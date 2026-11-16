@@ -1,9 +1,9 @@
 # IconsCXL design system
 
 IconsCXL is a rounded family with selective duotone for product interfaces. The expanded
-foundation contains 550 names in 19 categories, including 469 original UI symbols
-and 81 retained brand marks. There are 343 new names and 126 redrawn existing UI
-symbols. [The generated catalog](CATALOG.md) defines the delivered set;
+foundation contains 579 names in 19 categories, including 498 original UI symbols
+and 81 retained brand marks. The November 16 coverage batch adds 29 original concepts to the earlier
+foundation. The current quality audit records remaining findings explicitly. [The generated catalog](CATALOG.md) defines the delivered set;
 [`catalog.json`](../catalog.json) is its machine-readable counterpart.
 
 ## References and authorship
@@ -61,9 +61,9 @@ names. They do not represent distinct new concepts.
 
 | Style | Construction | Coverage |
 | --- | --- | --- |
-| Rounded Duotone | Selective surface depth; opaque linear symbols | All 550 names |
-| Rounded Solid | Filled silhouette with negative-space details | 469 UI names |
-| Rounded Stroke | Expanded contour and identifying detail lines | 469 UI names |
+| Rounded Duotone | Selective surface depth; opaque linear symbols | All 579 names |
+| Rounded Solid | Filled silhouette with negative-space details | 498 UI names |
+| Rounded Stroke | Expanded contour and identifying detail lines | 498 UI names |
 
 Minimal linear symbols can intentionally share Solid and Stroke geometry. A
 single arrow shaft does not need a different silhouette merely to increase the
@@ -119,7 +119,10 @@ both tints. Live browser inspection was unavailable in the execution environment
 gallery interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
-The [full artwork review](REVIEW.md) records the subsequent per-icon inspection
+The [current quality audit](DESIGN-AUDIT-2026-11-16.md) supersedes prior verdicts.
+The [Lucide coverage comparison](COVERAGE-2026-11-16.md) records the remaining expansion backlog.
+
+The historical [full artwork review](REVIEW.md) records the earlier per-icon inspection
 and corrections. Solid construction preserves structural parts separately from
 negative interior details; complex occlusion is authored explicitly. Round body
 corners, high-resolution stroke expansion and area-checked Boolean operations

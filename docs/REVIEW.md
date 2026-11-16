@@ -1,5 +1,8 @@
 # Artwork review — 10 November 2026
 
+> Superseded by the [16 November complete quality audit](DESIGN-AUDIT-2026-11-16.md).
+> The findings and counts below describe their historical snapshot.
+
 > Historical review. The [stricter 11 November audit](DESIGN-AUDIT-2026-11-11.md)
 > supersedes the all-approved design conclusion below and records remaining defects.
 > The [selective-duotone follow-up](TONE-REVIEW.md) records the later tone correction.

@@ -89,7 +89,7 @@ class DesignRegressionTests(unittest.TestCase):
             self.assertTrue(shape.contains((12,14)),style)
 
     def test_structural_solid_connections_do_not_turn_into_cutout_fragments(self):
-        for name in ['lock','trophy','network','workflow','watch','calendar','cpu','bug','signpost']:
+        for name in ['lock','trophy','network','workflow','watch','calendar','cpu','bug','signpost','syringe']:
             components=art.components(ink(name))
             self.assertEqual(len(components),1,(name,[p.area for p in components]))
 
@@ -119,8 +119,25 @@ class DesignRegressionTests(unittest.TestCase):
                     overlap=art.op(a,b,art.po.PathOp.INTERSECTION).area
                     self.assertLess(overlap,.02,(name,overlap))
 
+    def test_user_badges_have_clearance(self):
+        for name in ('user-plus','user-check','user-x'):
+            badge=art.DRAWINGS[name][1]
+            for style in ('duotone','solid','stroke'):
+                drawing=ink(name,style)
+                person=art.op(drawing,badge,art.po.PathOp.DIFFERENCE)
+                gap_zone=art.op(art.union(badge,art.stroke(badge,1.6)),badge,art.po.PathOp.DIFFERENCE)
+                self.assertLess(art.op(person,gap_zone,art.po.PathOp.INTERSECTION).area,.02,(name,style))
+
+    def test_solid_battery_charge_is_positive_ink(self):
+        window=art.rr(3,6,8,4,.5)
+        areas=[art.op(ink(name),window,art.po.PathOp.INTERSECTION).area
+               for name in ('battery-empty','battery-low','battery-full')]
+        self.assertLess(areas[0],.02)
+        self.assertGreater(areas[1],5)
+        self.assertGreater(areas[2],areas[1]*3)
+
     def test_non_special_default_compositions_preserve_ink(self):
-        special={'chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off'}
+        special={'user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}
         for name,(body,detail,outlined,*_) in art.DRAWINGS.items():
             if name in special:continue
             expected=art.union(body,detail,art.stroke(body,1.25) if outlined else art.po.Path())

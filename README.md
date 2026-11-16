@@ -1,7 +1,7 @@
 # IconsCXL
 
-550 rounded icons with selective duotone for product interfaces, developer tools, files,
-and brands. The 469 UI icons also have Solid and Stroke drawings (1,488 SVGs
+579 rounded icons with selective duotone for product interfaces, developer tools, files,
+and brands. The 498 UI icons also have Solid and Stroke drawings (1,575 SVGs
 total). Use the artwork directly or consume the generated Swift, React, and
 React Native adapters. The original collection was adapted and extended for [Tab](https://github.com/hugocxl/tab).
 
@@ -42,7 +42,8 @@ load them as template images and apply their own tint.
 Open [`index.html`](index.html) locally for a searchable, offline gallery with
 category/style filters, tint and size controls, SVG copying, and downloads.
 See [the coverage catalog](docs/CATALOG.md), [design system](docs/DESIGN.md),
-and [full artwork review with before/after examples](docs/REVIEW.md).
+[current quality audit](docs/DESIGN-AUDIT-2026-11-16.md), and
+[Lucide coverage comparison](docs/COVERAGE-2026-11-16.md).
 
 ## Swift / SwiftUI
 
@@ -147,7 +148,7 @@ lockfile, not every older React Native release.
 ## Choose a drawing style
 
 Rounded Duotone remains the default, including all 81 retained brand marks.
-The 469 original UI icons also support Rounded Solid and Rounded Stroke.
+The 498 original UI icons also support Rounded Solid and Rounded Stroke.
 Brands are intentionally absent from those two style namespaces.
 
 ```tsx

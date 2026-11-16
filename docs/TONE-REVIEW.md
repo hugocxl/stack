@@ -1,5 +1,8 @@
 # Selective duotone — 11 November 2026
 
+> Superseded by the [16 November complete quality audit](DESIGN-AUDIT-2026-11-16.md).
+> The findings and counts below describe their historical snapshot.
+
 **Two tones must explain surfaces or depth. Continuous marks use one opaque tint.**
 Arrows and chevrons no longer split their shafts, heads or arms into different
 tones. The same rule now covers checks, plus/minus, typography, menu lines,

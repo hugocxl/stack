@@ -1,0 +1,643 @@
+{
+  "scope": "29-icon delivered expansion; one handshake prototype deferred",
+  "method": "Inspected AppKit sheets at 16, 24, 32 points, light and dark, all supported styles, 1x and 2x. Syringe, handshake and dog were reviewed again after revision; other hashes describe the initial expansion snapshot. Handshake was removed from the delivered catalog after the final 16-point 1x review remained ambiguous; its failed evidence is preserved in deferredEntries.",
+  "entries": [
+    {
+      "name": "ambulance",
+      "category": "Health and fitness",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "556cbc00716101811704febceef33c1c9be901b6b4ffd54a7fa925c4d145cba0",
+        "solid": "eff5a442842f51e111c3bd8ebd3d75d25fedfbd298d955e0d8058115984cc857",
+        "stroke": "f741e2a2bcb72bd3168475a632f17ff5d6f9276c684fddbba1db2daebccd0b64"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/02-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/02-01.png"
+      }
+    },
+    {
+      "name": "anchor",
+      "category": "Maps and travel",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "794d8012b282e61aafd1029dd0d381a584c6b0a11a78ff4df5d7fa6ac3f50bba",
+        "solid": "794d8012b282e61aafd1029dd0d381a584c6b0a11a78ff4df5d7fa6ac3f50bba",
+        "stroke": "794d8012b282e61aafd1029dd0d381a584c6b0a11a78ff4df5d7fa6ac3f50bba"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/04-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/04-01.png"
+      }
+    },
+    {
+      "name": "baby",
+      "category": "People and accessibility",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "a1e686e6571b215c0425ab47882eaa2612f983c31960d6c874fad9e27b71c4a9",
+        "solid": "a844ace04489d66c3d7b46d3e34ac27f514344c0cdf6539c345538bca5f0887d",
+        "stroke": "bffe5ce12e7de331c1768f9f93d00182e26cf4665fcceb1a69577a5ae320f542"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/05-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/05-01.png"
+      }
+    },
+    {
+      "name": "backpack",
+      "category": "Maps and travel",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "3ac091fa42e6b3d2686972ec851d5115912f51c3ec5129836e4d87482951c4a8",
+        "solid": "a6bce335a0776a39e6d072816e628bb0d46d3c6e509fbf6044b0054e750f40a7",
+        "stroke": "2a184225e6b77b4dcff53fd8ba464965ea14f81a46f2d24b51d160b3ba922755"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/04-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/04-01.png"
+      }
+    },
+    {
+      "name": "banana",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "444d51c7a0978b45aad29daafee03662893a13ecb20d8ed48549314714dfe016",
+        "solid": "ae7ee77938e6b881fe82b748b72507bdabe9fa5043bb2a18f462ab8523d624d7",
+        "stroke": "1cbd1d26bbe1609c046d0ae5e24e2822088518b121e26f5ff05637fcdaee5830"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "bath",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "04f3612bbd127f7eb68e4f56e7aa4a65579fe2abcf77277f129b7271dcabefbb",
+        "solid": "b64d9317992ae5b59a0969e929a0febdf6258be8e8f6e9cdf34731aa801638e0",
+        "stroke": "64b598c8e4753b91fe87191161a39e8c254eb653b79266e5428489da2362ea74"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "binoculars",
+      "category": "Maps and travel",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "47588cd464472255ed6cb6b96e9487c78059009aaaf60923310509d0f0cb70b8",
+        "solid": "b1c8469c6fbd880506e3a8de038979e18b58607f374ad64a3f7793bbadc3729c",
+        "stroke": "20c340732041e0f81a7f25e00e085e944c8c65515c7b46c41059ed028da0862f"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/04-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/04-01.png"
+      }
+    },
+    {
+      "name": "bird",
+      "category": "Weather and nature",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "1ee2e9b8bc628a01c968df752159f00dfb5c8e35bc570048dd877ebf53bf9316",
+        "solid": "d3738c0c587b74bca6fad00898a274f45403250064d68de2d1f67afb4f48dfac",
+        "stroke": "0e8d7419701053b66c1e4c51916d8c3afdfa36c6093e216eed6cd7abc39002c6"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/06-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/06-01.png"
+      }
+    },
+    {
+      "name": "calculator",
+      "category": "Finance and commerce",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "9581ef4861b3cae6a27f7b639c12d1070d7c8045460ea6516c43c2570d3c0b91",
+        "solid": "e32697ac87756d634f93a7d1cc0767aefc61e34f30cde22e299859f26f43fe2b",
+        "stroke": "901ee5f13679670e5854e01efa79346de4c8b8d2d2b45cbe6f82505eedfd4514"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/01-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/01-01.png"
+      }
+    },
+    {
+      "name": "carrot",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "f2bccfcee881962b6ebeeab88721874b1f8bff8aed7167ee8aa932f4f8c1023a",
+        "solid": "9c71287fa9b5dbda695273c3521c3c48552f458b666b018c59d55cc06d67139f",
+        "stroke": "d48a3b35d7093c2d47addd77d0b2cce5c9c84fd999bd749148e7139bd6933efa"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "cat",
+      "category": "Weather and nature",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "3341d703a8627d01130f82116e5e646958d7fa88422d572ae2318564b7bafdb8",
+        "solid": "50fcff7bb3201d04ba8b96f98e71dd1552b5f933f2c4f24a64a9a2fa2e271bd3",
+        "stroke": "53b192f0288dedb6099ee9748782ea268f1cf4f72ddf2506773754625981d771"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/06-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/06-01.png"
+      }
+    },
+    {
+      "name": "cherry",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "116279c44efd22fa7d9d97b584d096704a06f6d90c24d54e7ff7c07266a55492",
+        "solid": "eb59838ac5dda484b85326edb2fa8c3a7a72a5e65f1c9a8b16f0a4ef6764fa0d",
+        "stroke": "baba17986b268dbcf69f556ad7a238e16d9762e96e0f5e3aa061ac879a437be9"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "construction",
+      "category": "Work and education",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "f217df2a2ae4cd4a81c2266cc8f3d029bf8d89609905344d21372be3489dfdef",
+        "solid": "22d6ee2aad0d1bfb09cd7c987e7fbec34c1ad99050f8fa8352617b88b2ab277f",
+        "stroke": "f8ab3cf30e71ca22e2323fb43df37ee53ea46392e595da4a9f8b13d46fe1705e"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/07-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/07-01.png"
+      }
+    },
+    {
+      "name": "cookie",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "22f10b810bce9bb60137176f4e8fd034c7c87af1bbb1b200da60e7e30f5b4ae2",
+        "solid": "75f983a2e703b73c93cc9e00fb694091849fb399cfdd3c8ccfa5d13fac63f742",
+        "stroke": "cf75695381d3f90c226596bec28de8eea668ed45169ca7540d53ed8dfa9e94f1"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "dog",
+      "category": "Weather and nature",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "Narrowed ears retain a balanced, recognizable dog silhouette.",
+      "sha256": {
+        "duotone": "986f29ba246063b3a517308f4d5f9061e982a4cef7094c1f94f25896563334c2",
+        "solid": "66471362a2955118995e5e49d5873da81351400fb02ec53f454772ce8ac24334",
+        "stroke": "2c1915c138e2df65e3284656583b2073fed6442e64771bbbf570e05a987e4703"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-final-1x/06-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-final-2x/06-01.png"
+      }
+    },
+    {
+      "name": "door-closed",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "0d3d9bf997e1c221bc46f50e9ce612f95be909cc21961de45018057fd496150e",
+        "solid": "a8b17e321c7eef2673b33f4918a462a26c367bbc660b34db5a31310867991ea4",
+        "stroke": "d684afc0d6b35b81e1b42bbc0feb8164f8d995558b0028bb94b8ac7b706fb851"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "ear",
+      "category": "People and accessibility",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "ad432742aea28a4b7738abeb3ea4d16abc76080f33bad9476c7d59e27e331fca",
+        "solid": "ad432742aea28a4b7738abeb3ea4d16abc76080f33bad9476c7d59e27e331fca",
+        "stroke": "ad432742aea28a4b7738abeb3ea4d16abc76080f33bad9476c7d59e27e331fca"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/05-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/05-01.png"
+      }
+    },
+    {
+      "name": "ear-off",
+      "category": "People and accessibility",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "e3fb9eac260e20b83db6a4f7094722860943eaaa899d20c7cf225c36e0a44cd0",
+        "solid": "df9e8af9622f7a5557795b898d49878572180596ad0f8be07fee88bc0b26d300",
+        "stroke": "df9e8af9622f7a5557795b898d49878572180596ad0f8be07fee88bc0b26d300"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/05-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/05-01.png"
+      }
+    },
+    {
+      "name": "hammer",
+      "category": "Work and education",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "8fc06b4cee6af60d0457dc90127bf2ff165072c466e37ce8ea23c54b2a2b32f2",
+        "solid": "906c09128301ed769aa23adf7103b4d1b85340dba5cc6804a0d31843bbf2ff61",
+        "stroke": "43281e3645eafd9f1f3022467f673fbc7e97cac8004a0696ff18ca55f3521876"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/07-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/07-01.png"
+      }
+    },
+    {
+      "name": "ice-cream-cone",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "d4c7fa991a78fe9a4c8894787f60f7d8ce36463bd6f29a9c8ec00b9929b95e17",
+        "solid": "4a0a29c86cfc983ad698c59fa923ab6e65592fe467eb54e0b21a715b9e3689da",
+        "stroke": "863c49946c13a3020bf142a7a1d241008ec8b51f79e3807672c0f9af2553c31c"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "id-card",
+      "category": "People and accessibility",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "7970fe24597b7a6f7ebf39bd2ea50c1267555c60f30a82e75e19177176e67de7",
+        "solid": "6be449d5335cbf64eb7e68d9f84d1740e564bbd184a39067a633c2440ac3cd47",
+        "stroke": "84ad103230acbd71e7908f660eb1dbd20e0ca6dc5b31e44c8ec51b367b21081e"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/05-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/05-01.png"
+      }
+    },
+    {
+      "name": "piggy-bank",
+      "category": "Finance and commerce",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "7b79dad208e985e08dc4699b7e1d5fbf3bde5be4722b62b6b0385b9a70d64aa9",
+        "solid": "00ff9e75f88921699d12c2f3efee1fd19483468a6837b89e4c2471fada7c7c9f",
+        "stroke": "d76f4df01fa1d03ea6d25f117fe987c9aea459fd38e30de4425e88d92344b08a"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/01-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/01-01.png"
+      }
+    },
+    {
+      "name": "rabbit",
+      "category": "Weather and nature",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "e326f8269fa81131a09816c34ccb723074d9b9076fb401d97011f2d593095d71",
+        "solid": "7ec58633e03c094e75adbe67ef5af78e841538b75f35a592be1b6911a53bd6a7",
+        "stroke": "ba52794ded055f08f6ea8eb6fd78036374a9c5d6d26e9334bb0d44c90d9f59ea"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/06-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/06-01.png"
+      }
+    },
+    {
+      "name": "refrigerator",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "416806494fcf6671cecefe44fbe6334bb9ff9ef45684a693181f7b1573313727",
+        "solid": "981f46c1872f53b5744020c862dd2c01521e62d6df096eadb41975a1c2194abe",
+        "stroke": "dc0daecd0efa08255029c7d92f9fc333104ac63c1d8c49fcef63981f44a1087a"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "sandwich",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "20a7fcb64761a9174705ade000a317f9b32a7dbd09ddabb9f65f211b16e31753",
+        "solid": "37bbe48bef374594e5f2ff0bee05d1060c6b18d7ba445d4b297c13df773d071f",
+        "stroke": "2e14cfccc070b5bb3516c4500b696972f781a17280552742b0bdd917ef32f066"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "scale",
+      "category": "Finance and commerce",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "da84437c76a06d7f9a6b0e6b1f1527de80040f2954b7fb422b3524ad1ba334da",
+        "solid": "56432b77014f0122125db145e9b451f9ddbcffacfafc6e0fcaba7d747d6e0068",
+        "stroke": "6a3f3392240df56d1d03ef18406de14e2dd1bc786f61df158a0b2eb993a1c547"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/01-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/01-01.png"
+      }
+    },
+    {
+      "name": "syringe",
+      "category": "Health and fitness",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "Needle now joins the barrel and remains visible at all reviewed sizes.",
+      "sha256": {
+        "duotone": "e72ec3e00ab02fe7849f999ad190b2e2ea8a6195646ab2d37f1e55ab54a9d0db",
+        "solid": "c2550b895537b17411098b82a6363c841de5885d48ab415575ea75cd3f0e849a",
+        "stroke": "07d4d29e6ee01547ea18e17b940b2dd1258e903abafd3821c00cc89842482bcc"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-final-1x/02-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-final-2x/02-01.png"
+      }
+    },
+    {
+      "name": "toilet",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "cd720bc74f3bcb5b2a4f149116227168aa3b19738ca941b18169a7dac8e9d029",
+        "solid": "b1f4a29dd4f8a51b0b09da1ba9d60adb3c81a384cde87812835865683a840da9",
+        "stroke": "53faa4421c68bb1380c6ad26e57b310ee1dceab90b7f3f8733b0655bf7e3ae98"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    },
+    {
+      "name": "washing-machine",
+      "category": "Home and food",
+      "verdict": "pass",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [],
+      "finding": "No material defect found in the inspected style and size matrix.",
+      "sha256": {
+        "duotone": "8c50d941127f5e8dab406b11b756eb13800099860fb0294ad612fdfe5648ec97",
+        "solid": "2bc6dde5e36a2a0370c254a7620ba5b0878e210c2bf4f3833ff81581df5ebecb",
+        "stroke": "c3c5201160ad2630420204706b1b8973963fd3bcac9f9acfda57e3127035bafa"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/expansion-1x/03-01.png",
+        "2x": "review/audit-2026-11-16-b/expansion-2x/03-01.png"
+      }
+    }
+  ],
+  "deferredEntries": [
+    {
+      "name": "handshake",
+      "category": "People and accessibility",
+      "verdict": "needs-review",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "affectedStyles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "finding": "Revised rectangular cuffs remain distinct, but the central grasp does not resolve as hands at 16 points 1x and can resemble a camera or linked blocks; defer pending redesign.",
+      "sha256": {
+        "duotone": "4ed5ed5c79bd626902d19f984b177b6f08ce575d6042671567e98e89d3784699",
+        "solid": "58406aeff53aab43fa4c8457126bc69f18a1778fecd03302a92f2e9af7d1de35",
+        "stroke": "2fb6857f5e9ee1e207e638f7fa3219cb50e51b5340d8fb7dfc611fdd728a5339"
+      },
+      "evidence": {
+        "1x": "review/audit-2026-11-16-b/handshake-final-1x/05-01.png",
+        "2x": "review/audit-2026-11-16-b/handshake-final-2x/05-01.png"
+      },
+      "deliveryStatus": "deferred; no canonical SVG or public name shipped"
+    }
+  ]
+}

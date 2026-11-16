@@ -1,6 +1,6 @@
 # Coverage catalog
 
-550 names; 1488 SVG drawings across the available styles.
+579 names; 1575 SVG drawings across the available styles.
 
 | Category | Names |
 | --- | ---: |
@@ -10,19 +10,19 @@
 | Communication | 25 |
 | Editing and design | 32 |
 | Files and folders | 38 |
-| Finance and commerce | 18 |
-| Health and fitness | 17 |
-| Home and food | 18 |
+| Finance and commerce | 21 |
+| Health and fitness | 19 |
+| Home and food | 29 |
 | Layout | 18 |
-| Maps and travel | 19 |
+| Maps and travel | 22 |
 | Media | 29 |
 | Navigation | 41 |
-| People and accessibility | 15 |
+| People and accessibility | 19 |
 | Security | 16 |
 | Technology and development | 63 |
 | Time and planning | 23 |
-| Weather and nature | 19 |
-| Work and education | 15 |
+| Weather and nature | 23 |
+| Work and education | 17 |
 
 ## Actions and status
 
@@ -50,15 +50,15 @@
 
 ## Finance and commerce
 
-`banknote`, `barcode`, `basket`, `coins`, `credit-card`, `dollar`, `euro`, `gift`, `package`, `percent`, `pound`, `receipt`, `shopping-bag`, `shopping-cart`, `store`, `tag`, `wallet`, `yen`
+`banknote`, `barcode`, `basket`, `calculator`, `coins`, `credit-card`, `dollar`, `euro`, `gift`, `package`, `percent`, `piggy-bank`, `pound`, `receipt`, `scale`, `shopping-bag`, `shopping-cart`, `store`, `tag`, `wallet`, `yen`
 
 ## Health and fitness
 
-`apple`, `bandage`, `bed`, `droplet`, `dumbbell`, `first-aid`, `footprints`, `heart`, `heart-pulse`, `hospital`, `lungs`, `medical-cross`, `moon`, `pill`, `stethoscope`, `thermometer`, `weight`
+`ambulance`, `apple`, `bandage`, `bed`, `droplet`, `dumbbell`, `first-aid`, `footprints`, `heart`, `heart-pulse`, `hospital`, `lungs`, `medical-cross`, `moon`, `pill`, `stethoscope`, `syringe`, `thermometer`, `weight`
 
 ## Home and food
 
-`bell-ring`, `bottle`, `cake`, `chef-hat`, `coffee`, `cup`, `door-open`, `fan`, `gamepad`, `key-round`, `lamp`, `music-note`, `pizza`, `plug`, `puzzle`, `sofa`, `utensils`, `wine`
+`banana`, `bath`, `bell-ring`, `bottle`, `cake`, `carrot`, `chef-hat`, `cherry`, `coffee`, `cookie`, `cup`, `door-closed`, `door-open`, `fan`, `gamepad`, `ice-cream-cone`, `key-round`, `lamp`, `music-note`, `pizza`, `plug`, `puzzle`, `refrigerator`, `sandwich`, `sofa`, `toilet`, `utensils`, `washing-machine`, `wine`
 
 ## Layout
 
@@ -66,7 +66,7 @@
 
 ## Maps and travel
 
-`bicycle`, `bus`, `car`, `fuel`, `globe`, `map`, `map-pin`, `mountain`, `navigation`, `parking`, `plane`, `route`, `ship`, `signpost`, `suitcase`, `tent`, `ticket`, `train`, `truck`
+`anchor`, `backpack`, `bicycle`, `binoculars`, `bus`, `car`, `fuel`, `globe`, `map`, `map-pin`, `mountain`, `navigation`, `parking`, `plane`, `route`, `ship`, `signpost`, `suitcase`, `tent`, `ticket`, `train`, `truck`
 
 ## Media
 
@@ -78,7 +78,7 @@
 
 ## People and accessibility
 
-`accessibility`, `circle-user`, `contact`, `frown`, `hand`, `meh`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`
+`accessibility`, `baby`, `circle-user`, `contact`, `ear`, `ear-off`, `frown`, `hand`, `id-card`, `meh`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`
 
 ## Security
 
@@ -94,8 +94,8 @@
 
 ## Weather and nature
 
-`cloud-fog`, `cloud-lightning`, `cloud-rain`, `cloud-snow`, `fish`, `flame`, `flower`, `leaf`, `paw`, `rainbow`, `recycle`, `snowflake`, `sprout`, `sun`, `sunrise`, `sunset`, `tree`, `umbrella`, `wind`
+`bird`, `cat`, `cloud-fog`, `cloud-lightning`, `cloud-rain`, `cloud-snow`, `dog`, `fish`, `flame`, `flower`, `leaf`, `paw`, `rabbit`, `rainbow`, `recycle`, `snowflake`, `sprout`, `sun`, `sunrise`, `sunset`, `tree`, `umbrella`, `wind`
 
 ## Work and education
 
-`atom`, `award`, `book`, `book-open`, `briefcase`, `building`, `flask`, `graduation-cap`, `infinity`, `landmark`, `lightbulb-on`, `medal`, `presentation`, `rocket`, `test-tube`
+`atom`, `award`, `book`, `book-open`, `briefcase`, `building`, `construction`, `flask`, `graduation-cap`, `hammer`, `infinity`, `landmark`, `lightbulb-on`, `medal`, `presentation`, `rocket`, `test-tube`

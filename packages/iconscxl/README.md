@@ -1,6 +1,6 @@
 # IconsCXL
 
-550 rounded icons with selective duotone (469 also available in Solid and Stroke) in one package, with typed, tree-shakeable exports for JavaScript,
+579 rounded icons with selective duotone (498 also available in Solid and Stroke) in one package, with typed, tree-shakeable exports for JavaScript,
 React and React Native.
 
 ```sh

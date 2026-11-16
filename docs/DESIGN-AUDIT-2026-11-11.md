@@ -1,5 +1,8 @@
 # Strict design audit — 11 November 2026
 
+> Superseded by the [16 November complete quality audit](DESIGN-AUDIT-2026-11-16.md).
+> The findings and counts below describe their historical snapshot.
+
 > Baseline before the [selective-duotone correction](TONE-REVIEW.md). The hashes
 > and counts below preserve that inspection. Trending Down has since been fixed;
 > the other reported design concerns remain open.

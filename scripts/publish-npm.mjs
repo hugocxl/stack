@@ -32,7 +32,8 @@ export async function publishPackage({ name, version, file, integrity }, {
     return;
   }
   publish(file);
-  for (let attempt = 0; attempt < 60; attempt++) {
+  // Registry processing previously exceeded five minutes after a successful publish.
+  for (let attempt = 0; attempt < 180; attempt++) {
     const metadata = await lookup(name, version);
     if (metadata) {
       verifyIntegrity(metadata, integrity, name, version);

@@ -195,7 +195,7 @@ FILE=path('M4 1.5H9L13.5 6V13Q13.5 14.5 12 14.5H4Q2.5 14.5 2.5 13V3Q2.5 1.5 4 1.
 FOLD=stroke('M9 1.5V6H13.5',1.2)
 FOLDER=path('M2 3H6L8 5H14Q15 5 15 6V12Q15 14 13 14H3Q1 14 1 12V4Q1 3 2 3Z')
 for name,detail in [('file',FOLD),('file-text',union(FOLD,lines('M5 8H11','M5 10.5H10'))),('file-plus',union(FOLD,plus(8,10,.7))),('file-minus',union(FOLD,line((5.5,10),(10.5,10)))),('file-check',union(FOLD,check(8,10,.65))),('file-x',union(FOLD,cross(8,10,.7))),('file-code',union(FOLD,lines('M6.5 8l-2 2 2 2','M9.5 8l2 2-2 2'))),('file-image',union(FOLD,circle(6,8,.7),line((4.5,12),(7,9.5),(9,11),(11,9)))),('file-table',union(FOLD,stroke('M5 8H11V12H5ZM5 10H11M8 8V12',1))),('file-symlink',union(FOLD,stroke('M5 12V10H10.5M8.5 8l2 2-2 2',1.1))),('file-lock',union(FOLD,rr(5.8,9.8,4.4,3,.6),stroke('M6.6 9.8V8.8A1.4 1.4 0 0 1 9.4 8.8V9.8',1))),('file-audio',union(FOLD,line((9,8),(9,11)),circle(7.8,11.5,1.2))),('file-video',union(FOLD,poly([(6,8),(10,10),(6,12)]))),('file-search',union(FOLD,ring(7,9.5,2,1),line((8.5,11),(10.5,13)))),('file-heart',union(FOLD,path('M8 12.5L5.3 10C3.8 8.5 6.2 7.2 8 9C9.8 7.2 12.2 8.5 10.7 10Z'))),('file-zip',union(FOLD,rr(7.3,7.5,1.4,1.4,.2),rr(8.5,9,1.4,1.4,.2),rr(7.3,10.5,1.4,1.4,.2)))]: shape(name,FILE,detail)
-for name,detail in [('folder',line((2,6),(14,6))),('folder-plus',plus(8,10,.8)),('folder-minus',line((5.5,10),(10.5,10))),('folder-check',check(8,10,.7)),('folder-x',cross(8,10,.7)),('folder-heart',path('M8 12.5L5 10C3.5 8.5 6 7 8 9C10 7 12.5 8.5 11 10Z')),('folder-lock',union(rr(6,9,4,3,1),stroke('M7 9V8A1 1 0 0 1 9 8V9',1))),('folder-search',union(ring(7.5,9,2.3,1.2),line((9.2,10.7),(11.3,12.8)))),('folder-code',lines('M6 8l-2 2 2 2','M10 8l2 2-2 2')),('folder-zip',union(rr(7,6.8,1.4,1.4,.2),rr(8.4,8.2,1.4,1.4,.2),rr(7,9.6,1.4,1.4,.2),stroke('M7.6 12H9.4',1)))]: shape(name,FOLDER,detail)
+for name,detail in [('folder',line((2,6),(14,6))),('folder-plus',plus(8,10,.8)),('folder-minus',line((5.5,10),(10.5,10))),('folder-check',check(8,10,.7)),('folder-x',cross(8,10,.7)),('folder-heart',path('M8 12.5L5 10C3.5 8.5 6 7 8 9C10 7 12.5 8.5 11 10Z')),('folder-lock',union(rr(6,9,4,3,1),stroke('M7 9V8A1 1 0 0 1 9 8V9',1))),('folder-search',union(ring(7.2,8.8,1.9,1.1),line((8.6,10.2),(10.2,11.8),width=1.1))),('folder-code',lines('M6 8l-2 2 2 2','M10 8l2 2-2 2')),('folder-zip',union(rr(7,6.8,1.4,1.4,.2),rr(8.4,8.2,1.4,1.4,.2),rr(7,9.6,1.4,1.4,.2),stroke('M7.6 12H9.4',1)))]: shape(name,FOLDER,detail)
 shape('folder-open',FOLDER,path('M2 7H14Q15 7 14.5 8.5L13 13H3Z'))
 shape('folders',union(transform(FOLDER,0,.8,-1,-2),transform(FOLDER,0,.8,1,1.5)),stroke(transform(FOLDER,0,.8,1,1.5),1.25))
 for name,detail in [('spreadsheet',stroke('M2 6H14M6 2V14M10 6V14M2 10H14',1.2)),('slides',union(lines('M4 5H12','M4 8H7','M4 10.5H7'),rr(9,8,3,4,.5))),('word',lines('M3.5 5l2 6 2.5-5 2.5 5 2-6')),('pdf',stroke('M3.7 10.8V5.2H4.7C6.5 5.2 6.5 8 4.7 8H3.7M7.2 5.2V10.8H8.1C10.4 10.8 10.4 5.2 8.1 5.2ZM10.9 10.8V5.2H13M10.9 8H12.6',.8)),('epub',stroke('M8 5Q5 3 3 4V11Q5 10 8 12Q11 10 13 11V4Q11 3 8 5ZM8 5V12',1)),('zip',lines('M7 3H9','M6 5H8','M7 7H9','M6 9H8','M7 11H9'))]: shape(name,rr(),detail)
@@ -251,7 +251,7 @@ for name,detail in [('clock',line((8,4),(8,8),(11,10))),('alarm-clock',union(lin
 shape('timer',circle(8,9,5),union(line((8,9),(10,6.5)),lines('M6 1H10','M8 1V4','M12 4l1-1')))
 shape('hourglass',path('M3 2H13Q13 6 9.5 8Q13 10 13 14H3Q3 10 6.5 8Q3 6 3 2Z'),lines('M3 2H13','M3 14H13','M6 5H10','M6 12l2-2 2 2'))
 CAL=rr(2,3,12,11,2); CALTOP=lines('M5 1.5V4.5','M11 1.5V4.5','M2 6H14')
-for name,detail in [('calendar',dots((5,9),(8,9),(11,9),(5,12),(8,12))),('calendar-days',dots((5,9),(8,9),(11,9),(5,12),(8,12),(11,12))),('calendar-check',check(8,10,.7)),('calendar-plus',plus(8,10,.8)),('calendar-x',cross(8,10,.7)),('calendar-clock',union(ring(9,10,2.7,1),stroke('M9 8.5V10H10.5',1))),('calendar-range',line((5,10),(11,10)))]: shape(name,CAL,union(CALTOP,detail))
+for name,detail in [('calendar',dots((5,9),(8,9),(11,9),(5,12),(8,12))),('calendar-days',dots((5,9),(8,9),(11,9),(5,12),(8,12),(11,12))),('calendar-check',check(8,10,.7)),('calendar-plus',plus(8,10,.8)),('calendar-x',cross(8,10,.7)),('calendar-clock',union(ring(9,10,2.7,1),stroke('M9 8.5V10H10.5',1))),('calendar-range',union(line((5,10),(11,10),width=1.1),dots((5,10),(11,10),r=1)))]: shape(name,CAL,union(CALTOP,detail))
 shape('list-todo',rr(1.5,2,13,12,2),lines('M3.5 5l1 1 2-2','M8 5H12','M3.5 10l1 1 2-2','M8 10H12'))
 shape('notebook',rr(3,1.5,10.5,13,1.5),lines('M1.5 4H4.5','M1.5 8H4.5','M1.5 12H4.5','M6.5 5H11','M6.5 8H10'))
 shape('sticky-note',path('M2 2H14V10L10 14H2Z'),stroke('M10 14V10H14M5 5H11M5 8H9',1.2))
@@ -272,7 +272,7 @@ shape('volume',path('M2 6H5L9 2V14L5 10H2Z'),stroke('M12 4Q16 8 12 12M11 6Q13 8 
 shape('volume-off',path('M2 6H5L9 2V14L5 10H2Z'),cross(12.5,8,.6))
 shape('microphone',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M5.5 15H10.5',1.2))
 shape('microphone-off',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M2 2L14 14',1.2))
-shape('headphones',path('M2 8A6 6 0 0 1 14 8V12H11V8H5V12H2Z'),union(rr(1.5,7,3.5,6,1.4),rr(11,7,3.5,6,1.4)))
+glyph('headphones',stroke('M2.5 9V7A5.5 5.5 0 0 1 13.5 7V9',1.35),union(rr(1.5,7,3.5,6,1.4),rr(11,7,3.5,6,1.4)))
 glyph('music',stroke('M6 12V3L13 1.5V10'),union(circle(4,12,2),circle(11,10,2),line((6,5),(13,3.5))))
 shape('image',rr(1.5,2,13,12,2),union(circle(5,5.5,1.3),line((2,12),(6.5,8),(9,10),(11,7.5),(14,11))))
 shape('camera',path('M2 4H5L6 2H10L11 4H14V13H2Z'),union(ring(8,8.5,3,1.35),circle(12,6,.65)))
@@ -281,11 +281,11 @@ shape('video',rr(1.5,2,13,12,2),union(poly([(6,5),(11,8),(6,11)]),lines('M4 2V14
 shape('film',rr(1.5,2,13,12,1),lines('M5 2V14','M11 2V14','M1.5 6H5','M1.5 10H5','M11 6H14.5','M11 10H14.5'))
 shape('radio',rr(1.5,5,13,9,2),union(line((3,5),(12,1.5)),ring(5.5,9.5,2.2,1.2),lines('M10 8H12','M10 11H12')))
 shape('tv',rr(1.5,4,13,9,2),lines('M5 1l3 3 3-3','M5 15H11'))
-shape('cast',rr(1.5,2,13,11,2),union(stroke('M2 7A7 7 0 0 1 9 14M2 10A4 4 0 0 1 6 14'),circle(2,14,1)))
+glyph('cast',stroke('M2 4V3Q2 2 3 2H13Q14 2 14 3V11Q14 12 13 12H11',1.35),union(stroke('M2 7A7 7 0 0 1 9 14M2 10A4 4 0 0 1 6 14',1.2),circle(2,14,.8)))
 shape('airplay',rr(1.5,2,13,10,2),poly([(8,8),(13,14),(3,14)]))
 glyph('waveform',lines('M2 6V10','M5 3V13','M8 1V15','M11 4V12','M14 6V10'),line((8,5),(8,11)))
 shape('disc',circle(),union(ring(8,8,1.5,.9),stroke('M4 5Q5 3.5 7 3M12 11Q11 12.5 9 13',1.2)))
-glyph('podcast',ring(8,6.5,5,1.3),union(circle(8,6,1.7),rr(6,9,4,6,2)))
+glyph('podcast',stroke('M3.4 11A6 6 0 1 1 12.6 11M5.2 8.9A3.5 3.5 0 1 1 10.8 8.9',1.1),union(circle(8,6,1.25),rr(6.7,8.5,2.6,6,1.3)))
 
 CATEGORY='Layout'
 WINDOW=rr(1.5,2,13,12,2)
@@ -309,7 +309,7 @@ glyph('crop',stroke('M4 1V12H15'),stroke('M1 4H12V15'))
 shape('ruler',transform(rr(1.5,5,13,6,1),-45),transform(lines('M4 5V7','M7 5V8','M10 5V7'),-45))
 glyph('scissors',union(ring(4,4,2.5,1.35),ring(4,12,2.5,1.35)),lines('M6 5.5L14 13','M6 10.5L14 3'))
 shape('pen-tool',path('M2 14L4 5L10 2L14 6L11 12Z'),union(circle(8,8,1.15),line((2,14),(7.2,8.8)),line((10,2),(14,6))))
-shape('pipette',path('M3 10L10 3 13 6 6 13 2 14Z'),stroke('M9 2L14 7M11 2L14 5M4 9L7 12'))
+shape('pipette',path('M3 10L8.5 4.5 11.5 7.5 6 13 2 14Z'),union(path('M8.5 4.5L10.5 2.5C13 .2 15.8 3 13.5 5.5L11.5 7.5Z'),stroke('M7.5 3.5L12.5 8.5',1.3)))
 glyph('bold',stroke('M4 2.5V13.5',1.7),stroke('M4 2.5H8.5C12.5 2.5 12.5 7.5 8.5 7.5H4M8.5 7.5C13.5 7.5 13.5 13.5 8.5 13.5H4',1.7))
 glyph('italic',lines('M7 2H13','M3 14H9'),line((10,2),(6,14)))
 glyph('underline',stroke('M3 2V7A5 5 0 0 0 13 7V2'),line((2,14),(14,14)))
@@ -397,7 +397,7 @@ shape('chart-pie',circle(),stroke('M8 2V8H14'))
 shape('chart-donut',ring(8,8,6,2.5),path('M8 2A6 6 0 0 1 14 8H10.5A2.5 2.5 0 0 0 8 5.5Z'))
 shape('activity',WINDOW,line((1.5,8),(5,8),(7,4),(9,12),(11,8),(14.5,8)))
 shape('workflow',union(poly([(8,1),(11,4),(8,7),(5,4)]),rr(1,11,5,4,1),rr(10,11,5,4,1)),stroke('M8 7V9H3.5V11M8 9H12.5V11'))
-glyph('git-compare',lines('M5 14V2L2 5'),lines('M11 2V14L14 11'))
+glyph('git-compare',union(ring(3,12.5,1.5,1.1),stroke('M3 11V5Q3 3 5 3H7M5 1L7 3 5 5',1.2)),union(ring(13,3.5,1.5,1.1),stroke('M13 5V11Q13 13 11 13H9M11 11L9 13 11 15',1.2)))
 
 CATEGORY='Finance and commerce'
 shape('credit-card',rr(1.5,3,13,10,2),lines('M1.5 6H14.5','M4 10H7','M10 10H12'))
@@ -469,7 +469,7 @@ shape('car',path('M3 6L5 2H11L13 6 14.5 7V12H1.5V7Z'),union(stroke('M3 6H13M2 12
 shape('truck',union(rr(1.5,3,8,8.5,1),path('M9.5 6H12.5L14.5 9V11.5H9.5Z')),union(ring(4.5,12,1.8,1.15),ring(12,12,1.8,1.15),stroke('M9.5 6V11.5M10 8.5H14',1.1)))
 shape('bus',rr(3,1.5,10,12,2),union(stroke('M3 6H13M3 10H13M5 1.5V6M11 1.5V6M4 13V15M12 13V15'),dots((5,8),(11,8),r=.65)))
 shape('train',rr(3,1,10,12,3),union(stroke('M3 6H13M8 1V6M5 13L3 15M11 13L13 15'),dots((5.5,9.5),(10.5,9.5),r=.8)))
-glyph('bicycle',union(ring(4,11,3,1.1),ring(12,11,3,1.1)),stroke('M4 11L7 5 11 5 12 11 7 11 5 4H3M10 2H13',1.2))
+glyph('bicycle',union(ring(4,11,3,1.1),ring(12,11,3,1.1)),stroke('M4 11L7 5 11 5 12 11 7 11 5 4H3M11 5L10 2H13',1.2))
 shape('plane',path('M8 1Q9 1 9 3V6L15 10V12L9 10V13L11 15H5L7 13V10L1 12V10L7 6V3Q7 1 8 1Z'))
 shape('ship',path('M1 9L8 7 15 9 13 13H3Z'),stroke('M4 8V3H12V8M7 3V1H9M1 15Q3 13 5 15Q7 13 9 15Q11 13 13 15H15'))
 shape('suitcase',rr(3,4,10,10,2),union(stroke('M6 4V1.5H10V4M5 6V12M11 6V12M5 14V15M11 14V15')))
@@ -490,7 +490,7 @@ SNOW_ARM=stroke('M8 1.5V8M5.8 3.3L8 5.5 10.2 3.3',1.1)
 glyph('snowflake',union(*(transform(SNOW_ARM,i*60) for i in range(6))),circle(8,8,1.1))
 glyph('wind',stroke('M1 5H10Q14 5 13 2Q12 0 10 2M1 8H13Q16 8 15 11Q14 13 12 11'),stroke('M2 11H7Q10 11 9 14Q8 16 6 14'))
 shape('umbrella',path('M1 8A7 7 0 0 1 15 8Q12 6 10 8Q8 6 6 8Q3 6 1 8Z'),stroke('M8 8V12Q8 16 11 14M8 1V2'))
-shape('rainbow',path('M1 13V9A7 7 0 0 1 15 9V13H12V9A4 4 0 0 0 4 9V13Z'),stroke('M5.5 13V9A2.5 2.5 0 0 1 10.5 9V13'))
+glyph('rainbow',stroke('M1.5 13V9A6.5 6.5 0 0 1 14.5 9V13',1.2),stroke('M4 13V9A4 4 0 0 1 12 9V13M6.5 13V9A1.5 1.5 0 0 1 9.5 9V13',1.2))
 shape('leaf',path('M2 13C0 3 8 1 14 2C15 10 10 16 2 13Z'),stroke('M2 13L11 5M6 9V5M6 9H10'))
 shape('tree',path('M8 1L14 7H11L15 12H1L5 7H2Z'),line((8,10),(8,15)))
 shape('flower',path('M8 4C3-2-1 5 4 8C-1 13 6 17 8 12C12 17 17 11 12 8C17 3 10-1 8 4Z'),ring(8,8,2.2,1.3))
@@ -562,9 +562,17 @@ shape('calendar-heart',CAL,union(CALTOP,path('M8 12.5L5 10C3.5 8 6 7 8 9C10 7 12
 CATEGORY='Finance and commerce'
 shape('yen',circle(),stroke('M5 4L8 8 11 4M8 8V12M5 8H11M5 10H11',1.1))
 
+# Original coverage additions share the same authoring geometry and exports.
+from expansion import register as register_expansion
+register_expansion(globals())
+
 # Format glyph corrections found during the individual legacy-art review.
 # Retain the existing brand-container treatment and attribution.
 BRAND_REFINEMENTS={
+    # Scale the retained GraphQL foreground once; preserve every source node and edge.
+    'graphql':transform(path('M7.99 2.88 A0.91 0.91 0 0 1 8.85 4.09 L10.9 5.26 Q11.15 5.07 11.46 5.07 A0.91 0.91 0 0 1 11.82 6.83 L11.82 9.17 A0.91 0.91 0 1 1 10.9 10.73 L8.85 11.91 A0.91 0.91 0 0 1 7.99 13.12 A0.91 0.91 0 0 1 7.12 11.91 L5.07 10.73 Q4.83 10.92 4.51 10.93 A0.91 0.91 0 0 1 4.16 9.17 L4.16 6.83 A0.91 0.91 0 1 1 5.07 5.26 L7.12 4.09 A0.91 0.91 0 0 1 7.99 2.88 M5.38 10.3 L5.34 10.39 L7.35 11.55 A0.91 0.91 0 0 1 8.62 11.55 L10.63 10.39 L10.6 10.3 Z M8.23 4.67 A0.95 0.95 0 0 1 7.75 4.67 L5.08 9.3 Q5.35 9.52 5.41 9.86 L10.57 9.86 Q10.62 9.52 10.9 9.3 Z M5.34 5.61 A0.9 0.9 0 0 1 4.59 6.89 L4.59 9.11 L4.69 9.11 L7.37 4.46 L7.35 4.45 Z M8.6 4.46 L11.29 9.11 L11.39 9.11 L11.39 6.89 A0.91 0.91 0 0 1 10.63 5.61 L8.62 4.45 Z'),scale=1.27),
+    # Retain the C++ hexagon with a wider C aperture and pixel-legible plus counters.
+    'cpp':op(transform(path('M12.44 5.44C12.37 5.32 12.27 5.2 12.16 5.14L8.39 2.97C8.18 2.84 7.82 2.84 7.61 2.97L3.84 5.14C3.62 5.27 3.44 5.58 3.44 5.83V10.17C3.44 10.3 3.49 10.44 3.56 10.56C3.64 10.68 3.73 10.8 3.84 10.86L7.61 13.03C7.82 13.16 8.18 13.16 8.39 13.03L12.16 10.86C12.27 10.8 12.36 10.68 12.44 10.56C12.51 10.44 12.56 10.3 12.56 10.17V5.83C12.56 5.7 12.51 5.56 12.44 5.44Z'),scale=1.35),union(stroke('M8.1 5.2287A3.2 3.2 0 1 0 8.1 10.7713',1.45),stroke('M8.35 8H10.05M9.2 6.6V9.4M11.75 8H13.45M12.6 6.6V9.4',1)),po.PathOp.DIFFERENCE),
     'svg':stroke('M5.5 5.5Q2.5 4.5 2.5 6.5Q2.5 7.5 4 8Q6 8.5 5 10Q4 11.5 2 10M6.5 5.5L8 10.5 9.5 5.5M14 6Q11 4.5 11 8Q11 11.5 14 10V8.5H12.7',.8),
     'html':op(poly([(3.5,3),(12.5,3),(11.2,12),(8,13),(4.8,12)]),stroke('M10.3 5H6L5.7 8H10L9.6 10.5 8 11 6.2 10.5',1.05),po.PathOp.DIFFERENCE),
     'yml':stroke('M3 4.5L5 7.5 7 4.5M5 7.5V11.5M9 5H13M9 8H13M9 11H12',1.1),
@@ -646,12 +654,12 @@ def main():
         mono=union(outer,d) if outline else union(b,d)
         # Large closed detail regions need their own contour in Stroke; a
         # filled basket or folder flap would otherwise hide the interior.
-        if name in {'folder-open','video-call','picture-in-picture','headphones'}:
+        if name in {'folder-open','video-call','picture-in-picture'}:
             mono=union(outer,stroke(d,1.1))
         elif name in {'layers','skip-forward','skip-back','fast-forward','rewind'}:
             mono=union(stroke(b,1.25),stroke(d,1.25))
         elif name == 'qr-code':
-            mono=union(outer,lines('M10 10H14V14H12','M10 13V14'))
+            mono=union(outer,d)
         elif name == 'quote':
             mono=union(stroke(b,1.25),stroke(rr(9.5,3,5,5,1),1.25),stroke('M6.5 8Q6.5 12 2.5 13M14.5 8Q14.5 12 10.5 13'))
         if outline:
@@ -688,6 +696,17 @@ def main():
             # divisions explicit as gaps instead of splitting a ring's tone.
             duo=[(solid,1)]
             mono=union(stroke(circle(8,8,6),1.1),stroke(circle(8,8,3.3),1.1),lines('M8 2V4.7','M11.3 8H14'))
+        if name in {'battery','battery-full','battery-low','battery-empty','battery-charging'}:
+            # Charge is positive ink in every style, including Solid.
+            solid=union(outer,d)
+        if name in {'user-plus','user-check','user-x'}:
+            # A badge floats beside the person; it must not fuse to a shoulder.
+            clearance=union(d,stroke(d,1.8))
+            duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo[:-1]]+[(union(op(outer,clearance,po.PathOp.DIFFERENCE),d),1)]
+            mono=union(op(outer,clearance,po.PathOp.DIFFERENCE),d)
+            solid=union(op(union(b,outer),clearance,po.PathOp.DIFFERENCE),d)
+        if name == 'headphones':
+            mono=union(b,stroke(d,1.1))
         if name == 'lungs':
             solid=union(op(union(b,outer),stroke('M5 9L7 7M9 7L11 9',1.1),po.PathOp.DIFFERENCE),line((8,1),(8,6)))
         if name == 'hourglass':
@@ -699,6 +718,9 @@ def main():
         if name == 'folder-open':
             flap=soften(path('M2 7H14Q15 7 14.5 8.5L13 13H3Z'))
             solid=union(op(union(b,outer),union(flap,stroke(flap,1.4)),po.PathOp.DIFFERENCE),flap)
+            # Hide the rear lower edge behind the open front panel.
+            rear=stroke('M1.5 5.7V4Q1.5 3 2.5 3H6L8 5H13.5Q14.5 5 14.5 5.7',1.25)
+            mono=union(rear,stroke(flap,1.1))
         if name == 'airplay':
             foreground=poly([(8,8),(13,14),(3,14)])
             clearance=union(foreground,stroke(foreground,1.5))
@@ -712,10 +734,13 @@ def main():
         if name == 'multiplexer':
             solid=stacked_solid(rr(1.5,1.5,9.5,9.5,2),rr(5,5,9.5,9.5,2),lines('M10 5V14.5','M5 10H14.5'))
         if name == 'swatch':
-            solid=stacked_solid(stacked_solid(SWATCH,SWATCH_DIAGONAL),rr(2,9.5,12,4.5,1),circle(4.25,11.75,.65))
+            rear=op(SWATCH,union(SWATCH_DIAGONAL,stroke(SWATCH_DIAGONAL,1.8)),po.PathOp.DIFFERENCE)
+            fan=union(rear,SWATCH_DIAGONAL)
+            front=rr(2,9.5,12,4.5,1)
+            solid=union(op(fan,union(front,stroke(front,1.8)),po.PathOp.DIFFERENCE),op(front,circle(4.25,11.75,.65),po.PathOp.DIFFERENCE))
         if name == 'store':
             solid=op(union(b,outer),union(rr(6.3,10,3.4,6,.2),stroke('M6.5 2L5.8 6M9.5 2L10.2 6',.8)),po.PathOp.DIFFERENCE)
-        if name in {'camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off'}:
+        if name in {'camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}:
             slash=line((2,2),(14,14)); clearance=line((2,2),(14,14),width=2.65)
             duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo]+[(slash,1)]
             mono=union(op(mono,clearance,po.PathOp.DIFFERENCE),slash)

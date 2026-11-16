@@ -108,6 +108,42 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "ambulance",
+    "category": "Health and fitness",
+    "tags": [
+      "emergency",
+      "paramedic",
+      "medical",
+      "vehicle",
+      "rescue"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "anchor",
+    "category": "Maps and travel",
+    "tags": [
+      "nautical",
+      "boat",
+      "harbor",
+      "mooring",
+      "sea"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "antigravity",
     "category": "Brands",
     "tags": [],
@@ -306,6 +342,41 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "baby",
+    "category": "People and accessibility",
+    "tags": [
+      "infant",
+      "childcare",
+      "newborn",
+      "family"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "backpack",
+    "category": "Maps and travel",
+    "tags": [
+      "bag",
+      "hiking",
+      "school",
+      "luggage",
+      "travel"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "badge-check",
     "category": "Security",
     "tags": [],
@@ -321,6 +392,23 @@
     "name": "ban",
     "category": "Actions and status",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "banana",
+    "category": "Home and food",
+    "tags": [
+      "fruit",
+      "food",
+      "tropical",
+      "produce"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -379,6 +467,23 @@
     "name": "basket",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "bath",
+    "category": "Home and food",
+    "tags": [
+      "bathtub",
+      "bathroom",
+      "wash",
+      "bathing"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -532,12 +637,47 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "binoculars",
+    "category": "Maps and travel",
+    "tags": [
+      "watch",
+      "observe",
+      "explore",
+      "search",
+      "sightseeing"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "biome",
     "category": "Brands",
     "tags": [],
     "origin": "legacy",
     "styles": [
       "duotone"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "bird",
+    "category": "Weather and nature",
+    "tags": [
+      "animal",
+      "avian",
+      "wildlife",
+      "songbird"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
     ],
     "defaultTone": "duotone"
   },
@@ -808,6 +948,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "calculator",
+    "category": "Finance and commerce",
+    "tags": [
+      "arithmetic",
+      "accounting",
+      "calculate",
+      "keypad"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "calendar",
     "category": "Time and planning",
     "tags": [],
@@ -940,9 +1097,43 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "carrot",
+    "category": "Home and food",
+    "tags": [
+      "vegetable",
+      "produce",
+      "food",
+      "nutrition"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "cast",
     "category": "Media",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "cat",
+    "category": "Weather and nature",
+    "tags": [
+      "animal",
+      "feline",
+      "pet",
+      "kitten"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -1063,6 +1254,23 @@
     "name": "chef-hat",
     "category": "Home and food",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "cherry",
+    "category": "Home and food",
+    "tags": [
+      "fruit",
+      "food",
+      "cherries",
+      "produce"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -1692,6 +1900,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "construction",
+    "category": "Work and education",
+    "tags": [
+      "barrier",
+      "work",
+      "roadworks",
+      "construction",
+      "maintenance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "contact",
     "category": "People and accessibility",
     "tags": [],
@@ -1719,6 +1945,24 @@
     "name": "conversation-add",
     "category": "Communication",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "cookie",
+    "category": "Home and food",
+    "tags": [
+      "food",
+      "biscuit",
+      "snack",
+      "browser",
+      "cookie"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -1906,9 +2150,43 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "dog",
+    "category": "Weather and nature",
+    "tags": [
+      "animal",
+      "canine",
+      "pet",
+      "puppy"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "dollar",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "door-closed",
+    "category": "Home and food",
+    "tags": [
+      "door",
+      "entrance",
+      "room",
+      "closed"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -1991,6 +2269,41 @@
     "name": "dumbbell",
     "category": "Health and fitness",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "ear",
+    "category": "People and accessibility",
+    "tags": [
+      "hearing",
+      "audio",
+      "listen",
+      "sensory",
+      "accessibility"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "ear-off",
+    "category": "People and accessibility",
+    "tags": [
+      "hearing",
+      "deaf",
+      "muted",
+      "accessibility"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -3003,6 +3316,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "hammer",
+    "category": "Work and education",
+    "tags": [
+      "tool",
+      "construction",
+      "repair",
+      "carpentry",
+      "build"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "hand",
     "category": "People and accessibility",
     "tags": [],
@@ -3082,7 +3413,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "heart",
@@ -3177,6 +3508,42 @@
     "origin": "legacy",
     "styles": [
       "duotone"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "ice-cream-cone",
+    "category": "Home and food",
+    "tags": [
+      "dessert",
+      "icecream",
+      "frozen",
+      "cone",
+      "sweet"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "id-card",
+    "category": "People and accessibility",
+    "tags": [
+      "identity",
+      "identification",
+      "membership",
+      "profile",
+      "credentials"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
     ],
     "defaultTone": "duotone"
   },
@@ -4383,6 +4750,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "piggy-bank",
+    "category": "Finance and commerce",
+    "tags": [
+      "savings",
+      "money",
+      "reserve",
+      "deposit"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "pill",
     "category": "Health and fitness",
     "tags": [],
@@ -4647,6 +5031,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "rabbit",
+    "category": "Weather and nature",
+    "tags": [
+      "animal",
+      "bunny",
+      "pet",
+      "wildlife"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "radio",
     "category": "Media",
     "tags": [],
@@ -4668,7 +5069,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "react",
@@ -4732,6 +5133,24 @@
     "name": "refresh-circle-fill",
     "category": "Actions and status",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "refrigerator",
+    "category": "Home and food",
+    "tags": [
+      "fridge",
+      "freezer",
+      "kitchen",
+      "appliance",
+      "cooling"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -4881,6 +5300,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "sandwich",
+    "category": "Home and food",
+    "tags": [
+      "food",
+      "bread",
+      "snack",
+      "lunch"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "sass",
     "category": "Brands",
     "tags": [],
@@ -4909,6 +5345,24 @@
     "origin": "legacy",
     "styles": [
       "duotone"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "scale",
+    "category": "Finance and commerce",
+    "tags": [
+      "balance",
+      "justice",
+      "comparison",
+      "legal",
+      "weight"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
     ],
     "defaultTone": "duotone"
   },
@@ -5539,6 +5993,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "syringe",
+    "category": "Health and fitness",
+    "tags": [
+      "injection",
+      "vaccine",
+      "medicine",
+      "needle",
+      "treatment"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "table",
     "category": "Layout",
     "tags": [],
@@ -5778,6 +6250,23 @@
     "name": "toggle-on",
     "category": "Actions and status",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "toilet",
+    "category": "Home and food",
+    "tags": [
+      "bathroom",
+      "restroom",
+      "lavatory",
+      "sanitation"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -6166,6 +6655,24 @@
     "name": "wallet",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "washing-machine",
+    "category": "Home and food",
+    "tags": [
+      "laundry",
+      "washer",
+      "appliance",
+      "clothing",
+      "cleaning"
+    ],
     "origin": "original",
     "styles": [
       "duotone",

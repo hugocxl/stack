@@ -19,12 +19,12 @@ test('a new package is published then verified, allowing registry propagation', 
   let requests = 0;
   const published = [];
   await publishPackage(artifact, {
-    lookup: async () => ++requests < 3 ? null : metadata,
+    lookup: async () => ++requests < 75 ? null : metadata,
     publish: file => published.push(file),
     pause: async () => {},
   });
   assert.deepEqual(published, [artifact.file]);
-  assert.equal(requests, 3);
+  assert.equal(requests, 75);
 });
 
 test('publication and verification errors prevent a successful release', async () => {
