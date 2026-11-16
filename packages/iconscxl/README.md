@@ -1,7 +1,11 @@
 # IconsCXL
 
-579 rounded icons with selective duotone (498 also available in Solid and Stroke) in one package, with typed, tree-shakeable exports for JavaScript,
-React and React Native.
+**2,198 rounded icons for apps, websites, and developer tools**, with typed,
+tree-shakeable exports for JavaScript, React, React Native, and Expo.
+
+Choose Duotone, Solid, or Stroke for 2,117 UI icons, plus 81 brand marks in the
+default style: 6,432 SVG drawings in total. SwiftUI, UIKit, and AppKit are also
+supported through the [Swift package](https://github.com/hugocxl/iconscxl#swift--swiftui).
 
 ```sh
 npm install @hugocxl/iconscxl
@@ -24,7 +28,8 @@ should install `react-native-svg` (Expo: `npx expo install react-native-svg`).
 The package root is the pure JavaScript adapter. Framework peers are optional;
 install the peers needed by the adapter you use.
 
-See https://github.com/hugocxl/iconscxl for Swift support and full usage.
+[Browse the complete catalog](https://github.com/hugocxl/iconscxl/blob/main/docs/CATALOG.md)
+or read the [full integration guide](https://github.com/hugocxl/iconscxl#readme).
 Redistribute LICENSE, NOTICE and THIRD_PARTY_LICENSES.md with the artwork.
 
 Style imports use `/js/solid`, `/react/solid`, `/react-native/solid` or the

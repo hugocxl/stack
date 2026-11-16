@@ -1,14 +1,22 @@
 # IconsCXL
 
-2,198 rounded icons with selective duotone for product interfaces, developer tools, files,
-and brands. The 2,117 UI icons also have Solid and Stroke drawings (6,432 SVGs
-total). Use the artwork directly or consume the generated Swift, React, and
-React Native adapters. The original collection was adapted and extended for [Tab](https://github.com/hugocxl/tab).
+**2,198 rounded icons for apps, websites, and developer tools.** Use SVGs directly,
+or integrate with SwiftUI, UIKit, AppKit, JavaScript, React, React Native, and Expo.
+
+Choose **Duotone, Solid, or Stroke** for 2,117 UI icons, plus 81 brand marks in
+the default style: 6,432 SVG drawings in total. Duotone uses a second tone only
+where it adds meaningful surface or depth; linear symbols stay monochrome.
+
+[Install from npm](https://www.npmjs.com/package/@hugocxl/iconscxl) ·
+[Swift package releases](https://github.com/hugocxl/iconscxl/releases) ·
+[Complete catalog](docs/CATALOG.md) · [License and attribution](#license-and-attribution)
 
 ![A selection of IconsCXL icons in light and dark tints](preview.png)
 
-A representative selection of 48 icons. Browse all names and styles in the
-[offline gallery](index.html) or [complete catalog](docs/CATALOG.md).
+A representative selection of 48 icons. Clone or download the repository and open
+[`index.html`](index.html) in your browser to search all names and styles, preview
+tints and sizes, and copy or download SVGs. Browse names on GitHub in the
+[complete catalog](docs/CATALOG.md).
 
 ## Choose an integration
 
@@ -16,6 +24,7 @@ A representative selection of 48 icons. Browse all names and styles in the
 | --- | --- |
 | Use an SVG in a web page, design, or native app | [Raw SVGs](#raw-svgs) |
 | Use icons in SwiftUI, UIKit, or AppKit | [Swift / SwiftUI](#swift--swiftui) |
+| Use SVG strings in JavaScript or on the server | [JavaScript](#javascript-no-framework) |
 | Use icons in a React app | [React](#react) |
 | Use icons in React Native or Expo | [React Native / Expo](#react-native--expo) |
 
@@ -53,7 +62,13 @@ See [the coverage catalog](docs/CATALOG.md), [design system](docs/DESIGN.md),
 The Swift package exposes the `IconsCXL` library for Swift 6+, macOS 12+, iOS
 15+, tvOS 15+, and watchOS 8+. Add the repository as a Swift Package Manager
 dependency using a release tag, or add it as a local package while developing.
-Then add `IconsCXL` to your app target.
+Then add `IconsCXL` to your app target. For a `Package.swift` dependency:
+
+```swift
+.package(url: "https://github.com/hugocxl/iconscxl.git", from: "0.1.9")
+```
+
+Add `.product(name: "IconsCXL", package: "iconscxl")` to your target's dependencies.
 
 ```swift
 import IconsCXL
@@ -143,10 +158,9 @@ or custom Metro configuration is needed. Install iOS pods using your app's
 normal workflow. To create a local package tarball, run `npm ci`,
 `npm run generate`, then `npm pack --workspace @hugocxl/iconscxl`.
 
-Both JavaScript packages ship typed ESM with per-icon exports and tree shaking.
+Both framework adapters ship typed ESM with per-icon exports and tree shaking.
 The peer ranges are compatibility declarations; CI checks the versions in the
 lockfile, not every older React Native release.
-
 
 ## Choose a drawing style
 
@@ -228,6 +242,9 @@ GitHub release. All three adapters share one version and one tarball; rerun a fa
 to recover a release interrupted after npm publication.
 
 ## Contribute
+
+IconsCXL grew out of the icon collection adapted and extended for
+[Tab](https://github.com/hugocxl/tab).
 
 See [the drawing guide](scripts/icons/STYLE.md) for geometry and naming conventions.
 Tools use Python 3's standard library; the contact sheet requires Swift and AppKit
