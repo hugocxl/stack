@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const SquareDotIcon = /*#__PURE__*/ forwardRef(function SquareDotIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M4 1.375H12Q13.0873 1.375 13.8562 2.1438Q14.625 2.9127 14.625 4V12Q14.625 13.0873 13.8562 13.8562Q13.0873 14.625 12 14.625H4Q2.9127 14.625 2.1438 13.8562Q1.375 13.0873 1.375 12V4Q1.375 2.9127 2.1438 2.1438Q2.9127 1.375 4 1.375ZM6.8 8C6.8 8.6627 7.3373 9.2 8 9.2C8.6627 9.2 9.2 8.6627 9.2 8C9.2 7.3373 8.6627 6.8 8 6.8C7.3373 6.8 6.8 7.3373 6.8 8Z", "fill": "currentColor"}));
+});

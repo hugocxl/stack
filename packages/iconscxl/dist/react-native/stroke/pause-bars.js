@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const PauseBarsIcon = /*#__PURE__*/ forwardRef(function PauseBarsIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M10.5 2H11.5C12.0523 2 12.5 2.4477 12.5 3V13C12.5 13.5523 12.0523 14 11.5 14H10.5C9.9477 14 9.5 13.5523 9.5 13V3C9.5 2.4477 9.9477 2 10.5 2ZM4.5 2H5.5C6.0523 2 6.5 2.4477 6.5 3V13C6.5 13.5523 6.0523 14 5.5 14H4.5C3.9477 14 3.5 13.5523 3.5 13V3C3.5 2.4477 3.9477 2 4.5 2Z", "fill": "currentColor"}));
+});

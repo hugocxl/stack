@@ -1,6 +1,8 @@
 # Quality audit — 16 November 2026
 
-The current audit reassesses every original catalog name and reviews a first
+Historical first-expansion report. See [the completed full audit](DESIGN-AUDIT-FULL.md) for the current catalog.
+
+This audit reassesses every original catalog name and reviews a first
 original coverage expansion. It supersedes the November 10 and 11 visual verdicts;
 those records remain historical evidence. This is an AI visual assessment by
 GPT-6.1 Sol and Terra at high reasoning effort, with coordinator review, not

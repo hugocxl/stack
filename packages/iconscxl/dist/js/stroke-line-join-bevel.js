@@ -1,0 +1,1 @@
+export const StrokeLineJoinBevelIcon = "<svg fill=\"none\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M1 12 6.5 2.5H9.5L15 12L12.5 13.5L8 5.8L3.5 13.5Z\" fill=\"currentColor\"/>\n</svg>\n";

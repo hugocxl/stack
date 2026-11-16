@@ -7,6 +7,7 @@ from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
 import draw as art
+art.register_full_catalog()
 
 ROOT=Path(__file__).resolve().parents[2]
 def layers(name,style='duotone'):
@@ -140,7 +141,11 @@ class DesignRegressionTests(unittest.TestCase):
         special={'user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}
         for name,(body,detail,outlined,*_) in art.DRAWINGS.items():
             if name in special:continue
-            expected=art.union(body,detail,art.stroke(body,1.25) if outlined else art.po.Path())
+            # Explicit surface occlusion changes the intended ink, but must
+            # still survive serialization without missing or added geometry.
+            override=art.STYLE_OVERRIDES.get(name,{}).get('duotone')
+            expected=(art.union(*(p for p,a in override)) if override is not None
+                      else art.union(body,detail,art.stroke(body,1.25) if outlined else art.po.Path()))
             actual=ink(name,'duotone')
             self.assertLess(abs(expected.area-actual.area),.04,name)
 

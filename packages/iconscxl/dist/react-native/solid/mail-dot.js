@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const MailDotIcon = /*#__PURE__*/ forwardRef(function MailDotIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.8 2.775H13.2Q13.9559 2.775 14.4905 3.3095Q15.025 3.8441 15.025 4.6V11.4Q15.025 12.1559 14.4905 12.6905Q13.9559 13.225 13.2 13.225H2.8Q2.0441 13.225 1.5095 12.6905Q0.975 12.1559 0.975 11.4L0.975 4.6Q0.975 3.8441 1.5095 3.3095Q2.0441 2.775 2.8 2.775ZM14.1237 4.5485Q14.1066 4.1985 13.8541 3.9459Q13.6881 3.78 13.48 3.7157L8 7.369L2.52 3.7157Q2.3119 3.78 2.1459 3.9459Q1.8934 4.1985 1.8762 4.5485L7.7088 8.4368Q7.7735 8.4799 7.8479 8.5025Q7.9223 8.525 8 8.525Q8.0777 8.525 8.1521 8.5025Q8.2265 8.4799 8.2912 8.4368ZM10.02 10.1C10.02 10.3651 10.2349 10.58 10.5 10.58C10.7651 10.58 10.98 10.3651 10.98 10.1C10.98 9.8349 10.7651 9.62 10.5 9.62C10.2349 9.62 10.02 9.8349 10.02 10.1Z", "fill": "currentColor"}));
+});

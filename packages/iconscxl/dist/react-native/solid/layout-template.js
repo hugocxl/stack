@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const LayoutTemplateIcon = /*#__PURE__*/ forwardRef(function LayoutTemplateIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.5 1.375H13.5Q14.1731 1.375 14.649 1.851Q15.125 2.3269 15.125 3V13Q15.125 13.6731 14.649 14.149Q14.1731 14.625 13.5 14.625H2.5Q1.8269 14.625 1.351 14.149Q0.875 13.6731 0.875 13V3Q0.875 2.3269 1.351 1.851Q1.8269 1.375 2.5 1.375ZM2 5.5Q1.9508 5.5 1.9025 5.5096Q1.8542 5.5192 1.8087 5.5381Q1.7915 5.5452 1.775 5.5535V6.4465Q1.7915 6.4548 1.8087 6.4619Q1.8542 6.4808 1.9025 6.4904Q1.9508 6.5 2 6.5H5.5V13.725H6.5V6.5H14Q14.0492 6.5 14.0975 6.4904Q14.1458 6.4808 14.1913 6.4619Q14.2085 6.4548 14.225 6.4465V5.5535Q14.2085 5.5452 14.1913 5.5381Q14.1458 5.5192 14.0975 5.5096Q14.0492 5.5 14 5.5Z", "fill": "currentColor"}));
+});

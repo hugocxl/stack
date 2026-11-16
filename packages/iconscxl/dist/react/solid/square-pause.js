@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const SquarePauseIcon = /*#__PURE__*/ forwardRef(function SquarePauseIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M4 1.375H12Q13.0873 1.375 13.8562 2.1438Q14.625 2.9127 14.625 4V12Q14.625 13.0873 13.8562 13.8562Q13.0873 14.625 12 14.625H4Q2.9127 14.625 2.1438 13.8562Q1.375 13.0873 1.375 12V4Q1.375 2.9127 2.1438 2.1438Q2.9127 1.375 4 1.375ZM9.6 4.7C9.3791 4.7 9.2 4.8791 9.2 5.1V10.9C9.2 11.1209 9.3791 11.3 9.6 11.3H10.6C10.8209 11.3 11 11.1209 11 10.9V5.1C11 4.8791 10.8209 4.7 10.6 4.7ZM5.4 4.7C5.1791 4.7 5 4.8791 5 5.1V10.9C5 11.1209 5.1791 11.3 5.4 11.3H6.4C6.6209 11.3 6.8 11.1209 6.8 10.9V5.1C6.8 4.8791 6.6209 4.7 6.4 4.7Z", "fill": "currentColor"}));
+});

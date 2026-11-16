@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const ChartNoAxesColumnIcon = /*#__PURE__*/ forwardRef(function ChartNoAxesColumnIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M7.25 4H8.45C8.809 4 9.1 4.291 9.1 4.65V13.35C9.1 13.709 8.809 14 8.45 14H7.25C6.891 14 6.6 13.709 6.6 13.35V4.65C6.6 4.291 6.891 4 7.25 4ZM11.65 7H12.85C13.209 7 13.5 7.291 13.5 7.65V13.35C13.5 13.709 13.209 14 12.85 14H11.65C11.291 14 11 13.709 11 13.35V7.65C11 7.291 11.291 7 11.65 7ZM2.85 9H4.05C4.409 9 4.7 9.291 4.7 9.65V13.35C4.7 13.709 4.409 14 4.05 14H2.85C2.491 14 2.2 13.709 2.2 13.35V9.65C2.2 9.291 2.491 9 2.85 9Z", "fill": "currentColor"}));
+});

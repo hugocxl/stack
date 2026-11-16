@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const OctagonIcon = /*#__PURE__*/ forwardRef(function OctagonIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M14.3531 5.7433V10.2567Q14.3531 10.4367 14.2842 10.603Q14.2153 10.7693 14.088 10.8966L10.8966 14.088Q10.7693 14.2153 10.603 14.2842Q10.4367 14.3531 10.2567 14.3531H5.7433Q5.5633 14.3531 5.397 14.2842Q5.2307 14.2153 5.1034 14.088L1.912 10.8966Q1.7847 10.7693 1.7158 10.603Q1.6469 10.4367 1.6469 10.2567V5.7433Q1.6469 5.5633 1.7158 5.397Q1.7847 5.2307 1.912 5.1034L5.1034 1.912Q5.2307 1.7847 5.397 1.7158Q5.5633 1.6469 5.7433 1.6469H10.2567Q10.4367 1.6469 10.603 1.7158Q10.7693 1.7847 10.8966 1.912L14.088 5.1034Q14.2153 5.2307 14.2842 5.397Q14.3531 5.5633 14.3531 5.7433ZM13.1031 5.8862 10.1138 2.8969H5.8862L2.8969 5.8862V10.1138L5.8862 13.1031H10.1138L13.1031 10.1138Z", "fill": "currentColor"}));
+});

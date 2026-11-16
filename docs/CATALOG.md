@@ -1,32 +1,46 @@
 # Coverage catalog
 
-579 names; 1575 SVG drawings across the available styles.
+2198 names; 6432 SVG drawings across the available styles.
 
 | Category | Names |
 | --- | ---: |
-| Actions and status | 53 |
+| Actions and status | 83 |
 | Brands | 81 |
-| Charts and analytics | 10 |
-| Communication | 25 |
+| Charts and analytics | 32 |
+| Communication | 89 |
+| Design tools | 74 |
+| Devices and connectivity | 20 |
+| Documents and books | 27 |
 | Editing and design | 32 |
-| Files and folders | 38 |
-| Finance and commerce | 21 |
+| Files and folders | 97 |
+| Finance and commerce | 74 |
+| Geometry | 41 |
 | Health and fitness | 19 |
-| Home and food | 29 |
-| Layout | 18 |
-| Maps and travel | 22 |
-| Media | 29 |
-| Navigation | 41 |
-| People and accessibility | 19 |
+| Health, science and accessibility | 29 |
+| Home and food | 144 |
+| Interface controls | 98 |
+| Layout | 109 |
+| Maps and travel | 111 |
+| Math and symbols | 31 |
+| Media | 63 |
+| Media and communication | 56 |
+| Navigation | 158 |
+| People and accessibility | 30 |
+| Photography and optics | 32 |
+| Product tools | 173 |
 | Security | 16 |
-| Technology and development | 63 |
+| Sports and outdoors | 11 |
+| Symbols | 13 |
+| Technology and development | 178 |
 | Time and planning | 23 |
-| Weather and nature | 23 |
-| Work and education | 17 |
+| Transform and flow | 20 |
+| Typography and text | 127 |
+| Weather and nature | 71 |
+| Work and education | 36 |
 
 ## Actions and status
 
-`archive`, `ban`, `check`, `check-check`, `checkbox`, `checkbox-fill`, `circle`, `circle-alert`, `circle-check`, `circle-check-fill`, `circle-ellipsis`, `circle-help`, `circle-info`, `circle-minus`, `circle-plus`, `circle-x`, `circle-x-fill`, `clipboard`, `clipboard-check`, `close`, `copy`, `dot`, `download`, `download-circle-fill`, `ellipsis`, `ellipsis-circle`, `ellipsis-vertical`, `exclamation-circle-fill`, `filter`, `info`, `info-fill`, `link`, `menu`, `minus`, `minus-circle`, `octagon-alert`, `plus`, `refresh-circle-fill`, `save`, `search`, `sliders`, `sort-ascending`, `sort-descending`, `square`, `toggle-off`, `toggle-on`, `trash`, `triangle-alert`, `triangle-alert-fill`, `unlink`, `upload`, `zoom-in`, `zoom-out`
+`alarm-clock-minus`, `alarm-clock-plus`, `archive`, `badge-question-mark`, `ban`, `check`, `check-check`, `checkbox`, `checkbox-fill`, `circle`, `circle-alert`, `circle-check`, `circle-check-fill`, `circle-ellipsis`, `circle-help`, `circle-info`, `circle-minus`, `circle-plus`, `circle-x`, `circle-x-fill`, `clipboard`, `clipboard-check`, `close`, `copy`, `diamond-minus`, `diamond-plus`, `dot`, `download`, `download-circle-fill`, `ellipsis`, `ellipsis-circle`, `ellipsis-vertical`, `exclamation-circle-fill`, `filter`, `flag-triangle-left`, `flag-triangle-right`, `info`, `info-fill`, `line-dot-bottom-vertical`, `line-dot-left-horizontal`, `line-dot-right-horizontal`, `line-dot-top-vertical`, `link`, `menu`, `minus`, `minus-circle`, `octagon-alert`, `plus`, `refresh-circle-fill`, `save`, `search`, `slash`, `sliders`, `sort-ascending`, `sort-descending`, `square`, `square-activity`, `square-bookmark`, `square-chart-gantt`, `square-dashed-bottom`, `square-dashed-bottom-code`, `square-dashed-kanban`, `square-dot`, `square-kanban`, `square-kanban-plus`, `square-pause`, `square-play`, `square-power`, `square-radical`, `square-slash`, `square-sparkles`, `square-star`, `square-stop`, `square-terminal`, `toggle-off`, `toggle-on`, `trash`, `triangle-alert`, `triangle-alert-fill`, `unlink`, `upload`, `zoom-in`, `zoom-out`
 
 ## Brands
 
@@ -34,11 +48,23 @@
 
 ## Charts and analytics
 
-`activity`, `chart-area`, `chart-bar`, `chart-donut`, `chart-line`, `chart-pie`, `git-compare`, `trending-down`, `trending-up`, `workflow`
+`activity`, `chart-area`, `chart-bar`, `chart-bar-big`, `chart-bar-decreasing`, `chart-bar-increasing`, `chart-bar-stacked`, `chart-bell-curve`, `chart-candlestick`, `chart-column-big`, `chart-column-decreasing`, `chart-column-increasing`, `chart-donut`, `chart-gantt`, `chart-line`, `chart-network`, `chart-no-axes-column`, `chart-no-axes-column-decreasing`, `chart-no-axes-column-increasing`, `chart-no-axes-combined`, `chart-no-axes-gantt`, `chart-pie`, `chart-quadrant`, `chart-radar`, `chart-spline`, `git-compare`, `kanban`, `podium`, `trending-down`, `trending-up`, `trending-up-down`, `workflow`
 
 ## Communication
 
-`at-sign`, `bell`, `bell-off`, `bell-plus`, `bell-unread`, `comment-text`, `conversation`, `conversation-add`, `envelope`, `inbox`, `mail`, `mail-check`, `mail-open`, `mail-plus`, `megaphone`, `message`, `message-check`, `message-dots`, `message-heart`, `message-plus`, `message-text`, `phone-call`, `rss`, `send`, `video-call`
+`at-sign`, `bell`, `bell-off`, `bell-plus`, `bell-unread`, `comment-text`, `conversation`, `conversation-add`, `envelope`, `inbox`, `mail`, `mail-badge`, `mail-check`, `mail-clock`, `mail-dot`, `mail-exclamation-point`, `mail-minus`, `mail-open`, `mail-pen`, `mail-plus`, `mail-question-mark`, `mail-search`, `mail-x`, `mails`, `megaphone`, `message`, `message-check`, `message-circle`, `message-circle-check`, `message-circle-code`, `message-circle-dashed`, `message-circle-dashed-check`, `message-circle-exclamation-point`, `message-circle-heart`, `message-circle-more`, `message-circle-off`, `message-circle-plus`, `message-circle-question-mark`, `message-circle-reply`, `message-circle-text`, `message-circle-x`, `message-dots`, `message-heart`, `message-plus`, `message-square-code`, `message-square-dashed`, `message-square-diff`, `message-square-dot`, `message-square-exclamation-point`, `message-square-lock`, `message-square-off`, `message-square-quote`, `message-square-reply`, `message-square-share`, `message-square-x`, `message-text`, `messages-circle`, `messages-square`, `phone-call`, `rss`, `send`, `user-cog`, `user-exclamation-point`, `user-group`, `user-key`, `user-lock`, `user-minus`, `user-pen`, `user-round`, `user-round-arrow-left`, `user-round-check`, `user-round-cog`, `user-round-exclamation-point`, `user-round-group`, `user-round-key`, `user-round-minus`, `user-round-pen`, `user-round-plus`, `user-round-search`, `user-round-shield`, `user-round-star`, `user-round-x`, `user-search`, `user-shield`, `user-star`, `users-collaboration`, `users-round`, `users-round-collaboration`, `video-call`
+
+## Design tools
+
+`blend`, `bring-to-front`, `brush`, `copy-minus`, `copy-slash`, `drafting-compass`, `frame`, `group`, `lasso`, `lasso-select`, `layer-arrow-down`, `layer-arrow-up`, `layers-2`, `layers-arrow-down`, `layers-arrow-up`, `layers-minus`, `layers-plus`, `line-squiggle`, `line-style`, `magnet`, `opacity`, `paint-bucket`, `paint-roller`, `paintbrush-vertical`, `pen`, `pen-line`, `pen-off`, `pencil-line`, `pencil-off`, `pencil-sparkles`, `scissors-line-dashed`, `send-to-back`, `signature`, `slice`, `spline`, `spline-pointer`, `spray-can`, `square-bottom-dashed-scissors`, `square-centerline-dashed-horizontal`, `square-centerline-dashed-vertical`, `square-code`, `square-dashed-mouse-pointer`, `square-dashed-plus`, `square-dashed-search`, `square-dashed-top-solid`, `square-dashed-x`, `square-dashed-x-corner`, `square-dimensions`, `square-menu`, `square-mouse-pointer`, `square-off`, `square-pen`, `square-round-corner`, `square-scissors`, `square-split-horizontal`, `square-split-vertical`, `square-square`, `square-stack`, `square-text`, `squares-exclude`, `squares-intersect`, `squares-subtract`, `squares-unite`, `stamp`, `stroke-line-cap-butt`, `stroke-line-cap-round`, `stroke-line-cap-square`, `stroke-line-join-bevel`, `stroke-line-join-miter`, `stroke-line-join-round`, `triangles-centerline-dashed-horizontal`, `triangles-centerline-dashed-vertical`, `wand`, `wand-sparkles`
+
+## Devices and connectivity
+
+`bluetooth-connected`, `bluetooth-searching`, `captions`, `captions-off`, `cctv`, `cctv-off`, `ethernet-port`, `headset`, `memory-stick`, `mouse-pointer`, `mouse-pointer-click`, `router`, `screen-share`, `screen-share-off`, `smartphone-user-round`, `speaker`, `touchpad`, `touchpad-off`, `volume-1`, `webcam`
+
+## Documents and books
+
+`book-a`, `book-bookmark`, `book-copy`, `book-exclamation-point`, `book-open-check`, `book-open-text`, `book-type`, `clipboard-pen-line`, `clipboard-type`, `library-big`, `notebook-dot`, `notebook-pen`, `notebook-text`, `notepad-text`, `notepad-text-dashed`, `sheet`, `square-library`, `sticky-note-check`, `sticky-note-minus`, `sticky-note-off`, `sticky-note-plus`, `sticky-note-x`, `sticky-notes`, `table-2`, `table-columns-split`, `table-properties`, `table-rows-split`
 
 ## Editing and design
 
@@ -46,56 +72,100 @@
 
 ## Files and folders
 
-`epub`, `file`, `file-audio`, `file-check`, `file-code`, `file-download`, `file-heart`, `file-image`, `file-lock`, `file-minus`, `file-plus`, `file-search`, `file-symlink`, `file-table`, `file-text`, `file-upload`, `file-video`, `file-x`, `file-zip`, `folder`, `folder-check`, `folder-code`, `folder-download`, `folder-heart`, `folder-lock`, `folder-minus`, `folder-open`, `folder-plus`, `folder-search`, `folder-upload`, `folder-x`, `folder-zip`, `folders`, `pdf`, `slides`, `spreadsheet`, `word`, `zip`
+`epub`, `file`, `file-audio`, `file-axis-3d`, `file-badge`, `file-box`, `file-braces`, `file-braces-corner`, `file-chart-column`, `file-chart-column-increasing`, `file-chart-line`, `file-chart-pie`, `file-check`, `file-check-corner`, `file-clock`, `file-code`, `file-code-corner`, `file-cog`, `file-database`, `file-diff`, `file-digit`, `file-download`, `file-exclamation-point`, `file-headphone`, `file-heart`, `file-image`, `file-input`, `file-key`, `file-lock`, `file-minus`, `file-minus-corner`, `file-output`, `file-pen`, `file-pen-line`, `file-plus`, `file-plus-corner`, `file-question-mark`, `file-scan`, `file-search`, `file-search-corner`, `file-signal`, `file-sliders`, `file-stack`, `file-symlink`, `file-table`, `file-terminal`, `file-text`, `file-type`, `file-type-corner`, `file-upload`, `file-user`, `file-video`, `file-video-camera`, `file-volume`, `file-x`, `file-x-corner`, `file-zip`, `files`, `folder`, `folder-bookmark`, `folder-check`, `folder-clock`, `folder-closed`, `folder-code`, `folder-cog`, `folder-dot`, `folder-download`, `folder-git`, `folder-git-2`, `folder-heart`, `folder-input`, `folder-kanban`, `folder-key`, `folder-lock`, `folder-minus`, `folder-open`, `folder-open-dot`, `folder-output`, `folder-pen`, `folder-plus`, `folder-root`, `folder-search`, `folder-search-2`, `folder-symlink`, `folder-sync`, `folder-tree`, `folder-upload`, `folder-user`, `folder-users`, `folder-x`, `folder-zip`, `folders`, `pdf`, `slides`, `spreadsheet`, `word`, `zip`
 
 ## Finance and commerce
 
-`banknote`, `barcode`, `basket`, `calculator`, `coins`, `credit-card`, `dollar`, `euro`, `gift`, `package`, `percent`, `piggy-bank`, `pound`, `receipt`, `scale`, `shopping-bag`, `shopping-cart`, `store`, `tag`, `wallet`, `yen`
+`armenian-dram`, `azerbaijani-manat`, `badge-cent`, `badge-dollar-sign`, `badge-euro`, `badge-indian-rupee`, `badge-japanese-yen`, `badge-percent`, `badge-pound-sterling`, `badge-russian-ruble`, `badge-swiss-franc`, `badge-turkish-lira`, `bangladeshi-taka`, `banknote`, `banknote-arrow-down`, `banknote-arrow-up`, `banknote-check`, `banknote-x`, `barcode`, `basket`, `belarusian-ruble`, `bitcoin`, `calculator`, `cap`, `circle-euro`, `circle-pound-sterling`, `coins`, `credit-card`, `credit-card-reader`, `currency`, `dollar`, `dollar-sign`, `emirati-dirham`, `euro`, `georgian-lari`, `gift`, `hand-coins`, `handbag`, `indian-rupee`, `japanese-yen`, `kazakh-tenge`, `nepali-rupee`, `package`, `percent`, `perfume-bottle`, `philippine-peso`, `piggy-bank`, `pound`, `pound-sterling`, `receipt`, `receipt-cent`, `receipt-euro`, `receipt-indian-rupee`, `receipt-japanese-yen`, `receipt-pound-sterling`, `receipt-russian-ruble`, `receipt-swiss-franc`, `receipt-text`, `receipt-turkish-lira`, `russian-ruble`, `saudi-riyal`, `scale`, `shirt`, `shopping-bag`, `shopping-cart`, `shopping-cart-minus`, `shopping-cart-plus`, `smartphone-nfc`, `store`, `swiss-franc`, `tag`, `turkish-lira`, `wallet`, `yen`
+
+## Geometry
+
+`angle`, `asterism`, `astroid`, `axis-3d`, `box`, `boxes`, `circle-dashed`, `circle-dashed-check`, `circle-dot`, `circle-dot-dashed`, `circle-off`, `circle-pile`, `circle-small`, `club`, `component`, `cone`, `cross`, `cuboid`, `cylinder`, `diameter`, `diamond`, `ellipse`, `hexagon`, `octagon`, `octagon-pause`, `pentagon`, `pyramid`, `radius`, `shapes`, `spade`, `sparkle`, `square-dashed`, `squircle`, `squircle-dashed`, `tangent`, `torus`, `triangle`, `triangle-dashed`, `triangle-right`, `vector-polygon`, `vector-square`
 
 ## Health and fitness
 
 `ambulance`, `apple`, `bandage`, `bed`, `droplet`, `dumbbell`, `first-aid`, `footprints`, `heart`, `heart-pulse`, `hospital`, `lungs`, `medical-cross`, `moon`, `pill`, `stethoscope`, `syringe`, `thermometer`, `weight`
 
+## Health, science and accessibility
+
+`beaker`, `biohazard`, `bone-fracture`, `dna`, `dna-off`, `flask-conical-off`, `flask-round`, `germ`, `germ-off`, `iv-bag`, `mars`, `mars-stroke`, `microscope`, `mouth`, `mouth-off`, `non-binary`, `person-standing`, `pill-bottle`, `radiation`, `tablets`, `telescope`, `test-tube-diagonal`, `test-tubes`, `transgender`, `tube-lotion`, `venus`, `venus-and-mars`, `virus`, `virus-off`
+
 ## Home and food
 
-`banana`, `bath`, `bell-ring`, `bottle`, `cake`, `carrot`, `chef-hat`, `cherry`, `coffee`, `cookie`, `cup`, `door-closed`, `door-open`, `fan`, `gamepad`, `ice-cream-cone`, `key-round`, `lamp`, `music-note`, `pizza`, `plug`, `puzzle`, `refrigerator`, `sandwich`, `sofa`, `toilet`, `utensils`, `washing-machine`, `wine`
+`air-vent`, `alarm-smoke`, `amphora`, `armchair`, `avocado`, `bacon`, `banana`, `barrel`, `bath`, `bean`, `bean-off`, `bed-double`, `bed-single`, `beef`, `beef-off`, `beer`, `beer-off`, `bell-ring`, `blender`, `blinds`, `bottle`, `bottle-wine`, `brick-wall`, `broccoli`, `brush-cleaning`, `bubbles`, `cake`, `cake-slice`, `can`, `can-soda`, `candy`, `candy-cane`, `candy-off`, `carrot`, `carton`, `carton-off`, `castle`, `cheese`, `chef-hat`, `cherry`, `church`, `citrus`, `coffee`, `cookie`, `cooking-pot`, `croissant`, `cup`, `cup-soda`, `cupcake`, `dam`, `dessert`, `dome`, `donut`, `door-closed`, `door-closed-cog`, `door-closed-locked`, `door-closed-package`, `door-open`, `door-stairwell`, `drumstick`, `egg`, `egg-fried`, `egg-off`, `factory`, `fan`, `faucet`, `fence`, `fire-extinguisher`, `fish-off`, `fish-symbol`, `gamepad`, `glass-water`, `grape`, `groceries`, `ham`, `hamburger`, `hand-platter`, `heater`, `hop`, `hop-off`, `hotel`, `house-cog`, `house-heart`, `house-plug`, `house-plus`, `house-wifi`, `houses`, `ice-cream-bowl`, `ice-cream-cone`, `key-round`, `lamp`, `lamp-ceiling`, `lamp-desk`, `lamp-floor`, `lamp-wall-down`, `lamp-wall-up`, `leafy-green`, `lighthouse`, `lollipop`, `mango`, `martini`, `microwave`, `milk`, `milk-off`, `mop`, `mop-sparkles`, `mosque`, `music-note`, `nut`, `nut-off`, `paper-bag`, `pizza`, `plant-pot`, `plug`, `popcorn`, `popsicle`, `puzzle`, `refrigerator`, `rocking-chair`, `salad`, `sandwich`, `school`, `shelving-unit`, `shower-head`, `soap-dispenser-droplet`, `sofa`, `solar-panel`, `soup`, `theater`, `toilet`, `toothbrush`, `toothbrush-sparkles`, `towel-rack`, `university`, `utensils`, `utensils-crossed`, `utility-pole`, `vegan`, `warehouse`, `washing-machine`, `wheat`, `wheat-off`, `wine`, `wine-off`
+
+## Interface controls
+
+`arrow-down-to-line`, `arrow-up-to-line`, `asterisk`, `badge`, `badge-exclamation-point`, `badge-info`, `badge-minus`, `badge-plus`, `badge-x`, `book-check`, `book-heart`, `book-lock`, `book-minus`, `book-plus`, `book-search`, `book-text`, `book-user`, `book-x`, `bookmark-minus`, `bookmark-off`, `bookmark-x`, `brackets`, `calendar-1`, `calendar-arrow-down`, `calendar-arrow-left`, `calendar-arrow-right`, `calendar-arrow-up`, `calendar-check-2`, `calendar-chevrons-left`, `calendar-chevrons-right`, `calendar-cog`, `calendar-fold`, `calendar-minus`, `calendar-minus-2`, `calendar-off`, `calendar-plus-2`, `calendar-search`, `calendar-sync`, `calendar-x-2`, `calendars`, `chart-bar-horizontal`, `chart-column-stacked`, `chart-scatter`, `check-line`, `clipboard-clock`, `clipboard-copy`, `clipboard-list`, `clipboard-minus`, `clipboard-paste`, `clipboard-pen`, `clipboard-plus`, `clipboard-x`, `clock-1`, `clock-10`, `clock-11`, `clock-12`, `clock-2`, `clock-3`, `clock-4`, `clock-5`, `clock-6`, `clock-7`, `clock-8`, `clock-9`, `clock-arrow-down`, `clock-arrow-left`, `clock-arrow-right`, `clock-arrow-up`, `clock-check`, `clock-exclamation-point`, `clock-fading`, `clock-plus`, `code-xml`, `copy-check`, `copy-plus`, `copy-x`, `credit-card-check`, `credit-card-minus`, `credit-card-plus`, `credit-card-x`, `equal`, `heading-3`, `heading-4`, `languages`, `link-2`, `loader`, `math-pi`, `panel-left-close`, `panel-left-open`, `scan-barcode`, `scan-qr-code`, `scan-text`, `sliders-vertical`, `table-cells-merge`, `table-cells-split`, `timeline`, `ungroup`, `x-line-top`
 
 ## Layout
 
-`app-window`, `browser`, `columns`, `fullscreen`, `layers`, `layout-dashboard`, `layout-grid`, `layout-sidebar`, `maximize`, `minimize`, `multiplexer`, `panel-bottom`, `panel-left`, `panel-right`, `panel-top`, `picture-in-picture`, `rows`, `table`
+`align-center-horizontal`, `align-center-vertical`, `align-end-horizontal`, `align-end-vertical`, `align-horizontal-distribute-center`, `align-horizontal-distribute-end`, `align-horizontal-distribute-start`, `align-horizontal-justify-center`, `align-horizontal-justify-end`, `align-horizontal-justify-start`, `align-horizontal-space-around`, `align-horizontal-space-between`, `align-start-horizontal`, `align-start-vertical`, `align-vertical-distribute-center`, `align-vertical-distribute-end`, `align-vertical-distribute-start`, `align-vertical-justify-center`, `align-vertical-justify-end`, `align-vertical-justify-start`, `align-vertical-space-around`, `align-vertical-space-between`, `app-window`, `app-window-mac`, `between-horizontal-end`, `between-horizontal-start`, `between-vertical-end`, `between-vertical-start`, `browser`, `columns`, `columns-3`, `columns-3-cog`, `columns-4`, `dock`, `fullscreen`, `gallery-horizontal`, `gallery-horizontal-end`, `gallery-thumbnails`, `gallery-vertical`, `gallery-vertical-end`, `gap-horizontal`, `gap-vertical`, `grid-2x2`, `grid-2x2-check`, `grid-2x2-plus`, `grid-2x2-x`, `grid-3x2`, `grid-3x3`, `grid-3x3-off`, `handle-bottom-right`, `layers`, `layout-arrow-down`, `layout-arrow-right`, `layout-dashboard`, `layout-freeform`, `layout-grid`, `layout-grid-circles`, `layout-grid-plus`, `layout-panel-left`, `layout-panel-top`, `layout-sidebar`, `margin`, `margin-bottom`, `margin-horizontal`, `margin-left`, `margin-right`, `margin-top`, `margin-vertical`, `maximize`, `minimize`, `multiplexer`, `panel-bottom`, `panel-bottom-close`, `panel-bottom-dashed`, `panel-bottom-open`, `panel-left`, `panel-left-dashed`, `panel-left-right-dashed`, `panel-right`, `panel-right-close`, `panel-right-dashed`, `panel-right-open`, `panel-top`, `panel-top-bottom-dashed`, `panel-top-close`, `panel-top-dashed`, `panel-top-open`, `panels-left-bottom`, `panels-right-bottom`, `panels-top-left`, `picture-in-picture`, `proportions`, `ratio`, `rectangle-ellipsis`, `rectangle-horizontal`, `rectangle-vertical`, `rows`, `rows-3`, `rows-4`, `square-padding`, `square-padding-bottom`, `square-padding-horizontal`, `square-padding-left`, `square-padding-right`, `square-padding-top`, `square-padding-vertical`, `stretch-horizontal`, `stretch-vertical`, `table`
 
 ## Maps and travel
 
-`anchor`, `backpack`, `bicycle`, `binoculars`, `bus`, `car`, `fuel`, `globe`, `map`, `map-pin`, `mountain`, `navigation`, `parking`, `plane`, `route`, `ship`, `signpost`, `suitcase`, `tent`, `ticket`, `train`, `truck`
+`anchor`, `backpack`, `baggage-claim`, `bicycle`, `binoculars`, `bridge`, `briefcase-business`, `briefcase-conveyor-belt`, `briefcase-plus`, `bus`, `bus-front`, `cable-car`, `car`, `car-battery`, `car-front`, `car-taxi-front`, `caravan`, `cigarette`, `cigarette-off`, `circle-gauge`, `concierge-bell`, `drone`, `earth`, `engine`, `ev-charger`, `ferris-wheel`, `forklift`, `fuel`, `globe`, `globe-ban`, `globe-check`, `globe-code`, `globe-off`, `globe-plus`, `globe-x`, `hand-grab`, `helicopter`, `hot-air-balloon`, `kayak`, `land-plot`, `locate-off`, `map`, `map-minus`, `map-pin`, `map-pin-check`, `map-pin-check-inside`, `map-pin-house`, `map-pin-minus`, `map-pin-minus-inside`, `map-pin-pen`, `map-pin-plus-inside`, `map-pin-search`, `map-pin-x-inside`, `map-pinned`, `map-plus`, `milestone`, `moped`, `motorbike`, `mountain`, `mouse-pointer-2`, `mouse-pointer-2-off`, `mouse-pointer-ban`, `navigation`, `navigation-2`, `navigation-2-off`, `navigation-off`, `octagon-minus`, `parasol`, `parking`, `parking-meter`, `plane`, `plane-landing`, `plane-takeoff`, `pointer`, `pointer-off`, `radar`, `road`, `roller-coaster`, `route`, `route-arrow-right`, `route-off`, `sailboat`, `scooter`, `ship`, `ship-cargo`, `ship-wheel`, `signpost`, `signpost-big`, `suitcase`, `tent`, `tent-tree`, `ticket`, `ticket-check`, `ticket-minus`, `ticket-percent`, `ticket-plus`, `ticket-slash`, `ticket-x`, `tickets`, `tickets-plane`, `tower-control`, `tractor`, `traffic-cone`, `trailer`, `train`, `train-front-tunnel`, `train-track`, `tram-front`, `truck`, `truck-electric`, `van`
+
+## Math and symbols
+
+`ampersand`, `ampersands`, `circle-divide`, `circle-equal`, `copyleft`, `creative-commons`, `divide`, `equal-approximately`, `equal-approximately-not`, `equal-not`, `exclamation-mark`, `lambda`, `omega`, `phi`, `pilcrow`, `question-mark`, `section`, `sigma`, `square-asterisk`, `square-divide`, `square-equal`, `square-function`, `square-pi`, `square-pilcrow`, `square-sigma`, `tally-1`, `tally-2`, `tally-3`, `tally-4`, `tally-5`, `weight-tilde`
 
 ## Media
 
-`airplay`, `camera`, `camera-off`, `cast`, `disc`, `fast-forward`, `film`, `headphones`, `image`, `image-plus`, `microphone`, `microphone-off`, `music`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `podcast`, `radio`, `rewind`, `skip-back`, `skip-forward`, `stop`, `stop-circle`, `tv`, `video`, `volume`, `volume-off`, `waveform`
+`airplay`, `bomb`, `bow-arrow`, `camera`, `camera-off`, `cast`, `chess-bishop`, `chess-king`, `chess-knight`, `chess-pawn`, `chess-queen`, `chess-rook`, `clover`, `crown`, `dice-1`, `dice-2`, `dice-3`, `dice-4`, `dice-5`, `dice-6`, `dices`, `disc`, `fast-forward`, `film`, `gamepad-2`, `gamepad-directional`, `gem`, `ghost`, `goal`, `headphones`, `image`, `image-plus`, `joystick`, `microphone`, `microphone-off`, `music`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `playing-card`, `playing-cards`, `playing-cards-fan`, `podcast`, `radio`, `rewind`, `scroll`, `scroll-text`, `skip-back`, `skip-forward`, `skull`, `stop`, `stop-circle`, `sword`, `swords`, `tic-tac-toe`, `tombstone`, `toy-brick`, `tv`, `video`, `volume`, `volume-off`, `waveform`
+
+## Media and communication
+
+`ad`, `audio-lines`, `audio-lines-off`, `audio-lines-x`, `boom-box`, `cassette-tape`, `circle-fading-play`, `circle-power`, `circle-slash`, `circle-slash-2`, `circle-star`, `clapperboard`, `clef-alto`, `clef-bass`, `clef-treble`, `closed-caption`, `disc-2`, `disc-3`, `disc-album`, `drama`, `drum`, `earbuds`, `earbuds-off`, `eighth-note`, `eject`, `guitar`, `guitar-electric`, `half-note`, `hd`, `headphone-off`, `keyboard-music`, `list-music`, `list-video`, `megaphone-off`, `metronome`, `mic-audio-lines`, `mic-signal`, `mic-vocal`, `pause-bars`, `phone-forwarded`, `phone-log`, `piano`, `play-off`, `play-triangle`, `radio-off`, `radio-signal`, `repeat-1`, `sixteenth-notes`, `speech`, `step-back`, `step-forward`, `turntable`, `video-camera`, `videotape`, `volume-none`, `volume-slash`
 
 ## Navigation
 
-`arrow-down`, `arrow-down-left`, `arrow-down-right`, `arrow-left`, `arrow-right`, `arrow-up`, `arrow-up-left`, `arrow-up-right`, `chevron-down`, `chevron-down-left`, `chevron-down-right`, `chevron-left`, `chevron-right`, `chevron-up`, `chevron-up-left`, `chevron-up-right`, `chevrons-down`, `chevrons-in`, `chevrons-left`, `chevrons-right`, `chevrons-up`, `chevrons-up-down`, `circle-arrow-down`, `circle-arrow-left`, `circle-arrow-right`, `circle-arrow-up`, `compass`, `external-link`, `home`, `log-in`, `log-out`, `redo`, `refresh`, `repeat`, `reset`, `rotate-left`, `rotate-right`, `shuffle`, `swap-horizontal`, `swap-vertical`, `undo`
+`arrow-big-down`, `arrow-big-down-dash`, `arrow-big-left`, `arrow-big-left-dash`, `arrow-big-right`, `arrow-big-right-dash`, `arrow-big-up`, `arrow-big-up-dash`, `arrow-down`, `arrow-down-0-1`, `arrow-down-1-0`, `arrow-down-a-z`, `arrow-down-from-line`, `arrow-down-left`, `arrow-down-narrow-wide`, `arrow-down-right`, `arrow-down-to-dot`, `arrow-down-up`, `arrow-down-wide-narrow`, `arrow-down-z-a`, `arrow-left`, `arrow-left-from-line`, `arrow-left-to-line`, `arrow-right`, `arrow-right-from-line`, `arrow-right-left`, `arrow-right-to-line`, `arrow-up`, `arrow-up-0-1`, `arrow-up-1-0`, `arrow-up-a-z`, `arrow-up-from-dot`, `arrow-up-from-line`, `arrow-up-left`, `arrow-up-narrow-wide`, `arrow-up-right`, `arrow-up-wide-narrow`, `arrow-up-z-a`, `arrows-up-from-line`, `chevron-down`, `chevron-down-left`, `chevron-down-right`, `chevron-first`, `chevron-last`, `chevron-left`, `chevron-right`, `chevron-up`, `chevron-up-left`, `chevron-up-right`, `chevrons-down`, `chevrons-down-up`, `chevrons-in`, `chevrons-left`, `chevrons-left-right`, `chevrons-right`, `chevrons-up`, `chevrons-up-down`, `circle-arrow-down`, `circle-arrow-down-left-exit`, `circle-arrow-down-right-exit`, `circle-arrow-left`, `circle-arrow-right`, `circle-arrow-up`, `circle-arrow-up-left-exit`, `circle-arrow-up-right-exit`, `circle-chevron-down`, `circle-chevron-left`, `circle-chevron-right`, `circle-chevron-up`, `circle-chevrons-down`, `circle-chevrons-left`, `circle-chevrons-right`, `circle-chevrons-up`, `compass`, `corner-down-left`, `corner-down-right`, `corner-left-down`, `corner-left-up`, `corner-right-down`, `corner-right-up`, `corner-up-left`, `corner-up-right`, `expand`, `external-link`, `fold-horizontal`, `home`, `iteration-ccw`, `iteration-cw`, `log-in`, `log-out`, `maximize-2`, `minimize-2`, `move-diagonal`, `move-diagonal-2`, `move-down`, `move-down-left`, `move-down-right`, `move-horizontal`, `move-left`, `move-right`, `move-up`, `move-up-left`, `move-up-right`, `move-vertical`, `redo`, `redo-2`, `redo-dot`, `refresh`, `refresh-ccw`, `refresh-ccw-dot`, `refresh-cw`, `refresh-cw-off`, `repeat`, `repeat-2`, `repeat-off`, `reset`, `rotate-left`, `rotate-right`, `shrink`, `shuffle`, `square-arrow-down`, `square-arrow-down-enter`, `square-arrow-down-exit`, `square-arrow-down-left`, `square-arrow-down-left-enter`, `square-arrow-down-left-exit`, `square-arrow-down-right`, `square-arrow-down-right-enter`, `square-arrow-down-right-exit`, `square-arrow-left`, `square-arrow-left-enter`, `square-arrow-left-exit`, `square-arrow-right`, `square-arrow-right-enter`, `square-arrow-right-exit`, `square-arrow-up`, `square-arrow-up-enter`, `square-arrow-up-exit`, `square-arrow-up-left`, `square-arrow-up-left-enter`, `square-arrow-up-left-exit`, `square-arrow-up-right`, `square-arrow-up-right-enter`, `square-arrow-up-right-exit`, `square-chevron-down`, `square-chevron-left`, `square-chevron-right`, `square-chevron-up`, `square-chevrons-down`, `square-chevrons-left`, `square-chevrons-right`, `square-chevrons-up`, `swap-horizontal`, `swap-vertical`, `undo`, `undo-2`, `undo-dot`, `unfold-horizontal`
 
 ## People and accessibility
 
-`accessibility`, `baby`, `circle-user`, `contact`, `ear`, `ear-off`, `frown`, `hand`, `id-card`, `meh`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`
+`accessibility`, `baby`, `balloon`, `biceps-flexed`, `circle-user`, `contact`, `ear`, `ear-off`, `face-angry`, `face-expressionless`, `face-grinning`, `face-slightly-smiling-plus`, `frown`, `hand`, `hand-helping`, `hand-metal`, `heart-crack`, `heart-handshake`, `id-card`, `meh`, `party-popper`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`
+
+## Photography and optics
+
+`aperture`, `contrast`, `crosshair`, `eclipse`, `eye-closed`, `eye-dashed`, `focus`, `galaxy`, `glasses`, `image-down`, `image-play`, `image-up`, `image-upscale`, `lens`, `lens-concave`, `lens-convex`, `mirror-rectangular`, `mirror-round`, `moon-star`, `orbit`, `picture-in-picture-2`, `rectangle-circle`, `rectangle-goggles`, `scan-eye`, `scan-heart`, `scan-line`, `scan-search`, `scan-square`, `sun-dim`, `sun-medium`, `sun-moon`, `wallpaper`
+
+## Product tools
+
+`alarm-clock-check`, `alarm-clock-off`, `archive-arrow-down`, `archive-arrow-up`, `archive-x`, `bell-check`, `bell-dot`, `bell-minus`, `brick-wall-fire`, `brick-wall-shield`, `briefcase-medical`, `building-complex`, `building-complex-plus`, `certificate`, `circle-check-big`, `circle-fading-check`, `circle-fading-plus`, `circle-percent`, `circle-user-round`, `cloud-check`, `cloud-sync`, `cog`, `contact-round`, `database-backup`, `database-check`, `database-cog`, `database-minus`, `database-plus`, `database-search`, `database-x`, `delete`, `diamond-percent`, `earth-lock`, `flag-off`, `forward`, `globe-lock`, `grip`, `grip-horizontal`, `grip-vertical`, `hand-fist`, `hand-heart`, `handshake`, `hat-glasses`, `heart-minus`, `heart-off`, `heart-plus`, `heart-x`, `highlighter`, `hourglass-cog`, `id-card-lanyard`, `image-minus`, `image-off`, `images`, `key-square`, `layout-list`, `layout-template`, `lectern`, `library`, `lightbulb-off`, `list-checks`, `list-clock`, `list-filter`, `list-minus`, `list-plus`, `list-tree`, `list-x`, `locate`, `locate-fixed`, `lock-keyhole`, `lock-keyhole-open`, `mailbox`, `map-pin-off`, `map-pin-plus`, `map-pin-x`, `monitor-cog`, `monitor-off`, `move`, `newspaper`, `nfc`, `notebook-tabs`, `octagon-x`, `package-2`, `package-check`, `package-minus`, `package-open`, `package-pen`, `package-plus`, `package-question-mark`, `package-search`, `package-x`, `phone-incoming`, `phone-missed`, `phone-off`, `phone-outgoing`, `pin-off`, `power-off`, `regex`, `reply`, `reply-all`, `ribbon`, `rotate-ccw-key`, `rotate-cw-fading-clock`, `save-all`, `save-check`, `save-off`, `save-pen`, `save-plus`, `search-check`, `search-code`, `search-x`, `send-horizontal`, `separator-horizontal`, `separator-vertical`, `server-cog`, `server-off`, `settings-2`, `share`, `share-2`, `shield-ban`, `shield-cog`, `shield-cog-corner`, `shield-ellipsis`, `shield-half`, `shield-house`, `shield-minus`, `shield-off`, `shield-plus`, `shield-question-mark`, `shield-user`, `shredder`, `signal`, `signal-high`, `signal-low`, `signal-medium`, `signal-zero`, `spell-check`, `square-check-big`, `square-exclamation-point`, `square-minus`, `square-percent`, `square-plus`, `square-user`, `square-user-round`, `square-x`, `star-check`, `star-half`, `star-minus`, `star-off`, `star-plus`, `star-x`, `sticker`, `switch-camera`, `tag-plus`, `tag-x`, `tags`, `timer-off`, `timer-reset`, `trash-off`, `unfold-vertical`, `vault`, `venetian-mask`, `video-off`, `voicemail`, `vote`, `wallet-cards`, `wallet-minimal`, `waypoints`, `webhook`, `wifi-high`, `wifi-low`, `wifi-zero`, `wrench-off`, `zap-off`
 
 ## Security
 
 `badge-check`, `eye`, `eye-off`, `fingerprint`, `key`, `lock`, `lock-open`, `qr-code`, `scan`, `scan-face`, `shield`, `shield-alert`, `shield-check`, `shield-keyhole`, `shield-lock`, `shield-x`
 
+## Sports and outdoors
+
+`ball-wave`, `fishing-hook`, `fishing-rod`, `hiking-stick`, `hockey-stick`, `life-buoy`, `rugby-ball`, `sport-shoe`, `volleyball`, `waves-ladder`, `whistle`
+
+## Symbols
+
+`zodiac-aquarius`, `zodiac-aries`, `zodiac-cancer`, `zodiac-capricorn`, `zodiac-gemini`, `zodiac-leo`, `zodiac-libra`, `zodiac-ophiuchus`, `zodiac-pisces`, `zodiac-sagittarius`, `zodiac-scorpio`, `zodiac-taurus`, `zodiac-virgo`
+
 ## Technology and development
 
-`agents`, `battery`, `battery-charging`, `battery-empty`, `battery-full`, `battery-low`, `bluetooth`, `bluetooth-off`, `bot`, `braces`, `brain`, `bug`, `cloud`, `cloud-download`, `cloud-off`, `cloud-upload`, `code`, `code-block`, `command`, `cpu`, `cursor`, `database`, `diff`, `extension`, `fold-vertical`, `gauge-high`, `gauge-low`, `gauge-max`, `gauge-medium`, `git-branch`, `git-commit`, `git-fork`, `git-merge`, `git-pull-request`, `hard-drive`, `keyboard`, `laptop`, `lightbulb`, `logs`, `monitor`, `mouse`, `network`, `phone`, `phone-android`, `power`, `printer`, `server-rack`, `settings`, `simulator`, `sparkles`, `spinner`, `ssh`, `star`, `tablet`, `terminal`, `terminal-stack`, `themes`, `usb`, `watch`, `wifi`, `wifi-off`, `wrench`, `zap`
+`agents`, `antenna`, `battery`, `battery-charging`, `battery-empty`, `battery-exclamation-point`, `battery-full`, `battery-low`, `battery-medium`, `battery-plus`, `bell-electric`, `blocks`, `bluetooth`, `bluetooth-off`, `book-audio`, `book-dashed`, `book-down`, `book-headphones`, `book-image`, `book-key`, `book-up`, `book-up-2`, `bot`, `bot-message-square`, `bot-off`, `boxes-linked`, `braces`, `brain`, `brain-circuit`, `brain-cog`, `brain-off`, `bug`, `bug-off`, `bug-play`, `cable`, `card-sim`, `chevrons-left-right-ellipsis`, `circuit-board`, `cloud`, `cloud-cog`, `cloud-download`, `cloud-exclamation-point`, `cloud-off`, `cloud-upload`, `code`, `code-block`, `combine`, `command`, `computer`, `container`, `cpu`, `cpu-ai`, `cursor`, `database`, `database-arrow-down`, `database-arrow-up`, `database-zap`, `diff`, `extension`, `flashlight`, `flashlight-off`, `fold-vertical`, `form`, `gauge-high`, `gauge-low`, `gauge-max`, `gauge-medium`, `git-branch`, `git-branch-minus`, `git-branch-plus`, `git-commit`, `git-commit-vertical`, `git-compare-arrows`, `git-fork`, `git-graph`, `git-merge`, `git-merge-conflict`, `git-pull-request`, `git-pull-request-arrow`, `git-pull-request-closed`, `git-pull-request-create`, `git-pull-request-create-arrow`, `git-pull-request-draft`, `gpu`, `graph-hub`, `graph-ring`, `graph-star`, `hard-drive`, `hard-drive-download`, `hard-drive-upload`, `hdmi-port`, `keyboard`, `laptop`, `laptop-minimal`, `laptop-minimal-check`, `lightbulb`, `logs`, `merge`, `microchip`, `midi-port`, `monitor`, `monitor-activity`, `monitor-check`, `monitor-cloud`, `monitor-dot`, `monitor-down`, `monitor-pause`, `monitor-pc`, `monitor-play`, `monitor-smartphone`, `monitor-speaker`, `monitor-stop`, `monitor-up`, `monitor-x`, `mouse`, `mouse-left`, `mouse-off`, `mouse-right`, `network`, `option`, `parentheses`, `pc-case`, `phone`, `phone-android`, `plug-2`, `plug-zap`, `power`, `printer`, `printer-3d`, `printer-check`, `printer-x`, `projector`, `radical`, `radio-tower`, `robot-arm`, `robot-vacuum`, `satellite`, `satellite-dish`, `scratch-blocks`, `server-crash`, `server-nas`, `server-plus`, `server-rack`, `settings`, `simulator`, `siren`, `siren-off`, `smartphone-charging`, `sparkles`, `spinner`, `split`, `spotlight`, `ssh`, `star`, `tablet`, `tablet-smartphone`, `terminal`, `terminal-stack`, `themes`, `tv-minimal`, `tv-minimal-play`, `unplug`, `usb`, `usb-c-port`, `variable`, `vibrate`, `vibrate-off`, `watch`, `webcam-off`, `webhook-off`, `wifi`, `wifi-cog`, `wifi-lock`, `wifi-off`, `wifi-pen`, `wifi-sync`, `wrench`, `zap`
 
 ## Time and planning
 
 `alarm-clock`, `bookmark`, `bookmark-check`, `bookmark-plus`, `calendar`, `calendar-check`, `calendar-clock`, `calendar-days`, `calendar-heart`, `calendar-plus`, `calendar-range`, `calendar-x`, `clock`, `flag`, `history`, `hourglass`, `list-todo`, `notebook`, `pin`, `sticky-note`, `target`, `timer`, `trophy`
 
+## Transform and flow
+
+`circle-fading-arrow-up`, `cloud-backup`, `diagram-flow-horizontal`, `diagram-flow-vertical`, `funnel-plus`, `funnel-x`, `import`, `keyboard-off`, `loader-pinwheel`, `move-3d`, `rotate-3d`, `rotate-ccw-square`, `rotate-cw-clock`, `rotate-cw-square`, `scale-3d`, `scaling`, `scan-box`, `search-exclamation-point`, `search-slash`, `view`
+
+## Typography and text
+
+`a-arrow-down`, `a-arrow-up`, `a-large-small`, `baseline`, `binary`, `case-lower`, `case-sensitive`, `case-upper`, `circle-letter-a`, `circle-letter-b`, `circle-letter-c`, `circle-letter-d`, `circle-letter-e`, `circle-letter-f`, `circle-letter-g`, `circle-letter-h`, `circle-letter-i`, `circle-letter-j`, `circle-letter-k`, `circle-letter-l`, `circle-letter-m`, `circle-letter-n`, `circle-letter-o`, `circle-letter-p`, `circle-letter-p-off`, `circle-letter-q`, `circle-letter-r`, `circle-letter-s`, `circle-letter-t`, `circle-letter-u`, `circle-letter-v`, `circle-letter-w`, `circle-letter-x`, `circle-letter-y`, `circle-letter-z`, `decimals-arrow-left`, `decimals-arrow-right`, `heading-5`, `heading-6`, `letter-a`, `letter-c`, `letter-d`, `letter-e`, `letter-f`, `letter-g`, `letter-h`, `letter-i`, `letter-j`, `letter-k`, `letter-l`, `letter-m`, `letter-n`, `letter-o`, `letter-p`, `letter-q`, `letter-r`, `letter-s`, `letter-spacing`, `letter-t`, `letter-u`, `letter-v`, `letter-w`, `letter-x`, `letter-y`, `letter-z`, `letters`, `ligature`, `line-height`, `link-2-off`, `list-check`, `list-chevrons-down-up`, `list-chevrons-up-down`, `list-collapse`, `list-end`, `list-filter-plus`, `list-restart`, `list-start`, `numbers`, `pilcrow-left`, `pilcrow-right`, `remove-formatting`, `replace`, `replace-all`, `space`, `spell-check-2`, `square-letter-a`, `square-letter-b`, `square-letter-c`, `square-letter-d`, `square-letter-e`, `square-letter-f`, `square-letter-g`, `square-letter-h`, `square-letter-i`, `square-letter-j`, `square-letter-k`, `square-letter-l`, `square-letter-m`, `square-letter-n`, `square-letter-o`, `square-letter-p-off`, `square-letter-q`, `square-letter-r`, `square-letter-s`, `square-letter-t`, `square-letter-u`, `square-letter-v`, `square-letter-w`, `square-letter-x`, `square-letter-y`, `square-letter-z`, `subscript`, `summary`, `superscript`, `table-of-contents`, `text-align-justify-center`, `text-align-justify-end`, `text-align-justify-start`, `text-cursor-input`, `text-initial`, `text-pen`, `text-quote`, `text-search`, `text-wrap`, `type-outline`, `unlink-2`, `whole-word`
+
 ## Weather and nature
 
-`bird`, `cat`, `cloud-fog`, `cloud-lightning`, `cloud-rain`, `cloud-snow`, `dog`, `fish`, `flame`, `flower`, `leaf`, `paw`, `rabbit`, `rainbow`, `recycle`, `snowflake`, `sprout`, `sun`, `sunrise`, `sunset`, `tree`, `umbrella`, `wind`
+`bird`, `birdhouse`, `bone`, `cannabis`, `cannabis-off`, `cat`, `cloud-drizzle`, `cloud-fog`, `cloud-hail`, `cloud-lightning`, `cloud-moon`, `cloud-moon-rain`, `cloud-rain`, `cloud-rain-wind`, `cloud-snow`, `cloud-sun`, `cloud-sun-rain`, `cloudy`, `dog`, `droplet-off`, `droplets`, `feather`, `fish`, `flame`, `flame-kindling`, `flower`, `flower-2`, `haze`, `leaf`, `mountain-snow`, `origami`, `panda`, `park`, `paw`, `rabbit`, `rainbow`, `rat`, `recycle`, `rose`, `shell`, `shovel`, `shrimp`, `shrimp-off`, `shrub`, `snail`, `snowflake`, `sprout`, `squirrel`, `stone`, `sun`, `sun-snow`, `sunrise`, `sunset`, `thermometer-snowflake`, `thermometer-sun`, `tornado`, `tree`, `tree-deciduous`, `tree-palm`, `trees`, `turtle`, `umbrella`, `umbrella-off`, `waves-arrow-down`, `waves-arrow-up`, `waves-horizontal`, `waves-vertical`, `wind`, `wind-arrow-down`, `wind-arrow-up`, `worm`
 
 ## Work and education
 
-`atom`, `award`, `book`, `book-open`, `briefcase`, `building`, `construction`, `flask`, `graduation-cap`, `hammer`, `infinity`, `landmark`, `lightbulb-on`, `medal`, `presentation`, `rocket`, `test-tube`
+`anvil`, `atom`, `award`, `axe`, `bolt`, `book`, `book-open`, `briefcase`, `broom`, `broom-sparkles`, `building`, `construction`, `drill`, `flask`, `gavel`, `graduation-cap`, `hammer`, `hard-hat`, `infinity`, `inspection-panel`, `landmark`, `laser`, `lightbulb-on`, `medal`, `mound-shovel`, `pencil-ruler`, `pickaxe`, `pocket-knife`, `presentation`, `rocket`, `ruler-dimension-line`, `screw`, `spool`, `test-tube`, `tool-case`, `toolbox`

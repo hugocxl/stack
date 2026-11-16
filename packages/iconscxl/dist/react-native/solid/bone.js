@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const BoneIcon = /*#__PURE__*/ forwardRef(function BoneIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.2311 0.8418Q4.8526 0.3278 5.7797 0.9459Q6.6815 1.5471 6.7521 3.0679L11.9985 8.3143Q13.4646 8.3803 14.276 9.1916Q15.1319 10.0475 15.1583 11.6322Q15.6722 13.2536 15.0541 14.1807Q14.4212 15.1302 12.7689 15.1582Q11.1474 15.6722 10.2203 15.0541Q9.3185 14.4529 9.2479 12.9321L4.0015 7.6857Q2.5354 7.6197 1.724 6.8084Q0.8681 5.9525 0.8417 4.3678Q0.3278 2.7464 0.9459 1.8193Q1.5788 0.8698 3.2311 0.8418Z", "fill": "currentColor"}));
+});

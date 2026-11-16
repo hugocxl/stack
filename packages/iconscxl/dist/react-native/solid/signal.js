@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SignalIcon = /*#__PURE__*/ forwardRef(function SignalIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M12 3.1H12.5C12.8866 3.1 13.2 3.4134 13.2 3.8V12.8C13.2 13.1866 12.8866 13.5 12.5 13.5H12C11.6134 13.5 11.3 13.1866 11.3 12.8V3.8C11.3 3.4134 11.6134 3.1 12 3.1ZM8.9 5.4H9.4C9.7866 5.4 10.1 5.7134 10.1 6.1V12.8C10.1 13.1866 9.7866 13.5 9.4 13.5H8.9C8.5134 13.5 8.2 13.1866 8.2 12.8V6.1C8.2 5.7134 8.5134 5.4 8.9 5.4ZM5.8 7.7H6.3C6.6866 7.7 7 8.0134 7 8.4V12.8C7 13.1866 6.6866 13.5 6.3 13.5H5.8C5.4134 13.5 5.1 13.1866 5.1 12.8V8.4C5.1 8.0134 5.4134 7.7 5.8 7.7ZM2.7 10H3.2C3.5866 10 3.9 10.3134 3.9 10.7V12.8C3.9 13.1866 3.5866 13.5 3.2 13.5H2.7C2.3134 13.5 2 13.1866 2 12.8V10.7C2 10.3134 2.3134 10 2.7 10Z", "fill": "currentColor"}));
+});

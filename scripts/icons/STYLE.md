@@ -71,3 +71,22 @@ sheets with every supported style, three sizes and two tints. Run
 and symmetry regressions. `npm run validate` rejects stale review hashes. Inspect
 changed rows before updating their records; never approve artwork by bulk
 rehashing without looking at its rendered result.
+
+
+## Full coverage recipes
+
+The original expansion recipes live in `full/design.py`, `full/product.py`,
+`full/technology.py`, and `full/world.py`. `draw.py` explicitly registers all four
+when run as a command; importing it leaves the baseline available for isolated
+review. `python scripts/icons/render-coverage.py GROUP` exports and renders a
+group at 1x and 2x in the authoring environment on macOS. It never approves a
+review or updates hashes.
+
+Use `STYLE_OVERRIDES` for compositions whose surfaces require independent
+occlusion or Solid counters. Their faded and opaque paths must not overlap,
+and each linear mark stays opaque. Surface compositions stored as glyphs need
+an explicit `DUOTONE_GLYPHS` rationale. A style override is not a visual approval.
+
+`assemble-audit.py` combines explicit reviewer ledgers in precedence order and
+rejects any stale SVG hash. The full audit keeps disagreements and their
+coordinator adjudication available in separate source ledgers.

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const ProportionsIcon = /*#__PURE__*/ forwardRef(function ProportionsIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.1 2.375H12.9Q13.6974 2.375 14.2612 2.9388Q14.825 3.5026 14.825 4.3V11.7Q14.825 12.4974 14.2612 13.0612Q13.6974 13.625 12.9 13.625H3.1Q2.3026 13.625 1.7388 13.0612Q1.175 12.4974 1.175 11.7V4.3Q1.175 3.5026 1.7388 2.9388Q2.3026 2.375 3.1 2.375ZM6 4.45Q5.358 4.45 4.904 4.904Q4.45 5.358 4.45 6V12Q4.45 12.3988 4.6251 12.725H12.9Q13.3246 12.725 13.6248 12.4248Q13.925 12.1246 13.925 11.7V4.6251Q13.5988 4.45 13.2 4.45ZM6 5.55H13.2Q13.3864 5.55 13.5182 5.6818Q13.65 5.8136 13.65 6V12Q13.65 12.1864 13.5182 12.3182Q13.3864 12.45 13.2 12.45H6Q5.8136 12.45 5.6818 12.3182Q5.55 12.1864 5.55 12V6Q5.55 5.8136 5.6818 5.6818Q5.8136 5.55 6 5.55Z", "fill": "currentColor"}));
+});

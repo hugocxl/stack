@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SquareSparklesIcon = /*#__PURE__*/ forwardRef(function SquareSparklesIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M4 1.375H12Q13.0873 1.375 13.8562 2.1438Q14.625 2.9127 14.625 4V12Q14.625 13.0873 13.8562 13.8562Q13.0873 14.625 12 14.625H4Q2.9127 14.625 2.1438 13.8562Q1.375 13.0873 1.375 12V4Q1.375 2.9127 2.1438 2.1438Q2.9127 1.375 4 1.375ZM7 4.79 6.32 6.218 4.79 6.422 5.912 7.51 5.64 9.04 7 8.292 8.36 9.04 8.088 7.51 9.21 6.422 7.68 6.218ZM11.5 10.395 11.16 11.109 10.395 11.211 10.956 11.755 10.82 12.52 11.5 12.146 12.18 12.52 12.044 11.755 12.605 11.211 11.84 11.109ZM11.5 3.59 11.22 4.178 10.59 4.262 11.052 4.71 10.94 5.34 11.5 5.032 12.06 5.34 11.948 4.71 12.41 4.262 11.78 4.178Z", "fill": "currentColor"}));
+});

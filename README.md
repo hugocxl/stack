@@ -1,11 +1,14 @@
 # IconsCXL
 
-579 rounded icons with selective duotone for product interfaces, developer tools, files,
-and brands. The 498 UI icons also have Solid and Stroke drawings (1,575 SVGs
+2,198 rounded icons with selective duotone for product interfaces, developer tools, files,
+and brands. The 2,117 UI icons also have Solid and Stroke drawings (6,432 SVGs
 total). Use the artwork directly or consume the generated Swift, React, and
 React Native adapters. The original collection was adapted and extended for [Tab](https://github.com/hugocxl/tab).
 
-![IconsCXL preview](preview.png)
+![A selection of IconsCXL icons in light and dark tints](preview.png)
+
+A representative selection of 48 icons. Browse all names and styles in the
+[offline gallery](index.html) or [complete catalog](docs/CATALOG.md).
 
 ## Choose an integration
 
@@ -42,8 +45,8 @@ load them as template images and apply their own tint.
 Open [`index.html`](index.html) locally for a searchable, offline gallery with
 category/style filters, tint and size controls, SVG copying, and downloads.
 See [the coverage catalog](docs/CATALOG.md), [design system](docs/DESIGN.md),
-[current quality audit](docs/DESIGN-AUDIT-2026-11-16.md), and
-[Lucide coverage comparison](docs/COVERAGE-2026-11-16.md).
+[full expansion audit](docs/DESIGN-AUDIT-FULL.md), and
+[full coverage comparison](docs/COVERAGE-2026-11-16.md).
 
 ## Swift / SwiftUI
 
@@ -148,7 +151,7 @@ lockfile, not every older React Native release.
 ## Choose a drawing style
 
 Rounded Duotone remains the default, including all 81 retained brand marks.
-The 498 original UI icons also support Rounded Solid and Rounded Stroke.
+The 2,117 original UI icons also support Rounded Solid and Rounded Stroke.
 Brands are intentionally absent from those two style namespaces.
 
 ```tsx
@@ -233,7 +236,10 @@ on macOS.
 ```sh
 python3 -I scripts/icons/normalize.py icons
 python3 -I scripts/icons/test-adapt-brand.py
-swift scripts/icons/render-sheet.swift icons preview.png --size 16 --scale 2
+preview_dir=$(mktemp -d)
+while IFS= read -r name; do cp "icons/$name.svg" "$preview_dir/"; done < scripts/icons/preview.txt
+swift scripts/icons/render-sheet.swift "$preview_dir" preview.png --size 24 --scale 2 --columns 8
+rm -r "$preview_dir"
 scripts/validate.sh
 ```
 

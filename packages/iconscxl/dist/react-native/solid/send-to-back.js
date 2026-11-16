@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SendToBackIcon = /*#__PURE__*/ forwardRef(function SendToBackIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.2 1.375H9.3Q10.0559 1.375 10.5905 1.9095Q11.125 2.4441 11.125 3.2V9.3Q11.125 10.0559 10.5905 10.5905Q10.0559 11.125 9.3 11.125H3.2Q2.4441 11.125 1.9095 10.5905Q1.375 10.0559 1.375 9.3V3.2Q1.375 2.4441 1.9095 1.9095Q2.4441 1.375 3.2 1.375ZM4.875 11.85H6.125V12.8Q6.125 13.0382 6.2934 13.2066Q6.4618 13.375 6.7 13.375H12.8Q13.0382 13.375 13.2066 13.2066Q13.375 13.0382 13.375 12.8V6.7Q13.375 6.4618 13.2066 6.2934Q13.0382 6.125 12.8 6.125H11.85V4.875H12.8Q13.5559 4.875 14.0905 5.4095Q14.625 5.9441 14.625 6.7V12.8Q14.625 13.5559 14.0905 14.0905Q13.5559 14.625 12.8 14.625H6.7Q5.9441 14.625 5.4095 14.0905Q4.875 13.5559 4.875 12.8Z", "fill": "currentColor"}));
+});

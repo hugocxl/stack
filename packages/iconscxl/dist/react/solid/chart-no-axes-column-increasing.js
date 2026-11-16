@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const ChartNoAxesColumnIncreasingIcon = /*#__PURE__*/ forwardRef(function ChartNoAxesColumnIncreasingIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M11.65 3H12.85C13.209 3 13.5 3.291 13.5 3.65V13.35C13.5 13.709 13.209 14 12.85 14H11.65C11.291 14 11 13.709 11 13.35V3.65C11 3.291 11.291 3 11.65 3ZM7.25 7H8.45C8.809 7 9.1 7.291 9.1 7.65V13.35C9.1 13.709 8.809 14 8.45 14H7.25C6.891 14 6.6 13.709 6.6 13.35V7.65C6.6 7.291 6.891 7 7.25 7ZM2.85 11H4.05C4.409 11 4.7 11.291 4.7 11.65V13.35C4.7 13.709 4.409 14 4.05 14H2.85C2.491 14 2.2 13.709 2.2 13.35V11.65C2.2 11.291 2.491 11 2.85 11Z", "fill": "currentColor"}));
+});

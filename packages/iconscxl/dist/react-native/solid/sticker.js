@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const StickerIcon = /*#__PURE__*/ forwardRef(function StickerIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3 1.375H12Q13.2589 1.375 13.9419 2.0581Q14.625 2.7411 14.625 4V8.884Q14.625 9.064 14.5561 9.2304Q14.4872 9.3967 14.3599 9.5239L9.524 14.3599Q9.3967 14.4872 9.2304 14.5561Q9.064 14.625 8.884 14.625H3Q2.2411 14.625 1.8081 14.1919Q1.375 13.7589 1.375 13V3Q1.375 2.2411 1.8081 1.8081Q2.2411 1.375 3 1.375ZM9.55 13.0611V9.55H13.0611L13.7235 8.8876Q13.7242 8.8869 13.7246 8.8859L13.725 8.884V8.45H9Q8.9458 8.45 8.8927 8.4606Q8.8396 8.4711 8.7895 8.4919Q8.7395 8.5126 8.6944 8.5427Q8.6494 8.5728 8.6111 8.6111Q8.5728 8.6494 8.5427 8.6944Q8.5126 8.7395 8.4919 8.7895Q8.4711 8.8396 8.4606 8.8927Q8.45 8.9458 8.45 9V13.725H8.884L8.8859 13.7246Q8.8869 13.7242 8.8876 13.7235Z", "fill": "currentColor"}));
+});

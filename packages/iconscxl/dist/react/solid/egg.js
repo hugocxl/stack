@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const EggIcon = /*#__PURE__*/ forwardRef(function EggIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M8 0.6177Q8.9294 0.6177 10.1146 1.7183Q11.1021 2.6353 12.0765 4.0969Q13.0442 5.5485 13.6457 7.0058Q14.3153 8.6284 14.3153 9.7782Q14.3153 11.1261 13.7603 12.2361Q13.2443 13.2681 12.2958 14.0058Q11.4208 14.6864 10.2751 15.0429Q9.1841 15.3823 8 15.3823Q6.8159 15.3823 5.7249 15.0429Q4.5792 14.6864 3.7042 14.0058Q2.7557 13.2681 2.2397 12.2361Q1.6847 11.1261 1.6847 9.7782Q1.6847 8.6284 2.3543 7.0058Q2.9558 5.5485 3.9235 4.0969Q4.8979 2.6353 5.8854 1.7183Q7.0706 0.6177 8 0.6177Z", "fill": "currentColor"}));
+});

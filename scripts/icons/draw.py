@@ -16,6 +16,7 @@ from fontTools.pens.svgPathPen import SVGPathPen
 
 ROOT = Path(__file__).resolve().parents[2]
 DRAWINGS = {}
+STYLE_OVERRIDES = {}
 # A second tone must describe a surface at a different depth, never an
 # arbitrary half of a line. Linear drawings are opaque unless justified here.
 DUOTONE_GLYPHS = {
@@ -745,6 +746,11 @@ def main():
             duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo]+[(slash,1)]
             mono=union(op(mono,clearance,po.PathOp.DIFFERENCE),slash)
             solid=union(op(solid,clearance,po.PathOp.DIFFERENCE),slash)
+        overrides=STYLE_OVERRIDES.get(name,{})
+        duo=overrides.get('duotone',duo)
+        solid=overrides.get('solid',solid)
+        mono=overrides.get('stroke',mono)
+        two_tones=any(p and 0<alpha<1 for p,alpha in duo)
         write(Path('icons')/(name+'.svg'),svg(duo))
         for style,layers in {
             'solid':[(solid,1)],
@@ -768,4 +774,15 @@ def main():
     write(Path('catalog.json'),json.dumps(sorted(catalog,key=lambda i:i['name']),indent=2)+'\n')
     if failed:sys.exit('\n'.join(failed))
     print(f'{len(DRAWINGS)} original drawings; {len(catalog)} total icons')
-if __name__=='__main__':main()
+def register_full_catalog():
+    """Register original recipes for the pinned full-coverage expansion.
+
+    Kept explicit so isolated native-review snapshots can register one group.
+    """
+    from full import design, product, technology, world
+    for module in (design, product, technology, world):
+        module.register(globals())
+
+if __name__=='__main__':
+    register_full_catalog()
+    main()

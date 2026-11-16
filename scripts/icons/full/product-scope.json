@@ -1,0 +1,5918 @@
+[
+  {
+    "lucide_name": "alarm-clock-check",
+    "categories": [
+      "devices",
+      "notifications",
+      "time"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "alarm-check",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "alarm-clock-off",
+    "categories": [
+      "devices",
+      "notifications",
+      "time"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "archive-arrow-down",
+    "categories": [
+      "files",
+      "mail"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "archive-arrow-up",
+    "categories": [
+      "files",
+      "mail"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "archive-restore",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "archive-x",
+    "categories": [
+      "files",
+      "mail"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "arrow-down-to-line",
+    "categories": [
+      "arrows",
+      "files",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "arrow-up-to-line",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "asterisk",
+    "categories": [
+      "text",
+      "math",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "badge",
+    "categories": [
+      "account",
+      "social",
+      "shapes"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "badge-exclamation-point",
+    "categories": [
+      "account",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "badge-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "badge-info",
+    "categories": [
+      "letters-digits",
+      "account",
+      "accessibility",
+      "social"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "badge-minus",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "badge-plus",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "badge-x",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bell-check",
+    "categories": [
+      "account",
+      "notifications"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bell-dot",
+    "categories": [
+      "account",
+      "notifications"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bell-minus",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bluetooth-connected",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bluetooth-searching",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-check",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-heart",
+    "categories": [
+      "social",
+      "text",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-lock",
+    "categories": [
+      "development",
+      "security",
+      "gaming"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-minus",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-plus",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-search",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-text",
+    "categories": [
+      "text",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "book-user",
+    "categories": [
+      "account",
+      "communication",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "book-x",
+    "categories": [
+      "text",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bookmark-minus",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bookmark-off",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "bookmark-x",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "brackets",
+    "categories": [
+      "development",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "brick-wall-fire",
+    "categories": [
+      "security",
+      "connectivity"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "brick-wall-shield",
+    "categories": [
+      "security",
+      "connectivity"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "briefcase-medical",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "building-complex",
+    "categories": [
+      "account",
+      "buildings"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "building-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "building-complex-plus",
+    "categories": [
+      "account",
+      "buildings"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-1",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-arrow-down",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-arrow-left",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-arrow-right",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-arrow-up",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-check-2",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-chevrons-left",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-chevrons-right",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-cog",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-fold",
+    "categories": [
+      "time",
+      "files"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-minus",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "calendar-minus-2",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-off",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "calendar-plus-2",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendar-search",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "calendar-sync",
+    "categories": [
+      "time",
+      "arrows"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "calendar-x-2",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "calendars",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "captions",
+    "categories": [
+      "multimedia",
+      "accessibility"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [
+      {
+        "name": "subtitles",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "captions-off",
+    "categories": [
+      "multimedia",
+      "accessibility"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "cctv",
+    "categories": [
+      "security",
+      "devices",
+      "photography"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "cctv-off",
+    "categories": [
+      "security",
+      "devices",
+      "photography"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "certificate",
+    "categories": [
+      "security",
+      "files"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "chart-bar",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart-horizontal",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "name_collision": "Local chart-bar has vertical columns; the Lucide canonical name means horizontal bars.",
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "chart-column-stacked",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "chart-scatter",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "scatter-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "check-line",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "circle-check-big",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [
+      {
+        "name": "check-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "circle-fading-check",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "circle-fading-plus",
+    "categories": [
+      "communication",
+      "social"
+    ],
+    "primary_category": "communication",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "circle-percent",
+    "categories": [
+      "social",
+      "finance",
+      "shopping",
+      "math"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "percent-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "circle-user-round",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-circle-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clipboard-clock",
+    "categories": [
+      "text",
+      "time"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-copy",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-list",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-minus",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-paste",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-pen",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "clipboard-edit",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-plus",
+    "categories": [
+      "text",
+      "medical"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clipboard-x",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clock-1",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-10",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-11",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-12",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-2",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-3",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-4",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-5",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-6",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-7",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-8",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-9",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-arrow-down",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-arrow-left",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-arrow-right",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-arrow-up",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-check",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "clock-exclamation-point",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [
+      {
+        "name": "clock-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-fading",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "clock-plus",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "cloud-check",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "cloud-sync",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "code-xml",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "code-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "cog",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "contact-round",
+    "categories": [
+      "account",
+      "communication",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "contact-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "copy-check",
+    "categories": [
+      "text",
+      "notifications"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "copy-plus",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "copy-x",
+    "categories": [
+      "notifications",
+      "text"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "credit-card-check",
+    "categories": [
+      "account",
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "credit-card-minus",
+    "categories": [
+      "account",
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "credit-card-plus",
+    "categories": [
+      "account",
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "credit-card-x",
+    "categories": [
+      "account",
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "database-backup",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-check",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-cog",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-minus",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-plus",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-search",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "database-x",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "delete",
+    "categories": [
+      "text",
+      "arrows"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "diamond-percent",
+    "categories": [
+      "social",
+      "finance",
+      "shopping",
+      "math"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "percent-diamond",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "earth-lock",
+    "categories": [
+      "security",
+      "connectivity"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "equal",
+    "categories": [
+      "math",
+      "development"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "ethernet-port",
+    "categories": [
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-axis-3d",
+    "categories": [
+      "files",
+      "design"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-axis-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-badge",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-badge-2",
+        "deprecated": true,
+        "deprecationReason": "alias.duplicate"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-box",
+    "categories": [
+      "files",
+      "design",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-braces",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-json",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-braces-corner",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-json-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-chart-column",
+    "categories": [
+      "files",
+      "charts"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-bar-chart-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-chart-column-increasing",
+    "categories": [
+      "files",
+      "charts"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-bar-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-chart-line",
+    "categories": [
+      "files",
+      "charts"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-line-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-chart-pie",
+    "categories": [
+      "files",
+      "charts"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-pie-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-check-corner",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-check-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-clock",
+    "categories": [
+      "files",
+      "time"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-code-corner",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-code-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-cog",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-cog-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-database",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-diff",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-digit",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-exclamation-point",
+    "categories": [
+      "files",
+      "notifications"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-warning",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-headphone",
+    "categories": [
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-audio",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      },
+      {
+        "name": "file-audio-2",
+        "deprecated": true,
+        "deprecationReason": "alias.duplicate"
+      }
+    ],
+    "local_upstream_alias_matches": [
+      "file-audio"
+    ],
+    "status": "missing",
+    "local_name": null,
+    "rejected_upstream_alias_reason": "Local file-audio uses a music note, not a headphone; mapped to file-music instead.",
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-input",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-key",
+    "categories": [
+      "files",
+      "security"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-key-2",
+        "deprecated": true,
+        "deprecationReason": "alias.duplicate"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-minus-corner",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-minus-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-output",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-pen",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-edit",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-pen-line",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-signature",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-plus-corner",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-plus-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-question-mark",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-question",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-scan",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-search-corner",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-search-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-signal",
+    "categories": [
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-volume-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-sliders",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-stack",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-terminal",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-type",
+    "categories": [
+      "files",
+      "text"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-type-corner",
+    "categories": [
+      "files",
+      "text"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-type-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-user",
+    "categories": [
+      "files",
+      "account"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "file-video-camera",
+    "categories": [
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-video-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-volume",
+    "categories": [
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "file-x-corner",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "file-x-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "files",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "flag-off",
+    "categories": [
+      "account",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-bookmark",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-clock",
+    "categories": [
+      "files",
+      "time"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-closed",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-cog",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "folder-cog-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-dot",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-git",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-git-2",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-input",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-kanban",
+    "categories": [
+      "files",
+      "charts",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-key",
+    "categories": [
+      "files",
+      "security"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-open-dot",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-output",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-pen",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [
+      {
+        "name": "folder-edit",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-root",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-search-2",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-symlink",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "folder-sync",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-tree",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-user",
+    "categories": [
+      "files",
+      "account"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "folder-users",
+    "categories": [
+      "files",
+      "account",
+      "people"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "forward",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "globe-lock",
+    "categories": [
+      "security",
+      "connectivity"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "grip",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "grip-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "grip-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "hand-fist",
+    "categories": [
+      "social",
+      "emoji",
+      "sports"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "hand-heart",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "handshake",
+    "categories": [
+      "social",
+      "finance"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "hat-glasses",
+    "categories": [
+      "social",
+      "account",
+      "security"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "heading-3",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "heading-4",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "headset",
+    "categories": [
+      "multimedia",
+      "devices",
+      "gaming",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "heart-minus",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "heart-off",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "heart-plus",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "heart-x",
+    "categories": [
+      "social",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "highlighter",
+    "categories": [
+      "text",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "hourglass-cog",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "id-card-lanyard",
+    "categories": [
+      "security",
+      "account"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "image-minus",
+    "categories": [
+      "photography",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "image-off",
+    "categories": [
+      "photography",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "images",
+    "categories": [
+      "photography",
+      "text",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "key-square",
+    "categories": [
+      "security",
+      "account"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "languages",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "layout-list",
+    "categories": [
+      "design",
+      "layout",
+      "text"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "layout-template",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "lectern",
+    "categories": [
+      "communication"
+    ],
+    "primary_category": "communication",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "library",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "lightbulb-off",
+    "categories": [
+      "photography",
+      "home"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "link-2",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-checks",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-clock",
+    "categories": [
+      "text",
+      "time"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-filter",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-minus",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-plus",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-tree",
+    "categories": [
+      "text",
+      "files",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "list-x",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "loader",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "locate",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "locate-fixed",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "lock-keyhole",
+    "categories": [
+      "security"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "lock-keyhole-open",
+    "categories": [
+      "security"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [
+      {
+        "name": "unlock-keyhole",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mail-badge",
+    "categories": [
+      "mail",
+      "communication",
+      "security"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mail-clock",
+    "categories": [
+      "mail",
+      "time",
+      "notifications",
+      "communication"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mail-dot",
+    "categories": [
+      "mail",
+      "notifications"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mail-exclamation-point",
+    "categories": [
+      "mail",
+      "notifications"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [
+      {
+        "name": "mail-warning"
+      },
+      {
+        "name": "mail-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mail-minus",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mail-pen",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mail-question-mark",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [
+      {
+        "name": "mail-question",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mail-search",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mail-x",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mailbox",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "mails",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "map-pin-off",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "map-pin-plus",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "map-pin-x",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "memory-stick",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "message-circle",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-check",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-code",
+    "categories": [
+      "social",
+      "communication",
+      "development"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-dashed",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-dashed-check",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-exclamation-point",
+    "categories": [
+      "social",
+      "communication",
+      "notifications"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "message-circle-warning"
+      },
+      {
+        "name": "message-circle-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-heart",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-more",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-off",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-plus",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-question-mark",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "message-circle-question",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-reply",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-text",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-circle-x",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-code",
+    "categories": [
+      "social",
+      "communication",
+      "development"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "message-square-dashed",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-diff",
+    "categories": [
+      "social",
+      "communication",
+      "development",
+      "files"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-dot",
+    "categories": [
+      "social",
+      "communication",
+      "notifications"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-exclamation-point",
+    "categories": [
+      "social",
+      "communication",
+      "notifications"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "message-square-warning"
+      },
+      {
+        "name": "message-square-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-lock",
+    "categories": [
+      "social",
+      "communication",
+      "security"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "message-square-off",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "message-square-quote",
+    "categories": [
+      "social",
+      "communication",
+      "text"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-reply",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "message-square-share",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "message-square-x",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "messages-circle",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "messages-square",
+    "categories": [
+      "social",
+      "communication"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "monitor-cog",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "monitor-off",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mouse-pointer",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "mouse-pointer-click",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "move",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "newspaper",
+    "categories": [
+      "multimedia",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "nfc",
+    "categories": [
+      "finance",
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "notebook-tabs",
+    "categories": [
+      "account",
+      "communication",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "octagon-x",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [
+      {
+        "name": "x-octagon",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "package-2",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "package-check",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "package-minus",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "package-open",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "package-pen",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "package-plus",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "package-question-mark",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "package-search",
+    "categories": [
+      "files",
+      "development"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "package-x",
+    "categories": [
+      "development",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "panel-left-close",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "sidebar-close",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "panel-left-open",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "sidebar-open",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "phone-incoming",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "phone-missed",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "phone-off",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "phone-outgoing",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "pi",
+    "categories": [
+      "letters-digits",
+      "development",
+      "math"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "name_collision": "Local pi is a retained Pi brand mark, not the mathematical constant.",
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "pin-off",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "power-off",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "regex",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "reply",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "reply-all",
+    "categories": [
+      "mail"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "ribbon",
+    "categories": [
+      "social",
+      "medical",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "rotate-ccw-key",
+    "categories": [
+      "security",
+      "account"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "rotate-cw-fading-clock",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "router",
+    "categories": [
+      "devices",
+      "connectivity",
+      "home"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "save-all",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "save-check",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "save-off",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "save-pen",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "save-plus",
+    "categories": [
+      "files"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "scan-barcode",
+    "categories": [
+      "shopping",
+      "devices"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "scan-qr-code",
+    "categories": [
+      "account",
+      "shopping",
+      "devices",
+      "security"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "scan-text",
+    "categories": [
+      "text",
+      "devices"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "screen-share",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "screen-share-off",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "search-check",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "search-code",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "search-x",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "send-horizontal",
+    "categories": [
+      "mail",
+      "communication"
+    ],
+    "primary_category": "mail",
+    "lucide_aliases": [
+      {
+        "name": "send-horizonal",
+        "deprecated": true,
+        "deprecationReason": "alias.typo"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "separator-horizontal",
+    "categories": [
+      "text",
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "separator-vertical",
+    "categories": [
+      "text",
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "server-cog",
+    "categories": [
+      "development",
+      "devices"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "server-off",
+    "categories": [
+      "development",
+      "devices"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "settings-2",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "share",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "share-2",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-ban",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-cog",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-cog-corner",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "shield-ellipsis",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "shield-half",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "shield-house",
+    "categories": [
+      "security",
+      "development",
+      "home",
+      "connectivity"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "shield-minus",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-off",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-plus",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming",
+      "medical"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shield-question-mark",
+    "categories": [
+      "account",
+      "security",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "shield-question",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "shield-user",
+    "categories": [
+      "account",
+      "security",
+      "development"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "shredder",
+    "categories": [
+      "files",
+      "security"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "signal",
+    "categories": [
+      "connectivity"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "signal-high",
+    "categories": [
+      "connectivity"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "signal-low",
+    "categories": [
+      "connectivity"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "signal-medium",
+    "categories": [
+      "connectivity"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "signal-zero",
+    "categories": [
+      "connectivity"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "sliders-vertical",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "sliders",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [
+      "sliders"
+    ],
+    "status": "missing",
+    "local_name": null,
+    "rejected_upstream_alias_reason": "Local sliders recipe has horizontal tracks; mapped to sliders-horizontal instead.",
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "smartphone-user-round",
+    "categories": [
+      "account",
+      "devices",
+      "people"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "speaker",
+    "categories": [
+      "multimedia",
+      "devices"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "spell-check",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "square-check-big",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [
+      {
+        "name": "check-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "square-exclamation-point",
+    "categories": [
+      "notifications"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "square-minus",
+    "categories": [
+      "math",
+      "development",
+      "text"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "minus-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "square-percent",
+    "categories": [
+      "social",
+      "finance",
+      "shopping",
+      "math"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [
+      {
+        "name": "percent-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "square-plus",
+    "categories": [
+      "math",
+      "development",
+      "text"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "plus-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "square-user",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "square-user-round",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-square-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "square-x",
+    "categories": [
+      "math",
+      "notifications"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "x-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "star-check",
+    "categories": [
+      "social",
+      "shapes",
+      "emoji",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "star-half",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "star-minus",
+    "categories": [
+      "social",
+      "shapes",
+      "emoji",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "star-off",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "star-plus",
+    "categories": [
+      "social",
+      "shapes",
+      "emoji",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "star-x",
+    "categories": [
+      "social",
+      "shapes",
+      "emoji",
+      "gaming"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "sticker",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "switch-camera",
+    "categories": [
+      "communication",
+      "devices",
+      "photography"
+    ],
+    "primary_category": "communication",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "table-cells-merge",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "table-cells-split",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "tag-plus",
+    "categories": [
+      "account",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "tag-x",
+    "categories": [
+      "account",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "tags",
+    "categories": [
+      "account",
+      "shopping"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "timeline",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "timer-off",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "timer-reset",
+    "categories": [
+      "time"
+    ],
+    "primary_category": "time",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "touchpad",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "touchpad-off",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "trash-off",
+    "categories": [
+      "files",
+      "mail"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "unfold-vertical",
+    "categories": [
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "ungroup",
+    "categories": [
+      "files",
+      "layout"
+    ],
+    "primary_category": "files",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-cog",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "user-exclamation-point",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-group",
+    "categories": [
+      "account",
+      "people",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-key",
+    "categories": [
+      "account",
+      "security"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-lock",
+    "categories": [
+      "account",
+      "security"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "user-minus",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "user-pen",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-arrow-left",
+    "categories": [
+      "account",
+      "people"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-check",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-check-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-cog",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-cog-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-exclamation-point",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-group",
+    "categories": [
+      "account",
+      "people",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-key",
+    "categories": [
+      "account",
+      "security"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-minus",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-minus-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-pen",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-plus",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-plus-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-search",
+    "categories": [
+      "account",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-shield",
+    "categories": [
+      "account",
+      "security"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-star",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-round-x",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "user-x-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "user-search",
+    "categories": [
+      "account",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "user-shield",
+    "categories": [
+      "account",
+      "security",
+      "people"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "user-star",
+    "categories": [
+      "account"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "users-collaboration",
+    "categories": [
+      "account",
+      "people",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "users-round",
+    "categories": [
+      "account",
+      "people"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "users-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "users-round-collaboration",
+    "categories": [
+      "account",
+      "people",
+      "social"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "vault",
+    "categories": [
+      "security",
+      "home",
+      "finance"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "venetian-mask",
+    "categories": [
+      "account",
+      "gaming"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "video-off",
+    "categories": [
+      "devices",
+      "communication",
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "voicemail",
+    "categories": [
+      "devices",
+      "communication"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "volume-1",
+    "categories": [
+      "communication",
+      "multimedia"
+    ],
+    "primary_category": "communication",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "vote",
+    "categories": [
+      "social"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "wallet-cards",
+    "categories": [
+      "account",
+      "finance"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "wallet-minimal",
+    "categories": [
+      "account",
+      "finance"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [
+      {
+        "name": "wallet-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "waypoints",
+    "categories": [
+      "security",
+      "navigation",
+      "development"
+    ],
+    "primary_category": "security",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "webcam",
+    "categories": [
+      "devices",
+      "communication"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "webhook",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "wifi-high",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "wifi-low",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "wifi-zero",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "wrench-off",
+    "categories": [
+      "account",
+      "development",
+      "tools"
+    ],
+    "primary_category": "account",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "x-line-top",
+    "categories": [
+      "notifications",
+      "math",
+      "letters-digits"
+    ],
+    "primary_category": "notifications",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zap-off",
+    "categories": [
+      "photography",
+      "devices"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "01"
+  },
+  {
+    "lucide_name": "zodiac-aquarius",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-aries",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-cancer",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-capricorn",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-gemini",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-leo",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-libra",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-ophiuchus",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-pisces",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-sagittarius",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-scorpio",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-taurus",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  },
+  {
+    "lucide_name": "zodiac-virgo",
+    "categories": [
+      "social",
+      "emoji"
+    ],
+    "primary_category": "social",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "02"
+  }
+]

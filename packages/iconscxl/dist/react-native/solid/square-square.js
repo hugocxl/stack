@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SquareSquareIcon = /*#__PURE__*/ forwardRef(function SquareSquareIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M4 1.375H12Q13.0873 1.375 13.8562 2.1438Q14.625 2.9127 14.625 4V12Q14.625 13.0873 13.8562 13.8562Q13.0873 14.625 12 14.625H4Q2.9127 14.625 2.1438 13.8562Q1.375 13.0873 1.375 12V4Q1.375 2.9127 2.1438 2.1438Q2.9127 1.375 4 1.375ZM5.8 4.625Q5.3133 4.625 4.9691 4.9691Q4.625 5.3133 4.625 5.8V10.2Q4.625 10.6867 4.9691 11.0309Q5.3133 11.375 5.8 11.375H10.2Q10.6867 11.375 11.0309 11.0309Q11.375 10.6867 11.375 10.2V5.8Q11.375 5.3133 11.0309 4.9691Q10.6867 4.625 10.2 4.625ZM5.8 5.775H10.2Q10.225 5.775 10.225 5.8V10.2Q10.225 10.225 10.2 10.225H5.8Q5.775 10.225 5.775 10.2V5.8Q5.775 5.775 5.8 5.775Z", "fill": "currentColor"}));
+});
