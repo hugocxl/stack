@@ -6,7 +6,7 @@ A family of **2,198 rounded icons** for the things you build. From everyday navi
 
 [Browse the icons](https://hugocxl.github.io/iconscxl/icons.html) · [Get started](https://hugocxl.github.io/iconscxl/guide.html) · [Website](https://hugocxl.github.io/iconscxl/)
 
-[![A selection of IconsCXL icons, shown in light and dark](preview.png)](https://hugocxl.github.io/iconscxl/icons.html)
+[![A selection of rounded IconsCXL icons in warm neutral tones](website/assets/preview.png)](https://hugocxl.github.io/iconscxl/icons.html)
 
 ## One family. Three expressions.
 

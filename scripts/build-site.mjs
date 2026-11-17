@@ -12,7 +12,7 @@ mkdirSync(out, { recursive: true });
 const read = (p) => readFileSync(p, "utf8");
 cpSync("website/assets", `${out}/assets`, { recursive: true });
 cpSync("website/styles.css", `${out}/styles.css`);
-cpSync("preview.png", `${out}/preview.png`);
+cpSync("website/assets/preview.png", `${out}/preview.png`);
 const catalog = JSON.parse(read("catalog.json"));
 const icon = (name, style = "duotone") =>
   read(
