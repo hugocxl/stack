@@ -120,8 +120,10 @@ both tints. Live browser inspection was unavailable in the execution environment
 gallery interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
-The [current expansion review](SF-EXPANSION-2026-11-17.md) records the focused additions
-and polish; its combined ledger preserves the earlier full-catalog assessments.
+The [current full-catalog quality audit](QUALITY-AUDIT-2026-11-17.md) records a fresh
+review of every icon and supersedes the earlier visual assessments. Its
+[before/after comparison](quality-changes-2026-11-17.html) shows every correction.
+The [expansion review](SF-EXPANSION-2026-11-17.md) remains a historical record of additions.
 The [Lucide coverage comparison](COVERAGE-2026-11-16.md) records complete coverage
 of the pinned reference inventory.
 

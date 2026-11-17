@@ -40,23 +40,34 @@ def register(api):
     def warn(x=8,y=8,s=1): return union(line((x,y-2*s),(x,y+.4*s),width=1.2),circle(x,y+2.3*s,.6))
     def power(x=8,y=8,s=1):
         return transform(union(stroke('M4.5 4.3A4.7 4.7 0 1 0 11.5 4.3',1.2),line((8,2),(8,7))),scale=s,dx=x-8,dy=y-8)
+    def layers(n, b, d, body):
+        # Build the complete object before occlusion. Outlining a cut body
+        # invents a second edge beside the slash or around a floating badge.
+        (S if body else G)(n, b, d)
+        b,d=api['DRAWINGS'][n][:2]
+        if not body:
+            ink=union(b,d)
+            return [(ink,1)],ink,ink
+        outer=stroke(b,1.25); ink=union(outer,d); filled=union(b,outer)
+        inset=cut(filled,stroke(filled,1.8))
+        counters=[]; structural=[]
+        for part in api['components'](d):
+            (structural if cut(part,filled).area>part.area*.12 else counters).append(part)
+        solid=union(cut(filled,op(union(*counters),inset,po.PathOp.INTERSECTION)),*structural)
+        return [(cut(b,ink),.24),(ink,1)],solid,ink
     def off(n,b,d=None,body=True):
-        # A clear channel separates the slash from the disabled object.
+        duo,solid,mono=layers(n,b,d or empty,body)
         gap=line((1.8,1.8),(14.2,14.2),width=3)
         slash=line((1.8,1.8),(14.2,14.2))
-        if body: S(n,cut(b,gap),union(cut(d or empty,gap),slash))
-        else: G(n,cut(union(b,d),gap),slash)
+        overrides[n]={'duotone':[(cut(a,gap),v) for a,v in duo]+[(slash,1)],
+                      'solid':union(cut(solid,gap),slash),
+                      'stroke':union(cut(mono,gap),slash)}
     def badge(n,b,d,mark,body=True,x=12,y=11.8):
-        clearance=circle(x,y,3.3)
-        bb,dd=cut(b,clearance),cut(d or empty,clearance)
-        (S if body else G)(n,bb,union(dd,mark))
-        if body:
-            bb,dd=api['DRAWINGS'][n][:2]
-            filled=union(bb,stroke(bb,1.25))
-            inset=cut(filled,stroke(filled,1.8))
-            # A floating mark must not make a connected interior detail lose
-            # its counter when Solid's structural-component rule runs.
-            overrides[n]={'solid':union(cut(filled,op(cut(dd,mark),inset,po.PathOp.INTERSECTION)),cut(dd,filled),mark)}
+        duo,solid,mono=layers(n,b,d or empty,body)
+        clearance=union(circle(x,y,3.3),mark,stroke(mark,1.5))
+        overrides[n]={'duotone':[(cut(a,clearance),v) for a,v in duo]+[(mark,1)],
+                      'solid':union(cut(solid,clearance),mark),
+                      'stroke':union(cut(mono,clearance),mark)}
     def lock(x=12,y=11.5):
         return union(stroke(rr(x-1.8,y,3.6,3,.5),1.15),stroke(f'M{x-1.1} {y}v-1.3a1.1 1.1 0 0 1 2.2 0v1.3',1.1))
 
@@ -97,7 +108,7 @@ def register(api):
         S('battery-'+n,battery,union(m,line((14.7,6.8),(14.7,9.2))))
     for n,direction in [('download','down'),('upload','up')]:
         S('hard-drive-'+n,rr(1.7,5.5,12.6,8,1.5),union(lines('M2 10H14'),dots((11.3,11.8),(13,11.8),r=.4),arr(direction,8,4.6,.85)))
-    for n,m in [('check',check(8,10.9,.7)),('x',cross(8,10.9,.7))]:
+    for n,m in [('check',check(8,11.5,.5)),('x',cross(8,11.5,.5))]:
         S('printer-'+n,rr(1.8,5,12.4,7,1.5),union(stroke('M4 5V1.8H12V5M4.2 9H11.8V14H4.2Z',1.1),m,circle(12,7,.5)))
     S('printer-3d',rr(2,2,12,12,1.2),union(lines('M2 5H14M8 5V7M6.5 7H9.5M8 7V8.5'),stroke('M5 11L8 9L11 11V13H5Z',1.05)))
     S('projector',rr(1.8,5,12.4,7,1.4),union(ring(10.4,8.5,2.1,1.05),lines('M4 12L3.4 14M12 12L12.6 14M3.5 7.5H5.5M3.5 9.5H5.5')))
@@ -149,7 +160,7 @@ def register(api):
     spine=stroke('M5 1.8V14.2M3 11.7H13',1.05)
     bookmarks={
         'down':arr('down',9,6.8,.7),'up':arr('up',9,6.8,.7),
-        'up-2':union(arr('up',9,7.7,.62),stroke('M7.4 3.5L9 2L10.6 3.5',1)),
+        'up-2':union(arr('up',9,8.1,.55),stroke('M7.5 5L9 3.5L10.5 5',1)),
         'audio':stroke('M7 5V8M9 4V9M11 5V8',1.1),
         'headphones':stroke('M6.8 8V6.5A2.4 2.4 0 0 1 11.6 6.5V8M6.8 6.5H7.7V8.7H6.8M10.7 6.5H11.6V8.7H10.7',.9),
         'image':union(stroke(rr(6.7,4,4.7,5.1,.4),.9),stroke('M7 8L8.5 6.5L10.8 8.5',.8),circle(10.3,5.3,.4)),
@@ -211,7 +222,7 @@ def register(api):
     off('audio-lines-off',wave,empty,False)
     badge('audio-lines-x',wave,empty,cross(12,11.8,.8),False)
     G('eject',poly([(8,2),(14,10),(2,10)]),line((2.5,13),(13.5,13),width=1.8))
-    G('step-back',play(9,8,1.7).transform(-1,0,0,1,16,0),line((3,3),(3,13),width=1.8))
+    G('step-back',play(7,8,1.7).transform(-1,0,0,1,16,0),line((3,3),(3,13),width=1.8))
     G('step-forward',play(7,8,1.7),line((13,3),(13,13),width=1.8))
     off('play-off',play(8,8,2),empty,False)
     G('repeat-1',stroke('M3 9V5Q3 3 5 3H13M13 7V11Q13 13 11 13H3M11 1L13 3L11 5M5 11L3 13L5 15',1.2),stroke('M7 6L8.5 5V10M7 10H10',1))
@@ -228,8 +239,8 @@ def register(api):
     G('circle-fading-play',union(stroke('M8 1.8A6.2 6.2 0 1 1 1.8 8',1.25),dots((2.5,5),(4.6,2.7),r=.62)),play(8.5,8,.95))
     S('circle-power',circle(),power(8,8,.63))
     S('circle-star',circle(),star(8,8,.48))
-    G('circle-slash',ring(),line((4,12),(12,4)))
-    G('circle-slash-2',ring(),line((4,4),(12,12)))
+    G('circle-slash',ring(),line((4.4,11.6),(11.6,4.4)))
+    G('circle-slash-2',ring(),line((4.4,4.4),(11.6,11.6)))
     S('drama',union(path('M1.5 3Q5 1 8.5 3V8Q6 13 2 9Z'),path('M7.5 6Q11 4 14.5 6V11Q12 16 8 12Z')),union(stroke('M3 5H4M6 5H7M3 7Q5 9 7 7M9 8H10M12 8H13M9 11Q11 9 13 11',1)))
     G('list-music',lines('M2 3H10M2 6H8M2 9H7M2 12H6'),union(stroke('M11 11V3L14 2V10',1.2),circle(9.8,11.5,1.25),circle(12.8,10.5,1.25)))
     G('list-video',lines('M2 3H14M2 6H8M2 9H6M2 12H6'),play(11,10.5,1.2))
@@ -264,7 +275,8 @@ def register(api):
     S('guitar',path('M5 7Q2 6 1.5 9Q.5 12 3.5 14Q7 16 9 13Q11 11 8 9L13 4L11 2Z'),union(ring(5.8,10.4,1.25,.9),stroke('M5.8 10.4L13.5 2.7M11 1.5L14.5 5M3 12L5 14',1.05)))
     S('guitar-electric',poly([(2,8),(6,8),(10.7,3.3),(12.7,5.3),(8,10),(8,14),(4,13),(1.5,10.5)]),union(lines('M5 11L13.5 2.5M11.5 1.5L14.5 4.5M3.8 9.5L6.5 12.2'),circle(5.5,10.8,.6)))
     for n,body in [('piano',rr(1.5,2.5,13,11,1.3)),('keyboard-music',rr(1.5,4,13,8,1))]:
-        S(n,body,union(stroke('M4.1 7V13M6.7 7V13M9.3 7V13M11.9 7V13',1),rr(3.5,4.3,1.2,4.2,.3),rr(6.1,4.3,1.2,4.2,.3),rr(10.7,4.3,1.2,4.2,.3)))
+        bottom=13 if n=='piano' else 11.5
+        S(n,body,union(stroke(f'M4.1 7V{bottom}M6.7 7V{bottom}M9.3 7V{bottom}M11.9 7V{bottom}',1),rr(3.5,4.8,1.2,3.6,.3),rr(6.1,4.8,1.2,3.6,.3),rr(10.7,4.8,1.2,3.6,.3)))
 
     api['CATEGORY']='Charts and analytics'
     axes=stroke('M2 2.5V13.5H14',1.2)
@@ -317,7 +329,7 @@ def register(api):
     G('square-dashed-bottom-code',dash,stroke('M6 5L3.5 8L6 11M10 5L12.5 8L10 11',1.1))
     G('square-dashed-kanban',stroke('M2 5V3Q2 2 3 2H5M8 2H10M13 2Q14 2 14 3V5M14 8V10M14 13Q14 14 13 14H11M8 14H6M3 14Q2 14 2 13V10M2 8V7',1.2),squaremarks['kanban'])
     for n,m in [('minus',line((5.8,8),(10.2,8))),('plus',plus(8,8,.9))]:S('diamond-'+n,poly([(8,1.5),(14.5,8),(8,14.5),(1.5,8)]),m)
-    S('badge-question-mark',poly([(8,1.2),(10,2.8),(12.5,2.7),(13.3,5.3),(15,7.2),(13.4,9.5),(13.2,12),(10.5,12.8),(8,14.8),(5.5,12.8),(2.8,12),(2.6,9.5),(1,7.2),(2.7,5.3),(3.5,2.7),(6,2.8)]),union(stroke('M6 5.3Q6 3.5 8 3.5Q10.8 3.5 10 6Q9.7 7 8 8V9',1.15),circle(8,11.3,.65)))
+    S('badge-question-mark',api['badge_body'](),union(stroke('M6.3 6.3C6.3 4.4 9.7 4.4 9.7 6.3C9.7 7.5 8 7.7 8 9',1.1),circle(8,11,.6)))
     G('slash',line((4,14),(12,2)))
     for n,angle in [('bottom-vertical',0),('top-vertical',180),('left-horizontal',90),('right-horizontal',270)]:
         G('line-dot-'+n,transform(line((8,2),(8,10)),angle),transform(circle(8,13,1.4),angle))
@@ -333,7 +345,7 @@ def register(api):
     for n,m in [('down',arr('down',12,11.8,.8)),('up',arr('up',12,11.8,.8)),('play',play(12,11.8,.9)),('upscale',stroke('M10 14L14.5 9.5M11 9.5H14.5V13',1.25))]:badge('image-'+n,image,landscape,m)
     S('wallpaper',rr(1.5,2.5,13,11,1.2),union(landscape,stroke('M5 2.5V13.5',1.15)))
     S('picture-in-picture-2',rr(1.5,2,13,12,1.4),union(stroke(rr(8,8,5,4, .5),1.1),stroke('M3.5 4L6.5 7M3.5 7H6.5V4',1.1)))
-    G('aperture',ring(8,8,6,1.2),union(*(transform(stroke('M6.3 2.5L9.8 8',1.15),i*60) for i in range(6))))
+    G('aperture',ring(8,8,6,1.2),op(union(*(transform(stroke('M6.3 2.5L9.8 8',1.15),i*60) for i in range(6))),circle(8,8,5.4),po.PathOp.INTERSECTION))
     G('crosshair',union(ring(8,8,4.5,1.2),circle(8,8,.8)),lines('M8 1V4M8 12V15M1 8H4M12 8H15'))
     G('focus',stroke('M1.5 5V1.5H5M11 1.5H14.5V5M14.5 11V14.5H11M5 14.5H1.5V11',1.3),ring(8,8,2.6,1.2))
     scan=stroke('M1.8 5V2H5M11 2H14.2V5M14.2 11V14H11M5 14H1.8V11',1.2)
@@ -404,6 +416,12 @@ def register(api):
 
     api['CATEGORY']='Sports and outdoors'
     S('life-buoy',circle(),union(stroke(circle(8,8,2.6),1.15),stroke('M3.8 3.8L6.2 6.2M9.8 9.8L12.2 12.2M3.8 12.2L6.2 9.8M9.8 6.2L12.2 3.8',1.4)))
+    buoy_body,buoy_detail=api['DRAWINGS']['life-buoy'][:2]
+    buoy_ink=union(stroke(buoy_body,1.25),buoy_detail)
+    buoy_hole=circle(8,8,2.025)
+    buoy_solid=cut(union(buoy_body,stroke(buoy_body,1.25)),buoy_detail)
+    overrides['life-buoy']={'duotone':[(cut(cut(buoy_body,buoy_ink),buoy_hole),.24),(buoy_ink,1)],
+                            'solid':cut(buoy_solid,buoy_hole)}
     S('rugby-ball',transform(rr(1.5,4.5,13,7,3.5),-35),transform(stroke('M6 6.5V9.5M8 6.5V9.5M10 6.5V9.5M5 8H11M3 5.5V10.5M13 5.5V10.5',1.05),-35))
     S('volleyball',circle(),stroke('M8 8L3 4M8 8L7 14M8 8L14 6M6 2Q9 3 10 6.7M13.5 10Q10 9.5 8 11M2 8Q5 7 6.2 6.5',1.1))
     S('ball-wave',circle(),stroke('M2.5 5Q6.5 3 8 7Q10 12 13.5 10M2 9Q5 7 7 11Q8 14 10 13.7',1.15))
@@ -418,12 +436,12 @@ def register(api):
 
     # Preserve the printed paper as a separate white interior and keep its
     # status positive in Solid; its frame crosses the printer's silhouette.
-    for state,mark in [('check',check(8,10.9,.6)),('x',cross(8,10.9,.6))]:
+    for state,mark in [('check',check(8,11.5,.5)),('x',cross(8,11.5,.5))]:
         n='printer-'+state
         b,d=api['DRAWINGS'][n][:2]
         filled=union(b,stroke(b,1.25))
         overrides[n]={'solid':union(cut(filled,rr(4.4,9.3,7.2,4.1,.2)),stroke('M4.2 9H11.8V14H4.2Z',1.1),mark,stroke('M4 5V1.8H12V5',1.1),circle(12,7,.5))}
-    for n in ['guitar','satellite']:
+    for n in ['guitar','guitar-electric','satellite']:
         b,d=api['DRAWINGS'][n][:2]
         filled=union(b,stroke(b,1.25));inset=cut(filled,stroke(filled,1.8))
         overrides[n]={'solid':union(cut(filled,op(d,inset,po.PathOp.INTERSECTION)),cut(d,filled))}

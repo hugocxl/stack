@@ -159,7 +159,7 @@ def register(api):
     g('ruler-dimension-line','M2 5H14V10H2ZM5 5V7M8 5V8M11 5V7M2 14H14M2 12V15M14 12V15')
     # Nature and animals: silhouettes remain distinguishable without labels.
     nature={
-      'birdhouse':('M3 6L8 2L13 6V13H3Z','M2 6L8 1L14 6M8 13V15M6 11H10'),
+      'birdhouse':('M3 5.5L8 1.5L13 5.5V13H3Z','M1.7 6.5L3 5.5M13 5.5L14.3 6.5M8 13V15M6 11H10'),
       'feather':('M3 12C-1 8 7-1 13 2C16 7 10 15 5 13Z','M2 15L11 4M5 12L5 8M8 9H12'),
       'flame-kindling':('M8 1Q8 5 11 5L12 3Q16 9 11 11Q5 14 3 9Q1 5 8 1Z','M2 12L14 15M2 15L14 12'),
       'flower-2':('M8 5C2-1 0 5 5 8C-1 11 5 17 8 11C11 17 17 11 11 8C17 5 11-1 8 5Z',st(ci(8,8,1.6),1.1)),
@@ -191,7 +191,8 @@ def register(api):
     # Board games and leisure symbols.
     g('bow-arrow','M2 2Q14 2 14 14M2 2L7 9L14 14M2 14L12 4M9 4H12V7')
     s('bomb',ci(7,9,5),st('M10 5L12 3Q13 1 15 2M13 1V3',1.2))
-    s('clover',un(ci(5,5,3),ci(11,5,3),ci(5,11,3),ci(11,11,3)),'M8 8L14 15')
+    clover=un(*(ci(x,y,3.25) for x,y in [(5.8,5.8),(10.2,5.8),(5.8,10.2),(10.2,10.2)]))
+    s('clover',clover,op(st('M9 10L14 15',1.1),clover,po.PathOp.DIFFERENCE))
     s('crown','M2 4L5 7L8 2L11 7L14 4L12 13H4Z','M4 10H12')
     for n in range(1,7):
         positions={1:[(8,8)],2:[(5,5),(11,11)],3:[(5,5),(8,8),(11,11)],4:[(5,5),(11,5),(5,11),(11,11)],5:[(5,5),(11,5),(8,8),(5,11),(11,11)],6:[(5,5),(11,5),(5,8),(11,8),(5,11),(11,11)]}[n]
@@ -251,13 +252,13 @@ def register(api):
     }
     for n,d in currencies.items():
         if n in scope:g(n,d)
-    cm={n:st(d,1.2) for n,d in currencies.items()}
+    cm={n:st(d,1.8) for n,d in currencies.items()}
     g('currency',un(st(ci(8,8,4),1.25),st('M2 2L5 5M11 11L14 14M2 14L5 11M11 5L14 2')))
     for n,typ in [('circle-euro','euro'),('circle-pound-sterling','pound-sterling')]:s(n,ci(),tr(cm[typ],scale=.58))
-    badge_body=p('M8 1L10 2L12 2L13 4L15 6L14 8L15 10L13 12L12 14L10 14L8 15L6 14L4 14L3 12L1 10L2 8L1 6L3 4L4 2L6 2Z')
+    badge_body=api['badge_body']()
     for typ in ['cent','dollar-sign','euro','indian-rupee','japanese-yen','pound-sterling','russian-ruble','swiss-franc','turkish-lira']:
         s('badge-'+typ,badge_body,tr(cm[typ],scale=.55))
-    s('badge-percent',badge_body,un(st('M5 11L11 5',1.1),st(ci(5,5,1),1),st(ci(11,11,1),1)))
+    s('badge-percent',badge_body,un(st('M5.7 10.3L10.3 5.7',1.1),st(ci(5.7,5.7,.85),1),st(ci(10.3,10.3,.85),1)))
     receipt=p('M3 1L5 2L7 1L9 2L11 1L13 2V15L11 14L9 15L7 14L5 15L3 14Z')
     for typ in ['cent','euro','indian-rupee','japanese-yen','pound-sterling','russian-ruble','swiss-franc','turkish-lira']:
         s('receipt-'+typ,receipt,tr(cm[typ],scale=.55))
@@ -307,7 +308,7 @@ def register(api):
       'ev-charger':(rr(2,2,8,13,1),'M4 5H8M5 8L4 10H7L6 12M10 5H12V12Q15 14 15 10V5L13 3'),
       'forklift':('M1 8H7V12H1Z','M2 8V3H7V12M7 9H11M11 2V13H15M2 12V14M6 12V14'),
       'helicopter':('M3 7H9Q14 7 14 11H4L2 7H1V5H3Z','M8 7V3M3 3H14M9 7V11M5 11V14M11 11V14M3 14H14'),
-      'hot-air-balloon':('M3 3C6-1 12 0 14 4Q17 9 10 12H6Q-1 7 3 3Z','M6 12V15H10V12M8 1Q2 6 8 12Q14 6 8 1M2 7H14'),
+      'hot-air-balloon':('M8 1C4.5 1 2 3.2 2 6Q2 9.3 6 12H10Q14 9.3 14 6C14 3.2 11.5 1 8 1Z','M6 12V15H10V12M8 1C4.5 4 4.5 8.5 8 12C11.5 8.5 11.5 4 8 1M2 6.5H14'),
       'kayak':('M8 1C1 4 1 12 8 15C15 12 15 4 8 1Z','M2 3L14 13M1 2L4 3L3 5M12 11L15 13L14 15M6 8Q8 5 10 8Q8 11 6 8Z'),
       'parking-meter':(rr(4,1,8,10,3),'M8 11V15M6 4H10V7H6ZM8 7V9'),
       'road':('M5 1H11L15 15H1Z','M8 3V5M8 8V10M8 13V15'),
@@ -357,7 +358,7 @@ def register(api):
     g('tent-tree','M1 14L6 5L11 14ZM6 5V14M10 7L13 1L15 7ZM13 7V14')
     s('tower-control','M3 3H13L11 8H5Z','M1 3H15M7 8V14M9 8V14M5 14H11M6 4V7M10 4V7')
     # Human gestures and expression changes, with facial counters in Solid.
-    for n,d in [('face-angry','M4 5L6.5 6M9.5 6L12 5M5 11Q8 8 11 11'),('face-expressionless','M4 6H6M10 6H12M5 11H11'),('face-grinning','M4 9H12Q11 14 8 13Q5 14 4 9Z')]:
+    for n,d in [('face-angry','M4 5L6.5 6M9.5 6L12 5M5 11Q8 8 11 11'),('face-expressionless','M4 6H6M10 6H12M5 11H11'),('face-grinning','M4.7 9H11.3Q10.6 12 8 12Q5.4 12 4.7 9Z')]:
         s(n,ci(),un(st(d,1.1),dots((5,6),(11,6),r=.55) if n!='face-expressionless' else po.Path()))
     badge('face-slightly-smiling-plus','smile',mark('plus'))
     s('balloon','M8 1C17 1 15 12 8 13C1 12-1 1 8 1Z','M8 13L7 15H9M8 15Q11 17 13 14')

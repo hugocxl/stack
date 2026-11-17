@@ -16,6 +16,28 @@ def layers(name,style='duotone'):
 def ink(name,style='solid'):return art.union(*(p for p,a in layers(name,style)))
 
 class DesignRegressionTests(unittest.TestCase):
+    def test_badge_family_has_one_symmetric_seal_and_clear_interior_marks(self):
+        reference=art.DRAWINGS['badge'][0]
+        for name,(body,detail,*_) in art.DRAWINGS.items():
+            if name != 'badge' and not name.startswith('badge-'): continue
+            self.assertLess(art.op(body,reference,art.po.PathOp.XOR).area,.01,name)
+            self.assertLess(art.op(body,art.mirror(body),art.po.PathOp.XOR).area,.01,name)
+            # Reserve at least half a unit between mark and inside contour.
+            self.assertLess(art.op(detail,art.stroke(body,2.25),art.po.PathOp.INTERSECTION).area,.01,name)
+
+    def test_currency_and_help_marks_clear_their_circular_borders(self):
+        for name in ('dollar','euro','pound','circle-help'):
+            body,detail,*_=art.DRAWINGS[name]
+            self.assertLess(art.op(detail,art.stroke(body,2.25),art.po.PathOp.INTERSECTION).area,.01,name)
+
+    def test_solid_ribbons_and_both_barrier_stripes_remain_visible(self):
+        for name,points in [('gift',[(8,11),(5,9)]),('construction',[(5.5,7.5),(10.5,7.5)])]:
+            for point in points:self.assertFalse(ink(name).contains(point),(name,point))
+
+    def test_sofa_stroke_has_open_armrests(self):
+        for point in [(3,9),(13,9)]:
+            self.assertFalse(ink('sofa','stroke').contains(point),point)
+
     def test_recipe_check_accepts_identical_closed_contours_in_different_order(self):
         # Actual Linux/x86 output of the recipe that blocked the release.
         native=(ROOT/'icons/film.svg').read_text()

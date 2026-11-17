@@ -105,6 +105,16 @@ def transform(p,angle=0,scale=1,dx=0,dy=0):
     a=math.radians(angle); c=math.cos(a)*scale; s=math.sin(a)*scale
     return p.transform(c,s,-s,c,8-8*c+8*s+dx,8-8*s-8*c+dy)
 
+def badge_body():
+    """Shared, optically centered eight-point seal for every badge variant."""
+    points = []
+    for i in range(16):
+        angle = -math.pi / 2 + i * math.pi / 8
+        radius = 6.5 if i % 2 == 0 else 5.65
+        points.append((8 + radius * math.cos(angle), 8 + radius * math.sin(angle)))
+    return path('M' + 'L'.join(f'{x} {y}' for x, y in points) + 'Z')
+
+
 def add(name,b,d=None,outline=True,tags=''):
     assert name not in DRAWINGS, name
     d = d or po.Path()
@@ -156,7 +166,7 @@ glyph('minus',line((3,8),(8,8)),line((8,8),(13,8)))
 glyph('close',line((3,3),(13,13)),line((13,3),(3,13)))
 glyph('check',line((2,8),(6,12)),line((6,12),(14,4)))
 glyph('check-check',line((1,8),(4,11),(10,4)),line((7,10),(9,12),(15,5)))
-for name,detail in [('check',check()),('x',cross()),('plus',plus()),('minus',line((5,8),(11,8))),('info',union(circle(8,5,.7),line((8,7.5),(8,11)))),('help',union(stroke('M6 5.5C6 3 11 3 10 6Q10 7 8 8V9'),circle(8,11.5,.65))),('alert',union(line((8,4.5),(8,8.5)),circle(8,11,.7))),('ellipsis',dots((4.5,8),(8,8),(11.5,8)))]:
+for name,detail in [('check',check()),('x',cross()),('plus',plus()),('minus',line((5,8),(11,8))),('info',union(circle(8,5,.7),line((8,7.5),(8,11)))),('help',union(stroke('M6.2 6Q6.2 4.6 8 4.6Q9.8 4.6 9.8 6Q9.8 7 8 8V8.8',1.2),circle(8,11,.65))),('alert',union(line((8,4.5),(8,8.5)),circle(8,11,.7))),('ellipsis',dots((4.5,8),(8,8),(11.5,8)))]:
     shape('circle-'+name,circle(),detail)
 for old,new in [('info','circle-info'),('info-fill','circle-info'),('exclamation-circle-fill','circle-alert'),('ellipsis-circle','circle-ellipsis'),('minus-circle','circle-minus'),('circle-check-fill','circle-check'),('circle-x-fill','circle-x')]:
     b,d,o,c,t = DRAWINGS[new]; add(old,b,d,o,t)
@@ -245,7 +255,7 @@ shape('eye',path('M1 8Q8-3 15 8Q8 19 1 8Z'),ring(8,8,2.5,1.35))
 shape('eye-off',DRAWINGS['eye'][0],union(DRAWINGS['eye'][1],line((2,2),(14,14))))
 shape('scan',rr(4,4,8,8,2),lines('M1 5V1H5','M11 1H15V5','M1 11V15H5','M11 15H15V11','M6 8H10'))
 shape('qr-code',union(rr(1.5,1.5,5,5,1),rr(9.5,1.5,5,5,1),rr(1.5,9.5,5,5,1)),union(rr(3,3,2,2,.3),rr(11,3,2,2,.3),rr(3,11,2,2,.3),lines('M10 10H14V14H12','M10 13V14')))
-shape('badge-check',path('M8 1L10 2.5 12.5 2.5 13.5 5 15 8 13.5 10 12.5 13 10 13.5 8 15 6 13.5 3.5 13 2.5 10 1 8 2.5 5 3.5 2.5 6 2.5Z'),check())
+shape('badge-check',badge_body(),check(s=.82))
 
 CATEGORY='Time and planning'
 for name,detail in [('clock',line((8,4),(8,8),(11,10))),('alarm-clock',union(line((8,4),(8,8),(11,8)),lines('M2 3l2-2','M12 1l2 2','M3 14l1-2','M12 12l1 2'))),('history',union(line((8,4),(8,8),(11,9)),line((1.5,1.5),(1.5,5),(5,5))))]: shape(name,circle(8,8,5.8),detail)
@@ -344,8 +354,8 @@ shape('cpu',rr(4,4,8,8,1.5),union(rr(6.5,6.5,3,3,.5),lines('M5 1V4M8 1V4M11 1V4M
 shape('database',path('M2 4C2 0 14 0 14 4V12C14 16 2 16 2 12Z'),stroke('M2 4C2 8 14 8 14 4M2 8C2 12 14 12 14 8'))
 shape('server-rack',rr(2,1.5,12,13,2),union(lines('M2 6H14','M2 10H14'),dots((5,4),(5,8),(5,12)),lines('M9 4H11','M9 8H11','M9 12H11')))
 shape('cloud',path('M4.2 13C-.2 13 .2 6.5 4.2 6.5C4.3 .7 12.7 .5 13 6.5C17 7 16.5 13 12.3 13Z'))
-shape('cloud-upload',DRAWINGS['cloud'][0],transform(arrow(),270,.55,0,1))
-shape('cloud-download',DRAWINGS['cloud'][0],transform(arrow(),90,.55,0,1))
+shape('cloud-upload',DRAWINGS['cloud'][0],transform(arrow(),270,.43,0,1))
+shape('cloud-download',DRAWINGS['cloud'][0],transform(arrow(),90,.43,0,1))
 shape('monitor',rr(1.5,2,13,9,1.5),lines('M8 11V14','M5 14H11','M2 8H14'))
 shape('laptop',rr(3,2,10,9,1),path('M2 11H14L15 14H1Z'))
 shape('phone',rr(4,1,8,14,2),union(line((6.5,3),(9.5,3)),line((7,13),(9,13))))
@@ -416,9 +426,9 @@ shape('gift',rr(2,6,12,8,1),union(stroke('M8 6V14M1 6H15V9H1ZM8 6C1 6 3 0 6 2L8 
 shape('package',path('M1.5 4.5L8 1.5 14.5 4.5V11.5L8 14.5 1.5 11.5Z'),stroke('M1.5 4.5L8 8 14.5 4.5M8 8V14.5M5 3L11.5 6.3'))
 shape('barcode',rr(1.5,3,13,10,1),lines('M4 5V11','M6 5V11','M9 5V11','M12 5V11'))
 shape('percent',circle(),union(line((5,11),(11,5)),circle(5,5,1),circle(11,11,1)))
-shape('dollar',circle(),stroke('M10.5 5Q5 2 5 6Q5 8 8 8Q12 8 11 10Q10 13 5 11M8 3V13',1.2))
-shape('euro',circle(),stroke('M11 4Q5 2 5 8Q5 14 11 12M3 7H10M3 9H9',1.2))
-shape('pound',circle(),stroke('M5 12H11M4.5 8H10M6 12V6Q6 3 10 4',1.2))
+shape('dollar',circle(),transform(stroke('M10.5 5Q5 2 5 6Q5 8 8 8Q12 8 11 10Q10 13 5 11M8 3V13',1.2),scale=.78))
+shape('euro',circle(),transform(stroke('M11 4Q5 2 5 8Q5 14 11 12M3 7H10M3 9H9',1.2),scale=.78))
+shape('pound',circle(),transform(stroke('M5 12H11M4.5 8H10M6 12V6Q6 3 10 4',1.2),scale=.78))
 
 CATEGORY='Work and education'
 shape('briefcase',rr(1.5,5,13,9,2),stroke('M5 5V2H11V5M1.5 8Q8 12 14.5 8M8 9V11'))
@@ -683,8 +693,11 @@ def main():
             mono=union(stroke(b,1.05),stroke(d,1.05))
         if name in {'thumbs-up','thumbs-down'}:
             mono=union(outer,stroke(d,1.1))
-        if name in {'chart-bar','chart-area'}:
+        if name == 'chart-area':
             mono=union(b,stroke(d,1.05))
+        if name == 'chart-bar':
+            # Keep outlined columns clear of both axes at small sizes.
+            mono=union(b,*(stroke(rr(x,y,2,12.1-y,.35),1) for x,y in [(4,8),(8,4),(12,6)]))
         if name == 'fan': mono=union(outer,stroke(d,1.05))
         if name == 'utensils':
             knife=path('M13.5 1.5C10 1.5 9.5 5 9.5 8H13.5Z')
@@ -716,6 +729,20 @@ def main():
             solid=op(solid,stroke('M3 10H13',1.1),po.PathOp.DIFFERENCE)
         if name == 'printer':
             solid=op(solid,rr(5,10.7,6,3.1,.3),po.PathOp.DIFFERENCE)
+        if name == 'gift':
+            # The ribbon joins an exterior bow; it must still cut through the box.
+            solid=op(solid,stroke('M8 6V13.6M2.2 9H13.8',1.15),po.PathOp.DIFFERENCE)
+        if name == 'construction':
+            # Both hazard stripes remain counters, independently of the legs.
+            solid=op(union(b,outer,lines('M4 10V14','M12 10V14')),
+                     op(lines('M4 5L7 10','M9 5L12 10'),interior,po.PathOp.INTERSECTION),po.PathOp.DIFFERENCE)
+        if name == 'sofa':
+            # Upholstery seams define the seat and arms in the filled silhouette.
+            solid=op(solid,stroke('M5 7V10.5H11V7',1.05),po.PathOp.DIFFERENCE)
+            mono=union(stroke('M3 7V5Q3 3 5 3H11Q13 3 13 5V7',1.25),stroke(rr(1,7,4,6,1),1.1),stroke(rr(11,7,4,6,1),1.1),lines('M5 11H11','M3 13V15','M13 13V15'))
+        if name == 'users':
+            # Separate the rear torso from the foreground person, not a tiny slit.
+            solid=op(solid,stroke('M9 11.5V14.7',1.25),po.PathOp.DIFFERENCE)
         if name == 'folder-open':
             flap=soften(path('M2 7H14Q15 7 14.5 8.5L13 13H3Z'))
             solid=union(op(union(b,outer),union(flap,stroke(flap,1.4)),po.PathOp.DIFFERENCE),flap)

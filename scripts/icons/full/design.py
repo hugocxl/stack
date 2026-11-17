@@ -50,6 +50,30 @@ def register(api):
     def outline(b, w=1.25):
         return stroke(b, w)
 
+    def badged(name, body, detail, badge, clearance):
+        s(name, body, union(detail, badge))
+        body=api['soften'](body)
+        boundary=outline(body)
+        primary=union(sub(union(boundary,detail),clearance),badge)
+        secondary=sub(sub(body,clearance),primary)
+        filled=union(body,boundary)
+        interior=sub(filled,outline(filled,1.8))
+        structural=[]
+        counters=[]
+        for piece in api['components'](detail):
+            (structural if sub(piece,filled).area > piece.area*.12 else counters).append(piece)
+        solid=union(sub(union(sub(filled,inter(union(*counters),interior)),*structural),clearance),badge)
+        layers=[(secondary,.24),(primary,1)]
+        x0,y0,x1,y1=union(primary,secondary,solid).bounds
+        if min(x0,y0)<.65 or max(x1,y1)>15.35:
+            scale=min(1,14.7/(x1-x0),14.7/(y1-y0))
+            def normalize(p):
+                return transform(p,scale=scale,dx=(8-(x0+x1)/2)*scale,dy=(8-(y0+y1)/2)*scale)
+            layers=[(normalize(p),alpha) for p,alpha in layers]
+            primary,solid=normalize(primary),normalize(solid)
+        api.setdefault('STYLE_OVERRIDES',{})[name]={
+            'duotone':layers,'solid':solid,'stroke':primary}
+
     def transpose(p):
         return p.transform(0,1,1,0,0,0)
 
@@ -155,11 +179,11 @@ def register(api):
         for container in ('circle','square'):
             name=f'{container}-letter-{ch}'
             if name in NAMES:
-                s(name,circle() if container=='circle' else rr(),letter(ch,scale=.62),tags='alphabet character '+ch)
+                s(name,circle() if container=='circle' else rr(),letter(ch,scale=.55 if container=='circle' else .62),tags='alphabet character '+ch)
     for container in ('circle','square'):
         name=container+'-letter-p-off'
         boundary=outline(circle() if container=='circle' else rr())
-        slash(union(boundary,letter('p',scale=.62)),name)
+        slash(union(boundary,letter('p',scale=.55 if container=='circle' else .62)),name)
     g('letters',letter('a',4.4,8,.52),letter('b',11.8,8,.52))
     g('numbers',number('1',4.3,8,.54),number('2',11.3,8,.54))
     g('binary',number('1',4.5,4.7,.38),number('0',11,4.7,.38),number('0',4.5,11.7,.38),number('1',11,11.7,.38))
@@ -337,8 +361,8 @@ def register(api):
     for horizontal in (True,False):
         for end in (False,True):
             name='between-'+('horizontal' if horizontal else 'vertical')+'-'+('end' if end else 'start')
-            body=union(rect(1.8,2.5,4,11,.7),rect(10.2,2.5,4,11,.7))
-            detail=union(line((8,2),(8,6.2)),line((6.2,4.4),(8,6.2),(9.8,4.4)))
+            body=union(rect(1.8,2.5,3.4,11,.7),rect(10.8,2.5,3.4,11,.7))
+            detail=union(line((8,2),(8,6.2),width=1.1),line((6.8,4.8),(8,6.2),(9.2,4.8),width=1.1))
             if end: detail=transform(detail,180)
             if horizontal: body,detail=transpose(body),transpose(detail)
             s(name,body,detail)
@@ -445,7 +469,8 @@ def register(api):
     s('astroid',astroid)
     s('sparkle',poly([(8,1.6),(9.8,6.2),(14.4,8),(9.8,9.8),(8,14.4),(6.2,9.8),(1.6,8),(6.2,6.2)]))
     g('asterism',union(*(fit(union(line((8,5.5),(8,10.5),width=1.1),line((5.8,6.7),(10.2,9.3),width=1.1),line((5.8,9.3),(10.2,6.7),width=1.1)),x,y,.7) for x,y in [(8,4.2),(4.3,11.3),(11.7,11.3)])))
-    s('club',union(circle(8,4.5,2.6),circle(4.7,8.5,2.8),circle(11.3,8.5,2.8),poly([(8,8),(5.2,14),(10.8,14)])))
+    # A single continuous trefoil boundary avoids internal lobe seams.
+    s('club',path('M6.2 6.4C3 3.2 5.5 1.4 8 1.4C10.5 1.4 13 3.2 9.8 6.4C13.1 4.6 15.2 7 14 9.7C13 12 10 12 8.8 10Q9 12.5 10.6 14H5.4Q7 12.5 7.2 10C6 12 3 12 2 9.7C.8 7 2.9 4.6 6.2 6.4Z'))
     s('spade',union(path('M8 1.6L2.8 6.8C-1 11 5 14 8 10C11 14 17 11 13.2 6.8Z'),poly([(8,9),(5.3,14.3),(10.7,14.3)])))
     s('cross',poly([(6,2),(10,2),(10,6),(14,6),(14,10),(10,10),(10,14),(6,14),(6,10),(2,10),(2,6),(6,6)]))
     s('circle-dot',circle(),circle(8,8,1.5))
@@ -462,7 +487,7 @@ def register(api):
     # Three boxes rather than a badged single box.
     miniature=union(outline(box,1.2),seams)
     g('boxes',fit(miniature,8,4.5,.43),fit(miniature,4.2,10.8,.43),fit(miniature,11.8,10.8,.43))
-    s('cuboid',path('M6 1.8L14 4.8V11.3L10 14.2L2 11.2V4.7Z'),st('M2 4.7L10 7.8L14 4.8M10 7.8V14.2M6 1.8V5.9',1.15))
+    s('cuboid',path('M6 1.8L14 4.8V11.3L10 14.2L2 11.2V4.7Z'),st('M2 4.7L10 7.8L14 4.8M10 7.8V14.2',1.15))
     s('cone',path('M8 1.6L14 12Q14 14.5 8 14.5Q2 14.5 2 12Z'),st('M2 12Q8 9 14 12',1.1))
     s('pyramid',poly([(8,1.7),(14,12.5),(7,14.2),(2,11.5)]),st('M8 1.7L7 14.2M8 1.7L2 11.5',1.1))
     s('cylinder',path('M2.5 4Q2.5 1.5 8 1.5Q13.5 1.5 13.5 4V12Q13.5 14.5 8 14.5Q2.5 14.5 2.5 12Z'),st('M2.5 4Q2.5 6.5 8 6.5Q13.5 6.5 13.5 4',1.15))
@@ -595,7 +620,11 @@ def register(api):
     binding=union(*(line((1.8,y),(4,y),width=1.05) for y in (4,8,12)))
     for name,detail in [('notebook-dot',circle(9,8,1.1)),('notebook-text',st('M6 5H11M6 8H11M6 11H9',1.05)),
                         ('notebook-pen',fit(pen_glyph,11.8,11.5,.48))]:
-        s(name,notebook,union(binding,detail))
+        if name=='notebook-pen':
+            foreground=fit(pen_glyph,11.8,11.5,.48)
+            clearance=fit(union(pen,outline(pen,3.6)),11.8,11.5,.48)
+            badged(name,notebook,binding,foreground,clearance)
+        else: s(name,notebook,union(binding,detail))
     notepad=rr(2.5,3,11,11.5,1)
     rings=union(*(line((x,1.5),(x,4.5),width=1.1) for x in (5,8,11)))
     note_text=st('M5 7H11M5 10H11M5 12.5H9',1.05)
@@ -604,7 +633,8 @@ def register(api):
     clip=rr(3,3,10,11,1.3)
     tab=outline(rect(5.4,1.5,5.2,3,1),1.05)
     s('clipboard-type',clip,union(tab,letter('t',8,9.3,.42)))
-    s('clipboard-pen-line',clip,union(tab,line((5.5,11),(8.5,11),width=1.1),fit(pen_glyph,11.4,10.5,.45)))
+    badged('clipboard-pen-line',clip,union(tab,line((5.5,11),(7.5,11),width=1.1)),
+           fit(pen_glyph,11.5,11,.48),fit(union(pen,outline(pen,3.6)),11.5,11,.48))
     sheet=rr(2,2,12,12,1)
     grid=st('M2 5.5H14M2 9.5H14M6 2V14M10 5.5V14',1.1)
     s('sheet',sheet,grid)
@@ -703,7 +733,7 @@ def register(api):
         for direction in ('up','down'):
             name=('layers-' if count==2 else 'layer-')+'arrow-'+direction
             sheetpiece=fit(planestroke,6.2,5.8,.76)
-            if count==2: sheetpiece=union(sheetpiece,st('M1.2 8.5L6.2 11.2L10 9.2',1.15))
+            if count==2: sheetpiece=union(sheetpiece,st('M1.2 8.5L6.2 11.2L9.2 9.6',1.15))
             g(name,sheetpiece,arr(direction,12.5,10.3,.52))
     g('layers-2',planestroke,st('M1.5 9L8 12.5L14.5 9'))
     for action,p in [('plus',plus(12.5,12,.63)),('minus',line((10.5,12),(14.5,12),width=1.3))]:
@@ -763,7 +793,7 @@ def register(api):
     mapfold=st('M6 1.8V12.5M10 3.5V14.2',1.05)
     for state,p in [('plus',plus(12.5,12,.65)),('minus',line((10.5,12),(14.5,12),width=1.25))]:
         body=sub(mappoly,circle(12.5,12,3.1))
-        s('map-'+state,body,union(sub(mapfold,circle(12.5,12,3.1)),p))
+        badged('map-'+state,mappoly,mapfold,p,union(p,outline(p,1.7)))
     pin=path('M8 14.5C6 12.5 2.5 8.5 2.5 5.8C2.5-.7 13.5-.7 13.5 5.8C13.5 8.5 10 12.5 8 14.5Z')
     hole=outline(circle(8,5.8,1.7),1.05)
     for state,p in [('check',check(8,6,.6)),('minus',line((5.7,5.8),(10.3,5.8),width=1.1)),
@@ -775,8 +805,10 @@ def register(api):
                     ('pen',fit(pen_glyph,12.5,12,.42)),
                     ('search',union(outline(circle(12,11.7,1.9),1.05),line((13.5,13.2),(15,14.7),width=1.05)))]:
         region=circle(12.2,12,3.2)
-        s('map-pin-'+state,sub(pin,region),union(sub(hole,region),p))
-    g('map-pinned',fit(union(outline(mappoly),mapfold),8,10,.78),fit(union(outline(pin),hole),8,5,.55))
+        badged('map-pin-'+state,pin,hole,p,union(region,outline(p,1.7)))
+    pin_foreground=fit(union(outline(pin),hole),8,5,.55)
+    pin_clearance=fit(union(pin,outline(pin,2.8)),8,5,.55)
+    g('map-pinned',sub(fit(union(outline(mappoly),mapfold),8,10,.78),pin_clearance),pin_foreground)
     s('land-plot',poly([(1.8,8),(7,3),(14.2,8),(9,13)]),st('M5 5L12 10M4 10L10.5 5.5M2 8V11M14 8V11',1.1))
     sign=poly([(2,4),(11,4),(14,7),(11,10),(2,10)])
     s('signpost-big',sign,union(line((8,1.5),(8,4)),line((8,10),(8,14.5)),line((5,7),(10,7),width=1.05)))
@@ -815,7 +847,7 @@ def register(api):
         else: details=st('M2.5 5Q8-1 14 6M11 5L14 6L14 3M3 10Q8 16 13 11',1.1)
         g(name,axes,details)
     for cw in (False,True):
-        p=union(outline(rect(3.5,4.5,7,7,1),1.15),st('M2 7Q2 1.5 7 1.5H13M10 0L13 1.5L10 4',1.1))
+        p=union(outline(rect(4.2,6.5,7.2,7.2,1),1.15),st('M2 8V6Q2 2.3 5.8 2.3H13M10.5 .7L13 2.3L10.5 4',1.1))
         g('rotate-'+('cw' if cw else 'ccw')+'-square',p if cw else mirror(p))
     s('rotate-cw-clock',circle(8,8.5,5),union(st('M8 5.5V8.5L10.5 10',1.1),st('M3 3Q8-1 13 3M10 3H13V.5',1.1)))
     g('scaling',outline(rect(2,8,6,6,.8),1.1),st('M2 5V2H5M8 2H14V8',1.1),line((8,8),(14,2)))
@@ -830,7 +862,7 @@ def register(api):
     # Fading in the name denotes incomplete progress, expressed as a broken
     # circumference; no arbitrary opacity is applied to a continuous stroke.
     g('circle-fading-arrow-up',sub(dash_circle(),rect(5,0,6,5)),arr('up',8,7,.65))
-    s('cloud-backup',path('M4 12Q1 12 1 9Q1 6 4 6Q4 1 8 1Q12 1 12 5Q15 5 15 8.5Q15 12 12 12Z'),union(outline(circle(8,9,2.5),1.05),st('M8 7.5V9L9.3 10',1)))
+    s('cloud-backup',path('M4 12Q1 12 1 9Q1 6 4 6Q4 1 8 1Q12 1 12 5Q15 5 15 8.5Q15 12 12 12Z'),union(outline(circle(8,8,2.1),1.0),st('M8 6.8V8L9 8.7',.9)))
     keyboard=union(outline(rect(1.5,3.5,13,9,1.4)),dots(*[(x,y) for x in (4,6.7,9.4,12) for y in (6,8.7)],r=.45),line((5,11),(11,11),width=1.1))
     slash(keyboard,'keyboard-off')
     g('import',st('M9 2H13Q14 2 14 3V13Q14 14 13 14H9',1.2),arr('right',5.8,8,.8))

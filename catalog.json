@@ -28992,7 +28992,9 @@
     "name": "waypoints",
     "category": "Product tools",
     "tags": [
-      "waypoints"
+      "connected",
+      "waypoints",
+      "nodes"
     ],
     "origin": "original",
     "styles": [
