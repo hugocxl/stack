@@ -10,3 +10,6 @@ release/
 
 # Reproducible native review sheets and audit baselines
 review/
+
+# Generated GitHub Pages site
+_site/
