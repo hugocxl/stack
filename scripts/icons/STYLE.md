@@ -90,3 +90,15 @@ an explicit `DUOTONE_GLYPHS` rationale. A style override is not a visual approva
 `assemble-audit.py` combines explicit reviewer ledgers in precedence order and
 rejects any stale SVG hash. The full audit keeps disagreements and their
 coordinator adjudication available in separate source ledgers.
+
+## SF-inspired additions
+
+`sf_home.py`, `sf_media.py`, and `sf_accessibility.py` add original semantic
+families through `draw.py`. Reference only concepts and optical design principles;
+keep the existing stroke widths, corner language, and selective tone policy.
+
+Reproduce the focused native review without changing its approval records:
+
+```sh
+python3 scripts/icons/render-focused.py docs/audit-sf-2026-11-17.json review/sf-expansion
+```

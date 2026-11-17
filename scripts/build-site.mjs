@@ -74,7 +74,7 @@ page(
     )
     .join(
       "",
-    )}</div><p class="small" style="margin-top:20px">2,117 interface icons in all three styles. Plus 81 brand marks in their default style.</p></section><section class="section wrap"><p class="eyebrow">02 / Bring them with you</p><div class="section-heading"><h2>Wherever<br>you build.</h2><p>From a website to a native app, use the same familiar shapes. Pick your platform and make them yours.</p></div><div class="platforms">${[
+    )}</div><p class="small" style="margin-top:20px">${catalog.filter((entry) => entry.styles.length === 3).length.toLocaleString("en-US")} interface icons in all three styles. Plus 81 brand marks in their default style.</p></section><section class="section wrap"><p class="eyebrow">02 / Bring them with you</p><div class="section-heading"><h2>Wherever<br>you build.</h2><p>From a website to a native app, use the same familiar shapes. Pick your platform and make them yours.</p></div><div class="platforms">${[
     ["SVG", "raw-svgs"],
     ["JavaScript", "javascript-no-framework"],
     ["React", "react"],

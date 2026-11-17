@@ -2,7 +2,7 @@
 
 ### Small details. A whole lot of character.
 
-A family of **2,198 rounded icons** for the things you build. From everyday navigation to creative tools, bring a clear, consistent visual language to your apps and websites.
+A family of **2,233 rounded icons** for the things you build. From everyday navigation to creative tools, bring a clear, consistent visual language to your apps and websites.
 
 [Browse the icons](https://hugocxl.github.io/iconscxl/icons.html) · [Get started](https://hugocxl.github.io/iconscxl/guide.html) · [Website](https://hugocxl.github.io/iconscxl/)
 
@@ -12,7 +12,7 @@ A family of **2,198 rounded icons** for the things you build. From everyday navi
 
 **Duotone** adds a quiet sense of depth. **Solid** brings emphasis. **Stroke** keeps things light. Choose the expression that suits your interface, with a shared rounded character across all three.
 
-The collection includes 2,117 interface icons in all three styles, plus 81 brand marks in their default style.
+The collection includes 2,152 interface icons in all three styles, plus 81 brand marks in their default style.
 
 ## At home in your product
 

@@ -1,9 +1,10 @@
 # IconsCXL design system
 
-IconsCXL is a rounded family with selective duotone for product interfaces. The expanded
-foundation contains 579 names in 19 categories, including 498 original UI symbols
-and 81 retained brand marks. The November 16 coverage batch adds 29 original concepts to the earlier
-foundation. The current quality audit records remaining findings explicitly. [The generated catalog](CATALOG.md) defines the delivered set;
+IconsCXL is a rounded family with selective duotone for product interfaces.
+The collection contains 2,233 names: 2,152 original UI symbols and 81 retained
+brand marks. The November 17 expansion adds 35 concepts inspired by SF Symbols'
+semantic breadth, with subtle polish to three existing symbols.
+[The generated catalog](CATALOG.md) defines the delivered set;
 [`catalog.json`](../catalog.json) is its machine-readable counterpart.
 
 ## References and authorship
@@ -61,9 +62,9 @@ names. They do not represent distinct new concepts.
 
 | Style | Construction | Coverage |
 | --- | --- | --- |
-| Rounded Duotone | Selective surface depth; opaque linear symbols | All 579 names |
-| Rounded Solid | Filled silhouette with negative-space details | 498 UI names |
-| Rounded Stroke | Expanded contour and identifying detail lines | 498 UI names |
+| Rounded Duotone | Selective surface depth; opaque linear symbols | All 2,233 names |
+| Rounded Solid | Filled silhouette with negative-space details | 2,152 UI names |
+| Rounded Stroke | Expanded contour and identifying detail lines | 2,152 UI names |
 
 Minimal linear symbols can intentionally share Solid and Stroke geometry. A
 single arrow shaft does not need a different silhouette merely to increase the
@@ -114,13 +115,15 @@ Before accepting an addition:
    and type checks, packaging, and the macOS/iOS resource builds.
 5. Regenerate adapters, catalog, coverage documentation, and offline gallery.
 
-For this expansion, AppKit contact sheets were used for actual SVG rendering in
+For visual review, AppKit contact sheets are used for actual SVG rendering in
 both tints. Live browser inspection was unavailable in the execution environment;
 gallery interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
-The [current quality audit](DESIGN-AUDIT-2026-11-16.md) supersedes prior verdicts.
-The [Lucide coverage comparison](COVERAGE-2026-11-16.md) records the remaining expansion backlog.
+The [current expansion review](SF-EXPANSION-2026-11-17.md) records the focused additions
+and polish; its combined ledger preserves the earlier full-catalog assessments.
+The [Lucide coverage comparison](COVERAGE-2026-11-16.md) records complete coverage
+of the pinned reference inventory.
 
 The historical [full artwork review](REVIEW.md) records the earlier per-icon inspection
 and corrections. Solid construction preserves structural parts separately from

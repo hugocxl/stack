@@ -138,7 +138,7 @@ class DesignRegressionTests(unittest.TestCase):
         self.assertGreater(areas[2],areas[1]*3)
 
     def test_non_special_default_compositions_preserve_ink(self):
-        special={'user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}
+        special={'airplay','user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}
         for name,(body,detail,outlined,*_) in art.DRAWINGS.items():
             if name in special:continue
             # Explicit surface occlusion changes the intended ink, but must
@@ -148,5 +148,11 @@ class DesignRegressionTests(unittest.TestCase):
                       else art.union(body,detail,art.stroke(body,1.25) if outlined else art.po.Path()))
             actual=ink(name,'duotone')
             self.assertLess(abs(expected.area-actual.area),.04,name)
+
+    def test_airplay_foreground_is_separate_from_screen_in_every_style(self):
+        # The lower bezel used to cross the casting triangle in default and
+        # Stroke. Preserve an actual transparent gap, including in dark tint.
+        for style in ('duotone','solid','stroke'):
+            self.assertEqual(len(art.components(ink('airplay',style))),2,style)
 
 if __name__=='__main__':unittest.main()

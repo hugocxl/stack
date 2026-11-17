@@ -4,6 +4,10 @@
 
 ### Added
 
+- Add 35 original icons for home controls, capture/audio, accessibility and body
+  activities, inspired by SF Symbols’ semantic coverage. All support Duotone,
+  Solid and Stroke with JS, React, React Native and Swift exports.
+
 - Expand from 207 to 550 names across 19 categories: 343 additions, 126 existing
   UI symbols redrawn, and 81 retained brand marks.
 - Rounded Duotone, Solid and Stroke artwork for 469 original UI icons, with
@@ -14,6 +18,9 @@
   validation, style export/tree-shaking tests, and gallery interaction tests.
 
 ### Changed
+
+- Center zoom marks within their lenses and clear the AirPlay bezel around its
+  foreground triangle, preserving the existing rounded visual language.
 
 - Accept platform-dependent ordering of identical closed contours in authoring
   checks, with a Linux Film regression fixture; keep all reviewed SVGs unchanged.

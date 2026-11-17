@@ -1,9 +1,9 @@
 # IconsCXL
 
-**2,198 rounded icons for apps, websites, and developer tools**, with typed,
+**2,233 rounded icons for apps, websites, and developer tools**, with typed,
 tree-shakeable exports for JavaScript, React, React Native, and Expo.
 
-Choose Duotone, Solid, or Stroke for 2,117 UI icons, plus 81 brand marks in the
+Choose Duotone, Solid, or Stroke for 2,152 UI icons, plus 81 brand marks in the
 default style: 6,432 SVG drawings in total. SwiftUI, UIKit, and AppKit are also
 supported through the [Swift package](https://github.com/hugocxl/iconscxl#swift--swiftui).
 

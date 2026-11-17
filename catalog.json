@@ -1262,6 +1262,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "assistive-listening",
+    "category": "People and accessibility",
+    "tags": [
+      "assistive",
+      "listening",
+      "hearing",
+      "loop",
+      "auditory",
+      "accessibility",
+      "sound"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "asterisk",
     "category": "Interface controls",
     "tags": [
@@ -1335,6 +1355,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "audio-description",
+    "category": "People and accessibility",
+    "tags": [
+      "audio",
+      "description",
+      "described",
+      "video",
+      "narration",
+      "accessibility",
+      "ad"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "audio-lines",
     "category": "Media and communication",
     "tags": [
@@ -1372,6 +1412,81 @@
       "audio",
       "lines",
       "x"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "audio-mono",
+    "category": "Media",
+    "tags": [
+      "mono",
+      "monaural",
+      "single",
+      "channel",
+      "sound"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "audio-spatial",
+    "category": "Media",
+    "tags": [
+      "spatial",
+      "surround",
+      "immersive",
+      "audio",
+      "listening"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "audio-stereo",
+    "category": "Media",
+    "tags": [
+      "stereo",
+      "left",
+      "right",
+      "dual",
+      "channel",
+      "sound"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "audio-transcription",
+    "category": "Media",
+    "tags": [
+      "speech",
+      "to",
+      "text",
+      "dictation",
+      "audio",
+      "transcription",
+      "transcript"
     ],
     "origin": "original",
     "styles": [
@@ -4166,6 +4281,43 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "camera-burst",
+    "category": "Photography and optics",
+    "tags": [
+      "camera",
+      "burst",
+      "sequence",
+      "continuous",
+      "capture"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "camera-metering",
+    "category": "Photography and optics",
+    "tags": [
+      "camera",
+      "exposure",
+      "spot",
+      "center",
+      "weighted",
+      "metering"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "camera-off",
     "category": "Media",
     "tags": [],
@@ -4535,6 +4687,24 @@
     "tags": [
       "disabled",
       "cctv"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "ceiling-fan",
+    "category": "Home and food",
+    "tags": [
+      "overhead",
+      "ventilation",
+      "cooling",
+      "fan",
+      "home"
     ],
     "origin": "original",
     "styles": [
@@ -8261,6 +8431,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "curtains",
+    "category": "Home and food",
+    "tags": [
+      "drapes",
+      "curtain",
+      "shade",
+      "window",
+      "home"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "cylinder",
     "category": "Geometry",
     "tags": [],
@@ -8774,6 +8962,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "dishwasher",
+    "category": "Home and food",
+    "tags": [
+      "dishes",
+      "cleaning",
+      "plates",
+      "kitchen",
+      "appliance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "divide",
     "category": "Math and symbols",
     "tags": [],
@@ -8979,6 +9185,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "doorbell",
+    "category": "Home and food",
+    "tags": [
+      "entry",
+      "door",
+      "bell",
+      "visitor",
+      "button",
+      "camera"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "dot",
     "category": "Actions and status",
     "tags": [],
@@ -9128,6 +9353,25 @@
     "name": "drumstick",
     "category": "Home and food",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "dryer",
+    "category": "Home and food",
+    "tags": [
+      "laundry",
+      "tumble",
+      "dry",
+      "clothes",
+      "heat",
+      "appliance"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -9566,6 +9810,26 @@
     "name": "expand",
     "category": "Navigation",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "exposure-lock",
+    "category": "Photography and optics",
+    "tags": [
+      "auto",
+      "exposure",
+      "lock",
+      "camera",
+      "brightness",
+      "hold",
+      "ae"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -10964,6 +11228,44 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "focus-auto",
+    "category": "Photography and optics",
+    "tags": [
+      "autofocus",
+      "automatic",
+      "camera",
+      "lens",
+      "sharpness",
+      "af"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "focus-manual",
+    "category": "Photography and optics",
+    "tags": [
+      "manual",
+      "focus",
+      "camera",
+      "lens",
+      "sharpness",
+      "mf"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "fold-horizontal",
     "category": "Navigation",
     "tags": [],
@@ -11755,6 +12057,25 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "garage",
+    "category": "Home and food",
+    "tags": [
+      "garage",
+      "door",
+      "parking",
+      "storage",
+      "car",
+      "home"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "gauge-high",
@@ -13079,6 +13400,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "hearing-aid",
+    "category": "People and accessibility",
+    "tags": [
+      "hearing",
+      "aid",
+      "auditory",
+      "assistive",
+      "device",
+      "accessibility"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "heart",
     "category": "Health and fitness",
     "tags": [],
@@ -13757,6 +14097,24 @@
     "name": "inspection-panel",
     "category": "Work and education",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "intercom",
+    "category": "Home and food",
+    "tags": [
+      "entry",
+      "speaker",
+      "communication",
+      "door",
+      "buzzer"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -15016,6 +15374,25 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "light-switch",
+    "category": "Home and food",
+    "tags": [
+      "wall",
+      "switch",
+      "rocker",
+      "light",
+      "power",
+      "control"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "lightbulb",
@@ -17481,6 +17858,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "motion-photo",
+    "category": "Photography and optics",
+    "tags": [
+      "live",
+      "photo",
+      "movement",
+      "capture",
+      "motion"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "motorbike",
     "category": "Maps and travel",
     "tags": [],
@@ -18009,6 +18404,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "noise-cancellation",
+    "category": "Media",
+    "tags": [
+      "active",
+      "noise",
+      "cancellation",
+      "anc",
+      "headphones",
+      "quiet",
+      "isolation"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "non-binary",
     "category": "Health, science and accessibility",
     "tags": [
@@ -18325,6 +18740,24 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "oven",
+    "category": "Home and food",
+    "tags": [
+      "kitchen",
+      "baking",
+      "cooking",
+      "appliance",
+      "oven"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "oxc",
@@ -19145,11 +19578,92 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "person-hiking",
+    "category": "People and accessibility",
+    "tags": [
+      "hike",
+      "hiking",
+      "trekking",
+      "trail",
+      "walking",
+      "outdoor",
+      "activity",
+      "backpack"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "person-running",
+    "category": "People and accessibility",
+    "tags": [
+      "run",
+      "running",
+      "jogging",
+      "sprint",
+      "workout",
+      "activity",
+      "fitness"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "person-seated",
+    "category": "People and accessibility",
+    "tags": [
+      "sitting",
+      "seated",
+      "person",
+      "chair",
+      "rest",
+      "accessibility",
+      "posture"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "person-standing",
     "category": "Health, science and accessibility",
     "tags": [
       "person",
       "standing"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "person-walking",
+    "category": "People and accessibility",
+    "tags": [
+      "walk",
+      "walking",
+      "pedestrian",
+      "movement",
+      "activity",
+      "steps",
+      "fitness"
     ],
     "origin": "original",
     "styles": [
@@ -19622,6 +20136,25 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "playback-speed",
+    "category": "Media",
+    "tags": [
+      "playback",
+      "speed",
+      "rate",
+      "faster",
+      "slower",
+      "media"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "playing-card",
     "category": "Media",
     "tags": [],
@@ -19867,6 +20400,25 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "power-outlet",
+    "category": "Home and food",
+    "tags": [
+      "socket",
+      "electrical",
+      "electricity",
+      "wall",
+      "outlet",
+      "receptacle"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "powershell",
@@ -22701,6 +23253,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "smart-lock",
+    "category": "Home and food",
+    "tags": [
+      "keypad",
+      "access",
+      "lock",
+      "door",
+      "code",
+      "security"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "smartphone-charging",
     "category": "Technology and development",
     "tags": [
@@ -25150,6 +25721,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "stove",
+    "category": "Home and food",
+    "tags": [
+      "cooktop",
+      "hob",
+      "burners",
+      "kitchen",
+      "cooking",
+      "appliance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "stretch-horizontal",
     "category": "Layout",
     "tags": [],
@@ -26162,6 +26752,25 @@
     "name": "thermometer-sun",
     "category": "Weather and nature",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "thermostat",
+    "category": "Home and food",
+    "tags": [
+      "temperature",
+      "climate",
+      "heating",
+      "cooling",
+      "room",
+      "control"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -28524,6 +29133,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "wheelchair-active",
+    "category": "People and accessibility",
+    "tags": [
+      "active",
+      "wheelchair",
+      "mobility",
+      "accessible",
+      "adaptive",
+      "sport",
+      "propulsion"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "whistle",
     "category": "Sports and outdoors",
     "tags": [
@@ -28709,6 +29338,43 @@
     "name": "wind-arrow-up",
     "category": "Weather and nature",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "window-closed",
+    "category": "Home and food",
+    "tags": [
+      "window",
+      "panes",
+      "glass",
+      "closed",
+      "architecture"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "window-open",
+    "category": "Home and food",
+    "tags": [
+      "window",
+      "panes",
+      "casement",
+      "ventilation",
+      "open",
+      "architecture"
+    ],
     "origin": "original",
     "styles": [
       "duotone",

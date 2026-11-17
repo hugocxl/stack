@@ -1,0 +1,818 @@
+{
+  "date": "2026-11-17",
+  "scope": "35 original additions and 3 existing refinements",
+  "method": "Native AppKit visual inspection by authoring agents and coordinator; AI assessment, not human design certification.",
+  "sizesPoints": [
+    16,
+    24,
+    32
+  ],
+  "rasterScales": [
+    1,
+    2
+  ],
+  "tints": [
+    "light",
+    "dark"
+  ],
+  "entries": [
+    {
+      "name": "zoom-in",
+      "category": "Actions and status",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Centered the plus on the lens; clear handle, counter and balanced interior spacing in all styles.",
+      "sha256": {
+        "duotone": "b5ec90016023aaf7e0d307fa45d8726072dc9b1c1c2fca01b23bd8c742434d37",
+        "solid": "d7e572f2a6d82e8e2f0a2a71e7f10957b8649a9e80deb5a54fce18f1d2e72479",
+        "stroke": "e393345bf92c09734f4da5ad43af32c8f29f1cbce1cb569458cbb871d90d825a"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/01-01.png",
+        "2x": "review/sf-expansion/2x/01-01.png",
+        "row": 1
+      }
+    },
+    {
+      "name": "zoom-out",
+      "category": "Actions and status",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Centered the minus on the lens; horizontal mark remains clear and optically balanced.",
+      "sha256": {
+        "duotone": "022961cfb57e2b4993bac15aa162acd886f7374c6c40031486c793978c4349cb",
+        "solid": "f4c6045d3bf9536e3253f6e72511d32c084a38785a75b6a8e42740b025394ada",
+        "stroke": "0f65f5ff96abf8000a24004d58ab18130b99e9ce02e1143b1d3949f6a65779b3"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/01-01.png",
+        "2x": "review/sf-expansion/2x/01-01.png",
+        "row": 2
+      }
+    },
+    {
+      "name": "ceiling-fan",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Ceiling mount, lateral blades and motor housing form a centered side elevation, distinct from a standing fan.",
+      "sha256": {
+        "duotone": "825da960342c34b8c193dda935058f1d5cfce4a779de90739ed6b26fef46b60f",
+        "solid": "ec0642dd82710269f3f8163c79ef5a78a8ee49ae78b37e29e798753c4edec284",
+        "stroke": "abd4e7db2ae0d95780210b60140fc29597b60a231d56baf59cce417e251574c5"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 1
+      }
+    },
+    {
+      "name": "curtains",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Open center, gathered fabric and curtain rod remain distinct; Solid keeps the opening clear.",
+      "sha256": {
+        "duotone": "cfd33ad9bb703f77435520ca1dc4309d01e916f6f13c57689ccd9ce8282887a2",
+        "solid": "29da2eb56ef74f95f35b000b88760a7da792010f32874d64ada82b77feea29c6",
+        "stroke": "10c27ca61c1acd84b31202c2a57018af3fb08d40d5266774ca366a5150ac007d"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 2
+      }
+    },
+    {
+      "name": "dishwasher",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Plate rack and handle distinguish the appliance; plate gaps remain visible at 16pt.",
+      "sha256": {
+        "duotone": "5603e7517d650f0334fa84f147507cab800a7963413d9545d9bc58ef99dd73f2",
+        "solid": "afce2f3c19df28b7b2260a6d95e369e3ebfe9e527612e76055210276f052a1aa",
+        "stroke": "63c706d594f7600b29463a9a27baeaef7c07ea5f689afc1a39afe152be95e44f"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 3
+      }
+    },
+    {
+      "name": "doorbell",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Tall rounded housing, camera dot and press ring retain distinct spacing.",
+      "sha256": {
+        "duotone": "3d264e6df52486180fa97a2a16f1928453db6afd604e36a99066528fba10b9f8",
+        "solid": "31e6e2df4de5272246bdd29104f2f4032e17a09801b9220516668ceadbfd8f11",
+        "stroke": "02828faefca1c22fd5f81755521795cb6b2b7f177e6b5ba55883816c207bb2fa"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 4
+      }
+    },
+    {
+      "name": "dryer",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Heat curls identify the drum; three small controls remain separated across styles.",
+      "sha256": {
+        "duotone": "dd0a8e86130e352bd9a76416383c02ea350df847b0710aad7b99207967170a59",
+        "solid": "ecf4ba02f9dd135167f87309892f8b1d43d0ecbe0445992e2407e30858e51d5e",
+        "stroke": "8548aeff9ed046e0b2c10a25780b280974e88aeb01814ccb304dfdacb3f3a7d9"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 5
+      }
+    },
+    {
+      "name": "garage",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Roof silhouette and horizontal roller-door divisions remain legible.",
+      "sha256": {
+        "duotone": "322ef2cf00cb2d8b7100ed7b6bab7a7059844e7ab0a353ef2188eebd2bb3442a",
+        "solid": "eee747b174afa5a934d7bc6c53d6d3bd4797355254cede0ad18dfa981c423d88",
+        "stroke": "412b5de6261fa855d974f36ccb7fe6ac2d7602372027b77dd61dab9100b38bcf"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 6
+      }
+    },
+    {
+      "name": "intercom",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Speaker slots and call button distinguish the housing from doorbell and lock.",
+      "sha256": {
+        "duotone": "547e363cb405c3ef3600a8eea57d4c2d69edd7683e285e3cd993d2d6ae9b5208",
+        "solid": "2e81e8ab38f544ce1d8e4d2d433046b0600abd03de5869181fd225da8557526f",
+        "stroke": "8f153db7f8e2ca5c869828f7420f1f7a63c34e1e64c5321c2097bdac52c69f4e"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 7
+      }
+    },
+    {
+      "name": "light-switch",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Inset rocker and offset dividing line remain readable in outline and Solid.",
+      "sha256": {
+        "duotone": "e9d9a1f41840b7c303e174c7a9239cbd99328df1766d2270a6de25cfbbf05b38",
+        "solid": "d55b7c224f9ea3726dd26dbcf8cb254eecfc986b3823bd9935250bde827ad089",
+        "stroke": "8957f3de85be19b617b13b518d9b4204716f2f83e59f2b50055ed45a14ad84fe"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 8
+      }
+    },
+    {
+      "name": "oven",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Shared appliance body with control panel and inset oven window; counters stay open.",
+      "sha256": {
+        "duotone": "6d2b6d83be0702d3834b7691285e1cbd14874a8a602bf73dd3f6bab03b869010",
+        "solid": "b4c44342168703bfaf6af58ad90f74cd991b97458e8fef8a11002b3fba94b970",
+        "stroke": "da2304d5d0128a1d3c870da1684e84efd148364c9be3a6ca9ff46f6486b6fe22"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 9
+      }
+    },
+    {
+      "name": "power-outlet",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Two socket slots and ground aperture stay separate inside the rounded wall plate.",
+      "sha256": {
+        "duotone": "22f1b03bcce9d0c69399391daf53b6ba4d8999487ced3a22d9cc74d23e393bc7",
+        "solid": "321730b3599c8937c1b64bda8d4f7fec8ae63b0339022d71921fed56a13db564",
+        "stroke": "03505f1eab6570c907bfa2ae86c03efce4f6c8a48b206e6b00fb82bbceb4761e"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 10
+      }
+    },
+    {
+      "name": "smart-lock",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Keypad dots and lower latch keep the access-control meaning visible at small sizes.",
+      "sha256": {
+        "duotone": "ce9068dacf8f73a7c6d8931e2e44da1867e23fe4c0c46cf4c1a94e75c850fe27",
+        "solid": "abe962f6772c68d8060331aec4ca56a8e150695eaaca6cfbb485f57d8f146ecf",
+        "stroke": "d184a7514edd18948185c76f5f27c0b152c41e2f8e39a171a4f01a226419835e"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 11
+      }
+    },
+    {
+      "name": "stove",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Four burner rings have consistent clearance from each other and the cooktop edge.",
+      "sha256": {
+        "duotone": "616f3868f350d207d9ae34c137bf5d5b9f44cd0ae4dac5e8d5de4ea0b826b458",
+        "solid": "1905dab1f74863447ef867e909af85ed8c842ae4a99cf657c3489466bdedc0d7",
+        "stroke": "05d9acf95166f509feaeb7ababee61e76b3846fd3491797822d27ec893c9a493"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 12
+      }
+    },
+    {
+      "name": "thermostat",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Temperature bulb and side ticks fit inside the round housing without tangent collisions.",
+      "sha256": {
+        "duotone": "d8f6424827f716873ad9e8310a98ce232d1960f96f586b2ad3d44e0026125003",
+        "solid": "dbbe9569ad21cb237807801e3691fb7995580e2492fc2a0d095ea6386768e8a3",
+        "stroke": "6afd9b823b6cf3187c82bb61662b501a221b8c3b5abacb998b2f6812ee822a87"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 13
+      }
+    },
+    {
+      "name": "window-closed",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Even panes and centered mullions remain clear in outline and negative-space Solid.",
+      "sha256": {
+        "duotone": "843630b964f9a7dff572b3befe82426a98b5851cb992486a53ebeb39b80b306a",
+        "solid": "1eeb1e6cc019af2bc978a37924aa3ab9e37dfa4512851be286368b78b029bade",
+        "stroke": "a9eb070b5f3bfa40d50c7a01012a2a0deaeac7beba7838f661a229a03c37edc4"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 14
+      }
+    },
+    {
+      "name": "window-open",
+      "category": "Home and food",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Angled casement leaves retain an open center and a distinct open-state silhouette.",
+      "sha256": {
+        "duotone": "5cbf45257684d3161679dd93c74a054c3d813f2ffdde1394cafe2082bc35fa86",
+        "solid": "5cbf45257684d3161679dd93c74a054c3d813f2ffdde1394cafe2082bc35fa86",
+        "stroke": "5cbf45257684d3161679dd93c74a054c3d813f2ffdde1394cafe2082bc35fa86"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/02-01.png",
+        "2x": "review/sf-expansion/2x/02-01.png",
+        "row": 15
+      }
+    },
+    {
+      "name": "airplay",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Opened the lower bezel around the foreground casting triangle; both components remain separate in all three styles.",
+      "sha256": {
+        "duotone": "c48486367a909f7b7f3dffad004e66bc6cd50a0bb48bad6d23ebdabb0cb2bded",
+        "solid": "65cc016411e5b7002bd0d88fb169f48af26474cd01eea59601f8134eb1f62a0d",
+        "stroke": "7a171859c610a9fbf17d118f5541662cc38e8b5e2b81249d21d0578309603c67"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 1
+      }
+    },
+    {
+      "name": "audio-mono",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Speaker source and single channel ring are separated with an open aperture.",
+      "sha256": {
+        "duotone": "a4ce65f397618c9a3e17470ee7afc2480d89b57bfd0ecd2d0c458c998f60a81d",
+        "solid": "e165948765594b88e7ed3ce59355b48c9b0e0a35f02a0acd2136c3ac70a8a873",
+        "stroke": "5b743c8d0ba5ab9da3cbff70fbc641bd3a054d9a4cd4900d246783714ca72a94"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 2
+      }
+    },
+    {
+      "name": "audio-spatial",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Listener and enclosing sound orbit retain recognizable head and shoulder separation.",
+      "sha256": {
+        "duotone": "8abccd87094dae65ed8d71420a19dcb4609844de801f1b4352a59bc42036d892",
+        "solid": "8abccd87094dae65ed8d71420a19dcb4609844de801f1b4352a59bc42036d892",
+        "stroke": "8abccd87094dae65ed8d71420a19dcb4609844de801f1b4352a59bc42036d892"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 3
+      }
+    },
+    {
+      "name": "audio-stereo",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Speaker source and two channel rings distinguish stereo from mono without overlapping counters.",
+      "sha256": {
+        "duotone": "1cc7a6c59f739043433a34cdfbf9fa9285b98283adfea920b7311419fb8fad1f",
+        "solid": "5c12e1e58f75b524116ecd50d206f4f541cf94303f8e477c3528b3f943370aa1",
+        "stroke": "3b143786f031c1731e08b388e08f05f570b5bcf62b3ae9680fc5a0df252093c3"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 4
+      }
+    },
+    {
+      "name": "audio-transcription",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Waveform and text lines preserve distinct audio-to-text cues with readable gaps.",
+      "sha256": {
+        "duotone": "ebe82ba7e9a1a30e67134929b49ce22da69461f50215bfb9821c13ea23bfcbff",
+        "solid": "ebe82ba7e9a1a30e67134929b49ce22da69461f50215bfb9821c13ea23bfcbff",
+        "stroke": "ebe82ba7e9a1a30e67134929b49ce22da69461f50215bfb9821c13ea23bfcbff"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 5
+      }
+    },
+    {
+      "name": "noise-cancellation",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Headphone band, cups and central reduction mark stay separate; structural band survives Solid.",
+      "sha256": {
+        "duotone": "fccc46fe8396974362fa3fba269206962e493261bd371503338d83b285e0eddd",
+        "solid": "26fe3e7a9be760c03e75c7b802eaba7483a651f2964b2926aaf8d2ddc96d73e2",
+        "stroke": "9926e775f01cc23e00e9cbe5295a7980e6e6c49019a1ff083518ca490248f731"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 6
+      }
+    },
+    {
+      "name": "playback-speed",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Speed dial, needle and playback triangle remain separate and optically balanced.",
+      "sha256": {
+        "duotone": "da5313b037274e89dc48ebe4ff8c679e2f13a0422f9dd245774174eaa7303f38",
+        "solid": "da5313b037274e89dc48ebe4ff8c679e2f13a0422f9dd245774174eaa7303f38",
+        "stroke": "da5313b037274e89dc48ebe4ff8c679e2f13a0422f9dd245774174eaa7303f38"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/03-01.png",
+        "2x": "review/sf-expansion/2x/03-01.png",
+        "row": 7
+      }
+    },
+    {
+      "name": "assistive-listening",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Ear and two radiating listening arcs retain separation and clear monochrome geometry.",
+      "sha256": {
+        "duotone": "692eadb8ad899785ba8990bfa970a924bb1e6557cf4afabfd175ef712ea643ed",
+        "solid": "692eadb8ad899785ba8990bfa970a924bb1e6557cf4afabfd175ef712ea643ed",
+        "stroke": "692eadb8ad899785ba8990bfa970a924bb1e6557cf4afabfd175ef712ea643ed"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 1
+      }
+    },
+    {
+      "name": "audio-description",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Purpose-drawn AD letters have open counters and comfortable panel clearance in all styles.",
+      "sha256": {
+        "duotone": "c04b021a1e82935e60447a29f9a969d5c877d361aa560caf32b8c9d0ef6afb95",
+        "solid": "16957e643773620e51cffe949a6e3e3911f9913ef80e505fb03d3c1418638a2c",
+        "stroke": "3058b0c14300527ed84ca36ed1964ab9796555fe038c769c7ee047c2e8a7c5a6"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 2
+      }
+    },
+    {
+      "name": "hearing-aid",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Receiver, curved tube and behind-ear housing remain distinct; tube stays positive in Solid.",
+      "sha256": {
+        "duotone": "0911cb434be7c88934fae6bdef5ba4db3adbe1d9bd106b5cb261b636e1b1636a",
+        "solid": "6138d0e7acce75fa5542d89f17b581413c5c3516491321631413dd9b2727535a",
+        "stroke": "77344b7a4269d2e1ec04af28353bec1760cf2b500c93f93206dd322fdbd538e6"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 3
+      }
+    },
+    {
+      "name": "person-hiking",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Backpack and walking pole distinguish the pose; limbs and head remain clear.",
+      "sha256": {
+        "duotone": "26ef6288038e494a22d798d6aae5872d52d15af364d1624aff3953e6d90c098d",
+        "solid": "26ef6288038e494a22d798d6aae5872d52d15af364d1624aff3953e6d90c098d",
+        "stroke": "26ef6288038e494a22d798d6aae5872d52d15af364d1624aff3953e6d90c098d"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 4
+      }
+    },
+    {
+      "name": "person-running",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Forward lean and lifted rear leg distinguish running from walking; joins survive serialization.",
+      "sha256": {
+        "duotone": "7ed63bec66fd157ae359cb9a802109ae4ca2d121ef871c73de527e1d3af1834a",
+        "solid": "7ed63bec66fd157ae359cb9a802109ae4ca2d121ef871c73de527e1d3af1834a",
+        "stroke": "7ed63bec66fd157ae359cb9a802109ae4ca2d121ef871c73de527e1d3af1834a"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 5
+      }
+    },
+    {
+      "name": "person-seated",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Bent body and chair have a clear seated silhouette with separated head.",
+      "sha256": {
+        "duotone": "e08fffd4a3c79afb23d0c40e3d0ba83b6a05809eac4fd19b6d2d2a897d3c0d4d",
+        "solid": "e08fffd4a3c79afb23d0c40e3d0ba83b6a05809eac4fd19b6d2d2a897d3c0d4d",
+        "stroke": "e08fffd4a3c79afb23d0c40e3d0ba83b6a05809eac4fd19b6d2d2a897d3c0d4d"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 6
+      }
+    },
+    {
+      "name": "person-walking",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Stride and offset arms communicate walking without crowding the head or legs.",
+      "sha256": {
+        "duotone": "dac81d042245ff5f370cad315a89398d9212416f92fd12e654aeee05654dbbfa",
+        "solid": "dac81d042245ff5f370cad315a89398d9212416f92fd12e654aeee05654dbbfa",
+        "stroke": "dac81d042245ff5f370cad315a89398d9212416f92fd12e654aeee05654dbbfa"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 7
+      }
+    },
+    {
+      "name": "wheelchair-active",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Forward-leaning user and open wheel describe active mobility; wheel counter remains open.",
+      "sha256": {
+        "duotone": "6fbf147a805a816654d51e1141115d2ae68f581e0b266cb5ca843a3c2f79eccb",
+        "solid": "6fbf147a805a816654d51e1141115d2ae68f581e0b266cb5ca843a3c2f79eccb",
+        "stroke": "6fbf147a805a816654d51e1141115d2ae68f581e0b266cb5ca843a3c2f79eccb"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/04-01.png",
+        "2x": "review/sf-expansion/2x/04-01.png",
+        "row": 8
+      }
+    },
+    {
+      "name": "camera-burst",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Stacked exposure edges and front camera lens read as sequential capture with clear gaps.",
+      "sha256": {
+        "duotone": "834f36c466e53eb6d4642b917bb34b47a494d5979678659d393c834cf6788f74",
+        "solid": "789c0e73786d284f36787aa5eb6a2c851d350b588c5db47488fa61b6bdb8d187",
+        "stroke": "195e41433e313cb4ad3e211252ec03de892f6cb01c93b8dd6d826a5758fb7cfa"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 1
+      }
+    },
+    {
+      "name": "camera-metering",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Four focus corners frame a centered metering ring and dot without collisions.",
+      "sha256": {
+        "duotone": "d5b09a61e435f1523081394b104a6322112ffd091563cae776bd0020ce181c0e",
+        "solid": "d5b09a61e435f1523081394b104a6322112ffd091563cae776bd0020ce181c0e",
+        "stroke": "d5b09a61e435f1523081394b104a6322112ffd091563cae776bd0020ce181c0e"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 2
+      }
+    },
+    {
+      "name": "exposure-lock",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Split exposure disc and lock remain separate; shackle counter survives 16pt rendering.",
+      "sha256": {
+        "duotone": "8f4048fde1ad77353d9daafb426f070ffb29ce62cc40faec83a113f95ea882f2",
+        "solid": "8f4048fde1ad77353d9daafb426f070ffb29ce62cc40faec83a113f95ea882f2",
+        "stroke": "8f4048fde1ad77353d9daafb426f070ffb29ce62cc40faec83a113f95ea882f2"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 3
+      }
+    },
+    {
+      "name": "focus-auto",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Purpose-drawn A stays legible within four focus corners at all inspected sizes.",
+      "sha256": {
+        "duotone": "85bff8da99973f03653168c06486ad329943693c51ba0802e2e5b6c561dcc61a",
+        "solid": "85bff8da99973f03653168c06486ad329943693c51ba0802e2e5b6c561dcc61a",
+        "stroke": "85bff8da99973f03653168c06486ad329943693c51ba0802e2e5b6c561dcc61a"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 4
+      }
+    },
+    {
+      "name": "focus-manual",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Purpose-drawn M stays legible within shared focus corners with open interior space.",
+      "sha256": {
+        "duotone": "aa473d4de8fbcb97f04c533a496ad1d8e220112b99bb4ce2b8033dc82b8b2474",
+        "solid": "aa473d4de8fbcb97f04c533a496ad1d8e220112b99bb4ce2b8033dc82b8b2474",
+        "stroke": "aa473d4de8fbcb97f04c533a496ad1d8e220112b99bb4ce2b8033dc82b8b2474"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 5
+      }
+    },
+    {
+      "name": "motion-photo",
+      "category": "Photography and optics",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "Segmented outer orbit, inner ring and center point remain distinct; orbital dashes avoid sun-ray semantics.",
+      "sha256": {
+        "duotone": "d7d5e92b38b490a72078a29851a78037dba030810c83f9df6a60257987947148",
+        "solid": "d7d5e92b38b490a72078a29851a78037dba030810c83f9df6a60257987947148",
+        "stroke": "d7d5e92b38b490a72078a29851a78037dba030810c83f9df6a60257987947148"
+      },
+      "evidence": {
+        "1x": "review/sf-expansion/1x/05-01.png",
+        "2x": "review/sf-expansion/2x/05-01.png",
+        "row": 6
+      }
+    }
+  ]
+}

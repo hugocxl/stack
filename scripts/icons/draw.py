@@ -172,7 +172,7 @@ glyph('dot',circle(8,8,4),circle(8,8,1.5))
 glyph('ellipsis',dots((3,8),(8,8),(13,8),r=1.1),circle(8,8,1.1))
 glyph('ellipsis-vertical',dots((8,3),(8,8),(8,13),r=1.1),circle(8,8,1.1))
 shape('search',circle(6.7,6.7,4.7),line((10.3,10.3),(14,14)))
-for name,detail in [('zoom-in',plus(6.5,6.5,.75)),('zoom-out',line((4.7,6.5),(8.3,6.5)))]: shape(name,circle(6.7,6.7,4.7),union(line((10.3,10.3),(14,14)),detail))
+for name,detail in [('zoom-in',plus(6.7,6.7,.75)),('zoom-out',line((4.9,6.7),(8.5,6.7)))]: shape(name,circle(6.7,6.7,4.7),union(line((10.3,10.3),(14,14)),detail))
 shape('filter',path('M2 2H14L9.5 7.5V13L6.5 14V7.5Z'),line((5,4.5),(11,4.5)),'funnel refine')
 glyph('sort-ascending',lines('M2 4H7','M2 8H6','M2 12H5'),lines('M12 13V3','M9 6l3-3 3 3'))
 glyph('sort-descending',lines('M2 4H7','M2 8H6','M2 12H5'),lines('M12 3V13','M9 10l3 3 3-3'))
@@ -725,6 +725,10 @@ def main():
         if name == 'airplay':
             foreground=poly([(8,8),(13,14),(3,14)])
             clearance=union(foreground,stroke(foreground,1.5))
+            # The casting triangle sits in front of the display in every
+            # style. A narrow aperture keeps the lower bezel from crossing it.
+            duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo]+[(foreground,1)]
+            mono=union(op(outer,clearance,po.PathOp.DIFFERENCE),foreground)
             solid=union(op(union(b,outer),clearance,po.PathOp.DIFFERENCE),foreground)
         if name == 'copy':
             solid=stacked_solid(rr(1.5,1.5,9,10,1.7),rr(5,5,9.5,9.5,1.7))
@@ -780,7 +784,8 @@ def register_full_catalog():
     Kept explicit so isolated native-review snapshots can register one group.
     """
     from full import design, product, technology, world
-    for module in (design, product, technology, world):
+    import sf_home, sf_media, sf_accessibility
+    for module in (design, product, technology, world, sf_home, sf_media, sf_accessibility):
         module.register(globals())
 
 if __name__=='__main__':

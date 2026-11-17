@@ -1,6 +1,6 @@
 # Coverage catalog
 
-2198 names; 6432 SVG drawings across the available styles.
+2233 names; 6537 SVG drawings across the available styles.
 
 | Category | Names |
 | --- | ---: |
@@ -17,16 +17,16 @@
 | Geometry | 41 |
 | Health and fitness | 19 |
 | Health, science and accessibility | 29 |
-| Home and food | 144 |
+| Home and food | 159 |
 | Interface controls | 98 |
 | Layout | 109 |
 | Maps and travel | 111 |
 | Math and symbols | 31 |
-| Media | 63 |
+| Media | 69 |
 | Media and communication | 56 |
 | Navigation | 158 |
-| People and accessibility | 30 |
-| Photography and optics | 32 |
+| People and accessibility | 38 |
+| Photography and optics | 38 |
 | Product tools | 173 |
 | Security | 16 |
 | Sports and outdoors | 11 |
@@ -92,7 +92,7 @@
 
 ## Home and food
 
-`air-vent`, `alarm-smoke`, `amphora`, `armchair`, `avocado`, `bacon`, `banana`, `barrel`, `bath`, `bean`, `bean-off`, `bed-double`, `bed-single`, `beef`, `beef-off`, `beer`, `beer-off`, `bell-ring`, `blender`, `blinds`, `bottle`, `bottle-wine`, `brick-wall`, `broccoli`, `brush-cleaning`, `bubbles`, `cake`, `cake-slice`, `can`, `can-soda`, `candy`, `candy-cane`, `candy-off`, `carrot`, `carton`, `carton-off`, `castle`, `cheese`, `chef-hat`, `cherry`, `church`, `citrus`, `coffee`, `cookie`, `cooking-pot`, `croissant`, `cup`, `cup-soda`, `cupcake`, `dam`, `dessert`, `dome`, `donut`, `door-closed`, `door-closed-cog`, `door-closed-locked`, `door-closed-package`, `door-open`, `door-stairwell`, `drumstick`, `egg`, `egg-fried`, `egg-off`, `factory`, `fan`, `faucet`, `fence`, `fire-extinguisher`, `fish-off`, `fish-symbol`, `gamepad`, `glass-water`, `grape`, `groceries`, `ham`, `hamburger`, `hand-platter`, `heater`, `hop`, `hop-off`, `hotel`, `house-cog`, `house-heart`, `house-plug`, `house-plus`, `house-wifi`, `houses`, `ice-cream-bowl`, `ice-cream-cone`, `key-round`, `lamp`, `lamp-ceiling`, `lamp-desk`, `lamp-floor`, `lamp-wall-down`, `lamp-wall-up`, `leafy-green`, `lighthouse`, `lollipop`, `mango`, `martini`, `microwave`, `milk`, `milk-off`, `mop`, `mop-sparkles`, `mosque`, `music-note`, `nut`, `nut-off`, `paper-bag`, `pizza`, `plant-pot`, `plug`, `popcorn`, `popsicle`, `puzzle`, `refrigerator`, `rocking-chair`, `salad`, `sandwich`, `school`, `shelving-unit`, `shower-head`, `soap-dispenser-droplet`, `sofa`, `solar-panel`, `soup`, `theater`, `toilet`, `toothbrush`, `toothbrush-sparkles`, `towel-rack`, `university`, `utensils`, `utensils-crossed`, `utility-pole`, `vegan`, `warehouse`, `washing-machine`, `wheat`, `wheat-off`, `wine`, `wine-off`
+`air-vent`, `alarm-smoke`, `amphora`, `armchair`, `avocado`, `bacon`, `banana`, `barrel`, `bath`, `bean`, `bean-off`, `bed-double`, `bed-single`, `beef`, `beef-off`, `beer`, `beer-off`, `bell-ring`, `blender`, `blinds`, `bottle`, `bottle-wine`, `brick-wall`, `broccoli`, `brush-cleaning`, `bubbles`, `cake`, `cake-slice`, `can`, `can-soda`, `candy`, `candy-cane`, `candy-off`, `carrot`, `carton`, `carton-off`, `castle`, `ceiling-fan`, `cheese`, `chef-hat`, `cherry`, `church`, `citrus`, `coffee`, `cookie`, `cooking-pot`, `croissant`, `cup`, `cup-soda`, `cupcake`, `curtains`, `dam`, `dessert`, `dishwasher`, `dome`, `donut`, `door-closed`, `door-closed-cog`, `door-closed-locked`, `door-closed-package`, `door-open`, `door-stairwell`, `doorbell`, `drumstick`, `dryer`, `egg`, `egg-fried`, `egg-off`, `factory`, `fan`, `faucet`, `fence`, `fire-extinguisher`, `fish-off`, `fish-symbol`, `gamepad`, `garage`, `glass-water`, `grape`, `groceries`, `ham`, `hamburger`, `hand-platter`, `heater`, `hop`, `hop-off`, `hotel`, `house-cog`, `house-heart`, `house-plug`, `house-plus`, `house-wifi`, `houses`, `ice-cream-bowl`, `ice-cream-cone`, `intercom`, `key-round`, `lamp`, `lamp-ceiling`, `lamp-desk`, `lamp-floor`, `lamp-wall-down`, `lamp-wall-up`, `leafy-green`, `light-switch`, `lighthouse`, `lollipop`, `mango`, `martini`, `microwave`, `milk`, `milk-off`, `mop`, `mop-sparkles`, `mosque`, `music-note`, `nut`, `nut-off`, `oven`, `paper-bag`, `pizza`, `plant-pot`, `plug`, `popcorn`, `popsicle`, `power-outlet`, `puzzle`, `refrigerator`, `rocking-chair`, `salad`, `sandwich`, `school`, `shelving-unit`, `shower-head`, `smart-lock`, `soap-dispenser-droplet`, `sofa`, `solar-panel`, `soup`, `stove`, `theater`, `thermostat`, `toilet`, `toothbrush`, `toothbrush-sparkles`, `towel-rack`, `university`, `utensils`, `utensils-crossed`, `utility-pole`, `vegan`, `warehouse`, `washing-machine`, `wheat`, `wheat-off`, `window-closed`, `window-open`, `wine`, `wine-off`
 
 ## Interface controls
 
@@ -112,7 +112,7 @@
 
 ## Media
 
-`airplay`, `bomb`, `bow-arrow`, `camera`, `camera-off`, `cast`, `chess-bishop`, `chess-king`, `chess-knight`, `chess-pawn`, `chess-queen`, `chess-rook`, `clover`, `crown`, `dice-1`, `dice-2`, `dice-3`, `dice-4`, `dice-5`, `dice-6`, `dices`, `disc`, `fast-forward`, `film`, `gamepad-2`, `gamepad-directional`, `gem`, `ghost`, `goal`, `headphones`, `image`, `image-plus`, `joystick`, `microphone`, `microphone-off`, `music`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `playing-card`, `playing-cards`, `playing-cards-fan`, `podcast`, `radio`, `rewind`, `scroll`, `scroll-text`, `skip-back`, `skip-forward`, `skull`, `stop`, `stop-circle`, `sword`, `swords`, `tic-tac-toe`, `tombstone`, `toy-brick`, `tv`, `video`, `volume`, `volume-off`, `waveform`
+`airplay`, `audio-mono`, `audio-spatial`, `audio-stereo`, `audio-transcription`, `bomb`, `bow-arrow`, `camera`, `camera-off`, `cast`, `chess-bishop`, `chess-king`, `chess-knight`, `chess-pawn`, `chess-queen`, `chess-rook`, `clover`, `crown`, `dice-1`, `dice-2`, `dice-3`, `dice-4`, `dice-5`, `dice-6`, `dices`, `disc`, `fast-forward`, `film`, `gamepad-2`, `gamepad-directional`, `gem`, `ghost`, `goal`, `headphones`, `image`, `image-plus`, `joystick`, `microphone`, `microphone-off`, `music`, `noise-cancellation`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `playback-speed`, `playing-card`, `playing-cards`, `playing-cards-fan`, `podcast`, `radio`, `rewind`, `scroll`, `scroll-text`, `skip-back`, `skip-forward`, `skull`, `stop`, `stop-circle`, `sword`, `swords`, `tic-tac-toe`, `tombstone`, `toy-brick`, `tv`, `video`, `volume`, `volume-off`, `waveform`
 
 ## Media and communication
 
@@ -124,11 +124,11 @@
 
 ## People and accessibility
 
-`accessibility`, `baby`, `balloon`, `biceps-flexed`, `circle-user`, `contact`, `ear`, `ear-off`, `face-angry`, `face-expressionless`, `face-grinning`, `face-slightly-smiling-plus`, `frown`, `hand`, `hand-helping`, `hand-metal`, `heart-crack`, `heart-handshake`, `id-card`, `meh`, `party-popper`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`
+`accessibility`, `assistive-listening`, `audio-description`, `baby`, `balloon`, `biceps-flexed`, `circle-user`, `contact`, `ear`, `ear-off`, `face-angry`, `face-expressionless`, `face-grinning`, `face-slightly-smiling-plus`, `frown`, `hand`, `hand-helping`, `hand-metal`, `hearing-aid`, `heart-crack`, `heart-handshake`, `id-card`, `meh`, `party-popper`, `person-hiking`, `person-running`, `person-seated`, `person-walking`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`, `wheelchair-active`
 
 ## Photography and optics
 
-`aperture`, `contrast`, `crosshair`, `eclipse`, `eye-closed`, `eye-dashed`, `focus`, `galaxy`, `glasses`, `image-down`, `image-play`, `image-up`, `image-upscale`, `lens`, `lens-concave`, `lens-convex`, `mirror-rectangular`, `mirror-round`, `moon-star`, `orbit`, `picture-in-picture-2`, `rectangle-circle`, `rectangle-goggles`, `scan-eye`, `scan-heart`, `scan-line`, `scan-search`, `scan-square`, `sun-dim`, `sun-medium`, `sun-moon`, `wallpaper`
+`aperture`, `camera-burst`, `camera-metering`, `contrast`, `crosshair`, `eclipse`, `exposure-lock`, `eye-closed`, `eye-dashed`, `focus`, `focus-auto`, `focus-manual`, `galaxy`, `glasses`, `image-down`, `image-play`, `image-up`, `image-upscale`, `lens`, `lens-concave`, `lens-convex`, `mirror-rectangular`, `mirror-round`, `moon-star`, `motion-photo`, `orbit`, `picture-in-picture-2`, `rectangle-circle`, `rectangle-goggles`, `scan-eye`, `scan-heart`, `scan-line`, `scan-search`, `scan-square`, `sun-dim`, `sun-medium`, `sun-moon`, `wallpaper`
 
 ## Product tools
 

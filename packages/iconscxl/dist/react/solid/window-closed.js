@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const WindowClosedIcon = /*#__PURE__*/ forwardRef(function WindowClosedIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M3.3 1.375H12.7Q13.2903 1.375 13.7076 1.7924Q14.125 2.2097 14.125 2.8V13.2Q14.125 13.7903 13.7076 14.2076Q13.2903 14.625 12.7 14.625H3.3Q2.7097 14.625 2.2924 14.2076Q1.875 13.7903 1.875 13.2V2.8Q1.875 2.2097 2.2924 1.7924Q2.7097 1.375 3.3 1.375ZM2.775 7.45V8.55H7.45V13.725H8.55V8.55H13.225V7.45H8.55V2.275H7.45V7.45Z", "fill": "currentColor"}));
+});
