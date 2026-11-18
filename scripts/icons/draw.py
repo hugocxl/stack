@@ -89,8 +89,10 @@ def stroke(d, width=STROKE):
     return po.simplify(p)
 
 def rr(x=2,y=2,w=12,h=12,r=RADIUS):
-    # A positive radius always means the family corner; 0 keeps a sharp cutter.
-    r=min(RADIUS if r>0 else 0,w/2,h/2);k=r*.5522847498
+    # A positive radius means the family corner; 0 keeps a sharp cutter. A
+    # radius meant as a full pill (capsule, toggle, microphone) stays a pill.
+    pill=min(w,h)/2
+    r=pill if r>=.9*pill else min(RADIUS if r>0 else 0,pill);k=r*.5522847498
     return path(f'M{x+r} {y}H{x+w-r}C{x+w-r+k} {y} {x+w} {y+r-k} {x+w} {y+r}V{y+h-r}C{x+w} {y+h-r+k} {x+w-r+k} {y+h} {x+w-r} {y+h}H{x+r}C{x+r-k} {y+h} {x} {y+h-r+k} {x} {y+h-r}V{y+r}C{x} {y+r-k} {x+r-k} {y} {x+r} {y}Z')
 
 def soften(p,r=.28):
