@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: P9DS
+name: Design system
 description: Text-led, technical design system. Large reading type, hairline figures, mono labels and one scarce orange accent.
 colors:
   primary: "#171717"
@@ -135,15 +135,15 @@ components:
 ---
 ## Overview
 
-P9DS is a design system for text-led technical websites. Large reading type leads every page. Hairline drawings and monospaced labels make it feel engineered, and a single orange accent appears at most twice per page. The visual reference is Superlogical: its paper and orange, its 21 px reading size, its centered or left-aligned column with a textured field, and its mono footer.
+This is the @hugocxl design system for text-led technical websites. Large reading type leads every page. Hairline drawings and monospaced labels make it feel engineered, and a single orange accent appears at most twice per page. The visual reference is Superlogical: its paper and orange, its 21 px reading size, its centered or left-aligned column with a textured field, and its mono footer.
 
-This file and [index.html](index.html) define the system completely. Anything not described here is not part of P9DS. When you build a page:
+This file and [index.html](index.html) define the system completely. Anything not described here is not part of the system. When you build a page:
 
 1. Pick a recipe from [Page recipes](#page-recipes). The recipe sets the layout and the order of components.
 2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, figure names and IDs.
 3. Check the result against [Do's and Don'ts](#dos-and-donts).
 
-Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (figures and copy buttons, loaded as a module), `system/figures/` (33 hairline drawings), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema).
+Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (figures and copy buttons, loaded as a module), `system/figures/` (33 hairline drawings, or [vectors](#vectors) from `@hugocxl/vectors`), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`.
 
 ```html
 <!doctype html>
@@ -183,7 +183,7 @@ The paper and orange come from Superlogical, and the greys are neutral. Use colo
 | `accent` | `#fe9369` | `#fe9369` | The status dot (`.p9-dot`) |
 | `accent-text` | `#ce7755` | `#fe9369` | One phrase at title size (`.p9-accent`) |
 
-P9DS keeps Superlogical's warm paper and orange but uses neutral greys instead of its green-tinted ink and muted tones. Superlogical's muted grey `#b3b3b3` fails WCAG AA for text, so it survives only as the light `faint` for placeholders, and `muted` is set to reach 4.5:1. The orange reaches 3:1 on paper only at title size, which is why `accent-text` exists and is used only there.
+The system keeps Superlogical's warm paper and orange but uses neutral greys instead of its green-tinted ink and muted tones. Superlogical's muted grey `#b3b3b3` fails WCAG AA for text, so it survives only as the light `faint` for placeholders, and `muted` is set to reach 4.5:1. The orange reaches 3:1 on paper only at title size, which is why `accent-text` exists and is used only there.
 
 **Accent budget:** at most two accent elements per page. That is one `.p9-accent` phrase of two or three words at the end of the `statement`, and one `.p9-dot` before a status label in `meta`. The accent never colors body text, links, buttons, backgrounds, rules or figures.
 
@@ -244,7 +244,7 @@ A recipe fixes the layout and the component order. `?` means optional, `+` one o
 
 ## Elevation & Depth
 
-P9DS is flat. Group content with space and `rule` hairlines. The only fills are `surface` behind media and code, and `ink` behind the one button. Use no shadows, gradients or blur.
+The system is flat. Group content with space and `rule` hairlines. The only fills are `surface` behind media and code, and `ink` behind the one button. Use no shadows, gradients or blur.
 
 ## Shapes
 
@@ -454,6 +454,51 @@ Mono links at both ends with a hairline between them. It is the last element in 
 ```
 <!-- /specimen -->
 
+## Icons and vectors
+
+Two companion libraries complete the system, and they are the only icons and illustrations a page may use. [Icons](https://hugocxl.github.io/icons/) label actions and [Vectors](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent.
+
+```sh
+npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors
+```
+
+### Icons
+
+Use the **Stroke** style from `@hugocxl/icons`, inline before the words of a link, the `button` or a `meta` label. Give the SVG `class="p9-icon"`: it sizes to `1em`, takes the text color and keeps `space-2` before the words.
+
+```html
+<a href="/docs"><svg class="p9-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons, Stroke --></svg>Read the guide</a>
+```
+
+```jsx
+import { BookOpenIcon } from '@hugocxl/icons/react/stroke';
+
+<a href="/docs"><BookOpenIcon className="p9-icon" />Read the guide</a>
+```
+
+- One icon per element, before its words. An icon never replaces a word; arrows and ◐ stay as text characters.
+- Only in links, the button and meta labels. Never in headings, the statement, body sentences, the masthead or the footer.
+- Decorative icons carry `aria-hidden="true"`. The React components add it unless they receive an `aria-label`.
+- Never in the accent color and never on a filled shape.
+
+### Vectors
+
+A vector from `@hugocxl/vectors` takes the place of a drawing in `figure-wide` or a `figure-grid` item. Inline the SVG, replace its root `xmlns` attribute with `class="p9-vector"` and remove its `color` attribute. It then draws in ink on the surface at its own 4:3 proportions.
+
+```html
+<figure class="p9-wide">
+  <div class="p9-media"><svg class="p9-vector" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor"><title>Modular design</title><desc>…</desc><!-- paths --></svg></div>
+  <figcaption class="p9-caption"><span class="p9-label">Fig. 02 / Modular design</span></figcaption>
+</figure>
+```
+
+In a `figure-grid` item the vector replaces the `data-figure` element, between the label and the `h3`. In React, render the component with `className="p9-vector"`.
+
+- Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) lists every one by use case. Name it in the caption.
+- Use one family of figures on a page: vectors or the built-in drawings, not both.
+- Keep the SVG's `title` and `desc`, or give it an `aria-label`.
+- Never crop a vector, color it with the accent or place it on the field.
+
 ## Do's and Don'ts
 
 ### Always
@@ -471,7 +516,7 @@ Mono links at both ends with a hairline between them. It is the last element in 
 - Never add a class, color, font, size, weight, radius or spacing value that is not a token.
 - Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures.
 - Never set text larger than the title or bolder than 500 (the wordmark is the exception).
-- Never use shadows, gradients, icons other than arrows and ◐, emoji or stock photography.
+- Never use shadows, gradients, emoji, stock photography, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`.
 - Never place two filled buttons on one page.
 - Never center or justify text. Only the column itself is centered.
 - Never invent copy, links, numbers, quotes or logos the brief does not supply. If a required input is missing, ask for it.
@@ -482,7 +527,7 @@ Give the agent this file at a pinned commit and a page plan. A page plan is JSON
 
 ```json
 {
-  "designRevision": "<P9DS commit SHA>",
+  "designRevision": "<design-system commit SHA>",
   "recipe": "changelog",
   "layout": "plain",
   "blocks": [

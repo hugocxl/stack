@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hugocxl.github.io/p9ds/system/plan.schema.json",
-  "title": "P9DS page plan",
+  "$id": "https://hugocxl.github.io/design-system/system/plan.schema.json",
+  "title": "Design system page plan",
   "description": "One page as data. Render each block by copying its component markup from DESIGN.md and replacing only the slot values.",
   "type": "object",
   "required": ["designRevision", "recipe", "layout", "blocks"],
@@ -22,8 +22,10 @@
     "text": { "type": "string", "minLength": 1 },
     "link": {
       "type": "object", "required": ["label", "href"], "additionalProperties": false,
-      "properties": { "label": { "$ref": "#/$defs/text" }, "href": { "$ref": "#/$defs/text" } }
+      "properties": { "label": { "$ref": "#/$defs/text" }, "href": { "$ref": "#/$defs/text" }, "icon": { "$ref": "#/$defs/icon" } }
     },
+    "icon": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "A Stroke icon from @hugocxl/icons, rendered before the words with class p9-icon." },
+    "vector": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "An illustration from @hugocxl/vectors, inlined with class p9-vector." },
     "figure": {
       "enum": ["basket", "branches", "cabinet", "dish", "drawer", "elevator", "exploded", "format", "hub", "keyboard", "laptop", "lockers", "loupe", "padlock", "patch", "phone", "phosphor", "plot", "plug", "query", "rail", "rebuild", "relay", "riffle", "router", "settle", "sieve", "slow", "stack", "terminal", "terrain", "turntable", "vault"]
     },
@@ -102,11 +104,12 @@
       "properties": {
         "component": { "const": "figure-wide" },
         "figure": { "$ref": "#/$defs/figure" },
+        "vector": { "$ref": "#/$defs/vector" },
         "image": { "type": "object", "required": ["src", "alt"], "additionalProperties": false, "properties": { "src": { "$ref": "#/$defs/text" }, "alt": { "$ref": "#/$defs/text" } } },
-        "label": { "type": "string", "description": "aria-label for a drawing." },
+        "label": { "type": "string", "description": "aria-label for a drawing or vector." },
         "caption": { "type": "string", "pattern": "^Fig\\. [0-9]{2} / .+$" }
       },
-      "oneOf": [{ "required": ["figure", "label"] }, { "required": ["image"] }]
+      "oneOf": [{ "required": ["figure", "label"] }, { "required": ["vector"] }, { "required": ["image"] }]
     },
     "figure-grid": {
       "type": "object", "required": ["component", "items"], "additionalProperties": false,
@@ -115,10 +118,12 @@
         "items": {
           "type": "array", "minItems": 2, "maxItems": 4,
           "items": {
-            "type": "object", "required": ["figure", "label", "title", "text"], "additionalProperties": false,
+            "type": "object", "required": ["label", "title", "text"], "additionalProperties": false,
+            "oneOf": [{ "required": ["figure"] }, { "required": ["vector"] }],
             "properties": {
               "figure": { "$ref": "#/$defs/figure" },
-              "label": { "type": "string", "description": "aria-label for the drawing." },
+              "vector": { "$ref": "#/$defs/vector" },
+              "label": { "type": "string", "description": "aria-label for the drawing or vector." },
               "title": { "type": "string", "maxLength": 32 },
               "text": { "type": "string", "maxLength": 90 }
             }
@@ -157,6 +162,7 @@
       "properties": {
         "component": { "const": "button" },
         "label": { "type": "string", "maxLength": 32 },
+        "icon": { "$ref": "#/$defs/icon" },
         "href": { "type": "string", "description": "Present for navigation (anchor); absent for an in-place action (button)." }
       }
     },

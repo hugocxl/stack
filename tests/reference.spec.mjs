@@ -12,7 +12,7 @@ const px = value => parseFloat(value);
 test('the opening paragraph links to every section of the article', async ({ page }) => {
   await page.goto('/');
   const links = page.locator('.p9-opening > .p9-section').first().locator('a');
-  await expect(links).toHaveCount(10);
+  await expect(links).toHaveCount(11);
   for (const link of await links.all()) {
     const fragment = await link.getAttribute('href');
     expect(fragment).toMatch(/^#[a-z]+$/);
@@ -148,6 +148,28 @@ test('component listings show the specimen markup', async ({ page }) => {
   await expect(listings).toHaveCount(13);
   await expect(listings.nth(1)).toHaveText('<hgroup class="p9-title">\n  <h1>Public testing is beginning</h1>\n  <p>Fieldwork team</p>\n</hgroup>');
   for (const listing of await listings.all()) await expect(listing).not.toContainText('data-hairline');
+});
+
+test('icons and vectors draw in the text color at their documented sizes', async ({ page }) => {
+  await page.goto('/');
+  for (const theme of ['light', 'dark']) {
+    await page.evaluate(theme => { document.documentElement.dataset.theme = theme }, theme);
+    const icon = await page.locator('#icon-example .p9-icon').evaluate(node => {
+      const link = getComputedStyle(node.closest('a'));
+      const box = node.getBoundingClientRect();
+      return { width: box.width, size: parseFloat(link.fontSize), color: getComputedStyle(node).color, linkColor: link.color, hidden: node.getAttribute('aria-hidden') };
+    });
+    expect(icon.width).toBeCloseTo(icon.size, 0);
+    expect(icon.color).toBe(icon.linkColor);
+    expect(icon.hidden).toBe('true');
+    const vector = await page.locator('#vector-example .p9-vector').evaluate(node => {
+      const box = node.getBoundingClientRect();
+      return { ratio: box.width / box.height, color: getComputedStyle(node).color, ink: getComputedStyle(document.body).color, title: node.querySelector('title')?.textContent };
+    });
+    expect(vector.ratio).toBeCloseTo(4 / 3, 1);
+    expect(vector.color).toBe(vector.ink);
+    expect(vector.title).toBeTruthy();
+  }
 });
 
 test('keyboard figure browsing and search feedback', async ({ page }) => {

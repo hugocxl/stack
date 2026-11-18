@@ -1,4 +1,4 @@
-/* Styles for this reference page only. P9DS sites do not load this file. */
+/* Styles for this reference page only. Sites built with the system do not load this file. */
 .doc-component { margin-top: var(--p9-space-8) }
 .doc-component > h3 code { font-size: var(--p9-size-label); letter-spacing: .08em; text-transform: uppercase }
 .doc-component > p { margin-top: var(--p9-space-2) }
@@ -74,3 +74,4 @@
   .doc-example { grid-template-columns: minmax(0, 1fr) 12px; padding-left: var(--p9-space-4) }
   .doc-example-field { border-radius: 5px }
 }
+.doc-stack-example { margin-block: var(--p9-space-5) }

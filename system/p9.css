@@ -1,4 +1,4 @@
-/* P9DS — the only stylesheet a P9DS page loads. Values mirror the DESIGN.md front matter. */
+/* Design system — the only stylesheet a page built with the system loads. Values mirror the DESIGN.md front matter. */
 @font-face {
   font-family: "Geist Sans";
   src: url("fonts/Geist-Variable.woff2") format("woff2");
@@ -230,3 +230,11 @@
   .p9-button, .p9-pager button, .p9-input { transition: transform var(--p9-ease), background-color var(--p9-ease), border-color var(--p9-ease), opacity var(--p9-ease) }
   .p9-button:active, .p9-pager button:active { transform: scale(.96) }
 }
+
+/* Icons from @hugocxl/icons (Stroke): inline before a link, button or label, at the size and color of its text. */
+.p9-icon { display: inline-block; width: 1em; height: 1em; margin-inline-end: var(--p9-space-2); vertical-align: -.125em; flex: none }
+
+/* Vectors from @hugocxl/vectors: a 4:3 line illustration in place of a drawing, in ink. */
+.p9-vector { display: block; color: var(--p9-ink) }
+.p9-media > .p9-vector { width: auto; height: 82%; max-width: 92%; aspect-ratio: 4 / 3 }
+.p9-grid .p9-vector { width: 100%; height: auto; aspect-ratio: 4 / 3; margin-block: var(--p9-space-5) }

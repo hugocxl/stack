@@ -1,4 +1,4 @@
-// P9DS runtime: mounts [data-figure] drawings and wires .p9-code copy buttons.
+// Design system runtime: mounts [data-figure] drawings and wires .p9-code copy buttons.
 import * as figures from './figures/index.js';
 
 const mounted = new Map();

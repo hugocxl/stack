@@ -1,33 +1,38 @@
-# P9DS
+# Design system
 
-A design system for text-led technical websites. Large reading type, hairline figures, mono labels and one scarce orange accent, on Superlogical’s paper and orange with neutral greys.
+### Words first. Everything else in their service.
 
-[Open the P9DS reference](https://hugocxl.github.io/p9ds/). One page holds the whole definition: tokens, layouts, thirteen components with live specimens and their markup, page recipes, rules and the agent handoff.
+A design system for **text-led websites**. Large reading type, hairline figures, mono labels and a single orange accent, defined so completely that a person or an agent can build a page that looks right the first time.
 
-## Use the system
+[Read the system](https://hugocxl.github.io/design-system/) · [Hand it to an agent](https://hugocxl.github.io/design-system/#agents) · [Visit the website](https://hugocxl.github.io/design-system/)
 
-Copy `system/` into your site and add:
+[![The design system's reference page](.github/preview.png)](https://hugocxl.github.io/design-system/)
 
-```html
-<link rel="stylesheet" href="system/p9.css">
-<script src="system/theme.js"></script>
-<script type="module" src="system/p9.js"></script>
-```
+## Calm by default
 
-Set `class="p9"` and `data-layout="field"` (home) or `data-layout="plain"` (everything else) on the body. Then build the page from the recipe's components.
+Reading type carries every page, and nothing is set larger than the title. Line drawings explain instead of decorate. The orange accent appears at most twice, so when it shows up, it means something.
 
-## Use it with an agent
+## A closed vocabulary
 
-Give the agent [DESIGN.md](DESIGN.md) at a pinned commit. It contains the same definition in Markdown, with each component's exact markup. For repeatable output, have the agent write a page plan that validates against [system/plan.schema.json](system/plan.schema.json), then render each block from its component markup.
+Thirteen components and six page recipes cover a home page, articles, docs, changelogs, pricing and contact. Every color, size and space is a token, and every rule can be checked in a browser. What isn't in the system isn't part of it.
 
-## Assets and influences
+## Made to feel at home
 
-- Self-hosted WOFF2 fonts from [Vercel Geist](https://vercel.com/font), npm release 1.9.2. See the [font license](system/fonts/Geist-LICENSE.txt).
-- Interactive figures from [Hairline](https://github.com/lucasmarkes/hairline), version 0.5.1. The bundled vanilla module includes all 33 figures. See the [figure license](system/figures/LICENSE).
-- Paper, orange, reading scale, column, field panel and footer from [Superlogical](https://www.superlogical.com/updates/public-testing-beginning). The greys are neutral rather than Superlogical’s green tint, and muted text meets WCAG AA. The field artwork is P9DS's own, in `system/images/`.
+- **Ready for agents.** One file holds the whole definition, so an agent builds the same page from the same plan, every time.
+- **Light and dark.** Every token has both, and pages follow the reader's preference.
+- **Accessible from the start.** Readable contrast, keyboard-friendly controls and layouts that hold from a phone to a wide screen.
+- **Free to use.** Open source, for personal and commercial work.
 
-## Development
+## Part of a stack
 
-Run `python3 -m http.server 8000` and open `http://localhost:8000`. GitHub Pages publishes the root of main.
+Three libraries, designed to work as one.
 
-Specimens in `index.html` are the source of component markup. After editing one, run `npm run sync` to copy it into DESIGN.md. `npm test` lints DESIGN.md, checks that its markup matches the specimens, and runs the browser tests. For a first run, use `npm ci` and `npx playwright install chromium`.
+- **[Icons](https://hugocxl.github.io/icons/)** label what people can do.
+- **[Vectors](https://hugocxl.github.io/vectors/)** illustrate what you mean.
+- **[Design system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+
+## License
+
+The system is [MIT licensed](LICENSE). It ships the [Geist](https://vercel.com/font) typefaces under their [own license](system/fonts/Geist-LICENSE.txt) and the line drawings from [Hairline](https://github.com/lucasmarkes/hairline) under [theirs](system/figures/LICENSE). Its paper, orange and reading scale take after [Superlogical](https://www.superlogical.com/).
+
+Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/design-system/issues).

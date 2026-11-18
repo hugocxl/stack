@@ -1,6 +1,39 @@
 {
-  "name": "p9ds",
-  "private": true,
+  "name": "@hugocxl/design-system",
+  "version": "0.1.0",
+  "description": "A text-led design system for websites: tokens, components, page recipes and rules.",
+  "type": "module",
+  "files": [
+    "system/p9.css",
+    "system/p9.js",
+    "system/theme.js",
+    "system/plan.schema.json",
+    "system/figures",
+    "system/fonts",
+    "system/images",
+    "DESIGN.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    "./p9.css": "./system/p9.css",
+    "./theme.js": "./system/theme.js",
+    "./p9.js": "./system/p9.js",
+    "./plan.schema.json": "./system/plan.schema.json",
+    "./DESIGN.md": "./DESIGN.md",
+    "./system/*": "./system/*",
+    "./package.json": "./package.json"
+  },
+  "style": "./system/p9.css",
+  "license": "MIT",
+  "homepage": "https://hugocxl.github.io/design-system/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocxl/design-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "sync": "node scripts/sync-design.mjs",
     "check": "design.md lint DESIGN.md && node scripts/sync-design.mjs --check",
