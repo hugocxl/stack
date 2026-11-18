@@ -43,7 +43,7 @@ for (const name of pages) {
   assert.equal(body.firstElementChild.className, "p9-masthead", `${name}: masthead first`);
   assert.equal(body.lastElementChild.className, "p9-footer", `${name}: footer last`);
   assert.deepEqual(linkList(doc.querySelector(".p9-masthead")), [
-    "Icons ./",
+    "@hugocxl/icons ./",
     "Browse browse.html",
     "Docs docs.html",
     "GitHub https://github.com/hugocxl/icons",
