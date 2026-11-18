@@ -2,7 +2,7 @@
 
 [Open the living preview](https://hugocxl.github.io/cxl-design-system/).
 
-Start with the [Interface Guidelines](https://hugocxl.github.io/cxl-design-system/system/interface-guidelines.html) when designing a page. The same guide ships in `system/interface-guidelines.html`.
+Start with the [Interface Guidelines](https://hugocxl.github.io/cxl-design-system/#guidelines) when designing a page. The guidelines, examples, and setup live in one article.
 
 Copy `system/` into a website. Link `system/cxl.css` and use its custom properties for page backgrounds, text, surfaces, borders, spacing and typography. Set `data-theme="light"` or `data-theme="dark"` on the HTML element. The preview follows the operating system until the visitor chooses a mode.
 
@@ -14,7 +14,7 @@ body {
 }
 ~~~
 
-Geist Sans carries all prose, headings, and controls. Geist Mono marks code and technical notes. The editorial layout uses 20–28 px prose, a centered 60ch reading column, and paragraph spacing for changes of subject. Load `system/editorial.css` after the base stylesheet and apply `cxl-reading` to the article. Place a figure with the `cxl-wide-figure` class inside the reading column to extend it to the article gutters. The preview keeps a semantic page title available to screen readers.
+Geist Sans carries all prose, headings, and controls. Geist Mono marks code and technical notes. The editorial layout uses fluid prose (about 21 px at 1440 px) with 1.3 line height, a centered 60ch reading column, and paragraph spacing for changes of subject. Load `system/editorial.css` after the base stylesheet and apply `cxl-reading` to the article. Place a figure with the `cxl-wide-figure` class inside the reading column to extend it to the article gutters. The preview keeps a semantic page title available to screen readers.
 
 Use the classes cxl-button, cxl-field and cxl-label for controls and captions. Mount a bundled interactive figure into a sized container from a module script.
 

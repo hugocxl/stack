@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, Apollo-inspired palette, and interactive figures.">
   <title>CXL Design System</title>
-  <link rel="stylesheet" href="system/cxl.css?v=tones">
-  <link rel="stylesheet" href="system/editorial.css?v=weight-up">
-  <link rel="stylesheet" href="preview.css?v=article">
+  <link rel="stylesheet" href="system/cxl.css?v=onepage">
+  <link rel="stylesheet" href="system/editorial.css?v=onepage">
+  <link rel="stylesheet" href="preview.css?v=onepage">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
   <header class="cxl-masthead">
     <a class="cxl-wordmark" href="./">CXL Design System</a>
-    <a href="system/interface-guidelines.html">Guidelines</a>
+    <a href="#guidelines">Guidelines</a>
     <button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button>
   </header>
   <main>
@@ -21,7 +21,7 @@
     <div class="cxl-reading cxl-opening">
       <p class="cxl-introduction">CXL is the design system we use across our websites. <span class="cxl-muted">It brings the writing, drawings, and controls together in one place.</span></p>
       <section id="components" aria-label="Interactive figure">
-        <p>The keyboard below is one of the drawings we use to explain an interface. Move across its keys, then try the other figures. <span class="cxl-muted">Each one responds in place, so you can explore it and carry on reading.</span></p>
+        <p>Move across the keys to try the keyboard, or use the arrows to explore another figure. <span class="cxl-muted">Each drawing responds in place, keeping the example close to the writing.</span></p>
         <figure class="cxl-wide-figure">
           <div id="figure"></div>
           <figcaption><span class="cxl-label cxl-muted" id="caption">Fig. 01 / Keyboard</span>
@@ -34,21 +34,41 @@
           <button class="cxl-button">Preview</button></div><output aria-live="polite"></output>
         </form>
       </section>
-      <section id="foundations" aria-label="Type and color">
-        <p>Across our projects, Geist Sans carries the whole conversation. <span class="cxl-muted">We use the same face for an opening passage, a field label, and the button beside it. The passage gets a generous measure and a regular weight. The button gets a short verb and a little more ink.</span> A line of <span class="mono">Geist Mono</span> marks something you can type, copy, or look up.</p>
-        <p>Our colors come from Apollo. <span class="cxl-muted">In dark mode, a near-black canvas carries soft white text, and a quieter gray sets off captions and supporting details. In daylight, we turn the paper light and bring the ink forward.</span> The reading order holds in either appearance.</p>
+      <div id="guidelines">
+        <h2>Interface guidelines</h2>
+        <p id="purpose">Start with what the reader came for. Explain the subject in a few connected sentences, then bring in an example where it answers a question. <span class="cxl-muted">On a product screen, name the object being edited and keep the action beside it. In an article, a sentence can lead straight into the next thought.</span></p>
+        <p id="layout">Keep prose within a centered column of up to 60ch. Let illustrations reach the page gutters when the details need more room. Use about a line of space between paragraphs, with a longer pause when the subject changes.</p>
+      </div>
+      <section id="type">
+        <h2>Type and color</h2>
+        <p id="foundations">Set the page in Geist Sans. Use weight 300 for reading, 400 for controls, and 600 for headings that need emphasis. <span class="cxl-muted">At 1440 px wide, body text is about 21 px. It scales with the viewport, with a line height of 1.3. Short section labels use the body size.</span> Set commands and technical notes in <span class="mono">Geist Mono</span>.</p>
+        <p id="tones">Give the main thought the foreground color. <span class="cxl-muted">Use the muted tone for context, examples, or a supporting paragraph.</span> Bring the ink forward again when someone needs to make a decision.</p>
         <div class="swatches" aria-label="Apollo palette"></div>
+        <p class="cxl-muted">Apollo’s dark canvas pairs near-black with soft white. Use the shared color tokens for surfaces, text, and fine rules. Light mode reverses the paper and ink. Match the system appearance on first visit and remember the reader’s choice.</p>
       </section>
-
-      <section aria-label="Start a website">
+      <section id="interaction">
+        <h2>Controls and feedback</h2>
+        <p>Use a link to take someone somewhere and a button to perform an action. Keep field labels visible while typing. When an entry needs correction, keep what was typed and explain the fix beside the field. <span class="cxl-muted">“Enter a date after 18 November” tells the reader exactly what to change.</span></p>
+        <p>Group related actions on one surface, as with the figure arrows above. Give icon controls an accessible name and a 44 px target. Keep keyboard focus visible and convey selection with a persistent cue. Honor reduced motion and reduced transparency preferences.</p>
+        <p class="cxl-muted">Account for the whole task. Show progress during a save, prevent duplicate submissions, and announce completion in place. An empty list needs a first action. A failed request needs a way to retry.</p>
+      </section>
+      <section id="figures">
+        <h2>Figures and motion</h2>
+        <p>Choose a drawing that explains the subject. <span class="cxl-muted">A keyboard belongs beside a shortcut list, where the commands can still be selected and copied.</span> Reserve the drawing’s space as the page loads. Describe meaningful imagery, give interactive figures keyboard controls, and provide a usable still view for readers who prefer reduced motion.</p>
+      </section>
+      <section id="delivery">
+        <h2>Build and review</h2>
         <p>Copy the <code>system/</code> folder into your project and load its stylesheet. <span class="cxl-muted">The fonts, figures, and theme tokens travel together.</span></p>
         <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet link">Copy</button></div>
         <output id="copy-result" aria-live="polite"></output>
         <a href="https://github.com/hugocxl/cxl-design-system/tree/main/system">Browse the assets on GitHub ↗</a>
+
+        <p>Load <code>system/theme.js</code> in the document head to apply the saved appearance. For this article layout, include <code>system/editorial.css</code>, set <code>cxl-editorial</code> on the body, and wrap the prose in <code>cxl-reading</code>. Use <code>cxl-wide-figure</code> when an illustration needs the full width.</p>
+        <p class="cxl-muted">Before shipping, complete the principal task with a keyboard. Check both appearances, reduced motion, long labels, phone widths, and 200% zoom. Try the empty, loading, success, and error states.</p>
       </section>
     </div>
   </main>
-  <footer><a href="system/interface-guidelines.html">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
+  <footer><a href="#guidelines">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
   <script type="module" src="preview.js?v=tones"></script>
 </body>
 </html>
