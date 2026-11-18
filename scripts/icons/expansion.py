@@ -79,8 +79,8 @@ def register(api):
           'emergency paramedic medical vehicle rescue')
     api['CATEGORY'] = 'Maps and travel'
     shape('backpack', rr(3, 4, 10, 10.5, 2.5),
-          union(stroke('M5.5 4V2Q8 0 10.5 2V4', 1.1),
-                stroke(rr(5, 8, 6, 4.5, 1), 1.1), line((6, 9.5), (10, 9.5), width=1)),
+          union(stroke('M5.5 4V2.4Q8 .4 10.5 2.4V4'),
+                stroke(rr(5.1, 8.9, 5.8, 3.5)), line((6.25, 6.6), (9.75, 6.6))),
           'bag hiking school luggage travel')
     shape('binoculars',
           union(path('M1.5 12L3.5 4H6.2L7 12Q7 14 4.3 14Q1.5 14 1.5 12Z'),
@@ -88,9 +88,9 @@ def register(api):
           union(lines('M6.5 7H9.5M7 10H9'),
                 stroke('M2 11.5Q4.2 10.3 6.5 11.5M9.5 11.5Q11.8 10.3 14 11.5', 1.1)),
           'watch observe explore search sightseeing')
-    glyph('anchor', stroke('M8 4.7V14M4 7H12M1.5 10Q2.5 14 8 14Q13.5 14 14.5 10M1.5 10V12M1.5 10H3.5M14.5 10V12M14.5 10H12.5'),
-          stroke(circle(8, 3, 1.6), 1.15),
-          'nautical boat harbor mooring sea')
+    fluke = lines('M1.8 9.55Q3.3 13.5 8 13.8','M1.8 12V9.55H4.05')
+    glyph('anchor', union(fluke,api['mirror'](fluke),lines('M8 4.6V13.8','M4.6 6.95H11.4')),
+          stroke(circle(8,3,1.6)), 'nautical boat harbor mooring sea')
 
     api['CATEGORY'] = 'Weather and nature'
     cat_head = path('M2.35 6.95V2.3L6.1 4.1Q8 3.3 9.9 4.1L13.65 2.3V6.95'
@@ -102,7 +102,8 @@ def register(api):
           'animal feline pet kitten')
     cat_body = api['DRAWINGS']['cat'][0]
     api['STYLE_OVERRIDES']['cat'] = {'solid': api['op'](
-        union(cat_body, stroke(cat_body)), cat_face, api['po'].PathOp.DIFFERENCE)}
+        union(cat_body, stroke(cat_body)), union(cat_face,lines('M3.65 9.9L5.35 10.4','M12.35 9.9L10.65 10.4')),
+        api['po'].PathOp.DIFFERENCE)}
     shape('dog',
           path('M4.8 3.6Q8 1.65 11.2 3.6Q13.5 3.3 14.3 7.3Q14.9 10.7 12.3 9.1Q12.3 13.6 8 13.8Q3.7 13.6 3.7 9.1Q1.1 10.7 1.7 7.3Q2.5 3.3 4.8 3.6Z'),
           union(stroke('M4.8 3.6Q5 6.3 3.7 9.1M11.2 3.6Q11 6.3 12.3 9.1', 1.05),
@@ -125,21 +126,18 @@ def register(api):
           lines('M9 4L9 1M11 4L14 2M12 6L15 6M7 6L9 8M5 9L6.5 10.5'),
           'vegetable produce food nutrition')
     shape('banana',
-          path('M3 3Q4 10 10 10Q12 10 13 8L14 8Q13 15 7 14Q1 13 2 5L3 3Z'),
-          stroke('M3.5 7.3Q3.65 12.2 8.5 12.25Q10.75 12.25 12.55 10.05M3 3L4 1.5'),
+          path('M2.65 3.25Q4.65 10 10.25 9.8Q12.45 9.7 13.35 7.6L14.15 7.8C13.3 13.4 9 15.7 5.2 13.55Q1.05 11.25 1.95 5.25Z'),
+          stroke('M4.8 9.5Q6.7 12.8 10.25 11.75M2.65 3.25L3.7 1.65'),
           'fruit food tropical produce')
     shape('cherry', union(circle(4.2, 11.4, 2.65), circle(11.8, 10.1, 2.55)),
           stroke('M4.2 8.75Q4.65 5.1 7.55 3.55Q8.7 6.15 11.8 7.55M7.55 3.55Q9.2 .8 13.7 1.8Q12.1 5.8 7.55 3.55M7.55 3.55Q5.95 .9 2.25 1.9Q3.95 5.6 7.55 3.55'),
           'fruit food cherries produce')
-    # Side elevation: rounded toast above a ruffled lettuce leaf, tomato
-    # slices and a folded cheese corner resting on the lower slice.
+    # Two crusts surround one ruffled lettuce edge.
     toast = path('M1.65 6.45Q1.25 5.8 1.8 5.15C3.5 2.4 5.9 3.15 8 3.35'
                  'C10.45 3.55 12.85 2.8 14.15 4.85Q14.9 5.85 14.35 6.45'
                  'V11.8Q14.35 13.05 13.1 13.05H2.9Q1.65 13.05 1.65 11.8Z')
-    layers = lines('M1.65 6.45Q4.1 5.85 7.1 6.45T14.35 6.45',
-                   'M1.65 8.35Q3 7.45 4.35 8.45T7 8.45Q8.4 7.3 9.85 8.45T12.35 8.5Q13.4 7.7 14.35 8.35',
-                   'M1.65 10.6H6.25L8.35 11.65L10.2 10.6H14.35',
-                   'M4.2 8.35Q4.4 9.7 5.65 10.6M11.25 8.95Q11.6 9.95 12.7 10.6')
+    layers = lines('M1.65 7Q3.2 5.7 4.8 7.05T8 7.05T11.2 7.05T14.35 7',
+                   'M1.65 10.2H14.35')
     shape('sandwich',toast,layers,'food bread snack lunch')
     shape('cookie',
           path('M9.5 1.5Q9 4 11 4Q10.5 6.5 14 6Q16 12 11 14Q4 17 1.5 10Q0 4 5 2Q7 1 9.5 1.5Z'),
@@ -170,11 +168,11 @@ def register(api):
           'fridge freezer kitchen appliance cooling')
 
     api['CATEGORY'] = 'Work and education'
-    shape('hammer',
-          path('M3 4.8L5.3 2.5L7 4.2Q9.5 2.7 11.7 4.6Q13.5 6.2 14 8.1'
+    hammer = path('M3 4.8L5.3 2.5L7 4.2Q9.5 2.7 11.7 4.6Q13.5 6.2 14 8.1'
                'Q11.6 6.2 10.1 6.9L9.5 7.6L4 13.8Q3.3 14.6 2.4 13.8L1.9 13.3'
-               'Q1.3 12.6 2 11.9L8 6.4L6.1 5.2L4.8 6.5Z'),
-          line((7.25, 7.15), (9.05, 8.65)),
+               'Q1.3 12.6 2 11.9L8 6.4L6.1 5.2L4.8 6.5Z')
+    joint = api['op'](line((7,6.95),(9.1,8.65)),hammer,api['po'].PathOp.INTERSECTION)
+    shape('hammer', hammer, joint,
           'tool construction repair carpentry build')
     shape('construction', rr(1.5, 5, 13, 5, .8),
           lines('M4 5L7 10M9 5L12 10M4 10V14M12 10V14'),

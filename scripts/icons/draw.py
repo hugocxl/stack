@@ -169,7 +169,8 @@ for name,angle in [('left',180),('right',0),('up',270),('down',90)]:
     shape('circle-arrow-'+name,circle(),arrow(angle, .62, width=1.25))
     glyph('chevrons-'+name,transform(line((2,4),(6,8),(2,12)),angle),transform(line((9,4),(13,8),(9,12)),angle))
 glyph('chevrons-up-down',line((5,6),(8,3),(11,6)),line((5,10),(8,13),(11,10)))
-glyph('chevrons-in',lines('M2 4l4 4-4 4'),lines('M14 4l-4 4 4 4'))
+inward = line((3.4,5.6),(5.8,8),(3.4,10.4))
+glyph('chevrons-in',inward,mirror(inward))
 shape('home',path('M2 7L8 2 14 7V13Q14 14 13 14H3Q2 14 2 13Z'),stroke('M6 14V9H10V14'),'house dashboard start')
 shape('compass',circle(),poly([(10.7,5.3),(9,9),(5.3,10.7),(7,7)]))
 glyph('external-link',stroke('M9 2H14V7'),stroke('M14 2L7 9M6 3H3Q2 3 2 4V13Q2 14 3 14H12Q13 14 13 13V10'))
@@ -210,7 +211,7 @@ glyph('dot',circle(8,8,4),circle(8,8,1.5))
 glyph('ellipsis',dots((3,8),(8,8),(13,8),r=1.1),circle(8,8,1.1))
 glyph('ellipsis-vertical',dots((8,3),(8,8),(8,13),r=1.1),circle(8,8,1.1))
 shape('search',circle(6.7,6.7,4.7),line((10.3,10.3),(14,14)))
-STYLE_OVERRIDES['search'] = {'solid': union(ring(6.7,6.7,5.325,1.9),line((10.1,10.1),(14,14),width=1.65))}
+STYLE_OVERRIDES['search'] = {'solid': union(ring(6.7,6.7,5.25),line((10.2,10.2),(14,14)))}
 for name,detail in [('zoom-in',plus(6.7,6.7,.75)),('zoom-out',line((4.9,6.7),(8.5,6.7)))]: shape(name,circle(6.7,6.7,4.7),union(line((10.3,10.3),(14,14)),detail))
 shape('filter',path('M2 2H14L9.5 7.5V13L6.5 14V7.5Z'),line((5,4.5),(11,4.5)),'funnel refine')
 glyph('sort-ascending',lines('M2 4H7','M2 8H6','M2 12H5'),lines('M12 13V3','M9 6l3-3 3 3'))
@@ -291,12 +292,22 @@ shoulder_arc = op(stroke('M2.5 13.2Q8 5.6 13.5 13.2'),avatar_frame,po.PathOp.INT
 shape('circle-user',avatar_frame,union(circle(8,5.9,1.8),shoulder_arc))
 shape('users',union(circle(5,4.5,2.2),circle(11.5,5.5,1.8),path('M1 14V12Q1 8.5 5 8.5Q9 8.5 9 12V14ZM9 14V12Q9 10 11.5 10Q15 10 15 13V14Z')),line((9,12),(9,14)))
 # Scale only the closed head and shoulder surfaces, then outline at native weight.
-badge_person = transform(person,scale=.81,dx=-2.15,dy=.1)
-for name, symbol in [('user-plus',plus(12.35,7.35,.77)),
-                     ('user-check',check(12.3,7.35,.64)),
-                     ('user-x',cross(12.35,7.35,.68))]:
+badge_person = union(transform(head,scale=.67,dx=-2.95,dy=-1.1),
+                     transform(shoulders,scale=.67,dx=-2.95,dy=-.25))
+for name, symbol in [('user-plus',plus(12.3,10.6,.874)),
+                     ('user-check',check(12.3,10.6,.735)),
+                     ('user-x',cross(12.3,10.6,.76))]:
     shape(name,badge_person,symbol)
-shape('contact',rr(2,1.5,12,13,2),union(circle(8,6,2),stroke('M5 11Q8 8 11 11'),lines('M1 5H3','M1 11H3')))
+def bound_cover(name, cover, holes, features):
+    tabs = union(*(line((1.45,y),(x,y)) for x,y in holes))
+    shape(name,cover,union(tabs,features))
+    body = DRAWINGS[name][0]
+    punches = union(*(circle(x,y,1.65) for x,y in holes))
+    solid = op(union(body,stroke(body)),union(punches,features),po.PathOp.DIFFERENCE)
+    STYLE_OVERRIDES[name] = {'solid':union(solid,tabs)}
+
+bound_cover('contact',rr(2.7,1.5,11.3,13),[(3.65,5),(3.65,11)],
+            union(circle(8.8,5.7,1.75),stroke('M6.4 11.2Q8.8 8.55 11.2 11.2')))
 glyph('accessibility',circle(8,2.5,1.5),lines('M2 6L8 7 14 6','M8 7V10','M8 10L4 14','M8 10L12 14'))
 wheel = stroke('M4.65 7.65A3.5 3.5 0 1 0 9.5 11.45')
 front_caster = ring(12.25,13.4,1.5)
@@ -319,20 +330,22 @@ shape('key',circle(5,5,3.5),union(circle(5,5,1),stroke('M7.5 7.5L14 14M11 11L13 
 glyph('fingerprint',stroke('M1.8 7.5A6.2 6.2 0 0 1 14.2 7.5Q14.2 11 13 13M3.8 10V7.5A4.2 4.2 0 0 1 12.2 7.5Q12.2 12 10.8 14',1.1),stroke('M5.5 13.5Q7.4 11 6.7 8A1.35 1.35 0 0 1 9.4 8Q10 11 8.5 14M1.8 10Q2.2 13 3 14',1.1))
 shape('eye',path('M1.35 8Q8-2.5 14.65 8Q8 18.5 1.35 8Z'),ring(8,8,3))
 DRAWINGS['eye-off'] = DRAWINGS['eye']
-shape('scan',rr(4,4,8,8,2),lines('M1 5V1H5','M11 1H15V5','M1 11V15H5','M11 15H15V11','M6 8H10'))
+glyph('scan',lines('M2 5.2V3.25Q2 2 3.25 2H5.2','M10.8 2H12.75Q14 2 14 3.25V5.2',
+                   'M14 10.8V12.75Q14 14 12.75 14H10.8','M5.2 14H3.25Q2 14 2 12.75V10.8'),None)
 shape('qr-code',union(rr(1.5,1.5,5,5,1),rr(9.5,1.5,5,5,1),rr(1.5,9.5,5,5,1)),union(rr(3,3,2,2,.3),rr(11,3,2,2,.3),rr(3,11,2,2,.3),lines('M10 10H14V14H12','M10 13V14')))
 shape('badge-check',badge_body(),check(s=.82))
 
 CATEGORY='Time and planning'
 for name,detail in [('clock',line((8,4),(8,8),(11,10))),('alarm-clock',union(line((8,4),(8,8),(11,8)),lines('M2.25 3.45L4.15 1.55','M11.85 1.55L13.75 3.45','M2.95 14.2L4.35 12.5','M11.65 12.5L13.05 14.2')))]: shape(name,circle(8,8,5.8),detail)
-history_return = stroke('M2.05 5.3A6.45 6.45 0 1 1 1.65 9.05M1.65 2.4V5.7H3.75')
-shape('history',circle(8,8,3.8),union(history_return,stroke('M8 6.15V8.2L9.55 9.05')))
+history_return = lines('M1.85 5.55A6.35 6.35 0 1 1 1.65 9.15','M1.85 2.45V5.55H3.45')
+shape('history',circle(8.25,8.25,3.55),union(history_return,stroke('M8.25 6.55V8.45L9.7 9.25')))
 shape('timer',circle(8,9,5),union(line((8,9),(10,6.5)),lines('M6 1H10','M8 1V4','M12 4l1-1')))
 shape('hourglass',path('M3 2H13Q13 6 9.5 8Q13 10 13 14H3Q3 10 6.5 8Q3 6 3 2Z'),lines('M3 2H13','M3 14H13','M6 5H10','M6 12l2-2 2 2'))
 CAL=rr(2,3,12,11,2); CALTOP=lines('M5 1.5V4.5','M11 1.5V4.5','M2 6H14')
 for name,detail in [('calendar',dots((5,9),(8,9),(11,9),(5,12),(8,12))),('calendar-days',dots((5,9),(8,9),(11,9),(5,12),(8,12),(11,12))),('calendar-check',check(8,10,.7)),('calendar-plus',plus(8,10,.8)),('calendar-x',cross(8,10,.7)),('calendar-clock',union(stroke(circle(8,10.05,2.5)),stroke('M8 8.95V10.1L9.05 10.65'))),('calendar-range',union(line((5,10),(11,10),width=1.1),dots((5,10),(11,10),r=1)))]: shape(name,CAL,union(CALTOP,detail))
 shape('list-todo',rr(1.5,2,13,12,2),lines('M3.5 5l1 1 2-2','M9 5H12','M3.5 10l1 1 2-2','M9 10H12'))
-shape('notebook',rr(3,1.5,10.5,13,1.5),lines('M1.5 4H4.5','M1.5 8H4.5','M1.5 12H4.5','M6.5 5H11','M6.5 8H10'))
+bound_cover('notebook',rr(3,1.5,10.5,13),[(4,4),(4,8),(4,12)],
+            lines('M7.25 5H11','M7.25 8H10.25'))
 shape('sticky-note',path('M2 2H14V10L10 14H2Z'),stroke('M10 14V10H14M5 5H11M5 8H9',1.2))
 shape('flag',path('M3 2Q6 0 9 2T14 2V9Q11 11 8 9T3 9Z'),line((3,2),(3,14)))
 shape('bookmark',path('M4 2H12V14L8 11 4 14Z'))
@@ -349,8 +362,11 @@ glyph('skip-forward',poly([(2,3),(10,8),(2,13)]),line((13,3),(13,13)))
 glyph('skip-back',poly([(14,3),(6,8),(14,13)]),line((3,3),(3,13)))
 shape('volume',path('M2 6H5L9 2V14L5 10H2Z'),stroke('M12 4Q16 8 12 12M11 6Q13 8 11 10'))
 shape('volume-off',path('M2 6H5L9 2V14L5 10H2Z'),cross(12.5,8,.6))
-shape('microphone',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M5.5 15H10.5',1.2))
-shape('microphone-off',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M2 2L14 14',1.2))
+mic_body = rr(5.1,1.55,5.8,8.65,2.9)
+mic_stand = lines('M2.65 6.7V7.55A5.35 5.35 0 0 0 13.35 7.55V6.7',
+                  'M8 12.9V14.6','M5.65 14.6H10.35')
+shape('microphone',mic_body,mic_stand)
+DRAWINGS['microphone-off'] = DRAWINGS['microphone']
 headband = stroke('M3.05 7.9V6.8A4.95 4.95 0 0 1 12.95 6.8V7.9')
 earcups = union(rr(1.55,7.9,3.15,5.15),rr(11.3,7.9,3.15,5.15))
 glyph('headphones',headband,earcups)
@@ -377,7 +393,9 @@ glyph('podcast',stroke('M3.4 11A6 6 0 1 1 12.6 11M5.2 8.9A3.5 3.5 0 1 1 10.8 8.9
 
 CATEGORY='Layout'
 WINDOW=rr(1.5,2,13,12,2)
-for name,detail in [('app-window',union(line((1.5,5.5),(14.5,5.5)),dots((4,3.8),(6,3.8),r=.4))),('browser',lines('M1.5 6.65H14.5','M7.4 4.3H11.4')),('panel-left',stroke('M6 2V14')),('panel-right',stroke('M10 2V14')),('panel-top',stroke('M2 6H14')),('panel-bottom',stroke('M2 10H14')),('columns',stroke('M8 2V14')),('rows',stroke('M2 8H14')),('layout-dashboard',stroke('M8 2V14M2 9H8M8 6H14')),('layout-grid',stroke('M8 2V14M2 8H14')),('layout-sidebar',stroke('M6 2V14M2 6H6M2 9H6')),('table',stroke('M2 6H14M2 10H14M6 2V14M10 2V14',1.1))]: shape(name,WINDOW,detail)
+for name,detail in [('app-window',union(line((1.5,5.5),(14.5,5.5)),dots((4,3.8),(6,3.8),r=.4))),('browser',lines('M1.5 6.65H14.5','M7.4 4.3H11.4')),('layout-dashboard',stroke('M8 2V14M2 9H8M8 6H14')),('layout-grid',stroke('M8 2V14M2 8H14')),('layout-sidebar',stroke('M6 2V14M2 6H6M2 9H6')),('table',stroke('M2 6H14M2 10H14M6 2V14M10 2V14',1.1))]: shape(name,WINDOW,detail)
+for name,detail in [('panel-left',stroke('M6 2V14')),('panel-right',stroke('M10 2V14')),('panel-top',stroke('M2 6H14')),('panel-bottom',stroke('M2 10H14')),('columns',stroke('M8 2V14')),('rows',stroke('M2 8H14'))]:
+    shape(name,rr(),detail)
 glyph('maximize',lines('M2 6V2H6','M10 14H14V10'),lines('M10 2H14V6','M2 10V14H6'))
 glyph('minimize',lines('M2 6H6V2','M10 14V10H14'),lines('M10 2V6H14','M2 10H6V14'))
 glyph('fullscreen',lines('M1.5 5V1.5H5','M11 14.5H14.5V11'),lines('M11 1.5H14.5V5','M1.5 11V14.5H5'))
@@ -396,23 +414,27 @@ brush = path('M1.7 14.3Q2.8 13.1 2.6 11.65Q2.35 9.05 5.2 8.65L10.75 2.25'
 ferrule = line((5.15,8.65),(7.35,10.85))
 shape('paintbrush',brush,ferrule)
 shape('palette',path('M8 1.5C0 1.5-1 13 6 14.5Q10 15 9 12Q8 10 11 10C17 11 16 1.5 8 1.5Z'),dots((5,5),(9,4),(12,6),(3.5,8)))
-SWATCH=rr(2,2,4.5,12,1)
-SWATCH_DIAGONAL=SWATCH.transform(.7071,.7071,-.7071,.7071,9.553,-.257)
+SWATCH=rr(2.6,1.95,4,9.4)
+SWATCH_DIAGONAL=SWATCH.transform(.707107,.707107,-.707107,.707107,8.84,.01)
 swatch_front = rr(2,9.55,12,4.4)
+swatch_pivot = circle(4.3,11.75,.62)
 swatch_rear = op(stroke(SWATCH),SWATCH_DIAGONAL,po.PathOp.DIFFERENCE)
 swatch_edges = op(union(swatch_rear,stroke(SWATCH_DIAGONAL)),swatch_front,po.PathOp.DIFFERENCE)
-shape('swatch',union(SWATCH,SWATCH_DIAGONAL,swatch_front),
-      union(swatch_edges,stroke(swatch_front),circle(4.35,11.75,.65)))
-STYLE_OVERRIDES['swatch'] = {'stroke':union(swatch_edges,stroke(swatch_front),stroke(circle(4.35,11.75,1.05)))}
+swatch_ink = union(swatch_edges,stroke(swatch_front),swatch_pivot)
+shape('swatch',union(SWATCH,SWATCH_DIAGONAL,swatch_front),swatch_ink)
+STYLE_OVERRIDES['swatch'] = {'stroke':swatch_ink}
 glyph('crop',stroke('M4 1V12H15'),stroke('M1 4H12V15'))
 shape('ruler',transform(rr(1.5,5,13,6,1),-45),transform(lines('M4 5V7','M7 5V8','M10 5V7'),-45))
 glyph('scissors',union(ring(4,4,2.5,1.35),ring(4,12,2.5,1.35)),lines('M6 5.5L14 13','M6 10.5L14 3'))
 nib = path('M2.1 13.95L4.2 5.3L9.15 2.05L13.95 6.85L10.75 11.9Z')
 shape('pen-tool',nib,union(circle(7.85,8.15,1.15),line((2.1,13.95),(7.35,8.65))))
-dropper = path('M1.75 14.1L2.85 10.05L9.75 3.15C12.55 .35 15.7 3.5 12.9 6.3L6 13.2Z')
-collar = line((7.25,4.55),(11.5,8.8))
-shape('pipette', dropper, collar)
-STYLE_OVERRIDES['pipette'] = {'solid': op(union(dropper, stroke(dropper)), collar, po.PathOp.DIFFERENCE)}
+# Fit the bulb, collar and glass tube on one axis before tipping the tool.
+bulb = transform(path('M5.85 6.55V3.15C5.85 .25 10.15 .25 10.15 3.15V6.55Z'),45)
+tube = transform(path('M6.55 6.55H9.45V11.55Q9.45 12.55 8 13.25Q6.55 12.55 6.55 11.55Z'),45)
+tip = transform(line((8,13.25),(8,14.85)),45)
+collar = transform(line((4.65,6.55),(11.35,6.55)),45)
+shape('pipette',union(bulb,tube),union(collar,tip))
+STYLE_OVERRIDES['pipette'] = {'solid':union(bulb,stroke(bulb),stroke(tube),collar,tip)}
 bold_body = path('M3.1 1.65H8.65C13.15 1.65 14 6.1 11.2 7.65'
                  'C14.85 9.1 13.95 14.35 9.25 14.35H3.1Z')
 bold_counters = path('M5.9 4.1V6.65H8.25C10.75 6.65 10.75 4.1 8.25 4.1Z'
@@ -464,7 +486,7 @@ shape('monitor',rr(1.5,2,13,9,1.5),lines('M8 11V14','M5 14H11','M2 8H14'))
 laptop_screen = rr(3.15,2.35,9.7,8.55)
 laptop_base = path('M3.15 10.9H12.85L14.45 13.45H1.55Z')
 shape('laptop',union(laptop_screen,laptop_base),line((3.15,10.9),(12.85,10.9)))
-STYLE_OVERRIDES['laptop'] = {'solid':union(stroke(laptop_screen),laptop_base,stroke(laptop_base))}
+STYLE_OVERRIDES['laptop'] = {'solid':union(laptop_screen,stroke(laptop_screen),stroke(laptop_base))}
 shape('phone',rr(4,1,8,14,2),union(line((6.5,3),(9.5,3)),line((7,13),(9,13))))
 shape('phone-android',rr(4,1,8,14,1.5),union(circle(8,3,.5),dots((6,13),(8,13),(10,13),r=.4)))
 shape('simulator',rr(4,1,8,14,2),union(poly([(6.5,5.5),(10,8),(6.5,10.5)]),line((7,13),(9,13))))
@@ -485,7 +507,8 @@ shape('hard-drive',rr(1.5,3,13,10,2),union(line((2,9),(14,9)),dots((11,11),(13,1
 shape('battery',rr(1,4,12,8,1.5),union(rr(3,6,6,4,.5),line((15,6.5),(15,9.5))))
 shape('battery-charging',rr(1,4,12,8,1.5),union(poly([(8,4.8),(4,8.5),(7,8.5),(5.5,11.5),(10,7.5),(7,7.5)]),line((15,6.5),(15,9.5))))
 glyph('wifi',stroke('M1 5Q8-1 15 5M3.5 8Q8 4 12.5 8M6 11Q8 9 10 11'),circle(8,13,1))
-glyph('bluetooth',stroke('M7 1.5V14.5L12 10.5 3 3.5'),stroke('M7 1.5L12 5.5 3 12.5'))
+glyph('bluetooth',stroke('M7.55 1.3V14.7L10.9 11.35L3.55 4'),
+      stroke('M7.55 1.3L10.9 4.65L3.55 12'))
 shape('network',union(rr(5.5,1,5,4,1),rr(1,11,5,4,1),rr(10,11,5,4,1)),stroke('M8 5V8H3.5V11M8 8H12.5V11'))
 shape('git-branch',union(circle(4,3,1.5),circle(4,13,1.5),circle(12,3,1.5)),stroke('M4 4.5V11.5M12 4.5V5Q12 9 4 9',1.25))
 shape('git-merge',union(circle(3.5,3,1.5),circle(3.5,13,1.5),circle(12.5,3,1.5)),stroke('M3.5 4.5V11.5M12.5 4.5V5Q12.5 8.5 6.5 8.5M8.5 6.5L6.5 8.5 8.5 10.5',1.2))
@@ -536,7 +559,7 @@ pie = path('M7 2A5.9 5.9 0 1 0 14 9H7Z')
 quarter = path('M9.3 1.7A6 6 0 0 1 14.3 6.7H9.3Z')
 shape('chart-pie', union(pie, quarter))
 shape('chart-donut',ring(8,8,6,2.5),path('M8 2A6 6 0 0 1 14 8H10.5A2.5 2.5 0 0 0 8 5.5Z'))
-shape('activity',WINDOW,line((1.5,8),(5,8),(7,4),(9,12),(11,8),(14.5,8)))
+glyph('activity',line((1.5,8.4),(4.7,8.4),(6.85,2.8),(9.15,13.2),(11.25,8.4),(14.5,8.4)),None)
 shape('workflow',union(poly([(8,1),(11,4),(8,7),(5,4)]),rr(1,11,5,4,1),rr(10,11,5,4,1)),stroke('M8 7V9H3.5V11M8 9H12.5V11'))
 compare_end = union(ring(3.45,12.25,2.05,1.1),
                     stroke('M3.45 10.25V5.6Q3.45 3.65 5.45 3.65H7.2M5.3 1.75L7.2 3.65L5.3 5.55',1.25))
@@ -606,8 +629,8 @@ windows = union(*(rr(x,y,2.35,2.35) for x in (4.75,8.9) for y in (3.25,6.55)))
 shape('building',building,union(windows,line((3,9.95),(13,9.95))))
 shape('landmark',path('M1 6L8 1.5 15 6Z'),lines('M1 14H15','M3 8V12','M8 8V12','M13 8V12'))
 shape('presentation',rr(1.5,2,13,9,1),lines('M8 11V15','M5 15L8 12 11 15','M4 8L7 5 9 7 12 4'))
-shape('book',rr(2.85,1.65,10.3,12.7),
-      stroke('M2.85 11.45H13.15M5.4 1.85V11.45M7.6 5.55H10.85'))
+shape('book',rr(3,1.7,10,12.6),
+      lines('M5.6 1.8V11.4','M13 11.4H5.3Q3.1 11.4 3.1 13','M7.9 5.55H10.85'))
 shape('book-open',path('M8 3Q4 1 1.5 2V13Q4 12 8 14Q12 12 14.5 13V2Q12 1 8 3Z'),line((8,3),(8,14)))
 shape('graduation-cap',path('M1 6L8 2 15 6 8 10Z'),stroke('M4 8V11Q8 15 12 11V8M15 6V11'))
 shape('award',circle(8,6,4.5),union(path('M5 10L3 15 8 13 13 15 11 10Z'),circle(8,6,1.5)))
@@ -615,8 +638,8 @@ shape('medal',circle(8,10,4.5),union(path('M3 1H6L8 5 10 1H13L10 6H6Z'),circle(8
 shape('lightbulb-on',DRAWINGS['lightbulb'][0],union(DRAWINGS['lightbulb'][1],lines('M1 2L2 3','M14 3L15 2')))
 shape('flask',path('M5 1H11V3H10V7L14 13Q15 15 12 15H4Q1 15 2 13L6 7V3H5Z'),union(line((5,10),(11,10)),dots((7,12),(10,13),r=.5)))
 shape('test-tube',path('M4.5 1.5H11.5V10.5A3.5 3.5 0 0 1 4.5 10.5Z'),lines('M3.5 1.5H12.5','M4.5 8H11.5','M9 4.5H11'))
-orbit = stroke('M8 1.55A2.75 6.45 0 1 0 8 14.45A2.75 6.45 0 1 0 8 1.55Z')
-glyph('atom',union(orbit,transform(orbit,60),transform(orbit,-60)),circle(8,8,.7))
+orbit = stroke('M8 1.35A2.9 6.65 0 1 0 8 14.65A2.9 6.65 0 1 0 8 1.35Z')
+glyph('atom',union(transform(orbit,45),transform(orbit,-45)),circle(8,8,.75))
 rocket_body = path('M5.3 10.7C4.7 5.7 8.4 1.65 14.25 1.65C14.3 7.65 10.45 11.3 5.3 10.7Z')
 rear_fins = path('M5.8 5.95Q2.4 6.4 1.95 10.1L5.3 9.5Z'
                  'M10.1 10.2Q9.55 13.7 5.85 14.1L6.55 10.75Z')
@@ -687,9 +710,9 @@ shape('bus', rr(2.55,1.7,10.9,11.2), union(
     stroke('M2.55 6.7H13.45M2.55 9.85H13.45M5.6 1.7V6.7M10.4 1.7V6.7'
            'M4.4 12.9V14.5M11.6 12.9V14.5'),dots((5.1,8.25),(10.9,8.25),r=.53)))
 shape('train',rr(3,1,10,12,3),union(stroke('M3 6H13M8 1V6M5 13L3 15M11 13L13 15'),dots((5.5,9.5),(10.5,9.5),r=.8)))
-glyph('bicycle',union(ring(3.95,10.95,3.2),ring(12.05,10.95,3.2)),
-      stroke('M3.95 10.95L6.9 5.55H10.75L7.85 10.95H3.95M7.85 10.95L5.95 4H4.45'
-             'M12.05 10.95L10.2 2.55H12.8'))
+glyph('bicycle',union(ring(3.8,11.05,2.95),ring(12.2,11.05,2.95)),
+      lines('M3.8 11.05L6.15 6.1L8.1 9.05L10.95 5.4',
+            'M6.15 6.1L5.6 4.25H3.95','M12.2 11.05L10.45 2.8H12.85'))
 plane_body = path('M6.55 3.55Q6.55 1.35 8 1.35Q9.45 1.35 9.45 3.55V6.35'
                   'L14.55 9.45V11.55L9.35 9.65V12.05L11.1 13.95V14.35L8 13.45'
                   'L4.9 14.35V13.95L6.65 12.05V9.65L1.45 11.55V9.45L6.55 6.35Z')
@@ -698,6 +721,11 @@ hull = path('M1.65 8.6L8 6.55L14.35 8.6L12.45 11.55H3.55Z')
 cabin = path('M4.3 7.7V3.65H11.7V7.7L8 6.55Z')
 wave = stroke('M1.7 14.1Q3.25 12.85 4.85 14.1T8 14.1Q9.55 12.85 11.15 14.1T14.3 14.1')
 shape('ship',union(hull,cabin),union(stroke('M1.65 8.6L8 6.55L14.35 8.6M8 3.65V6.55'),stroke('M6.9 3.65V1.65H9.1V3.65'),wave))
+bridge_windows = path('M4.85 4.2H7.45V6.15L4.85 7ZM8.55 4.2H11.15V7L8.55 6.15Z')
+bow_seam = line((2.6,8.8),(8,7.1),(13.4,8.8))
+ship_body = DRAWINGS['ship'][0]
+ship_shell = union(ship_body,stroke(ship_body),stroke('M6.9 3.65V1.65H9.1V3.65'))
+STYLE_OVERRIDES['ship'] = {'solid':union(op(ship_shell,union(bridge_windows,bow_seam),po.PathOp.DIFFERENCE),wave)}
 shape('suitcase',rr(2.65,4.15,10.7,9.45),stroke(
     'M5.95 4.15V1.8H10.05V4.15M5.55 6.5V11.25M10.45 6.5V11.25M4.65 13.6V14.7M11.35 13.6V14.7'))
 ticket = path('M1.55 3H14.45V5.95C11.1 6.15 11.1 9.85 14.45 10.05V13H1.55'
@@ -716,9 +744,9 @@ CATEGORY='Weather and nature'
 shape('sun',circle(8,8,3.5),lines('M8 1V2','M8 14V15','M1 8H2','M14 8H15','M3 3l1 1','M12 12l1 1','M3 13l1-1','M12 4l1-1'))
 shape('sunrise',path('M3 12A5 5 0 0 1 13 12Z'),lines('M1 12H15','M3 14.5H13','M8 1.3V4.8','M5.7 3.6L8 1.3 10.3 3.6','M1 8H2','M14 8H15'))
 shape('sunset',path('M3 12A5 5 0 0 1 13 12Z'),lines('M1 12H15','M3 14.5H13','M8 1.3V4.8','M5.7 2.5L8 4.8 10.3 2.5','M1 8H2','M14 8H15'))
-for name,detail in [('cloud-rain',lines('M4 12L3 15','M8 12L7 15','M12 12L11 15')),('cloud-snow',dots((4,13),(8,14),(12,13))),('cloud-lightning',stroke('M8.75 10.4L6.5 12.65H9.35L7.4 14.75')),('cloud-fog',lines('M2.65 11.55H13.35','M4.2 14.15H11.8'))]:
+for name,detail in [('cloud-rain',lines('M4 12L3 15','M8 12L7 15','M12 12L11 15')),('cloud-snow',lines('M8 11.1V14.7','M6.44 12L9.56 13.8','M6.44 13.8L9.56 12')),('cloud-lightning',stroke('M8.75 10.4L6.5 12.65H9.35L7.4 14.75')),('cloud-fog',lines('M2.65 11.55H13.35','M4.2 14.15H11.8'))]:
     # Make room beneath the cloud for the two fog bands or the bolt.
-    if name in {'cloud-fog','cloud-lightning'}:
+    if name in {'cloud-fog','cloud-lightning','cloud-snow'}:
         cloud = path('M4.1 8.95C.65 8.95 .6 4.5 4.05 4.45C4.9 .3 11.05 .45 11.85 4.5C15.65 4.7 15.55 8.95 12 8.95Z')
     else:
         cloud = transform(DRAWINGS['cloud'][0],0,.85,0,-2)
@@ -746,7 +774,7 @@ sprout_leaves = path('M8 9.25C4.35 9.3 2.4 7.15 2.15 4.55C5.6 4.55 7.75 6.35 8 9
 shape('sprout',sprout_leaves,line((8,9.25),(8,14.05)))
 flame = path('M8.25 1.55C8.1 5.15 3.2 6.25 2.85 10.15C2.3 15.7 12.75 16 13.15 10.3'
              'Q13.45 7.15 11.4 4.85Q11.45 7.25 9.65 7.85Q8.5 5.75 8.25 1.55Z')
-ember = path('M7.7 9.15C7.35 10.4 6.25 10.95 6.25 12.05C6.25 13.75 9.65 13.75 9.65 12.1Q9.65 10.8 7.7 9.15Z')
+ember = path('M7.35 8.05C7.05 9.3 5.85 9.85 5.85 10.9C5.85 12.8 9.4 12.8 9.4 10.9Q9.4 9.75 7.35 8.05Z')
 shape('flame', flame, stroke(ember))
 RECYCLE_ARM=stroke('M5 4L7 1.7Q8 1 8.7 2.2L11 6M8 5.3L11 6 11.5 3',1.15)
 glyph('recycle',union(RECYCLE_ARM,transform(RECYCLE_ARM,120)),transform(RECYCLE_ARM,240))
@@ -780,8 +808,8 @@ key_head = circle(5.35,5.4,3.5)
 key_bit = path('M6.7 8.15L8.15 6.7L14.3 12.85V14.2H11.15V11.95H8.95V10.2Z')
 shape('key-round', union(key_head,key_bit), stroke(circle(5.15,5.2,1.5)))
 shape('plug',rr(4,5,8,5,2),stroke('M5.5 1V5M10.5 1V5M8 10V15'))
-fan_blade = path('M7.6 7.45C6.35 6.8 5.25 5.2 6.35 4.25C7.75 3.05 9.8 4.1 9.2 5.7Q8.8 6.8 8.45 7.55Z')
-fan_blades = union(*(transform(fan_blade,i*120) for i in range(3)),circle(8,8,.85))
+fan_blade = path('M7.25 8.35C6.2 7.5 5.3 5.4 6.15 4.45C7.3 3.1 9.85 3.75 9.35 5.4Q9.05 6.55 8.35 8.4Z')
+fan_blades = union(*(transform(fan_blade,i*120) for i in range(3)),circle(8,8,1.05))
 shape('fan',circle(),fan_blades)
 shape('gamepad',path('M4 4H12Q14 4 15 11Q16 15 12 13L10 11H6L4 13Q0 15 1 11Q2 4 4 4Z'),union(plus(5,8,.65),dots((10.5,7),(12.5,9),r=.7)))
 shape('puzzle',DRAWINGS['extension'][0])
@@ -812,11 +840,55 @@ CATEGORY='Files and folders'
 for name,angle in [('folder-upload',270),('folder-download',90)]:shape(name, path('M1.6 4Q1.6 3 2.7 3H6L8 5H13.3Q14.4 5 14.4 6.1V12.5Q14.4 14 13 14H3Q1.6 14 1.6 12.5Z'), arrow(angle, .48, dy=1.45, width=1.25))
 for name,angle in [('file-upload',270),('file-download',90)]:shape(name,FILE,union(FOLD,arrow(angle, .43, dx=-.45, dy=2.05, width=1.2)))
 CATEGORY='Communication'
-for name,detail in [('mail-check',check(8,9.8,.55)),('mail-plus',plus(8,9.8,.6))]:
-    shape(name,rr(1.5,3,13,10,2),union(line((2,4),(8,6.3),(14,4)),detail))
-shape('bell-plus',BELL,union(plus(8,7,.7),line((6,14),(10,14))))
+def components(p):
+    """Connected filled components, keeping counters with their outer contour."""
+    contours=list(po.simplify(p).contours)
+    outer=[c for c in contours if not c.clockwise]
+    for hole in (c for c in contours if c.clockwise):
+        parents=[i for i,c in enumerate(outer) if op(c,hole,po.PathOp.INTERSECTION).area >= hole.area*.999]
+        if parents:
+            i=min(parents,key=lambda i:outer[i].area)
+            outer[i]=op(outer[i],hole,po.PathOp.DIFFERENCE)
+    return outer
+
+def solid_body(body, rim, detail):
+    field = union(body,rim)
+    interior = op(field,stroke(field,1.8),po.PathOp.DIFFERENCE)
+    structure, counters = [], []
+    for part in components(detail):
+        exterior = op(part,field,po.PathOp.DIFFERENCE)
+        (structure if exterior.area > part.area*.12 else counters).append(part)
+    cut = op(union(*counters),interior,po.PathOp.INTERSECTION)
+    return union(op(field,cut,po.PathOp.DIFFERENCE),*structure)
+
+def corner_mark(name, body, detail, mark, clearance, *, return_edge=False):
+    # Compose the base first, so occlusion preserves counters in each style.
+    shape(name,body,union(detail,mark))
+    rim = stroke(body)
+    host = union(rim,detail)
+    ink = op(host,clearance,po.PathOp.DIFFERENCE)
+    if return_edge:
+        ink = union(ink,stroke(op(body,clearance,po.PathOp.DIFFERENCE)))
+    ink = union(ink,mark)
+    surface = op(body,union(ink,clearance),po.PathOp.DIFFERENCE)
+    solid = solid_body(body,rim,detail)
+    STYLE_OVERRIDES[name] = {'duotone':[(surface,.24),(ink,1)],'stroke':ink,
+                             'solid':union(op(solid,clearance,po.PathOp.DIFFERENCE),mark)}
+
+mail_body, flap = DRAWINGS['mail'][:2]
+mail_slot = circle(12.75,12.25,4.6)
+for name, mark in [('mail-plus',plus(12.75,12.25)),('mail-check',check(12.75,12.25,.68))]:
+    corner_mark(name,mail_body,flap,mark,mail_slot,return_edge=True)
+
+bell_body = transform(DRAWINGS['bell'][0],scale=.75,dx=-1.65,dy=-1.25)
+bell_parts = stroke(transform(path('M6 14H10M8 1V2'),scale=.75,dx=-1.65,dy=-1.25))
+bell_mark = plus(12.45,11.35)
+bell_gap = union(bell_mark,stroke(bell_mark,3.2))
+corner_mark('bell-plus',bell_body,bell_parts,bell_mark,bell_gap,return_edge=True)
 CATEGORY='Media'
-shape('image-plus',DRAWINGS['image'][0],union(line((2,12),(6,8),(10,12)),plus(11,5,.65)))
+image_body, scene = DRAWINGS['image'][:2]
+image_mark = plus(12,11.8,.95)
+corner_mark('image-plus',image_body,scene,image_mark,circle(12,11.8,3.5))
 for name,angle in [('fast-forward',0),('rewind',180)]:
     glyph(name,transform(poly([(1.5,3),(8,8),(1.5,13)]),angle),transform(poly([(8,3),(14.5,8),(8,13)]),angle))
 CATEGORY='Security'
@@ -833,8 +905,8 @@ CATEGORY='Time and planning'
 shape('bookmark-check',path('M4 2H12V14L8 11 4 14Z'),check(8,6,.55))
 shape('calendar-heart',CAL,union(CALTOP,path('M8 12.5L5 10C3.5 8 6 7 8 9C10 7 12.5 8 11 10Z')))
 CATEGORY='Finance and commerce'
-shape('yen', circle(), stroke('M5.05 4.8L8 9.25L10.95 4.8M8 9.25V12'
-                              'M5.7 6.9H10.3M5.7 10.05H10.3'))
+shape('yen', circle(), lines('M5.2 4.6L8 7.65L10.8 4.6','M8 7.65V12',
+                             'M5.65 7.65H10.35','M5.65 9.85H10.35'))
 
 # Original coverage additions share the same authoring geometry and exports.
 from expansion import register as register_expansion
@@ -883,17 +955,6 @@ def svg_comparison_key(text):
     return re.sub(r' d="([^"]*)"',sort_closed_contours,text)
 
 
-def components(p):
-    """Connected filled components, keeping counters with their outer contour."""
-    contours=list(po.simplify(p).contours)
-    outer=[c for c in contours if not c.clockwise]
-    for hole in (c for c in contours if c.clockwise):
-        parents=[i for i,c in enumerate(outer) if op(c,hole,po.PathOp.INTERSECTION).area >= hole.area*.999]
-        if parents:
-            i=min(parents,key=lambda i:outer[i].area)
-            outer[i]=op(outer[i],hole,po.PathOp.DIFFERENCE)
-    return outer
-
 def stacked_solid(back,front,detail=None):
     rear=union(back,stroke(back,1.25));fore=union(front,stroke(front,1.25))
     clearance=union(fore,stroke(fore,1.5))
@@ -936,18 +997,7 @@ def main():
             mono=union(outer,d)
 
         if outline:
-            filled=union(b,outer)
-            # Structural details remain attached. Only interior details become
-            # counters; never XOR a handle, stem, wheel or connector off its body.
-            interior=op(filled,stroke(filled,1.8),po.PathOp.DIFFERENCE)
-            structural=[];counters=[]
-            for component in components(d):
-                exterior=op(component,filled,po.PathOp.DIFFERENCE)
-                if exterior.area > component.area*.12:
-                    structural.append(component)
-                else: counters.append(component)
-            cut=op(union(*counters),interior,po.PathOp.INTERSECTION)
-            solid=union(op(filled,cut,po.PathOp.DIFFERENCE),*structural)
+            solid=solid_body(b,outer,d)
         else: solid=union(b,d)
         if name in {'skip-forward','skip-back'}:
             mono=union(stroke(b,1.15),d)
@@ -960,15 +1010,16 @@ def main():
             solid=op(union(b,outer,d),wrist,po.PathOp.DIFFERENCE)
         if name == 'film':
             sprockets=union(*(rr(x,y,1.65,1.95) for x in (2.5,11.85) for y in (3,7.05,11.1)))
-            solid=op(union(b,outer),sprockets,po.PathOp.DIFFERENCE)
-        if name == 'layout-grid':
-            solid=union(*(rr(x,y,5.75,5.45,1) for x in (1.5,8.75) for y in (1.9,8.65)))
+            frames=union(rr(5.55,3,4.9,4.45),rr(5.55,8.55,4.9,4.45))
+            solid=op(union(b,outer),union(sprockets,frames),po.PathOp.DIFFERENCE)
         if name == 'chart-area':
             mono=union(b,stroke(d,1.05))
         if name == 'chart-bar':
             # Keep outlined columns clear of both axes at small sizes.
             mono=union(b,stroke(chart_columns))
-        if name == 'fan': mono=union(outer,stroke(d,1.05))
+        if name == 'fan':
+            vanes = union(*(transform(stroke(fan_blade),i*120) for i in range(3)))
+            mono=union(outer,vanes,circle(8,8,1.3))
 
         if name == 'chart-donut':
             # Preserve the central aperture and quarter-sector divisions.
@@ -983,7 +1034,7 @@ def main():
             solid=union(outer,d)
         if name in {'user-plus','user-check','user-x'}:
             # A badge floats beside the person; it must not fuse to a shoulder.
-            clearance=union(d,stroke(d,1.8))
+            clearance=union(d,stroke(d,2.05))
             duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo[:-1]]+[(union(op(outer,clearance,po.PathOp.DIFFERENCE),d),1)]
             mono=union(op(outer,clearance,po.PathOp.DIFFERENCE),d)
             solid=union(op(union(b,outer),clearance,po.PathOp.DIFFERENCE),d)
@@ -1002,7 +1053,9 @@ def main():
             solid=op(solid,stroke('M8 6V13.6M2.2 9H13.8',1.15),po.PathOp.DIFFERENCE)
         if name == 'construction':
             # Both hazard stripes remain counters, independently of the legs.
-            solid=op(union(b,outer,lines('M4 10V14','M12 10V14')),
+            field=union(b,outer)
+            interior=op(field,stroke(field,1.8),po.PathOp.DIFFERENCE)
+            solid=op(union(field,lines('M4 10V14','M12 10V14')),
                      op(lines('M4 5L7 10','M9 5L12 10'),interior,po.PathOp.INTERSECTION),po.PathOp.DIFFERENCE)
         if name == 'sofa':
             solid=op(union(b,outer,d),union(sofa_seam, line((8,3.3),(8,10))),po.PathOp.DIFFERENCE)
@@ -1022,10 +1075,6 @@ def main():
             solid=union(op(union(b,outer),clearance,po.PathOp.DIFFERENCE),foreground)
         if name in {'clipboard', 'clipboard-check'}:
             solid=op(solid,stroke('M5 2.9V4.1Q5 5.1 6 5.1H10Q11 5.1 11 4.1V2.9',1.05),po.PathOp.DIFFERENCE)
-        if name in {'notebook', 'contact'}:
-            bindings = [4,8,12] if name == 'notebook' else [5,11]
-            slots = union(*(line((2.7,y+1.1),(4.45,y+1.1),width=1.05) for y in bindings))
-            solid=op(solid,slots,po.PathOp.DIFFERENCE)
         if name == 'archive':
             solid=op(union(b,outer),d,po.PathOp.DIFFERENCE)
         if name == 'agents':
@@ -1041,8 +1090,8 @@ def main():
         if name == 'swatch':
             rear=op(SWATCH,union(SWATCH_DIAGONAL,stroke(SWATCH_DIAGONAL,1.8)),po.PathOp.DIFFERENCE)
             fan=union(rear,SWATCH_DIAGONAL)
-            front=rr(2,9.5,12,4.5,1)
-            solid=union(op(fan,union(front,stroke(front,1.8)),po.PathOp.DIFFERENCE),op(front,circle(4.25,11.75,.65),po.PathOp.DIFFERENCE))
+            solid=union(op(fan,union(swatch_front,stroke(swatch_front,2.1)),po.PathOp.DIFFERENCE),
+                        op(swatch_front,swatch_pivot,po.PathOp.DIFFERENCE))
         if name == 'store':
             scallops=stroke('M1.5 6Q1.5 8 3.7 8Q5.8 8 5.8 6Q5.8 8 8 8Q10.2 8 10.2 6Q10.2 8 12.3 8Q14.5 8 14.5 6')
             reveal=op(scallops,rr(2.05,5.4,11.9,3.6,0),po.PathOp.INTERSECTION)
@@ -1052,6 +1101,8 @@ def main():
             clearance=line((2,2),(14,14),width=3.2 if name in {'bluetooth-off','camera-off','eye-off'} else 2.65)
             duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo]+[(slash,1)]
             mono=union(op(mono,clearance,po.PathOp.DIFFERENCE),slash)
+            if name == 'eye-off':
+                solid=op(union(b,outer),circle(8,8,3),po.PathOp.DIFFERENCE)
             solid=union(op(solid,clearance,po.PathOp.DIFFERENCE),slash)
         overrides=STYLE_OVERRIDES.get(name,{})
         duo=overrides.get('duotone',duo)

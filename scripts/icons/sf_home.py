@@ -49,11 +49,11 @@ def register(api):
 
     # The dial, drum and curved lower lip stay legible on a narrow housing.
     dryer_front = rr(2.65, 1.35, 10.7, 13.3)
-    drum = circle(8, 10, 3.1)
+    drum = circle(8,10.1,2.5)
     s('dryer', dryer_front,
-      union(line((2.7, 5.3), (13.3, 5.3)), st(circle(5.1, 3.35, 1.05)),
-            line((9.4, 3.35), (11, 3.35)), st(drum),
-            st('M5.05 10.9Q8 9.45 10.95 10.9')),
+      union(line((2.7,5.5),(13.3,5.5)),circle(5.1,3.45,.55),
+            line((9.4,3.45),(11,3.45)),st(drum),
+            st('M5.65 10.95Q8 9.65 10.35 10.95')),
       'laundry tumble dry clothes heat appliance')
     s('thermostat', circle(8, 8, 6),
       union(st('M5.7 5.4V9A1.65 1.65 0 1 0 7.8 9V5.4A1.05 1.05 0 0 0 5.7 5.4Z'),
