@@ -83,11 +83,16 @@ def register(api):
                         else 'M6 4L10 8L6 12')
         return st(transform(skeleton, angle, scale, x-8, y-8))
 
+    def base_ink(name):
+        body, details, outlined = api['DRAWINGS'][name][:3]
+        return union(outline(body) if outlined else body, details)
+
     def slash(p, name):
         diagonal=line((2,2),(14,14))
         # Clear a hairline either side of the cancellation stroke, preserving
         # the contour behind it without a dense black intersection.
-        g(name, sub(p, line((2,2),(14,14),width=2.7)), diagonal)
+        remaining = sub(p, line((2,2),(14,14),width=3.2))
+        g(name, *(part for part in api['components'](remaining) if part.area >= .6), diagonal)
 
     def cancelled(name, base, start, end):
         g(name, sub(base, line(start, end, width=3.2)), line(start, end))
@@ -383,6 +388,8 @@ def register(api):
     for cols,rows in [(2,2),(3,2),(3,3)]:
         if cols == rows == 3:
             s('grid-3x3', rr(), st('M6 2V14M10 2V14M2 6H14M2 10H14'))
+        elif cols == 3:
+            s('grid-3x2',rr(),st('M6 2V14M10 2V14M2 8H14'))
         else:
             s(f'grid-{cols}x{rows}',cells(cols,rows))
     grid_frame = rr()
@@ -392,8 +399,9 @@ def register(api):
         body=union(rect(2,2,4.8,4.8),rect(9.2,2,4.8,4.8),rect(2,9.2,4.8,4.8))
         s('grid-2x2-'+status,body,detail)
     for count in (3,4):
-        s('columns-'+str(count),cells(count,1,gap=1.8))
-        s('rows-'+str(count),cells(1,count,gap=1.8))
+        verticals = union(*(line((2+i*12/count,2),(2+i*12/count,14)) for i in range(1,count)))
+        s('columns-'+str(count),rr(),verticals)
+        s('rows-'+str(count),rr(),transpose(verticals))
     gear_center = (11.8, 11.8)
     teeth = []
     for tooth in range(6):
@@ -401,7 +409,8 @@ def register(api):
             angle = (tooth + phase) * math.pi / 3
             teeth.append((11.8 + radius * math.cos(angle), 11.8 + radius * math.sin(angle)))
     cog = sub(poly(teeth), circle(*gear_center, 1.15))
-    badged('columns-3-cog', cells(3, 1, gap=1.8), empty,
+    columns, dividers = api['DRAWINGS']['columns-3'][:2]
+    badged('columns-3-cog', columns, dividers,
            cog, circle(*gear_center, 4.45))
     s('layout-panel-left',union(rect(2,2,4,12),rect(8,2,6,5),rect(8,9,6,5)))
     s('layout-panel-top',union(rect(2,2,12,4),rect(2,8,5,6),rect(9,8,5,6)))
@@ -430,11 +439,11 @@ def register(api):
     for vertical in (False,True):
         for end in (False,True):
             body=rect(4.5 if not end else 1.5,2,8,12,1.3)
-            if end: extras=union(line((11.5,2),(11.5,14),width=1.1),line((14.5,2),(14.5,14),width=1.1))
+            if end: extras=st('M11 2.7Q12 2.8 12 4V12Q12 13.2 11 13.3M14 3.6Q14.7 3.9 14.7 4.9V11.1Q14.7 12.1 14 12.4')
             else: extras=union(line((1.5,2),(1.5,14),width=1.1),line((14.5,2),(14.5,14),width=1.1))
             if vertical: body,extras=transform(body,90),transform(extras,90)
             s('gallery-'+('vertical' if vertical else 'horizontal')+('-end' if end else ''),body,extras)
-    s('gallery-thumbnails',union(rect(1.8,1.8,12.4,8,1),rect(1.8,12,3,2.5,.4),rect(6.5,12,3,2.5,.4),rect(11.2,12,3,2.5,.4)))
+    s('gallery-thumbnails',union(rect(1.8,1.8,12.4,7.4),rect(1.8,11.5,2.9,2.9),rect(6.55,11.5,2.9,2.9),rect(11.3,11.5,2.9,2.9)))
     for horizontal in (True,False):
         p = st('M2 2V14M14 2V14M4.1 8H6.8M5.4 6.6L6.8 8L5.4 9.4M11.9 8H9.2M10.6 6.6L9.2 8L10.6 9.4', 1.2)
         g('gap-'+('horizontal' if horizontal else 'vertical'),p if horizontal else transform(p,90))
@@ -471,7 +480,9 @@ def register(api):
             points={'top':(8,3.5),'bottom':(8,12.5),'left':(3.5,8),'right':(12.5,8)}
             rules.extend(circle(*points[e],.5) for e in selected)
         else:
-            rules.append(outline(rect(6.5,6.5,3,3,.3),.9))
+            cx = 8 + (1.5 if side == 'left' else -1.5 if side == 'right' else 0)
+            cy = 8 + (1.5 if side == 'top' else -1.5 if side == 'bottom' else 0)
+            rules.append(rect(cx-1.7,cy-1.7,3.4,3.4))
         s(name,body,union(*rules))
 
     cat('Geometry')
@@ -492,7 +503,7 @@ def register(api):
     g('circle-dashed-check',dash_circle(),check(8,8,.75))
     g('square-dashed',dash_square())
     g('squircle-dashed',union(*(transform(st('M3 1.9Q1.9 1.9 1.9 3',1.2),a) for a in (0,90,180,270))),union(*(transform(line((6.2,1.7),(9.8,1.7),width=1.2),a) for a in (0,90,180,270))))
-    g('triangle-dashed',dashed([(8,2),(14,14),(2,14)],True,dash=1.7,gap=1.5))
+    g('triangle-dashed', st('M7 4L8 2L9 4M5.8 6.4L4.4 9.2M3.1 11.8L2 14H4.4M6.9 14H9.1M11.6 14H14L12.9 11.8M11.6 9.2L10.2 6.4'))
     astroid=path('M8 1.7Q8 8 14.3 8Q8 8 8 14.3Q8 8 1.7 8Q8 8 8 1.7Z')
     s('astroid',astroid)
     s('sparkle',poly([(8,1.6),(9.8,6.2),(14.4,8),(9.8,9.8),(8,14.4),(6.2,9.8),(1.6,8),(6.2,6.2)]))
@@ -506,7 +517,7 @@ def register(api):
     slash(outline(circle()),'circle-off')
     s('circle-pile',union(circle(8,4.3,2.6),circle(4.5,10.8,2.6),circle(11.5,10.8,2.6)))
     g('angle',line((3,3),(3,13),(14,13)),st('M3 8Q8 8 8 13',1.1))
-    g('diameter',outline(circle()),line((3.6,12.4),(12.4,3.6)),dots((3.6,12.4),(12.4,3.6),r=.85))
+    g('diameter',outline(circle()),line((3.76,12.24),(12.24,3.76)))
     g('radius',outline(circle()),line((8,8),(12.2,3.8)),circle(8,8,.9))
     g('tangent',outline(circle(8,9.5,4.2)),line((1.5,5.3),(14.5,5.3)),circle(8,5.3,.9))
     g('axis-3d',line((8,8),(8,1.7)),line((8,8),(14,12.8)),line((8,8),(2,12.8)),st('M6 3.7L8 1.7L10 3.7M11.4 12.6L14 12.8L13.5 10.2M2.5 10.2L2 12.8L4.6 12.6',1.1))
@@ -544,14 +555,14 @@ def register(api):
     pilcrow = paragraph()
     asterisk=union(line((8,3),(8,13)),line((3.7,5.5),(12.3,10.5)),line((3.7,10.5),(12.3,5.5)))
     for name,p in [('divide',divide),('equal-not',union(equals,line((4,14),(12,2)))),
-                   ('equal-approximately',union(st('M2.5 5C5 1 11 9 13.5 5'),line((3,11),(13,11)))),
+                   ('equal-approximately',approximately),
                    ('equal-approximately-not',union(approximately,line((4,14),(12,2)))),
                    ('sigma',sigma),('pilcrow',pilcrow),('lambda',st('M3 2Q5 1 6.5 5L11 13Q12 15 14 13M7.5 7L3 14')),
                    ('omega',st('M3 13H6V10.5C-.5 7 3 1.5 8 1.5C13 1.5 16.5 7 10 10.5V13H13')),
                    ('phi',union(outline(circle(8,8,4.5)),line((8,1.7),(8,14.3)))),
                    ('exclamation-mark',union(line((8,2),(8,9.5),width=1.1),circle(8,13,.75))),
                    ('question-mark',union(st('M4.5 5Q4.5 1.5 8.5 1.5Q12.5 1.5 12.5 5Q12.5 7 9.5 8Q8 8.5 8 10'),circle(8,13.5,.8))),
-                   ('weight-tilde',st('M2 8C5-1 11 17 14 8',1.6))]:
+                   ('weight-tilde',st('M2 9C5 1.5 10.6 14.5 14 7'))]:
         g(name,p)
     compact_math = {
         'divide': union(st('M4.9 8H11.1'), dots((8, 5.2), (8, 10.8), r=.7)),
@@ -590,13 +601,13 @@ def register(api):
         g('a-arrow-'+direction,letter('a',5.5,8,.7),arr(direction,12.5,8,.53))
     g('baseline',letter('a',8,7.2,.86),line((2.5,13.7),(13.5,13.7)))
     g('letter-spacing',letter('a',4.2,6,.48),letter('a',11.8,6,.48),st('M2 12.7H14M3.8 10.9L2 12.7L3.8 14.5M12.2 10.9L14 12.7L12.2 14.5'))
-    g('line-height',st('M8 3H14M8 8H12M8 13H14'),line((3,2),(3,14)),st('M1 4L3 2L5 4M1 12L3 14L5 12',1.1))
+    g('line-height',st('M8 3H14M8 8H12M8 13H14'),st('M3.3 2.3V13.7M1.4 4.2L3.3 2.3L5.2 4.2M1.4 11.8L3.3 13.7L5.2 11.8'))
     g('ligature', st('M4.4 13.5V6C4.4 3.2 5.9 2 8.2 2H9M2.4 6.7H11.5V13.5'), circle(11.5, 3, .75))
     for i in (5,6):
         g('heading-'+str(i),letter('h',5.2,8,.68),number(str(i),12.1,9.7,.47))
     g('type-outline',outline(poly([(8,2),(14,14),(11.3,14),(9.8,10.8),(6.2,10.8),(4.7,14),(2,14)]),1.1),outline(poly([(8,5.5),(6.8,8.7),(9.2,8.7)]),.8))
     for subscript in (True,False):
-        g('subscript' if subscript else 'superscript',letter('x',5.4,8,.68),number('2',12.3,12 if subscript else 4,.32))
+        g('subscript' if subscript else 'superscript',letter('x',5.4,8,.68),number('2',12,11.7 if subscript else 4.3,.46))
     for direction in ('left','right'):
         g('pilcrow-'+direction,paragraph(5.3 if direction=='right' else 10.7,8,.74),arr(direction,12.5 if direction=='right' else 3.5,9,.39))
     g('remove-formatting',letter('t',6.7,6.5,.8),line((2,14),(8,14)),cross(12.3,12.1,.65))
@@ -607,11 +618,11 @@ def register(api):
     for end in ('center','end','start'):
         last={'center':(4,12),'end':(6,14),'start':(2,10)}[end]
         g('text-align-justify-'+end,st('M2 2.5H14M2 6.2H14M2 9.9H14'),line((last[0],13.6),(last[1],13.6)))
-    g('summary',line((2,2.5),(14,2.5),width=1.7),st('M2 6H14M2 9.5H14M2 13H9',1.2))
-    g('text-quote',st('M7 3H14M7 7H14M7 11H12'),st('M2 3V13',2.1))
+    g('summary',line((2,2.5),(11,2.5)),st('M2 6H14M2 9.5H14M2 13H9',1.2))
+    g('text-quote',st('M6.3 3.7H13.8M6.3 7.8H13.8M6.3 11.9H11.8'),st('M2.7 2.6V13'))
     g('text-wrap',st('M2 3H14M2 7H11Q14 7 14 10Q14 13 11 13H6'),line((8.5,10.5),(6,13),(8.5,15.5)),line((2,11),(3.5,11)))
     g('text-initial',letter('a',4.5,7.5,.57),st('M9 3H14M9 6.5H14M9 10H14M2 13.5H14',1.1))
-    g('whole-word',label('ab',8,6.5,.46),st('M1.7 11.3V14H14.3V11.3'))
+    g('whole-word',label('ab',8,6.1,.52),st('M1.8 10.7V12.8H14.2V10.7'))
     g('space',st('M2 6V10H14V6'))
     s('text-cursor-input',rr(1.5,4,13,8,1.5),st('M6 1.5H10M8 1.5V14.5M6 14.5H10',1.15))
     cursor_frame=rr(1.5,4,13,8,1.5)
@@ -634,7 +645,7 @@ def register(api):
         body = pencil_body(x, y)
         return union(body, outline(body, 3.2))
 
-    g('text-pen',st('M2 3H10M2 7H7M2 11H4',1.2),fit(pen_glyph,11,11,.6))
+    g('text-pen',st('M2 3H10M2 7H7M2 11H4',1.2),pencil_mark(10.7,10.4))
     g('table-of-contents',st('M2 3H11M2 8H8M2 13H11'),dots((14,3),(14,8),(14,13),r=.6))
     list_rows = st('M8 3H14M8 8H14M8 13H14')
     g('list-check', st('M7 3H14M7 8H14M7 13H14'), check(3.5,8,.55))
@@ -644,7 +655,7 @@ def register(api):
     for behavior in ('down-up','up-down'):
         g('list-chevrons-'+behavior,st('M7 3H14M7 8H14M7 13H14'),chev('down' if behavior=='down-up' else 'up',3,4.5,.4),chev('up' if behavior=='down-up' else 'down',3,11.5,.4))
     g('list-collapse',st('M7 3H14M7 8H14M7 13H14'),chev('right',3,8,.6))
-    g('list-restart',st('M2 3H14M2 7H9M2 11H6'),st('M14 14A3.1 3.1 0 1 1 14.7 9M12 9H15V6.5',1.1))
+    g('list-restart',st('M2 3H14M2 7H9M2 11H6'),st('M13.8 13.5A3 3 0 1 1 13.9 9.7M11.7 9.7H14.1V7.3',1.1))
     g('list-filter-plus',st('M2 3H14M4 7H12M6 11H8'),plus(12.5,12.5,.7))
     # Replace controls use actual text groups and directed exchange routes.
     g('replace', letter('a',5.2,4.7,.5), letter('b',10.8,11.6,.5),
@@ -656,7 +667,7 @@ def register(api):
     for name,d in [('link-2-off','M6 10L4.5 11.5Q1 13 1.8 9L4 6.5M10 6L11.5 4.5Q15 3 14.2 7L12 9.5'),
                    ('unlink-2','M6 10L4.5 11.5Q1 13 1.8 9L4 6.5M10 6L11.5 4.5Q15 3 14.2 7L12 9.5')]:
         p=st(d)
-        if name=='link-2-off': slash(p,name)
+        if name=='link-2-off': slash(st('M6 10L5 11A2.5 2.5 0 0 1 1.5 7.5L4 5A2.5 2.5 0 0 1 7.5 5M10 6L11 5A2.5 2.5 0 0 1 14.5 8.5L12 11A2.5 2.5 0 0 1 8.5 11M5.5 10.5L10.5 5.5'),name)
         else:
             end = st('M6.1 7.4L4.4 9.1C1.7 11.8 4.2 14.3 6.9 11.6L8.6 9.9')
             g(name, end, transform(end, 180), st('M2.2 5H4.3M5 2.2V4.3M13.8 11H11.7M11 13.8V11.7', 1.15))
@@ -667,18 +678,18 @@ def register(api):
     book_spine = st(book_seam)
     open_book=path('M8 3.5Q4 1 1.5 3V12Q4 10.8 8 13.5Q12 10.8 14.5 12V3Q12 1 8 3.5Z')
     for name,detail in [('book-a',letter('a',9,7,.38)),('book-type',letter('t',9,7,.38)),
-                        ('book-bookmark',st('M8 2V8L10 6.5L12 8V2',1.1)),
-                        ('book-exclamation-point',union(line((9,4),(9,7.5),width=1.15),circle(9,9,.55)))]:
+                        ('book-bookmark',st('M8 2V8.4L9.7 7L11.4 8.4V2')),
+                        ('book-exclamation-point',union(line((9.3,4),(9.3,6.65)),circle(9.3,9,.65)))]:
         s(name,book,union(book_spine,detail))
     # Distinct rear copy remains visible at the top and left.
     g('book-copy',st('M3 11.6H2.8Q1.6 11.6 1.6 10.4V2.8Q1.6 1.6 2.8 1.6H10.4'),
       outline(rect(4.4,4,9.5,10.4)),st('M7 4V11.7M13.9 11.7H6.5Q4.4 11.7 4.4 13'))
-    for name,detail in [('book-open-text',st('M3.5 5H5.7M3.5 8H5.7M10.3 5H12.5M10.3 8H12.5',.95)),('book-open-check',check(11,7.5,.46))]:
+    for name,detail in [('book-open-text',st('M3.65 5.6Q4.5 5.35 5.8 5.9M3.65 8.6Q4.5 8.35 5.8 8.9M10.2 5.9Q11.5 5.35 12.35 5.6M10.2 8.9Q11.5 8.35 12.35 8.6',.95)),('book-open-check',check(11,7.5,.46))]:
         s(name,open_book,union(line((8,3.5),(8,13.5),width=1.1),detail))
     # Parallel library spines are discrete books, not a comb of lines.
-    library=union(rect(1.8,2,2.7,12,.5),rect(6,2,2.7,12,.5),poly([(10,2.6),(12.5,2),(15,13.3),(12.5,14)]))
-    s('library-big',library,st('M2 5H4.3M6.2 5H8.5M11 5.2L13.1 4.7',.9))
-    s('square-library',rr(),fit(union(outline(library),st('M2 5H4.3M6.2 5H8.5',.9)),scale=.63))
+    library=union(rect(1.5,2,2.45,12),rect(6.1,2,2.45,12),poly([(10.6,2.6),(12.8,2.2),(14.7,13.4),(12.5,13.8)]))
+    s('library-big',library,st('M1.5 5.8H3.95M6.1 5.8H8.55M11.1 5.9L13.3 5.5',.9))
+    s('square-library',rr(),st('M4.7 4.8V11.2M7.6 4.8V11.2M10 5L11.5 11.1'))
     notebook=rr(3,1.7,10.5,12.6,1.2)
     binding=union(*(line((1.8,y),(4,y),width=1.05) for y in (4,8,12)))
     for name,detail in [('notebook-dot',circle(9,8,1.1)),('notebook-text',st('M6 5H11M6 8H11M6 11H9',1.05)),
@@ -712,7 +723,7 @@ def register(api):
     for status,detail in [('plus',plus(7.5,7,.7)),('minus',line((5,7),(10,7))),('x',cross(7.5,7,.65)),('check',check(7.5,7,.65))]:
         s('sticky-note-'+status,sticky,union(fold,detail))
     slash(union(outline(sticky),fold),'sticky-note-off')
-    g('sticky-notes',st('M11 1H3Q1 1 1 3V11',1.2),fit(union(outline(sticky),fold),9,9,.8))
+    g('sticky-notes',st('M11 1.6H3Q1.6 1.6 1.6 3V11'),outline(fit(sticky,9.4,9.4,.8)),placed_stroke('M10 14V10H14',9.4,9.4,.8))
 
     cat('Design tools')
     # Pen and pencil surfaces differ: nib for pen, wood and graphite for pencil.
@@ -738,8 +749,8 @@ def register(api):
 
     s('pencil-sparkles',fit(pen,7.4,9.5,.76),
       union(placed_stroke('M10 3L13 6',7.4,9.5,.76),sparkle_at(12.5,3,1.8),sparkle_at(4.3,3.5,1.45)))
-    brushbody=path('M2 14Q5 14 6.5 11Q8 11 9 8L13.5 3.5Q15 1.5 13.3 1.5Q12.5 1.5 11.5 3L7 7Q4 7 4 10Q4 12 2 14Z')
-    s('brush',brushbody,st('M4.3 10Q6 9 7.5 11M7 7L9 9',1.05))
+    brushbody = path('M2.1 14Q4 12.5 4 10.8Q4 7.2 7 7.4L11.8 2.3Q12.9 1.1 14 2.2Q15 3.2 13.8 4.4L9.1 9.4Q9 12.8 6.3 13.5Q4.7 14.1 2.1 14Z')
+    s('brush',brushbody,inter(brushbody,st('M6.6 7L9.6 10')))
     brushvertical=path('M6 1.8H10V8L12 10V13Q8 16 4 13V10L6 8Z')
     s('paintbrush-vertical',brushvertical,st('M4 10H12M6.7 12V14M9.3 12V14M6 6H10',1.05))
     s('paint-roller',rect(1.7,2,10,4.5,1),union(st('M11.7 4.3H14V9H8V11',1.15),rect(6.8,11,2.4,3.5,.6)))
@@ -751,12 +762,12 @@ def register(api):
     s('spray-can',spray,union(outline(rect(4.5,3,4.5,3,.4),1.1),line((5.5,1.5),(8,1.5),width=1.2),dots((12.3,2.8),(14.7,1.8),(14.7,4.3),r=.55),line((5.5,9),(5.5,12),width=1.1)))
     stamp=path('M3 10H13L14 14H2Z')
     s('stamp',stamp,union(st('M5 10V8Q7 7 6 5Q4 1.5 8 1.5Q12 1.5 10 5Q9 7 11 8V10',1.2),line((2,14),(14,14),width=1.4)))
-    compasslegs=union(st('M8 5L3 14M8 5L13 14M4.8 10H11.2'),outline(circle(8,3.8,2),1.15),line((8,1),(8,1.8),width=1.1))
+    compasslegs=union(st('M7.2 5.7L3 14M8.8 5.7L13 14M5.07 9.9H10.93'),outline(circle(8,3.9,1.95)),line((8,1.25),(8,1.95)))
     g('drafting-compass',compasslegs)
     g('magnet',st('M3 2V8.5C3 15.5 13 15.5 13 8.5V2H9.5V8.5C9.5 10.8 6.5 10.8 6.5 8.5V2ZM3 5H6.5M9.5 5H13'))
     wand=union(outline(poly([(2,12),(11.5,2.5),(13.5,4.5),(4,14)]),1.1),line((9.5,4.5),(11.5,6.5),width=1.05))
     g('wand',wand)
-    g('wand-sparkles',fit(wand,7,9,.82),plus(12.5,2.8,.55),plus(3.3,3.1,.45),plus(13.2,10,.35))
+    g('wand-sparkles',placed_stroke('M2 12L11.5 2.5L13.5 4.5L4 14ZM9 5L11 7',7,9.3,.83),sparkle_at(12.6,3,1.7),sparkle_at(4.2,3.7,1.45))
     s('slice', path('M1.6 13.5L3.7 8.9L5.4 7.2L7.3 7.2L11.9 2.6Q13.2 1.3 14.2 2.7Q15 3.8 13.8 5L8.3 10.5L6.9 10.6Z'),
       st('M5.4 7.2L8.3 10.5M9.8 4.7L12.2 7.1'))
     g('signature',st('M1.5 11C6 14 8-1 5.5 2C3 5 4.5 14 7 11L9 8Q9 14 11 10Q12 7 13 9Q13.5 11 15 9',1.2),line((3,14),(13,14),width=1.05))
@@ -767,7 +778,7 @@ def register(api):
     pointer2=poly([(2.5,1.8),(13.8,8),(8.5,9),(6.8,14.3)])
     g('spline-pointer',sub(st('M3.5 10.6C9.3 10.5 5.6 3.2 12.6 3.2'),circle(2.85,10.8,1.3)),
       outline(circle(2.85,10.8,1.3)),outline(fit(pointer2,11.3,11.1,.55)))
-    g('lasso',st('M4 11C-3 4 6-2 12 2C19 7 9 14 4 11Q1 12 2 14Q3 16 5 14',1.25))
+    g('lasso',st('M4 10C.6 7.4 2.3 2.1 8 2.1C14.4 2.1 16 8.5 11.5 10.9Q8.4 12.6 5.8 11.1Q4.3 10.3 3.1 12Q2.1 13.6 4.5 14.2'))
     g('lasso-select', st('M4.4 10.4C.4 7.7 2.6 2.2 7.7 2.2C11.6 2.2 14.5 4.5 13.4 7.3M7.1 10.8Q4.6 9.6 3 11.7Q2.1 13.1 3.6 14'), outline(fit(pointer2,11.6,11.6,.5)))
     g('frame',st('M4 1V15M12 1V15M1 4H15M1 12H15',1.25))
     handles = union(*(transform(st('M1.6 4.2V2.2Q1.6 1.6 2.2 1.6H4.2', 1.15), a)
@@ -839,7 +850,7 @@ def register(api):
         g(name,sub(outline(background),union(foreground,outline(foreground,2.7))),foreground,outline(foreground))
     s('square-square',rr(),outline(rect(5.2,5.2,5.6,5.6,.6),1.15))
     g('square-stack',st('M1.5 10V2.5Q1.5 1.5 2.5 1.5H10M4 12V5Q4 4 5 4H12',1.15),outline(rect(6.5,6.5,8,8,1.2),1.2))
-    for status,p in [('minus',line((8.5,10),(12.5,10),width=1.15)),('slash',line((8,12),(13,7),width=1.15))]:
+    for status,p in [('minus',line((7.5,9.5),(11.5,9.5))),('slash',line((7.65,11.35),(11.35,7.65)))]:
         g('copy-'+status,st('M2 11V3Q2 2 3 2H10',1.2),outline(rect(5,5,9,9,1.2),1.2),p)
     g('blend',sub(outline(circle(5.6,8,4.1)),circle(10.4,8,4.1)),outline(circle(10.4,8,4.1)),inter(circle(5.6,8,4.1),circle(10.4,8,4.1)))
     s('opacity',circle(),inter(circle(),rect(8,2,6,12,0)))
@@ -857,12 +868,12 @@ def register(api):
         g('triangles-centerline-dashed-'+('horizontal' if horizontal else 'vertical'),transform(triangles,90) if horizontal else triangles)
     for horizontal in (True,False):
         s('square-split-'+('horizontal' if horizontal else 'vertical'),rr(),line((2,8),(14,8)) if horizontal else line((8,2),(8,14)))
-    s('square-round-corner',rr(),st('M5 11V8Q5 5 8 5H11',1.7))
+    s('square-round-corner',rr(),st('M5 11V8.4Q5 5 8.4 5H11'))
     s('square-dimensions',rr(2.5,2.5,10,10,1),st('M2.5 15H12.5M1 14V16M14 14V16M15 2.5V12.5M14 1H16M14 14H16',.9))
     s('square-text',rr(),st('M4.5 5H11.5M4.5 8H11.5M4.5 11H9',1.15))
     s('square-menu',rr(),st('M4.5 5H11.5M4.5 8H11.5M4.5 11H11.5',1.15))
     s('square-code',rr(),st('M6.5 5L3.5 8L6.5 11M9.5 5L12.5 8L9.5 11',1.15))
-    s('square-pen',rr(),fit(pen_glyph,scale=.6))
+    s('square-pen',rr(),union(outline(fit(pen,scale=.62)),placed_stroke('M10 3L13 6',scale=.62)))
     s('square-mouse-pointer',rr(),fit(outline(pointer2),scale=.62))
     slash(outline(rr()),'square-off')
     for name,p in [('square-dashed-plus',plus()),('square-dashed-x',cross()),('square-dashed-search',union(outline(circle(10.1,10.2,2.5)),st('M11.9 12L14.4 14.5'))),('square-dashed-mouse-pointer',outline(fit(pointer2,10.7,10.4,.59)))]:
@@ -884,7 +895,8 @@ def register(api):
       st('M6.15 6.55L11.7 10.65M6.15 9.6L11.7 5.5', 1.15))
 
     cat('Maps and travel')
-    globe=union(outline(circle()),st('M2 8H14M8 2C3.5 5 3.5 11 8 14C12.5 11 12.5 5 8 2',1.1))
+    world, meridians = api['DRAWINGS']['globe'][:2]
+    globe = union(outline(world),meridians)
     # Earth shows land masses rather than longitude lines.
     ocean = circle()
     americas = path('M1 1H8C8 3 7.4 4.4 5.7 5.1Q4.8 5.7 5.6 6.7L7.7 8.1Q8.8 8.9 7.7 10.7L6.5 13.4Q5.3 12.1 5.4 10.4Q5.5 9.3 4.1 8.5Q2 7.4 1 6Z')
@@ -896,16 +908,16 @@ def register(api):
         'duotone': [(sub(ocean, coast), .24), (coast, 1)],
         'solid': coast, 'stroke': union(outline(ocean), inter(ocean, outline(land, 1.2)))}
     for state,p in [('check',check(12.3,12.4,.5)),('plus',plus(12.3,12.4,.6)),('x',cross(12.3,12.4,.57)),
-                    ('ban',union(outline(circle(12.3,12.3,2.1),1.0),line((10.8,10.8),(13.8,13.8),width=.95))),
-                    ('code',st('M10.5 10L8.5 12L10.5 14M13 10L15 12L13 14',1.05))]:
-        cut=circle(12.3,12.3,3.2) if state!='code' else rect(7.5,9,8.5,7,.5)
+                    ('ban',union(outline(circle(12.45,12.45,2.2)),line((10.9,10.9),(14,14)))),
+                    ('code',st('M10.3 10.4L8.6 12.1L10.3 13.8M13.1 10.4L14.8 12.1L13.1 13.8',1.05))]:
+        cut=circle(12.45,12.45,3.9) if state!='code' else rect(7.1,9,8.9,7)
         g('globe-'+state,sub(globe,cut),p)
     slash(globe,'globe-off')
     mappoly=path('M1.8 3.5L6 1.8L10 3.5L14.2 1.8V12.5L10 14.2L6 12.5L1.8 14.2Z')
     mapfold=st('M6 1.8V12.5M10 3.5V14.2',1.05)
     for state,p in [('plus',plus(12.5,12,.65)),('minus',line((10.5,12),(14.5,12),width=1.25))]:
-        body=sub(mappoly,circle(12.5,12,3.1))
-        badged('map-'+state,mappoly,mapfold,p,union(p,outline(p,1.7)))
+        map_body, folds = api['DRAWINGS']['map'][:2]
+        badged('map-'+state,map_body,folds,p,rect(9.2,9.85,6.8,6.15))
     pin=path('M8 14.5C6 12.5 2.5 8.5 2.5 5.8C2.5-.7 13.5-.7 13.5 5.8C13.5 8.5 10 12.5 8 14.5Z')
     hole=outline(circle(8,5.8,1.7),1.05)
     for state,p in [('check',check(8,6,.6)),('minus',line((5.7,5.8),(10.3,5.8),width=1.1)),
@@ -913,7 +925,7 @@ def register(api):
         name='map-pin-'+state+'-inside'
         s(name,pin,p)
     for state,p in [('check',check(12.2,12,.5)),('minus',line((10.5,12),(14.2,12),width=1.2)),
-                    ('house',st('M10 12L12.5 9.5L15 12M10.7 11.5V14H14.3V11.5',1.05)),
+                    ('house',st('M9.75 11.65L12.25 9.25L14.75 11.65M10.45 11.1V14.3H14.05V11.1',1.05)),
                     ('pen',pencil_mark(11.5,11.5)),
                     ('search',union(outline(circle(12,11.7,1.9),1.05),line((13.5,13.2),(15,14.7),width=1.05)))]:
         region=circle(12.2,12,3.2)
@@ -932,8 +944,7 @@ def register(api):
     route_line, route_stops = api['DRAWINGS']['route'][:2]
     slash(union(route_line, route_stops), 'route-off')
     g('route-arrow-right',outline(circle(3,3,1.6),1.1),st('M5 3H11Q14 3 14 6Q14 8 11 8H5Q2 8 2 11Q2 13 5 13H13',1.1),line((10,10),(13,13),(10,15.5),width=1.1))
-    target=union(outline(circle(8,8,4.2)),line((8,1.5),(8,4)),line((8,12),(8,14.5)),line((1.5,8),(4,8)),line((12,8),(14.5,8)))
-    slash(target,'locate-off')
+    slash(st('M8 3A5 5 0 1 0 8 13A5 5 0 1 0 8 3M8 1.3V4M8 12V14.7M1.3 8H4M12 8H14.7'),'locate-off')
     g('radar', outline(circle()), outline(circle(8, 8, 3)), line((8, 8), (12.24, 3.76)), circle(4.1, 10.3, .65))
     for name,p in [('navigation-2',poly([(8,1.7),(14,14),(8,11),(2,14)])),
                    ('mouse-pointer-2',pointer2)]:
@@ -941,7 +952,7 @@ def register(api):
         if name == 'mouse-pointer-2':
             cancelled(name + '-off', outline(api['DRAWINGS'][name][0]), (2.4, 12.4), (13.6, 3.2))
         else:
-            slash(outline(p), name + '-off')
+            slash(base_ink(name), name + '-off')
     navigation, heading = api['DRAWINGS']['navigation'][:2]
     cancelled('navigation-off', union(outline(navigation), heading), (2, 3), (13.5, 14.5))
     hand=path('M4.5 13.5Q2 11.5 1.5 8.5Q1.5 7 3 7L5 9V3.5Q5 2 6.5 2Q8 2 8 3.5V7Q8 5.5 9.5 5.5Q11 5.5 11 7Q11 6 12.5 6.5Q14 6.8 14 8.5V11Q14 14 11 14H6Z')
@@ -964,8 +975,8 @@ def register(api):
         pieces=union(outline(rect(1.2,1.8,4,3.5,.6),1.1),outline(rect(10.8,1.8,4,3.5,.6),1.1),outline(rect(6,10.8,4,3.5,.6),1.1),st('M3.2 5.3V7.5H12.8V5.3M8 7.5V10.8',1.1))
         g('diagram-flow-'+('vertical' if vertical else 'horizontal'),pieces if vertical else transform(pieces,90))
     for name in ('move-3d','scale-3d','rotate-3d'):
-        axes=st('M7 8V2M7 8L1.5 12.5M7 8L14 12',1.15)
-        if name=='move-3d': details=st('M5 4L7 2L9 4M1.5 9.5V12.5H4.5M11 12.5L14 12L13 9',1.1)
+        axes=st('M8 8V2M8 8L2.2 11.7M8 8L13.8 11.7')
+        if name=='move-3d': details=st('M6.1 3.9L8 2L9.9 3.9M2.7 9.1L2.2 11.7L4.85 12.3M13.3 9.1L13.8 11.7L11.15 12.3')
         elif name=='scale-3d': details=union(rect(5.7,1,2.6,2.6,.35),rect(1,11,2.6,2.6,.35),rect(12,10.7,2.6,2.6,.35))
         else:
             axes = st('M7.6 4.8V8.3L4.9 10M7.6 8.3L10.4 10')
@@ -979,8 +990,8 @@ def register(api):
     g('scan-box',st('M1.5 5V1.5H5M11 1.5H14.5V5M1.5 11V14.5H5M11 14.5H14.5V11',1.1),small_box(8,8,.59))
     g('view',st('M1.5 5V1.5H5M11 1.5H14.5V5M1.5 11V14.5H5M11 14.5H14.5V11',1.1),st('M3.2 8Q8 1.8 12.8 8Q8 14.2 3.2 8Z',1.1),circle(8,8,1.25))
     funnel=path('M2 2H14L9.5 7.5V13L6.5 14V7.5Z')
-    for state,p in [('plus',plus(12.5,12.5,.6)),('x',cross(12.5,12.5,.6))]:
-        s('funnel-'+state,sub(funnel,circle(12.5,12.5,3)),p)
+    for state,p in [('plus',plus(12.9,12.4,.83)),('x',cross(12.9,12.4,.75))]:
+        badged('funnel-'+state, funnel, empty, p, union(p,outline(p,2.1)))
     s('search-exclamation-point',circle(6.7,6.7,4.6),union(line((10.3,10.3),(14,14)),line((6.7,3.8),(6.7,6.8),width=1.15),circle(6.7,8.8,.6)))
     s('search-slash',circle(6.7,6.7,4.6),union(line((10.3,10.3),(14,14)),line((4.7,8.7),(8.7,4.7),width=1.2)))
     g('loader-pinwheel',*(transform(st('M9.2 2.1Q13.9 3.5 13.4 7.4L9 6.5Z'),a) for a in (0,90,180,270)))
@@ -988,9 +999,9 @@ def register(api):
     # circumference; no arbitrary opacity is applied to a continuous stroke.
     arc = st('M4.5 3.2A5.9 5.9 0 0 0 2.15 7M2.55 10.25A5.9 5.9 0 0 0 5.8 13.45')
     g('circle-fading-arrow-up', arc, mirror(arc), arr('up',8,7.1,.76))
-    s('cloud-backup',path('M4 12Q1 12 1 9Q1 6 4 6Q4 1 8 1Q12 1 12 5Q15 5 15 8.5Q15 12 12 12Z'),union(outline(circle(8,8,2.1),1.0),st('M8 6.8V8L9 8.7',.9)))
-    keyboard=union(outline(rect(1.5,3.5,13,9,1.4)),dots(*[(x,y) for x in (4,6.7,9.4,12) for y in (6,8.7)],r=.45),line((5,11),(11,11),width=1.1))
-    slash(keyboard,'keyboard-off')
+    s('cloud-backup',path('M4.6 12.9C.6 12.9 .5 6.6 4.2 6.4C4.5 .5 12.1 .5 12.4 6Q14.6 6.5 14.6 9.3Q14.6 12.9 11.6 12.9Z'),
+      union(outline(circle(8,8.5,2.7)),st('M8 7.2V8.5L9 9.1')))
+    slash(base_ink('keyboard'),'keyboard-off')
     g('import',st('M9 2H13Q14 2 14 3V13Q14 14 13 14H9',1.2),arr('right',5.8,8,.8))
 
     missing=set(NAMES)-made
