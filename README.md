@@ -1,4 +1,4 @@
-# Design system
+# @hugocxl/design-system
 
 ### My signature, across everything I make.
 
@@ -28,9 +28,9 @@ Thirteen components and six page recipes cover a home page, articles, docs, chan
 
 Three libraries, designed to work as one.
 
-- **[Icons](https://hugocxl.github.io/icons/)** label what people can do.
-- **[Vectors](https://hugocxl.github.io/vectors/)** illustrate what you mean.
-- **[Design system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+- **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
+- **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
+- **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
 
 ## License
 
