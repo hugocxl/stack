@@ -33,7 +33,7 @@
 }
 .cxl-masthead a { display: inline-flex; align-items: center; min-height: 44px }
 .cxl-masthead + main { scroll-margin-top: 5rem }
-.cxl-wordmark { margin-right: auto; font: 600 1.12rem/1 var(--cxl-sans); letter-spacing: -.055em; text-decoration: none }
+.cxl-wordmark { margin-right: auto; font: var(--cxl-weight-heading) 1.12rem/1 var(--cxl-sans); letter-spacing: -.055em; text-decoration: none }
 .cxl-editorial a { color: inherit; text-underline-offset: .2em }
 .cxl-editorial a:hover { text-decoration: underline }
 .cxl-masthead > a:not(.cxl-wordmark), .cxl-theme { font-size: .84rem }
