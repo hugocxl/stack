@@ -1,0 +1,8 @@
+node_modules
+dist
+_site
+packages/sounds/LICENSE
+packages/sounds/NOTICE
+*.tgz
+.DS_Store
+release

@@ -1,0 +1,37 @@
+{{head title="Listen · @hugocxl/sounds" canonical="listen.html" description="Play all {{count}} @hugocxl/sounds interface sounds and {{haptics}} haptics, try them while typing, and download any of them as a WAV file."}}
+</head>
+<body class="ds" data-layout="plain">
+{{masthead}}
+  <main>
+    <article class="ds-column ds-opening">
+      <hgroup class="ds-title">
+        <h1>Listen</h1>
+        <p>Every sound, on press</p>
+      </hgroup>
+      <ul class="ds-meta">
+        <li class="ds-label">{{count}} sounds</li>
+        <li class="ds-label">{{haptics}} haptics</li>
+      </ul>
+      <section class="ds-section">
+        <p>Press a sound to hear it the way your interface will play it. <span class="ds-muted">Each play varies a little in pitch and level, and the WAV download is the steady version.</span></p>
+      </section>
+{{sounds}}
+      <section class="ds-section" id="haptics">
+        <h2>Haptics</h2>
+        <p>Each iOS-style haptic plays its sound, and vibrates on devices that can. <span class="ds-muted">Use them when you think in feedback rather than in sounds.</span></p>
+        <div class="site-options">
+{{haptic-buttons}}
+        </div>
+      </section>
+      <section class="ds-section" id="typing">
+        <h2>Typing</h2>
+        <p>Keys play <code>type</code>, the space bar and Enter have their own sounds, and every key plays <code>type-up</code> when it is released.</p>
+        <div class="ds-input site-typing">
+          <input type="text" id="typing-field" aria-label="Type to hear the keys" placeholder="Type to hear the keys" autocomplete="off" spellcheck="false">
+        </div>
+      </section>
+    </article>
+  </main>
+{{footer}}
+</body>
+</html>

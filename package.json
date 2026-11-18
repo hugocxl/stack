@@ -1,0 +1,26 @@
+{
+  "name": "sounds-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @hugocxl/sounds",
+    "typecheck": "tsc -p packages/sounds --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "build:site": "npm run build && node scripts/build-site.mjs",
+    "dev": "npm run build:site && npx --yes serve _site -l 4321",
+    "pack:check": "npm pack -w @hugocxl/sounds --dry-run"
+  },
+  "devDependencies": {
+    "@hugocxl/design-system": "^0.2.10",
+    "@hugocxl/icons": "^0.2.27",
+    "@hugocxl/vectors": "^0.1.11",
+    "esbuild": "^0.28.2",
+    "marked": "^15.0.12",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

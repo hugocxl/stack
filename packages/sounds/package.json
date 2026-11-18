@@ -1,0 +1,49 @@
+{
+  "name": "@hugocxl/sounds",
+  "version": "0.1.0",
+  "description": "Tactile interface sounds for the web, synthesized live with Web Audio. No audio files.",
+  "keywords": [
+    "sounds",
+    "ui sounds",
+    "interface",
+    "haptics",
+    "feedback",
+    "web audio",
+    "click",
+    "typing"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "author": "Hugo Corta (https://hugocxl.me)",
+  "homepage": "https://hugocxl.github.io/sounds/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocxl/sounds.git",
+    "directory": "packages/sounds"
+  },
+  "bugs": "https://github.com/hugocxl/sounds/issues",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p .",
+    "prepack": "cp ../../LICENSE ../../NOTICE . && npm run build"
+  }
+}
