@@ -1,8 +1,64 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="The CXL design system. Explore the palette, typography, interactive figures and reusable interface components."><title>CXL Design System</title><link rel="stylesheet" href="system/cxl.css?v=gray"><link rel="stylesheet" href="preview.css?v=gray"><script src="system/theme.js"></script></head><body>
-<header><a class="brand" href="./"><b>cxl</b><span>Design System</span></a><nav><a href="system/interface-guidelines.html">Guidelines</a><a href="#foundations">Foundations</a><a href="#components">Components</a><a href="https://github.com/hugocxl/cxl-design-system">GitHub ↗</a></nav><button id="theme" aria-label="Toggle dark mode">◐</button></header>
-<main><section class="hero"><div><small class="cxl-label"><i></i> Design system · v0.1</small><h1>The CXL<br>design system<span>.</span></h1><p>A shared vocabulary of type, color, and form for building websites and interfaces.</p><a href="#foundations" class="cxl-button">Explore foundations <span>↓</span></a></div>
-<figure><div class="stage"><div id="figure"></div></div><figcaption><span class="cxl-label" id="caption">FIG. 01 / Keyboard</span><div><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></div></figcaption></figure></section>
-<section id="foundations"><h2>Foundations</h2><div class="pair"><article><h3>Color palette</h3><p>Paper and ink frame the page. Intermediate grays distinguish surfaces, borders, and secondary text.</p><div class="swatches"></div></article>
-<article><h3>Typography</h3><div class="sample sans"><strong>Aa</strong><span>Geist Sans<br><small>Body and H3–H6</small></span></div><div class="sample serif"><strong>Aa</strong><span>Geist Serif<br><small>H1 and H2</small></span></div><div class="sample mono"><strong>01</strong><span>Geist Mono<br><small>Code and technical notes</small></span></div></article></div></section>
-<section id="components"><h2>Components</h2><div class="pair"><article><h3>Controls</h3><p>A text field and primary action, composed as a search.</p><form><label for="query">Find a figure</label><div class="controls"><input class="cxl-field" type="search" id="query" placeholder="Try terrain" required list="names"><datalist id="names"><option>Keyboard</option><option>Terrain</option><option>Dish</option></datalist><button class="cxl-button">Preview</button></div><output aria-live="polite"></output></form></article><article><h3>Use the system</h3><p>Copy the system folder into your project and load the stylesheet. Fonts and figures travel with it.</p><code>&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><a href="https://github.com/hugocxl/cxl-design-system/tree/main/system">Browse the assets ↗</a></article></div></section></main>
-<footer><b>cxl</b> Design System <a href="system/interface-guidelines.html">Interface guidelines</a><a href="#top" onclick="window.scrollTo(0,0)">Back to top ↑</a></footer><script type="module" src="preview.js?v=guide"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, grayscale palette, and interactive figures.">
+  <title>CXL Design System</title>
+  <link rel="stylesheet" href="system/cxl.css?v=gray">
+  <link rel="stylesheet" href="system/editorial.css">
+  <link rel="stylesheet" href="preview.css?v=editorial">
+  <script src="system/theme.js"></script>
+</head>
+<body class="cxl-editorial" id="top">
+  <header class="cxl-masthead">
+    <a class="cxl-wordmark" href="./">CXL Design System</a>
+    <a href="system/interface-guidelines.html">Guidelines</a>
+    <button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button>
+  </header>
+  <main>
+    <div class="cxl-opening">
+      <h1>A shared language<br>for <em>building interfaces.</em></h1>
+      <a class="guide-link" href="system/interface-guidelines.html">Read the interface guidelines <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="cxl-reading">
+      <p class="lead">CXL brings our websites together through type, spacing, and a single scale of gray.</p>
+      <p>Start with what someone came to read or do. Give that thought a heading, set the explanation beneath it, and put the next action within reach.</p>
+      <section id="foundations">
+        <h2>Writing with type</h2>
+        <p>A change of voice marks a change of purpose. Serif introduces a subject, sans carries the explanation, and mono makes technical details easy to pick out.</p>
+        <dl class="type-list">
+          <div><dt class="serif">Geist Serif</dt><dd>Page and section headings</dd></div>
+          <div><dt>Geist Sans</dt><dd>Body, controls, and H3–H6</dd></div>
+          <div><dt class="mono">Geist Mono</dt><dd>Code and technical notes</dd></div>
+        </dl>
+        <h2>Working in gray</h2>
+        <p>Paper and ink carry the strongest contrast. Use the middle tones to separate surfaces and give supporting details a quieter voice.</p>
+        <div class="swatches"></div>
+      </section>
+      <section id="components">
+        <h2>Figures and controls</h2>
+        <p>Use a drawing where a reader needs to see how something works. Explore three interactive figures from the bundled Hairline collection.</p>
+        <figure>
+          <div id="figure"></div>
+          <figcaption><span class="cxl-label" id="caption">Fig. 01 / Keyboard</span>
+            <span><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
+          </figcaption>
+        </figure>
+        <form><label for="query">Find a figure</label><div class="controls">
+          <input class="cxl-field" type="search" id="query" placeholder="Try terrain" required list="names">
+          <datalist id="names"><option>Keyboard</option><option>Terrain</option><option>Dish</option></datalist>
+          <button class="cxl-button">Preview</button></div><output aria-live="polite"></output>
+        </form>
+      </section>
+      <section><h2>Start a website</h2>
+        <p>Copy the <code>system/</code> folder into your project and load its stylesheet. The fonts, figures, and theme tokens travel together.</p>
+        <pre><code>&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code></pre>
+        <a href="https://github.com/hugocxl/cxl-design-system/tree/main/system">Browse the assets on GitHub ↗</a>
+      </section>
+    </div>
+  </main>
+  <footer><a href="system/interface-guidelines.html">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
+  <script type="module" src="preview.js?v=guide"></script>
+</body>
+</html>

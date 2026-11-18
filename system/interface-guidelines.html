@@ -6,48 +6,34 @@
   <title>Interface Guidelines · CXL Design System</title>
   <link rel="stylesheet" href="cxl.css">
   <script src="theme.js"></script>
+  <link rel="stylesheet" href="editorial.css">
   <style>
-    * { box-sizing: border-box }
-    body { margin: 0 auto; max-width: 76rem; padding: 0 clamp(1rem,5vw,4rem) 4rem; background: var(--cxl-bg); color: var(--cxl-text); font-size: 1rem; line-height: 1.6 }
-    a { color: inherit; text-underline-offset: .2em }
-    header { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; border-bottom: 1px solid var(--cxl-line) }
-    header a { font-weight: 600; text-decoration: none }
-    h1,h2,h3 { line-height: 1.12; text-wrap: balance }
-    h1,h2 { font-weight: 400; letter-spacing: -.045em }
-    h1 { margin: 0; font-size: clamp(3rem,7vw,6rem) }
-    h2 { margin: 0; font-size: clamp(2rem,4vw,3.25rem) }
-    h3 { margin: 1.5rem 0 .4rem; font-size: 1.125rem }
-    p,li { max-width: 65ch }
-    .intro { padding-block: var(--cxl-space-6) var(--cxl-space-4) }
-    .layout { display: grid; grid-template-columns: minmax(10rem,1fr) minmax(0,3fr); gap: var(--cxl-space-6); align-items: start }
-    nav { position: sticky; top: 1rem; display: grid; gap: .4rem }
-    section { border-top: 1px solid var(--cxl-line); padding: 2rem 0; scroll-margin-top: 1rem }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 2rem; font-size: .875rem }
+    dt { font-weight: 600; margin-top: 1.25rem }
+    dd { margin: .25rem 0 0 }
     li + li { margin-top: .5rem }
-    pre { overflow-x: auto; padding: 1rem; background: var(--cxl-surface); border-radius: var(--cxl-radius); font-size: .875rem }
-    dd { margin: 0 0 .8rem; color: var(--cxl-muted) }
-    dt { font-weight: 600 }
-    @media(max-width: 760px) { .layout { display: block } nav { position: static; margin-bottom: 2rem } }
   </style>
 </head>
-<body>
-<header><a href="https://hugocxl.github.io/cxl-design-system/">← CXL Design System</a><button class="cxl-button" id="theme">Switch theme</button></header>
+<body class="cxl-editorial">
+<header class="cxl-masthead"><a class="cxl-wordmark" href="https://hugocxl.github.io/cxl-design-system/">CXL Design System</a><button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button></header>
 <main>
-  <div class="intro"><h1>Interface Guidelines</h1><p>Use this guide to decide what belongs on a page, how its elements relate, and how the interface responds when someone uses it.</p></div>
-  <div class="layout">
+  <div class="cxl-opening"><h1>Interface guidelines</h1></div>
+  <div class="cxl-reading">
+    <p>Open with one thought a reader can carry down the page. Follow it with a short explanation, then bring in the type, figures, and controls that help someone act on it.</p>
     <nav aria-label="On this page">
       <a href="#purpose">Page structure</a><a href="#layout">Layout and spacing</a><a href="#type">Type and language</a><a href="#tones">Gray and contrast</a><a href="#interaction">Controls and feedback</a><a href="#figures">Figures and motion</a><a href="#delivery">Build and review</a>
     </nav>
     <div>
       <section id="purpose"><h2>Page structure</h2>
         <p>Write down what someone came to do. Use that task to choose the page title, the information that follows, and the most prominent action.</p>
-        <dl><dt>Landing page</dt><dd>Name the product and its purpose. Place the primary action beside that explanation. Follow with a working example or figure that demonstrates the promise.</dd>
+        <dl><dt>Landing page</dt><dd>Give the masthead to the product name. Set one short opening sentence in Geist Serif with generous space above and below. Offer one quiet link underneath. Continue with an introduction and a sequence of titled passages, each with its example close by.</dd>
         <dt>Reading or reference page</dt><dd>Start with the subject and scope. Use descriptive section headings and anchor links for long pages. Keep examples next to the rule they illustrate.</dd>
         <dt>Task or product screen</dt><dd>Put the current object or task in the heading. Group its controls with the content they change. Keep navigation in a consistent location between screens.</dd></dl>
       </section>
       <section id="layout"><h2>Layout and spacing</h2>
-        <p>Choose a single reading column for sequential content. Use two columns when people benefit from seeing things together, such as a setting and its preview. Align section headings, text, and controls to a common edge.</p>
+        <p>For editorial pages, align the masthead, opening statement, and prose to one left edge. Keep the text measure near 64ch. Place a specimen in the reading sequence at the point where it answers a question. Reserve multi-column layouts for tasks that require comparison.</p>
         <p>Use the six spacing tokens as a starting point. Keep a label 4–8 px from its value, related controls 16 px apart, panel padding around 24 px, and major sections 40–64 px apart. Use a thin rule where two groups still need a visible boundary.</p>
-        <p>Let text wrap and panels grow. Stack columns when either becomes hard to read. The specimen stacks at 760 px. On narrow screens, preserve reading order and keep essential navigation reachable.</p>
+        <p>The preview uses an original grayscale texture along the right edge. The field stays still while the text scrolls and narrows to a 12 px strip at 760 px. Keep all information and actions in the reading column. Task screens can use the full width for their controls.</p>
       </section>
       <section id="type"><h2>Type and language</h2>
         <dl><dt>Geist Serif</dt><dd>Use for the H1 page title and H2 section headings. Give each page one descriptive H1 and nest subsequent headings by subject.</dd>
@@ -63,7 +49,7 @@
         <p>Follow the system appearance on first visit and remember an explicit choice. Check normal text at 4.5:1 contrast or higher against its actual background in each mode.</p>
       </section>
       <section id="interaction"><h2>Controls and feedback</h2>
-        <p>Use links for destinations and buttons for actions. Give the main action in a group the filled <code>.cxl-button</code> treatment. Give secondary actions less emphasis while keeping labels legible.</p>
+        <p>Use links for destinations and buttons for actions. Use a quiet text or outlined link for an editorial invitation. Give the main submit action in a form the filled <code>.cxl-button</code> treatment. Give secondary actions less emphasis while keeping labels legible.</p>
         <p>Give each field a persistent label. Put format hints beside the field. On validation failure, preserve the entry, identify the field, and explain the correction. For example, “Enter a date after 18 November.” Associate the message with the field so assistive technology can announce it.</p>
         <h3>Design the states the task can reach</h3>
         <ul><li>Keep keyboard focus visible and distinct from selection. Every pointer action needs a keyboard path.</li><li>During a save, show “Saving…” and prevent duplicate submissions. Announce completion in place.</li><li>For an empty list, explain what belongs there and offer the first action. For a failed load, explain what happened and offer a retry.</li><li>Mark selected items with a persistent cue and expose the corresponding state to assistive technology. Explain unavailable actions when the reason is unclear.</li></ul>
@@ -73,7 +59,7 @@
         <p>Reserve the figure’s space before it loads. Describe meaningful artwork in text and hide purely decorative imagery from assistive technology. Give interactive figures named controls and a usable still view when reduced motion is requested.</p>
       </section>
       <section id="delivery"><h2>Build and review</h2>
-        <p>Copy the <code>system/</code> directory into the project. Load its stylesheet and theme script in the document head. A button with <code>id="theme"</code> lets visitors switch appearance.</p>
+        <p>Copy the <code>system/</code> directory into the project. Load its stylesheet and theme script in the document head. For the editorial layout, also load <code>system/editorial.css</code>, apply <code>cxl-editorial</code> to the body, and use <code>cxl-masthead</code>, <code>cxl-opening</code>, and <code>cxl-reading</code> for the header, introduction, and prose. A button with <code>id="theme"</code> lets visitors switch appearance.</p>
         <pre><code>&lt;link rel="stylesheet" href="system/cxl.css"&gt;
 &lt;script src="system/theme.js"&gt;&lt;/script&gt;
 
