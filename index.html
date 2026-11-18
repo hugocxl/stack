@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IconsCXL — Rounded icons for every interface</title>
+<title>Icons — Rounded icons for every interface</title>
 <style>
 :root{color-scheme:light;--bg:#f8f9fb;--surface:#fff;--ink:#19222e;--muted:#687487;--line:#e2e6ed;--accent:#5566d8;--tile:120px;--size:24px;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 :root[data-theme=dark]{color-scheme:dark;--bg:#10141c;--surface:#181e29;--ink:#e8edf6;--muted:#9aa9bd;--line:#2a3445;--accent:#a3adff}
@@ -21,12 +21,12 @@ h1{font-family:Junicode,Georgia,serif;font-weight:400;font-size:clamp(48px,6vw,8
 </head>
 <body>
 <header>
-<nav aria-label="Main"><a class="logo" href="https://hugocxl.github.io/iconscxl/">Icons<span>CXL</span></a><div class="links"><a href="https://hugocxl.github.io/iconscxl/guide.html">Documentation</a><a href="https://github.com/hugocxl/iconscxl">GitHub ↗</a><button class="control" id="theme" aria-label="Switch to dark theme">Dark</button></div></nav>
+<nav aria-label="Main"><a class="logo" href="https://hugocxl.github.io/icons/">Icons</a><div class="links"><a href="https://hugocxl.github.io/icons/guide.html">Documentation</a><a href="https://github.com/hugocxl/icons">GitHub ↗</a><button class="control" id="theme" aria-label="Switch to dark theme">Dark</button></div></nav>
 <div class="intro"><div class="eyebrow">One family. Every interface.</div><h1>Small details.<br>Endless possibilities.</h1><p>2233 considered symbols for the things you build. Rounded geometry, a shared visual rhythm, and duotone where depth matters.</p></div>
 <div class="toolbar"><label class="search"><input type="search" id="search" aria-label="Search icons" placeholder="Search names, categories, or keywords…" autocomplete="off"></label><select id="style" aria-label="Icon style"><option value="duotone">Rounded · Duotone</option><option value="solid">Rounded · Solid</option><option value="stroke">Rounded · Stroke</option></select><label class="small">Size <input id="size" type="range" min="16" max="40" value="24" step="4"><output id="size-value">24</output></label><label class="small">Tint <input id="tint" type="color" value="#806033"></label><button class="control" id="reset-tint" aria-label="Use default tint">Reset</button></div>
 </header>
 <div class="layout"><aside id="categories" aria-label="Icon categories"><h2>Collection</h2></aside><main><div class="results-top"><strong id="count" aria-live="polite"></strong><span id="hint">Select a symbol to inspect, copy, or download.</span></div><div id="grid"></div><p class="empty" id="empty" hidden>No matching icons. Try another term or category.</p></main></div>
-<footer>Original UI artwork is MIT licensed. Brand and legacy artwork retains its upstream licenses. <a href="https://github.com/hugocxl/iconscxl/blob/main/NOTICE">Attribution</a> · <a href="https://github.com/hugocxl/iconscxl/blob/main/docs/DESIGN.md">Design system</a> · <a href="https://github.com/hugocxl/iconscxl/blob/main/docs/CATALOG.md">Coverage catalog</a></footer>
+<footer>Original UI artwork is MIT licensed. Brand and legacy artwork retains its upstream licenses. <a href="https://github.com/hugocxl/icons/blob/main/NOTICE">Attribution</a> · <a href="https://github.com/hugocxl/icons/blob/main/docs/DESIGN.md">Design system</a> · <a href="https://github.com/hugocxl/icons/blob/main/docs/CATALOG.md">Coverage catalog</a></footer>
 <dialog id="detail" aria-labelledby="detail-name" aria-describedby="detail-meta"><div class="dialog-head"><div><h2 id="detail-name"></h2><p id="detail-meta"></p></div><button class="close" aria-label="Close icon details">×</button></div><div class="specimen" id="specimen"></div><code class="code" id="import"></code><div class="actions"><button class="control" id="copy-svg">Copy SVG</button><button class="control" id="copy-name">Copy name</button><button class="control" id="download">Download SVG</button></div><div id="notice" role="status"></div></dialog>
 <div id="status" role="status"></div>
 <script>
@@ -50,7 +50,7 @@ function render(){
  for(const i of filtered){const b=document.createElement('button');b.className='card';b.setAttribute('aria-label',`Inspect ${i.name}`);const art=document.createElement('span');art.className='art';art.innerHTML=artwork[i.name][style()];art.firstChild.setAttribute('aria-hidden','true');const code=document.createElement('code');code.textContent=i.name;b.append(art,code);b.onclick=()=>open(i);fragment.append(b)}
  $('grid').replaceChildren(fragment);$('empty').hidden=filtered.length!==0;
 }
-function open(i){selected=i;$('detail-name').textContent=i.name;$('detail-meta').textContent=`${i.category} · Rounded ${style()} · ${i.origin==='original'?'Original · MIT':'Upstream licenses apply'}`;$('specimen').replaceChildren();for(const c of ['tiny','medium','large']){const e=document.createElement('div');e.className=c;e.innerHTML=artwork[i.name][style()];e.firstChild.setAttribute('aria-hidden','true');$('specimen').append(e)}$('import').textContent=`import { ${symbol(i.name)} } from\n  '@hugocxl/iconscxl/react${style()==='duotone'?'':'/'+style()}';`;$('notice').textContent='';$('detail').showModal()}
+function open(i){selected=i;$('detail-name').textContent=i.name;$('detail-meta').textContent=`${i.category} · Rounded ${style()} · ${i.origin==='original'?'Original · MIT':'Upstream licenses apply'}`;$('specimen').replaceChildren();for(const c of ['tiny','medium','large']){const e=document.createElement('div');e.className=c;e.innerHTML=artwork[i.name][style()];e.firstChild.setAttribute('aria-hidden','true');$('specimen').append(e)}$('import').textContent=`import { ${symbol(i.name)} } from\n  '@hugocxl/icons/react${style()==='duotone'?'':'/'+style()}';`;$('notice').textContent='';$('detail').showModal()}
 async function copy(value){try{await navigator.clipboard.writeText(value);$('notice').textContent='Copied to clipboard.'}catch{$('notice').textContent='Clipboard is unavailable here. Use Download SVG or select the import text.'}}
 $('copy-svg').onclick=()=>copy(artwork[selected.name][style()]);$('copy-name').onclick=()=>copy(selected.name);
 $('download').onclick=()=>{const url=URL.createObjectURL(new Blob([artwork[selected.name][style()]],{type:'image/svg+xml'}));const a=document.createElement('a');a.href=url;a.download=`${selected.name}-${style()}.svg`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};

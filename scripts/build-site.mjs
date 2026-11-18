@@ -18,12 +18,12 @@ const icon = (name, style = "duotone") =>
   read(
     `icons/${style === "duotone" ? "" : `styles/${style}/`}${name}.svg`,
   ).replace("<svg ", '<svg aria-hidden="true" ');
-const header = `<a class="skip" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="./">Icons<span>CXL</span></a><nav aria-label="Main navigation"><a href="icons.html">Icons</a><a href="guide.html">Guide</a><a href="https://github.com/hugocxl/iconscxl">GitHub ↗</a></nav></header>`;
+const header = `<a class="skip" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="./">Icons</a><nav aria-label="Main navigation"><a href="icons.html">Icons</a><a href="guide.html">Guide</a><a href="https://github.com/hugocxl/icons">GitHub ↗</a></nav></header>`;
 const footer = `<footer class="wrap"><span>Made by <a href="https://github.com/hugocxl">Hugo</a>. Also behind <a href="https://hugocxl.github.io/tab/">Tab ↗</a></span><span>Free &amp; open source · <a href="guide.html#license-and-attribution">License &amp; attribution</a></span></footer>`;
 function page(title, body, file) {
   writeFileSync(
     `${out}/${file}`,
-    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — IconsCXL</title><meta name="description" content="A family of rounded icons for apps and websites. Explore Duotone, Solid, and Stroke, with guides for web, React, React Native, and Swift."><meta name="theme-color" content="#f5f3ed"><link rel="canonical" href="https://hugocxl.github.io/iconscxl/${file === "index.html" ? "" : file}"><meta property="og:image" content="https://hugocxl.github.io/iconscxl/preview.png"><link rel="stylesheet" href="styles.css"><link rel="preload" href="assets/fonts/Junicode-Regular-latin.woff2" as="font" type="font/woff2" crossorigin></head><body>${header}${body}${footer}</body></html>`,
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — Icons</title><meta name="description" content="A family of rounded icons for apps and websites. Explore Duotone, Solid, and Stroke, with guides for web, React, React Native, and Swift."><meta name="theme-color" content="#f5f3ed"><link rel="canonical" href="https://hugocxl.github.io/icons/${file === "index.html" ? "" : file}"><meta property="og:image" content="https://hugocxl.github.io/icons/preview.png"><link rel="stylesheet" href="styles.css"><link rel="preload" href="assets/fonts/Junicode-Regular-latin.woff2" as="font" type="font/woff2" crossorigin></head><body>${header}${body}${footer}</body></html>`,
   );
 }
 const names = [
@@ -60,7 +60,7 @@ const names = [
 ];
 page(
   "Rounded icons for the things you build",
-  `<main id="main"><section class="hero wrap"><p class="eyebrow">One family. Every interface.</p><h1>Small details.<br>A whole lot<br><span>of character.</span></h1><div class="hero-bottom"><div><p class="description">Rounded icons for the things you build.<br>A little warmth. A shared rhythm. Right at home in your next app.</p><div class="actions"><a class="button" href="icons.html">Explore the icons ↗</a><a href="guide.html">Get started →</a></div></div><p class="small">${catalog.length.toLocaleString("en")} icons / 3 styles<br>Free &amp; open source</p></div></section><figure class="wrap" style="margin-block:0"><div class="specimen" role="img" aria-label="Thirty IconsCXL symbols, from navigation and communication to creative tools">${names.map((n) => `<div>${icon(n)}</div>`).join("")}</div><figcaption class="caption small"><span>A small taste of a much bigger collection.</span><a href="icons.html">Find your next icon →</a></figcaption></figure><section class="section wrap"><p class="eyebrow">01 / Find your expression</p><div class="section-heading"><h2>Same family.<br>Different feeling.</h2><p>Keep a consistent character across your interface. Add depth, bring emphasis, or keep things light.</p></div><div class="styles">${[
+  `<main id="main"><section class="hero wrap"><p class="eyebrow">One family. Every interface.</p><h1>Small details.<br>A whole lot<br><span>of character.</span></h1><div class="hero-bottom"><div><p class="description">Rounded icons for the things you build.<br>A little warmth. A shared rhythm. Right at home in your next app.</p><div class="actions"><a class="button" href="icons.html">Explore the icons ↗</a><a href="guide.html">Get started →</a></div></div><p class="small">${catalog.length.toLocaleString("en")} icons / 3 styles<br>Free &amp; open source</p></div></section><figure class="wrap" style="margin-block:0"><div class="specimen" role="img" aria-label="Thirty Icons symbols, from navigation and communication to creative tools">${names.map((n) => `<div>${icon(n)}</div>`).join("")}</div><figcaption class="caption small"><span>A small taste of a much bigger collection.</span><a href="icons.html">Find your next icon →</a></figcaption></figure><section class="section wrap"><p class="eyebrow">01 / Find your expression</p><div class="section-heading"><h2>Same family.<br>Different feeling.</h2><p>Keep a consistent character across your interface. Add depth, bring emphasis, or keep things light.</p></div><div class="styles">${[
     [
       "duotone",
       "A quiet sense of depth. A second tone where it adds something.",
@@ -101,17 +101,17 @@ let guide =
   "\n" +
   read("README.md").split("## License and attribution")[1];
 guide = guide.replace(
-  "\nOriginal IconsCXL artwork",
-  "\n## License and attribution\n\nOriginal IconsCXL artwork",
+  "\nOriginal Icons artwork",
+  "\n## License and attribution\n\nOriginal Icons artwork",
 );
 guide = guide
   .replace(
     /\]\(\.\.\/([^)]+)\)/g,
-    "](https://github.com/hugocxl/iconscxl/blob/main/$1)",
+    "](https://github.com/hugocxl/icons/blob/main/$1)",
   )
   .replace(
     /\]\((LICENSE|NOTICE|THIRD_PARTY_LICENSES.md)\)/g,
-    "](https://github.com/hugocxl/iconscxl/blob/main/$1)",
+    "](https://github.com/hugocxl/icons/blob/main/$1)",
   );
 page(
   "Getting started",

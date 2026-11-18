@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Changed
+
+- Join the @hugocxl stack: the repository is now `hugocxl/icons`, the npm package is
+  `@hugocxl/icons` and the Swift package exposes the `Icons` library. Releases move
+  to the 0.2 line. `@hugocxl/iconscxl` and the `IconsCXL` module are retired.
+
 ### Added
 
 - Add 35 original icons for home controls, capture/audio, accessibility and body

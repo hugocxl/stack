@@ -1,5 +1,5 @@
 import Testing
-@testable import IconsCXL
+@testable import Icons
 
 @Test func iconNamesAreUniqueAndRoundTrip() {
     let icons = Icon.allCases

@@ -260,7 +260,7 @@ data = {
 
 lines = [
     '# Lucide coverage comparison — 2026-11-16', '',
-    f'IconsCXL covers **{covered:,} of {len(lucide):,} pinned Lucide canonical concepts ({covered/len(lucide)*100:.1f}%)**: **{counts["exact-name"]:,} exact names** and **{counts["semantic-equivalent"]:,} reviewed alternate names**. **{gap:,} concepts remain without a strong semantic mapping.** The full reference expansion is delivered in one phase; artwork quality and platform verification have separate evidence.', '',
+    f'Icons covers **{covered:,} of {len(lucide):,} pinned Lucide canonical concepts ({covered/len(lucide)*100:.1f}%)**: **{counts["exact-name"]:,} exact names** and **{counts["semantic-equivalent"]:,} reviewed alternate names**. **{gap:,} concepts remain without a strong semantic mapping.** The full reference expansion is delivered in one phase; artwork quality and platform verification have separate evidence.', '',
     f'The catalog contains **{len(catalog):,} names**: {data["local_snapshot"]["original_ui_count"]:,} original UI names and {data["local_snapshot"]["legacy_brand_count"]} retained brand names. The full phase adds **{len(new_names):,} original names** after the earlier 579-name foundation. Compatibility names and extra local variants do not increase the reference-concept count.', '',
     '## Pinned reference and reproducibility', '',
     f'- Official [Lucide {upstream["release"]["tag_name"]} release]({upstream["release"]["html_url"]}), published {upstream["release"]["published_at"]}. The metadata snapshot was pinned on the audit date.',
@@ -281,7 +281,7 @@ for group in delivery_groups:
 lines += ['', 'All delivered names support the three published styles. Native per-name review and repository/platform checks remain separate acceptance gates; a successful mapping or generated file alone is not visual approval.', '',
           '## Preserved names and precise variants', '',
           'The following historical APIs retain their existing meanings. Each canonical reference concept now maps to the explicit variant shown:', '',
-          '| Lucide concept / historical local name | Precise IconsCXL variant | Compatibility detail |', '| --- | --- | --- |']
+          '| Lucide concept / historical local name | Precise Icons variant | Compatibility detail |', '| --- | --- | --- |']
 for name, (target, reason) in compatibility_variants.items():
     lines.append(f'| `{name}` | `{target}` | {reason} |')
 lines += ['', '## Counting rules', '',
@@ -289,7 +289,7 @@ lines += ['', '## Counting rules', '',
           'Upstream historical aliases are not automatic matches. Separate `file-headphone`, `mic-signal`, `sliders-vertical` and `tram-front` drawings now cover their precise concepts; the older music-document, podcast, horizontal-slider and train drawings retain their distinct meanings. Text start/end mappings for existing left/right controls cover left-to-right interfaces; direction-aware selection is required for RTL.', '',
           'Reference categories overlap and can inherit through `$extends:` entries. All resolved categories remain in JSON; the first category is used for disjoint totals below. Category membership does not certify specialist fitness, medical or accessibility suitability.', '',
           '## Reviewed alternate names', '',
-          '| Lucide canonical name | IconsCXL name | Meaning |', '| --- | --- | --- |']
+          '| Lucide canonical name | Icons name | Meaning |', '| --- | --- | --- |']
 for record in records:
     if record['status'] == 'semantic-equivalent':
         lines.append(f'| `{record["lucide_name"]}` | `{record["local_name"]}` | {record["reason"]} |')

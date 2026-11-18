@@ -1,4 +1,4 @@
-# IconsCXL website
+# Icons website
 
 Run `npm ci` and `npm run build:site`. Serve `_site` with any static HTTP server.
 Run `node scripts/check-site.mjs` to check navigation, guide anchors, and assets.

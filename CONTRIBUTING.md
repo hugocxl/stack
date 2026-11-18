@@ -1,4 +1,4 @@
-# Contributing to IconsCXL
+# Contributing to Icons
 
 ## Development and validation
 
@@ -8,13 +8,13 @@ Use Node 22+, npm, Python 3, and Xcode with Swift 6+ for Apple builds.
 npm ci
 npm run generate       # regenerate adapters after editing icons/
 npm run validate       # artwork, generation drift, rendering, types, packaging
-xcodebuild -scheme IconsCXL -destination 'platform=macOS' test
-xcodebuild -scheme IconsCXL -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+xcodebuild -scheme Icons -destination 'platform=macOS' test
+xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
 `icons/` is the source of truth for distribution. Original editable recipes live
 in `scripts/icons/draw.py`; see the drawing guide for pinned authoring tools. Commit generated `packages/*/dist` and
-`Sources/IconsCXL` resources so consumers do not need Python or a generation
+`Sources/Icons` resources so consumers do not need Python or a generation
 step. Do not edit generated files directly. Build caches and dependencies are
 ignored. CI validates JavaScript packages on Linux and Swift on macOS, including
 an iOS Simulator build. Use Xcode for asset-catalog tests; standalone SwiftPM resource compilation varies
@@ -41,7 +41,7 @@ the development version. Change the `0.1` release line in
 
 Publishing uses npm trusted publishing (OIDC) from `validate.yml`, with
 `id-token: write` and a compatible npm CLI on Node 24. The package authorizes
-`hugocxl/iconscxl` and this workflow filename on npm. No npm token is stored in
+`hugocxl/icons` and this workflow filename on npm. No npm token is stored in
 GitHub. The GitHub release uses `GITHUB_TOKEN` with `contents: write`; repository
 rules must permit version tags. The initial package must exist before trust
 can be configured; that one-time bootstrap requires the npm owner's login.
@@ -52,7 +52,7 @@ to recover a release interrupted after npm publication.
 
 ## Contribute
 
-IconsCXL grew out of the icon collection adapted and extended for
+Icons grew out of the icon collection adapted and extended for
 [Tab](https://github.com/hugocxl/tab).
 
 See [the drawing guide](scripts/icons/STYLE.md) for geometry and naming conventions.

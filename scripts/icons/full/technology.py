@@ -1,6 +1,6 @@
 """Original 16-unit technology, science, media and sport artwork.
 
-Every recipe is authored for IconsCXL. Shared constructions express actual
+Every recipe is authored for Icons. Shared constructions express actual
 families; state marks have clearance and never borrow reference-library paths.
 """
 import math

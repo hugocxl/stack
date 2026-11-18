@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { releaseVersion, stampVersion } from '../scripts/prepare-release.mjs';
 
 test('release versions are deterministic on retry and distinct across runs', () => {
-  assert.equal(releaseVersion('2'), '0.1.2');
+  assert.equal(releaseVersion('2'), '0.2.2');
   assert.equal(releaseVersion('2'), releaseVersion(2));
   assert.notEqual(releaseVersion(2), releaseVersion(3));
   for (const invalid of [undefined, 0, -1, '1.2', '01', 'abc', '9007199254740992']) {
@@ -13,12 +13,12 @@ test('release versions are deterministic on retry and distinct across runs', () 
 
 test('release stamping keeps package and lockfile versions aligned', () => {
   const manifests = {
-    'packages/iconscxl': { name: '@hugocxl/iconscxl', version: '0.1.0' },
+    'packages/icons': { name: '@hugocxl/icons', version: '0.1.0' },
   };
   const lock = { packages: structuredClone(manifests), lockfileVersion: 3 };
   stampVersion(manifests, lock, '0.1.8');
   assert.deepEqual(lock.packages, manifests);
-  assert.equal(manifests['packages/iconscxl'].version, '0.1.8');
+  assert.equal(manifests['packages/icons'].version, '0.1.8');
   assert.equal(lock.lockfileVersion, 3);
   assert.throws(() => stampVersion(manifests, { packages: {} }, '0.1.9'));
 });

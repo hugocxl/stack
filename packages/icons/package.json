@@ -1,7 +1,7 @@
 {
-  "name": "@hugocxl/iconscxl",
-  "version": "0.1.0",
-  "description": "IconsCXL icons for JavaScript, React and React Native.",
+  "name": "@hugocxl/icons",
+  "version": "0.2.0",
+  "description": "Rounded icons for JavaScript, React and React Native.",
   "type": "module",
   "sideEffects": false,
   "files": [
@@ -105,8 +105,8 @@
   "license": "SEE LICENSE IN THIRD_PARTY_LICENSES.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugocxl/iconscxl.git",
-    "directory": "packages/iconscxl"
+    "url": "https://github.com/hugocxl/icons.git",
+    "directory": "packages/icons"
   },
   "publishConfig": {
     "access": "public"

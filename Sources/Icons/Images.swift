@@ -5,7 +5,7 @@ import UIKit
 import AppKit
 #endif
 
-/// A named vector resource in the IconsCXL asset catalog.
+/// A named vector resource in the Icons asset catalog.
 public protocol IconResource: Sendable {
     var resourceName: String { get }
 }

@@ -1,11 +1,11 @@
 // swift-tools-version: 6.0
 import PackageDescription
 let package = Package(
-    name: "IconsCXL",
+    name: "Icons",
     platforms: [.macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v8)],
-    products: [.library(name: "IconsCXL", targets: ["IconsCXL"])],
+    products: [.library(name: "Icons", targets: ["Icons"])],
     targets: [
-        .target(name: "IconsCXL", resources: [.process("Resources")]),
-        .testTarget(name: "IconsCXLTests", dependencies: ["IconsCXL"], path: "tests/IconsCXLTests")
+        .target(name: "Icons", resources: [.process("Resources")]),
+        .testTarget(name: "IconsTests", dependencies: ["Icons"], path: "tests/IconsTests")
     ]
 )

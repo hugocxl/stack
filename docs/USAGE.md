@@ -1,4 +1,4 @@
-# Use IconsCXL
+# Use Icons
 
 Bring the same rounded icon family to your website, app, or design. Choose your platform below.
 
@@ -21,7 +21,7 @@ Download or clone the repository and copy the SVGs you need from [`icons/`](../i
 No dependencies or build step are required to use the artwork.
 
 ```sh
-git clone https://github.com/hugocxl/iconscxl.git
+git clone https://github.com/hugocxl/icons.git
 ```
 
 Icons use `currentColor` and filled vector geometry. New UI symbols use a
@@ -41,19 +41,19 @@ Browse the [complete catalog](../docs/CATALOG.md) for every available name.
 
 ## Swift / SwiftUI
 
-The Swift package exposes the `IconsCXL` library for Swift 6+, macOS 12+, iOS
+The Swift package exposes the `Icons` library for Swift 6+, macOS 12+, iOS
 15+, tvOS 15+, and watchOS 8+. Add the repository as a Swift Package Manager
 dependency using a release tag, or add it as a local package while developing.
-Then add `IconsCXL` to your app target. For a `Package.swift` dependency:
+Then add `Icons` to your app target. For a `Package.swift` dependency:
 
 ```swift
-.package(url: "https://github.com/hugocxl/iconscxl.git", from: "0.1.9")
+.package(url: "https://github.com/hugocxl/icons.git", from: "0.1.9")
 ```
 
-Add `.product(name: "IconsCXL", package: "iconscxl")` to your target's dependencies.
+Add `.product(name: "Icons", package: "icons")` to your target's dependencies.
 
 ```swift
-import IconsCXL
+import Icons
 import SwiftUI
 
 Icon.search.image
@@ -70,18 +70,18 @@ Images come from the package's vector asset catalog and use template rendering.
 
 ## JavaScript (no framework)
 
-All JavaScript integrations come from one npm package, `@hugocxl/iconscxl`.
+All JavaScript integrations come from one npm package, `@hugocxl/icons`.
 Choose `/js`, `/react`, or `/react-native`; per-icon imports are available too.
 React and React Native dependencies are optional, so a plain JavaScript install
 adds no framework dependencies.
 
 ```sh
-npm install @hugocxl/iconscxl
+npm install @hugocxl/icons
 ```
 
 ```js
-import { SearchIcon } from '@hugocxl/iconscxl/js';
-// Or: import { SearchIcon } from '@hugocxl/iconscxl/js/search';
+import { SearchIcon } from '@hugocxl/icons/js';
+// Or: import { SearchIcon } from '@hugocxl/icons/js/search';
 // The package root also exports the plain JavaScript adapter.
 document.querySelector('#search-icon').innerHTML = SearchIcon;
 ```
@@ -97,13 +97,13 @@ The React package provides typed ESM components with per-icon exports and tree
 shaking. Install it from npm:
 
 ```sh
-npm install @hugocxl/iconscxl
+npm install @hugocxl/icons
 ```
 
 ```tsx
-import { SearchIcon } from '@hugocxl/iconscxl/react';
+import { SearchIcon } from '@hugocxl/icons/react';
 // Per-icon imports are also supported:
-import { TerminalIcon } from '@hugocxl/iconscxl/react/terminal';
+import { TerminalIcon } from '@hugocxl/icons/react/terminal';
 
 <SearchIcon size={24} color="currentColor" aria-label="Search" />
 <TerminalIcon size={16} />
@@ -120,14 +120,14 @@ The React Native package provides the same typed, per-icon API for React Native
 and Expo. Install it from npm along with its peer dependency:
 
 ```sh
-npm install @hugocxl/iconscxl
+npm install @hugocxl/icons
 npx expo install react-native-svg
 # Or, in a bare React Native app:
 npm install react-native-svg
 ```
 
 ```tsx
-import { SearchIcon } from '@hugocxl/iconscxl/react-native';
+import { SearchIcon } from '@hugocxl/icons/react-native';
 
 <SearchIcon size={24} color="#64748b" accessibilityLabel="Search" />
 ```
@@ -147,14 +147,14 @@ The 2,117 original UI icons also support Rounded Solid and Rounded Stroke.
 Brands are intentionally absent from those two style namespaces.
 
 ```tsx
-import { SearchIcon } from '@hugocxl/iconscxl/react'; // Duotone
-import { SearchIcon as SolidSearchIcon } from '@hugocxl/iconscxl/react/solid';
-import { SearchIcon as StrokeSearchIcon } from '@hugocxl/iconscxl/react/stroke/search';
+import { SearchIcon } from '@hugocxl/icons/react'; // Duotone
+import { SearchIcon as SolidSearchIcon } from '@hugocxl/icons/react/solid';
+import { SearchIcon as StrokeSearchIcon } from '@hugocxl/icons/react/stroke/search';
 ```
 
 The same style paths work under `/js` and `/react-native`. Explicit `/duotone`
 and `/duotone/search` imports are aliases of the default artwork. Use
-`@hugocxl/iconscxl/catalog.json` to inspect names, categories, keywords, provenance,
+`@hugocxl/icons/catalog.json` to inspect names, categories, keywords, provenance,
 supported styles, and `defaultTone` (`monochrome` or `duotone`).
 Style namespaces remain tree-shakeable.
 

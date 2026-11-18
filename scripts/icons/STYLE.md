@@ -15,9 +15,9 @@ increase the count with arbitrary badge combinations or change a symbol's
 meaning simply to reuse a drawing.
 
 ```sh
-python3 -m venv /tmp/iconscxl-artwork-venv
-/tmp/iconscxl-artwork-venv/bin/pip install -r scripts/icons/requirements.txt
-/tmp/iconscxl-artwork-venv/bin/python scripts/icons/draw.py
+python3 -m venv /tmp/icons-artwork-venv
+/tmp/icons-artwork-venv/bin/pip install -r scripts/icons/requirements.txt
+/tmp/icons-artwork-venv/bin/python scripts/icons/draw.py
 python3 -I scripts/icons/normalize.py icons
 npm run generate
 ```
@@ -53,8 +53,8 @@ swift scripts/icons/render-sheet.swift icons /tmp/icons-16.png --size 16 --scale
 swift scripts/icons/render-sheet.swift icons/styles/solid /tmp/solid-32.png --size 32 --scale 2
 swift scripts/icons/render-sheet.swift icons/styles/stroke /tmp/stroke-32.png --size 32 --scale 2
 npm run validate
-xcodebuild -scheme IconsCXL -destination 'platform=macOS' test
-xcodebuild -scheme IconsCXL -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+xcodebuild -scheme Icons -destination 'platform=macOS' test
+xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
 The native renderer shows light and dark tinting and fails on unloadable SVGs.

@@ -30,8 +30,8 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -scheme IconsCXL -destination 'platform=macOS' -derivedDataPath /tmp/iconscxl-macos test
-      - run: xcodebuild -scheme IconsCXL -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/iconscxl-ios CODE_SIGNING_ALLOWED=NO build
+      - run: xcodebuild -scheme Icons -destination 'platform=macOS' -derivedDataPath /tmp/icons-macos test
+      - run: xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/icons-ios CODE_SIGNING_ALLOWED=NO build
       - run: swift scripts/icons/render-sheet.swift icons /tmp/tab-icons-preview.png --size 16 --scale 2
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

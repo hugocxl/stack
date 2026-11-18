@@ -9,7 +9,7 @@ export function releaseVersion(runNumber) {
   if (!/^[1-9]\d*$/.test(String(runNumber)) || !Number.isSafeInteger(Number(runNumber))) {
     throw new Error('A positive, safe GitHub Actions run number is required');
   }
-  return `0.1.${runNumber}`;
+  return `0.2.${runNumber}`;
 }
 
 export function stampVersion(manifests, lock, version) {
@@ -24,7 +24,7 @@ export function stampVersion(manifests, lock, version) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const version = releaseVersion(process.env.GITHUB_RUN_NUMBER);
-  const paths = ['packages/iconscxl'];
+  const paths = ['packages/icons'];
   const manifests = Object.fromEntries(paths.map(path => [path, JSON.parse(readFileSync(`${path}/package.json`))]));
   const lock = JSON.parse(readFileSync('package-lock.json'));
   stampVersion(manifests, lock, version);

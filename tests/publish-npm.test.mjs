@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { publishPackage, registryVersion } from '../scripts/publish-npm.mjs';
 
-const artifact = { name: '@hugocxl/iconscxl', version: '0.1.4', file: 'release/web.tgz', integrity: 'sha512-example' };
+const artifact = { name: '@hugocxl/icons', version: '0.1.4', file: 'release/web.tgz', integrity: 'sha512-example' };
 const metadata = { name: artifact.name, version: artifact.version, dist: { integrity: artifact.integrity } };
 
 test('a retry skips the package already published and checks its integrity', async () => {
