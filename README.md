@@ -2,46 +2,35 @@
 
 ### Small details. A whole lot of character.
 
-A family of **2,233 rounded icons** for the things you build. From everyday navigation to creative tools, bring a clear, consistent visual language to your apps and websites.
+A family of **2,233 rounded icons** for the things you build. From everyday navigation to creative tools, they give your apps and websites one clear, consistent voice.
 
-[Browse the icons](https://hugocxl.github.io/icons/icons.html) · [Get started](https://hugocxl.github.io/icons/guide.html) · [Website](https://hugocxl.github.io/icons/)
+[Browse the icons](https://hugocxl.github.io/icons/browse.html) · [Read the docs](https://hugocxl.github.io/icons/docs.html) · [Visit the website](https://hugocxl.github.io/icons/)
 
-[![A selection of rounded Icons icons in warm neutral tones](website/assets/preview.png)](https://hugocxl.github.io/icons/icons.html)
+[![A selection of rounded icons from the collection](.github/preview.png)](https://hugocxl.github.io/icons/)
 
 ## One family. Three expressions.
 
-**Duotone** adds a quiet sense of depth. **Solid** brings emphasis. **Stroke** keeps things light. Choose the expression that suits your interface, with a shared rounded character across all three.
+**Duotone** adds a quiet sense of depth. **Solid** brings emphasis. **Stroke** keeps things light. Every icon shares the same rounded character, so you can move between styles without losing your rhythm.
 
-The collection includes 2,152 interface icons in all three styles, plus 81 brand marks in their default style.
+2,152 interface icons come in all three styles, across 33 categories, alongside 81 brand marks.
 
-## At home in your product
+## Made to feel at home
 
-- **Made to work together.** Consistent shapes and proportions, from your first toolbar to your last settings screen.
-- **Make them yours.** Explore different sizes and colors, then copy or download the icon you need.
-- **Across your platforms.** Ready for the web, React, React Native, Expo, SwiftUI, UIKit, and AppKit.
-- **Free to build with.** Open source, with original artwork available for personal and commercial projects under the MIT license.
+- **Consistent by design.** Shared shapes and proportions, from the first toolbar to the last settings screen.
+- **Easy to find.** Search by name or category, compare the styles, and take the one you need.
+- **Ready where you build.** The same icons on the web, in React and React Native, and in native Apple apps.
+- **Free to use.** Open source, for personal and commercial work.
 
-## Find your next icon
+## Part of a stack
 
-[Explore the full collection →](https://hugocxl.github.io/icons/icons.html)
+Three libraries, designed to work as one.
 
-Search by name or category, compare styles, and preview an icon before bringing it into your project. The [getting started guide](https://hugocxl.github.io/icons/guide.html) covers every supported platform.
+- **[Icons](https://hugocxl.github.io/icons/)** label what people can do.
+- **[Vectors](https://hugocxl.github.io/vectors/)** illustrate what you mean.
+- **[Design system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
 
-Created by [Hugo](https://github.com/hugocxl), growing out of the icon collection for [Tab](https://hugocxl.github.io/tab/).
+## License
 
-## Contribute
+The original artwork is [MIT licensed](LICENSE). Some icons are adapted from open-source collections and keep their own licenses, and brand marks belong to their owners. [NOTICE](NOTICE) has the details.
 
-Ideas, issues, and contributions are welcome. See the [contributing guide](CONTRIBUTING.md) or [open an issue](https://github.com/hugocxl/icons/issues).
-
-## License and attribution
-
-Original Icons artwork, Tab contributions and tooling are [MIT licensed](LICENSE).
-The collection includes artwork adapted from Pierre Icons (Apache 2.0),
-Pierre's file icons (MIT), Simple Icons (CC0 1.0), LobeHub Icons (MIT), and
-Devicon (MIT). Upstream artwork retains its original license; the collection
-is not solely MIT licensed. Keep [NOTICE](NOTICE),
-[the upstream license texts](THIRD_PARTY_LICENSES.md), and applicable copyright
-notices with redistributed artwork.
-
-Brand marks remain the trademarks of their owners. Inclusion does not imply
-endorsement or grant trademark rights.
+Made by [Hugo](https://github.com/hugocxl), growing out of the icons for [Tab](https://hugocxl.github.io/tab/). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/icons/issues).

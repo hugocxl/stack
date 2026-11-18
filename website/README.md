@@ -28,4 +28,3 @@ Serve `_site` with any static HTTP server.
 - `home.js` cycles the home specimen through Duotone, Solid and Stroke.
 
 `.github/workflows/pages.yml` builds, checks and deploys `_site` on main.
-`assets/preview.png` is not used by the site; the repository README links to it.
