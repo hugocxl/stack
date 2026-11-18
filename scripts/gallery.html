@@ -15,13 +15,13 @@
   [hidden] { display: none !important; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "Inter", system-ui, sans-serif; }
   a { color: inherit; text-decoration: none; }
-  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .shell { max-width: 1312px; margin: auto; padding-inline: clamp(18px, 5vw, 72px); }
   header { border-bottom: 1px solid var(--border); }
   .top { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { font-weight: 650; letter-spacing: -.035em; }
   .tools { display: flex; gap: 16px; align-items: center; color: var(--soft); font-size: 13px; }
-  button, input { color: inherit; font: inherit; background: var(--plate); border: 1px solid var(--border); border-radius: 7px; }
+  button, input, select { color: inherit; font: inherit; background: var(--plate); border: 1px solid var(--border); border-radius: 7px; }
   button { padding: 6px 11px; cursor: pointer; }
   .intro { padding-block: clamp(55px, 8vw, 120px) clamp(30px, 5vw, 60px); }
   h1 { font-size: clamp(52px, 9vw, 116px); line-height: 1; letter-spacing: -.047em; font-weight: 650; margin: 0 0 20px; }
@@ -29,7 +29,10 @@
   .filters { padding-block: 15px; border-block: 1px solid var(--border); display: flex; gap: 12px 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
   nav { display: flex; gap: 8px 22px; flex-wrap: wrap; color: var(--soft); font-size: 14px; }
   nav a:hover, .tools a:hover, h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
-  input { padding: 7px 11px; width: min(100%, 240px); }
+  input, select { padding: 7px 11px; max-width: 100%; }
+  input { width: min(100%, 280px); }
+  #result-count { margin-left: auto; font-size: 13px; color: var(--soft); }
+  .next { margin-top: 24px; text-align: center; }
   section { padding-block: 26px 12px; scroll-margin: 20px; }
   h2 { font-size: 25px; line-height: 1.2; letter-spacing: -.03em; margin: 16px 0 20px; }
   .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; list-style: none; margin: 0; padding: 0; }
@@ -56,15 +59,27 @@
 <main class="shell">
   <div class="intro"><h1>P9 Figures</h1><p>{{figure_count}} isometric SVG illustrations for websites and product pages.</p></div>
   <div class="filters"><nav aria-label="Collections"><!-- CATEGORIES --></nav>
-  <input id="search" type="search" aria-label="Find a figure" placeholder="Find a figure…" hidden></div>
+  <input id="search" type="search" aria-label="Find a figure" placeholder="Find a figure…" hidden>
+  <select id="collection" aria-label="Collection" hidden><option value="">All collections</option></select>
+  <span id="result-count" aria-live="polite"></span></div>
   <p id="empty" role="status" hidden>No matching figures.</p>
   <!-- COLLECTIONS -->
+  <div class="next"><button id="more" type="button" hidden>Show more figures</button></div>
 </main>
 <footer><div class="shell">MIT licensed. Inspired by <a href="https://hairline.lucasmarkes.com/skills">Hairline by Lucas Marques</a>.</div></footer>
 <script>
   const search = document.querySelector("#search");
   const theme = document.querySelector("#theme");
-  const sections = [...document.querySelectorAll("main section")];
+  const collection = document.querySelector("#collection");
+  const more = document.querySelector("#more");
+  const count = document.querySelector("#result-count");
+  const sections = [...document.querySelectorAll("main section")].map(section => ({
+    section,
+    cards: [...section.querySelectorAll("[data-figure]")].map(card => ({
+      card,
+      text: card.textContent.toLowerCase()
+    }))
+  }));
   const empty = document.querySelector("#empty");
   const system = matchMedia("(prefers-color-scheme: dark)");
   const root = document.documentElement;
@@ -81,19 +96,49 @@
   labelTheme();
   theme.hidden = false;
 
-  search.addEventListener("input", () => {
+  const pageSize = 48;
+  let limit = pageSize;
+  function update() {
     const terms = search.value.trim().toLowerCase().split(/\s+/);
-    for (const section of sections) {
-      const cards = [...section.querySelectorAll("[data-figure]")];
-      for (const card of cards) {
-        const text = card.textContent.toLowerCase();
-        card.hidden = !terms.every(term => text.includes(term));
+    let matches = 0;
+    for (const {section, cards} of sections) {
+      let anyVisible = false;
+      const selected = !collection.value || collection.value === section.id;
+      for (const {card, text} of cards) {
+        const matched = selected && terms.every(term => text.includes(term));
+        if (matched) matches++;
+        card.hidden = !matched || matches > limit;
+        anyVisible ||= !card.hidden;
       }
-      section.hidden = cards.every(card => card.hidden);
+      section.hidden = !anyVisible;
     }
-    empty.hidden = sections.some(section => !section.hidden);
+    more.hidden = matches <= limit;
+    empty.hidden = matches !== 0;
+    count.textContent = matches > limit
+      ? Math.min(limit, matches).toLocaleString() + " of " + matches.toLocaleString() + " figures"
+      : matches.toLocaleString() + (matches === 1 ? " figure" : " figures");
+  }
+  function reset() {
+    limit = pageSize;
+    update();
+  }
+  for (const {section} of sections) {
+    collection.add(new Option(section.querySelector("h2").textContent, section.id));
+  }
+  search.addEventListener("input", reset);
+  collection.addEventListener("change", reset);
+  more.addEventListener("click", () => {
+    const previous = [...document.querySelectorAll("[data-figure]:not([hidden])")].pop();
+    limit += pageSize;
+    update();
+    const visible = [...document.querySelectorAll("[data-figure]:not([hidden])")].filter(card => !card.closest("section").hidden);
+    const next = visible[visible.indexOf(previous)+1];
+    next?.querySelector(".art")?.focus();
   });
+  document.querySelector(".filters nav").hidden = true;
   search.hidden = false;
+  collection.hidden = false;
+  update();
 </script>
 </body>
 </html>

@@ -42,7 +42,7 @@
 <body>
 <header><nav class="shell" aria-label="Site"><a href="./">P9 Figures</a><a href="https://github.com/hugocxl/p9-figures">GitHub ↗</a></nav></header>
 <main class="shell">
-  <div class="intro"><h1>Use-case catalog</h1><p>{{case_count}} website illustration briefs, with {{figure_count}} finished SVGs available.</p></div>
+  <div class="intro"><h1>Use-case catalog</h1><p>{{catalog_summary}}</p></div>
   <div class="controls" hidden>
     <input id="filter" type="search" placeholder="Find a use case…" aria-label="Find a use case">
     <select id="availability" aria-label="Availability"><option value="">All cases</option><option value="1">SVG available</option><option value="0">Planned</option></select>
@@ -82,6 +82,7 @@
   }
   search.addEventListener("input", update);
   availability.addEventListener("change", update);
+  availability.hidden = !document.querySelector('li[data-asset="0"]');
   update();
   document.querySelector(".controls").hidden = false;
 </script>

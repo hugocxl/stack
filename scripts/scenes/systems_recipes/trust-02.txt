@@ -1,0 +1,1 @@
+document-signature | Document signature | Digital agreement tools | A drafting pen rests over a marked signing line at the foot of a flat agreement. | sheet 0 5 0 116 76 E; barline 17 55 2.2 62 E; signature_pen 43 58 3 44 27 B; ring 92 23 2.2 12 D

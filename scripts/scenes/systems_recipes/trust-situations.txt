@@ -1,0 +1,64 @@
+Passkey enrollment | Passwordless account setup | dock | passkey phone
+Passkey recovery | Lost device account recovery | handover | phone passkey credential
+Authentication strength | Account security setup score | bench | lock meter
+Backup authentication codes | Emergency sign-in screen | shelter | gridrack archive
+Recovery key verification | Security settings | watched | key seal
+Delegated administration | Enterprise organization admin | relay | credential key vault
+Scoped service identity | API service account settings | protected | processor credential
+Credential expiry | Credential lifecycle settings | watched | credential clock
+Token timeout | Authentication docs | outside | clock passkey
+Token renewal | Session settings and status | handover | terminal credential key
+Trusted devices | Sign-in approval flow | compare | phone tablet
+Device attestation | Managed device security | gate | phone seal
+Device trust revocation | Admin device action screen | boundary | phone stop
+Suspected sign-in | Account security alert | inspect | phone warning
+Security alert inbox | Trust settings | index | phone warning archive
+Secure enrollment | Device management setup | conduit | phone shield
+Restricted workspace | Enterprise security feature | shelter | cabinet shield
+Private installation | Deployment policy comparison | independent | vault cabinet
+Isolated test accounts | QA environment security | isolated | cabinet credential processor
+Account soft lock | Account protection flow | protected | stop lock
+Account unlock | Account help workflow | exchange | passkey lock
+Access expiry | Workspace policy controls | watched | lock clock
+Just-in-time access | Operational access request | handover | lock clock key
+Break-glass access | Emergency response settings | protected | vault passkey
+Temporary guest access | Collaboration security controls | gate | credential clock
+Second-person approval | Dual approval administrative surface | merge | credential key approval
+Approval delegation | Governance workflow | relay | approval credential passkey
+Access certification campaign | Compliance review software | stations | credential archive seal
+Access scope preview | Admin role editor | inspect | credential lens
+Group membership review | Directory administration UI | index | credential list archive
+Permissions inheritance | Resource permissions UI | alignment | archive key
+Exception policy | Policy management UI | outside | shield receipt
+Policy staging | Policy roll-out docs | bench | form approval
+Policy rollout checkpoint | Compliance deployment screen | stations | form gate_mark seal
+Policy conflict | Admin warning state | compare | form warning
+Policy impact estimate | Review screen before rollout | watched | form bars
+Sensitive field labeling | Data governance admin | surface | form tags
+Sensitive field access | Sensitive content permission flow | gate | lock form
+Field-level redaction | Document privacy controls | boundary | file curtain
+Display masking | Personal information masking settings | protected | credential curtain
+Database row access | Data governance feature | gate | gridrack key
+Dataset stewardship | Data ownership settings | bench | archive credential
+Data access review | Audit workflow | inspect | archive seal
+Data export request | Privacy rights support | handover | drawer receipt template
+Subject access request | Rights request intake | relay | form credential archive
+Consent withdrawal | Privacy center action | boundary | switch stop
+Regional transfer review | Compliance exception screen | gate | map approval
+Processing inventory | Privacy operations audit | index | processor tags archive
+Purpose limitation | Data use policy controls | protected | tags gate_mark
+Event retention schedule | Data policy wizard | alignment | clock archive
+Restoration restrictions | Data recovery governance | shelter | vault archive
+Long-term transcript archive | Media retention section | shelter | transcript vault
+Forensic image custody | Security response archive | handover | drive seal vault
+Secure erasure certification | Data disposal audit | stations | drive stop seal
+Evidence comparison | Incident response examination | compare | drive photo_flat
+Integrity verification | Security compliance tooling | inspect | sealed seal
+Timestamped signature | Signed contract metadata | bench | seal clock
+Counterparty verification | Agreements workflow | independent | credential seal
+Submission acknowledgement | Regulatory filing flow | relay | receipt form seal
+Incident triage | Security operations overview | index | warning network tags
+Incident escalation | Security response playbook | elevation | warning beacon
+Incident resolution statement | Trust center status post | flow | warning archive approval
+Read-only incident timeline | Compliance reporting feature | surface | track seal
+Verified provenance record | Supply chain and asset integrity | surface | tags seal

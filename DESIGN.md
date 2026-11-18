@@ -12,6 +12,14 @@ Every figure earns its place by illustrating a specific moment on a website. A u
 
 Mechanical checks catch stale outputs and broken cross-references. Browser review is required to judge the drawing.
 
+## Review at 2,000 figures
+
+The build rejects self-intersecting projected faces and requires every catalog link to resolve to a shipped SVG. The release check also enforces the figure count, checks SVG elements and attributes, verifies all path coordinates and safe margins, and detects identical geometry. A normalized contour comparison surfaces near-duplicates for side-by-side review. Each file is rasterized in Chromium at 160 and 360 CSS pixels on light and dark backgrounds to check loading, visible ink, and clipping.
+
+Visual review uses contact sheets and individual enlargements for new compositions, reported defects, and closely matched silhouettes. Related figures share objects and construction methods. Inspect the specific scene for meaning, depth, alignment, and line collisions before accepting a change.
+
+Product return was redrawn after a reported defect. Two flaps fold from opposite rim edges, and the arrow follows a separate ground path with the arrowhead clear of the carton.
+
 ## Review of the original collection
 
 All 50 original figures were reviewed in Chromium on both backgrounds at 160 and 360 CSS pixels. The first pass identified 15 compositions for redraw, 28 for refinement, and seven with a baseline worth preserving.

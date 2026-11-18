@@ -1,11 +1,9 @@
 """Render the use-case catalog and validate its links to published figures."""
-import json
 import re
 from html import escape
 
 
-def render_catalog(root, available):
-    catalog = json.loads((root/"catalog/use-cases.json").read_text(encoding="utf-8"))
+def render_catalog(root, available, catalog):
     seen_ids, linked_assets, sections = set(), set(), []
     for group in catalog["groups"]:
         entries = []
@@ -32,8 +30,12 @@ def render_catalog(root, available):
     if missing := available - linked_assets:
         raise ValueError(f"Figures missing from the use-case catalog: {', '.join(sorted(missing))}")
     template = (root/"scripts/catalog.html").read_text(encoding="utf-8")
+    n_cases, n_assets = len(seen_ids), len(linked_assets)
+    if n_cases == n_assets:
+        summary = f"{n_cases:,} website use cases with downloadable SVGs."
+    else:
+        summary = f"{n_cases:,} website illustration briefs, with {n_assets:,} finished SVGs available."
     return (
         template.replace("<!-- GROUPS -->", "\n".join(sections))
-        .replace("{{case_count}}", str(len(seen_ids)))
-        .replace("{{figure_count}}", str(len(linked_assets)))
+        .replace("{{catalog_summary}}", summary)
     )

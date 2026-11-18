@@ -1,6 +1,6 @@
 # P9 Figures
 
-79 static isometric SVG illustrations for landing pages, feature sections, documentation, and product UI.
+2,000 static isometric SVG illustrations for website heroes, feature sections, documentation, product states, and industry pages.
 
 [Browse the gallery](https://hugocxl.github.io/p9-figures/) · [Search the use-case catalog](https://hugocxl.github.io/p9-figures/use-cases.html) · [Download the SVG files](figures/)
 
@@ -19,7 +19,7 @@
 - **Commerce** covers checkout, fulfillment, receipts, returns, and product comparison.
 - **Editorial & media** covers documentation, video, photography, newsletters, and learning.
 
-The [use-case catalog](catalog/) records planned briefs alongside available illustrations. The [design review](DESIGN.md) documents acceptance criteria and the review of the original set.
+The [illustration manifest](catalog/manifest.json) lists every SVG by use case, including where it can appear on a site. The [design review](DESIGN.md) documents the acceptance criteria and what the automated checks cover.
 
 ## Use an SVG
 
@@ -41,8 +41,9 @@ The assets, gallery, and use-case page are checked in. To regenerate them, use P
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python scripts/build.py
-python scripts/build.py --check
+python scripts/build.py --expect 2000
+python scripts/build.py --check --expect 2000
+python scripts/verify.py --expect 2000 --similarity .965
 ```
 
 The scene definitions live in `scripts/scenes/`. The build projects their 3D coordinates into SVG and removes hidden lines so the backdrop stays transparent. Open `index.html` to browse the gallery locally.

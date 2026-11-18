@@ -2,6 +2,7 @@
 from math import cos, sin, radians
 from shapely.geometry import LineString, MultiPoint, Polygon
 from shapely.ops import unary_union
+from shapely.validation import explain_validity
 
 BOLD = "1"
 EDGE = ".76"
@@ -51,11 +52,14 @@ class Scene:
             self.layers.append((LineString(xy), None, ink))
 
     def face(self, points, ink=EDGE, *, openings=()):
+        outline = list(map(project, points))
         polygon = Polygon(
-            list(map(project, points)),
+            outline,
             [list(map(project, opening)) for opening in openings],
         )
-        if polygon.is_valid and polygon.area > .01:
+        if not polygon.is_valid and MultiPoint(outline).convex_hull.area > .01:
+            raise ValueError(f"Invalid projected face: {explain_validity(polygon)}")
+        if polygon.area > .01:
             self.layers.append((polygon.boundary, polygon, ink))
 
     def tube(self, points, radius, ink=EDGE):

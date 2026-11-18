@@ -1,6 +1,6 @@
 """Illustrations for the shopping, payment, and fulfillment journey."""
 
-from math import cos, radians, sin
+from math import cos, hypot, radians, sin
 
 from geometry import BOLD, DETAIL, EDGE, GUIDE, oval, rounded
 
@@ -88,21 +88,31 @@ def store_pickup(s):
 
 
 def product_return(s):
-    # Open carton with its lowered flaps and a broad path returning to it.
-    s.ellipse(48, 44, 0, 74, 64, EDGE, -79, 191)
-    angle = radians(191)
-    tip = (48 + 74 * cos(angle), 44 + 64 * sin(angle), 0)
-    arrowbase = (tip[0] - 13 * sin(angle), tip[1] - 13 * cos(angle), 0)
-    s.line([(arrowbase[0] + 7, arrowbase[1], 0), tip,
-            (arrowbase[0] - 7, arrowbase[1], 0)], EDGE)
-    s.box(16, 13, 0, 66, 60, 6, 4)
-    s.face([(16, 13, 6), (82, 13, 6), (82, 13, 35), (16, 13, 35)], EDGE)
-    s.face([(16, 13, 35), (82, 13, 35), (79, -7, 48), (19, -7, 48)], EDGE)
-    s.face([(16, 13, 6), (16, 73, 6), (16, 73, 35), (16, 13, 35)], DETAIL)
-    s.face([(82, 13, 6), (82, 73, 6), (82, 73, 35), (82, 13, 35)], EDGE)
-    s.face([(82, 13, 35), (82, 73, 35), (101, 67, 39), (101, 19, 39)], EDGE)
-    s.face([(16, 73, 6), (82, 73, 6), (82, 73, 35), (16, 73, 35)], BOLD)
-    s.face([(16, 73, 35), (82, 73, 35), (77, 95, 27), (21, 95, 27)], BOLD)
+    # The return lane runs along the foreground, well clear of the carton.
+    cx, cy, rx, ry = 50, 46, 93, 85
+    end = 66
+    s.ellipse(cx, cy, 0, rx, ry, EDGE, -20, end)
+    s.ellipse(cx, cy, 0, rx, ry, DETAIL, 144, 340)
+    angle = radians(end)
+    x, y = cx + rx*cos(angle), cy + ry*sin(angle)
+    dx, dy = -rx*sin(angle), ry*cos(angle)
+    length = hypot(dx, dy)
+    ux, uy = dx/length, dy/length
+    s.line([(x-13*ux+6*uy, y-13*uy-6*ux, 0), (x,y,0),
+            (x-13*ux-6*uy, y-13*uy+6*ux, 0)], BOLD)
+
+    # Both lids pivot from the same two opposite rim edges. The other
+    # two panels fold inside the rim and are hidden behind the front walls.
+    left, right, back, front, rim = 16, 84, 15, 76, 40
+    def wall(a, b, ink):
+        s.face([(*a,0),(*b,0),(*b,rim),(*a,rim)], ink)
+
+    s.face([(left,back,rim),(right,back,rim),(right-4,-3,55),(left+4,-3,55)], EDGE)
+    wall((left,back),(right,back), EDGE)
+    wall((left,back),(left,front), DETAIL)
+    wall((right,back),(right,front), EDGE)
+    wall((left,front),(right,front), BOLD)
+    s.face([(left,front,rim),(right,front,rim),(right-4,96,26),(left+4,96,26)], BOLD)
 
 
 def gift_card(s):

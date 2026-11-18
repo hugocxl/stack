@@ -1,0 +1,65 @@
+Writing outline | Drafting assistant feature | surface | note template
+Draft continuity | Long-form writing tool | relay | note archive terminal
+Draft shortening | Editing capability page | convert | transcript note
+Plain-language rewrite | Readability assistant feature | compare | transcript manual
+Style transfer for text | Writing tool tone settings | convert | note template
+Inline continuation | Editor assistance feature | handover | terminal template file
+Source quote extraction | Reading assistant workspace | index | file template receipt
+Citation checking | Research assistant feature | watched | file seal
+Editorial voice consistency | Content production workflow | alignment | file transcript
+Grammar feedback | Writing editor help | inspect | file warning
+Spelling intervention | Copy editing controls | bench | file lever
+Brand tone guide | Workspace writing policy | protected | template note
+Reusable content structure | Structured writing studio | dock | template file
+Long-answer research | Research assistant output page | flow | archive lens transcript
+Research confidence cues | Fact-checking UI | watched | form meter
+Citation review queue | Researcher's verification tab | queue | receipt file archive
+Evidence gap | Research answer review | outside | note warning
+Document question answering | Document assistant overview | merge | file terminal transcript
+Cross-document synthesis | Knowledge assistant feature | merge | archive file transcript
+Meeting actions | Meeting assistant feature | convert | transcript form
+Speaker attribution | Meeting editor transcript review | stations | microphone transcript credential
+Timecoded transcript | Media editor feature | bench | clock transcript
+Clip highlights | Video generation or editing workspace | index | play tablet photo_flat
+Scene segmentation | Video analysis feature | split | play photo_flat clock
+Automated chapter breaks | Video organization screen | stations | play clock tags
+Speech synthesis | Accessibility and writing tool feature | flow | file chip speaker
+Narration pacing | Voice synthesis controls | bench | microphone meter
+Pronunciation preview | Multilingual voice-over tool | compare | microphone wave
+Voice selection | Narration profile settings | orbit | speaker microphone earpiece
+Dialogue noise profile | Audio cleaning tool | inspect | wave lens
+Speaker separation | Audio mixing feature | split | wave speaker transcript
+Filler-word detection | Interview editor review | inspect | transcript pulse
+Music loop detection | Audio utility tool | feedback | wave clock
+Audio redaction | Privacy toggle in media editor | boundary | wave curtain
+Music stem extraction | Editing workstation feature | split | spectrum wave audio_clip
+Image upscaling | Creative image tools | elevation | photo_flat photo
+Generated fill | Photo editor mask tools | dock | photo_flat stencil
+Object segmentation | Creative editing workflow | split | photo photo_flat stencil
+Object replacement | Photo editor remove and replace mode | replace | photo_flat photo
+Reference alignment | Generative render setup | alignment | photo_flat outline_map
+Layout generation | Creative content tool | lift | plan template
+Banner variations | Campaign design studio | split | plan tablet photo_flat
+Image palette extraction | Design tool | split | photo square hex
+Vectorization | Creative format conversion | convert | photo_flat outline_map
+Line cleanup | Illustration editor | compare | outline_map stencil
+Texture consistency | Creative tool comparison | compare | pattern photo_flat
+Character pose fitting | Illustration rigging view | inspect | portrait calipers
+Image prompt reference | Generative image prompt tools | relay | photo note template
+Content-aware resize | Design automation resources | gate | photo_flat tablet
+Keyframe generation | Video editing tools | queue | plan clock play
+Motion interpolation | Media creation preview | conduit | play frames
+Storyboard generation | Creator productivity tool | stations | note frames play
+Voiceover alignment | Video editor audio layback | alignment | play transcript
+Code explanation | Assistant code review | exchange | terminal note
+Test fixture generation | AI testing capability | stations | terminal gridrack seal
+Code refactoring | Developer editor assistant | convert | terminal network
+Codebase search assistant | Developer AI discovery | merge | terminal lens network
+API response drafting | Developer assistant tools | relay | port terminal receipt
+Tool selection | Assistant setup | orbit | processor lever terminal
+Tool output handoff | Agent runtime explainability | handover | processor receipt drawer
+Task scoping | Agent planning page | inspect | plan calipers
+Agent execution trace | Activity and transparency view | flow | plan processor transcript
+Action preview | Assistant safety and user review | watched | lever play
+Tool permission prompt | Agent access-control screen | protected | lever key
+Agent stop control | Agent execution toolbar | boundary | processor stop
