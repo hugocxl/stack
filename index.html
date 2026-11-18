@@ -471,12 +471,45 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 
       <section class="p9-section" id="install">
         <h2>Install</h2>
-        <p>Install the package, or copy its <code>system/</code> folder into the site. <span class="p9-muted">Fonts, the field texture and the theme script travel together. Install @hugocxl/icons and @hugocxl/vectors beside it.</span></p>
+        <p>Install the package, or copy its <code>system/</code> folder into the site. <span class="p9-muted">Fonts, the field texture and the theme script travel together, with ready-made entries for Tailwind, CSS, Sass and JavaScript. Install @hugocxl/icons and @hugocxl/vectors beside it.</span></p>
         <div class="p9-code"><pre tabindex="0"><code>npm install @hugocxl/design-system</code></pre><button type="button">Copy</button></div>
         <p>Serve the folder with the site and add these lines. <span class="p9-muted">With a bundler, import <code>@hugocxl/design-system/p9.css</code>, <code>/theme.js</code> and <code>/p9.js</code> instead.</span></p>
         <div class="p9-code"><pre tabindex="0"><code>&lt;link rel="stylesheet" href="system/p9.css"&gt;
 &lt;script src="system/theme.js"&gt;&lt;/script&gt;
 &lt;script type="module" src="system/p9.js"&gt;&lt;/script&gt;</code></pre><button type="button">Copy</button></div>
+        <p><strong>Use it in any project.</strong> The package also ships the tokens on their own, generated from the stylesheet so they never drift. <span class="p9-muted">Pick the entry that fits the project. Every value is a <code>--p9-*</code> custom property, so light and dark keep working.</span></p>
+        <div class="p9-table-scroll" tabindex="0">
+          <table class="p9-table">
+            <thead><tr><th scope="col">Project</th><th scope="col">Import</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Tailwind v4</th><td><code>@hugocxl/design-system/tailwind</code></td></tr>
+              <tr><th scope="row">Tailwind v3</th><td><code>@hugocxl/design-system/tailwind-preset</code> and <code>/tokens.css</code></td></tr>
+              <tr><th scope="row">Plain CSS</th><td><code>@hugocxl/design-system/tokens.css</code> and <code>/fonts.css</code></td></tr>
+              <tr><th scope="row">Sass</th><td><code>pkg:@hugocxl/design-system/scss</code></td></tr>
+              <tr><th scope="row">JavaScript</th><td><code>@hugocxl/design-system/tokens</code> or <code>/tokens.json</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Tailwind v4 gets the fonts, the tokens and a <code>dark</code> variant tied to the theme, as utilities like <code>bg-canvas</code>, <code>text-ink</code>, <code>text-reading</code>, <code>p-space-5</code>, <code>rounded-media</code> and <code>max-w-measure</code>.</p>
+        <div class="p9-code"><pre tabindex="0"><code>/* app.css */
+@import "tailwindcss";
+@import "@hugocxl/design-system/tailwind";</code></pre><button type="button">Copy</button></div>
+        <p>Tailwind v3 takes the preset, with the tokens loaded once in the CSS.</p>
+        <div class="p9-code"><pre tabindex="0"><code>// tailwind.config.js
+module.exports = {
+  presets: [require("@hugocxl/design-system/tailwind-preset")],
+};
+
+/* app.css, through your bundler or postcss-import */
+@import "@hugocxl/design-system/tokens.css";
+@import "@hugocxl/design-system/fonts.css";</code></pre><button type="button">Copy</button></div>
+        <p>Sass maps each token to a variable; load <code>tokens.css</code> once for the values. <span class="p9-muted">JavaScript gets the raw values for charts, canvas and native apps.</span></p>
+        <div class="p9-code"><pre tabindex="0"><code>@use "pkg:@hugocxl/design-system/scss" as ds;
+.card { padding: ds.$p9-space-5; color: ds.$p9-ink; }
+
+// JavaScript
+import { tokens } from "@hugocxl/design-system/tokens";
+tokens.color.dark.canvas; // "#111111"</code></pre><button type="button">Copy</button></div>
         <p class="p9-muted">Before shipping, complete the main task with a keyboard and check reflow at 320px, text zoom at 200%, reduced motion and both themes.</p>
       </section>
     </article>

@@ -19,6 +19,7 @@ Thirteen components and six page recipes cover a home page, articles, docs, chan
 ## Made to feel at home
 
 - **One look, every project.** Start a new site and it already looks like mine.
+- **Fits any stack.** Tailwind, plain CSS, Sass or JavaScript: the same tokens come along wherever I build.
 - **Ready for agents.** One file holds the whole definition, so an agent builds the same page from the same plan, every time.
 - **Light and dark.** Every token has both, and pages follow the reader's preference.
 - **Accessible from the start.** Readable contrast, keyboard-friendly controls and layouts that hold from a phone to a wide screen.

@@ -143,7 +143,7 @@ This file and [index.html](index.html) define the system completely. Anything no
 2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, vector and icon names and IDs.
 3. Check the result against [Do's and Don'ts](#dos-and-donts).
 
-Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (copy buttons, loaded as a module), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`. Figures come from [`@hugocxl/vectors`](#vectors) and icons from [`@hugocxl/icons`](#icons); no other artwork is part of the system.
+Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (copy buttons, loaded as a module), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`. The package also ships the tokens alone for other stacks, generated from `system/p9.css`: `@hugocxl/design-system/tailwind` (Tailwind v4), `/tailwind-preset` (Tailwind v3), `/tokens.css` and `/fonts.css` (plain CSS), `pkg:@hugocxl/design-system/scss` (Sass) and `/tokens` or `/tokens.json` (JavaScript). In Tailwind, use the token utilities (`bg-canvas`, `text-ink`, `text-reading`, `p-space-5`, `rounded-media`, `max-w-measure`) and never Tailwind's default palette, sizes or radii. Figures come from [`@hugocxl/vectors`](#vectors) and icons from [`@hugocxl/icons`](#icons); no other artwork is part of the system.
 
 ```html
 <!doctype html>

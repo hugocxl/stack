@@ -10,15 +10,30 @@
     "system/plan.schema.json",
     "system/figures",
     "system/fonts",
-    "system/images",
     "DESIGN.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "system/images",
+    "dist"
   ],
   "exports": {
+    ".": "./system/p9.css",
     "./p9.css": "./system/p9.css",
     "./theme.js": "./system/theme.js",
     "./p9.js": "./system/p9.js",
+    "./css": "./dist/tokens.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./tokens.scss": "./dist/tokens.scss",
+    "./scss": "./dist/tokens.scss",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./tokens.json": "./dist/tokens.json",
+    "./tailwind": "./dist/tailwind.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tailwind-preset": "./dist/tailwind-preset.cjs",
     "./plan.schema.json": "./system/plan.schema.json",
     "./DESIGN.md": "./DESIGN.md",
     "./system/*": "./system/*",
@@ -36,8 +51,10 @@
   },
   "scripts": {
     "sync": "node scripts/sync-design.mjs",
-    "check": "design.md lint DESIGN.md && node scripts/sync-design.mjs --check",
-    "test": "npm run check && playwright test"
+    "check": "design.md lint DESIGN.md && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check",
+    "test": "npm run check && playwright test",
+    "build": "node scripts/build-exports.mjs",
+    "prepack": "node scripts/build-exports.mjs --check"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
