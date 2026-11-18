@@ -1,1 +1,1 @@
-export const LayersIcon = "<svg fill=\"none\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M1 9 8 13 15 9V11L8 15L1 11Z\" fill=\"currentColor\" opacity=\"0.4\"/>\n  <path d=\"M1 5 8 1 15 5 8 9 1 5Z\" fill=\"currentColor\"/>\n</svg>\n";
+export const LayersIcon = "<svg fill=\"none\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M1.55 9.35 8 12.9 14.45 9.35V11.15L8 14.7L1.55 11.15Z\" fill=\"currentColor\" opacity=\"0.4\"/>\n  <path d=\"M1.55 5.5 8 1.95 14.45 5.5 8 9.05 1.55 5.5Z\" fill=\"currentColor\"/>\n</svg>\n";

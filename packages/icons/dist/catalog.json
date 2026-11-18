@@ -57,7 +57,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "ad",
@@ -2792,7 +2792,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "book",
@@ -2870,7 +2870,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "book-dashed",
@@ -3487,7 +3487,8 @@
     "tags": [
       "firewall",
       "network",
-      "security"
+      "security",
+      "fire"
     ],
     "origin": "original",
     "styles": [
@@ -5121,7 +5122,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "chart-scatter",
@@ -5217,6 +5218,66 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "checklist",
+    "category": "Product tools",
+    "tags": [
+      "checklist",
+      "list",
+      "tasks",
+      "todo",
+      "completion",
+      "mixed",
+      "progress"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "checklist-checked",
+    "category": "Product tools",
+    "tags": [
+      "checklist",
+      "list",
+      "tasks",
+      "todo",
+      "completion",
+      "complete",
+      "done"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "checklist-unchecked",
+    "category": "Product tools",
+    "tags": [
+      "checklist",
+      "list",
+      "tasks",
+      "todo",
+      "completion",
+      "pending",
+      "incomplete"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "cheese",
@@ -6311,7 +6372,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "circle-letter-q",
@@ -6464,6 +6525,25 @@
       "alphabet",
       "character",
       "z"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "circle-list-filter",
+    "category": "Interface controls",
+    "tags": [
+      "filter",
+      "list",
+      "narrow",
+      "refine",
+      "results",
+      "descending"
     ],
     "origin": "original",
     "styles": [
@@ -7996,7 +8076,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "copy-plus",
@@ -8024,7 +8104,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "copy-x",
@@ -8052,7 +8132,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "corner-down-left",
@@ -9493,9 +9573,10 @@
     "name": "earth-lock",
     "category": "Product tools",
     "tags": [
-      "earth",
       "world",
-      "security"
+      "globe",
+      "security",
+      "lock"
     ],
     "origin": "original",
     "styles": [
@@ -11193,7 +11274,7 @@
   },
   {
     "name": "flask-conical-off",
-    "category": "Health, science and accessibility",
+    "category": "Work and education",
     "tags": [
       "flask",
       "conical",
@@ -12075,7 +12156,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "gap-horizontal",
@@ -12601,7 +12682,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "globe-check",
@@ -12613,7 +12694,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "globe-code",
@@ -12625,15 +12706,16 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "globe-lock",
     "category": "Product tools",
     "tags": [
-      "globe",
       "world",
-      "security"
+      "globe",
+      "security",
+      "lock"
     ],
     "origin": "original",
     "styles": [
@@ -12653,7 +12735,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "globe-plus",
@@ -12665,7 +12747,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "globe-x",
@@ -12677,7 +12759,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "go",
@@ -12878,7 +12960,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "grip",
@@ -13066,7 +13148,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "hand-fist",
@@ -13124,7 +13206,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "hand-metal",
@@ -13407,7 +13489,7 @@
   },
   {
     "name": "headphone-off",
-    "category": "Media and communication",
+    "category": "Media",
     "tags": [
       "headphone",
       "off"
@@ -13418,7 +13500,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "headphones",
@@ -13853,7 +13935,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "html",
@@ -13945,7 +14027,7 @@
   },
   {
     "name": "image-down",
-    "category": "Photography and optics",
+    "category": "Media",
     "tags": [
       "image",
       "down"
@@ -13990,7 +14072,7 @@
   },
   {
     "name": "image-play",
-    "category": "Photography and optics",
+    "category": "Media",
     "tags": [
       "image",
       "play"
@@ -14017,7 +14099,7 @@
   },
   {
     "name": "image-up",
-    "category": "Photography and optics",
+    "category": "Media",
     "tags": [
       "image",
       "up"
@@ -14032,7 +14114,7 @@
   },
   {
     "name": "image-upscale",
-    "category": "Photography and optics",
+    "category": "Media",
     "tags": [
       "image",
       "upscale"
@@ -14387,7 +14469,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "kiro",
@@ -14706,7 +14788,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "layers-plus",
@@ -14718,7 +14800,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "layout-arrow-down",
@@ -16555,7 +16637,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "map-plus",
@@ -16792,7 +16874,7 @@
   },
   {
     "name": "megaphone-off",
-    "category": "Media and communication",
+    "category": "Communication",
     "tags": [
       "megaphone",
       "off"
@@ -18063,7 +18145,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "mouse-pointer-ban",
@@ -18376,7 +18458,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "navigation-off",
@@ -18388,7 +18470,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "nepali-rupee",
@@ -19531,7 +19613,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "pen-tool",
@@ -19579,7 +19661,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "pencil-ruler",
@@ -19591,7 +19673,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "pencil-sparkles",
@@ -20284,7 +20366,7 @@
   },
   {
     "name": "plug-zap",
-    "category": "Technology and development",
+    "category": "Home and food",
     "tags": [
       "plug",
       "zap"
@@ -20380,7 +20462,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "popcorn",
@@ -20546,7 +20628,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "printer-check",
@@ -21025,6 +21107,66 @@
     "name": "rectangle-horizontal",
     "category": "Layout",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "rectangle-stack",
+    "category": "Interface controls",
+    "tags": [
+      "cards",
+      "layers",
+      "deck",
+      "stack",
+      "collection"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "rectangle-stack-minus",
+    "category": "Interface controls",
+    "tags": [
+      "cards",
+      "layers",
+      "deck",
+      "stack",
+      "collection",
+      "remove",
+      "delete",
+      "subtract"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "rectangle-stack-plus",
+    "category": "Interface controls",
+    "tags": [
+      "cards",
+      "layers",
+      "deck",
+      "stack",
+      "collection",
+      "add",
+      "insert",
+      "new"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -21965,7 +22107,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "monochrome"
   },
   {
     "name": "scan-barcode",
@@ -23047,6 +23189,46 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "sidebar-left",
+    "category": "Layout",
+    "tags": [
+      "layout",
+      "window",
+      "panel",
+      "sidebar",
+      "leading",
+      "left",
+      "navigation"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "sidebar-right",
+    "category": "Layout",
+    "tags": [
+      "layout",
+      "window",
+      "panel",
+      "sidebar",
+      "trailing",
+      "right",
+      "inspector"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "sigma",
@@ -24743,7 +24925,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "square-letter-q",
@@ -25490,7 +25672,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "stamp",
@@ -25716,7 +25898,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "sticky-note-plus",
@@ -25752,7 +25934,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "stone",
@@ -27000,7 +27182,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "tickets-plane",
@@ -27012,7 +27194,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "timeline",
@@ -27447,7 +27629,7 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "duotone"
   },
   {
     "name": "trending-down",
@@ -29148,7 +29330,7 @@
   },
   {
     "name": "webhook-off",
-    "category": "Technology and development",
+    "category": "Product tools",
     "tags": [
       "webhook",
       "off"

@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path, Circle, Rect, G } from "react-native-svg";
 export const SquareSplitVerticalIcon = /*#__PURE__*/ forwardRef(function SquareSplitVerticalIcon({size = 16, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M4 1.375H12Q13.0873 1.375 13.8562 2.1438Q14.625 2.9127 14.625 4V12Q14.625 13.0873 13.8562 13.8562Q13.0873 14.625 12 14.625H4Q2.9127 14.625 2.1438 13.8562Q1.375 13.0873 1.375 12V4Q1.375 2.9127 2.1438 2.1438Q2.9127 1.375 4 1.375ZM7.325 13.725H8.675V2.275H7.325Z", "fill": "currentColor"}));
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM8.55 2.55Q8.55 2.4958 8.5394 2.4427Q8.53 2.3951 8.5123 2.35H7.4877Q7.47 2.3951 7.4606 2.4427Q7.45 2.4958 7.45 2.55V13.45Q7.45 13.5042 7.4606 13.5573Q7.47 13.6049 7.4877 13.65H8.5123Q8.53 13.6049 8.5394 13.5573Q8.55 13.5042 8.55 13.45Z", "fill": "currentColor"}));
 });

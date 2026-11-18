@@ -1,7 +1,7 @@
 # @hugocxl/icons design system
 
 @hugocxl/icons is a rounded family with selective duotone for product interfaces.
-The collection contains 2,233 names: 2,152 original UI symbols and 81 retained
+The collection contains 2,242 names: 2,161 original UI symbols and 81 retained
 brand marks. The November 17 expansion adds 35 concepts inspired by SF Symbols'
 semantic breadth, with subtle polish to three existing symbols.
 [The generated catalog](CATALOG.md) defines the delivered set;
@@ -25,10 +25,12 @@ THIRD_PARTY_LICENSES.md.
 ## Visual contract
 
 New UI artwork uses a square 16 × 16 canvas with optical fitting, typically
-0.65–1.5 units of clearance. The primary centerline width is 1.35 units; body
-outlines are 1.25 units. Round caps and round joins are expanded to filled Bézier
-contours. Smaller interior details may use 1–1.2 units; dense document labels use
-0.8. Shapes are fitted by their actual bounds, including outlines, rather than
+0.65–1.5 units of clearance. Every icon is drawn as if by one hand: a single
+stroke width of 1.1 units for every line, outline and detail, and a single
+1.25-unit corner radius for every rounded rectangle (full pills stay pills). Both
+values were measured from SF Symbols Regular on this grid and are enforced in
+`draw.py`; crowded drawings are simplified, never thinned. Round caps and round
+joins are expanded to filled Bézier contours. Shapes are fitted by their actual bounds, including outlines, rather than
 by their control points. Curves remain curves in the exported SVG.
 
 Duotone is selective, not a requirement to use two opacity levels in every icon.
@@ -62,9 +64,9 @@ names. They do not represent distinct new concepts.
 
 | Style | Construction | Coverage |
 | --- | --- | --- |
-| Rounded Duotone | Selective surface depth; opaque linear symbols | All 2,233 names |
-| Rounded Solid | Filled silhouette with negative-space details | 2,152 UI names |
-| Rounded Stroke | Expanded contour and identifying detail lines | 2,152 UI names |
+| Rounded Duotone | Selective surface depth; opaque linear symbols | All 2,242 names |
+| Rounded Solid | Filled silhouette with negative-space details | 2,161 UI names |
+| Rounded Stroke | Expanded contour and identifying detail lines | 2,161 UI names |
 
 Minimal linear symbols can intentionally share Solid and Stroke geometry. A
 single arrow shaft does not need a different silhouette merely to increase the
@@ -120,7 +122,8 @@ both tints. Live browser inspection was unavailable in the execution environment
 icon browser interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
-The [current full-catalog quality audit](QUALITY-AUDIT-2026-11-17.md) records a fresh
+The [current full-catalog quality audit](QUALITY-AUDIT-2026-11-18.md) records the
+single-weight redraw. The [previous audit](QUALITY-AUDIT-2026-11-17.md) recorded a fresh
 review of every icon and supersedes the earlier visual assessments. Its
 [before/after comparison](quality-changes-2026-11-17.html) shows every correction.
 The [expansion review](SF-EXPANSION-2026-11-17.md) remains a historical record of additions.

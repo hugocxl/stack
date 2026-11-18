@@ -146,7 +146,7 @@ lockfile, not every older React Native release.
 ## Choose a drawing style
 
 Rounded Duotone remains the default, including all 81 retained brand marks.
-The 2,152 original UI icons also support Rounded Solid and Rounded Stroke.
+The 2,161 original UI icons also support Rounded Solid and Rounded Stroke.
 Brands are intentionally absent from those two style namespaces.
 
 ```tsx

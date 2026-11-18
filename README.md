@@ -2,7 +2,7 @@
 
 ### Small details. A whole lot of character.
 
-A family of **2,233 rounded icons** for the things you build. From everyday navigation to creative tools, they give your apps and websites one clear, consistent voice.
+A family of **2,242 rounded icons** for the things you build. From everyday navigation to creative tools, they give your apps and websites one clear, consistent voice.
 
 [Browse the icons](https://hugocxl.github.io/icons/browse.html) · [Read the docs](https://hugocxl.github.io/icons/docs.html) · [Visit the website](https://hugocxl.github.io/icons/)
 
@@ -12,7 +12,7 @@ A family of **2,233 rounded icons** for the things you build. From everyday navi
 
 **Duotone** adds a quiet sense of depth. **Solid** brings emphasis. **Stroke** keeps things light. Every icon shares the same rounded character, so you can move between styles without losing your rhythm.
 
-2,152 interface icons come in all three styles, across 33 categories, alongside 81 brand marks.
+2,161 interface icons come in all three styles, across 33 categories, alongside 81 brand marks.
 
 Icons inherit text color by default. For file trees and tool lists, choose **Color → Assigned** in the browser to see folders in yellow, terminals in green, and React in sky. The [assigned colors](docs/USAGE.md#use-an-assigned-color) adapt to light and dark appearances.
 

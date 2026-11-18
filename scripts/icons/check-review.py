@@ -9,7 +9,7 @@ root = Path(__file__).resolve().parents[2]
 # The current audit records explicit unresolved verdicts instead of inheriting
 # the historical all-approved claim. Hash integrity and design acceptance are
 # separate gates; --strict-design rejects any unresolved design finding.
-current = root / 'docs/design-audit-2026-11-17.json'
+current = root / 'docs/design-audit-2026-11-18.json'
 if current.exists():
     audit = json.loads(current.read_text())
     catalog = json.loads((root / 'catalog.json').read_text())
