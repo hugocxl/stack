@@ -20,7 +20,7 @@ Serve `_site` with any static HTTP server.
   from `catalog.json` and `packages/icons/package.json`, inlines real artwork and
   renders `docs/USAGE.md` into the docs page. `partials/` holds the shared head,
   masthead and footer.
-- `site.css` holds the only site-specific styles. It may use `--p9-*` properties
+- `site.css` holds the only site-specific styles. It may use `--ds-*` properties
   and the documented spacing and radius tokens only; `check-site.mjs` enforces it.
 - `browse.js` is the icon browser. The build copies every SVG to
   `svg/<style>/<name>.svg`; the browser fetches each file only when its cell

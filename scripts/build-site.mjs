@@ -26,7 +26,7 @@ const facts = {
 // Inline artwork renders in ink through currentColor.
 const svg = (name, style, attributes = 'aria-hidden="true" focusable="false"') =>
   read(source(name, style)).trim().replace("<svg ", `<svg ${attributes} `);
-const strokeIcon = (name) => svg(name, "stroke", 'class="p9-icon" aria-hidden="true" focusable="false"');
+const strokeIcon = (name) => svg(name, "stroke", 'class="ds-icon" aria-hidden="true" focusable="false"');
 
 const specimenNames = [
   "home", "search", "heart", "star", "bell", "calendar",
@@ -45,10 +45,10 @@ const slug = (text) => text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s/g
 const github = "https://github.com/hugocxl/icons/blob/main/";
 const renderer = new marked.Renderer();
 renderer.code = ({ text }) =>
-  `<div class="p9-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;
+  `<div class="ds-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;
 const baseTable = renderer.table.bind(renderer);
 renderer.table = (token) =>
-  `<div class="p9-table-scroll" tabindex="0">${baseTable(token).replace("<table>", '<table class="p9-table">')}</div>\n`;
+  `<div class="ds-table-scroll" tabindex="0">${baseTable(token).replace("<table>", '<table class="ds-table">')}</div>\n`;
 renderer.heading = function ({ tokens, depth }) {
   return `<h${depth}>${this.parser.parseInline(tokens)}</h${depth}>\n`;
 };
@@ -73,7 +73,7 @@ const docs = groups
   .map((group) => {
     const body = marked.parser(Object.assign(group.tokens, { links: tokens.links }), { renderer });
     const heading = group.heading ? `<h2>${marked.parseInline(group.heading.text)}</h2>\n` : "";
-    return `      <section class="p9-section"${group.id ? ` id="${group.id}"` : ""}>\n${heading}${body}      </section>`;
+    return `      <section class="ds-section"${group.id ? ` id="${group.id}"` : ""}>\n${heading}${body}      </section>`;
   })
   .join("\n");
 
