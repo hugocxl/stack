@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Interface Guidelines · CXL Design System</title>
-  <link rel="stylesheet" href="cxl.css">
+  <link rel="stylesheet" href="cxl.css?v=material">
   <script src="theme.js"></script>
-  <link rel="stylesheet" href="editorial.css">
+  <link rel="stylesheet" href="editorial.css?v=material">
   <style>
     nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 2rem; font-size: .875rem }
     dt { font-weight: 600; margin-top: 1.25rem }
@@ -15,7 +15,7 @@
   </style>
 </head>
 <body class="cxl-editorial">
-<header class="cxl-masthead"><a class="cxl-wordmark" href="https://hugocxl.github.io/cxl-design-system/">CXL Design System</a><button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button></header>
+<header class="cxl-masthead cxl-material"><a class="cxl-wordmark" href="https://hugocxl.github.io/cxl-design-system/">CXL Design System</a><button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button></header>
 <main>
   <div class="cxl-opening"><h1>Interface guidelines</h1></div>
   <div class="cxl-reading">
@@ -51,6 +51,9 @@
       <section id="interaction"><h2>Controls and feedback</h2>
         <p>Use links for destinations and buttons for actions. Use a quiet text or outlined link for an editorial invitation. Give the main submit action in a form the filled <code>.cxl-button</code> treatment. Give secondary actions less emphasis while keeping labels legible.</p>
         <p>Give each field a persistent label. Put format hints beside the field. On validation failure, preserve the entry, identify the field, and explain the correction. For example, “Enter a date after 18 November.” Associate the message with the field so assistive technology can announce it.</p>
+        <h3>Group controls on a shared surface</h3>
+        <p>Use one softly rounded surface for persistent navigation or a pair of related actions, such as the figure arrows. The shared <code>.cxl-material</code> style adds a fine inner highlight and a shallow shadow. A translucent fill lets scrolling content show through softly. Keep reading surfaces flat.</p>
+        <p>Give icon controls a 44 px target and an accessible name. Show a visible focus ring for keyboard use. A brief press movement acknowledges activation. The material becomes opaque with reduced transparency and the press stays still with reduced motion.</p>
         <h3>Design the states the task can reach</h3>
         <ul><li>Keep keyboard focus visible and distinct from selection. Every pointer action needs a keyboard path.</li><li>During a save, show “Saving…” and prevent duplicate submissions. Announce completion in place.</li><li>For an empty list, explain what belongs there and offer the first action. For a failed load, explain what happened and offer a retry.</li><li>Mark selected items with a persistent cue and expose the corresponding state to assistive technology. Explain unavailable actions when the reason is unclear.</li></ul>
       </section>

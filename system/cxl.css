@@ -36,3 +36,28 @@
 :where(body, button, input, select, textarea, h3, h4, h5, h6) { font-family: var(--cxl-sans); }
 :where(h1, h2) { font-family: var(--cxl-serif); }
 :where(code, pre, kbd, samp), .cxl-note { font-family: var(--cxl-mono); }
+
+/* A shared control surface for compact navigation groups. */
+.cxl-material {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--cxl-line);
+  border-radius: 999px;
+  background-color: var(--cxl-bg);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 18%), 0 2px 6px rgb(0 0 0 / 7%);
+}
+@supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+  .cxl-material {
+    background-color: color-mix(in srgb, var(--cxl-bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
+.cxl-material button:hover { background-color: var(--cxl-surface) }
+@media (prefers-reduced-motion: no-preference) {
+  .cxl-material button, .cxl-button { transition: transform 120ms ease-out, background-color 120ms ease-out }
+  .cxl-material button:active, .cxl-button:active { transform: scale(.96) }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .cxl-material { background-color: var(--cxl-bg); -webkit-backdrop-filter: none; backdrop-filter: none }
+}

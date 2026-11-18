@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, grayscale palette, and interactive figures.">
   <title>CXL Design System</title>
-  <link rel="stylesheet" href="system/cxl.css?v=gray">
-  <link rel="stylesheet" href="system/editorial.css">
-  <link rel="stylesheet" href="preview.css?v=editorial">
+  <link rel="stylesheet" href="system/cxl.css?v=material">
+  <link rel="stylesheet" href="system/editorial.css?v=material">
+  <link rel="stylesheet" href="preview.css?v=material">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
-  <header class="cxl-masthead">
+  <header class="cxl-masthead cxl-material">
     <a class="cxl-wordmark" href="./">CXL Design System</a>
     <a href="system/interface-guidelines.html">Guidelines</a>
     <button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button>
@@ -42,7 +42,7 @@
         <figure>
           <div id="figure"></div>
           <figcaption><span class="cxl-label" id="caption">Fig. 01 / Keyboard</span>
-            <span><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
+            <span class="cxl-material cxl-pager" role="group" aria-label="Figure navigation"><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
           </figcaption>
         </figure>
         <form><label for="query">Find a figure</label><div class="controls">

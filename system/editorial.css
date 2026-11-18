@@ -19,16 +19,29 @@
   background: #777 url("images/gray-folds.png") center / cover;
   pointer-events: none;
 }
-.cxl-masthead { display: flex; align-items: center; gap: 1rem; padding-block: clamp(1.25rem,4vw,3rem) }
+.cxl-masthead {
+  position: sticky;
+  top: .75rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2px 3px 2px 1rem;
+  margin-block: clamp(1rem,3vw,2.5rem);
+}
+.cxl-masthead a { display: inline-flex; align-items: center; min-height: 44px }
+.cxl-masthead + main { scroll-margin-top: 5rem }
 .cxl-wordmark { margin-right: auto; font: 650 1.12rem/1 var(--cxl-sans); letter-spacing: -.045em; text-decoration: none }
 .cxl-editorial a { color: inherit; text-underline-offset: .2em }
 .cxl-editorial a:hover { text-decoration: underline }
 .cxl-masthead > a:not(.cxl-wordmark), .cxl-theme { font-size: .84rem }
-.cxl-theme { background: transparent; color: inherit; cursor: pointer; border: 1px solid var(--cxl-line); border-radius: 50%; width: 34px; height: 34px }
+.cxl-theme { background: transparent; color: inherit; cursor: pointer; border: 1px solid var(--cxl-line); border-radius: 50%; width: 44px; height: 44px; flex: none }
 .cxl-opening { padding-block: clamp(4rem,18vh,14rem) clamp(4rem,14vh,10rem) }
 .cxl-opening h1 { font: 400 clamp(2.75rem,5.35vw,6rem)/1.03 var(--cxl-serif); letter-spacing: -.052em; margin: 0; text-wrap: balance }
 .cxl-reading { max-width: 64ch }
-.cxl-reading section { margin-block: var(--cxl-space-6); scroll-margin-top: 2rem }
+.cxl-reading section { margin-block: var(--cxl-space-6); scroll-margin-top: 5rem }
 .cxl-reading h2 { margin: 0 0 1rem; font: 400 clamp(1.85rem,3vw,2.75rem)/1.12 var(--cxl-serif); letter-spacing: -.04em }
 .cxl-reading h3 { margin: 2rem 0 .5rem; font-size: 1.05rem }
 .cxl-reading p { margin: 0 0 1.1em }
