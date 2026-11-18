@@ -31,7 +31,7 @@ for (const [name, doc] of docs) {
 
 // Every page is a P9 page with the shared masthead and footer.
 const linkList = (root) => [...root.querySelectorAll("a")].map((a) => `${a.textContent.trim()} ${a.getAttribute("href")}`);
-const layouts = { "index.html": "field", "browse.html": "plain", "docs.html": "plain" };
+const layouts = { "index.html": "plain", "browse.html": "plain", "docs.html": "plain" };
 for (const name of pages) {
   const doc = docs.get(name);
   const body = doc.body;
