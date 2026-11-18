@@ -2,6 +2,8 @@
 
 [Open the living preview](https://hugocxl.github.io/cxl-design-system/).
 
+Start with the [Interface Guidelines](https://hugocxl.github.io/cxl-design-system/system/interface-guidelines.html) when designing a page. The same guide ships in `system/interface-guidelines.html`.
+
 Copy `system/` into a website. Link `system/cxl.css` and use its custom properties for page backgrounds, text, surfaces, borders, spacing and typography. Set `data-theme="light"` or `data-theme="dark"` on the HTML element. The preview follows the operating system until the visitor chooses a mode.
 
 ~~~css

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interface Guidelines · CXL Design System</title>
+  <link rel="stylesheet" href="cxl.css">
+  <script src="theme.js"></script>
+  <style>
+    * { box-sizing: border-box }
+    body { margin: 0 auto; max-width: 76rem; padding: 0 clamp(1rem,5vw,4rem) 4rem; background: var(--cxl-bg); color: var(--cxl-text); font-size: 1rem; line-height: 1.6 }
+    a { color: inherit; text-underline-offset: .2em }
+    header { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; border-bottom: 1px solid var(--cxl-line) }
+    header a { font-weight: 600; text-decoration: none }
+    h1,h2,h3 { line-height: 1.12; text-wrap: balance }
+    h1,h2 { font-weight: 400; letter-spacing: -.045em }
+    h1 { margin: 0; font-size: clamp(3rem,7vw,6rem) }
+    h2 { margin: 0; font-size: clamp(2rem,4vw,3.25rem) }
+    h3 { margin: 1.5rem 0 .4rem; font-size: 1.125rem }
+    p,li { max-width: 65ch }
+    .intro { padding-block: var(--cxl-space-6) var(--cxl-space-4) }
+    .layout { display: grid; grid-template-columns: minmax(10rem,1fr) minmax(0,3fr); gap: var(--cxl-space-6); align-items: start }
+    nav { position: sticky; top: 1rem; display: grid; gap: .4rem }
+    section { border-top: 1px solid var(--cxl-line); padding: 2rem 0; scroll-margin-top: 1rem }
+    li + li { margin-top: .5rem }
+    pre { overflow-x: auto; padding: 1rem; background: var(--cxl-surface); border-radius: var(--cxl-radius); font-size: .875rem }
+    dd { margin: 0 0 .8rem; color: var(--cxl-muted) }
+    dt { font-weight: 600 }
+    @media(max-width: 760px) { .layout { display: block } nav { position: static; margin-bottom: 2rem } }
+  </style>
+</head>
+<body>
+<header><a href="https://hugocxl.github.io/cxl-design-system/">← CXL Design System</a><button class="cxl-button" id="theme">Switch theme</button></header>
+<main>
+  <div class="intro"><h1>Interface Guidelines</h1><p>Use this guide to decide what belongs on a page, how its elements relate, and how the interface responds when someone uses it.</p></div>
+  <div class="layout">
+    <nav aria-label="On this page">
+      <a href="#purpose">Page structure</a><a href="#layout">Layout and spacing</a><a href="#type">Type and language</a><a href="#tones">Gray and contrast</a><a href="#interaction">Controls and feedback</a><a href="#figures">Figures and motion</a><a href="#delivery">Build and review</a>
+    </nav>
+    <div>
+      <section id="purpose"><h2>Page structure</h2>
+        <p>Write down what someone came to do. Use that task to choose the page title, the information that follows, and the most prominent action.</p>
+        <dl><dt>Landing page</dt><dd>Name the product and its purpose. Place the primary action beside that explanation. Follow with a working example or figure that demonstrates the promise.</dd>
+        <dt>Reading or reference page</dt><dd>Start with the subject and scope. Use descriptive section headings and anchor links for long pages. Keep examples next to the rule they illustrate.</dd>
+        <dt>Task or product screen</dt><dd>Put the current object or task in the heading. Group its controls with the content they change. Keep navigation in a consistent location between screens.</dd></dl>
+      </section>
+      <section id="layout"><h2>Layout and spacing</h2>
+        <p>Choose a single reading column for sequential content. Use two columns when people benefit from seeing things together, such as a setting and its preview. Align section headings, text, and controls to a common edge.</p>
+        <p>Use the six spacing tokens as a starting point. Keep a label 4–8 px from its value, related controls 16 px apart, panel padding around 24 px, and major sections 40–64 px apart. Use a thin rule where two groups still need a visible boundary.</p>
+        <p>Let text wrap and panels grow. Stack columns when either becomes hard to read. The specimen stacks at 760 px. On narrow screens, preserve reading order and keep essential navigation reachable.</p>
+      </section>
+      <section id="type"><h2>Type and language</h2>
+        <dl><dt>Geist Serif</dt><dd>Use for the H1 page title and H2 section headings. Give each page one descriptive H1 and nest subsequent headings by subject.</dd>
+        <dt>Geist Sans</dt><dd>Use for body text, navigation, controls, and H3–H6. Start prose at 16 px with roughly 1.5 line height. Aim for 55–70 characters per line in long passages.</dd>
+        <dt>Geist Mono</dt><dd>Use for code, commands, identifiers, and technical notes. Apply <code>.cxl-note</code> to a note or <code>.cxl-label</code> to a short technical caption.</dd></dl>
+        <p>Use sentence case. Name the action and its object when the outcome could be unclear. “Save draft” and “Publish page” distinguish two decisions a button labeled “Continue” would hide.</p>
+      </section>
+      <section id="tones"><h2>Gray and contrast</h2>
+        <p>Every interface color has equal red, green, and blue values. Use the semantic tokens so the same component works on paper in light mode and near-black in dark mode.</p>
+        <dl><dt><code>--cxl-bg</code> and <code>--cxl-surface</code></dt><dd>Use the first for the page and the second for grouped controls, figures, or code samples.</dd>
+        <dt><code>--cxl-text</code> and <code>--cxl-muted</code></dt><dd>Use the first for primary content and the second for supporting details. Fill the primary button with the text token and use the background token for its label.</dd>
+        <dt><code>--cxl-line</code></dt><dd>Use for quiet dividers. Give focus, selection, and validation a stronger cue, such as an outline, checkmark, or explicit message.</dd></dl>
+        <p>Follow the system appearance on first visit and remember an explicit choice. Check normal text at 4.5:1 contrast or higher against its actual background in each mode.</p>
+      </section>
+      <section id="interaction"><h2>Controls and feedback</h2>
+        <p>Use links for destinations and buttons for actions. Give the main action in a group the filled <code>.cxl-button</code> treatment. Give secondary actions less emphasis while keeping labels legible.</p>
+        <p>Give each field a persistent label. Put format hints beside the field. On validation failure, preserve the entry, identify the field, and explain the correction. For example, “Enter a date after 18 November.” Associate the message with the field so assistive technology can announce it.</p>
+        <h3>Design the states the task can reach</h3>
+        <ul><li>Keep keyboard focus visible and distinct from selection. Every pointer action needs a keyboard path.</li><li>During a save, show “Saving…” and prevent duplicate submissions. Announce completion in place.</li><li>For an empty list, explain what belongs there and offer the first action. For a failed load, explain what happened and offer a retry.</li><li>Mark selected items with a persistent cue and expose the corresponding state to assistive technology. Explain unavailable actions when the reason is unclear.</li></ul>
+      </section>
+      <section id="figures"><h2>Figures and motion</h2>
+        <p>Choose a bundled Hairline figure when it explains the subject. A keyboard fits a shortcuts guide. Put it beside the shortcut list and keep the commands in selectable text.</p>
+        <p>Reserve the figure’s space before it loads. Describe meaningful artwork in text and hide purely decorative imagery from assistive technology. Give interactive figures named controls and a usable still view when reduced motion is requested.</p>
+      </section>
+      <section id="delivery"><h2>Build and review</h2>
+        <p>Copy the <code>system/</code> directory into the project. Load its stylesheet and theme script in the document head. A button with <code>id="theme"</code> lets visitors switch appearance.</p>
+        <pre><code>&lt;link rel="stylesheet" href="system/cxl.css"&gt;
+&lt;script src="system/theme.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+  body {
+    background: var(--cxl-bg);
+    color: var(--cxl-text);
+  }
+&lt;/style&gt;</code></pre>
+        <h3>Before shipping</h3>
+        <ul><li>Read the title, headings, and action labels in order. They should explain the task on their own.</li><li>Complete the main task with a keyboard. Check focus after opening and closing a dialog and after an error.</li><li>At a narrow phone width and at 200% zoom, check the longest label, navigation, and form. Keep wide tables or code scrollable within their own region.</li><li>Try both appearances, reduced motion, and each reachable loading, empty, error, and success state.</li></ul>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

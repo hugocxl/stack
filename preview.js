@@ -13,10 +13,6 @@ function show(index) {
 show(0);
 select('prev').onclick = () => show(current - 1);
 select('next').onclick = () => show(current + 1);
-select('theme').onclick = () => {
-  localStorage.setItem('cxl-theme', document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
-  applyTheme();
-};
 for (const name of ['Paper','Silver','Graphite','Ink']) {
   const token = '--cxl-' + name.toLowerCase();
   const hex = getComputedStyle(document.documentElement).getPropertyValue(token).trim();
