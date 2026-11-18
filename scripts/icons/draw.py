@@ -1095,8 +1095,8 @@ def register_full_catalog():
     Kept explicit so isolated native-review snapshots can register one group.
     """
     from full import design, product, technology, world
-    import sf_home, sf_media, sf_accessibility
-    for module in (design, product, technology, world, sf_home, sf_media, sf_accessibility):
+    import sf_home, sf_media, sf_accessibility, sf_interface
+    for module in (design, product, technology, world, sf_home, sf_media, sf_accessibility, sf_interface):
         module.register(globals())
 
 if __name__=='__main__':
