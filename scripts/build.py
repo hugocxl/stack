@@ -1,4 +1,4 @@
-"""Write the standalone SVG library and its gallery."""
+"""Write the standalone SVG library and the use-case manifest."""
 from html import escape
 from pathlib import Path
 import argparse
@@ -7,7 +7,6 @@ import re
 
 from geometry import Scene, paths_for
 from scenes import commerce, control, data, editorial, infrastructure, new_states, product, workflow
-from catalog_page import render_catalog
 from expansion import attach_artwork, packs
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,14 +37,22 @@ def render_svg(draw, title, description):
 '''
 
 
-def card(file, title, description):
-    title = escape(title)
-    description = escape(description)
-    return f'''<li class="card" data-figure>
-  <a class="art" href="{file}" aria-label="Open {title} SVG"><img src="{file}" width="480" height="360" alt="" loading="lazy"></a>
-  <div class="card-info"><div><h3><a href="{file}">{title}</a></h3><p>{description}</p></div>
-  <a class="download" href="{file}" download aria-label="Download {title} SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
-</li>'''
+def validate_catalog(available, catalog):
+    """Every use case has a unique ID and every published figure belongs to exactly one use case."""
+    seen_ids, linked_assets = set(), set()
+    for group in catalog["groups"]:
+        for case in group["cases"]:
+            identifier = case["id"]
+            if identifier in seen_ids or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", identifier):
+                raise ValueError(f"Invalid or repeated use-case ID {identifier}")
+            seen_ids.add(identifier)
+            asset = case.get("asset")
+            if asset:
+                if asset not in available or asset in linked_assets:
+                    raise ValueError(f"Unknown or repeated asset for {identifier}: {asset}")
+                linked_assets.add(asset)
+    if missing := available - linked_assets:
+        raise ValueError(f"Figures missing from the use-case catalog: {', '.join(sorted(missing))}")
 
 
 def main():
@@ -53,27 +60,18 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check that the committed output is current.")
     parser.add_argument("--expect", type=int, help="Require exactly this many published SVGs.")
     args = parser.parse_args()
-    files, sections, links = {}, [], []
-    for category, figures in COLLECTIONS:
-        cards = []
+    files = {}
+    for _, figures in COLLECTIONS:
         for draw, title, description in figures:
             file = f"figures/{slug(title)}.svg"
             if file in files:
                 raise ValueError(f"Duplicate figure {file}")
             files[file] = render_svg(draw, title, description)
-            cards.append(card(file, title, description))
-        section_id = slug(category)
-        label = escape(category)
-        links.append(f'<a href="#{section_id}">{label}</a>')
-        sections.append(f'<section id="{section_id}"><h2>{label}</h2><ul class="cards">\n' + "\n".join(cards) + "\n</ul></section>")
     catalog = json.loads((ROOT/"catalog/use-cases.json").read_text(encoding="utf-8"))
     expansion = list(packs())
     attach_artwork(catalog, expansion)
     for group in catalog["groups"]:
         group_entries = [entry for entry in expansion if entry[0] == group["id"]]
-        if not group_entries:
-            continue
-        cards = []
         for _, identifier, title, _, description, draw in group_entries:
             if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", identifier):
                 raise ValueError(f"Invalid figure name {identifier}")
@@ -84,24 +82,13 @@ def main():
                 files[file] = render_svg(draw, title, description)
             except Exception as error:
                 raise ValueError(f"Could not draw {file}") from error
-            cards.append(card(file, title, description))
-        section_id = group["id"]
-        label = escape(group["title"])
-        links.append(f'<a href="#{section_id}">{label}</a>')
-        sections.append(f'<section id="{section_id}"><h2>{label}</h2><ul class="cards">\n' + "\n".join(cards) + "\n</ul></section>")
     expected = set(files)
     if args.expect is not None and args.expect != len(expected):
         raise SystemExit(f"Expected {args.expect} published figures, found {len(expected)}")
     extra = {f.relative_to(ROOT).as_posix() for f in (ROOT/"figures").glob("*.svg")} - expected
     if extra:
         raise ValueError(f"Unexpected figures: {', '.join(sorted(extra))}")
-    template = (ROOT/"scripts/gallery.html").read_text(encoding="utf-8")
-    files["index.html"] = (
-        template.replace("<!-- COLLECTIONS -->", "\n".join(sections))
-        .replace("<!-- CATEGORIES -->", "\n".join(links))
-        .replace("{{figure_count}}", f"{len(expected):,}")
-    )
-    files["use-cases.html"] = render_catalog(ROOT, expected, catalog)
+    validate_catalog(expected, catalog)
     files["catalog/manifest.json"] = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
     stale = []
     for relative, content in files.items():
@@ -114,7 +101,9 @@ def main():
             path.write_text(content, encoding="utf-8")
     if stale:
         raise SystemExit("Regenerate these files with python scripts/build.py:\n" + "\n".join(stale))
-    print(f"{'Verified' if args.check else 'Built'} {len(expected)} static SVGs, the gallery and use-case catalog.")
+    print(f"{'Verified' if args.check else 'Built'} {len(expected)} static SVGs and the use-case manifest.")
+    if not args.check:
+        print("Run python3 scripts/generate.py to update the npm and Swift packages.")
 
 
 if __name__ == "__main__":
