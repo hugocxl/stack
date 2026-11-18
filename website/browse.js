@@ -5,14 +5,16 @@ const STYLES = ['duotone', 'solid', 'stroke'];
 const STYLE_NAMES = { duotone: 'Duotone', solid: 'Solid', stroke: 'Stroke' };
 const ALL = 'All';
 
-const icons = JSON.parse($('ui-catalog').textContent).map(([name, category, tags, everyStyle]) => ({
+const icons = JSON.parse($('ui-catalog').textContent).map(([name, category, tags, everyStyle, hue]) => ({
   name,
   category,
+  hue,
   styles: everyStyle ? STYLES : ['duotone'],
   text: `${name.replaceAll('-', ' ')} ${name} ${category} ${tags}`.toLowerCase(),
 }));
 const byName = new Map(icons.map(icon => [icon.name, icon]));
-const state = { style: 'duotone', size: '24', category: ALL, query: [], platform: 'react', selected: null };
+const state = { style: 'duotone', colorMode: 'inherited', size: '24', category: ALL, query: [], platform: 'react', selected: null };
+if (new URLSearchParams(location.search).get('color') === 'assigned') state.colorMode = 'assigned';
 
 const search = $('ui-search');
 const results = $('ui-results');
@@ -23,11 +25,12 @@ const feedback = $('ui-feedback');
 
 // ─── Artwork ────────────────────────────────────────────────────────────
 const cache = new Map();
-const url = (style, name) => `svg/${style}/${name}.svg`;
-export function artwork(style, name) {
-  const key = `${style}/${name}`;
+const url = (style, name, colored) => `svg/${colored ? 'colored/' : ''}${style}/${name}.svg`;
+const usesColor = name => state.colorMode === 'assigned' && Boolean(byName.get(name)?.hue);
+export function artwork(style, name, colored) {
+  const key = url(style, name, colored);
   if (!cache.has(key)) {
-    const request = fetch(url(style, name)).then(response => {
+    const request = fetch(key).then(response => {
       if (!response.ok) throw new Error(`${response.status} ${key}`);
       return response.text();
     });
@@ -38,9 +41,10 @@ export function artwork(style, name) {
 }
 
 function paint(element, style, name) {
-  const key = `${style}/${name}`;
+  const colored = usesColor(name);
+  const key = url(style, name, colored);
   element.dataset.key = key;
-  artwork(style, name).then(svg => {
+  artwork(style, name, colored).then(svg => {
     if (element.dataset.key !== key) return;
     element.innerHTML = svg;
     const drawing = element.querySelector('svg');
@@ -67,6 +71,7 @@ const categoryButtons = [...document.querySelectorAll('[data-category]')];
 
 function matches(icon, withCategory = true) {
   if (!icon.styles.includes(state.style)) return false;
+  if (state.colorMode === 'assigned' && !icon.hue) return false;
   if (withCategory && state.category !== ALL && icon.category !== state.category) return false;
   return state.query.every(word => icon.text.includes(word));
 }
@@ -132,10 +137,20 @@ $('ui-search-form').addEventListener('submit', event => {
 });
 
 document.addEventListener('click', event => {
-  const button = event.target.closest('button[data-style], button[data-size], button[data-category], button[data-platform]');
+  const button = event.target.closest('button[data-style], button[data-color-mode], button[data-size], button[data-category], button[data-platform]');
   if (!button) return;
-  const { style, size, category, platform } = button.dataset;
+  const { style, colorMode, size, category, platform } = button.dataset;
   if (style) setStyle(style);
+  if (colorMode) {
+    state.colorMode = colorMode;
+    const page = new URL(location.href);
+    if (colorMode === 'assigned') page.searchParams.set('color', colorMode);
+    else page.searchParams.delete('color');
+    history.replaceState(null, '', page);
+    press('data-color-mode', colorMode);
+    render();
+    if (state.selected) fill(state.selected);
+  }
   if (size) {
     state.size = size;
     results.dataset.size = size;
@@ -176,26 +191,34 @@ const swiftCase = name => {
   return ['init', 'self', 'Type', 'Protocol'].includes(member) || /^\d/.test(member) ? `\`${member}\`` : member;
 };
 
-export function snippet(platform, style, name) {
+export function snippet(platform, style, name, colored = false) {
   const sub = style === 'duotone' ? '' : `/${style}`;
   const component = symbol(name);
+  const colorImport = colored ? "\nimport { defaultColor } from '@hugocxl/icons/colors';" : '';
+  const color = `defaultColor('${name}')`;
   switch (platform) {
     case 'svg':
+      if (colored) return `curl -O https://hugocxl.github.io/icons/${url(style, name, true)}`;
       return `curl -O https://raw.githubusercontent.com/hugocxl/icons/main/icons/${style === 'duotone' ? '' : `styles/${style}/`}${name}.svg`;
     case 'js':
-      return `import { ${component} } from '@hugocxl/icons/js${sub}/${name}';\n\nelement.innerHTML = ${component};`;
+      return `import { ${component} } from '@hugocxl/icons/js${sub}/${name}';${colorImport}\n\nelement.innerHTML = ${component};` +
+        (colored ? `\nelement.querySelector('svg').style.color = ${color};` : '');
     case 'react':
-      return `import { ${component} } from '@hugocxl/icons/react${sub}/${name}';\n\n<${component} size={24} />`;
+      return `import { ${component} } from '@hugocxl/icons/react${sub}/${name}';${colorImport}\n\n<${component} size={24}${colored ? ` color={${color}}` : ''} />`;
     case 'react-native':
+      if (colored) return `import { ${component} } from '@hugocxl/icons/react-native${sub}/${name}';${colorImport}\nimport { useColorScheme } from 'react-native';\n\nfunction Mark() {\n  const mode = useColorScheme() === 'dark' ? 'dark' : 'light';\n  return <${component} size={24} color={defaultColor('${name}', mode)} />;\n}`;
       return `import { ${component} } from '@hugocxl/icons/react-native${sub}/${name}';\n\n<${component} size={24} />`;
-    case 'swift':
-      return `import Icons\n\n${style === 'duotone' ? 'Icon' : STYLE_NAMES[style] + 'Icon'}.${swiftCase(name)}.image`;
+    case 'swift': {
+      const icon = `${style === 'duotone' ? 'Icon' : STYLE_NAMES[style] + 'Icon'}.${swiftCase(name)}`;
+      return `import Icons\n\n${icon}.image${colored ? `\n    .foregroundColor(${icon}.defaultColor)` : ''}`;
+    }
   }
   return '';
 }
 
 function fill(icon) {
   const style = icon.styles.includes(state.style) ? state.style : 'duotone';
+  const colored = usesColor(icon.name);
   $('ui-detail-name').textContent = icon.name;
   $('ui-detail-category').textContent = icon.styles.length === 1 ? `${icon.category} · Duotone only` : icon.category;
   $('ui-preview').setAttribute('aria-label', `${icon.name} in the ${STYLE_NAMES[style]} style`);
@@ -205,10 +228,16 @@ function fill(icon) {
     button.hidden = !icon.styles.includes(button.dataset.style);
     button.setAttribute('aria-pressed', String(button.dataset.style === style));
   }
-  $('ui-snippet').textContent = snippet(state.platform, style, icon.name);
+  for (const button of detail.querySelectorAll('[data-color-mode]')) {
+    const assigned = button.dataset.colorMode === 'assigned';
+    button.disabled = assigned && !icon.hue;
+    button.setAttribute('aria-pressed', String(assigned === colored));
+    if (assigned) button.textContent = icon.hue ? `Assigned (${icon.hue})` : 'Assigned';
+  }
+  $('ui-snippet').textContent = snippet(state.platform, style, icon.name, colored);
   const download = $('ui-download');
-  download.href = url(style, icon.name);
-  download.download = `${icon.name}${style === 'duotone' ? '' : `-${style}`}.svg`;
+  download.href = url(style, icon.name, colored);
+  download.download = `${icon.name}${style === 'duotone' ? '' : `-${style}`}${colored ? '-colored' : ''}.svg`;
   feedback.textContent = '';
 }
 
@@ -238,7 +267,7 @@ $('ui-copy-svg').addEventListener('click', async () => {
   if (!icon) return;
   const style = icon.styles.includes(state.style) ? state.style : 'duotone';
   try {
-    await navigator.clipboard.writeText(await artwork(style, icon.name));
+    await navigator.clipboard.writeText(await artwork(style, icon.name, usesColor(icon.name)));
     feedback.textContent = `Copied the ${STYLE_NAMES[style]} SVG for ${icon.name}.`;
   } catch {
     feedback.textContent = 'Copying is not available here. Use Download SVG instead.';
@@ -252,5 +281,6 @@ function route() {
 }
 window.addEventListener('hashchange', route);
 
+press('data-color-mode', state.colorMode);
 render();
 route();

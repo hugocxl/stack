@@ -47,3 +47,26 @@ import Testing
         #endif
     }
 }
+
+#if canImport(AppKit)
+import AppKit
+import SwiftUI
+
+@Test func assignedTintsResolveForBothAppearances() throws {
+    let folder = try #require(Icon.folder.defaultColor)
+    #expect(folder == SolidIcon.folder.defaultColor)
+    #expect(folder == StrokeIcon.folder.defaultColor)
+    #expect(Icon.react.defaultColor != nil)
+    #expect(Icon.search.defaultColor == nil)
+    let color = NSColor(folder)
+    for (appearance, expected) in [(NSAppearance.Name.aqua, [160, 128, 5]), (.darkAqua, [206, 171, 60])] {
+        let theme = try #require(NSAppearance(named: appearance))
+        var resolved: NSColor?
+        theme.performAsCurrentDrawingAppearance {
+            resolved = color.usingColorSpace(.sRGB)
+        }
+        let rgb = try #require(resolved)
+        #expect([rgb.redComponent, rgb.greenComponent, rgb.blueComponent].map { Int(($0 * 255).rounded()) } == expected)
+    }
+}
+#endif

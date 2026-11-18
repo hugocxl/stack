@@ -4,6 +4,7 @@ import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { marked } from "marked";
+import { defaultColor } from "@hugocxl/icons/colors";
 
 const out = "_site";
 const designSystem = dirname(createRequire(import.meta.url).resolve("@hugocxl/design-system/package.json"));
@@ -88,7 +89,7 @@ const categoryButtons = ["All", ...categories]
   )
   .join("\n");
 const browseData = JSON.stringify(
-  catalog.map((icon) => [icon.name, icon.category, icon.tags.join(" "), icon.styles.length === STYLES.length ? 1 : 0]),
+  catalog.map((icon) => [icon.name, icon.category, icon.tags.join(" "), icon.styles.length === STYLES.length ? 1 : 0, icon.defaultColor]),
 ).replaceAll("</", "<\\/");
 
 // ─── Templates ──────────────────────────────────────────────────────────
@@ -117,6 +118,14 @@ for (const style of STYLES) {
     recursive: true,
     filter: (path) => !path.endsWith(".DS_Store") && (style !== "duotone" || !path.startsWith("icons/styles")),
   });
+  const colored = `${out}/svg/colored/${style}`;
+  mkdirSync(colored, { recursive: true });
+  for (const icon of catalog.filter(icon => icon.defaultColor && icon.styles.includes(style))) {
+    const light = defaultColor(icon.name, "light");
+    const color = defaultColor(icon.name);
+    const attributes = `color="${light}" style="color-scheme: light dark; color: ${color}"`;
+    writeFileSync(`${colored}/${icon.name}.svg`, svg(icon.name, style, attributes) + "\n");
+  }
 }
 
 const values = { ...facts, specimen, categories: categoryButtons, catalog: browseData, docs, "docs-title": escape(docsTitle) };

@@ -14,6 +14,8 @@ A family of **2,233 rounded icons** for the things you build. From everyday navi
 
 2,152 interface icons come in all three styles, across 33 categories, alongside 81 brand marks.
 
+Icons inherit text color by default. For file trees and tool lists, choose **Color → Assigned** in the browser to see folders in yellow, terminals in green, and React in sky. The [assigned colors](docs/USAGE.md#use-an-assigned-color) adapt to light and dark appearances.
+
 ## Made to feel at home
 
 - **Consistent by design.** Shared shapes and proportions, from the first toolbar to the last settings screen.

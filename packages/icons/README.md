@@ -39,3 +39,9 @@ Brand marks are available in Duotone only. The exported `catalog.json` records
 style availability, category, keywords, provenance, and `defaultTone` for every
 name. Arrows, chevrons and other linear symbols are fully opaque; two tones are
 reserved for meaningful surfaces and depth, such as the Pencil and Trash bodies.
+
+Use an assigned color for a language, tool, file type or brand by passing
+`color={defaultColor('folder')}` to its component. Import `defaultColor` from
+`@hugocxl/icons/colors`. The web value follows the design-system hue token or
+CSS color scheme. Pass `'light'` or `'dark'` as the second argument for a native
+hex value. The catalog’s optional `defaultColor` field names the hue.

@@ -21,6 +21,12 @@ an iOS Simulator build. Use Xcode for asset-catalog tests; standalone SwiftPM re
 with the installed toolchain. Device rendering and a running React Native app still
 need app-level verification.
 
+Assign kind-based colors in `scripts/icons/default-hues.json`. Each name
+belongs to at most one design-system hue. Run the drawing recipe to refresh
+the catalog, then `npm run generate` and
+`python3 scripts/icons/compare-lucide.py --require-complete`. The generator
+reads light and dark values from the installed design-system package.
+
 ### Automatic releases
 
 Every push to `main` runs the JavaScript and Apple checks, publishes the single npm

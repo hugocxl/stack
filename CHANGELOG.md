@@ -14,6 +14,10 @@
 
 ### Added
 
+- Assign adaptive design-system colors to language, tool, file-type and brand
+  icons. The browser previews and exports colored SVGs, and npm and Swift
+  consumers can opt into the same colors across drawing styles.
+
 - Add 35 original icons for home controls, capture/audio, accessibility and body
   activities, inspired by SF Symbols’ semantic coverage. All support Duotone,
   Solid and Stroke with JS, React, React Native and Swift exports.

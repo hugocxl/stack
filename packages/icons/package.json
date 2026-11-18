@@ -9,7 +9,9 @@
     "LICENSE",
     "NOTICE",
     "THIRD_PARTY_LICENSES.md",
-    "README.md"
+    "README.md",
+    "colors.js",
+    "colors.d.ts"
   ],
   "exports": {
     ".": {
@@ -82,7 +84,11 @@
       "react-native": "./dist/react-native/*.js",
       "default": "./dist/react-native/*.js"
     },
-    "./catalog.json": "./dist/catalog.json"
+    "./catalog.json": "./dist/catalog.json",
+    "./colors": {
+      "types": "./colors.d.ts",
+      "default": "./colors.js"
+    }
   },
   "main": "./dist/js/index.js",
   "types": "./dist/js/index.d.ts",

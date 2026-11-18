@@ -27,6 +27,10 @@ names=set(draw.DRAWINGS)-before
 brands=ROOT/'scripts/icons/brands.json'
 (snapshot/'scripts/icons').mkdir(parents=True,exist_ok=True)
 shutil.copy2(brands,snapshot/'scripts/icons/brands.json')
+scope = set(draw.DRAWINGS) | set(json.loads(brands.read_text()))
+hues = json.loads((ROOT/'scripts/icons/default-hues.json').read_text())
+subset = {hue: [name for name in members if name in scope] for hue, members in hues.items()}
+(snapshot/'scripts/icons/default-hues.json').write_text(json.dumps(subset))
 (snapshot/'icons').mkdir(exist_ok=True)
 for name in json.loads(brands.read_text()):shutil.copy2(ROOT/'icons'/f'{name}.svg',snapshot/'icons'/f'{name}.svg')
 draw.ROOT=snapshot

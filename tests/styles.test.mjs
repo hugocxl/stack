@@ -46,3 +46,19 @@ test('every platform supports style-specific imports and tree shaking',async()=>
   assert.equal(single.outputFiles[0].text,result.outputFiles[0].text);
  }
 });
+
+test('assigned colors resolve the design-system token for each appearance', async () => {
+  const { defaultColor } = await import('@hugocxl/icons/colors');
+  const { default: { color } } = await import('@hugocxl/design-system/tokens.json', { with: { type: 'json' } });
+  for (const icon of catalog) {
+    if (!icon.defaultColor) {
+      assert.equal(defaultColor(icon.name), undefined, icon.name);
+      continue;
+    }
+    for (const mode of ['light', 'dark']) {
+      assert.equal(defaultColor(icon.name, mode), color[mode][icon.defaultColor], icon.name);
+    }
+    assert.ok(defaultColor(icon.name).startsWith(`var(--ds-${icon.defaultColor},`));
+  }
+  assert.equal(defaultColor('constructor'), undefined);
+});

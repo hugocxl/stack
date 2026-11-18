@@ -12,3 +12,6 @@ createElement(SolidNativeSearchIcon, { ref: createRef<ComponentRef<typeof SolidN
 createElement(StrokeNativeSearchIcon, { size: 16, onPress: () => {} });
 // @ts-expect-error style exports retain the native prop boundary
 createElement(StrokeNativeSearchIcon, { onClick: () => {} });
+
+import { defaultColor } from '@hugocxl/icons/colors';
+createElement(NativeTerminalIcon, { color: defaultColor('terminal', 'dark') });

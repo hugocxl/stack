@@ -802,6 +802,14 @@ def main():
         if not any(0<float(n.get('opacity','1'))<1 for n in r.iter()):
             failed.append('Unreviewed single-tone icon: '+file.stem)
         catalog.append(dict(name=file.stem,category='Brands',tags=[],origin='legacy',styles=['duotone'],defaultTone='duotone'))
+    by_name = {item['name']: item for item in catalog}
+    hues = json.loads((ROOT/'scripts/icons/default-hues.json').read_text())
+    for hue, names in hues.items():
+        for name in names:
+            item = by_name[name]
+            if 'defaultColor' in item:
+                raise ValueError(f'Duplicate default color for {name}')
+            item['defaultColor'] = hue
     write(Path('catalog.json'),json.dumps(sorted(catalog,key=lambda i:i['name']),indent=2)+'\n')
     if failed:sys.exit('\n'.join(failed))
     print(f'{len(DRAWINGS)} original drawings; {len(catalog)} total icons')

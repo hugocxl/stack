@@ -172,6 +172,50 @@ and `nsImage` (AppKit). Existing names and imports remain available; the UI artw
 has been redrawn, including historical `*-fill` names, so upgrading changes their
 appearance. This release does not include Hugeicons or SF Symbols artwork.
 
+## Use an assigned color
+
+Icons inherit the surrounding text color by default. In a file tree or tool
+list, you can opt into the library’s assigned color. Folders use yellow,
+terminals use green, and React uses sky. A name has the same hue in every
+supported drawing style. Keep action icons in the surrounding tint.
+
+Choose **Color → Assigned** in the icon browser to see the available names.
+Copy or download the SVG in your chosen style. The file includes its light and
+dark colors and also picks up the matching `--ds-<hue>` token when inlined.
+
+```tsx
+import { FolderIcon } from '@hugocxl/icons/react/stroke/folder';
+import { defaultColor } from '@hugocxl/icons/colors';
+
+<FolderIcon color={defaultColor('folder')} />
+```
+
+On the web, the helper returns a CSS color that uses the design-system token
+when present and otherwise follows the element’s CSS `color-scheme`. Set
+`color-scheme: light dark` on your page to follow the system preference.
+For plain JavaScript SVG strings, set the inline SVG element’s `style.color`.
+For React Native, pass the active appearance to get an sRGB hex value.
+
+```tsx
+import { useColorScheme } from 'react-native';
+import { TerminalIcon } from '@hugocxl/icons/react-native/terminal';
+import { defaultColor } from '@hugocxl/icons/colors';
+
+function TerminalMark() {
+  const mode = useColorScheme() === 'dark' ? 'dark' : 'light';
+  return <TerminalIcon color={defaultColor('terminal', mode)} />;
+}
+```
+
+```swift
+StrokeIcon.folder.image.foregroundColor(StrokeIcon.folder.defaultColor)
+```
+
+Swift resolves the color through the asset catalog as the appearance changes.
+An icon without an assignment returns `undefined` from the JavaScript helper
+and `nil` in Swift. The optional `defaultColor` field in
+`@hugocxl/icons/catalog.json` contains the hue name, such as `yellow`.
+
 ## License and attribution
 
 Original @hugocxl/icons artwork, Tab contributions and tooling are [MIT licensed](../LICENSE).

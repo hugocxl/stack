@@ -688,7 +688,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "archive-arrow-down",
@@ -1316,7 +1317,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "astroid",
@@ -1564,7 +1566,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "baby",
@@ -2052,7 +2055,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "basket",
@@ -2525,7 +2529,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "blue"
   },
   {
     "name": "binoculars",
@@ -2567,7 +2572,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "teal"
   },
   {
     "name": "bird",
@@ -2606,7 +2612,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "bitcoin",
@@ -3255,7 +3262,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "violet"
   },
   {
     "name": "bot",
@@ -3385,7 +3393,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "blue"
   },
   {
     "name": "brackets",
@@ -3782,7 +3791,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "brown"
   },
   {
     "name": "bus",
@@ -3816,7 +3826,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "cable",
@@ -6711,7 +6722,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "clef-alto",
@@ -7577,7 +7589,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "blue"
   },
   {
     "name": "code-block",
@@ -7589,7 +7602,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "code-xml",
@@ -7605,7 +7619,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "blue"
   },
   {
     "name": "codex",
@@ -8143,7 +8158,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "cpu",
@@ -8346,7 +8362,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "css",
@@ -8356,7 +8373,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "violet"
   },
   {
     "name": "cuboid",
@@ -8480,7 +8498,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "database",
@@ -9040,7 +9059,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "dog",
@@ -9285,7 +9305,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "drone",
@@ -9571,7 +9592,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "ellipse",
@@ -9740,7 +9762,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "violet"
   },
   {
     "name": "ethernet-port",
@@ -10135,7 +10158,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "file-braces-corner",
@@ -10152,7 +10176,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "file-chart-column",
@@ -10278,7 +10303,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "file-code-corner",
@@ -10295,7 +10321,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "file-cog",
@@ -10428,7 +10455,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "pink"
   },
   {
     "name": "file-input",
@@ -10712,7 +10740,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "file-terminal",
@@ -10728,7 +10757,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "file-text",
@@ -10756,7 +10786,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "file-type-corner",
@@ -10773,7 +10804,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "file-upload",
@@ -10887,7 +10919,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "files",
@@ -11299,7 +11332,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-bookmark",
@@ -11358,7 +11392,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-code",
@@ -11543,7 +11578,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-open-dot",
@@ -11559,7 +11595,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-output",
@@ -11619,7 +11656,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-search",
@@ -11664,7 +11702,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-sync",
@@ -11696,7 +11735,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folder-upload",
@@ -11764,7 +11804,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "folders",
@@ -11776,7 +11817,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "font",
@@ -11788,7 +11830,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "purple"
   },
   {
     "name": "footprints",
@@ -12222,7 +12265,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "git-branch",
@@ -12485,7 +12529,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "github",
@@ -12505,7 +12550,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "glass-water",
@@ -12641,7 +12687,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "goal",
@@ -12746,7 +12793,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "pink"
   },
   {
     "name": "grid-2x2",
@@ -13218,7 +13266,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "hat-glasses",
@@ -13644,7 +13693,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "brown"
   },
   {
     "name": "hop",
@@ -13813,7 +13863,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "ice-cream-bowl",
@@ -13889,7 +13940,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "pink"
   },
   {
     "name": "image-down",
@@ -14007,7 +14059,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "pink"
   },
   {
     "name": "import",
@@ -14194,7 +14247,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "red"
   },
   {
     "name": "javascript",
@@ -14204,7 +14258,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "joystick",
@@ -14352,7 +14407,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "kubernetes",
@@ -14362,7 +14418,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "lambda",
@@ -14599,7 +14656,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "layers-2",
@@ -14611,7 +14669,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "sky"
   },
   {
     "name": "layers-arrow-down",
@@ -16034,7 +16093,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "lungs",
@@ -16691,7 +16751,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "medal",
@@ -18401,7 +18462,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "noise-cancellation",
@@ -18534,7 +18596,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "red"
   },
   {
     "name": "numbers",
@@ -18580,7 +18643,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "octagon",
@@ -19835,7 +19899,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "violet"
   },
   {
     "name": "pi",
@@ -20252,7 +20317,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "pocket-knife",
@@ -20348,7 +20414,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "pound",
@@ -20428,7 +20495,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "presentation",
@@ -20450,7 +20518,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "teal"
   },
   {
     "name": "printer",
@@ -20567,7 +20636,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "qr-code",
@@ -20613,7 +20683,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "rabbit",
@@ -20785,7 +20856,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "receipt",
@@ -21573,7 +21645,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "monochrome"
+    "defaultTone": "monochrome",
+    "defaultColor": "orange"
   },
   {
     "name": "ruby",
@@ -21583,7 +21656,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "red"
   },
   {
     "name": "rugby-ball",
@@ -21644,7 +21718,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "sailboat",
@@ -21695,7 +21770,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "pink"
   },
   {
     "name": "satellite",
@@ -21834,7 +21910,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "red"
   },
   {
     "name": "scale",
@@ -22373,7 +22450,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "server-off",
@@ -22415,7 +22493,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "settings",
@@ -22498,7 +22577,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "shell",
@@ -24168,7 +24248,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "square-dashed",
@@ -25254,7 +25335,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "square-text",
@@ -26006,7 +26088,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "svg",
@@ -26016,7 +26099,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "yellow"
   },
   {
     "name": "svgo",
@@ -26072,7 +26156,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "swiss-franc",
@@ -26154,7 +26239,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "table-2",
@@ -26166,7 +26252,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "table-cells-merge",
@@ -26355,7 +26442,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "tally-1",
@@ -26489,7 +26577,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "terminal-stack",
@@ -26501,7 +26590,8 @@
       "solid",
       "stroke"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "terraform",
@@ -26511,7 +26601,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "test-tube",
@@ -27634,7 +27725,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "umbrella",
@@ -28604,7 +28696,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "virus",
@@ -28643,7 +28736,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "purple"
   },
   {
     "name": "voicemail",
@@ -28767,7 +28861,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "blue"
   },
   {
     "name": "vue",
@@ -28777,7 +28872,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "green"
   },
   {
     "name": "wallet",
@@ -28899,7 +28995,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "violet"
   },
   {
     "name": "watch",
@@ -29072,7 +29169,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "weight",
@@ -29518,7 +29616,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "yarn",
@@ -29528,7 +29627,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "sky"
   },
   {
     "name": "yen",
@@ -29550,7 +29650,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "red"
   },
   {
     "name": "zap",
@@ -29587,7 +29688,8 @@
     "styles": [
       "duotone"
     ],
-    "defaultTone": "duotone"
+    "defaultTone": "duotone",
+    "defaultColor": "orange"
   },
   {
     "name": "zip",

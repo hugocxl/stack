@@ -22,3 +22,6 @@ createElement(DuotoneSearchIcon, { size: 32 });
 const styledSvg: string = solidSvg;
 // @ts-expect-error retained brands are not exported as invented stroke variants
 import { GithubIcon } from '@hugocxl/icons/react/stroke';
+
+import { defaultColor } from '@hugocxl/icons/colors';
+createElement(TerminalIcon, { color: defaultColor('terminal') });
