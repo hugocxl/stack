@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const CapsuleIcon = /*#__PURE__*/ forwardRef(function CapsuleIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M5.4 3.5 10.6 3.5Q11.5152 3.5 12.3518 3.8539Q13.1594 4.1955 13.782 4.818Q14.4045 5.4406 14.7461 6.2482Q15.1 7.0848 15.1 8Q15.1 8.9152 14.7461 9.7518Q14.4045 10.5594 13.782 11.182Q13.1594 11.8045 12.3518 12.1461Q11.5152 12.5 10.6 12.5H5.4Q4.4848 12.5 3.6482 12.1461Q2.8406 11.8045 2.218 11.182Q1.5955 10.5594 1.2539 9.7518Q0.9 8.9152 0.9 8Q0.9 7.0848 1.2539 6.2482Q1.5955 5.4406 2.218 4.818Q2.8406 4.1955 3.6482 3.8539Q4.4848 3.5 5.4 3.5Z", "fill": "currentColor"}));
+});

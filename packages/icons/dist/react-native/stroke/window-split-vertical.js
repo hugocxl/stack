@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const WindowSplitVerticalIcon = /*#__PURE__*/ forwardRef(function WindowSplitVerticalIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.6 2.1 13.4 2.1Q14.1456 2.1 14.6728 2.6272Q15.2 3.1544 15.2 3.9V12.1Q15.2 12.8456 14.6728 13.3728Q14.1456 13.9 13.4 13.9H2.6Q1.8544 13.9 1.3272 13.3728Q0.8 12.8456 0.8 12.1L0.8 3.9Q0.8 3.1544 1.3272 2.6272Q1.8544 2.1 2.6 2.1ZM2.6 3.2Q2.3101 3.2 2.105 3.405Q1.9 3.6101 1.9 3.9L1.9 12.1Q1.9 12.3899 2.105 12.595Q2.3101 12.8 2.6 12.8H7.45V3.2ZM8.55 12.8H13.4Q13.6899 12.8 13.895 12.595Q14.1 12.3899 14.1 12.1V3.9Q14.1 3.6101 13.895 3.405Q13.69 3.2 13.4 3.2H8.55V12.8Z", "fill": "currentColor"}));
+});

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const CellularBarsIcon = /*#__PURE__*/ forwardRef(function CellularBarsIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M13.25 2.65C13.9127 2.65 14.45 3.1873 14.45 3.85V12.15C14.45 12.8127 13.9127 13.35 13.25 13.35C12.5873 13.35 12.05 12.8127 12.05 12.15V3.85C12.05 3.1873 12.5873 2.65 13.25 2.65ZM9.75 4.95C10.4127 4.95 10.95 5.4873 10.95 6.15V12.15C10.95 12.8127 10.4127 13.35 9.75 13.35C9.0873 13.35 8.55 12.8127 8.55 12.15V6.15C8.55 5.4873 9.0873 4.95 9.75 4.95ZM6.25 7.25C6.9127 7.25 7.45 7.7873 7.45 8.45V12.15C7.45 12.8127 6.9127 13.35 6.25 13.35C5.5873 13.35 5.05 12.8127 5.05 12.15V8.45C5.05 7.7873 5.5873 7.25 6.25 7.25ZM2.75 9.55C3.4127 9.55 3.95 10.0873 3.95 10.75V12.15C3.95 12.8127 3.4127 13.35 2.75 13.35C2.0873 13.35 1.55 12.8127 1.55 12.15V10.75C1.55 10.0873 2.0873 9.55 2.75 9.55Z", "fill": "currentColor"}));
+});

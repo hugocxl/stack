@@ -98,9 +98,47 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "airplane-seat",
+    "category": "Maps and travel",
+    "tags": [
+      "airline",
+      "cabin",
+      "seat",
+      "passenger",
+      "airplane",
+      "armrest"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "airplay",
     "category": "Media",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "airplay-video",
+    "category": "Media",
+    "tags": [
+      "airplay",
+      "stream",
+      "video",
+      "wireless",
+      "display",
+      "television"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -527,6 +565,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "american-football",
+    "category": "Sports and outdoors",
+    "tags": [
+      "american",
+      "football",
+      "gridiron",
+      "laces",
+      "touchdown",
+      "pigskin",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "ampersand",
     "category": "Math and symbols",
     "tags": [],
@@ -554,6 +612,27 @@
     "name": "amphora",
     "category": "Home and food",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "amplifier",
+    "category": "Media and communication",
+    "tags": [
+      "amplifier",
+      "guitar",
+      "amp",
+      "speaker",
+      "cabinet",
+      "grille",
+      "audio",
+      "gain"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -1019,6 +1098,28 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "arrow-keys",
+    "category": "Media",
+    "tags": [
+      "keyboard",
+      "arrow",
+      "keys",
+      "cursor",
+      "up",
+      "down",
+      "left",
+      "right",
+      "gaming"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "arrow-left",
     "category": "Navigation",
     "tags": [],
@@ -1263,6 +1364,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "aspect-ratio",
+    "category": "Design tools",
+    "tags": [
+      "aspect",
+      "ratio",
+      "resize",
+      "proportions",
+      "image",
+      "frame",
+      "crop"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "assistive-listening",
     "category": "People and accessibility",
     "tags": [
@@ -1497,6 +1618,66 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "austral",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "argentina",
+      "argentine",
+      "historical",
+      "ara"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "australian-dollar",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "australia",
+      "australian",
+      "aud",
+      "aussie"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "av-remote",
+    "category": "Devices and connectivity",
+    "tags": [
+      "remote",
+      "control",
+      "av",
+      "television",
+      "media",
+      "buttons",
+      "handset"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "avocado",
@@ -1872,6 +2053,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "baht",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "thailand",
+      "thai",
+      "thb"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "ball-wave",
     "category": "Sports and outdoors",
     "tags": [
@@ -2036,6 +2236,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "baseball",
+    "category": "Sports and outdoors",
+    "tags": [
+      "baseball",
+      "stitching",
+      "pitch",
+      "bat",
+      "diamond",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "baseline",
     "category": "Typography and text",
     "tags": [],
@@ -2062,6 +2281,25 @@
     "name": "basket",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "basketball",
+    "category": "Sports and outdoors",
+    "tags": [
+      "basketball",
+      "hoop",
+      "court",
+      "dribble",
+      "team",
+      "sport"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -2668,6 +2906,27 @@
     "category": "Technology and development",
     "tags": [
       "blocks"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "blood-pressure-cuff",
+    "category": "Health and fitness",
+    "tags": [
+      "blood",
+      "pressure",
+      "cuff",
+      "sphygmomanometer",
+      "monitor",
+      "arm",
+      "pump",
+      "hypertension"
     ],
     "origin": "original",
     "styles": [
@@ -3470,6 +3729,27 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "brazilian-real",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "brazil",
+      "brazilian",
+      "real",
+      "brl",
+      "reais"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "brick-wall",
     "category": "Home and food",
     "tags": [],
@@ -3831,6 +4111,25 @@
     "defaultColor": "blue"
   },
   {
+    "name": "cabinet",
+    "category": "Home and food",
+    "tags": [
+      "cabinet",
+      "cupboard",
+      "wardrobe",
+      "doors",
+      "furniture",
+      "storage"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "cable",
     "category": "Technology and development",
     "tags": [
@@ -4109,6 +4408,24 @@
     "name": "calendar-heart",
     "category": "Time and planning",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "calendar-lock",
+    "category": "Time and planning",
+    "tags": [
+      "schedule",
+      "date",
+      "locked",
+      "private",
+      "calendar"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -4438,6 +4755,44 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "capslock",
+    "category": "Technology and development",
+    "tags": [
+      "keyboard",
+      "modifier",
+      "capital",
+      "uppercase",
+      "caps",
+      "lock",
+      "latch"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "capsule",
+    "category": "Geometry",
+    "tags": [
+      "stadium",
+      "obround",
+      "pill",
+      "capsule",
+      "shape"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "captions",
     "category": "Devices and connectivity",
     "tags": [
@@ -4497,6 +4852,25 @@
     "name": "car-front",
     "category": "Maps and travel",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "car-seat",
+    "category": "Maps and travel",
+    "tags": [
+      "vehicle",
+      "car",
+      "seat",
+      "headrest",
+      "driver",
+      "passenger"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -4649,6 +5023,27 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "cast-off",
+    "category": "Media",
+    "tags": [
+      "cast",
+      "disconnect",
+      "disabled",
+      "wireless",
+      "display",
+      "screen",
+      "mirroring",
+      "off"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "castle",
     "category": "Home and food",
     "tags": [],
@@ -4709,6 +5104,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "cedi",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "ghana",
+      "ghanaian",
+      "ghs"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "ceiling-fan",
     "category": "Home and food",
     "tags": [
@@ -4725,6 +5139,26 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "cellular-bars",
+    "category": "Devices and connectivity",
+    "tags": [
+      "mobile",
+      "network",
+      "reception",
+      "cellular",
+      "signal",
+      "strength",
+      "bars"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "certificate",
@@ -6806,6 +7240,24 @@
     "defaultColor": "orange"
   },
   {
+    "name": "clear-key",
+    "category": "Technology and development",
+    "tags": [
+      "keyboard",
+      "keypad",
+      "clear",
+      "erase",
+      "reset"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "clef-alto",
     "category": "Media and communication",
     "tags": [
@@ -7344,6 +7796,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "clock-x",
+    "category": "Time and planning",
+    "tags": [
+      "time",
+      "clock",
+      "expired",
+      "cancelled"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "close",
     "category": "Actions and status",
     "tags": [],
@@ -7660,6 +8129,66 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "co-cloud",
+    "category": "Weather and nature",
+    "tags": [
+      "carbon",
+      "monoxide",
+      "gas",
+      "air",
+      "quality",
+      "sensor"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "co2-cloud",
+    "category": "Weather and nature",
+    "tags": [
+      "carbon",
+      "dioxide",
+      "emissions",
+      "atmosphere",
+      "gas",
+      "air",
+      "quality"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "coat",
+    "category": "Finance and commerce",
+    "tags": [
+      "overcoat",
+      "long",
+      "coat",
+      "lapel",
+      "formal",
+      "winter",
+      "outerwear",
+      "clothing"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "code",
     "category": "Technology and development",
     "tags": [],
@@ -7752,6 +8281,27 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "colon-sign",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "col\u00f3n",
+      "costa",
+      "rica",
+      "costarricense",
+      "crc"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "columns",
     "category": "Layout",
     "tags": [],
@@ -7791,6 +8341,25 @@
     "name": "columns-4",
     "category": "Layout",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "comb",
+    "category": "Home and food",
+    "tags": [
+      "comb",
+      "hair",
+      "teeth",
+      "grooming",
+      "styling",
+      "barber"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -8373,6 +8942,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "cricket-ball",
+    "category": "Sports and outdoors",
+    "tags": [
+      "cricket",
+      "leather",
+      "seam",
+      "bowling",
+      "bat",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "croissant",
     "category": "Home and food",
     "tags": [],
@@ -8433,6 +9021,25 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "cruzeiro",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "brazil",
+      "historical",
+      "cr"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "csharp",
@@ -8529,6 +9136,44 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "cursor-motion",
+    "category": "Technology and development",
+    "tags": [
+      "cursor",
+      "pointer",
+      "motion",
+      "speed",
+      "movement",
+      "tracking"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "cursor-rays",
+    "category": "Technology and development",
+    "tags": [
+      "cursor",
+      "pointer",
+      "click",
+      "highlight",
+      "select",
+      "rays"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "curtains",
     "category": "Home and food",
     "tags": [
@@ -8569,6 +9214,27 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "danish-krone",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "denmark",
+      "danish",
+      "dkk",
+      "krone",
+      "kr"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "dart",
@@ -8775,6 +9441,63 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "degree-celsius",
+    "category": "Weather and nature",
+    "tags": [
+      "temperature",
+      "degrees",
+      "celsius",
+      "centigrade",
+      "metric",
+      "weather"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "degree-fahrenheit",
+    "category": "Weather and nature",
+    "tags": [
+      "temperature",
+      "degrees",
+      "fahrenheit",
+      "imperial",
+      "weather"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "dehumidifier",
+    "category": "Home and food",
+    "tags": [
+      "humidity",
+      "dry",
+      "moisture",
+      "extraction",
+      "climate",
+      "air",
+      "appliance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "delete",
@@ -9196,6 +9919,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "dong",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "vietnam",
+      "vietnamese",
+      "\u0111\u1ed3ng",
+      "vnd"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "donut",
     "category": "Home and food",
     "tags": [],
@@ -9340,6 +10083,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "dpad",
+    "category": "Media",
+    "tags": [
+      "controller",
+      "d-pad",
+      "directional",
+      "pad",
+      "game",
+      "navigation",
+      "buttons"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "drafting-compass",
     "category": "Design tools",
     "tags": [],
@@ -9472,6 +10235,26 @@
       "clothes",
       "heat",
       "appliance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "duffle-bag",
+    "category": "Maps and travel",
+    "tags": [
+      "duffel",
+      "duffle",
+      "travel",
+      "luggage",
+      "overnight",
+      "holdall",
+      "straps"
     ],
     "origin": "original",
     "styles": [
@@ -9836,6 +10619,45 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "escape",
+    "category": "Technology and development",
+    "tags": [
+      "keyboard",
+      "escape",
+      "esc",
+      "cancel",
+      "dismiss",
+      "shortcut"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "esim",
+    "category": "Devices and connectivity",
+    "tags": [
+      "embedded",
+      "sim",
+      "digital",
+      "cellular",
+      "phone",
+      "carrier",
+      "chip"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "eslint",
     "category": "Brands",
     "tags": [],
@@ -9878,6 +10700,27 @@
     "name": "ev-charger",
     "category": "Maps and travel",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "ev-motor",
+    "category": "Maps and travel",
+    "tags": [
+      "electric",
+      "vehicle",
+      "motor",
+      "rotor",
+      "drive",
+      "power",
+      "alternating",
+      "current"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -10138,6 +10981,25 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "fax-machine",
+    "category": "Devices and connectivity",
+    "tags": [
+      "fax",
+      "facsimile",
+      "telephone",
+      "office",
+      "paper",
+      "keypad"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "feather",
     "category": "Weather and nature",
     "tags": [],
@@ -10172,6 +11034,27 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "ferry",
+    "category": "Maps and travel",
+    "tags": [
+      "ferry",
+      "boat",
+      "passenger",
+      "ship",
+      "harbor",
+      "crossing",
+      "water",
+      "transport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "file",
@@ -10494,6 +11377,25 @@
     "name": "file-download",
     "category": "Files and folders",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "file-ellipsis",
+    "category": "Files and folders",
+    "tags": [
+      "document",
+      "file",
+      "more",
+      "options",
+      "actions",
+      "overflow"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -11092,6 +11994,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "fireplace",
+    "category": "Home and food",
+    "tags": [
+      "hearth",
+      "mantel",
+      "fire",
+      "heating",
+      "living",
+      "room",
+      "chimney"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "first-aid",
     "category": "Health and fitness",
     "tags": [],
@@ -11325,6 +12247,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "florin",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "aruba",
+      "guilder",
+      "florin",
+      "awg"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "flower",
     "category": "Weather and nature",
     "tags": [],
@@ -11347,6 +12289,24 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "fn",
+    "category": "Technology and development",
+    "tags": [
+      "function",
+      "fn",
+      "keyboard",
+      "modifier",
+      "shortcut"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "focus",
@@ -12076,6 +13036,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "fuel-pump",
+    "category": "Maps and travel",
+    "tags": [
+      "fuel",
+      "pump",
+      "petrol",
+      "gas",
+      "station",
+      "refuel"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "fullscreen",
     "category": "Layout",
     "tags": [],
@@ -12393,6 +13372,26 @@
     "name": "gift",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "gift-card",
+    "category": "Finance and commerce",
+    "tags": [
+      "gift",
+      "card",
+      "voucher",
+      "prepaid",
+      "present",
+      "ribbon",
+      "shopping"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -13106,6 +14105,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "greeting-card",
+    "category": "Documents and books",
+    "tags": [
+      "greeting",
+      "card",
+      "birthday",
+      "invitation",
+      "wishes",
+      "folded",
+      "heart"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "grid-2x2",
     "category": "Layout",
     "tags": [],
@@ -13268,6 +14287,46 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "guarani",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "paraguay",
+      "paraguayan",
+      "guaran\u00ed",
+      "pyg"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "guide-point",
+    "category": "Design tools",
+    "tags": [
+      "vector",
+      "guide",
+      "point",
+      "anchor",
+      "control",
+      "handles",
+      "tangent"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "guitar",
     "category": "Media and communication",
     "tags": [
@@ -13287,6 +14346,27 @@
     "tags": [
       "guitar",
       "electric"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "gym-bag",
+    "category": "Maps and travel",
+    "tags": [
+      "gym",
+      "bag",
+      "kit",
+      "locker",
+      "workout",
+      "training",
+      "sports",
+      "pocket"
     ],
     "origin": "original",
     "styles": [
@@ -13512,6 +14592,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "hard-drive-check",
+    "category": "Technology and development",
+    "tags": [
+      "storage",
+      "disk",
+      "drive",
+      "verified",
+      "healthy"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "hard-drive-download",
     "category": "Technology and development",
     "tags": [
@@ -13528,12 +14626,48 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "hard-drive-plus",
+    "category": "Technology and development",
+    "tags": [
+      "storage",
+      "disk",
+      "drive",
+      "add",
+      "mount"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "hard-drive-upload",
     "category": "Technology and development",
     "tags": [
       "hard",
       "drive",
       "upload"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "hard-drive-x",
+    "category": "Technology and development",
+    "tags": [
+      "storage",
+      "disk",
+      "drive",
+      "error",
+      "disconnect"
     ],
     "origin": "original",
     "styles": [
@@ -13713,6 +14847,25 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "headlight",
+    "category": "Maps and travel",
+    "tags": [
+      "car",
+      "headlamp",
+      "high",
+      "beam",
+      "light",
+      "headlights"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "headphone-off",
@@ -13909,9 +15062,50 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "helmet",
+    "category": "Sports and outdoors",
+    "tags": [
+      "helmet",
+      "cycling",
+      "protective",
+      "headgear",
+      "safety",
+      "bike",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "hexagon",
     "category": "Geometry",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "hifi-receiver",
+    "category": "Devices and connectivity",
+    "tags": [
+      "hifi",
+      "stereo",
+      "audio",
+      "tuner",
+      "receiver",
+      "volume",
+      "home",
+      "theater"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -13995,6 +15189,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "home-sensor",
+    "category": "Home and food",
+    "tags": [
+      "home",
+      "sensor",
+      "motion",
+      "detector",
+      "occupancy",
+      "automation",
+      "wireless"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "homebrew",
     "category": "Brands",
     "tags": [],
@@ -14021,6 +15235,25 @@
     "name": "hop-off",
     "category": "Home and food",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "horn",
+    "category": "Maps and travel",
+    "tags": [
+      "vehicle",
+      "horn",
+      "honk",
+      "trumpet",
+      "sound",
+      "alert"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -14117,6 +15350,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "house-off",
+    "category": "Navigation",
+    "tags": [
+      "house",
+      "home",
+      "unavailable",
+      "disabled"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "house-plug",
     "category": "Home and food",
     "tags": [],
@@ -14165,6 +15415,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "hryvnia",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "ukraine",
+      "ukrainian",
+      "hryvnia",
+      "uah"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "html",
     "category": "Brands",
     "tags": [],
@@ -14174,6 +15444,46 @@
     ],
     "defaultTone": "duotone",
     "defaultColor": "orange"
+  },
+  {
+    "name": "humidifier",
+    "category": "Home and food",
+    "tags": [
+      "humidity",
+      "mist",
+      "steam",
+      "vaporiser",
+      "vaporizer",
+      "climate",
+      "air",
+      "appliance"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "hurricane",
+    "category": "Weather and nature",
+    "tags": [
+      "hurricane",
+      "typhoon",
+      "cyclone",
+      "eye",
+      "severe",
+      "wind"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "ice-cream-bowl",
@@ -14253,6 +15563,23 @@
     "defaultColor": "pink"
   },
   {
+    "name": "image-check",
+    "category": "Media",
+    "tags": [
+      "photo",
+      "picture",
+      "verified",
+      "selected"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "image-down",
     "category": "Media",
     "tags": [
@@ -14316,6 +15643,25 @@
     "name": "image-plus",
     "category": "Media",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "image-search",
+    "category": "Media",
+    "tags": [
+      "photo",
+      "picture",
+      "search",
+      "find",
+      "visual",
+      "lookup"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -14492,6 +15838,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "inhaler",
+    "category": "Health and fitness",
+    "tags": [
+      "inhaler",
+      "asthma",
+      "medication",
+      "respiratory",
+      "breathing",
+      "mouthpiece"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "inspection-panel",
     "category": "Work and education",
     "tags": [],
@@ -14563,6 +15928,26 @@
     "tags": [
       "iv",
       "bag"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "jacket",
+    "category": "Finance and commerce",
+    "tags": [
+      "jacket",
+      "collar",
+      "zip",
+      "bomber",
+      "sleeves",
+      "outerwear",
+      "clothing"
     ],
     "origin": "original",
     "styles": [
@@ -14669,6 +16054,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "key-off",
+    "category": "Security",
+    "tags": [
+      "security",
+      "access",
+      "key",
+      "revoked",
+      "disabled"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "key-round",
     "category": "Home and food",
     "tags": [],
@@ -14708,6 +16111,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "keyboard-ellipsis",
+    "category": "Technology and development",
+    "tags": [
+      "keyboard",
+      "typing",
+      "input",
+      "more",
+      "options",
+      "shortcuts",
+      "ellipsis"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "keyboard-music",
     "category": "Media and communication",
     "tags": [
@@ -14733,6 +16156,25 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "kip",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "laos",
+      "lao",
+      "lak"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "kiro",
@@ -14901,6 +16343,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "laptop-check",
+    "category": "Technology and development",
+    "tags": [
+      "computer",
+      "laptop",
+      "verified",
+      "trusted"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "laptop-minimal",
     "category": "Technology and development",
     "tags": [
@@ -14922,6 +16381,23 @@
       "laptop",
       "minimal",
       "check"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "laptop-off",
+    "category": "Technology and development",
+    "tags": [
+      "computer",
+      "laptop",
+      "offline",
+      "disabled"
     ],
     "origin": "original",
     "styles": [
@@ -14966,6 +16442,46 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "latch",
+    "category": "Product tools",
+    "tags": [
+      "latch",
+      "sliding",
+      "bolt",
+      "door",
+      "gate",
+      "lock",
+      "hardware"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "laurel",
+    "category": "Work and education",
+    "tags": [
+      "laurel",
+      "wreath",
+      "leaves",
+      "victory",
+      "honor",
+      "award",
+      "champion"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "layer-arrow-down",
@@ -15763,6 +17279,27 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "level",
+    "category": "Product tools",
+    "tags": [
+      "spirit",
+      "level",
+      "bubble",
+      "vial",
+      "horizontal",
+      "carpenter",
+      "construction",
+      "tool"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "library",
     "category": "Product tools",
     "tags": [
@@ -15791,6 +17328,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "license-plate",
+    "category": "Maps and travel",
+    "tags": [
+      "car",
+      "license",
+      "plate",
+      "registration",
+      "number",
+      "vehicle",
+      "tag"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "life-buoy",
     "category": "Sports and outdoors",
     "tags": [
@@ -15809,6 +17366,47 @@
     "name": "ligature",
     "category": "Typography and text",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "light-rail",
+    "category": "Maps and travel",
+    "tags": [
+      "tram",
+      "light",
+      "rail",
+      "streetcar",
+      "electric",
+      "train",
+      "public",
+      "transit"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "light-spectrum",
+    "category": "Photography and optics",
+    "tags": [
+      "light",
+      "spectrum",
+      "vibrance",
+      "optical",
+      "color",
+      "wavelength",
+      "exposure"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -16022,6 +17620,24 @@
     "name": "link-2-off",
     "category": "Typography and text",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "link-plus",
+    "category": "Actions and status",
+    "tags": [
+      "hyperlink",
+      "url",
+      "attach",
+      "add",
+      "insert"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -16298,6 +17914,24 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "lizard",
+    "category": "Weather and nature",
+    "tags": [
+      "gecko",
+      "reptile",
+      "animal",
+      "wildlife",
+      "tail"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "loader",
     "category": "Interface controls",
     "tags": [
@@ -16377,6 +18011,42 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "lock-check",
+    "category": "Security",
+    "tags": [
+      "padlock",
+      "access",
+      "secure",
+      "verified",
+      "approved"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "lock-clock",
+    "category": "Security",
+    "tags": [
+      "padlock",
+      "access",
+      "timed",
+      "pending",
+      "expiry"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "lock-keyhole",
     "category": "Product tools",
     "tags": [
@@ -16412,6 +18082,23 @@
     "name": "lock-open",
     "category": "Security",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "lock-x",
+    "category": "Security",
+    "tags": [
+      "padlock",
+      "access",
+      "denied",
+      "rejected"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -16469,6 +18156,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "loupe",
+    "category": "Design tools",
+    "tags": [
+      "magnifier",
+      "loupe",
+      "optical",
+      "lens",
+      "inspect",
+      "jeweler",
+      "photography"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "lua",
     "category": "Brands",
     "tags": [],
@@ -16483,6 +18190,25 @@
     "name": "lungs",
     "category": "Health and fitness",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "magazine",
+    "category": "Documents and books",
+    "tags": [
+      "magazine",
+      "periodical",
+      "publication",
+      "issue",
+      "reading",
+      "cover"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -17229,6 +18955,66 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "menu-card",
+    "category": "Documents and books",
+    "tags": [
+      "menu",
+      "card",
+      "restaurant",
+      "food",
+      "dining",
+      "courses",
+      "list"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "menubar",
+    "category": "Layout",
+    "tags": [
+      "desktop",
+      "window",
+      "menu",
+      "bar",
+      "top",
+      "system",
+      "commands"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "menubar-dock",
+    "category": "Layout",
+    "tags": [
+      "desktop",
+      "window",
+      "menu",
+      "bar",
+      "dock",
+      "launcher",
+      "applications"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "merge",
     "category": "Technology and development",
     "tags": [
@@ -17835,6 +19621,42 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "microphone-plus",
+    "category": "Media",
+    "tags": [
+      "audio",
+      "recording",
+      "microphone",
+      "add",
+      "input"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "microphone-x",
+    "category": "Media",
+    "tags": [
+      "audio",
+      "recording",
+      "microphone",
+      "remove",
+      "cancel"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "microscope",
     "category": "Health, science and accessibility",
     "tags": [
@@ -17910,6 +19732,27 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "mill",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "mill",
+      "mille",
+      "thousandth",
+      "cent",
+      "accounting"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "minimize",
@@ -18239,11 +20082,177 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "moon-first-quarter",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "first",
+      "quarter"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-full",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "full"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-last-quarter",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "last",
+      "quarter"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-new",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "new"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "moon-star",
     "category": "Photography and optics",
     "tags": [
       "moon",
       "star"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-waning-crescent",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "waning",
+      "crescent"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-waning-gibbous",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "waning",
+      "gibbous"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-waxing-crescent",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "waxing",
+      "crescent"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "moon-waxing-gibbous",
+    "category": "Weather and nature",
+    "tags": [
+      "astronomy",
+      "lunar",
+      "phase",
+      "night",
+      "orbit",
+      "moon",
+      "waxing",
+      "gibbous"
     ],
     "origin": "original",
     "styles": [
@@ -18745,6 +20754,25 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "naira",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "nigeria",
+      "nigerian",
+      "ngn"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "navigation",
     "category": "Maps and travel",
     "tags": [],
@@ -18903,6 +20931,27 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "norwegian-krone",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "norway",
+      "norwegian",
+      "nok",
+      "kroner",
+      "kr"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "notebook",
     "category": "Time and planning",
     "tags": [],
@@ -19038,6 +21087,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "oar",
+    "category": "Sports and outdoors",
+    "tags": [
+      "oar",
+      "paddle",
+      "rowing",
+      "boat",
+      "canoe",
+      "water",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "objc",
     "category": "Brands",
     "tags": [],
@@ -19122,6 +21191,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "oil-can",
+    "category": "Maps and travel",
+    "tags": [
+      "engine",
+      "oil",
+      "can",
+      "lubrication",
+      "service",
+      "automotive"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "omega",
     "category": "Math and symbols",
     "tags": [],
@@ -19152,6 +21240,27 @@
     "origin": "legacy",
     "styles": [
       "duotone"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "optical-disc",
+    "category": "Devices and connectivity",
+    "tags": [
+      "optical",
+      "disc",
+      "cd",
+      "dvd",
+      "blu-ray",
+      "storage",
+      "media",
+      "laser"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
     ],
     "defaultTone": "duotone"
   },
@@ -19206,6 +21315,24 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "oval",
+    "category": "Geometry",
+    "tags": [
+      "ellipse",
+      "oval",
+      "geometric",
+      "shape",
+      "horizontal"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "oven",
@@ -20140,6 +22267,67 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "personal-hotspot",
+    "category": "Devices and connectivity",
+    "tags": [
+      "tethering",
+      "cellular",
+      "internet",
+      "share",
+      "network",
+      "broadcast",
+      "personal",
+      "hotspot"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "perspective",
+    "category": "Design tools",
+    "tags": [
+      "perspective",
+      "projection",
+      "plane",
+      "vanishing",
+      "grid",
+      "transform"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "peseta",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "spain",
+      "spanish",
+      "peseta",
+      "esp",
+      "historical"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "phi",
     "category": "Math and symbols",
     "tags": [],
@@ -20191,6 +22379,43 @@
     "name": "phone-call",
     "category": "Communication",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "phone-check",
+    "category": "Communication",
+    "tags": [
+      "telephone",
+      "handset",
+      "call",
+      "answered",
+      "verified"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "phone-clock",
+    "category": "Communication",
+    "tags": [
+      "telephone",
+      "handset",
+      "call",
+      "waiting",
+      "scheduled",
+      "history"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -20294,6 +22519,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "phone-plus",
+    "category": "Communication",
+    "tags": [
+      "telephone",
+      "handset",
+      "add",
+      "call",
+      "contact"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "php",
     "category": "Brands",
     "tags": [],
@@ -20319,6 +22562,26 @@
     "category": "Media and communication",
     "tags": [
       "piano"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "piano-keys",
+    "category": "Media and communication",
+    "tags": [
+      "piano",
+      "keys",
+      "keyboard",
+      "ivory",
+      "music",
+      "instrument",
+      "octave"
     ],
     "origin": "original",
     "styles": [
@@ -20467,6 +22730,91 @@
     "tags": [
       "disabled",
       "pin"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "pip-enter",
+    "category": "Layout",
+    "tags": [
+      "picture",
+      "in",
+      "picture",
+      "floating",
+      "video",
+      "player",
+      "enter",
+      "shrink",
+      "minimize"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "pip-exit",
+    "category": "Layout",
+    "tags": [
+      "picture",
+      "in",
+      "picture",
+      "floating",
+      "video",
+      "player",
+      "exit",
+      "restore",
+      "expand"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "pip-swap",
+    "category": "Layout",
+    "tags": [
+      "picture",
+      "in",
+      "picture",
+      "floating",
+      "video",
+      "player",
+      "swap",
+      "exchange",
+      "switch"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "pipe",
+    "category": "Home and food",
+    "tags": [
+      "plumbing",
+      "elbow",
+      "water",
+      "drain",
+      "tube",
+      "fitting"
     ],
     "origin": "original",
     "styles": [
@@ -20919,6 +23267,44 @@
       "wall",
       "outlet",
       "receptacle"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "power-sleep",
+    "category": "Actions and status",
+    "tags": [
+      "power",
+      "sleep",
+      "standby",
+      "suspend",
+      "crescent",
+      "moon"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "power-toggle",
+    "category": "Actions and status",
+    "tags": [
+      "power",
+      "toggle",
+      "on",
+      "off",
+      "switch",
+      "system"
     ],
     "origin": "original",
     "styles": [
@@ -21574,6 +23960,27 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "rectangle-stack-play",
+    "category": "Interface controls",
+    "tags": [
+      "cards",
+      "layers",
+      "deck",
+      "stack",
+      "play",
+      "video",
+      "media",
+      "playlist"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "rectangle-stack-plus",
     "category": "Interface controls",
     "tags": [
@@ -21585,6 +23992,28 @@
       "add",
       "insert",
       "new"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "rectangle-stack-user",
+    "category": "Interface controls",
+    "tags": [
+      "cards",
+      "layers",
+      "deck",
+      "stack",
+      "person",
+      "user",
+      "profile",
+      "shared",
+      "collection"
     ],
     "origin": "original",
     "styles": [
@@ -21899,12 +24328,49 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "rhombus",
+    "category": "Geometry",
+    "tags": [
+      "lozenge",
+      "diamond",
+      "rhombus",
+      "quadrilateral",
+      "geometry"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "ribbon",
     "category": "Product tools",
     "tags": [
       "award",
       "medal",
       "ribbon"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "right-triangle",
+    "category": "Geometry",
+    "tags": [
+      "triangle",
+      "right",
+      "angle",
+      "diagonal",
+      "geometry",
+      "polygon"
     ],
     "origin": "original",
     "styles": [
@@ -21993,9 +24459,49 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "roman-shade",
+    "category": "Home and food",
+    "tags": [
+      "roman",
+      "shade",
+      "blind",
+      "window",
+      "fabric",
+      "pleat",
+      "drawstring"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "rose",
     "category": "Weather and nature",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "rosette",
+    "category": "Work and education",
+    "tags": [
+      "rosette",
+      "award",
+      "prize",
+      "ribbon",
+      "cockade",
+      "merit",
+      "winner"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -22674,6 +25180,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "scanner",
+    "category": "Devices and connectivity",
+    "tags": [
+      "flatbed",
+      "scanner",
+      "digitize",
+      "document",
+      "scan",
+      "copier",
+      "glass"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "school",
     "category": "Home and food",
     "tags": [],
@@ -22778,6 +25304,25 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "scribble",
+    "category": "Design tools",
+    "tags": [
+      "freehand",
+      "pen",
+      "pencil",
+      "drawing",
+      "sketch",
+      "scribble"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "scroll",
@@ -23058,6 +25603,25 @@
     "defaultColor": "sky"
   },
   {
+    "name": "service-dog",
+    "category": "Weather and nature",
+    "tags": [
+      "assistance",
+      "guide",
+      "dog",
+      "harness",
+      "accessibility",
+      "animal"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "settings",
     "category": "Technology and development",
     "tags": [],
@@ -23129,6 +25693,23 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "share-check",
+    "category": "Product tools",
+    "tags": [
+      "share",
+      "export",
+      "sent",
+      "completed"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "sheet",
     "category": "Documents and books",
     "tags": [],
@@ -23140,6 +25721,27 @@
     ],
     "defaultTone": "duotone",
     "defaultColor": "green"
+  },
+  {
+    "name": "shekel",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "israel",
+      "israeli",
+      "new",
+      "sheqel",
+      "ils"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "shell",
@@ -23414,6 +26016,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "shift-key",
+    "category": "Technology and development",
+    "tags": [
+      "keyboard",
+      "modifier",
+      "uppercase",
+      "shift",
+      "arrow"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "ship",
     "category": "Maps and travel",
     "tags": [],
@@ -23465,6 +26085,43 @@
     "name": "shopping-bag",
     "category": "Finance and commerce",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "shopping-bag-minus",
+    "category": "Finance and commerce",
+    "tags": [
+      "shopping",
+      "bag",
+      "retail",
+      "remove",
+      "item"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "shopping-bag-plus",
+    "category": "Finance and commerce",
+    "tags": [
+      "shopping",
+      "bag",
+      "retail",
+      "purchase",
+      "add",
+      "item"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -23789,6 +26446,45 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "singapore-dollar",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "singapore",
+      "singaporean",
+      "sgd"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "sink",
+    "category": "Home and food",
+    "tags": [
+      "sink",
+      "washbasin",
+      "faucet",
+      "tap",
+      "kitchen",
+      "bathroom",
+      "plumbing"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "siren",
     "category": "Technology and development",
     "tags": [
@@ -23833,6 +26529,45 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "skateboard",
+    "category": "Sports and outdoors",
+    "tags": [
+      "skate",
+      "deck",
+      "wheels",
+      "board",
+      "skatepark",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "skew",
+    "category": "Design tools",
+    "tags": [
+      "transform",
+      "shear",
+      "distort",
+      "skew",
+      "handles",
+      "vector",
+      "corners"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "skip-back",
     "category": "Media",
     "tags": [],
@@ -23855,6 +26590,26 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "skis",
+    "category": "Sports and outdoors",
+    "tags": [
+      "ski",
+      "pair",
+      "alpine",
+      "snow",
+      "winter",
+      "downhill",
+      "bindings"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "skull",
@@ -24040,6 +26795,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "snowboard",
+    "category": "Sports and outdoors",
+    "tags": [
+      "snowboard",
+      "snow",
+      "bindings",
+      "mountain",
+      "winter",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "snowflake",
     "category": "Weather and nature",
     "tags": [],
@@ -24055,6 +26829,25 @@
     "name": "soap-dispenser-droplet",
     "category": "Home and food",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "soccer-ball",
+    "category": "Sports and outdoors",
+    "tags": [
+      "football",
+      "soccer",
+      "pentagon",
+      "pitch",
+      "team",
+      "sport"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -24103,6 +26896,25 @@
     "name": "sort-descending",
     "category": "Actions and status",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "sos",
+    "category": "Actions and status",
+    "tags": [
+      "sos",
+      "distress",
+      "emergency",
+      "rescue",
+      "help",
+      "signal"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -24295,6 +27107,26 @@
     "tags": [
       "sport",
       "shoe"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "sports-court",
+    "category": "Sports and outdoors",
+    "tags": [
+      "court",
+      "tennis",
+      "net",
+      "field",
+      "lines",
+      "game",
+      "sport"
     ],
     "origin": "original",
     "styles": [
@@ -26133,6 +28965,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "stairs",
+    "category": "Home and food",
+    "tags": [
+      "stairs",
+      "steps",
+      "staircase",
+      "floor",
+      "climb",
+      "architecture"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "stamp",
     "category": "Design tools",
     "tags": [],
@@ -26205,6 +29056,28 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "star-of-life-shield",
+    "category": "Health and fitness",
+    "tags": [
+      "star",
+      "of",
+      "life",
+      "emergency",
+      "medical",
+      "services",
+      "ems",
+      "rescue",
+      "shield"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "star-off",
     "category": "Product tools",
     "tags": [
@@ -26243,6 +29116,25 @@
       "favorite",
       "star",
       "x"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "steering-wheel",
+    "category": "Maps and travel",
+    "tags": [
+      "car",
+      "steering",
+      "wheel",
+      "driver",
+      "vehicle",
+      "controls"
     ],
     "origin": "original",
     "styles": [
@@ -26570,6 +29462,45 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "stroller",
+    "category": "Home and food",
+    "tags": [
+      "stroller",
+      "pram",
+      "pushchair",
+      "carriage",
+      "baby",
+      "wheels"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "student-desk",
+    "category": "Work and education",
+    "tags": [
+      "school",
+      "classroom",
+      "desk",
+      "chair",
+      "student",
+      "furniture",
+      "education"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "stylelint",
     "category": "Brands",
     "tags": [],
@@ -26704,6 +29635,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "sunglasses",
+    "category": "Finance and commerce",
+    "tags": [
+      "sunglasses",
+      "shades",
+      "eyewear",
+      "lenses",
+      "sun",
+      "fashion"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "sunrise",
     "category": "Weather and nature",
     "tags": [],
@@ -26738,6 +29688,27 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "surfboard",
+    "category": "Sports and outdoors",
+    "tags": [
+      "surf",
+      "board",
+      "ocean",
+      "wave",
+      "surfing",
+      "beach",
+      "water",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "svelte",
@@ -26808,6 +29779,47 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "swatch-palette",
+    "category": "Editing and design",
+    "tags": [
+      "color",
+      "palette",
+      "swatches",
+      "sample",
+      "fan",
+      "paint",
+      "chips"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "swedish-krona",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "sweden",
+      "swedish",
+      "sek",
+      "kronor",
+      "kr"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "swift",
     "category": "Brands",
     "tags": [],
@@ -26817,6 +29829,26 @@
     ],
     "defaultTone": "duotone",
     "defaultColor": "orange"
+  },
+  {
+    "name": "swirl",
+    "category": "Design tools",
+    "tags": [
+      "swirl",
+      "twist",
+      "tonal",
+      "balance",
+      "filter",
+      "contrast",
+      "effect"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "swiss-franc",
@@ -27048,6 +30080,23 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "tag-off",
+    "category": "Finance and commerce",
+    "tags": [
+      "label",
+      "tag",
+      "hidden",
+      "disabled"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "tag-plus",
     "category": "Product tools",
     "tags": [
@@ -27189,10 +30238,68 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "teddy-bear",
+    "category": "Home and food",
+    "tags": [
+      "teddy",
+      "bear",
+      "plush",
+      "stuffed",
+      "animal",
+      "toy",
+      "nursery"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "telescope",
     "category": "Health, science and accessibility",
     "tags": [
       "telescope"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "tennis-ball",
+    "category": "Sports and outdoors",
+    "tags": [
+      "tennis",
+      "felt",
+      "seam",
+      "racket",
+      "court",
+      "sport"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "tennis-racket",
+    "category": "Sports and outdoors",
+    "tags": [
+      "tennis",
+      "racquet",
+      "strings",
+      "handle",
+      "court",
+      "sport"
     ],
     "origin": "original",
     "styles": [
@@ -27869,6 +30976,25 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "tire",
+    "category": "Maps and travel",
+    "tags": [
+      "tyre",
+      "tire",
+      "wheel",
+      "sidewall",
+      "rubber",
+      "vehicle"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "toggle-off",
     "category": "Actions and status",
     "tags": [],
@@ -28035,6 +31161,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "tow-hitch",
+    "category": "Maps and travel",
+    "tags": [
+      "tow",
+      "hitch",
+      "trailer",
+      "ball",
+      "coupling",
+      "towing",
+      "vehicle"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "towel-rack",
     "category": "Home and food",
     "tags": [],
@@ -28167,6 +31313,24 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "trapezoid",
+    "category": "Geometry",
+    "tags": [
+      "trapezium",
+      "trapezoid",
+      "polygon",
+      "parallel",
+      "quadrilateral"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "trash",
@@ -28384,6 +31548,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "tropical-storm",
+    "category": "Weather and nature",
+    "tags": [
+      "tropical",
+      "storm",
+      "cyclone",
+      "forecast",
+      "wind"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "truck",
     "category": "Maps and travel",
     "tags": [],
@@ -28421,6 +31603,47 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "tugrik",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "mongolia",
+      "mongolian",
+      "t\u00f6gr\u00f6g",
+      "tugrik",
+      "mnt"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "tuning-fork",
+    "category": "Media and communication",
+    "tags": [
+      "tuning",
+      "fork",
+      "pitch",
+      "reference",
+      "resonance",
+      "music",
+      "instrument"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "turkish-lira",
@@ -28494,6 +31717,23 @@
       "tv",
       "minimal",
       "play"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "tv-off",
+    "category": "Media",
+    "tags": [
+      "television",
+      "broadcast",
+      "display",
+      "disconnected"
     ],
     "origin": "original",
     "styles": [
@@ -28754,6 +31994,24 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "user-clock",
+    "category": "People and accessibility",
+    "tags": [
+      "person",
+      "account",
+      "history",
+      "pending",
+      "waiting"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "user-cog",
     "category": "Communication",
     "tags": [
@@ -28839,6 +32097,24 @@
       "person",
       "account",
       "minus"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "user-off",
+    "category": "People and accessibility",
+    "tags": [
+      "person",
+      "account",
+      "profile",
+      "unavailable",
+      "disabled"
     ],
     "origin": "original",
     "styles": [
@@ -29172,11 +32448,85 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "users-cog",
+    "category": "People and accessibility",
+    "tags": [
+      "people",
+      "group",
+      "team",
+      "settings",
+      "manage",
+      "permissions"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "users-collaboration",
     "category": "Communication",
     "tags": [
       "people",
       "collaboration"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "users-minus",
+    "category": "People and accessibility",
+    "tags": [
+      "people",
+      "group",
+      "team",
+      "members",
+      "remove"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "users-off",
+    "category": "People and accessibility",
+    "tags": [
+      "people",
+      "group",
+      "team",
+      "unavailable",
+      "disabled"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "users-plus",
+    "category": "People and accessibility",
+    "tags": [
+      "people",
+      "group",
+      "team",
+      "members",
+      "add",
+      "invite"
     ],
     "origin": "original",
     "styles": [
@@ -29378,6 +32728,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "vial",
+    "category": "Health and fitness",
+    "tags": [
+      "vial",
+      "sample",
+      "medicine",
+      "ampoule",
+      "liquid",
+      "laboratory",
+      "glass"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "vibrate",
     "category": "Technology and development",
     "tags": [
@@ -29446,11 +32816,47 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "video-check",
+    "category": "Communication",
+    "tags": [
+      "video",
+      "camera",
+      "call",
+      "enabled",
+      "verified"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "video-off",
     "category": "Product tools",
     "tags": [
       "disabled",
       "video-call"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "video-plus",
+    "category": "Communication",
+    "tags": [
+      "video",
+      "camera",
+      "call",
+      "add",
+      "recording"
     ],
     "origin": "original",
     "styles": [
@@ -29809,6 +33215,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "water-bottle",
+    "category": "Home and food",
+    "tags": [
+      "water",
+      "bottle",
+      "drink",
+      "flask",
+      "refill",
+      "hydration",
+      "canteen"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "waveform",
     "category": "Media",
     "tags": [],
@@ -29898,6 +33324,26 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "web-camera",
+    "category": "Devices and connectivity",
+    "tags": [
+      "webcam",
+      "video",
+      "conference",
+      "camera",
+      "streaming",
+      "lens",
+      "desktop"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "webcam",
@@ -30075,6 +33521,66 @@
       "stroke"
     ],
     "defaultTone": "monochrome"
+  },
+  {
+    "name": "widget-large",
+    "category": "Layout",
+    "tags": [
+      "home",
+      "screen",
+      "dashboard",
+      "widget",
+      "tile",
+      "expanded",
+      "square"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "widget-medium",
+    "category": "Layout",
+    "tags": [
+      "home",
+      "screen",
+      "dashboard",
+      "widget",
+      "tile",
+      "wide",
+      "landscape"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "widget-small",
+    "category": "Layout",
+    "tags": [
+      "home",
+      "screen",
+      "dashboard",
+      "widget",
+      "tile",
+      "compact",
+      "square"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
   },
   {
     "name": "wifi",
@@ -30282,6 +33788,68 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "window-split-horizontal",
+    "category": "Layout",
+    "tags": [
+      "window",
+      "split",
+      "panes",
+      "divider",
+      "layout",
+      "rows",
+      "upper",
+      "lower",
+      "horizontal"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "window-split-vertical",
+    "category": "Layout",
+    "tags": [
+      "window",
+      "split",
+      "panes",
+      "divider",
+      "layout",
+      "columns",
+      "left",
+      "right",
+      "vertical"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "window-stack",
+    "category": "Layout",
+    "tags": [
+      "desktop",
+      "overlapping",
+      "windows",
+      "switch",
+      "multitask"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "wine",
     "category": "Home and food",
     "tags": [],
@@ -30304,6 +33872,28 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "won",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "korea",
+      "korean",
+      "south",
+      "north",
+      "krw",
+      "kpw"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "word",
@@ -30452,9 +34042,50 @@
     "defaultColor": "red"
   },
   {
+    "name": "yuan",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "china",
+      "chinese",
+      "yuan",
+      "renminbi",
+      "cny",
+      "rmb"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "zap",
     "category": "Technology and development",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "zap-check",
+    "category": "Technology and development",
+    "tags": [
+      "lightning",
+      "bolt",
+      "power",
+      "energy",
+      "ready",
+      "charged"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -30469,6 +34100,25 @@
     "tags": [
       "disabled",
       "zap"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
+    "name": "zap-x",
+    "category": "Technology and development",
+    "tags": [
+      "lightning",
+      "bolt",
+      "power",
+      "energy",
+      "error",
+      "unavailable"
     ],
     "origin": "original",
     "styles": [
@@ -30500,6 +34150,27 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "zloty",
+    "category": "Finance and commerce",
+    "tags": [
+      "currency",
+      "money",
+      "finance",
+      "poland",
+      "polish",
+      "z\u0142oty",
+      "pln",
+      "z\u0142"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "zodiac-aquarius",
@@ -30732,5 +34403,24 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "zzz",
+    "category": "Actions and status",
+    "tags": [
+      "sleep",
+      "sleeping",
+      "snooze",
+      "idle",
+      "rest",
+      "zzz"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   }
 ]

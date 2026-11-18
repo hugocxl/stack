@@ -1,7 +1,7 @@
 # @hugocxl/icons design system
 
 @hugocxl/icons is a rounded family with selective duotone for product interfaces.
-The collection contains 2,273 names: 2,192 original UI symbols and 81 retained
+The collection contains 2,462 names: 2,381 original UI symbols and 81 retained
 brand marks. The November 17 expansion adds 35 concepts inspired by SF Symbols'
 semantic breadth, with subtle polish to three existing symbols.
 [The generated catalog](CATALOG.md) defines the delivered set;
@@ -64,9 +64,9 @@ names. They do not represent distinct new concepts.
 
 | Style | Construction | Coverage |
 | --- | --- | --- |
-| Rounded Duotone | Selective surface depth; opaque linear symbols | All 2,273 names |
-| Rounded Solid | Filled silhouette with negative-space details | 2,192 UI names |
-| Rounded Stroke | Expanded contour and identifying detail lines | 2,192 UI names |
+| Rounded Duotone | Selective surface depth; opaque linear symbols | All 2,462 names |
+| Rounded Solid | Filled silhouette with negative-space details | 2,381 UI names |
+| Rounded Stroke | Expanded contour and identifying detail lines | 2,381 UI names |
 
 Minimal linear symbols can intentionally share Solid and Stroke geometry. A
 single arrow shaft does not need a different silhouette merely to increase the
