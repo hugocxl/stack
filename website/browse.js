@@ -17,8 +17,8 @@ const fetchSvg = name => {
   }));
   return svgs.get(name);
 };
-const inline = (text, decorative) => {
-  const svg = text.replace(' xmlns="http://www.w3.org/2000/svg"', ' class="ds-vector"').replace(/ color="[^"]*"/, '');
+const inline = (text, name, decorative) => {
+  const svg = text.replace(' xmlns="http://www.w3.org/2000/svg"', ` class="ds-vector" data-vector="${name}"`).replace(/ color="[^"]*"/, '');
   return decorative ? svg.replace('<svg ', '<svg aria-hidden="true" focusable="false" ') : svg;
 };
 const escapeHtml = text => text.replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
@@ -29,7 +29,7 @@ const observer = new IntersectionObserver(entries => {
     if (!entry.isIntersecting) continue;
     observer.unobserve(entry.target);
     const art = entry.target.querySelector('.browse-art');
-    fetchSvg(entry.target.id).then(text => { art.innerHTML = inline(text, true); }).catch(() => {});
+    fetchSvg(entry.target.id).then(text => { art.innerHTML = inline(text, entry.target.id, true); }).catch(() => {});
   }
 }, { rootMargin: '600px 0px' });
 for (const item of items) observer.observe(item);
@@ -111,7 +111,7 @@ async function open(name) {
   document.title = `${item.title} — Vectors`;
   try {
     const text = await fetchSvg(item.name);
-    if (shown === item) media.innerHTML = inline(text, false);
+    if (shown === item) media.innerHTML = inline(text, item.name, false);
   } catch {
     if (shown === item) media.textContent = 'The preview could not be loaded.';
   }

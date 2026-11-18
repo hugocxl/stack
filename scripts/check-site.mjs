@@ -1,8 +1,26 @@
 #!/usr/bin/env node
 // Check the built site: links, anchors, assets and the design system's page contract.
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
+
+// The design system is copied verbatim from @hugocxl/design-system.
+const system = join(dirname(createRequire(import.meta.url).resolve('@hugocxl/design-system/package.json')), 'system');
+for (const path of readdirSync(system, { recursive: true }).filter(path => statSync(join(system, path)).isFile())) {
+  assert.ok(readFileSync(join(system, path)).equals(readFileSync(`_site/system/${path}`)), `_site/system/${path} differs from the package`);
+}
+
+// Inline icons and vectors, as DESIGN.md writes them, keyed by name.
+const svgInner = svg => JSDOM.fragment(svg.trim()).firstElementChild.innerHTML.replace(/>\s+</g, '><').trim();
+const iconCache = new Map();
+const packageIcon = async name => {
+  if (!iconCache.has(name)) iconCache.set(name, svgInner(Object.values(await import(`@hugocxl/icons/js/stroke/${name}`))[0]));
+  return iconCache.get(name);
+};
+let icons = 0;
+let vectors = 0;
 
 const pages = { 'index.html': 'plain', 'browse.html': 'plain', 'docs.html': 'plain' };
 const docs = new Map(Object.keys(pages).map(name => [name, new JSDOM(readFileSync(`_site/${name}`, 'utf8')).window.document]));
@@ -25,7 +43,21 @@ for (const [name, doc] of docs) {
   assert.equal(doc.querySelectorAll('h1').length, 1, `${name}: one h1`);
   assert.ok(doc.querySelectorAll('.ds-accent, .ds-dot').length <= 2, `${name}: accent budget`);
   assert.ok(doc.querySelectorAll('.ds-button').length <= 1, `${name}: one filled button`);
+  for (const svg of doc.querySelectorAll('svg.ds-icon')) {
+    const icon = svg.dataset.icon;
+    assert.ok(icon, `${name}: icon without data-icon`);
+    assert.equal(svg.getAttribute('viewBox'), '0 0 16 16', `${name}: ${icon} viewBox`);
+    assert.equal(svg.getAttribute('fill'), 'none', `${name}: ${icon} fill`);
+    assert.equal(svg.getAttribute('aria-hidden'), 'true', `${name}: ${icon} aria-hidden`);
+    assert.equal(svg.innerHTML.replace(/>\s+</g, '><').trim(), await packageIcon(icon), `${name}: ${icon} differs from @hugocxl/icons`);
+    icons++;
+  }
+  assert.equal(doc.querySelectorAll('svg:not(.ds-icon):not(.ds-vector)').length, 0, `${name}: stray inline svg`);
   for (const svg of doc.querySelectorAll('svg.ds-vector')) {
+    const vector = svg.dataset.vector;
+    assert.ok(names.has(vector), `${name}: unknown vector ${vector}`);
+    assert.equal(svg.innerHTML.replace(/>\s+</g, '><').trim(), svgInner(readFileSync(`figures/${vector}.svg`, 'utf8')), `${name}: ${vector} differs from figures/`);
+    vectors++;
     assert.ok(!svg.hasAttribute('color'), `${name}: vector keeps a color attribute`);
     assert.ok(svg.querySelector('title')?.textContent && svg.querySelector('desc')?.textContent, `${name}: vector title/desc`);
   }
@@ -86,4 +118,4 @@ assert.equal(guide.querySelectorAll('table:not(.ds-table)').length, 0);
 for (const table of guide.querySelectorAll('table')) assert.ok(table.parentElement.matches('.ds-table-scroll[tabindex="0"]'));
 for (const code of guide.querySelectorAll('.ds-code')) assert.equal(code.querySelector('button').textContent, 'Copy');
 
-console.log(`Site verified: 3 pages, ${links} internal links, ${items.length} vectors, ${headings.length} guide sections.`);
+console.log(`Site verified: 3 pages, ${links} internal links, ${icons} icons, ${vectors} inline vectors, ${items.length} vectors, ${headings.length} guide sections.`);

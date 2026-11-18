@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 // Build the website from website/, docs/USAGE.md and the generated catalog into _site/.
+// The design system and the interface icons come from the @hugocxl/design-system and
+// @hugocxl/icons packages; the vectors are this repo's own figures/.
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { dirname } from 'node:path';
 import { marked } from 'marked';
+
+const require = createRequire(import.meta.url);
+const designSystem = dirname(require.resolve('@hugocxl/design-system/package.json'));
 
 const out = '_site';
 const site = 'https://hugocxl.github.io/vectors/';
@@ -17,23 +24,36 @@ const count = number(catalog.length);
 
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
-cpSync('website/system', `${out}/system`, { recursive: true });
+cpSync(`${designSystem}/system`, `${out}/system`, { recursive: true });
 cpSync('figures', `${out}/figures`, { recursive: true });
 for (const file of ['site.css', 'home.js', 'browse.js']) cpSync(`website/${file}`, `${out}/${file}`);
 writeFileSync(`${out}/.nojekyll`, '');
 
 // An inline vector for the design system's figure slots: ink, 4:3, title and desc kept.
 const inlineVector = name => read(`figures/${name}.svg`)
-  .replace(' xmlns="http://www.w3.org/2000/svg"', ' class="ds-vector"')
+  .replace(' xmlns="http://www.w3.org/2000/svg"', ` class="ds-vector" data-vector="${name}"`)
   .replace(/ color="[^"]*"/, '')
   .trim();
+
+// An inline stroke icon from @hugocxl/icons, as DESIGN.md writes it.
+const icons = new Map();
+for (const file of ['index.html', 'browse.html', 'docs.html']) {
+  for (const [, name] of read(`website/${file}`).matchAll(/{{icon ([\w-]+)}}/g)) icons.set(name, null);
+}
+icons.set('contrast', null);
+for (const name of icons.keys()) {
+  const svg = Object.values(await import(`@hugocxl/icons/js/stroke/${name}`))[0];
+  const inner = svg.trim().replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '').split('\n').map(line => line.trim()).join('');
+  icons.set(name, `<svg class="ds-icon" data-icon="${name}" viewBox="0 0 16 16" fill="none" aria-hidden="true">${inner}</svg>`);
+}
+const icon = name => icons.get(name);
 
 const masthead = `  <header class="ds-masthead">
     <a class="ds-wordmark" href="./">@hugocxl/vectors</a>
     <a href="browse.html">Browse</a>
     <a href="docs.html">Docs</a>
     <a href="${repo}">GitHub</a>
-    <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme"><svg class="ds-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.375 8Q1.375 6.6526 1.8959 5.4211Q2.3988 4.232 3.3154 3.3154Q4.232 2.3988 5.4211 1.8959Q6.6526 1.375 8 1.375Q9.3474 1.375 10.5789 1.8959Q11.768 2.3988 12.6846 3.3154Q13.6012 4.232 14.1041 5.4211Q14.625 6.6526 14.625 8Q14.625 9.3474 14.1041 10.5789Q13.6012 11.768 12.6846 12.6846Q11.768 13.6012 10.5789 14.1041Q9.3474 14.625 8 14.625Q6.6526 14.625 5.4211 14.1041Q4.232 13.6012 3.3154 12.6846Q2.3988 11.768 1.8959 10.5789Q1.375 9.3474 1.375 8ZM2.625 8Q2.625 9.094 3.0471 10.092Q3.4551 11.0565 4.1993 11.8007Q4.9435 12.5449 5.908 12.9529Q6.906 13.375 8 13.375L8 2.625Q6.906 2.625 5.908 3.0471Q4.9435 3.4551 4.1993 4.1993Q3.4551 4.9435 3.0471 5.908Q2.625 6.906 2.625 8Z" fill="currentColor"/></svg></button>
+    <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme">${icon('contrast')}</button>
   </header>`;
 const footer = `  <footer class="ds-footer">
     <ul><li><a href="https://hugocxl.github.io/icons/">Icons</a></li><li><a href="${site}">Vectors</a></li><li><a href="https://hugocxl.github.io/design-system/">Design system</a></li></ul>
@@ -50,7 +70,7 @@ const head = (title, description, file) => `  <meta charset="utf-8">
   <script type="module" src="system/ds.js"></script>`;
 
 function page(file, values) {
-  let html = read(`website/${file}`);
+  let html = read(`website/${file}`).replace(/{{icon ([\w-]+)}}/g, (_, name) => icon(name));
   for (const [key, value] of Object.entries({ masthead, footer, count, categories: categories.length, ...values })) {
     html = html.replaceAll(`{{${key}}}`, () => String(value));
   }

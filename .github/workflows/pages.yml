@@ -24,6 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm install --no-save @hugocxl/design-system@latest @hugocxl/icons@latest
       - run: npm run build:site
       - run: npm run check:site
       - uses: actions/configure-pages@v5

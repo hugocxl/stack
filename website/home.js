@@ -5,8 +5,8 @@ const caption = document.getElementById('home-caption');
 const cache = new Map();
 let current = 0;
 
-export const inline = text => text
-  .replace(' xmlns="http://www.w3.org/2000/svg"', ' class="ds-vector"')
+export const inline = (text, name) => text
+  .replace(' xmlns="http://www.w3.org/2000/svg"', ` class="ds-vector" data-vector="${name}"`)
   .replace(/ color="[^"]*"/, '');
 
 async function show(index) {
@@ -16,7 +16,7 @@ async function show(index) {
   if (!cache.has(name)) cache.set(name, fetch(`figures/${name}.svg`).then(response => response.text()));
   const svg = await cache.get(name);
   if (requested !== current) return;
-  media.innerHTML = inline(svg);
+  media.innerHTML = inline(svg, name);
   caption.textContent = `Fig. ${String(current + 1).padStart(2, '0')} / ${title}`;
 }
 

@@ -55,16 +55,19 @@ them by hand; `npm run check` (`generate.py --check`) fails on any drift, and
 The site is built from `website/` and `docs/USAGE.md` into `_site/` (ignored):
 
 ```sh
-npm run sync:design-system   # copy ../design-system/system into website/system
 npm run build:site
 npm run check:site           # links, anchors and assets
 npx serve _site              # or any static server
 ```
 
-`website/system/` is a verbatim, committed copy of the design system so CI does
-not need a sibling checkout. Re-run the sync when the design system changes and
-commit the result. Never edit it by hand. Site-specific styles live only in
-`website/site.css` and use only `--ds-*` tokens.
+The design system and the interface icons are dev dependencies, not copies:
+the build copies `system/` from `@hugocxl/design-system` into `_site/system/` and
+inlines each `{{icon name}}` placeholder in `website/*.html` (and the theme button)
+from the stroke icons of `@hugocxl/icons`. The vectors are this repo's own
+`figures/`. The Pages workflow installs the latest release of both packages
+before building, so a design system release that triggers it redeploys the site
+with the newest versions. Site-specific styles live only in `website/site.css`
+and use only `--ds-*` tokens.
 
 ## Automatic releases
 

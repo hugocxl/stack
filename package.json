@@ -12,11 +12,12 @@
     "typecheck": "tsc -p tests/tsconfig.json && tsc -p tests/tsconfig.native.json",
     "validate": "bash scripts/validate.sh",
     "test:swift": "swift test",
-    "sync:design-system": "node scripts/sync-design-system.mjs",
     "build:site": "node scripts/build-site.mjs",
     "check:site": "node scripts/check-site.mjs"
   },
   "devDependencies": {
+    "@hugocxl/design-system": "^0.2.7",
+    "@hugocxl/icons": "^0.2.0",
     "@types/react": "^19.0.0",
     "esbuild": "^0.28.2",
     "jsdom": "26.1.0",
