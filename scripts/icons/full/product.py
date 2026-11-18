@@ -92,7 +92,7 @@ def register(api):
         body, detail, outline, category, tags = api['DRAWINGS'][source]
         # These baseline contours occupy the full bleed before outlining.
         # Inset the unexpanded body by less than a tenth of a grid unit.
-        if source in ('cloud','map-pin','lightbulb','wrench'):
+        if source in ('cloud','map-pin','lightbulb','wrench','database'):
             body = transform(body,scale=.985)
         return body, detail, outline, category, tags
 
@@ -101,37 +101,41 @@ def register(api):
         # Map the construction grid before expanding its lines. These small
         # hosts retain the same bells, lid, handle and rack bays as the bases.
         if source == 'alarm-clock':
-            cx, cy, s = 6.45, 6.9, .84
+            cx, cy, s = 6.45, 7.14, .84
             def centerline(d):
                 return stroke(path(d).transform(s,0,0,s,cx-8*s,cy-8*s))
             return (circle(cx,cy,5.8*s),
                     centerline('M8 4V8H11M2 3L4 1M12 1L14 3M3 14L4 12M12 12L13 14'))
         if source == 'archive':
-            body = rr(2.2,4.8,8.6,7.75)
-            lid = rr(1.45,2.25,10.1,2.55)
+            body = rr(2.2,4.8,7.95,6.0)
+            lid = rr(1.45,2.25,9.45,2.55)
             return body, union(lid,stroke('M4.95 7.3H8.05'))
         if source == 'server-rack':
-            rack = rr(1.7,1.75,9.2,11.55)
-            dividers = stroke('M1.7 5.6H10.9M1.7 9.45H10.9')
-            indicators = dots((3.85,3.7),(3.85,7.55),(3.85,11.4),r=.58)
-            slots = stroke('M6.5 3.7H8.4M6.5 7.55H8.4M6.5 11.4H8.4')
+            rack = rr(1.55,1.85,7.65,11.4)
+            dividers = stroke('M1.55 5.65H9.2M1.55 9.45H9.2')
+            indicators = dots((3.55,3.75),(3.55,7.55),(3.55,11.35),r=.58)
+            slots = stroke('M5.8 3.75H7.4M5.8 7.55H7.4M5.8 11.35H7.4')
             return rack, union(dividers,indicators,slots)
         return host_drawing(source)[:2]
 
     def badged(name, source, suffix, tags=None):
         body, detail = corner_host(source)
-        if suffix == 'cog':
+        if source == 'server-rack':
+            badge = gear(12.6,12.15,2.55)
+        elif suffix == 'cog':
             badge = mark(suffix,12,11.8,.68)
         elif name == 'bell-dot':
             badge = circle(12.9,3.1,1.5)
+        elif suffix in ('plus','minus') and source != 'archive':
+            badge = compact(suffix,12.45,11.35,.87)
         elif source in ('alarm-clock','archive'):
-            badge = compact(suffix,12.9,13,.76)
+            badge = compact(suffix,12.75,12.8,.74)
         elif suffix == 'shield':
             badge = stroke('M10 10L12.2 9L14.4 10V11.65Q14.4 13.45 12.2 14.55Q10 13.45 10 11.65Z')
         elif suffix == 'star':
             badge = stroke(transform(api['STAR'],scale=.39,dx=4,dy=3.65))
         else:
-            badge = compact(suffix,11.65 if suffix in ('sync','pen') else 12.05,11.75,.92)
+            badge = compact(suffix,11.65 if suffix in ('sync','pen','key','search') else 12.05,11.5 if suffix == 'question-mark' else 11.75,.92)
         shape(name,body,union(detail,badge),tags or name.replace('-',' '))
         # The badge clears the original drawing after its style has been composed.
         corner_badges[name] = (source,body,detail,badge)
@@ -175,7 +179,7 @@ def register(api):
         hx, hy = 8+length*math.sin(angle), 8-length*math.cos(angle)
         shape('clock-'+str(hour), circle(8,8,6), union(stroke(f'M8 4.2V8L{hx:.3f} {hy:.3f}'),circle(8,8,.97) if hour == 6 else None), 'time hour '+str(hour))
     for suffix in ('arrow-down','arrow-left','arrow-right','arrow-up','check','exclamation-point','plus'):
-        shape('clock-'+suffix, circle(6.5,7,4.8), union(stroke('M6.5 4.2V7L8.3 8'), compact(suffix,12.2,12,.82)), 'time '+suffix)
+        shape('clock-'+suffix, circle(6.25,6.7,4.6), union(stroke('M6.25 3.9V6.7L8.05 7.7'), compact(suffix,12.5,12.4,.76)), 'time '+suffix)
     glyph('clock-fading', stroke('M13.5 8A5.5 5.5 0 0 1 8 13.5M2.5 8A5.5 5.5 0 0 1 8 2.5A5.5 5.5 0 0 1 13.5 8M8 4.5V8L10.3 9.3'), dots((3.3,11),(5.3,13),r=.6), 'time history fading')
 
     clip = rr(3,3,10,11)
@@ -280,6 +284,9 @@ def register(api):
             detail_layer = ink if suffix in ('braces','type') else union(fold,ink)
         if suffix == 'clock':
             detail_layer = union(fold,compact('clock',7.8,9.85,.95))
+        if suffix == 'database':
+            body = path('M2.7 1.6H10.5L13.3 4.4V14.5H2.7Z')
+            detail_layer = union(stroke('M10.5 1.6V4.4H13.3'),stroke(page_marks[suffix]))
         if suffix == 'user':
             detail_layer = union(fold,compact('user',7.8,9.7,1.02))
         if suffix == 'volume':
@@ -348,10 +355,10 @@ def register(api):
         if suffix == 'kanban':
             ink = stroke('M5.1 7.25V11.1M8 7.25V9.2M10.9 7.25V10.35')
         if suffix == 'tree':
-            ink = union(stroke('M4.5 6.35V10.65H9.4M4.5 7.35H7.15'),
-                        stroke(rr(7.15,6.35,2.65,2)),stroke(rr(9.4,9.65,2.65,2)))
-            tree_folder = path('M1.8 2.85H6L7.6 4.5H14.2V14H1.8Z')
-            shape('folder-tree',tree_folder,ink,'directory folder tree')
+            root = path('M3.9 1.7H6.85L8 2.85H12.1V6.45H3.9Z')
+            children = union(rr(1.9,11.15,4.65,3.1),rr(9.45,11.15,4.65,3.1))
+            branches = stroke('M8 6.45V8.75M4.23 11.15V8.75H11.77V11.15')
+            shape('folder-tree',union(root,children),branches,'directory folder tree')
             continue
         if suffix == 'users':
             ink = union(compact('user',6.5,9.15,.84),circle(10.45,7.75,.76),
@@ -362,10 +369,13 @@ def register(api):
         if suffix == 'root':
             ink = union(stroke('M8 7.4V9M5.2 10.8V9H10.8V10.8'),
                         rr(6.95,6.7,2.1,1.65), rr(4.15,10,2.1,1.75), rr(9.75,10,2.1,1.75))
-        shape('folder-'+suffix,folder,ink,'directory folder '+suffix.replace('-',' '))
+        body = folder
+        if suffix in ('clock','user','users','pen','sync','search-2'):
+            body = path('M1.8 3H6.2L7.6 4.5H14.2V14H1.8Z')
+        shape('folder-'+suffix,body,ink,'directory folder '+suffix.replace('-',' '))
     shape('folder-closed',folder,stroke('M1.8 7.65H14.2'),'directory closed')
     front_flap = path('M2.6 7.3H14.45L12.55 12.8H1.65Z')
-    stack('folder-open-dot',folder,front_flap,circle(8,9.95,.85),'directory open notification')
+    stack('folder-open-dot',path('M1.8 3.5H6.2L7.6 5H12.65V12.55H1.8Z'),front_flap,circle(8,9.95,.85),'directory open notification')
 
     api['CATEGORY'] = 'Communication'
     # Speech bubbles use separate round and square contours and keep the
@@ -435,9 +445,9 @@ def register(api):
 
     mail = rr(1.6,3.4,12.8,9.2)
     for suffix in ('clock','dot','exclamation-point','minus','pen','question-mark','search','x'):
-        # Raise the flap apex to give the lower panel room for punctuation.
-        ink = compact(suffix,9.9,9.15,.8)
-        shape('mail-'+suffix,mail,union(stroke('M2.15 3.95L7.95 6.75L13.85 3.95'),ink),'email message '+suffix)
+        # Give the modifier its own panel beneath the flap.
+        ink = compact(suffix,8,10.15,.75)
+        shape('mail-'+suffix,rr(1.5,2.45,13,11.6),union(stroke('M2.05 3.05L8 6.05L13.95 3.05'),ink),'email message '+suffix)
     shape('mail-badge',mail,union(stroke('M2 4L8 8L14 4'),circle(12,3,1.6)),'email notification')
     stack('mails',rr(1.6,2,10,8.1),rr(4.55,5.05,9.9,8.1),
           stroke('M4.98 5.55L9.5 8.55L14 5.55'),'multiple email messages')
@@ -541,7 +551,7 @@ def register(api):
         else:
             glyph(name,stroke(geom),None,name.replace('-',' '))
     # The three open terminals sweep around the outside of the triangle.
-    hook = stroke('M9.65 5.1A2.2 2.2 0 1 0 6.2 4.95L3.95 10.38')
+    hook = stroke('M6.05 2.7A2.2 2.2 0 1 1 7.5 5.64L12 10.25')
     glyph('webhook',union(hook,transform(hook,120),transform(hook,240)),None,'webhook')
     for suffix, geom in {
         'minus':'M2 3.8H9.4M2 7.8H9.4M2 11.8H7.5M10.5 12.7H14',
@@ -614,7 +624,7 @@ def register(api):
         'heading-3':'M2 3V12M7 3V12M2 7.5H7M10 5Q12 3.5 13.5 5Q14.5 6.5 12 7.5Q14.5 8 14 10Q13.5 12 10 11',
         'heading-4':'M2 3V12M7 3V12M2 7.5H7M12.5 12V4L9 9.1H14',
         'languages':'M2 4H10M6 2V4M3.5 5Q4.35 7.95 8 10M8.5 5Q7.5 9 2.5 11M10 14L12.25 7.9L14.5 14M10.7 12.25H13.8',
-        'link-2':'M6 10L5 11A2.35 2.35 0 0 1 1.8 7.5L4 5A2.5 2.5 0 0 1 7.5 5M10 6L11 5A2.35 2.35 0 0 1 14.2 8.5L12 11A2.5 2.5 0 0 1 8.5 11M5.5 10.5L10.5 5.5',
+        'link-2':'M6.15 9.8L5.15 10.8A2.2 2.2 0 0 1 2.1 7.65L4.35 5.4A2.2 2.2 0 0 1 7.45 5.4M9.85 6.2L10.85 5.2A2.2 2.2 0 0 1 13.9 8.35L11.65 10.6A2.2 2.2 0 0 1 8.55 10.6M5.8 10.2L10.2 5.8',
         'loader':'M8 1.5V3.5M12.6 3.4L11.2 4.8M14.5 8H12.5M12.6 12.6L11.2 11.2M8 14.5V12.5M3.4 12.6L4.8 11.2M1.5 8H3.5M3.4 3.4L4.8 4.8',
         'sliders-vertical':'M3.25 2V5M3.25 8V14M2.1 5H4.4V8H2.1ZM8 2V8M8 11V14M6.85 8H9.15V11H6.85ZM12.75 2V4M12.75 7V14M11.6 4H13.9V7H11.6Z',
         'scan-barcode':'M2 5V2H5M11 2H14V5M2 11V14H5M11 14H14V11M4.65 5V11M7.6 5V11M11.35 5V11',
@@ -775,6 +785,17 @@ def register(api):
     # first would outline the cut edges and produce two distracting diagonals.
     def disabled_styles(name, source):
         b,d,outline,_,_=host_drawing(source)
+        if name == 'screen-share-off':
+            d = stroke('M8 11V14M5 14H11M10.65 7V4.2M9.2 5.65L10.65 4.2L12.1 5.65')
+        elif name == 'message-square-off':
+            d = po.Path()
+        elif name == 'image-off':
+            # The mountain remains visible on either side of the channel.
+            d = union(*(piece for piece in api['components'](d) if piece.area > 3))
+        elif name == 'server-off':
+            d = union(stroke('M2 6H14M2 10H14M9 4H11'),dots((5,8),(5,12),r=.7))
+        elif name == 'timer-off':
+            d = stroke('M6 1.55H10M8 1.55V3.9M12 4L13 3')
         outer=stroke(b) if outline else po.Path()
         boundary=subtract(outer,d) if outer else po.Path()
         duo=[(subtract(b,union(boundary,d)),.24),(union(boundary,d),1)] if outline else [(union(b,d),1)]
@@ -790,11 +811,13 @@ def register(api):
             solid=union(subtract(filled,cut),*structural)
         else:
             solid=union(b,d)
-        clearance=line((2,2),(14,14),width=2.7)
+        reviewed = name in ('alarm-clock-off','calendar-off','cctv-off','image-off','lightbulb-off',
+                            'message-square-off','screen-share-off','server-off','timer-off','trash-off')
+        clearance=line((2,2),(14,14),width=3.15 if reviewed else 2.7)
         slash=line((2,2),(14,14))
         def visible(layer):
             clipped = subtract(layer,clearance)
-            return union(*(piece for piece in api['components'](clipped) if piece.area > .55))
+            return union(*(piece for piece in api['components'](clipped) if piece.area > (1.25 if reviewed else .55)))
         overrides[name]={
             'duotone':[(visible(layer),alpha) for layer,alpha in duo]+[(slash,1)],
             'solid':union(visible(solid),slash),
@@ -886,8 +909,10 @@ def register(api):
         host = union(outline,detail)
         left,top,right,bottom = badge.bounds
         gap = circle((left+right)/2,(top+bottom)/2,max(right-left,bottom-top)/2+1.4)
+        if name.endswith(('-minus','-plus')):
+            gap = circle((left+right)/2,(top+bottom)/2,(right-left)/2+2)
         if 'cog' in name:
-            gap = circle(12,11.8,3.95)
+            gap = circle((left+right)/2,(top+bottom)/2,(right-left)/2+1)
 
         if source in ('archive','alarm-clock','server-rack'):
             # Interrupt only the real contours behind the mark. A stroke along
