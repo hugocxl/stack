@@ -74,11 +74,13 @@ def register(api):
     # A shared speaker source and explicit output channels distinguish these
     # settings from generic circle marks and sound-volume wavefronts.
     source = path('M2.1 6H4.1L7.4 3.4V12.6L4.1 10H2.1Z')
-    shape('audio-mono', source, circle(11.6, 8, 1.15),
-          'mono monaural single channel sound')
-    shape('audio-stereo', source,
-          union(circle(11.6, 5.45, 1.15), circle(11.6, 10.55, 1.15)),
-          'stereo left right dual channel sound')
+    for name, channels, tags in (
+        ('audio-mono', (8,), 'mono monaural single channel sound'),
+        ('audio-stereo', (5.45, 10.55), 'stereo left right dual channel sound'),
+    ):
+        dots = union(*(circle(11.6, y, 1.4) for y in channels))
+        shape(name, source, dots, tags)
+        api['STYLE_OVERRIDES'][name] = {'stroke': union(st(source), st(dots))}
     # Headphone cups remain visible; the quiet center distinguishes ANC from mute.
     cups = union(rr(1.6,7,2.7,5.1,1.1),rr(11.7,7,2.7,5.1,1.1))
     band = st('M2.95 7V6C2.95-.2 13.05-.2 13.05 6V7',1.25)

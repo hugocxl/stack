@@ -43,32 +43,31 @@ def register(api):
       'cooktop hob burners kitchen cooking appliance')
 
     s('dishwasher', appliance,
-      union(panel, controls, line((5.5, 7.65), (10.5, 7.65), width=1.35)),
+      union(panel, circle(5.1, 3.4, .55), line((9.2, 3.4), (11.2, 3.4)),
+            line((5.7, 7.8), (10.3, 7.8))),
       'dishes cleaning plates kitchen appliance')
 
-    # A shallow lower arc follows the curvature of the drum window.
-    s('dryer', appliance,
-      union(panel, controls, st(circle(8, 9.7, 3.1), 1.15),
-            st('M6.65 10.2Q8 11.6 9.35 10.2', 1.05)),
+    # The dial, drum and curved lower lip stay legible on a narrow housing.
+    dryer_front = rr(2.65, 1.35, 10.7, 13.3)
+    drum = circle(8, 10, 3.1)
+    s('dryer', dryer_front,
+      union(line((2.7, 5.3), (13.3, 5.3)), st(circle(5.1, 3.35, 1.05)),
+            line((9.4, 3.35), (11, 3.35)), st(drum),
+            st('M5.05 10.9Q8 9.45 10.95 10.9')),
       'laundry tumble dry clothes heat appliance')
-
     s('thermostat', circle(8, 8, 6),
       union(st('M5.7 5.4V9A1.65 1.65 0 1 0 7.8 9V5.4A1.05 1.05 0 0 0 5.7 5.4Z'),
             line((10, 5.8), (11, 5.8), width=1.1),
             line((10, 8.25), (11.45, 8.25), width=1.1)),
       'temperature climate heating cooling room control')
 
-    # Side view of the suspended motor. Opposing pitched paddles attach
-    # at the motor's waist beneath the ceiling plate and downrod.
-    motor = rr(6.2, 6.55, 3.6, 3.6, 1.5)
-    left_blade = path('M6.5 7.5L2.1 5.95Q1.4 5.75 1.4 6.55V7.45'
-                      'Q1.4 8.05 2.05 8.2L6.5 8.9Z')
-    blades = union(left_blade, api['mirror'](left_blade))
-    s('ceiling-fan', union(motor, blades),
-      union(st('M5.9 2.4H10.1M8 2.4V6.55', 1.25),
-            st('M8 10.15V12.85', 1.05), circle(8, 13.2, .7)),
+    # Two opposing pitched blades sit behind the suspended motor.
+    motor = rr(6.15, 6.65, 3.7, 3.5)
+    blade = path('M6.45 7.45L2.15 5.85Q1.4 5.55 1.4 6.4V7.6'
+                 'Q1.4 8.1 2 8.35L6.45 9.65Z')
+    s('ceiling-fan', union(motor, blade, api['mirror'](blade)),
+      union(st(motor), st('M5.7 2.4H10.3M8 2.4V6.65M8 10.15V13.3')),
       'overhead ventilation cooling fan home')
-
     s('garage', path('M2 6L8 1.8L14 6V14H2Z'),
       st('M4.4 14V6.8H11.6V14M4.4 9.3H11.6M4.4 11.6H11.6'),
       'garage door parking storage car home')
@@ -81,15 +80,14 @@ def register(api):
                        'M14 1.8L10.5 3V13L14 14.2ZM2 8H5.5M10.5 8H14', 1.25),
       tags='window panes casement ventilation open architecture')
 
-    curtains = path('M2.3 3H6Q6 7.5 3.5 9L5 14H2.3Z'
-                    'M13.7 3H10Q10 7.5 12.5 9L11 14H13.7Z')
-    s('curtains', curtains,
-      union(line((1.5, 2.2), (14.5, 2.2)), st('M2.3 9H3.5M12.5 9H13.7')),
-      'drapes curtain shade window home')
-
-    curtain_field = union(curtains, st(curtains, 1.25), line((1.5, 2.2), (14.5, 2.2)))
+    curtain = path('M1.9 3.1H6.8Q6.65 6.9 4.5 8.8L6 13.7H1.9Z')
+    curtains = union(curtain, api['mirror'](curtain))
+    rail = line((1.5, 3.1), (14.5, 3.1))
+    ties = st('M1.9 8.8H4.5M11.5 8.8H14.1')
+    s('curtains', curtains, union(rail, ties), 'drapes curtain shade window home')
     api['STYLE_OVERRIDES']['curtains'] = {'solid': api['op'](
-        curtain_field, st('M1 9H5.1M10.9 9H15', 1.1), api['po'].PathOp.DIFFERENCE)}
+        union(curtains, st(curtains), rail), st('M1 8.8H5.25M10.75 8.8H15'),
+        api['po'].PathOp.DIFFERENCE)}
     api['STYLE_OVERRIDES']['window-closed'] = {'solid': union(
         st(frame, 1.75), st('M8 2V14M2.5 8H13.5', 1.65))}
 

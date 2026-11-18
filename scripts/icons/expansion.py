@@ -65,17 +65,18 @@ def register(api):
           'infant childcare newborn family')
 
     api['CATEGORY'] = 'Health and fitness'
-    shape('syringe',
-          path('M4 6L8 2L13 7L9 11Z'),
-          union(lines('M3 5L10 12M7.7 2L13.3 7.6M10.5 4.8L12.5 2.8M11.2 1.5L13.8 4.1M6.5 8.5L1.5 13.5'),
-                stroke('M7 5L9 7', 1.1)),
+    # Build on the vertical axis and rotate the completed barrel and fittings.
+    barrel = rr(6.05, 4.8, 3.9, 6.75)
+    fittings = lines('M4.85 4.8H11.15', 'M8 4.8V1.85', 'M6.15 1.85H9.85',
+                     'M8 11.55V15', 'M6.05 7.8H7.5')
+    shape('syringe', api['transform'](barrel, 45), api['transform'](fittings, 45),
           'injection vaccine medicine needle treatment')
-    shape('ambulance',
-          path('M1.5 4H9V6H12L14.5 9V12H1.5Z'),
-          union(plus(5.2, 7.6, .7), stroke('M9 6V9H14.5', 1.1),
-                circle(4, 12, 1.5), circle(12, 12, 1.5), line((4, 2), (6, 2), width=1.1)),
+    ambulance = path('M1.55 4H9.1V6H11.8L14.45 8.9V10.65H13.65'
+                     'Q12 8.1 10.35 10.65H5.65Q4 8.1 2.35 10.65H1.55Z')
+    shape('ambulance', ambulance,
+          union(stroke('M9.1 6V8.9H14.45'), plus(5.05, 6.65, .61), line((3.95, 2.05),(6.15, 2.05)),
+                circle(4,12.25,1.35),circle(12,12.25,1.35)),
           'emergency paramedic medical vehicle rescue')
-
     api['CATEGORY'] = 'Maps and travel'
     shape('backpack', rr(3, 4, 10, 10.5, 2.5),
           union(stroke('M5.5 4V2Q8 0 10.5 2V4', 1.1),
@@ -92,17 +93,16 @@ def register(api):
           'nautical boat harbor mooring sea')
 
     api['CATEGORY'] = 'Weather and nature'
-    shape('cat',
-          path('M2 7V2L6 4Q8 3 10 4L14 2V7Q15 13.5 8 14Q1 13.5 2 7Z'),
-          union(dots((5.5, 7.5), (10.5, 7.5), r=.6),
-                poly([(7, 9.5), (9, 9.5), (8, 10.5)]),
-                stroke('M8 10.5V11.5M4 10L1 9M12 10L15 9', 1.05)),
+    cat_head = path('M2.35 6.95V2.3L6.1 4.1Q8 3.3 9.9 4.1L13.65 2.3V6.95'
+                    'C14.65 11.9 11.75 14 8 14S1.35 11.9 2.35 6.95Z')
+    cat_face = union(dots((5.45, 7.5), (10.55, 7.5), r=.65),
+                     poly([(6.95, 9.55), (9.05, 9.55), (8, 10.8)]))
+    shape('cat', cat_head, union(cat_face, lines('M1.25 9.45L4.2 10.3',
+                                                'M14.75 9.45L11.8 10.3')),
           'animal feline pet kitten')
     cat_body = api['DRAWINGS']['cat'][0]
-    cat_face = union(dots((5.5, 7.5), (10.5, 7.5), r=.7),
-                     path('M6.85 9.55Q8 9.1 9.15 9.55Q8.95 10.5 8 10.9Q7.05 10.5 6.85 9.55Z'))
     api['STYLE_OVERRIDES']['cat'] = {'solid': api['op'](
-        union(cat_body, stroke(cat_body, 1.25)), cat_face, api['po'].PathOp.DIFFERENCE)}
+        union(cat_body, stroke(cat_body)), cat_face, api['po'].PathOp.DIFFERENCE)}
     shape('dog',
           path('M4.8 3.6Q8 1.65 11.2 3.6Q13.5 3.3 14.3 7.3Q14.9 10.7 12.3 9.1Q12.3 13.6 8 13.8Q3.7 13.6 3.7 9.1Q1.1 10.7 1.7 7.3Q2.5 3.3 4.8 3.6Z'),
           union(stroke('M4.8 3.6Q5 6.3 3.7 9.1M11.2 3.6Q11 6.3 12.3 9.1', 1.05),
@@ -126,39 +126,37 @@ def register(api):
           'vegetable produce food nutrition')
     shape('banana',
           path('M3 3Q4 10 10 10Q12 10 13 8L14 8Q13 15 7 14Q1 13 2 5L3 3Z'),
-          stroke('M4.1 9.2Q6.2 12.4 9 12.1M3 3L4 1.5', 1.1),
+          stroke('M3.5 7.3Q3.65 12.2 8.5 12.25Q10.75 12.25 12.55 10.05M3 3L4 1.5'),
           'fruit food tropical produce')
     shape('cherry', union(circle(4.2, 11.4, 2.65), circle(11.8, 10.1, 2.55)),
-          stroke('M4.2 8.75Q4.8 5.1 8 3Q8.8 5.9 11.8 7.55M8 3Q11 1 13 2Q11 5 8 3', 1.1),
+          stroke('M4.2 8.75Q4.65 5.1 7.55 3.55Q8.7 6.15 11.8 7.55M7.55 3.55Q9.2 .8 13.7 1.8Q12.1 5.8 7.55 3.55M7.55 3.55Q5.95 .9 2.25 1.9Q3.95 5.6 7.55 3.55'),
           'fruit food cherries produce')
-    # A right-triangular cut face, with a gently scalloped lettuce edge
-    # visible between the bread and the lower crust.
-    sandwich = path('M2.05 8.65L10.65 2.5Q11.35 2.05 11.85 2.9L14.3 7.65'
-                    'Q14.55 8.1 14.35 8.7L14.2 11.6Q14.1 12.2 13.35 12.35'
-                    'L2.75 13.55Q1.7 13.65 1.7 12.7V9.5Q1.7 8.95 2.05 8.65Z')
-    filling = stroke('M1.85 9.1L14.3 7.95M1.75 11.25Q3.05 10.55 4.2 11.35'
-                     'Q5.25 12.05 6.4 10.95Q7.4 10 8.65 10.65Q9.75 11.3 10.9 10.25'
-                     'Q12 9.35 13.05 9.95L14.3 9.85', 1.05)
+    # The apex and the two cut faces describe a single sandwich wedge.
+    sandwich = path('M1.55 5.8L14.45 2.75L8.3 8.75L1.55 5.8Z'
+                    'M1.55 5.8L8.3 8.75L14.45 2.75V8.45L8.3 14.25L1.55 11.25Z')
+    filling = lines('M1.55 5.8L8.3 8.75L14.45 2.75', 'M8.3 8.75V14.25',
+                    'M1.55 8.45Q3.05 8.25 4.9 9.8T8.3 11.55'
+                    'L10.3 9.65L11.65 10.2L12.7 7.3L14.45 5.65')
     shape('sandwich', sandwich, filling, 'food bread snack lunch')
     shape('cookie',
           path('M9.5 1.5Q9 4 11 4Q10.5 6.5 14 6Q16 12 11 14Q4 17 1.5 10Q0 4 5 2Q7 1 9.5 1.5Z'),
           dots((5, 5.5), (4, 9.5), (8, 8), (9.5, 12), (12, 9), r=.7),
           'food biscuit snack browser cookie')
-    shape('ice-cream-cone',
-          union(path('M3.7 7.4H12.3L8 14.5Z'),
-                path('M3 8Q1.5 5.5 4 4Q4 1 8 1Q12 1 12 4Q14.5 5.5 13 8Z')),
-          stroke('M3 8H13M6.35 9.9L9.1 11.2', 1.1),
-          'dessert icecream frozen cone sweet')
+    scoop = path('M2.85 7.55Q2 5.55 4.1 4.25C4.35 .45 11.65 .45 11.9 4.25Q14 5.55 13.15 7.55Z')
+    cone = path('M3.5 7.55H12.5L8 14.45Z')
+    shape('ice-cream-cone', union(scoop, cone),
+          lines('M2.85 7.55H13.15', 'M4.65 9.3L9.25 12.55',
+                'M7.85 7.55L11 9.8'), 'dessert icecream frozen cone sweet')
     shape('door-closed', rr(3, 1.5, 10, 13, .7),
           union(line((1.5, 14.5), (14.5, 14.5)), circle(10.5, 8, .65)),
           'door entrance room closed')
     shape('bath', path('M1.5 8H14.5L13 12Q12.5 13 11 13H5Q3.5 13 3 12Z'),
           lines('M3 8V3Q3 1 5 1Q7 1 7 3M5 13V15M11 13V15M1 8H15'),
           'bathtub bathroom wash bathing')
-    shape('toilet',
-          path('M2.2 2.2H6V7H14Q13.9 10.5 10.1 11.4L10.7 13.8H5.2L6.1 11.4Q3 10.5 3 8.5H2.2Z'),
-          stroke('M3 8.5V7H6M3.7 4.3H4.6', 1.15),
-          'bathroom restroom lavatory sanitation')
+    toilet = path('M2 2H5.65V6.8H14.15Q14 10.1 10.25 11.5L10.75 13.95'
+                  'H5.35L6 11.5Q2.85 10.05 2.85 7.1H2Z')
+    shape('toilet', toilet, lines('M2.85 6.8H5.65', 'M3.6 9H13.45',
+                                  'M6 11.5H10.25'), 'bathroom restroom lavatory sanitation')
     shape('washing-machine', rr(2.5, 1.5, 11, 13, 1.5),
           union(stroke(circle(8, 9.5, 3.2), 1.1),
                 stroke('M5 9.5Q6.5 8 8 9.5T11 9.5M2.5 5H13.5', 1.05),
@@ -173,7 +171,7 @@ def register(api):
           path('M3 4.8L5.3 2.5L7 4.2Q9.5 2.7 11.7 4.6Q13.5 6.2 14 8.1'
                'Q11.6 6.2 10.1 6.9L9.5 7.6L4 13.8Q3.3 14.6 2.4 13.8L1.9 13.3'
                'Q1.3 12.6 2 11.9L8 6.4L6.1 5.2L4.8 6.5Z'),
-          None,
+          line((7.25, 7.15), (9.05, 8.65)),
           'tool construction repair carpentry build')
     shape('construction', rr(1.5, 5, 13, 5, .8),
           lines('M4 5L7 10M9 5L12 10M4 10V14M12 10V14'),
