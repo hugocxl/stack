@@ -3,93 +3,425 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="The P9DS design system in one article, with layout rules, an interactive figure, and a guide for building pages.">
+  <meta name="description" content="P9DS, a design system for text-led technical websites: tokens, layout, thirteen components, page recipes, rules and the agent handoff on one page.">
   <title>P9DS</title>
-  <link rel="stylesheet" href="system/cxl.css?v=onepage">
-  <link rel="stylesheet" href="system/editorial.css?v=article">
-  <link rel="stylesheet" href="preview.css?v=article">
-  <script src="system/theme.js"></script>
+  <link rel="stylesheet" href="system/p9.css?v=2">
+  <link rel="stylesheet" href="preview.css?v=2">
+  <script src="system/theme.js?v=2"></script>
 </head>
-<body class="cxl-editorial" id="top">
-  <header class="cxl-masthead">
-    <a class="cxl-wordmark" href="./">P9DS</a>
-    <button class="cxl-theme" id="theme" type="button" aria-label="Switch theme">◐</button>
+<body class="p9" data-layout="field" id="top">
+  <header class="p9-masthead">
+    <a class="p9-wordmark" href="./">P9DS</a>
+    <a href="DESIGN.md" download>DESIGN.md</a>
+    <a href="https://github.com/hugocxl/p9ds">Source</a>
+    <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme">◐</button>
   </header>
   <main>
-    <article class="cxl-reading cxl-opening">
-      <h1 class="cxl-visually-hidden">P9DS</h1>
-      <p class="cxl-introduction">P9DS is the design system we use across our websites. <span class="cxl-muted">It brings the writing, drawings, and controls together in one place.</span></p>
-      <p class="cxl-muted">Start with the <a href="#guidelines">interface guidelines</a> and <a href="#type">type and color</a>. Then read how to <a href="#interaction">build controls</a>, <a href="#design-specification">define a design</a>, <a href="#site-building">compose a page</a>, and <a href="#agent-handoff">brief an agent</a>.</p>
-      <section id="components" aria-label="Interactive figure">
-        <p>Move across the keys to try the keyboard, or use the arrows to explore another figure. <span class="cxl-muted">Each drawing responds in place, keeping the example close to the writing.</span></p>
-        <figure class="cxl-wide-figure">
-          <div id="figure"></div>
-          <figcaption><span class="cxl-label cxl-muted" id="caption">Fig. 01 / Keyboard</span>
-            <span class="cxl-material cxl-pager" role="group" aria-label="Figure navigation"><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
-          </figcaption>
-        </figure>
-        <form><label for="query">Find a figure</label><div class="cxl-form-row">
-          <input class="cxl-field" type="search" id="query" placeholder="Try terrain" required list="names" aria-describedby="figure-feedback">
-          <datalist id="names"><option>Keyboard</option><option>Terrain</option><option>Dish</option></datalist>
-          <button class="cxl-button">Preview</button></div><output id="figure-feedback" aria-live="polite"></output>
-        </form>
+    <article class="p9-column p9-opening">
+      <hgroup class="p9-title">
+        <h1>P9DS</h1>
+        <p>A design system for text-led technical websites</p>
+      </hgroup>
+      <ul class="p9-meta">
+        <li class="p9-label"><span class="p9-dot" aria-hidden="true"></span>Version 2.0</li>
+        <li class="p9-label"><time datetime="2026-11-18">18 November 2026</time></li>
+      </ul>
+      <section class="p9-section">
+        <p>Large reading type leads every page. Line drawings and monospaced labels give it an engineered feel, and one orange accent appears at most twice. <span class="p9-muted">This page is the complete definition: every token, component and rule a person or an agent needs to build a P9DS site is here, and nothing outside it is part of the system.</span></p>
+        <p class="p9-muted">Read the <a href="#principles">principles</a>, then <a href="#color">color</a>, <a href="#type">type</a>, <a href="#space">space</a> and <a href="#layout">layout</a>. Build with the <a href="#components">components</a> and <a href="#recipes">page recipes</a>, check the <a href="#rules">rules</a>, and <a href="#agents">brief an agent</a> or <a href="#install">install</a> the files.</p>
       </section>
-      <div id="guidelines">
-        <h2>Interface guidelines</h2>
-        <p id="purpose">Start with what the reader came for. Explain the subject in a few connected sentences, then bring in an example where it answers a question. <span class="cxl-muted">On a product screen, name the object being edited and keep the action beside it. In an article, a sentence can lead straight into the next thought.</span></p>
-        <p id="layout">Keep prose within a centered column of up to 60ch. Let illustrations reach the page gutters when the details need more room. Use about a line of space between paragraphs, with a longer pause when the subject changes.</p>
+
+      <figure class="p9-wide" id="opening-figure">
+        <div class="p9-media"><div id="figure" data-figure="keyboard" aria-label="Isometric keyboard drawing"></div></div>
+        <figcaption class="p9-caption">
+          <span class="p9-label" id="caption">Fig. 01 / Keyboard</span>
+          <span class="p9-pager" role="group" aria-label="Figure navigation"><button type="button" id="prev" aria-label="Previous figure">←</button><button type="button" id="next" aria-label="Next figure">→</button></span>
+        </figcaption>
+      </figure>
+      <form class="p9-form" id="figure-search" novalidate>
+        <label for="query">Find a figure</label>
+        <div class="p9-input">
+          <input type="search" id="query" placeholder="Try terrain" required list="names" aria-describedby="figure-feedback" autocomplete="off">
+          <button type="submit" aria-label="Preview">→</button>
+        </div>
+        <datalist id="names"><option>Keyboard</option><option>Terrain</option><option>Dish</option></datalist>
+        <output class="p9-feedback" id="figure-feedback" aria-live="polite"></output>
+      </form>
+
+      <section class="p9-section" id="principles">
+        <h2>Principles</h2>
+        <ol class="p9-index">
+          <li><span class="p9-label">01</span><div><h3>Text leads</h3><p>Reading type is 21 px at desktop widths and carries the page. Nothing is set larger than the title.</p></div></li>
+          <li><span class="p9-label">02</span><div><h3>Figures explain</h3><p>Hairline drawings and captioned media show the subject. They are never decoration.</p></div></li>
+          <li><span class="p9-label">03</span><div><h3>One accent</h3><p>Orange marks at most two things on a page: one phrase in the statement and one status dot.</p></div></li>
+          <li><span class="p9-label">04</span><div><h3>Closed vocabulary</h3><p>Pages use the thirteen components below in a recipe’s order. Anything else is a proposal, not P9DS.</p></div></li>
+          <li><span class="p9-label">05</span><div><h3>Every rule is checkable</h3><p>Each value is a token, and each token is checked in a browser test.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="p9-section" id="color">
+        <h2>Color</h2>
+        <p>The paper and the orange come from Superlogical. The ink and greys are neutral, with no tint. <span class="p9-muted">Muted text is dark enough for supporting copy to meet WCAG AA. Superlogical’s lighter grey survives as <code>faint</code>, for placeholders only.</span></p>
+        <div class="p9-table-scroll" tabindex="0">
+          <table class="p9-table doc-palette">
+            <thead><tr><th scope="col">Token</th><th scope="col">Light</th><th scope="col">Dark</th><th scope="col">Use</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>canvas</code></th><td><span class="doc-chip" style="background:#f5f5f4"></span><code>#f5f5f4</code></td><td><span class="doc-chip" style="background:#111111"></span><code>#111111</code></td><td>Page background</td></tr>
+              <tr><th scope="row"><code>ink</code></th><td><span class="doc-chip" style="background:#171717"></span><code>#171717</code></td><td><span class="doc-chip" style="background:#ededed"></span><code>#ededed</code></td><td>Text, filled button</td></tr>
+              <tr><th scope="row"><code>muted</code></th><td><span class="doc-chip" style="background:#6e6e6e"></span><code>#6e6e6e</code></td><td><span class="doc-chip" style="background:#7d7d7d"></span><code>#7d7d7d</code></td><td>Byline, headings, labels, supporting text</td></tr>
+              <tr><th scope="row"><code>faint</code></th><td><span class="doc-chip" style="background:#b3b3b3"></span><code>#b3b3b3</code></td><td><span class="doc-chip" style="background:#737373"></span><code>#737373</code></td><td>Placeholder text only</td></tr>
+              <tr><th scope="row"><code>rule</code></th><td><span class="doc-chip" style="background:#1717171f"></span><code>#1717171f</code></td><td><span class="doc-chip" style="background:#ededed24"></span><code>#ededed24</code></td><td>Hairlines, borders</td></tr>
+              <tr><th scope="row"><code>surface</code></th><td><span class="doc-chip" style="background:#ebebea"></span><code>#ebebea</code></td><td><span class="doc-chip" style="background:#1c1c1c"></span><code>#1c1c1c</code></td><td>Media and code backgrounds</td></tr>
+              <tr><th scope="row"><code>accent</code></th><td><span class="doc-chip" style="background:#fe9369"></span><code>#fe9369</code></td><td><span class="doc-chip" style="background:#fe9369"></span><code>#fe9369</code></td><td>Status dot</td></tr>
+              <tr><th scope="row"><code>accent-text</code></th><td><span class="doc-chip" style="background:#ce7755"></span><code>#ce7755</code></td><td><span class="doc-chip" style="background:#fe9369"></span><code>#fe9369</code></td><td>One phrase at title size</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Use the accent at most twice per page: once as <code>.p9-accent</code> on the last two or three words of the statement, and once as the <code>.p9-dot</code> before a status label. <span class="p9-muted">On paper the orange reaches 3:1 only at title size, so it never colors body text, links, buttons, backgrounds or rules.</span></p>
+      </section>
+
+      <section class="p9-section" id="type">
+        <h2>Type</h2>
+        <p>Geist Sans for everything people read and Geist Mono for labels, dates and code. Both are bundled. <span class="p9-muted">There are six styles and three weights: 300 for reading, 400 for headings and controls, 500 for the title and emphasis. The wordmark alone uses 600.</span></p>
+        <ol class="p9-index doc-type">
+          <li><span class="p9-label">Title</span><div><p class="p9-title">Public testing is beginning</p><p class="p9-label">1.4 × reading · 500 · 1.15 · −0.02em</p></div></li>
+          <li><span class="p9-label">Reading</span><div><p>Text leads the composition, and figures follow it.</p><p class="p9-label">min(1rem + 0.36vw, 1.54rem) · 300 · 1.3 · −0.01em</p></div></li>
+          <li><span class="p9-label">Heading</span><div><p class="p9-muted">What is available</p><p class="p9-label">Reading size · 400 · muted</p></div></li>
+          <li><span class="p9-label">Small</span><div><p class="doc-small">Captions for grid items and table cells.</p><p class="p9-label">0.8 × reading · 300 · 1.4</p></div></li>
+          <li><span class="p9-label">Label</span><div><p class="p9-label">5 October 2026</p><p class="p9-label">Mono 13px · 400 · 0.08em · uppercase</p></div></li>
+          <li><span class="p9-label">Mono</span><div><p class="doc-mono">Press kit</p><p class="p9-label">Mono 15px · 400 · footer links</p></div></li>
+        </ol>
+      </section>
+
+      <section class="p9-section" id="space">
+        <h2>Space</h2>
+        <p>Ten steps. Every margin, padding and gap uses one of them. <span class="p9-muted">The named roles are the ones you reach for most.</span></p>
+        <div class="p9-table-scroll" tabindex="0">
+          <table class="p9-table doc-space">
+            <thead><tr><th scope="col">Token</th><th scope="col">Value</th><th scope="col">Role</th><th scope="col"><span class="p9-visually-hidden">Scale</span></th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>space-1</code></th><td>4px</td><td></td><td><span class="doc-bar" style="width:.25rem"></span></td></tr>
+              <tr><th scope="row"><code>space-2</code></th><td>8px</td><td>List items, label gaps</td><td><span class="doc-bar" style="width:.5rem"></span></td></tr>
+              <tr><th scope="row"><code>space-3</code></th><td>12px</td><td>Caption offset, cell padding</td><td><span class="doc-bar" style="width:.75rem"></span></td></tr>
+              <tr><th scope="row"><code>space-4</code></th><td>16px</td><td>Heading to text</td><td><span class="doc-bar" style="width:1rem"></span></td></tr>
+              <tr><th scope="row"><code>space-5</code></th><td>20px</td><td>Paragraph</td><td><span class="doc-bar" style="width:1.25rem"></span></td></tr>
+              <tr><th scope="row"><code>space-6</code></th><td>32px</td><td>Title to meta, grid gutter</td><td><span class="doc-bar" style="width:2rem"></span></td></tr>
+              <tr><th scope="row"><code>space-7</code></th><td>40px</td><td>Section</td><td><span class="doc-bar" style="width:2.5rem"></span></td></tr>
+              <tr><th scope="row"><code>space-8</code></th><td>56px</td><td>Wide figure, meta to lead</td><td><span class="doc-bar" style="width:3.5rem"></span></td></tr>
+              <tr><th scope="row"><code>space-9</code></th><td>80px</td><td>Footer</td><td><span class="doc-bar" style="width:5rem"></span></td></tr>
+              <tr><th scope="row"><code>space-10</code></th><td>128px</td><td>Opening, maximum</td><td><span class="doc-bar" style="width:8rem"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="p9-muted">Radii are 6px for controls and code, 12px for media and the field, and a full pill for the pager. Every interactive target is at least 44px. Nothing has a shadow.</p>
+      </section>
+
+      <section class="p9-section" id="layout">
+        <h2>Layout</h2>
+        <p>Every page uses one of two layouts, set with <code>data-layout</code> on the body. <span class="p9-muted">Text sits in a 30em column, about 65 characters. Wide figures and grids extend to 80rem.</span></p>
+      </section>
+      <ul class="p9-grid p9-wide" data-columns="2">
+        <li>
+          <span class="p9-label">Layout / field</span>
+          <div class="doc-schematic" data-layout="field" aria-hidden="true"><span class="doc-col">30em</span><span class="doc-wide">80rem</span><span class="doc-field">field</span></div>
+          <h3>Field</h3>
+          <p>Home and landing pages. The column aligns to the left gutter and a fixed textured panel fills the right: <code>clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)</code>. At 760px and below it becomes a 12px strip.</p>
+        </li>
+        <li>
+          <span class="p9-label">Layout / plain</span>
+          <div class="doc-schematic" data-layout="plain" aria-hidden="true"><span class="doc-col">30em</span><span class="doc-wide">80rem</span></div>
+          <h3>Plain</h3>
+          <p>Articles, docs, changelogs, pricing and contact. The column is centered and wide figures are centered on it. The gutter is <code>clamp(1.25rem, 4.5vw, 4rem)</code>.</p>
+        </li>
+      </ul>
+
+      <section class="p9-section" id="components">
+        <h2>Components</h2>
+        <p>Thirteen components make up the whole vocabulary. <span class="p9-muted">Each one is shown live with its exact markup. Copy the markup, change only the text, links and figure names, and keep every class and attribute.</span></p>
+
+        <div class="doc-component" id="c-masthead" data-wide>
+          <h3><code>masthead</code></h3>
+          <p class="p9-muted">Wordmark, up to three text links, and the theme button. It is always the first element in the body.</p>
+          <div class="doc-specimen" data-component="masthead">
+            <header class="p9-masthead">
+              <a class="p9-wordmark" href="/">Fieldwork</a>
+              <a href="/changelog">Changelog</a>
+              <a href="/docs">Docs</a>
+              <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme">◐</button>
+            </header>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-title">
+          <h3><code>title</code></h3>
+          <p class="p9-muted">The page name in ink with a muted byline beneath it. Use it on every page except home.</p>
+          <div class="doc-specimen" data-component="title">
+            <hgroup class="p9-title">
+              <h1>Public testing is beginning</h1>
+              <p>Fieldwork team</p>
+            </hgroup>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-statement">
+          <h3><code>statement</code></h3>
+          <p class="p9-muted">One sentence for the home page, at title size. It may end with a single accent phrase of two or three words.</p>
+          <div class="doc-specimen" data-component="statement">
+            <h1 class="p9-statement">Field notes for teams that ship <span class="p9-accent">every day.</span></h1>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-meta">
+          <h3><code>meta</code></h3>
+          <p class="p9-muted">One to three mono labels under the title: date, version, status. Only a status label takes the dot.</p>
+          <div class="doc-specimen" data-component="meta">
+            <ul class="p9-meta">
+              <li class="p9-label"><span class="p9-dot" aria-hidden="true"></span>Beta</li>
+              <li class="p9-label"><time datetime="2026-10-05">5 October 2026</time></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-section">
+          <h3><code>section</code></h3>
+          <p class="p9-muted">A muted heading followed by paragraphs, lists, <code>code</code> or <code>table</code>. The first section after the title has no heading and acts as the lead.</p>
+          <div class="doc-specimen" data-component="section">
+            <section class="p9-section" id="what-is-available">
+              <h2>What is available</h2>
+              <p>Initially, testing is limited to the macOS application. <span class="p9-muted">Linux and Windows follow once the first wave is stable.</span></p>
+              <p>Read the <a href="/docs">documentation</a> for setup.</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-figure-wide" data-wide>
+          <h3><code>figure-wide</code></h3>
+          <p class="p9-muted">One drawing or screenshot on the surface at 3:2, with a mono caption. A pager is added only when the figure cycles. The opening figure on this page is the live example.</p>
+          <div class="doc-specimen" data-component="figure-wide">
+            <figure class="p9-wide">
+              <div class="p9-media"><div data-figure="terrain" aria-label="Isometric terrain drawing"></div></div>
+              <figcaption class="p9-caption"><span class="p9-label">Fig. 01 / Terrain</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-figure-grid" data-wide>
+          <h3><code>figure-grid</code></h3>
+          <p class="p9-muted">Two to four drawings side by side, divided by hairlines, each with a figure label, a short title and one sentence. It stacks below 34rem.</p>
+          <div class="doc-specimen" data-component="figure-grid">
+            <ul class="p9-grid p9-wide" data-columns="3">
+              <li>
+                <span class="p9-label">Fig 0.1</span>
+                <div data-figure="stack" aria-label="Stacked layers drawing"></div>
+                <h3>Purpose-built</h3>
+                <p>Shaped by the practices of teams who ship daily.</p>
+              </li>
+              <li>
+                <span class="p9-label">Fig 0.2</span>
+                <div data-figure="relay" aria-label="Relay drawing"></div>
+                <h3>Shared by people and agents</h3>
+                <p>From the first draft to the merged change.</p>
+              </li>
+              <li>
+                <span class="p9-label">Fig 0.3</span>
+                <div data-figure="terminal" aria-label="Terminal drawing"></div>
+                <h3>Designed for speed</h3>
+                <p>Less noise, more momentum, every release.</p>
+              </li>
+            </ul>
+          </div>
+          <p class="p9-muted doc-note">Figure names: <code>basket</code>, <code>branches</code>, <code>cabinet</code>, <code>dish</code>, <code>drawer</code>, <code>elevator</code>, <code>exploded</code>, <code>format</code>, <code>hub</code>, <code>keyboard</code>, <code>laptop</code>, <code>lockers</code>, <code>loupe</code>, <code>padlock</code>, <code>patch</code>, <code>phone</code>, <code>phosphor</code>, <code>plot</code>, <code>plug</code>, <code>query</code>, <code>rail</code>, <code>rebuild</code>, <code>relay</code>, <code>riffle</code>, <code>router</code>, <code>settle</code>, <code>sieve</code>, <code>slow</code>, <code>stack</code>, <code>terminal</code>, <code>terrain</code>, <code>turntable</code>, <code>vault</code>.</p>
+        </div>
+
+        <div class="doc-component" id="c-index">
+          <h3><code>index</code></h3>
+          <p class="p9-muted">Numbered or dated rows divided by hairlines, for changelogs, steps, plans and principles. The label is a number, a date or a price.</p>
+          <div class="doc-specimen" data-component="index">
+            <ol class="p9-index">
+              <li><span class="p9-label"><time datetime="2026-11-12">12 Nov 2026</time></span><div><h3>Persistent sessions</h3><p>Sessions survive restarts and reconnect where you left them.</p></div></li>
+              <li><span class="p9-label"><time datetime="2026-10-28">28 Oct 2026</time></span><div><h3>Remote hosts</h3><p>Connect to any machine running the server.</p></div></li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-table">
+          <h3><code>table</code></h3>
+          <p class="p9-muted">Comparisons and specifications. Mono column headings, row headings in ink, hairline rows, tabular figures.</p>
+          <div class="doc-specimen" data-component="table">
+            <div class="p9-table-scroll" tabindex="0">
+              <table class="p9-table">
+                <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Hosts</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Personal</th><td>Free</td><td>3</td></tr>
+                  <tr><th scope="row">Team</th><td>€12 per seat / month</td><td>Unlimited</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-button">
+          <h3><code>button</code></h3>
+          <p class="p9-muted">The one filled action on a page. Use an anchor for navigation and a button for an action. Every other action is an underlined text link.</p>
+          <div class="doc-specimen" data-component="button">
+            <a class="p9-button" href="/download">Download for macOS</a>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-form">
+          <h3><code>form</code></h3>
+          <p class="p9-muted">A visible label, an underlined input with an icon submit, help text and a live feedback line. Entered values are kept when validation fails.</p>
+          <div class="doc-specimen" data-component="form">
+            <form class="p9-form" action="/waitlist" method="post">
+              <label for="waitlist-email">Sign up to secure your place in the waitlist</label>
+              <div class="p9-input">
+                <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="waitlist-help waitlist-feedback">
+                <button type="submit" aria-label="Join the waitlist">↩</button>
+              </div>
+              <p class="p9-help" id="waitlist-help">We’ll let you know when the beta is available.</p>
+              <output class="p9-feedback" id="waitlist-feedback" aria-live="polite"></output>
+            </form>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-code">
+          <h3><code>code</code></h3>
+          <p class="p9-muted">A command or snippet on the surface, with a Copy button.</p>
+          <div class="doc-specimen" data-component="code">
+            <div class="p9-code"><pre tabindex="0"><code>brew install fieldwork</code></pre><button type="button">Copy</button></div>
+          </div>
+        </div>
+
+        <div class="doc-component" id="c-footer" data-wide>
+          <h3><code>footer</code></h3>
+          <p class="p9-muted">Mono links on both ends with a hairline between them. It is always the last element in the body.</p>
+          <div class="doc-specimen" data-component="footer">
+            <footer class="p9-footer">
+              <ul><li><a href="/press">Press kit</a></li></ul>
+              <ul><li><a href="/privacy">Privacy</a></li><li><a href="https://x.com/fieldwork">@fieldwork</a></li></ul>
+            </footer>
+          </div>
+        </div>
+      </section>
+
+      <section class="p9-section" id="recipes">
+        <h2>Page recipes</h2>
+        <p>A recipe fixes the layout and the order of components. <span class="p9-muted"><code>?</code> means optional, <code>+</code> one or more, <code>*</code> zero or more and <code>|</code> one of. Leave out an optional component when the brief has no content for it.</span></p>
+        <div class="p9-table-scroll" tabindex="0">
+          <table class="p9-table doc-recipes">
+            <thead><tr><th scope="col">Recipe</th><th scope="col">Layout</th><th scope="col">Sequence</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>home</code></th><td>field</td><td><code>masthead statement meta? section (figure-wide | figure-grid) section* (button | form)? footer</code></td></tr>
+              <tr><th scope="row"><code>article</code></th><td>plain</td><td><code>masthead title meta section figure-wide? section+ form? footer</code></td></tr>
+              <tr><th scope="row"><code>docs</code></th><td>plain</td><td><code>masthead title meta? section (section | figure-wide)* footer</code></td></tr>
+              <tr><th scope="row"><code>changelog</code></th><td>plain</td><td><code>masthead title section? index footer</code></td></tr>
+              <tr><th scope="row"><code>pricing</code></th><td>plain</td><td><code>masthead title section index table? section* button footer</code></td></tr>
+              <tr><th scope="row"><code>contact</code></th><td>plain</td><td><code>masthead title section form footer</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The example below is a complete <code>home</code> page built only from the components above. <span class="p9-muted">Use it as the reference output: a generated home page should differ from it only in its words, links and figure names.</span></p>
+      </section>
+      <div class="p9-wide doc-example" aria-label="Example home page" role="region">
+        <div class="doc-example-page">
+          <header class="p9-masthead">
+            <a class="p9-wordmark" href="#recipes">Fieldwork</a>
+            <a href="#recipes">Changelog</a>
+            <a href="#recipes">Docs</a>
+          </header>
+          <div class="p9-column p9-opening">
+            <p class="p9-statement">Field notes for teams that ship <span class="p9-accent">every day.</span></p>
+            <ul class="p9-meta">
+              <li class="p9-label"><span class="p9-dot" aria-hidden="true"></span>Beta</li>
+              <li class="p9-label">Version 0.9</li>
+            </ul>
+            <section class="p9-section">
+              <p>Fieldwork turns every deploy into a short note your team can read in a minute. <span class="p9-muted">It reads the diff, the tests and the incident channel, then writes what changed and why.</span></p>
+            </section>
+            <ul class="p9-grid p9-wide" data-columns="3">
+              <li><span class="p9-label">Fig 0.1</span><div data-figure="branches" aria-label="Branches drawing"></div><h3>Reads the diff</h3><p>Every merged change, summarised in a sentence.</p></li>
+              <li><span class="p9-label">Fig 0.2</span><div data-figure="plot" aria-label="Plot drawing"></div><h3>Watches the release</h3><p>Errors and latency beside the note.</p></li>
+              <li><span class="p9-label">Fig 0.3</span><div data-figure="vault" aria-label="Vault drawing"></div><h3>Keeps the record</h3><p>A searchable history of every deploy.</p></li>
+            </ul>
+            <section class="p9-section">
+              <h2>How it works</h2>
+              <p>Connect a repository and a deploy target. The first note arrives with your next release.</p>
+            </section>
+            <form class="p9-form" action="#recipes">
+              <label for="example-email">Join the beta</label>
+              <div class="p9-input">
+                <input type="email" id="example-email" placeholder="you@example.com" autocomplete="email">
+                <button type="submit" aria-label="Join the beta">↩</button>
+              </div>
+            </form>
+          </div>
+          <footer class="p9-footer">
+            <ul><li><a href="#recipes">Press kit</a></li></ul>
+            <ul><li><a href="#recipes">Privacy</a></li></ul>
+          </footer>
+        </div>
+        <div class="doc-example-field" aria-hidden="true"></div>
       </div>
-      <section id="type">
-        <h2>Type and color</h2>
-        <p id="foundations">Set the page in Geist Sans. Use weight 300 for reading, 400 for controls, and 600 for headings that need emphasis. <span class="cxl-muted">At 1440 px wide, body text is about 21 px. It scales with the viewport, with a line height of 1.3. Short section labels use the body size.</span> Set commands and technical notes in <span class="cxl-note">Geist Mono</span>.</p>
-        <p id="tones">Give the main thought the foreground color. <span class="cxl-muted">Use the muted tone for context, examples, or a supporting paragraph.</span> Bring the ink forward again when someone needs to make a decision.</p>
-        <div class="swatches" aria-label="Apollo palette"></div>
-        <p class="cxl-muted">Apollo’s dark canvas pairs near-black with soft white. Light mode reverses the paper and ink. Light surfaces use <code>#f2f2f2</code> with <code>#505050</code> for muted text. Dark surfaces use <code>#131313</code> with <code>#808080</code> for muted text. Ring is the light rule color. Dark rules use <code>#1d1d1d</code>. Apply the theme roles in <code>system/cxl.css</code> and remember the reader’s choice.</p>
+
+      <section class="p9-section" id="rules">
+        <h2>Rules</h2>
+        <p>These hold on every page. A result that breaks one is wrong, whatever else it gets right.</p>
+        <h3 class="doc-rule-head">Always</h3>
+        <ul>
+          <li>Load <code>system/p9.css</code>, <code>system/theme.js</code> in the head and <code>system/p9.js</code> as a module.</li>
+          <li>Set <code>class="p9"</code> and <code>data-layout</code> on the body, as the recipe specifies.</li>
+          <li>Follow the recipe’s component order. Copy component markup exactly and change only text, links, figure names and IDs.</li>
+          <li>Write in sentence case. Keep the title to one line and the statement to one sentence.</li>
+          <li>Use the muted color for supporting sentences, inline after the main thought. Text on the surface is always ink.</li>
+          <li>Give every figure an <code>aria-label</code> and every field a visible label.</li>
+          <li>Check the page at 320, 760, 761 and 1440px wide in both themes.</li>
+        </ul>
+        <h3 class="doc-rule-head">Never</h3>
+        <ul>
+          <li>Never add a class, color, font, size, weight, radius or spacing value that is not a token.</li>
+          <li>Never use the accent more than twice, on body text, links, buttons, backgrounds or rules.</li>
+          <li>Never set text larger than the title or bolder than 500 (the wordmark is the exception).</li>
+          <li>Never use shadows, gradients, icons other than arrows and ◐, emoji or stock photography.</li>
+          <li>Never place two filled buttons on one page.</li>
+          <li>Never center text other than the column itself, and never justify it.</li>
+          <li>Never invent copy, links, numbers, quotes or logos the brief does not supply.</li>
+        </ul>
       </section>
-      <section id="interaction">
-        <h2>Controls and feedback</h2>
-        <p>Use a link to take someone somewhere and a button to perform an action. Keep field labels visible while typing. When an entry needs correction, keep what was typed and explain the fix beside the field. <span class="cxl-muted">“Enter a date after 18 November” tells the reader exactly what to change.</span></p>
-        <p>Use the filled button for the primary action in a group. Use underlined text for supporting links and group related icon controls on one surface, as with the figure arrows above. Give icon controls an accessible name, give controls a 44 px target, and keep keyboard focus visible. Convey selection with a persistent cue and honor reduced motion and reduced transparency preferences.</p>
-        <p class="cxl-muted">Account for the whole task. Show progress during a save, prevent duplicate submissions, and announce completion in place. An empty list needs a first action. A failed request needs a way to retry.</p>
+
+      <section class="p9-section" id="agents">
+        <h2>Agent handoff</h2>
+        <p><strong>Give the agent this page and a page plan.</strong> Point it at <a href="DESIGN.md" download>DESIGN.md</a>, which repeats this page in Markdown, at a pinned commit. Write the plan as JSON that validates against <a href="system/plan.schema.json">plan.schema.json</a>. It names the recipe and lists the blocks in order with their copy.</p>
+        <div class="p9-code"><pre tabindex="0"><code>{
+  "designRevision": "&lt;P9DS commit SHA&gt;",
+  "recipe": "changelog",
+  "layout": "plain",
+  "blocks": [
+    { "component": "masthead", "wordmark": "Fieldwork", "links": [{ "label": "Docs", "href": "/docs" }] },
+    { "component": "title", "heading": "Changelog", "byline": "What shipped, newest first" },
+    { "component": "index", "items": [
+      { "label": "12 Nov 2026", "title": "Persistent sessions", "text": "Sessions survive restarts." }
+    ] },
+    { "component": "footer", "start": [{ "label": "Press kit", "href": "/press" }], "end": [] }
+  ]
+}</code></pre><button type="button">Copy</button></div>
+        <p><strong>Make the build repeatable.</strong> The same prompt can produce different output, so keep the model’s freedom in the plan, not in the markup. Validate the plan against the schema and check that it follows the recipe. Then render each block by copying its component markup. The same plan and revision always give the same page.</p>
+        <p><strong>Verify the result.</strong> Run the browser tests: computed tokens, column and figure widths, keyboard use, both themes and an axe WCAG 2.2 AA scan. <span class="p9-muted">To compare screenshots, fix the browser, viewport, scale, theme, locale and motion settings, and wait for fonts and figures.</span></p>
       </section>
-      <section id="figures">
-        <h2>Figures and motion</h2>
-        <p>Choose a drawing that explains the subject. <span class="cxl-muted">A keyboard belongs beside a shortcut list, where the commands can still be selected and copied.</span> Reserve the drawing’s space as the page loads. Describe meaningful imagery, give interactive figures keyboard controls, and provide a usable still view for readers who prefer reduced motion.</p>
-      </section>
-      <section id="design-specification">
-        <h2>Define a design</h2>
-        <p><strong>Start with the task.</strong> Name who the page serves, what they came to do, and how they’ll know it worked. The figure picker lets a reader find a named figure, preview it with the keyboard, and confirm the change in the caption. Test the task with representative users. <a href="https://www.gov.uk/guidance/government-design-principles">GOV.UK design principles</a>.</p>
-        <p><strong>Give visual choices a rule.</strong> Specify the role, value or formula, and context. A section heading in P9DS uses the reading size, weight 400, and the theme’s muted text color. Define asset paths, proportions, and cropping when the image matters. Pair text colors with their intended backgrounds in each theme. <a href="https://designsystem.digital.gov/design-tokens/color/overview/">USWDS color roles</a>.</p>
-        <p><strong>Define a component through its behavior.</strong> Record the markup, required content, allowed variants, default, and what changes in each applicable state. An unknown figure name leaves the drawing and search value in place, marks the field invalid, and announces what to try. A valid name updates the drawing and moves focus to the next-figure button. <a href="https://design-system.service.gov.uk/components/text-input/">Text input specification</a> and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA interaction patterns</a>.</p>
-        <p class="cxl-muted">Specify how the same content fits at narrow widths, with long labels, and at increased text size. Keep an accessible reading and focus order. Give every required rule a coded example or a check someone can run. Research with users establishes whether the design serves the task. <a href="https://design-system.service.gov.uk/community/contribution-criteria/">GOV.UK contribution criteria</a> and <a href="https://www.w3.org/WAI/test-evaluate/">Evaluating accessibility</a>.</p>
-      </section>
-      <section id="site-building">
-        <h2>Page composition</h2>
-        <p>Use this page’s editorial shell for every page type. Set the opening in <code>.cxl-introduction</code>, follow with section headings at body size, and use the same centered reading column. Leave <code>1.25rem</code> between paragraphs and <code>2.5rem</code> around sections. A wide figure can extend to the gutters up to <code>1280px</code>. The textured right margin narrows to a strip at <code>760px</code>.</p>
-        <p><strong>Product homepage.</strong> Lead with the promise, a short explanation, and one primary action. Show the product in a figure. Follow with two or three workflows, then customer evidence or recent updates when available. End with the primary action and plain footer links.</p>
-        <p><strong>Feature page.</strong> Name the outcome and walk through the steps in order. Pair each step with a short paragraph and a figure or captioned screenshot. Keep the copy ahead of its figure at every width.</p>
-        <p><strong>Pricing.</strong> List plans in order of scope. Give each a name, price with currency and billing period, a short list of what is included, and an action. Separate plans with a fine rule. Use a table with row and column headings when readers need to compare the same attributes.</p>
-        <p><strong>Changelog and documentation.</strong> Lead each release entry with a date in Geist Mono, then a heading and what changed. Keep the newest entry first. For a reference article, put jump links in an opening paragraph and keep examples close to the rules they illustrate.</p>
-        <p><strong>Contact or signup.</strong> Start with the task and place a labeled form directly beneath it. Ask for the information the task needs. Keep validation beside the field, and put submission status and retry by the action.</p>
-      </section>
-      <section id="agent-handoff">
-        <h2>Hand off a design to an agent</h2>
-        <p><strong>Give the agent a versioned reference and a page brief.</strong> Pin a P9DS commit. Explicitly ask it to read <code>DESIGN.md</code> and the relevant markup and CSS. Supply ordered sections, exact copy, local asset paths, action destinations, and fixtures for applicable states. Name any choices the agent can make. Omit optional sections without source content and surface missing required inputs for review.</p>
-        <p><strong>Use each file for a clear purpose.</strong> The Google Labs draft pairs YAML tokens with prose and references to component source. Here, the shared CSS owns the rendered values and <code>DESIGN.md</code> records the tokens and usage. Exchange tokens with other tools using the DTCG JSON format when needed. <a href="DESIGN.md" download>Download DESIGN.md</a>, <a href="https://github.com/google-labs-code/design.md">Google Labs format</a>, and <a href="https://www.designtokens.org/tr/2025.10/">Design Tokens specification</a>.</p>
-        <p><strong>Make the build repeatable.</strong> Model output can vary with the same prompt and decoding settings. For an automated generator, have the agent propose a page plan as data. Validate the plan against a schema of allowed components and fields, then check section order, asset IDs, and destinations. Save the approved plan and render it with pinned templates and styles. Rebuilding then uses the saved inputs. <a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">Research on inference variability</a> and <a href="https://a2ui.org/concepts/catalogs/">Component catalogs for agents</a>.</p>
-        <p class="cxl-muted">Check computed styles, section order, keyboard behavior, and reflow in both themes. For pixel comparison, fix the browser build and OS, viewport, scale, content, state, locale, and motion settings. Wait for the bundled fonts and images before capturing. <a href="https://playwright.dev/docs/test-snapshots">Visual comparison guide</a>.</p>
-      </section>
-      <section id="delivery">
-        <h2>Build and review</h2>
-        <p>Copy the <code>system/</code> folder into your project and load both stylesheets. <span class="cxl-muted">The fonts, figures, and theme tokens travel together.</span></p>
-        <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;&#10;&lt;link rel="stylesheet" href="system/editorial.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet links">Copy</button></div>
-        <output id="copy-result" aria-live="polite"></output>
-        <p>Set <code>cxl-editorial</code> on the body. Inside <code>main</code>, wrap the article with <code>cxl-reading cxl-opening</code>. Add <code>cxl-wide-figure</code> when an illustration needs the full width. Load <code>system/theme.js</code> in the document head to apply the saved appearance. <a href="https://github.com/hugocxl/p9ds/tree/main/system">Browse the source files ↗</a>.</p>
-        <p class="cxl-muted">Before shipping, complete the principal task with a keyboard. Check both appearances, reduced motion, long labels, reflow at 320 CSS pixels, and 200% zoom. Follow <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 AA</a> for the finished page.</p>
+
+      <section class="p9-section" id="install">
+        <h2>Install</h2>
+        <p>Copy the <code>system/</code> folder into the site and add these lines. <span class="p9-muted">Fonts, figures, the field texture and the theme script travel together.</span></p>
+        <div class="p9-code"><pre tabindex="0"><code>&lt;link rel="stylesheet" href="system/p9.css"&gt;
+&lt;script src="system/theme.js"&gt;&lt;/script&gt;
+&lt;script type="module" src="system/p9.js"&gt;&lt;/script&gt;</code></pre><button type="button">Copy</button></div>
+        <p class="p9-muted">Before shipping, complete the main task with a keyboard and check reflow at 320px, text zoom at 200%, reduced motion and both themes.</p>
       </section>
     </article>
   </main>
-  <footer><a href="#top">Back to top ↑</a></footer>
-  <script type="module" src="preview.js?v=article"></script>
+  <footer class="p9-footer">
+    <ul><li><a href="#top">Back to top ↑</a></li></ul>
+    <ul><li><a href="DESIGN.md" download>DESIGN.md</a></li><li><a href="system/plan.schema.json">Schema</a></li><li><a href="https://github.com/hugocxl/p9ds">GitHub</a></li></ul>
+  </footer>
+  <script type="module" src="preview.js?v=2"></script>
 </body>
 </html>

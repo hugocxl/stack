@@ -2,7 +2,8 @@
   "name": "p9ds",
   "private": true,
   "scripts": {
-    "check": "design.md lint DESIGN.md",
+    "sync": "node scripts/sync-design.mjs",
+    "check": "design.md lint DESIGN.md && node scripts/sync-design.mjs --check",
     "test": "npm run check && playwright test"
   },
   "devDependencies": {

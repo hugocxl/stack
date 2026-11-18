@@ -3,79 +3,86 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { parse } from 'yaml';
 
-const design = readFileSync(new URL('../DESIGN.md', import.meta.url), 'utf8');
+const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
+const design = read('DESIGN.md');
 const { colors, typography, spacing, rounded } = parse(design.split('---')[1]);
+const schema = JSON.parse(read('system/plan.schema.json'));
+const px = value => parseFloat(value);
 
-test('the opening paragraph links to sections of the same article', async ({ page }) => {
+test('the opening paragraph links to every section of the article', async ({ page }) => {
   await page.goto('/');
-  const article = page.getByRole('article');
-  await expect(article).toHaveCount(1);
-  const links = article.locator('.cxl-introduction + p a');
-  await expect(links).toHaveCount(6);
+  const links = page.locator('.p9-opening > .p9-section').first().locator('a');
+  await expect(links).toHaveCount(10);
   for (const link of await links.all()) {
     const fragment = await link.getAttribute('href');
-    expect(fragment).toMatch(/^#[a-z-]+$/);
-    await expect(article.locator(fragment)).toHaveCount(1);
+    expect(fragment).toMatch(/^#[a-z]+$/);
     await link.click();
     await expect(page).toHaveURL(new RegExp(fragment + '$'));
-    await expect(article.locator(fragment).getByRole('heading')).toBeInViewport();
+    await expect(page.locator(fragment + ' > h2')).toBeInViewport();
   }
-
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByRole('link', { name: 'Download DESIGN.md' }).click(),
-  ]);
-  expect(download.suggestedFilename()).toBe('DESIGN.md');
 });
 
-for (const width of [320, 646, 760, 761, 1440]) {
-  test(`editorial layout at ${width}px`, async ({ page }) => {
+test('DESIGN.md, the schema and the page name the same thirteen components', async ({ page }) => {
+  await page.goto('/');
+  const specimens = await page.locator('.doc-specimen').evaluateAll(nodes => nodes.map(node => node.dataset.component));
+  const documented = [...design.matchAll(/^### `([a-z-]+)`$/gm)].map(match => match[1]);
+  expect(specimens).toHaveLength(13);
+  expect(documented).toEqual(specimens);
+  expect(schema.$defs.block.properties.component.enum).toEqual(specimens);
+  for (const id of specimens) expect(schema.$defs[id].properties.component.const).toBe(id);
+});
+
+for (const width of [320, 760, 761, 1440]) {
+  test(`field layout geometry at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
     await page.evaluate(() => document.fonts.ready);
-    const reading = page.getByRole('article');
-    const metrics = await reading.evaluate(article => {
-      const main = article.closest('main').getBoundingClientRect();
+    const metrics = await page.evaluate(() => {
+      const article = document.querySelector('.p9-opening');
+      const main = document.querySelector('main').getBoundingClientRect();
       const column = article.getBoundingClientRect();
-      const figure = article.querySelector('figure').getBoundingClientRect();
+      const figure = document.querySelector('#opening-figure').getBoundingClientRect();
       const style = getComputedStyle(article);
-      const intro = getComputedStyle(article.querySelector('.cxl-introduction'));
-      const section = getComputedStyle(article.querySelector('section'));
-      const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const field = getComputedStyle(document.body, '::after');
       return {
         scrollWidth: document.documentElement.scrollWidth,
+        mainLeft: main.left,
         mainWidth: main.width,
+        columnLeft: column.left,
         columnWidth: column.width,
-        maxWidth: parseFloat(style.maxWidth),
-        centerOffset: column.left + column.width / 2 - (main.left + main.width / 2),
+        measure: parseFloat(style.fontSize) * 30,
+        figureLeft: figure.left,
         figureWidth: figure.width,
-        figureOffset: figure.left + figure.width / 2 - (main.left + main.width / 2),
-        paragraphMargin: parseFloat(intro.marginBottom) / rootSize,
-        sectionMargin: parseFloat(section.marginTop) / rootSize,
-        readingLineHeight: parseFloat(style.lineHeight) / parseFloat(style.fontSize),
         readingSize: parseFloat(style.fontSize),
-        headingSize: parseFloat(getComputedStyle(article.querySelector('h2')).fontSize),
-        textureWidth: parseFloat(getComputedStyle(document.body, '::after').width),
+        lineHeight: parseFloat(style.lineHeight) / parseFloat(style.fontSize),
+        titleSize: parseFloat(getComputedStyle(document.querySelector('.p9-title h1')).fontSize),
+        headingSize: parseFloat(getComputedStyle(document.querySelector('.p9-section > h2')).fontSize),
+        paragraphGap: parseFloat(getComputedStyle(document.querySelector('.p9-section p + p')).marginTop),
+        sectionGap: parseFloat(getComputedStyle(document.querySelector('#principles')).marginTop),
+        fieldWidth: parseFloat(field.width),
       };
     });
 
     expect(metrics.scrollWidth).toBe(width);
-    expect(metrics.columnWidth).toBeCloseTo(Math.min(metrics.maxWidth, metrics.mainWidth), 0);
-    expect(metrics.centerOffset).toBeCloseTo(0, 0);
+    expect(metrics.columnLeft).toBeCloseTo(metrics.mainLeft, 0);
+    expect(metrics.columnWidth).toBeCloseTo(Math.min(metrics.measure, metrics.mainWidth), 0);
+    expect(metrics.figureLeft).toBeCloseTo(metrics.mainLeft, 0);
     expect(metrics.figureWidth).toBeCloseTo(Math.min(metrics.mainWidth, 1280), 0);
-    expect(metrics.figureOffset).toBeCloseTo(0, 0);
-    expect(metrics.paragraphMargin).toBe(parseFloat(spacing.paragraph));
-    expect(metrics.sectionMargin).toBe(parseFloat(spacing.section));
-    expect(metrics.readingLineHeight).toBeCloseTo(typography.reading.lineHeight, 2);
     expect(metrics.readingSize).toBeCloseTo(Math.min(16 + width * 0.0036, 16 * 1.54), 2);
+    expect(metrics.lineHeight).toBeCloseTo(typography.reading.lineHeight, 2);
+    expect(metrics.titleSize).toBeCloseTo(metrics.readingSize * 1.4, 1);
     expect(metrics.headingSize).toBe(metrics.readingSize);
-    expect(metrics.textureWidth).toBeCloseTo(width <= 760 ? 12 : Math.max(240, width * 0.23) - 10, 0);
+    expect(metrics.paragraphGap).toBe(px(spacing.paragraph));
+    expect(metrics.sectionGap).toBe(px(spacing.section));
+    const gutter = Math.min(Math.max(20, width * 0.045), 64);
+    const field = width <= 760 ? 20 : Math.min(Math.max(width * 0.3, width - 2 * gutter - 47.6 * 16), width * 0.4);
+    expect(metrics.fieldWidth).toBeCloseTo(width <= 760 ? 12 : field - 12, 0);
   });
 }
 
 for (const mode of ['light', 'dark']) {
   test(`${mode} tokens, type and accessibility`, async ({ page }) => {
-    await page.setViewportSize({ width: 646, height: 900 });
+    await page.setViewportSize({ width: 1024, height: 900 });
     await page.emulateMedia({ colorScheme: mode });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -84,36 +91,30 @@ for (const mode of ['light', 'dark']) {
     });
     await page.goto('/');
     await page.evaluate(() => document.fonts.ready);
+    await expect(page.locator('html')).toHaveAttribute('data-theme', mode);
 
-    const canvas = mode === 'light' ? colors.paper : colors.primary;
-    const foreground = mode === 'light' ? colors.primary : colors.paper;
-    const root = page.locator('html');
-    await expect(root).toHaveAttribute('data-theme', mode);
-    const tokens = await root.evaluate(element => {
-      const style = getComputedStyle(element);
-      const names = ['bg', 'text', 'muted', 'surface', 'line', 'graphite', 'radius'];
-      return Object.fromEntries(names.map(name => [name, style.getPropertyValue('--cxl-' + name).trim()]));
-    });
-    expect(tokens).toEqual({
-      bg: canvas,
-      text: foreground,
-      muted: colors[mode].muted,
-      surface: colors[mode].surface,
-      line: mode === 'light' ? colors.ring : colors.dark.line,
-      graphite: colors.graphite,
-      radius: rounded.control,
-    });
+    const tokens = await page.evaluate(names => {
+      const style = getComputedStyle(document.documentElement);
+      return Object.fromEntries(names.map(name => [name, style.getPropertyValue('--p9-' + name).trim()]));
+    }, Object.keys(colors[mode]));
+    expect(tokens).toEqual(colors[mode]);
+    expect(await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--p9-accent').trim())).toBe(colors.accent);
+
     await expect(page.getByRole('article')).toHaveCSS('font-weight', String(typography.reading.fontWeight));
-    await expect(page.locator('.cxl-introduction')).toHaveCSS('font-weight', String(typography.introduction.fontWeight));
-    await expect(page.locator('#site-building strong').first()).toHaveCSS('font-weight', String(typography.emphasis.fontWeight));
-    await expect(page.locator('#caption')).toHaveCSS('font-size', typography.caption.fontSize);
-    await expect(page.getByRole('button', { name: 'Preview' })).toHaveCSS('font-size', typography.control.fontSize);
-    await expect(page.getByRole('button', { name: 'Preview' })).toHaveCSS('border-radius', rounded.control);
-    await expect(page.locator('.cxl-pager')).toHaveCSS('border-radius', rounded.material);
+    await expect(page.locator('.p9-opening > .p9-title h1')).toHaveCSS('font-weight', String(typography.title.fontWeight));
+    await expect(page.locator('#principles > h2')).toHaveCSS('font-weight', String(typography.heading.fontWeight));
+    await expect(page.locator('#caption')).toHaveCSS('font-size', typography.label.fontSize);
+    await expect(page.locator('body > .p9-footer a').first()).toHaveCSS('font-size', typography.mono.fontSize);
+    await expect(page.locator('#c-button .p9-button')).toHaveCSS('font-size', typography.control.fontSize);
+    await expect(page.locator('#c-button .p9-button')).toHaveCSS('border-radius', rounded.control);
+    const button = await page.locator('#c-button .p9-button').evaluate(node => [getComputedStyle(node).color, getComputedStyle(node).backgroundColor]);
+    const rgb = hex => `rgb(${hex.slice(1).match(/../g).map(pair => parseInt(pair, 16)).join(', ')})`;
+    expect(button).toEqual([rgb(colors[mode].canvas), rgb(colors[mode].ink)]);
+    await expect(page.locator('#opening-figure .p9-media')).toHaveCSS('border-radius', rounded.media);
+    await expect(page.locator('.p9-pager')).toHaveCSS('border-radius', rounded.pill);
     await expect(page.getByRole('button', { name: 'Next figure' })).toHaveCSS('height', spacing.target);
-    const loadedFonts = await page.evaluate(() => Array.from(document.fonts)
-      .filter(font => font.status === 'loaded').map(font => font.family));
-    expect(loadedFonts).toEqual(expect.arrayContaining([typography.reading.fontFamily, typography.caption.fontFamily]));
+    const loadedFonts = await page.evaluate(() => Array.from(document.fonts).filter(font => font.status === 'loaded').map(font => font.family));
+    expect(loadedFonts).toEqual(expect.arrayContaining(['Geist Sans', 'Geist Mono']));
 
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
@@ -123,38 +124,71 @@ for (const mode of ['light', 'dark']) {
   });
 }
 
+test('the example home page follows its recipe and accent budget', async ({ page }) => {
+  await page.goto('/');
+  const example = page.locator('.doc-example-page');
+  const sequence = await example.evaluate(root => {
+    const names = {
+      'p9-masthead': 'masthead', 'p9-statement': 'statement', 'p9-meta': 'meta', 'p9-section': 'section',
+      'p9-grid': 'figure-grid', 'p9-form': 'form', 'p9-footer': 'footer', 'p9-button': 'button',
+    };
+    const blocks = [root.querySelector('.p9-masthead'), ...root.querySelector('.p9-column').children, root.querySelector('.p9-footer')];
+    return blocks.map(block => names[[...block.classList].find(name => names[name])]);
+  });
+  expect(sequence.join(' ')).toMatch(/^masthead statement( meta)? section (figure-wide|figure-grid)( section)*( button| form)? footer$/);
+  await expect(example.locator('.p9-accent, .p9-dot')).toHaveCount(2);
+  await expect(example.locator('.p9-button')).toHaveCount(0);
+  const accent = await example.locator('.p9-accent').evaluate(node => getComputedStyle(node).color);
+  expect(accent).toBe('rgb(206, 119, 85)');
+});
+
+test('component listings show the specimen markup', async ({ page }) => {
+  await page.goto('/');
+  const listings = page.locator('.doc-specimen + .p9-code code');
+  await expect(listings).toHaveCount(13);
+  await expect(listings.nth(1)).toHaveText('<hgroup class="p9-title">\n  <h1>Public testing is beginning</h1>\n  <p>Fieldwork team</p>\n</hgroup>');
+  for (const listing of await listings.all()) await expect(listing).not.toContainText('data-hairline');
+});
+
 test('keyboard figure browsing and search feedback', async ({ page }) => {
   await page.goto('/');
   const caption = page.locator('#caption');
   const next = page.getByRole('button', { name: 'Next figure' });
-  await expect(caption).toContainText('Keyboard');
+  await expect(caption).toHaveText('Fig. 01 / Keyboard');
   await next.focus();
   await page.keyboard.press('Enter');
-  await expect(caption).toContainText('Terrain');
+  await expect(caption).toHaveText('Fig. 02 / Terrain');
+  await expect(page.locator('#figure')).toHaveAttribute('data-hairline', 'terrain');
 
   const search = page.getByLabel('Find a figure');
-  await search.fill('Unknown');
+  const feedback = page.locator('#figure-feedback');
   await search.press('Enter');
-  await expect(page.locator('form output')).toHaveText('Choose Keyboard, Terrain, or Dish.');
+  await expect(feedback).toHaveText('Enter a figure name.');
+  await search.fill('Unknown');
+  await expect(feedback).toHaveText('');
+  await search.press('Enter');
+  await expect(feedback).toHaveText('Choose Keyboard, Terrain, or Dish.');
   await expect(search).toHaveAttribute('aria-invalid', 'true');
   await expect(search).toHaveValue('Unknown');
-  await search.fill('dish');
+  await search.fill(' dish ');
+  await expect(search).not.toHaveAttribute('aria-invalid');
   await search.press('Enter');
-  await expect(caption).toContainText('Dish');
-  await expect(page.locator('form output')).toHaveText('Showing Dish');
+  await expect(caption).toHaveText('Fig. 03 / Dish');
+  await expect(feedback).toHaveText('Showing Dish');
   await expect(next).toBeFocused();
 });
 
-test('theme selection persists on the reference page', async ({ page }) => {
+test('theme selection persists across visits', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Switch theme' }).click();
+  await page.locator('body > .p9-masthead .p9-theme').click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
 
 test('the old guide URL forwards to the article', async ({ page }) => {
   await page.goto('/system/interface-guidelines.html');
-  await expect(page).toHaveURL('/#guidelines');
-  await expect(page.getByRole('heading', { name: 'Interface guidelines' })).toBeInViewport();
+  await expect(page).toHaveURL('/#principles');
+  await expect(page.locator('#principles > h2')).toBeInViewport();
 });

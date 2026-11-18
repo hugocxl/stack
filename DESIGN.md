@@ -1,186 +1,501 @@
 ---
 version: alpha
 name: P9DS
-description: Editorial design system defined by the single-page P9DS reference.
+description: Text-led, technical design system. Large reading type, hairline figures, mono labels and one scarce orange accent.
 colors:
-  primary: "#0d0d0d"
-  paper: "#fafafa"
-  graphite: "#878787"
-  ring: "#d4d4d8"
+  primary: "#171717"
+  accent: "#fe9369"
   light:
-    surface: "#f2f2f2"
-    muted: "#505050"
+    canvas: "#f5f5f4"
+    ink: "#171717"
+    muted: "#6e6e6e"
+    faint: "#b3b3b3"
+    rule: "#1717171f"
+    surface: "#ebebea"
+    accent-text: "#ce7755"
   dark:
-    surface: "#131313"
-    muted: "#808080"
-    line: "#1d1d1d"
+    canvas: "#111111"
+    ink: "#ededed"
+    muted: "#7d7d7d"
+    faint: "#737373"
+    rule: "#ededed24"
+    surface: "#1c1c1c"
+    accent-text: "#fe9369"
 typography:
+  title:
+    fontFamily: Geist Sans
+    fontWeight: 500
+    lineHeight: 1.15
+    letterSpacing: -0.02em
   reading:
     fontFamily: Geist Sans
     fontWeight: 300
     lineHeight: 1.3
     letterSpacing: -0.01em
-  introduction:
+  heading:
+    fontFamily: Geist Sans
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: -0.01em
+  small:
     fontFamily: Geist Sans
     fontWeight: 300
-    lineHeight: 1.15
-    letterSpacing: -0.02em
+    lineHeight: 1.4
   control:
     fontFamily: Geist Sans
-    fontSize: 14px
+    fontSize: 16px
     fontWeight: 400
     letterSpacing: -0.01em
-  emphasis:
-    fontFamily: Geist Sans
-    fontWeight: 600
-  caption:
+  label:
     fontFamily: Geist Mono
-    fontSize: 11px
+    fontSize: 13px
     fontWeight: 400
     lineHeight: 1.5
-    letterSpacing: 0.06em
+    letterSpacing: 0.08em
+  mono:
+    fontFamily: Geist Mono
+    fontSize: 15px
+    fontWeight: 400
+    lineHeight: 1.4
+  wordmark:
+    fontFamily: Geist Sans
+    fontSize: 18px
+    fontWeight: 600
+    letterSpacing: -0.055em
 rounded:
   control: 6px
-  material: 999px
+  media: 12px
+  pill: 999px
 spacing:
-  xs: 4px
-  sm: 8px
-  md: 16px
-  lg: 24px
-  xl: 40px
-  xxl: 64px
-  paragraph: 1.25rem
-  section: 2.5rem
+  space-1: 4px
+  space-2: 8px
+  space-3: 12px
+  space-4: 16px
+  space-5: 20px
+  space-6: 32px
+  space-7: 40px
+  space-8: 56px
+  space-9: 80px
+  space-10: 128px
+  paragraph: 20px
+  section: 40px
+  figure: 56px
   target: 44px
+  measure: 30em
+  wide: 80rem
 components:
-  button-light:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.paper}"
+  button:
+    backgroundColor: "{colors.light.ink}"
+    textColor: "{colors.light.canvas}"
     typography: "{typography.control}"
     rounded: "{rounded.control}"
+    height: "{spacing.target}"
+    padding: "{spacing.space-5}"
   button-dark:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.primary}"
+    backgroundColor: "{colors.dark.ink}"
+    textColor: "{colors.dark.canvas}"
     typography: "{typography.control}"
     rounded: "{rounded.control}"
-  surface-light:
+  media:
     backgroundColor: "{colors.light.surface}"
-    textColor: "{colors.light.muted}"
-  surface-dark:
+    rounded: "{rounded.media}"
+  media-dark:
     backgroundColor: "{colors.dark.surface}"
+    rounded: "{rounded.media}"
+  code:
+    backgroundColor: "{colors.light.surface}"
+    textColor: "{colors.light.ink}"
+    typography: "{typography.mono}"
+    rounded: "{rounded.control}"
+  label:
+    textColor: "{colors.light.muted}"
+    typography: "{typography.label}"
+  label-dark:
     textColor: "{colors.dark.muted}"
+    typography: "{typography.label}"
+  status-dot:
+    backgroundColor: "{colors.accent}"
+    rounded: "{rounded.pill}"
+  statement-accent:
+    textColor: "{colors.light.accent-text}"
+    typography: "{typography.title}"
+  statement-accent-dark:
+    textColor: "{colors.dark.accent-text}"
+    typography: "{typography.title}"
+  hairline:
+    backgroundColor: "{colors.light.rule}"
+  hairline-dark:
+    backgroundColor: "{colors.dark.rule}"
+  placeholder:
+    textColor: "{colors.light.faint}"
+    typography: "{typography.reading}"
+  placeholder-dark:
+    textColor: "{colors.dark.faint}"
+    typography: "{typography.reading}"
 ---
 ## Overview
 
-The [P9DS reference](index.html) is the visual standard. Use its centered reading column, small muted headings, near-black and paper palette, side texture, and inline links. The same editorial shell serves product, documentation, and form pages. Read the [page composition rules](index.html#site-building) for their section order.
+P9DS is a design system for text-led technical websites. Large reading type leads every page. Hairline drawings and monospaced labels make it feel engineered, and a single orange accent appears at most twice per page. The visual reference is Superlogical: its paper and orange, its 21 px reading size, its centered or left-aligned column with a textured field, and its mono footer.
 
-Define the audience, primary task, success condition, and relevant usage context before choosing a pattern. For the figure picker, success means a reader can find the named figure, preview it by keyboard, and identify the result. Test user tasks with representative people, including people with disabilities. Require an example and an observable result for each shared pattern. [GOV.UK design principles](https://www.gov.uk/guidance/government-design-principles) · [GOV.UK contribution criteria](https://design-system.service.gov.uk/community/contribution-criteria/)
+This file and [index.html](index.html) define the system completely. Anything not described here is not part of P9DS. When you build a page:
 
-### Source of truth
+1. Pick a recipe from [Page recipes](#page-recipes). The recipe sets the layout and the order of components.
+2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, figure names and IDs.
+3. Check the result against [Do's and Don'ts](#dos-and-donts).
 
-Pin a Git commit for the reference HTML, styles, and local assets. Load `system/cxl.css` first and `system/editorial.css` second. Use those stylesheets for rendered values and responsive behavior. Use the corresponding markup and scripts for component structure and behavior. The page brief supplies content, section order, and any approved component choices. Raise a discrepancy between the brief, the token file, and runtime code for review so the fix can land in the shared source.
+Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (figures and copy buttons, loaded as a module), `system/figures/` (33 hairline drawings), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema).
 
-The Google Labs draft organizes exact token values in YAML, usage in Markdown, and component references as `@path` pointers in prose. P9DS keeps the draft’s section order and uses the pinned `@google/design.md` 0.4.0 linter. The front matter describes the tokens implemented by the CSS. Check correspondence in the browser when changing either file. Typed JSON and the DTCG resolver are available for interchanging tokens and theme contexts with tools. Generate any export from the shared values. [Google Labs specification](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md) · [DTCG format and resolver](https://www.designtokens.org/tr/2025.10/)
-
-A valid token file answers questions about values and roles. Include coded references for the rest of the design. In a 2026 corpus study, 47.5% of the 17,240 unique files had a Components heading without recognized component tokens. The study measures file structure and coverage. [DesignSpecs preprint](https://arxiv.org/html/2611.17713v1#S4.SS3)
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page title</title>
+  <link rel="stylesheet" href="system/p9.css">
+  <script src="system/theme.js"></script>
+  <script type="module" src="system/p9.js"></script>
+</head>
+<body class="p9" data-layout="plain">
+  <!-- masthead -->
+  <main>
+    <article class="p9-column p9-opening">
+      <!-- title, meta, sections, figures, form … in recipe order -->
+    </article>
+  </main>
+  <!-- footer -->
+</body>
+</html>
+```
 
 ## Colors
 
-Use `--cxl-bg` for canvas, `--cxl-text` for text, `--cxl-muted` for supporting text, `--cxl-surface` for figures and snippets, and `--cxl-line` for fine rules. Light mode uses paper as canvas, primary ink as text, and ring for rules. Dark mode flips canvas and text and uses the dark rule value. Filled actions take the theme’s text color and use the canvas color for their label.
+The paper and orange come from Superlogical, and the greys are neutral. Use colors only through these roles. The CSS custom property is `--p9-<role>`, and each one switches with `data-theme` on `<html>`.
 
-Resolve colors by role in each theme. The theme script follows the system until the visitor selects a mode, then applies that choice on later visits. Specify intended foreground and background pairs and check contrast in the rendered states. Use fine rules as decoration. When a boundary identifies a control, give it the non-text contrast required for that use. Use labels, shape, or other persistent cues alongside color to show state. [USWDS color roles](https://designsystem.digital.gov/design-tokens/color/overview/) · [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+| Role | Light | Dark | Use |
+| --- | --- | --- | --- |
+| `canvas` | `#f5f5f4` | `#111111` | Page background |
+| `ink` | `#171717` | `#ededed` | Text and the filled button |
+| `muted` | `#6e6e6e` | `#7d7d7d` | Byline, section headings, labels, supporting sentences |
+| `faint` | `#b3b3b3` | `#737373` | Placeholder text only |
+| `rule` | `#1717171f` | `#ededed24` | Hairlines and borders |
+| `surface` | `#ebebea` | `#1c1c1c` | Figure media and code backgrounds |
+| `accent` | `#fe9369` | `#fe9369` | The status dot (`.p9-dot`) |
+| `accent-text` | `#ce7755` | `#fe9369` | One phrase at title size (`.p9-accent`) |
+
+P9DS keeps Superlogical's warm paper and orange but uses neutral greys instead of its green-tinted ink and muted tones. Superlogical's muted grey `#b3b3b3` fails WCAG AA for text, so it survives only as the light `faint` for placeholders, and `muted` is set to reach 4.5:1. The orange reaches 3:1 on paper only at title size, which is why `accent-text` exists and is used only there.
+
+**Accent budget:** at most two accent elements per page. That is one `.p9-accent` phrase of two or three words at the end of the `statement`, and one `.p9-dot` before a status label in `meta`. The accent never colors body text, links, buttons, backgrounds, rules or figures.
 
 ## Typography
 
-Use the bundled `Geist-Variable.woff2` for prose and controls and `GeistMono-Variable.woff2` for captions, dates, and code. Reading size is `min(calc(1rem + .36vw), 1.54rem)` with 1.3 line height. The opening uses `clamp(1.5rem, 1rem + 1vw, 2.75rem)` with 1.15 line height and a 44ch cap. Give section headings the reading size, weight 400, muted tone, and a 1rem bottom margin. Use weight 600 for emphasis. Allow copy and labels to wrap with their content intact.
+Geist Sans for everything people read and Geist Mono for labels, dates and code. Both are bundled as variable WOFF2 files. Use three weights: 300 for reading, 400 for headings and controls, and 500 for the title and `<strong>`. The wordmark alone uses 600.
+
+| Style | Size | Weight | Line height | Tracking | Use |
+| --- | --- | --- | --- | --- | --- |
+| title | `1.4 × reading` (≈ 29.7px at 1440) | 500 | 1.15 | −0.02em | `title`, `statement`. The largest text on any page. |
+| reading | `min(1rem + 0.36vw, 1.54rem)` (≈ 21.2px at 1440) | 300 | 1.3 | −0.01em | Body text |
+| heading | reading | 400, muted | 1.3 | −0.01em | Section `h2`, item `h3` (in ink) |
+| small | `0.8 × reading` | 300 | 1.4 | −0.01em | Grid item text, table cells |
+| label | 13px mono, uppercase | 400 | 1.5 | 0.08em | Dates, versions, figure captions, table headings |
+| mono | 15px mono | 400 | 1.4 | 0 | Footer links |
+| control | 16px | 400 | 1 | −0.01em | Button text |
+
+Supporting sentences follow the main thought in the same paragraph, wrapped in `<span class="p9-muted">`. Write in sentence case.
 
 ## Layout
 
-Use `body.cxl-editorial` with one `main` containing `.cxl-reading`. Center the reading column within the available main area and cap it at 60ch. Use 1.25rem after paragraphs and 2.5rem around sections. `.cxl-wide-figure` uses the available main width up to 1280px and keeps its caption beneath the figure.
+Set the layout with `data-layout` on `<body class="p9">`. There are two layouts:
 
-Above 760 CSS pixels, use the `clamp(1.25rem, 5vw, 5rem)` gutter and reserve `clamp(15rem, 23vw, 34rem)` on the right for the fixed texture. At 760px and below, the reserved width is 20px, the texture is 12px wide, and the gutter is `clamp(1rem, 5vw, 2rem)`. The sidebar art is decorative. Keep the content’s reading and focus order across width changes. Check reflow at 320 CSS pixels and text resize to 200%.
+- **`field`** is for home only. The column aligns to the left gutter. A fixed textured panel fills the right side at `clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)`, inset 12px with a 12px radius. At 760px and below the field becomes a 12px strip.
+- **`plain`** is for every other recipe. The column is centered, and wide figures are centered on the column.
 
-For the guide, use a normal paragraph of inline links beneath the introduction to jump to sections. In other page types, choose the matching [page recipe](index.html#site-building), then supply the final section order. Include optional sections when the brief supplies eligible content. Omit the whole section when that content is absent.
+The column (`.p9-column`) is 30em of reading type, about 65 characters. `.p9-wide` elements (figures and grids) extend to `min(main width, 80rem)`. The gutter is `clamp(1.25rem, 4.5vw, 4rem)`. The opening padding is `clamp(80px, 8vw, 128px)`.
+
+Use only these ten spacing steps:
+
+| Token | Value | Role |
+| --- | --- | --- |
+| `space-1` | 4px | — |
+| `space-2` | 8px | List items, label gaps, item title to text |
+| `space-3` | 12px | Caption offset, table cell padding |
+| `space-4` | 16px | Section heading to text |
+| `space-5` | 20px | Between paragraphs |
+| `space-6` | 32px | Title to meta, masthead top, grid gutter |
+| `space-7` | 40px | Between sections, form top |
+| `space-8` | 56px | Around wide figures, meta to lead |
+| `space-9` | 80px | Above the footer |
+| `space-10` | 128px | Largest opening |
+
+### Page recipes
+
+A recipe fixes the layout and the component order. `?` means optional, `+` one or more, `*` zero or more and `|` one of. The first `section` after `title`, `statement` or `meta` has no heading and acts as the lead. Leave out an optional component when the brief has no content for it.
+
+| Recipe | Layout | Sequence |
+| --- | --- | --- |
+| `home` | field | `masthead statement meta? section (figure-wide \| figure-grid) section* (button \| form)? footer` |
+| `article` | plain | `masthead title meta section figure-wide? section+ form? footer` |
+| `docs` | plain | `masthead title meta? section (section \| figure-wide)* footer` |
+| `changelog` | plain | `masthead title section? index footer` |
+| `pricing` | plain | `masthead title section index table? section* button footer` |
+| `contact` | plain | `masthead title section form footer` |
+
+`masthead` goes before `<main>` and `footer` after it. All other components go inside `<article class="p9-column p9-opening">`, in order. The example home page in [index.html](index.html#recipes) is the reference output.
 
 ## Elevation & Depth
 
-Group content with whitespace and fine rules. Use a flat surface for figures and code. Reserve the shared material surface for compact groups of related controls.
+P9DS is flat. Group content with space and `rule` hairlines. The only fills are `surface` behind media and code, and `ink` behind the one button. Use no shadows, gradients or blur.
 
 ## Shapes
 
-Use the 6px field and button radius. Give icon controls a 44px target and use the shared pill shape for grouped controls.
-
-## Motion & Micro-interaction
-
-Keep the 2px focus outline with a 4px offset. Use the shared 120ms ease-out transition for compact controls and respect reduced motion and reduced transparency. Keep the meaning and controls of a figure available in a still state.
-
-## Voice & Content Strategy
-
-Use sentence case, a concise opening, and clear link labels. Put examples beside the claims they illustrate. Use approved assets and attribute evidence. Provide text or captions for meaningful images. Keep the action near its status and keep entered values through a validation error.
+Radii: 6px for the button, code blocks and table edges, 12px for media and the field, and a pill for the pager. Hairlines are 1px `rule`. Interactive targets are at least 44 × 44px. Focus is a 2px `ink` outline with a 3px offset.
 
 ## Components
 
-For each component, record its purpose, required markup and content slots, supported variants and their default, named token roles, and state transitions. For transitions, specify the trigger, visible result, retained values, focus destination, and accessible announcement where applicable. Give each meaningful state a fixed example or fixture. [GOV.UK text input](https://design-system.service.gov.uk/components/text-input/) · [W3C interaction patterns](https://www.w3.org/WAI/ARIA/apg/patterns/) · [Storybook state examples](https://storybook.js.org/docs/writing-stories)
+These thirteen components make up the whole vocabulary. Each markup block below is copied from the live specimen in `index.html` by `npm run sync`, so it is exactly what the reference renders. Keep every class and attribute.
 
-- **Page shell and links** follow `@index.html` and `@system/editorial.css`. The shell controls the reading measure, space, and texture. Use underlined text for supporting links.
-- **Primary action** uses `.cxl-button` from `@system/cxl.css`. Use an anchor with a destination for navigation and a button for an in-place action. Use one filled action per group. P9DS uses 14px Geist Sans at weight 400, 12px block and 18px inline padding, and a 6px radius. The theme determines its foreground and background. The shared hover and focus rules apply.
-- **Field and feedback** follow `@index.html#components` and `@preview.js`. Include a visible label associated with the field ID, the input, and adjacent feedback. Associate feedback with the field and keep entered values when validation fails. For async actions, define idle, pending, success, and error. Show progress beside the action, prevent duplicate activation while pending, announce the result, and define retry. Specify an empty state where the task can return no content.
-- **Figures and captions** use `.cxl-wide-figure` and `.cxl-label`. Give meaningful figures a text equivalent, and preserve the asset’s intended crop and reserved display dimensions. Use `.cxl-material.cxl-pager` for the named group of 44px arrow controls. Their order follows the figure’s reading direction and focus order.
+### `masthead`
 
-### Figure picker
+Wordmark, up to three text links, and the theme button. It is the first element in the body.
 
-The reference uses the local figure catalog in `system/figures/index.js` and the chooser behavior in `preview.js`. It accepts Keyboard, Terrain, and Dish in that order. Input is trimmed and matched case-insensitively.
+<!-- specimen:masthead -->
+```html
+<header class="p9-masthead">
+  <a class="p9-wordmark" href="/">Fieldwork</a>
+  <a href="/changelog">Changelog</a>
+  <a href="/docs">Docs</a>
+  <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme">◐</button>
+</header>
+```
+<!-- /specimen -->
 
-| State or action | Observable result |
+### `title`
+
+The page name in ink with a muted byline. Use it on every recipe except home. The heading fits on one line.
+
+<!-- specimen:title -->
+```html
+<hgroup class="p9-title">
+  <h1>Public testing is beginning</h1>
+  <p>Fieldwork team</p>
+</hgroup>
+```
+<!-- /specimen -->
+
+### `statement`
+
+Home only: one sentence at title size, ending with an optional accent phrase of two or three words.
+
+<!-- specimen:statement -->
+```html
+<h1 class="p9-statement">Field notes for teams that ship <span class="p9-accent">every day.</span></h1>
+```
+<!-- /specimen -->
+
+### `meta`
+
+One to three mono labels: status, version, date. Only a status label takes `.p9-dot`, and it comes first. Dates use `<time datetime>`.
+
+<!-- specimen:meta -->
+```html
+<ul class="p9-meta">
+  <li class="p9-label"><span class="p9-dot" aria-hidden="true"></span>Beta</li>
+  <li class="p9-label"><time datetime="2026-10-05">5 October 2026</time></li>
+</ul>
+```
+<!-- /specimen -->
+
+### `section`
+
+A muted `h2` followed by paragraphs, lists, `code` or `table`. The lead section has no `h2`. Give a section an `id` when the page links to it.
+
+<!-- specimen:section -->
+```html
+<section class="p9-section" id="what-is-available">
+  <h2>What is available</h2>
+  <p>Initially, testing is limited to the macOS application. <span class="p9-muted">Linux and Windows follow once the first wave is stable.</span></p>
+  <p>Read the <a href="/docs">documentation</a> for setup.</p>
+</section>
+```
+<!-- /specimen -->
+
+### `figure-wide`
+
+One drawing (`data-figure`) or `<img>` on the surface at 3:2, with a caption that reads `Fig. NN / Name`. A drawing needs an `aria-label` and an image needs `alt`. Add the pager only when the figure cycles.
+
+<!-- specimen:figure-wide -->
+```html
+<figure class="p9-wide">
+  <div class="p9-media"><div data-figure="terrain" aria-label="Isometric terrain drawing"></div></div>
+  <figcaption class="p9-caption"><span class="p9-label">Fig. 01 / Terrain</span></figcaption>
+</figure>
+```
+<!-- /specimen -->
+
+### `figure-grid`
+
+Two to four drawings separated by hairlines. Each has a `Fig 0.N` label, a title of up to four words and one sentence. Set `data-columns` to the item count. The grid stacks when its container is narrower than 34rem.
+
+<!-- specimen:figure-grid -->
+```html
+<ul class="p9-grid p9-wide" data-columns="3">
+  <li>
+    <span class="p9-label">Fig 0.1</span>
+    <div data-figure="stack" aria-label="Stacked layers drawing"></div>
+    <h3>Purpose-built</h3>
+    <p>Shaped by the practices of teams who ship daily.</p>
+  </li>
+  <li>
+    <span class="p9-label">Fig 0.2</span>
+    <div data-figure="relay" aria-label="Relay drawing"></div>
+    <h3>Shared by people and agents</h3>
+    <p>From the first draft to the merged change.</p>
+  </li>
+  <li>
+    <span class="p9-label">Fig 0.3</span>
+    <div data-figure="terminal" aria-label="Terminal drawing"></div>
+    <h3>Designed for speed</h3>
+    <p>Less noise, more momentum, every release.</p>
+  </li>
+</ul>
+```
+<!-- /specimen -->
+
+Figure names: `basket`, `branches`, `cabinet`, `dish`, `drawer`, `elevator`, `exploded`, `format`, `hub`, `keyboard`, `laptop`, `lockers`, `loupe`, `padlock`, `patch`, `phone`, `phosphor`, `plot`, `plug`, `query`, `rail`, `rebuild`, `relay`, `riffle`, `router`, `settle`, `sieve`, `slow`, `stack`, `terminal`, `terrain`, `turntable`, `vault`.
+
+### `index`
+
+Rows divided by hairlines for changelogs, steps, plans and principles. The label is a number (`01`), a date or a price.
+
+<!-- specimen:index -->
+```html
+<ol class="p9-index">
+  <li><span class="p9-label"><time datetime="2026-11-12">12 Nov 2026</time></span><div><h3>Persistent sessions</h3><p>Sessions survive restarts and reconnect where you left them.</p></div></li>
+  <li><span class="p9-label"><time datetime="2026-10-28">28 Oct 2026</time></span><div><h3>Remote hosts</h3><p>Connect to any machine running the server.</p></div></li>
+</ol>
+```
+<!-- /specimen -->
+
+### `table`
+
+Comparisons and specifications. Column headings use `scope="col"` and row headings use `scope="row"`. Always wrap the table in `.p9-table-scroll` with `tabindex="0"` so it can be scrolled by keyboard.
+
+<!-- specimen:table -->
+```html
+<div class="p9-table-scroll" tabindex="0">
+  <table class="p9-table">
+    <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Hosts</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Personal</th><td>Free</td><td>3</td></tr>
+      <tr><th scope="row">Team</th><td>€12 per seat / month</td><td>Unlimited</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+<!-- /specimen -->
+
+### `button`
+
+The single filled action on a page. Use `<a>` for navigation and `<button type="button">` for an in-place action. Every other action is an underlined text link.
+
+<!-- specimen:button -->
+```html
+<a class="p9-button" href="/download">Download for macOS</a>
+```
+<!-- /specimen -->
+
+### `form`
+
+A visible label, an underlined input with an icon submit button (`↩` or `→`, with an `aria-label`), optional help text and a live feedback line.
+
+| State | Result |
 | --- | --- |
-| Initial | Keyboard is visible. The label reads “Find a figure”, the input is empty, and the feedback region is empty. |
-| Previous or next | Advance to the corresponding figure, wrapping at either end. Update the caption and keep focus on the activated button. |
-| Empty submission | The required field uses native browser validation. |
-| Unknown name | Preserve the field value and current figure. Set `aria-invalid="true"` and announce “Choose Keyboard, Terrain, or Dish.” |
-| Edit the field | Clear the previous error and status message. |
-| Valid name | Update the figure and caption, announce “Showing” followed by its name, and move focus to “Next figure”. |
+| Idle | Placeholder in `faint`, feedback empty |
+| Invalid submit | Value kept, `aria-invalid="true"` on the input, the fix written in the feedback line |
+| Editing after an error | `aria-invalid` removed, feedback cleared |
+| Pending | Submit disabled, feedback reads “Sending…” |
+| Success | Feedback confirms in one sentence. Focus stays on the input. |
+| Failure | Value kept, feedback explains the failure and how to retry |
 
-Bind an agent to the coded component whenever it exists. A visual reference helps review the result. Component names and exact markup give the agent an implementation to reuse. [Design2Code benchmark](https://aclanthology.org/2025.naacl-long.199/) · [Figma example of design-to-code mapping](https://developers.figma.com/docs/figma-mcp-server/code-connect-integration/)
+<!-- specimen:form -->
+```html
+<form class="p9-form" action="/waitlist" method="post">
+  <label for="waitlist-email">Sign up to secure your place in the waitlist</label>
+  <div class="p9-input">
+    <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="waitlist-help waitlist-feedback">
+    <button type="submit" aria-label="Join the waitlist">↩</button>
+  </div>
+  <p class="p9-help" id="waitlist-help">We’ll let you know when the beta is available.</p>
+  <output class="p9-feedback" id="waitlist-feedback" aria-live="polite"></output>
+</form>
+```
+<!-- /specimen -->
+
+### `code`
+
+A command or snippet on the surface with a Copy button. `system/p9.js` handles the copy. `tabindex="0"` on `pre` keeps long lines scrollable by keyboard.
+
+<!-- specimen:code -->
+```html
+<div class="p9-code"><pre tabindex="0"><code>brew install fieldwork</code></pre><button type="button">Copy</button></div>
+```
+<!-- /specimen -->
+
+### `footer`
+
+Mono links at both ends with a hairline between them. It is the last element in the body, after `</main>`.
+
+<!-- specimen:footer -->
+```html
+<footer class="p9-footer">
+  <ul><li><a href="/press">Press kit</a></li></ul>
+  <ul><li><a href="/privacy">Privacy</a></li><li><a href="https://x.com/fieldwork">@fieldwork</a></li></ul>
+</footer>
+```
+<!-- /specimen -->
 
 ## Do's and Don'ts
 
-### Brief the agent
+### Always
 
-Explicitly direct the agent to read this file, the relevant reference markup, the shared CSS, and the component script at the pinned revision. In a consuming project, put that pointer in the task prompt or its agent instructions. Supply the user task, page type, ordered section IDs, variants, exact copy, real destinations, versioned assets with alt text or captions, and state fixtures. Specify which choices are fixed and which the agent may propose. Surface missing required inputs for a decision. Use the visual reference and classes as the defaults. [Agent instructions convention](https://agents.md/)
+- Load `system/p9.css` and `system/theme.js` in the head and `system/p9.js` as a module.
+- Set `class="p9"` and the recipe's `data-layout` on the body.
+- Follow the recipe's component order. Copy component markup exactly and change only text, links, figure names and IDs.
+- Write in sentence case. Keep the title to one line and the statement to one sentence.
+- Put supporting sentences in `.p9-muted`, inline after the main thought. Text on `surface` is always `ink`, because muted falls below 4.5:1 there.
+- Give every drawing an `aria-label`, every image `alt` text and every field a visible label.
+- Check the page at 320, 760, 761 and 1440px wide in both themes.
 
-Here is an example brief as data for a downstream figure guide. The component names and IDs make the instructions unambiguous for a shared renderer.
+### Never
+
+- Never add a class, color, font, size, weight, radius or spacing value that is not a token.
+- Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures.
+- Never set text larger than the title or bolder than 500 (the wordmark is the exception).
+- Never use shadows, gradients, icons other than arrows and ◐, emoji or stock photography.
+- Never place two filled buttons on one page.
+- Never center or justify text. Only the column itself is centered.
+- Never invent copy, links, numbers, quotes or logos the brief does not supply. If a required input is missing, ask for it.
+
+### Brief an agent
+
+Give the agent this file at a pinned commit and a page plan. A page plan is JSON that validates against `system/plan.schema.json`. It names the recipe and layout and lists the blocks in order, with every slot filled. Validate the plan, check its sequence against the recipe, and then render each block from its component markup. The model's freedom stays in the plan, so the same plan and revision always produce the same page.
 
 ```json
 {
   "designRevision": "<P9DS commit SHA>",
-  "template": "editorial",
-  "task": "Find and preview a named figure by keyboard",
-  "sections": [
-    { "id": "opening", "type": "introduction", "text": "Explore the figures." },
-    {
-      "id": "components",
-      "type": "figure-picker",
-      "figures": ["keyboard", "terrain", "dish"],
-      "initialFigure": "keyboard",
-      "label": "Find a figure",
-      "submitLabel": "Preview"
-    }
-  ],
-  "fixtures": {
-    "invalidQuery": "unknown",
-    "validQuery": "terrain",
-    "viewportWidths": [320, 760, 761, 1440],
-    "themes": ["light", "dark"]
-  }
+  "recipe": "changelog",
+  "layout": "plain",
+  "blocks": [
+    { "component": "masthead", "wordmark": "Fieldwork", "links": [{ "label": "Docs", "href": "/docs" }] },
+    { "component": "title", "heading": "Changelog", "byline": "What shipped, newest first" },
+    { "component": "index", "items": [
+      { "label": "12 Nov 2026", "datetime": "2026-11-12", "title": "Persistent sessions", "text": "Sessions survive restarts." }
+    ] },
+    { "component": "footer", "start": [{ "label": "Press kit", "href": "/press" }], "end": [] }
+  ]
 }
 ```
 
-### Repeatable generation
+### Verify
 
-Treat model proposals as drafts. Identical prompts or sampling settings can yield different outputs. For a generator that must repeat a build, accept a page plan constrained to an allowlisted catalog of components, variants, and typed slots. Use a schema with required fields, enumerated IDs, and unknown fields rejected. Check that referenced assets exist, links resolve, section IDs are unique, and section order satisfies the chosen recipe. Retain the approved plan as an input. Feed it to a fixed, versioned renderer and shared CSS. Build from that plan and revision each time. [Research on inference variability](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/) · [JSON Schema validation](https://json-schema.org/draft/2020-12/json-schema-validation) · [Agent and renderer catalog design](https://a2ui.org/concepts/catalogs/)
-
-### Verify the result
-
-Run `npm test` in P9DS to lint this document and exercise the reference. Its browser checks cover token values, loaded fonts, reflow, the texture breakpoint, figure search and focus, and both themes. For a consuming page, assert the required DOM order and component roles, computed styles, expected state transitions, and valid links. Check keyboard and screen-reader behavior with the intended task. Apply WCAG 2.2 AA to the rendered page and its complete interactions. [W3C accessibility evaluation](https://www.w3.org/WAI/test-evaluate/)
-
-For pixel comparison, record the browser build and OS, viewport, device scale, browser theme, locale, time and data fixtures, and the animation state. Wait for the local fonts and images and keep the same reference environment for each baseline. To evaluate whether agents follow the brief, run several independent generations with fixed inputs and measure how many pass the same checks. [Playwright visual comparisons](https://playwright.dev/docs/test-snapshots)
+`npm test` lints this file, checks that its markup matches the specimens, and runs browser tests on the reference: computed tokens in both themes, column and figure geometry at 320, 760, 761 and 1440px, the accent budget, keyboard behavior and an axe WCAG 2.2 AA scan. For a generated page, check the same things plus the recipe order. To compare screenshots, fix the browser, viewport, scale, theme, locale and motion settings, and wait for fonts and figures to load.
