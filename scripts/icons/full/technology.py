@@ -45,10 +45,21 @@ def register(api):
     def power(x=8,y=8,s=1):
         arc = transform(path('M4.65 4.45A4.8 4.8 0 1 0 11.35 4.45'),scale=s,dx=x-8,dy=y-8)
         return union(stroke(arc),line((x,y-5.7*s),(x,y-.6*s)))
+    def fit_outline(body):
+        # An inherited contour fitted with a scaled outline needs room for a
+        # full 1.1-unit outline. Fit the unexpanded body around its own center.
+        x0,y0,x1,y1 = body.bounds
+        # Leave 0.005 per edge for the rounded Bézier stroke expansion.
+        span = 14.69-api['STROKE']
+        sx,sy = min(1,span/(x1-x0)),min(1,span/(y1-y0))
+        return body.transform(sx,0,0,sy,(x0+x1)*(1-sx)/2,(y0+y1)*(1-sy)/2)
+
     def layers(n,b,d,body,source=None):
         # A modifier inherits the exact fitted paths of its base.
         if source:
             b,d,body,category,_ = api['DRAWINGS'][source]
+            if source in ('mouse','flask'):
+                b = fit_outline(b)
             api['DRAWINGS'][n] = (b,d,body,category,n.replace('-',' '))
         else:
             (S if body else G)(n,b,d)
@@ -95,7 +106,7 @@ def register(api):
     def lock(x=12,y=11.5):
         return union(stroke(rr(x-1.8,y,3.6,3)),stroke(f'M{x-1.1} {y}v-1.3a1.1 1.1 0 0 1 2.2 0v1.3'))
 
-    def overlapping(n,rear,front,rear_detail,front_detail):
+    def overlapping(n,rear,front,rear_detail,front_detail,*,structural_rear_detail=False):
         # Paint the front object once, with the same clearance in all three styles.
         front_ink = union(stroke(front),front_detail)
         clear = union(front,stroke(front,4.3))
@@ -106,9 +117,10 @@ def register(api):
         def filled(body,detail):
             shell = union(body,stroke(body))
             return union(cut(shell,detail),cut(detail,shell))
+        rear_solid = union(rear,stroke(rear),rear_detail) if structural_rear_detail else filled(rear,rear_detail)
         S(n,union(rear,front),union(rear_detail,front_detail))
         overrides[n]={'duotone':[(surface,.24),(ink,1)],'stroke':ink,
-                      'solid':union(cut(filled(rear,rear_detail),clear),filled(front,front_detail))}
+                      'solid':union(cut(rear_solid,clear),filled(front,front_detail))}
     api['CATEGORY']='Technology and development'
     screen=rr(1.8,2.3,12.4,8.5)
     stand=lines('M8 10.8V14M5.2 14H10.8')
@@ -122,16 +134,11 @@ def register(api):
     for state,m in marks.items(): S('monitor-'+state,screen,union(stand,m))
     S('tv-minimal',screen,lines('M5 10.8L4.2 13M11 10.8L11.8 13'))
     S('tv-minimal-play',screen,union(play(8,6.5,.8),lines('M5 10.8L4.2 13M11 10.8L11.8 13')))
-    for n,top,base in [('monitor-pc',3.2,10.45),('computer',2.35,10.45),('monitor-speaker',3.2,10.45)]:
+    for n,top,base in [('monitor-pc',3.2,10.45),('computer',2.35,10.45)]:
         display = rr(1.45,top,7.85,base-top)
         side = rr(11.55,2.8,3,10.65)
         stand_mark = stroke('M5.4 10.45V13M3.7 13H7.1')
-        if n=='monitor-speaker':
-            display = rr(1.45,top,6.85,base-top)
-            side = rr(10.6,2.8,4,10.65)
-            stand_mark = stroke('M4.9 10.45V13M3.3 13H6.5')
-            face = union(circle(12.6,5.6,.65),ring(12.6,10.15,1.45))
-        elif n=='computer':
+        if n=='computer':
             face = union(circle(13.05,5.45,.65),line((1.45,7.85),(9.3,7.85)))
         else:
             face = union(line((11.55,6.65),(14.55,6.65)),circle(13.05,11.1,.62))
@@ -140,8 +147,14 @@ def register(api):
       union(stroke('M4.1 6.8H11.9M6.05 4.15H9.95'),ring(8,10.55,1.8)))
     phone_face = rr(9.35,6.4,5.05,7.95)
     home_dot = circle(11.875,12.15,.61)
+    monitor_stand = stroke('M5.5 10.5V13.35M3.55 13.35H7.45')
     overlapping('monitor-smartphone',rr(1.45,2.45,10.25,8.05),phone_face,
-                stroke('M5.5 10.5V13.35M3.55 13.35H7.45'),home_dot)
+                monitor_stand,home_dot,structural_rear_detail=True)
+    cabinet = rr(8.4,6.15,6.3,8.35)
+    speaker_face = union(circle(11.55,8.25,.6),ring(11.55,11.6,1.65))
+    speaker_stand = stroke('M4.35 9.65V12.9M2.75 12.9H6.15')
+    overlapping('monitor-speaker',rr(1.45,1.75,10.8,7.9),cabinet,
+                speaker_stand,speaker_face,structural_rear_detail=True)
     overlapping('tablet-smartphone',rr(1.75,1.6,9.45,12.5),phone_face,
                 circle(5.75,11.85,.65),home_dot)
 
@@ -158,7 +171,7 @@ def register(api):
     divider = stroke('M4 7.55H12M8 1.6V7.55')
     for n,mark in [('left',button),('right',api['mirror'](button))]:
         S('mouse-'+n,mouse,union(divider,mark))
-    off('mouse-off',rr(4,1.5,8,13),line((8,3),(8,6)))
+    off('mouse-off',source='mouse',center=(7.65,8.35))
     S('card-sim',path('M5 1.5H11.7V14.5H3V3.5Z'),union(stroke(rr(5,7,5,5)),stroke('M7.5 7.2V11.8M5.2 9.5H9.8')))
     battery=rr(1.5,4,11.5,8)
     for n,m in [('medium',rr(3.4,6.2,4.5,3.6)),('plus',plus(7,8,.65)),('exclamation-point',warn(7,8,.8))]:
@@ -168,21 +181,15 @@ def register(api):
     down_arrow = stroke('M8 1.4V6M5.9 3.9L8 6L10.1 3.9')
     for name,arrow in [('download',down_arrow),('upload',down_arrow.transform(1,0,0,-1,0,7.4))]:
         S('hard-drive-'+name,drive,union(arrow,face))
-    # The paper occludes the chassis through the full width of its front face.
     printer_body,printer_detail = api['DRAWINGS']['printer'][:2]
-    page = rr(4,8.95,8,5.55)
-    page_rim = stroke(page)
-    tray = stroke('M4 5V1.45H12V5M4 3.25H12')
-    chassis = stroke(printer_body)
-    indicator = circle(12,7,.65)
-    for n,mark in [('check',check(8,11.75,.58)),('x',cross(8,11.75,.62))]:
+    printer_shell = union(printer_body,stroke(printer_body))
+    paper_seam = line((4.65,9.35),(11.35,9.35))
+    printer_solid = cut(printer_shell,union(line((4.5,5.2),(11.5,5.2)),
+                                            circle(12,7.3,.55),paper_seam))
+    for n,mark in [('check',check(8,11.98,.48)),('x',cross(8,11.98,.45))]:
         name = 'printer-'+n
         S(name,printer_body,union(printer_detail,mark))
-        clear = union(page,page_rim)
-        ink = union(cut(chassis,clear),tray,indicator,page_rim,mark)
-        surface = cut(union(printer_body,page),ink)
-        solid = union(cut(union(printer_body,chassis),page),tray,page_rim,mark)
-        overrides[name]={'duotone':[(surface,.24),(ink,1)],'stroke':ink,'solid':solid}
+        overrides[name]={'solid':cut(printer_solid,mark)}
     gantry = rr(2,2,12,12)
     head = path('M6.4 2H9.6V4.35L8 6.1L6.4 4.35Z')
     print_part = path('M5 12V9.85H6.6V8.15H9.35V9.85H11V12Z')
@@ -192,10 +199,11 @@ def register(api):
     S('projector',rr(1.8,5,12.4,7),union(ring(10.4,8.5,2.1),lines('M4 12L3.4 14M12 12L12.6 14M3.5 7.5H5.5M3.5 9.5H5.5')))
     vacuum = path('M2.05 8.2C2.05 4.65 4.7 2.35 8 2.35S13.95 4.65 13.95 8.2C13.95 10.15 13.2 12.25 11.65 13.2Q11.1 13.55 10.45 13.55H5.55Q4.9 13.55 4.35 13.2C2.8 12.25 2.05 10.15 2.05 8.2Z')
     S('robot-vacuum',vacuum,stroke('M2.65 10.6Q8 11.3 13.35 10.6M7.35 5.25H8.65'))
-    foot = rr(1.8,11.75,7,2.6)
-    pivots = union(circle(4.6,9,1.45),circle(8.8,4.7,1.4))
-    links = stroke('M4.6 11.75V10.45M5.65 7.95L7.8 5.7M10.2 4.7L12.05 4M12.05 4L12 2.2L14 1.6M12.05 4L13.25 5.55L14.65 5')
+    foot = rr(1.8,12.05,7,2.3)
+    pivots = union(circle(4.6,8.65,1.25),circle(8.8,4.7,1.4))
+    links = stroke('M4.6 12.05V9.9M5.5 7.78L7.8 5.7M10.2 4.7L12.05 4M12.05 4L12 2.2L14 1.6M12.05 4L13.25 5.55L14.65 5')
     S('robot-arm',union(foot,pivots),links)
+    overrides['robot-arm']={'solid':union(foot,pivots,stroke(foot),stroke(pivots),links)}
     # Opposed plug backs share one S-bend. The pins face away from the cord.
     plug_ends = union(rr(1.8,3,4.4,3.9), rr(9.8,9.1,4.4,3.9))
     S('cable', plug_ends, stroke('M2.65 3V1.5H5.35V3M10.65 13V14.5H13.35V13M4 6.9V9.7C4 13 8 13 8 9V7C8 3 12 3 12 6.3V9.1'))
@@ -211,8 +219,10 @@ def register(api):
     S('hdmi-port',path('M2 4H14V9L11.5 12H4.5L2 9Z'),union(line((5.45,6.6),(10.55,6.6)),dots((5.45,9.2),(8,9.2),(10.55,9.2),r=.64)))
     S('midi-port',circle(8,8,6),dots(*[(8+3.15*math.cos(i*math.pi/4),8-3.15*math.sin(i*math.pi/4)) for i in range(5)],r=.68))
     S('microchip',rr(4.2,4.2,7.6,7.6),union(stroke(rr(6.3,6.3,3.4,3.4)),lines('M5 1.5V4M8 1.5V4M11 1.5V4M5 12V14.5M8 12V14.5M11 12V14.5M1.5 5H4M1.5 8H4M1.5 11H4M12 5H14.5M12 8H14.5M12 11H14.5')))
-    pins = stroke('M5 1.45V3.25M11 1.45V3.25M5 12.75V14.55M11 12.75V14.55M1.45 5H3M1.45 11H3M13 5H14.55M13 11H14.55')
-    S('cpu-ai',rr(2.95,3.15,10.1,9.7),union(stroke('M4.95 10.3L6.95 5.65L8.95 10.3M5.6 9.05H8.3M10.95 5.85V10.15'),pins))
+    package,cpu_details = api['DRAWINGS']['cpu'][:2]
+    pins = cut(cpu_details,package)
+    lettering = stroke('M5.65 9.85L5.98 6.95Q6.12 5.85 7.05 5.85Q8 5.85 8.15 6.95L8.5 9.85M5.85 8.65H8.28M10.25 6.05V9.85')
+    S('cpu-ai',package,union(pins,lettering))
     fan_center = (6.35,7.25)
     blade = stroke('M6.35 7.25Q4.05 6.4 4.55 4.65')
     blade = transform(blade,dx=1.65,dy=.75)
@@ -225,10 +235,8 @@ def register(api):
     corner = rr(1.65,4.15,1.6,1.6)
     corners = union(corner,api['mirror'](corner),transform(corner,180),transform(api['mirror'](corner),180))
     S('container', freight, union(corners,stroke('M5 6.1V9.9M8 6.1V9.9M11 6.1V9.9')))
-    server,tiers = api['DRAWINGS']['server-rack'][:2]
-    tiers = op(tiers,server,po.PathOp.INTERSECTION)
-    badge('server-plus',server,tiers,plus(12,11.8,.8))
-    badge('server-crash',server,tiers,warn(12,11.5,.85))
+    for name,mark in [('server-plus',plus(12,11.8,.8)),('server-crash',warn(12,11.8,.85))]:
+        badge(name,None,None,mark,source='server-rack',radius=3.95,min_area=1)
     S('server-nas',rr(1.8,3,12.4,10.5),union(stroke(rr(4,5,2.6,6.5)),stroke(rr(9.4,5,2.6,6.5)),dots((5.3,10),(10.7,10),r=.45)))
 
 
@@ -236,7 +244,14 @@ def register(api):
     cloud=path('M4.2 13C.3 13 .5 7 4.3 7C4.5 1.5 12 1.5 12.5 7C16.3 7 16 13 12.5 13Z')
     badge('cloud-cog',None,None,cog(),source='cloud',x=12,y=11.8,radius=3.9,min_area=1.3)
     S('cloud-exclamation-point',cloud,warn(8,9,.85))
-    for n,m in [('cog',cog()),('lock',lock()),('pen',stroke('M10 13.8L10.5 11.5L13.2 8.75L14.7 10.25L12 13Z')),('sync',stroke('M9.45 10.65Q11 7.65 14.1 10.05M14.1 8.4V10.35H12.15M14.35 12.65Q12.6 15.3 9.6 13.1M9.6 14.65V12.8H11.55'))]: badge('wifi-'+n,None,None,m,source='wifi',x=12,y=11.8,radius=3.55)
+    wifi_badges = {
+        'cog':cog(12.55,11.7),
+        'lock':lock(12.55,11.45),
+        'pen':stroke('M10.4 13.9L10.9 11.55L13.35 8.95L14.75 10.35L12.25 13.1Z'),
+        'sync':stroke('M10.25 10.7Q11.9 8.3 14.55 10.15M14.55 8.6V10.5H12.7'
+                      'M14.7 12.7Q13 15.1 10.55 13.15M10.55 14.65V12.8H12.4')}
+    for n,mark in wifi_badges.items():
+        badge('wifi-'+n,None,None,mark,source='wifi',x=12.55,y=11.7,radius=3.5)
     G('antenna',union(stroke('M3.5 6A5.5 5.5 0 0 1 12.5 6M5.5 7.8A3 3 0 0 1 10.5 7.8'),circle(8,8.6,.75)),lines('M8 11.1V14M5 14H11'))
     signal_arc = stroke('M2.15 7.3Q1.75 4.55 3.65 2.1M4.55 6.35Q4.45 4.7 5.55 3.55')
     G('radio-tower',union(signal_arc,api['mirror'](signal_arc),circle(8,4.2,.85)),
@@ -276,17 +291,25 @@ def register(api):
         'audio':stroke('M7 5V8M9 4V9M11 5V8'),
         'headphones':union(stroke('M7.35 7.4V6.55A1.85 1.85 0 0 1 11.05 6.55V7.4'),rr(6.8,6.85,1.45,2.35),rr(10.15,6.85,1.45,2.35)),
         'image':union(stroke('M5.15 10.45L8.45 6.85L13.1 10.45'),ring(10.55,4.85,1.52)),
-        'key':union(ring(8,5.5,1.3),stroke('M9 6.5L11.5 9M10.5 8L11.5 7'))}
+        'key':union(ring(8.5,5.4,1.9),stroke('M9.65 6.55L11.65 9.3M10.75 8.1L11.7 7.4'))}
     for n,m in bookmarks.items(): S('book-'+n,book,union(spine,m))
     G('book-dashed',stroke('M5.5 2H4Q2.8 2 2.8 3.3V12.4Q2.8 13.7 4 13.7H5.5ZM8.1 2H9.3M11.8 2H13.25V4.65M13.25 7.3V9M13.25 11.6V13.7H11.65M8.95 13.7H8'))
-    S('bot-message-square',path('M2 3H14V11H7L3 14V11H2Z'),union(dots((5.5,6.5),(10.5,6.5),r=.75),line((6,9),(10,9)),line((8,1),(8,3))))
+    head,face = api['DRAWINGS']['bot'][:2]
+    # Raise the face as a unit to make space for a speech tail.
+    head = transform(head,dy=-1.65)
+    face = cut(face,rr(7,.65,2,5,0))
+    tail = poly([(3.55,11.8),(7.55,12.45),(3.5,14.8)])
+    S('bot-message-square',union(head,tail),
+      union(transform(face,dy=-1.65),line((8,1.25),(8,2.85))))
     off('bot-off',source='bot',center=(7.1,9.05),min_area=1.55)
-    brain=path('M8 3Q4 0 2.5 3Q1 4 2.5 6Q.5 8 2 10Q2.8 12 4.5 11.5Q4 15 8 13Q12 15 11.5 11.5Q14.5 12 14.5 8Q15 6 13.5 5Q14.5 1 11 1.8Q9.5 1 8 3Z')
-
+    brain,folds = api['DRAWINGS']['brain'][:2]
+    brain = fit_outline(brain)
+    midline = max(api['components'](folds),key=lambda part:part.area)
+    traces = stroke('M4.25 5.25V7.45H5.95M11.85 8.35H10.25V10.9')
     badge('brain-cog',None,None,cog(),source='brain',x=12.05,y=11.95,radius=3.8,min_area=1.3)
-    S('brain-circuit',brain,stroke('M8 3V13M4.05 4.8V7.9H5.7M11.9 4.9V7.7H10.25V10.5'))
+    S('brain-circuit',brain,union(midline,traces))
     off('brain-off',source='brain',min_area=1.7)
-    off('bug-off',source='bug',min_area=1.8)
+    off('bug-off',source='bug',center=(7.55,8.45),min_area=1.8)
     badge('bug-play',None,None,play(12,11.8,1),source='bug',radius=3.65,min_area=1.85)
     S('blocks',union(rr(1.5,8.8,5.5,5.5),rr(8.8,8.8,5.5,5.5),rr(5.2,1.5,5.5,5.5)))
     S('boxes-linked',union(rr(1.5,2,4.5,4.5),rr(10,2,4.5,4.5),rr(5.8,10,4.5,4.5)),stroke('M3.75 6.5V8.35H12.25V6.5M8 8.35V10'))
@@ -308,19 +331,22 @@ def register(api):
     S('git-graph',union(circle(3.5,3,1.4),circle(3.5,12.7,1.4),circle(12.5,4.5,1.4),circle(12.5,12.7,1.4)),stroke('M3.5 4.4V11.3M12.5 5.9V11.3M3.5 7Q8 7 8 10Q8 12.7 11.1 12.7'))
     S('git-merge-conflict',union(circle(3.4,3.15,1.45),circle(3.4,12.85,1.45),circle(12.5,3.15,1.45)),
       union(stroke('M3.4 4.6V11.4M12.5 4.6Q12.5 8.05 9 8.05'),cross(6.55,8.05,.55)))
-    G('git-compare-arrows',union(ring(4,3.25,2.05),ring(12,12.75,2.05)),
-      stroke('M4 5.2V13M1.8 10.8L4 13L6.2 10.8M12 10.8V3M9.8 5.2L12 3L14.2 5.2'))
+    def git_nodes(name,centers,radius,links):
+        G(name,union(*(ring(x,y,radius) for x,y in centers)),links)
+        overrides[name]={'solid':union(links,*(circle(x,y,radius) for x,y in centers))}
+    git_nodes('git-compare-arrows',[(4,3.25),(12,12.75)],2.05,
+              stroke('M4 5.2V13M1.8 10.8L4 13L6.2 10.8M12 10.8V3M9.8 5.2L12 3L14.2 5.2'))
     requestbody = api['DRAWINGS']['git-pull-request'][0]
     for n,mark in [('closed',cross(12,3.25,.78)),('create',plus(12,3.25,.82))]:
-        S('git-pull-request-'+n,requestbody,union(stroke('M4 4.5V11.5M12 11.5V6.75'),mark))
+        S('git-pull-request-'+n,requestbody,union(cut(stroke('M4 3.25V13.25M12 13.25V6.75'),requestbody),mark))
     for n in ['arrow','create-arrow']:
         nodes = union(circle(3.1,3.4,1.45),circle(3.1,12.5,1.45),circle(12.5,12.5,1.45))
         branch = stroke('M3.1 4.85V11.05M12.5 11.05V7.2Q12.5 3.8 9.1 3.8H7.2M9.35 1.65L7.2 3.8L9.35 5.95')
         mark = plus(7.65,10.35,.7) if n=='create-arrow' else empty
         S('git-pull-request-'+n,nodes,union(branch,mark))
-    node_rings = union(*(ring(x,y,1.95) for x,y in [(3.8,3.05),(3.8,12.8),(12.1,12.8)]))
-    G('git-pull-request-draft',node_rings,union(line((3.8,4.95),(3.8,10.9)),dots((12.1,3.2),(12.1,6.2),(12.1,9.2),r=.65)))
-    off('webhook-off',source='webhook',center=(7.750,7.950),min_area=.8)
+    git_nodes('git-pull-request-draft',[(3.8,3.05),(3.8,12.8),(12.1,12.8)],1.95,
+              union(line((3.8,4.95),(3.8,10.9)),dots((12.1,3.2),(12.1,6.2),(12.1,9.2),r=.65)))
+    off('webhook-off',source='webhook',center=(7.2,8.8),min_area=1.5)
     G('merge',stroke('M2 2V5Q2 8 8 8M14 2V5Q14 8 8 8M8 8V14M5.5 11.5L8 14L10.5 11.5'))
     fork = stroke('M8 10.8C8 8.3 5.9 6.3 2.55 3M2.55 6.55V3H6.1')
     G('split',line((8,14.35),(8,10.8)),union(fork,api['mirror'](fork)))
@@ -365,7 +391,8 @@ def register(api):
     S('clapperboard',union(slate,clap),cuts)
     S('boom-box',rr(1.5,5.6,13,7.9),union(stroke('M5.35 5.6V3.1H10.65V5.6M2.05 5.7L3.35 1.6'),ring(5,9.55,2.15),ring(11,9.55,2.15)))
     S('cassette-tape',rr(1.5,3.3,13,9.4),union(stroke(rr(3.5,5.2,9,3.8)),dots((5.4,7.1),(10.6,7.1),r=.65),stroke('M5 10L4 12.7M11 10L12 12.7M5 10H11')))
-    S('videotape',rr(1.5,3.3,13,9.4),union(ring(4.5,7.2,1.6),ring(11.5,7.2,1.6),stroke(rr(5.25,9.75,5.5,2.05)),line((6.2,7.2),(9.8,7.2))))
+    S('videotape',rr(1.5,2.4,13,11.2),union(ring(4.7,6.25,1.7),ring(11.3,6.25,1.7),
+      stroke(rr(5.15,9.15,5.7,2.3)),line((6.2,6.25),(9.8,6.25))))
     for n,arc,angle in [('2','M4.1 8A3.9 3.9 0 0 1 8 4.1',180),('3','M5.65 4.9A3.9 3.9 0 0 1 11.85 8.65',180)]:
         groove = stroke(arc)
         S('disc-'+n,circle(),union(ring(8,8,1.65),groove,transform(groove,angle)))
@@ -381,7 +408,7 @@ def register(api):
     rear_mask = path('M1.55 2.75Q4.95 1.3 8.3 2.65L8.05 6.6Q8 9.45 5 10.45Q2.05 9.7 1.85 6.8Z')
     front_mask = path('M7.05 6.45Q10.8 7.55 14.45 5.4L14.15 9.65Q14.05 12.8 11.2 14.1Q7.8 13.45 7.35 10.35Z')
     overlapping('drama',rear_mask,front_mask,union(dots((3.65,4.55),(6.3,4.4),r=.57),stroke('M3.7 7.2Q4.85 8.6 6 7.05')),
-                union(dots((9.3,8.9),(12.35,8.5),r=.6),stroke('M9.5 11.9Q10.65 9.9 12.25 11.45Q11.1 13.25 9.5 11.9Z')))
+                union(dots((9.3,8.9),(12.35,8.5),r=.6),stroke('M9.35 11.8Q10.7 9.85 12.45 11.35')))
     G('list-music',lines('M2 3H8.25M2 6H7.65M2 9H6.65M2 12H5.8'),union(stroke('M11 11V3L14 2V10'),circle(9.8,11.5,1.25),circle(12.8,10.5,1.25)))
     G('list-video',lines('M2 3H14M2 6H8M2 9H6M2 12H6'),play(11,10.5,1.2))
     mic=rr(5.5,1.5,5,8)
@@ -427,16 +454,20 @@ def register(api):
     S('metronome',poly([(6,1.7),(10,1.7),(14,14),(2,14)]),
       union(stroke('M5.3 11.65H10.7M7.1 11.65L9.2 5.65'),rr(8.15,6.45,1.75,1.7)))
     # Construct neck, headstock and bridge on one axis before rotating the instrument.
-    head = rr(7.05,.8,1.9,2.5)
-    neck = rr(7.45,2.7,1.1,5.7)
+    headstock = rr(7.05,1,1.9,2.65)
+    neck = line((8,3.2),(8,8))
     acoustic = path('M8 6.8C10.25 6.45 11.35 7.7 10.65 9.3Q10.25 10.15 11.1 10.95C13.4 13.85 10.6 15.1 8 15.1S2.6 13.85 4.9 10.95Q5.75 10.15 5.35 9.3C4.65 7.7 5.75 6.45 8 6.8Z')
     electric = path('M5.1 6.05Q6.1 8.5 7.6 7.6L8.5 7.35Q10.05 8.65 11.2 6.5C11.85 8.55 9.75 9.8 11.15 11.1C13.25 13.6 10.3 15.1 8 15.1C4.8 15.1 3.4 13.6 4.6 11.55Q5.6 10.1 5.1 9.05Q4.45 7.65 5.1 6.05Z')
     for n,wood,detail in [('guitar',acoustic,ring(8,9.45,1.65)),
                           ('guitar-electric',electric,line((7.05,9.85),(8.95,9.85)))]:
         offset_y = -.2 if n=='guitar' else 0
-        body = transform(union(wood,neck,head),36,dy=offset_y)
+        body = transform(wood,36,dy=offset_y)
+        fittings = transform(union(headstock,cut(neck,wood)),36,dy=offset_y)
         bridge = line((6.75,12.5),(9.25,12.5))
-        S(n,body,transform(union(detail,bridge),36,dy=offset_y))
+        face = transform(union(detail,bridge),36,dy=offset_y)
+        S(n,body,union(face,fittings))
+        shell = union(body,stroke(body))
+        overrides[n]={'solid':union(cut(shell,face),fittings)}
     for n,top,bottom in [('piano',2.25,13.75),('keyboard-music',4,12)]:
         body = rr(1.5,top,13,bottom-top)
         rail = top+2.35 if n=='piano' else top
@@ -518,7 +549,8 @@ def register(api):
     api['CATEGORY']='Photography and optics'
 
 
-    for n,m in [('down',arr('down',12,11.8,.8)),('up',arr('up',12,11.8,.8)),('play',play(12,11.8,.9)),('upscale',stroke('M10 14L14.5 9.5M11 9.5H14.5V13'))]:badge('image-'+n,None,None,m,source='image')
+    for n,m in [('down',arr('down',12,11.8,.8)),('up',arr('up',12,11.8,.8)),('play',play(12,11.8,.9)),('upscale',stroke('M10 14L14.5 9.5M11 9.5H14.5V13'))]:
+        badge('image-'+n,None,None,m,source='image',radius=3.95,min_area=1)
     S('wallpaper',rr(1.5,2.5,13,11),union(stroke('M4.65 2.5V13.5M4.65 11.6L8.35 7.55L14.45 12.1'),ring(11.65,5.4,1.45)))
     S('picture-in-picture-2',rr(1.5,2,13,12),union(stroke(rr(8,8,5,4)),stroke('M3.5 4L6.5 7M3.5 7H6.5V4')))
     # Extend each edge of the hexagonal aperture outward to meet the rim.
@@ -530,7 +562,9 @@ def register(api):
     blades = union(*(transform(blade,i*60) for i in range(6)))
     G('aperture',ring(8,8,6.45),op(blades,circle(8,8,6),po.PathOp.INTERSECTION))
     G('crosshair',union(ring(8,8,4.5),circle(8,8,.8)),lines('M8 1V4M8 12V15M1 8H4M12 8H15'))
-    G('focus',stroke('M1.5 5V1.5H5M11 1.5H14.5V5M14.5 11V14.5H11M5 14.5H1.5V11'),ring(8,8,2.6))
+    focus_brackets = stroke('M5 2H3Q2 2 2 3V5M11 2H13Q14 2 14 3V5'
+                           'M14 11V13Q14 14 13 14H11M5 14H3Q2 14 2 13V11')
+    G('focus',focus_brackets,ring(8,8,2.6))
     scan=stroke('M1.8 5V2H5M11 2H14.2V5M14.2 11V14H11M5 14H1.8V11')
     scanmarks={
         'eye':union(stroke('M4 8Q8 3 12 8Q8 13 4 8Z'),circle(8,8,1.05)),
@@ -563,7 +597,9 @@ def register(api):
         S('sun-'+n,circle(8,8,r),rays)
     moon = cut(circle(7.7,8.25,5.95),circle(10.45,5.55,5.35))
     S('moon-star',moon,star(12,3.9,.31))
-    S('sun-moon',union(circle(4.9,5.1,1.6),path('M9 5Q8 11 14 10Q12.5 15 8 13.5Q4 11 6 7Z')),stroke('M4.8 1.3V1.85M1.3 5.05H1.85M2.05 2.35L2.55 2.85'))
+    crescent = cut(circle(10.55,10.1,4.15),circle(12.45,7.95,3.7))
+    S('sun-moon',union(circle(4.95,5.05,1.35),crescent),
+      stroke('M4.95 1.25V1.6M1.25 5.05H1.5M2.05 2.15L2.5 2.6'))
     orbit = stroke('M2 10.95C-.55 5.3 10.15-.5 13.55 4.8C17 10.3 5.25 16.8 2 10.95Z')
     satellite = circle(4.3,4.65,1.4)
     G('orbit',union(cut(orbit,circle(4.3,4.65,2.45)),ring(8,8,1.85)),satellite)
@@ -599,36 +635,42 @@ def register(api):
     # Glassware: bodies are filled surfaces; fluid lines and measuring ticks are details.
     S('beaker',path('M4 2H12V11Q12 14 8 14Q4 14 4 11Z'),stroke('M3 2H13M4 9H12M4 5H6M4 7H6'))
     S('flask-round',path('M6 1.5H10V6Q14 7 14 10.5Q14 14.5 8 14.5Q2 14.5 2 10.5Q2 7 6 6Z'),stroke('M5 1.5H11M2.5 10H13.5'))
-    off('flask-conical-off',source='flask',min_area=1.45)
+    off('flask-conical-off',source='flask',center=(8.2,7.8),min_area=.6)
     tube=path('M6 2H10V11Q10 14.5 8 14.5Q6 14.5 6 11Z')
     S('test-tube-diagonal',transform(tube,40),transform(stroke('M5 2H11M6 8H10'),40))
     S('test-tubes',union(path('M2 2H6V10Q6 13 4 13Q2 13 2 10Z'),path('M10 4H14V12Q14 15 12 15Q10 15 10 12Z')),stroke('M1 2H7M9 4H15M2 8H6M10 10H14'))
     barrel = path('M7.7 1.55L10.55 3.35L7.55 8.1L4.7 6.3Z')
     pivot = circle(10.75,6,1.3)
-    S('microscope',union(barrel,pivot),stroke('M5.3 6.65L4.55 7.85M11.85 6.65C15 10.6 11.2 13.6 8.75 13.6M2.35 10.1H8.3M7.1 10.1L9.05 13.6M3.1 13.6H13.45M4.05 13.6L5.95 10.1'))
+    support = stroke('M5.3 6.65L4.55 7.85M11.85 6.65C15 10.6 11.2 13.6 8.75 13.6M2.35 10.1H8.3M7.1 10.1L9.05 13.6M3.1 13.6H13.45M4.05 13.6L5.95 10.1')
+    S('microscope',union(barrel,pivot),support)
+    overrides['microscope']={'solid':cut(union(barrel,stroke(barrel),pivot,stroke(pivot),support),
+                                         circle(10.75,6,.85))}
     barrel = path('M3.5 5.55L12 3.95V9.35L3.5 7.85Z')
     S('telescope',transform(barrel,-23),union(transform(stroke('M1.95 6.65H3.5M12 3.25V10.05'),-23),
       stroke('M7.9 8.65V10.45M4.65 14.3L7.9 10.45L11.15 14.3')))
-    # The two crossings bound a lens; clip all three rungs to its inner edges.
-    strand = path('M4.7 1.55C5.5 3.8 10.95 5.2 11.5 7.45C12.3 10.6 6.05 12 4.7 14.45')
+    # Use the same curves to define the strand and the clipping edge for its rungs.
+    right_side = 'C10.6 4.4 11.45 5.65 11.45 8S10.6 11.6 8 13'
+    strand = path('M5.35 1.8Q6.65 2.05 8 3'+right_side+'Q6.65 13.95 5.35 14.2')
     helix = union(stroke(strand),stroke(api['mirror'](strand)))
-    middle = path('M8 3.95C10.1 5.1 11.8 6.35 11.55 8.05C11.2 9.8 9.65 10.9 8 11.8C6.35 10.9 4.8 9.8 4.45 8.05C4.2 6.35 5.9 5.1 8 3.95Z')
-    rungs = op(stroke('M3.8 5.75H12.2M3.8 8H12.2M3.8 10.25H12.2'),middle,po.PathOp.INTERSECTION)
+    middle = path('M8 3'+right_side+'C5.4 11.6 4.55 10.35 4.55 8S5.4 4.4 8 3Z')
+    rungs = op(stroke('M4 5.85H12M4 8H12M4 10.15H12'),middle,po.PathOp.INTERSECTION)
     G('dna',transform(union(helix,rungs),20))
-    off('dna-off',source='dna',min_area=2.6)
+    off('dna-off',source='dna',min_area=1.4)
     for n,is_germ in [('virus',False),('germ',True)]:
-        body=path('M4.55 4.8Q6.75 2 9.65 4Q13 4 12.25 7.85Q13.85 10.8 10.85 12.25Q7.5 14.15 5.55 11.75Q2.45 10.9 3.75 8Q2.45 5.55 4.55 4.8Z') if is_germ else circle(8,8,4)
+        body=path('M4.55 4.8Q6.75 2 9.65 4Q13 4 12.25 7.85Q13.85 10.8 10.85 12.25Q7.5 14.15 5.55 11.75Q2.45 10.9 3.75 8Q2.45 5.55 4.55 4.8Z') if is_germ else circle(8,8,4.7)
         spokes = union(*(transform(line((8,3.85),(8,1.55)),i*45) for i in range(8)))
         spokes = cut(spokes,body)
-        pores = union(ring(6.55,9.35,1.3),circle(9.35,6.5,.7)) if not is_germ else dots((6.55,8.85),(9.45,6.45),r=.76)
+        pores = union(ring(6.7,9.3,1.7),circle(9.65,6.35,.7)) if not is_germ else dots((6.15,9.55),(9.7,6.25),r=.76)
         S(n,body,union(spokes,pores))
-        off(n+'-off',source=n,min_area=1.35)
+        if is_germ:
+            off('germ-off',source=n)
+        else:
+            off('virus-off',source=n,center=(9,7),min_area=1)
     sector = path('M6.2 6.96L4.46 5.95A4.1 4.1 0 0 1 8 3.9V5.92A2.08 2.08 0 0 0 6.2 6.96Z')
     S('radiation',circle(),union(circle(8,8,.95),*(transform(sector,i*120) for i in range(3))))
-    # Each open claw sweeps around its own counter; the common band links all three.
-    claw = stroke('M6.75 1.7C3.5 3.25 4.95 7.15 8 7.15S12.5 3.25 9.25 1.7')
-    claws = union(*(transform(claw,120*i) for i in range(3)))
-    G('biohazard',claws,ring(8,8,3.05))
+    claw = stroke('M6.65 1.5C3.65 3.25 5.1 5.7 8 5.7S12.35 3.25 9.35 1.5')
+    lobe = union(claw,line((8,5.7),(8,6.7)))
+    G('biohazard',union(*(transform(lobe,120*i) for i in range(3))),ring(8,8,1.8))
 
     api['CATEGORY']='Sports and outdoors'
     outer = circle(8,8,6.1)
@@ -664,10 +706,6 @@ def register(api):
     whistle = path('M1.75 8.25Q1.75 6.2 3.85 6.2H6V7.55H8.25V6.2H14.25V8.95H10Q10 13.85 5.95 13.85Q1.75 13.85 1.75 9.8Z')
     S('whistle',whistle,union(ring(5.25,10.3,1.6),stroke('M5.85 3.9V2.15M8.55 4.15L9.55 2.6')))
 
-    for n in ['guitar','guitar-electric']:
-        b,d=api['DRAWINGS'][n][:2]
-        filled=union(b,stroke(b));inset=cut(filled,stroke(filled,1.8))
-        overrides[n]={'solid':union(cut(filled,op(d,inset,po.PathOp.INTERSECTION)),cut(d,filled))}
     for n in ['battery-medium','battery-plus','battery-exclamation-point']:
         b,d=api['DRAWINGS'][n][:2]
         overrides[n]={'solid':union(stroke(b),d)}
