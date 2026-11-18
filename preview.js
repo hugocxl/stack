@@ -13,8 +13,7 @@ function show(index) {
 show(0);
 select('prev').onclick = () => show(current - 1);
 select('next').onclick = () => show(current + 1);
-for (const name of ['Paper','Silver','Graphite','Ink']) {
-  const token = '--cxl-' + name.toLowerCase();
+for (const [name, token] of Object.entries({Canvas:'--cxl-ink', Foreground:'--cxl-paper', Muted:'--cxl-graphite', Ring:'--cxl-silver'})) {
   const hex = getComputedStyle(document.documentElement).getPropertyValue(token).trim();
   const swatch = document.createElement('div');
   swatch.innerHTML = '<span class="chip"></span>' + name + '<small>' + hex.toUpperCase() + '</small>';

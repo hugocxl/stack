@@ -12,10 +12,9 @@ body {
   color: var(--cxl-text);
   font-family: var(--cxl-sans);
 }
-h1 { font-family: var(--cxl-serif); }
 ~~~
 
-The stylesheet applies Geist Sans to body text, controls and H3–H6, Geist Serif to H1 and H2, and Geist Mono to code and keyboard input. Use `.cxl-note` for technical notes. Use the highest foreground contrast for primary actions and muted gray for supporting text. All palette values have equal red, green, and blue channels. Build sections around one heading, generous whitespace and a thin dividing rule. Use the 4, 8, 16, 24, 40 and 64 px spacing scale. The preview and guide share an editorial layout: a quiet masthead, a single opening sentence, a 64ch reading column, and a fixed grayscale field that contracts on small screens. Load `system/editorial.css` after the base stylesheet to reuse it.
+Geist Sans carries all prose, headings, and controls. Geist Mono marks code and technical notes. The editorial layout uses 20–28 px prose, a 54ch reading column, and paragraph spacing for changes of subject. Load `system/editorial.css` after the base stylesheet and apply `cxl-reading` to the article. The preview keeps a semantic page title available to screen readers.
 
 Use the classes cxl-button, cxl-field and cxl-label for controls and captions. Mount a bundled interactive figure into a sized container from a module script.
 
@@ -30,7 +29,7 @@ figure.destroy();
 
 - Self-hosted WOFF2 fonts from [Vercel Geist](https://vercel.com/font), npm release 1.9.2. See system/fonts/Geist-LICENSE.txt.
 - Interactive figures from [Hairline](https://github.com/lucasmarkes/hairline), version 0.5.1. The bundled vanilla module includes all 33 library figures with grayscale colors for both modes. See system/figures/LICENSE.
-- The restrained use of color draws on [Superlogical](https://www.superlogical.com/). Its opening statement, narrow article, and fixed textured margin also informed the editorial layout. CXL’s grayscale artwork is bundled in `system/images/`.
+- The dark palette comes from [Apollo](https://heyapollo.dev/), with a CXL light adaptation. The long paragraphs and fixed textured margin draw on [Superlogical](https://www.superlogical.com/). CXL’s grayscale artwork is bundled in `system/images/`.
 
 ## Development
 

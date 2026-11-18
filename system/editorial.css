@@ -1,6 +1,6 @@
 /* An opt-in reading layout shared by the specimen and interface guide. */
 .cxl-editorial {
-  --field-width: clamp(15rem, 28vw, 34rem);
+  --field-width: clamp(15rem, 23vw, 34rem);
   --gutter: clamp(1.25rem, 5vw, 5rem);
   box-sizing: border-box;
   margin: 0;
@@ -20,15 +20,15 @@
   pointer-events: none;
 }
 .cxl-masthead {
-  position: sticky;
-  top: .75rem;
+  position: relative;
+  top: auto;
   z-index: 2;
   display: flex;
   align-items: center;
   gap: .75rem;
-  width: fit-content;
+  width: auto;
   max-width: 100%;
-  padding: 2px 3px 2px 1rem;
+  padding: 0;
   margin-block: clamp(1rem,3vw,2.5rem);
 }
 .cxl-masthead a { display: inline-flex; align-items: center; min-height: 44px }
@@ -38,22 +38,21 @@
 .cxl-editorial a:hover { text-decoration: underline }
 .cxl-masthead > a:not(.cxl-wordmark), .cxl-theme { font-size: .84rem }
 .cxl-theme { background: transparent; color: inherit; cursor: pointer; border: 1px solid var(--cxl-line); border-radius: 50%; width: 44px; height: 44px; flex: none }
-.cxl-opening { padding-block: clamp(4rem,18vh,14rem) clamp(4rem,14vh,10rem) }
-.cxl-opening h1 { font: 400 clamp(2.75rem,5.35vw,6rem)/1.03 var(--cxl-serif); letter-spacing: -.052em; margin: 0; text-wrap: balance }
-.cxl-reading { max-width: 64ch }
-.cxl-reading section { margin-block: var(--cxl-space-6); scroll-margin-top: 5rem }
-.cxl-reading h2 { margin: 0 0 1rem; font: 400 clamp(1.85rem,3vw,2.75rem)/1.12 var(--cxl-serif); letter-spacing: -.04em }
-.cxl-reading h3 { margin: 2rem 0 .5rem; font-size: 1.05rem }
-.cxl-reading p { margin: 0 0 1.1em }
+.cxl-reading { max-width: 54ch; font-size: var(--cxl-prose-size); line-height: 1.49 }
+.cxl-reading section { margin-block: 2.25em; scroll-margin-top: 2rem }
+.cxl-reading p { margin: 0 0 1.2em; text-wrap: pretty }
+.cxl-opening { padding-top: clamp(3rem,13vh,10rem) }
+.cxl-introduction { font-size: clamp(1.85rem,1.35rem + 1.55vw,3.3rem); line-height: 1.19; letter-spacing: -.036em; max-width: 32ch }
+.cxl-visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
 .cxl-editorial pre { max-width: 100%; overflow: auto; padding: 1rem; font-size: .85rem; background: var(--cxl-surface) }
 @media (max-width: 760px) {
   .cxl-editorial { --field-width: 20px; --gutter: clamp(1rem,5vw,2rem) }
   .cxl-editorial::after { inset: 6px 5px 6px auto; width: 12px; border-radius: 5px }
-  .cxl-opening { padding-block: clamp(5rem,17svh,10rem) clamp(4rem,12svh,7rem) }
 }
 
-/* Fine rules mark chapter breaks along the reading column. */
-.cxl-reading section { border-top: 1px solid var(--cxl-line); padding-top: var(--cxl-space-4) }
 .cxl-snippet {
   display: flex;
   align-items: center;

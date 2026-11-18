@@ -3,42 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, grayscale palette, and interactive figures.">
+  <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, Apollo-inspired palette, and interactive figures.">
   <title>CXL Design System</title>
-  <link rel="stylesheet" href="system/cxl.css?v=weights">
-  <link rel="stylesheet" href="system/editorial.css?v=apollo">
-  <link rel="stylesheet" href="preview.css?v=apollo">
+  <link rel="stylesheet" href="system/cxl.css?v=prose">
+  <link rel="stylesheet" href="system/editorial.css?v=prose">
+  <link rel="stylesheet" href="preview.css?v=prose">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
-  <header class="cxl-masthead cxl-material">
+  <header class="cxl-masthead">
     <a class="cxl-wordmark" href="./">CXL Design System</a>
     <a href="system/interface-guidelines.html">Guidelines</a>
     <button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button>
   </header>
   <main>
-    <div class="cxl-opening">
-      <h1>A shared language<br>for <em>building interfaces.</em></h1>
-      <a class="guide-link" href="system/interface-guidelines.html">Read the interface guidelines <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="cxl-reading">
-      <p class="lead">CXL brings our websites together through type, spacing, and a single scale of gray.</p>
-      <p>Start with what someone came to read or do. Give that thought a heading, set the explanation beneath it, and put the next action within reach.</p>
-      <section id="foundations">
-        <h2>Writing with type</h2>
-        <p>A change of voice marks a change of purpose. Serif introduces a subject, sans carries the explanation, and mono makes technical details easy to pick out.</p>
-        <dl class="type-list">
-          <div><dt class="serif">Geist Serif</dt><dd>Page and section headings</dd></div>
-          <div><dt>Geist Sans</dt><dd>Body, controls, and H3–H6</dd></div>
-          <div><dt class="mono">Geist Mono</dt><dd>Code and technical notes</dd></div>
-        </dl>
-        <h2>Working in gray</h2>
-        <p>Paper and ink carry the strongest contrast. Use the middle tones to separate surfaces and give supporting details a quieter voice.</p>
-        <div class="swatches"></div>
+    <h1 class="cxl-visually-hidden">CXL Design System</h1>
+    <div class="cxl-reading cxl-opening">
+      <p class="cxl-introduction">We build websites around the things people come to read, the tools they come to use, and the space each one needs.</p>
+      <p>A page can often begin with the explanation itself. Give the first sentence room. Let the next few sentences develop the idea while it’s still fresh in the reader’s mind. When someone needs an example, a drawing, or a way into the product, put it right there in the text.</p>
+      <section id="foundations" aria-label="Type and color">
+        <p>Across our projects, Geist Sans carries the whole conversation. We use the same face for an opening passage, a field label, and the button beside it. The passage gets a generous measure and a light weight. The button gets a short verb and a little more ink. A line of <span class="mono">Geist Mono</span> marks something you can type, copy, or look up.</p>
+        <p>Our colors come from Apollo. In dark mode, a near-black canvas carries soft white text, and a quieter gray sets off captions and supporting details. In daylight, we turn the paper light and bring the ink forward. The reading order holds in either appearance.</p>
+        <div class="swatches" aria-label="Apollo palette"></div>
       </section>
-      <section id="components">
-        <h2>Figures and controls</h2>
-        <p>Use a drawing where a reader needs to see how something works. Explore three interactive figures from the bundled Hairline collection.</p>
+      <section id="components" aria-label="Figures and controls">
+        <p>Some things are easier to understand in your hands. Move across the keyboard below and watch the keys respond, then use the arrows to try a different figure. The drawing and its controls belong together, close to the passage that gives them a purpose.</p>
         <figure>
           <div id="figure"></div>
           <figcaption><span class="cxl-label" id="caption">Fig. 01 / Keyboard</span>
@@ -51,7 +40,7 @@
           <button class="cxl-button">Preview</button></div><output aria-live="polite"></output>
         </form>
       </section>
-      <section><h2>Start a website</h2>
+      <section aria-label="Start a website">
         <p>Copy the <code>system/</code> folder into your project and load its stylesheet. The fonts, figures, and theme tokens travel together.</p>
         <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet link">Copy</button></div>
         <output id="copy-result" aria-live="polite"></output>
@@ -60,6 +49,6 @@
     </div>
   </main>
   <footer><a href="system/interface-guidelines.html">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
-  <script type="module" src="preview.js?v=apollo"></script>
+  <script type="module" src="preview.js?v=prose"></script>
 </body>
 </html>
