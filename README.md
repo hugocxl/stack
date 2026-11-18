@@ -1,8 +1,8 @@
-# CXL Design System
+# P9DS
 
-[Open the living preview](https://hugocxl.github.io/cxl-design-system/).
+[Open the living preview](https://hugocxl.github.io/p9ds/).
 
-Start with the [Interface Guidelines](https://hugocxl.github.io/cxl-design-system/#guidelines) when designing a page. The guidelines, examples, and setup live in one article.
+Start with the [Interface Guidelines](https://hugocxl.github.io/p9ds/#guidelines) when designing a page. The guidelines, examples, and setup live in one article.
 
 Copy `system/` into a website. Link `system/cxl.css` and use its custom properties for page backgrounds, text, surfaces, borders, spacing and typography. Set `data-theme="light"` or `data-theme="dark"` on the HTML element. The preview follows the operating system until the visitor chooses a mode.
 
@@ -29,7 +29,7 @@ figure.destroy();
 
 - Self-hosted WOFF2 fonts from [Vercel Geist](https://vercel.com/font), npm release 1.9.2. See system/fonts/Geist-LICENSE.txt.
 - Interactive figures from [Hairline](https://github.com/lucasmarkes/hairline), version 0.5.1. The bundled vanilla module includes all 33 library figures with grayscale colors for both modes. See system/figures/LICENSE.
-- The dark palette comes from [Apollo](https://heyapollo.dev/), with a CXL light adaptation. The long paragraphs and fixed textured margin draw on [Superlogical](https://www.superlogical.com/). The centered measure and early wide illustration follow the [public testing article](https://www.superlogical.com/updates/public-testing-beginning). CXL’s grayscale artwork is bundled in `system/images/`.
+- The dark palette comes from [Apollo](https://heyapollo.dev/), with a P9DS light adaptation. The long paragraphs and fixed textured margin draw on [Superlogical](https://www.superlogical.com/). The centered measure and early wide illustration follow the [public testing article](https://www.superlogical.com/updates/public-testing-beginning). P9DS’s grayscale artwork is bundled in `system/images/`.
 
 ## Development
 
