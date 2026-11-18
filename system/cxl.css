@@ -1,0 +1,16 @@
+@font-face{font-family:Junicode;src:url(fonts/Junicode.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/DM-Sans.ttf) format("truetype");font-weight:100 1000;font-display:swap}
+:root{
+  --cxl-paper:#f5f5f4;--cxl-ink:#181d16;--cxl-amber:#fcbb00;--cxl-sage:#737b6f;
+  --cxl-bg:var(--cxl-paper);--cxl-text:var(--cxl-ink);--cxl-surface:#ececea;--cxl-muted:#586052;--cxl-line:#c9ccc4;
+  --cxl-serif:Junicode,Georgia,serif;--cxl-sans:"DM Sans",Arial,sans-serif;--cxl-mono:ui-monospace,monospace;
+  --cxl-space-1:4px;--cxl-space-2:8px;--cxl-space-3:16px;--cxl-space-4:24px;--cxl-space-5:40px;--cxl-space-6:64px;
+  --cxl-radius:6px;color-scheme:light
+}
+:root[data-theme=dark]{--cxl-bg:#10120f;--cxl-text:#f5f5f4;--cxl-surface:#20231e;--cxl-muted:#b3b9ac;--cxl-line:#41463e;color-scheme:dark}
+.cxl-button,.cxl-field{font:500 14px var(--cxl-sans);border-radius:var(--cxl-radius);padding:12px 18px;border:1px solid var(--cxl-line)}
+.cxl-button{display:inline-flex;align-items:center;gap:18px;background:var(--cxl-text);color:var(--cxl-bg);text-decoration:none;cursor:pointer;border-color:transparent}
+.cxl-button:hover{opacity:.84}
+.cxl-field{background:var(--cxl-bg);color:var(--cxl-text)}
+.cxl-label{font:11px/1.5 var(--cxl-mono);letter-spacing:.06em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--cxl-muted);outline-offset:4px}
