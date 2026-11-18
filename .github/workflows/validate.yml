@@ -61,3 +61,15 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ steps.package.outputs.tag }}
         run: bash scripts/publish-release.sh
+      - name: Rebuild the sites that use the vectors
+        env:
+          GH_TOKEN: ${{ secrets.STACK_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::STACK_DEPLOY_TOKEN is not set, so the sites were not rebuilt."
+            exit 0
+          fi
+          for repo in tab quickshot agentkit; do
+            gh workflow run pages.yml --repo "hugocxl/$repo" --ref main
+            echo "Started the hugocxl/$repo site deploy."
+          done
