@@ -1,6 +1,3 @@
-figcaption, footer, .controls { display: flex; align-items: center; gap: 1rem }
-figcaption, footer { justify-content: space-between; border-top: 1px solid var(--cxl-line); padding-block: .8rem }
-.mono { font-family: var(--cxl-mono); font-weight: 400; letter-spacing: normal }
 .swatches { display: flex; margin: 1.5rem 0; gap: 2px }
 .swatches div { flex: 1; font-size: .8rem }
 .swatches small { display: block; letter-spacing: normal; font: .68rem var(--cxl-mono); color: var(--cxl-muted) }
@@ -8,10 +5,5 @@ figcaption, footer { justify-content: space-between; border-top: 1px solid var(-
 figure { margin: 1.5rem 0 }
 #figure { height: clamp(14rem, 35cqw, 30rem); background: var(--cxl-surface) }
 #figure svg { width: 100%; height: 100% }
-.cxl-pager { padding: 2px }
-figcaption button { min-width: 44px; height: 44px; border-radius: 50%; color: inherit; background: transparent; border: 0; font-size: 1.1rem; cursor: pointer; padding: .5rem }
-.controls { margin-top: .5rem; gap: .5rem }
-.controls input { flex: 1; min-width: 0 }
-footer { max-width: 64ch; margin-bottom: 2rem; font-size: .85rem }
 
 #copy-result { display: block; margin-block: .5rem 1rem; font-size: .85rem }

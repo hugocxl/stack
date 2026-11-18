@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="P9DS’s interface guidelines, self-hosted typefaces, Apollo-inspired palette, and interactive figures.">
+  <meta name="description" content="The P9DS design system in one article, with layout rules, an interactive figure, and a guide for building pages.">
   <title>P9DS</title>
   <link rel="stylesheet" href="system/cxl.css?v=onepage">
-  <link rel="stylesheet" href="system/editorial.css?v=onepage">
-  <link rel="stylesheet" href="preview.css?v=onepage">
+  <link rel="stylesheet" href="system/editorial.css?v=article">
+  <link rel="stylesheet" href="preview.css?v=article">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
   <header class="cxl-masthead">
     <a class="cxl-wordmark" href="./">P9DS</a>
-    <a href="#guidelines">Guidelines</a>
-    <button class="cxl-theme" id="theme" aria-label="Switch theme">◐</button>
+    <button class="cxl-theme" id="theme" type="button" aria-label="Switch theme">◐</button>
   </header>
   <main>
-    <h1 class="cxl-visually-hidden">P9DS</h1>
-    <div class="cxl-reading cxl-opening">
+    <article class="cxl-reading cxl-opening">
+      <h1 class="cxl-visually-hidden">P9DS</h1>
       <p class="cxl-introduction">P9DS is the design system we use across our websites. <span class="cxl-muted">It brings the writing, drawings, and controls together in one place.</span></p>
+      <p class="cxl-muted">Start with the <a href="#guidelines">interface guidelines</a> and <a href="#type">type and color</a>. Then read how to <a href="#interaction">build controls</a>, <a href="#design-specification">define a design</a>, <a href="#site-building">compose a page</a>, and <a href="#agent-handoff">brief an agent</a>.</p>
       <section id="components" aria-label="Interactive figure">
         <p>Move across the keys to try the keyboard, or use the arrows to explore another figure. <span class="cxl-muted">Each drawing responds in place, keeping the example close to the writing.</span></p>
         <figure class="cxl-wide-figure">
@@ -28,10 +28,10 @@
             <span class="cxl-material cxl-pager" role="group" aria-label="Figure navigation"><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
           </figcaption>
         </figure>
-        <form><label for="query">Find a figure</label><div class="controls">
-          <input class="cxl-field" type="search" id="query" placeholder="Try terrain" required list="names">
+        <form><label for="query">Find a figure</label><div class="cxl-form-row">
+          <input class="cxl-field" type="search" id="query" placeholder="Try terrain" required list="names" aria-describedby="figure-feedback">
           <datalist id="names"><option>Keyboard</option><option>Terrain</option><option>Dish</option></datalist>
-          <button class="cxl-button">Preview</button></div><output aria-live="polite"></output>
+          <button class="cxl-button">Preview</button></div><output id="figure-feedback" aria-live="polite"></output>
         </form>
       </section>
       <div id="guidelines">
@@ -41,34 +41,55 @@
       </div>
       <section id="type">
         <h2>Type and color</h2>
-        <p id="foundations">Set the page in Geist Sans. Use weight 300 for reading, 400 for controls, and 600 for headings that need emphasis. <span class="cxl-muted">At 1440 px wide, body text is about 21 px. It scales with the viewport, with a line height of 1.3. Short section labels use the body size.</span> Set commands and technical notes in <span class="mono">Geist Mono</span>.</p>
+        <p id="foundations">Set the page in Geist Sans. Use weight 300 for reading, 400 for controls, and 600 for headings that need emphasis. <span class="cxl-muted">At 1440 px wide, body text is about 21 px. It scales with the viewport, with a line height of 1.3. Short section labels use the body size.</span> Set commands and technical notes in <span class="cxl-note">Geist Mono</span>.</p>
         <p id="tones">Give the main thought the foreground color. <span class="cxl-muted">Use the muted tone for context, examples, or a supporting paragraph.</span> Bring the ink forward again when someone needs to make a decision.</p>
         <div class="swatches" aria-label="Apollo palette"></div>
-        <p class="cxl-muted">Apollo’s dark canvas pairs near-black with soft white. Use the shared color tokens for surfaces, text, and fine rules. Light mode reverses the paper and ink. Match the system appearance on first visit and remember the reader’s choice.</p>
+        <p class="cxl-muted">Apollo’s dark canvas pairs near-black with soft white. Light mode reverses the paper and ink. Light surfaces use <code>#f2f2f2</code> with <code>#505050</code> for muted text. Dark surfaces use <code>#131313</code> with <code>#808080</code> for muted text. Ring is the light rule color. Dark rules use <code>#1d1d1d</code>. Apply the theme roles in <code>system/cxl.css</code> and remember the reader’s choice.</p>
       </section>
       <section id="interaction">
         <h2>Controls and feedback</h2>
         <p>Use a link to take someone somewhere and a button to perform an action. Keep field labels visible while typing. When an entry needs correction, keep what was typed and explain the fix beside the field. <span class="cxl-muted">“Enter a date after 18 November” tells the reader exactly what to change.</span></p>
-        <p>Group related actions on one surface, as with the figure arrows above. Give icon controls an accessible name and a 44 px target. Keep keyboard focus visible and convey selection with a persistent cue. Honor reduced motion and reduced transparency preferences.</p>
+        <p>Use the filled button for the primary action in a group. Use underlined text for supporting links and group related icon controls on one surface, as with the figure arrows above. Give icon controls an accessible name, give controls a 44 px target, and keep keyboard focus visible. Convey selection with a persistent cue and honor reduced motion and reduced transparency preferences.</p>
         <p class="cxl-muted">Account for the whole task. Show progress during a save, prevent duplicate submissions, and announce completion in place. An empty list needs a first action. A failed request needs a way to retry.</p>
       </section>
       <section id="figures">
         <h2>Figures and motion</h2>
         <p>Choose a drawing that explains the subject. <span class="cxl-muted">A keyboard belongs beside a shortcut list, where the commands can still be selected and copied.</span> Reserve the drawing’s space as the page loads. Describe meaningful imagery, give interactive figures keyboard controls, and provide a usable still view for readers who prefer reduced motion.</p>
       </section>
+      <section id="design-specification">
+        <h2>Define a design</h2>
+        <p><strong>Start with the task.</strong> Name who the page serves, what they came to do, and how they’ll know it worked. The figure picker lets a reader find a named figure, preview it with the keyboard, and confirm the change in the caption. Test the task with representative users. <a href="https://www.gov.uk/guidance/government-design-principles">GOV.UK design principles</a>.</p>
+        <p><strong>Give visual choices a rule.</strong> Specify the role, value or formula, and context. A section heading in P9DS uses the reading size, weight 400, and the theme’s muted text color. Define asset paths, proportions, and cropping when the image matters. Pair text colors with their intended backgrounds in each theme. <a href="https://designsystem.digital.gov/design-tokens/color/overview/">USWDS color roles</a>.</p>
+        <p><strong>Define a component through its behavior.</strong> Record the markup, required content, allowed variants, default, and what changes in each applicable state. An unknown figure name leaves the drawing and search value in place, marks the field invalid, and announces what to try. A valid name updates the drawing and moves focus to the next-figure button. <a href="https://design-system.service.gov.uk/components/text-input/">Text input specification</a> and <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA interaction patterns</a>.</p>
+        <p class="cxl-muted">Specify how the same content fits at narrow widths, with long labels, and at increased text size. Keep an accessible reading and focus order. Give every required rule a coded example or a check someone can run. Research with users establishes whether the design serves the task. <a href="https://design-system.service.gov.uk/community/contribution-criteria/">GOV.UK contribution criteria</a> and <a href="https://www.w3.org/WAI/test-evaluate/">Evaluating accessibility</a>.</p>
+      </section>
+      <section id="site-building">
+        <h2>Page composition</h2>
+        <p>Use this page’s editorial shell for every page type. Set the opening in <code>.cxl-introduction</code>, follow with section headings at body size, and use the same centered reading column. Leave <code>1.25rem</code> between paragraphs and <code>2.5rem</code> around sections. A wide figure can extend to the gutters up to <code>1280px</code>. The textured right margin narrows to a strip at <code>760px</code>.</p>
+        <p><strong>Product homepage.</strong> Lead with the promise, a short explanation, and one primary action. Show the product in a figure. Follow with two or three workflows, then customer evidence or recent updates when available. End with the primary action and plain footer links.</p>
+        <p><strong>Feature page.</strong> Name the outcome and walk through the steps in order. Pair each step with a short paragraph and a figure or captioned screenshot. Keep the copy ahead of its figure at every width.</p>
+        <p><strong>Pricing.</strong> List plans in order of scope. Give each a name, price with currency and billing period, a short list of what is included, and an action. Separate plans with a fine rule. Use a table with row and column headings when readers need to compare the same attributes.</p>
+        <p><strong>Changelog and documentation.</strong> Lead each release entry with a date in Geist Mono, then a heading and what changed. Keep the newest entry first. For a reference article, put jump links in an opening paragraph and keep examples close to the rules they illustrate.</p>
+        <p><strong>Contact or signup.</strong> Start with the task and place a labeled form directly beneath it. Ask for the information the task needs. Keep validation beside the field, and put submission status and retry by the action.</p>
+      </section>
+      <section id="agent-handoff">
+        <h2>Hand off a design to an agent</h2>
+        <p><strong>Give the agent a versioned reference and a page brief.</strong> Pin a P9DS commit. Explicitly ask it to read <code>DESIGN.md</code> and the relevant markup and CSS. Supply ordered sections, exact copy, local asset paths, action destinations, and fixtures for applicable states. Name any choices the agent can make. Omit optional sections without source content and surface missing required inputs for review.</p>
+        <p><strong>Use each file for a clear purpose.</strong> The Google Labs draft pairs YAML tokens with prose and references to component source. Here, the shared CSS owns the rendered values and <code>DESIGN.md</code> records the tokens and usage. Exchange tokens with other tools using the DTCG JSON format when needed. <a href="DESIGN.md" download>Download DESIGN.md</a>, <a href="https://github.com/google-labs-code/design.md">Google Labs format</a>, and <a href="https://www.designtokens.org/tr/2025.10/">Design Tokens specification</a>.</p>
+        <p><strong>Make the build repeatable.</strong> Model output can vary with the same prompt and decoding settings. For an automated generator, have the agent propose a page plan as data. Validate the plan against a schema of allowed components and fields, then check section order, asset IDs, and destinations. Save the approved plan and render it with pinned templates and styles. Rebuilding then uses the saved inputs. <a href="https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/">Research on inference variability</a> and <a href="https://a2ui.org/concepts/catalogs/">Component catalogs for agents</a>.</p>
+        <p class="cxl-muted">Check computed styles, section order, keyboard behavior, and reflow in both themes. For pixel comparison, fix the browser build and OS, viewport, scale, content, state, locale, and motion settings. Wait for the bundled fonts and images before capturing. <a href="https://playwright.dev/docs/test-snapshots">Visual comparison guide</a>.</p>
+      </section>
       <section id="delivery">
         <h2>Build and review</h2>
-        <p>Copy the <code>system/</code> folder into your project and load its stylesheet. <span class="cxl-muted">The fonts, figures, and theme tokens travel together.</span></p>
-        <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet link">Copy</button></div>
+        <p>Copy the <code>system/</code> folder into your project and load both stylesheets. <span class="cxl-muted">The fonts, figures, and theme tokens travel together.</span></p>
+        <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;&#10;&lt;link rel="stylesheet" href="system/editorial.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet links">Copy</button></div>
         <output id="copy-result" aria-live="polite"></output>
-        <a href="https://github.com/hugocxl/p9ds/tree/main/system">Browse the assets on GitHub ↗</a>
-
-        <p>Load <code>system/theme.js</code> in the document head to apply the saved appearance. For this article layout, include <code>system/editorial.css</code>, set <code>cxl-editorial</code> on the body, and wrap the prose in <code>cxl-reading</code>. Use <code>cxl-wide-figure</code> when an illustration needs the full width.</p>
-        <p class="cxl-muted">Before shipping, complete the principal task with a keyboard. Check both appearances, reduced motion, long labels, phone widths, and 200% zoom. Try the empty, loading, success, and error states.</p>
+        <p>Set <code>cxl-editorial</code> on the body. Inside <code>main</code>, wrap the article with <code>cxl-reading cxl-opening</code>. Add <code>cxl-wide-figure</code> when an illustration needs the full width. Load <code>system/theme.js</code> in the document head to apply the saved appearance. <a href="https://github.com/hugocxl/p9ds/tree/main/system">Browse the source files ↗</a>.</p>
+        <p class="cxl-muted">Before shipping, complete the principal task with a keyboard. Check both appearances, reduced motion, long labels, reflow at 320 CSS pixels, and 200% zoom. Follow <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 AA</a> for the finished page.</p>
       </section>
-    </div>
+    </article>
   </main>
-  <footer><a href="#guidelines">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
-  <script type="module" src="preview.js?v=tones"></script>
+  <footer><a href="#top">Back to top ↑</a></footer>
+  <script type="module" src="preview.js?v=article"></script>
 </body>
 </html>

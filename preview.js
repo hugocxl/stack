@@ -20,11 +20,18 @@ for (const [name, token] of Object.entries({Canvas:'--cxl-ink', Foreground:'--cx
   swatch.firstChild.style.background = 'var(' + token + ')';
   document.querySelector('.swatches').append(swatch);
 }
-document.querySelector('form').onsubmit = event => {
+const query = select('query');
+const feedback = select('figure-feedback');
+query.oninput = () => {
+  query.removeAttribute('aria-invalid');
+  feedback.textContent = '';
+};
+query.form.onsubmit = event => {
   event.preventDefault();
-  const query = select('query').value.trim().toLowerCase();
-  const index = figures.findIndex(([name]) => name.toLowerCase() === query);
-  document.querySelector('form output').textContent = index < 0 ? 'Choose Keyboard, Terrain, or Dish.' : 'Showing ' + figures[index][0];
+  const requested = query.value.trim().toLowerCase();
+  const index = figures.findIndex(([name]) => name.toLowerCase() === requested);
+  query.setAttribute('aria-invalid', String(index < 0));
+  feedback.textContent = index < 0 ? 'Choose Keyboard, Terrain, or Dish.' : 'Showing ' + figures[index][0];
   if (index >= 0) {
     show(index);
     document.querySelector('figure').scrollIntoView({block:'center'});
@@ -35,7 +42,7 @@ document.querySelector('form').onsubmit = event => {
 select('copy-snippet').onclick = async () => {
   try {
     await navigator.clipboard.writeText(select('stylesheet-snippet').textContent);
-    select('copy-result').textContent = 'Copied stylesheet link.';
+    select('copy-result').textContent = 'Copied stylesheet links.';
   } catch {
     select('copy-result').textContent = 'Select the snippet to copy it manually.';
   }
