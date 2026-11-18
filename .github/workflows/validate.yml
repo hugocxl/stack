@@ -41,14 +41,8 @@ jobs:
       - name: Package release
         id: package
         run: node scripts/prepare-release.mjs
-      # Trusted publishing needs no token. NPM_TOKEN is only for the very first publish, before
-      # npm knows the package and can trust this workflow; delete the secret afterwards.
       - name: Publish and verify the npm package
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -n "$NPM_TOKEN" ]; then npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"; fi
-          node scripts/publish-npm.mjs
+        run: node scripts/publish-npm.mjs
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
