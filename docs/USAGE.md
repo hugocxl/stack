@@ -1,6 +1,6 @@
-# Use Icons
+# Use @hugocxl/icons
 
-Icons is a family of rounded icons for websites, apps and designs. Every icon
+@hugocxl/icons is a family of rounded icons for websites, apps and designs. Every icon
 is a plain SVG file, and the same names ship as packages for JavaScript, React,
 React Native and Swift. Choose how you build below.
 
@@ -26,7 +26,7 @@ No dependencies or build step are required to use the artwork.
 git clone https://github.com/hugocxl/icons.git
 ```
 
-Icons use `currentColor` and filled vector geometry. New UI symbols use a
+The icons use `currentColor` and filled vector geometry. New UI symbols use a
 16 × 16 canvas; preserve the viewBox and aspect ratio when sizing legacy assets.
 The default uses duotone only for meaningful surfaces or depth. Linear symbols
 such as arrows and chevrons use one opaque tint; Pencil and Trash retain their
@@ -174,7 +174,7 @@ appearance. This release does not include Hugeicons or SF Symbols artwork.
 
 ## License and attribution
 
-Original Icons artwork, Tab contributions and tooling are [MIT licensed](../LICENSE).
+Original @hugocxl/icons artwork, Tab contributions and tooling are [MIT licensed](../LICENSE).
 The collection includes artwork adapted from Pierre Icons (Apache 2.0),
 Pierre's file icons (MIT), Simple Icons (CC0 1.0), LobeHub Icons (MIT), and
 Devicon (MIT). Upstream artwork retains its original license, so the collection

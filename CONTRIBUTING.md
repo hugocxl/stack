@@ -1,4 +1,4 @@
-# Contributing to Icons
+# Contributing to @hugocxl/icons
 
 ## Development and validation
 
@@ -52,7 +52,7 @@ to recover a release interrupted after npm publication.
 
 ## Contribute
 
-Icons grew out of the icon collection adapted and extended for
+@hugocxl/icons grew out of the icon collection adapted and extended for
 [Tab](https://github.com/hugocxl/tab).
 
 See [the drawing guide](scripts/icons/STYLE.md) for geometry and naming conventions.

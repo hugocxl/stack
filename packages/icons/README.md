@@ -1,4 +1,4 @@
-# Icons
+# @hugocxl/icons
 
 **2,233 rounded icons for apps, websites, and developer tools**, with typed,
 tree-shakeable exports for JavaScript, React, React Native, and Expo.

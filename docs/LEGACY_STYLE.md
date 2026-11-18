@@ -1,4 +1,4 @@
-# Icons drawing guide
+# @hugocxl/icons drawing guide
 
 Measured from the 373 SVGs in upstream package 0.9.0. Coordinates below are SVG
 user units, not device pixels. This guide describes geometry, including the

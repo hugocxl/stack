@@ -1,6 +1,6 @@
 # SF-inspired expansion · 17 November 2026
 
-35 original additions bring Icons from 2,198 to **2,233 names**: 2,152 UI
+35 original additions bring @hugocxl/icons from 2,198 to **2,233 names**: 2,152 UI
 icons in three styles and 81 retained brand marks. Three existing icons receive
 small optical refinements. The rounded construction, 16-unit grid, stroke
 weights, selective duotone treatment, and existing names/imports are preserved.
@@ -36,7 +36,7 @@ opaque. Physical housings carry the secondary tone where it clarifies a surface.
 Apple's [SF Symbols overview](https://developer.apple.com/sf-symbols/) and
 [custom symbol guidance](https://developer.apple.com/documentation/technologyoverviews/custom-sf-symbols)
 inform semantic coverage, optical balance, and legibility. All added paths are
-original Icons recipes; no Apple artwork, font outlines, or symbol assets are
+original @hugocxl/icons recipes; no Apple artwork, font outlines, or symbol assets are
 included. This is a focused expansion, not a claim of complete SF Symbols
 coverage or support for Apple's variable weights, font metrics, or animations.
 

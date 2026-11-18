@@ -1,6 +1,6 @@
-# Icons design system
+# @hugocxl/icons design system
 
-Icons is a rounded family with selective duotone for product interfaces.
+@hugocxl/icons is a rounded family with selective duotone for product interfaces.
 The collection contains 2,233 names: 2,152 original UI symbols and 81 retained
 brand marks. The November 17 expansion adds 35 concepts inspired by SF Symbols'
 semantic breadth, with subtle polish to three existing symbols.

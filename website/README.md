@@ -1,7 +1,7 @@
-# Icons website
+# @hugocxl/icons website
 
 The site at https://hugocxl.github.io/icons/ is built strictly from the P9 design
-system shared by the @hugocxl stack (Icons, Vectors, Design system).
+system shared by the @hugocxl stack (@hugocxl/icons, @hugocxl/vectors, @hugocxl/design-system).
 
 ```sh
 npm ci

@@ -63,9 +63,9 @@ for (const name of pages) {
   ]);
   assert.ok(doc.querySelector(".ds-masthead > button.ds-theme[data-ds-theme]"), `${name}: theme button`);
   assert.deepEqual(linkList(doc.querySelector(".ds-footer")), [
-    "Icons https://hugocxl.github.io/icons/",
-    "Vectors https://hugocxl.github.io/vectors/",
-    "Design system https://hugocxl.github.io/design-system/",
+    "@hugocxl/icons https://hugocxl.github.io/icons/",
+    "@hugocxl/vectors https://hugocxl.github.io/vectors/",
+    "@hugocxl/design-system https://hugocxl.github.io/design-system/",
     "npm https://www.npmjs.com/package/@hugocxl/icons",
     "License https://github.com/hugocxl/icons/blob/main/LICENSE",
     "@hugocxl https://github.com/hugocxl",
