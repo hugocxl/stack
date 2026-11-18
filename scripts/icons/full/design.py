@@ -317,34 +317,41 @@ def register(api):
         g('fold-horizontal' if inward else 'unfold-horizontal',*ps)
 
     cat('Layout')
+    def centered_bars(centers, lengths, thickness):
+        bars = union(*(rect(x - thickness / 2, 8 - length / 2, thickness, length)
+                       for x, length in zip(centers, lengths)))
+        guide = line((1.25, 8), (14.75, 8))
+        return bars, sub(guide, bars)
+
     def aligned_pair(position, lengths):
-        guide_y = {'start': 2, 'center': 8, 'end': 14}[position]
+        if position == 'center':
+            return centered_bars((4.75, 11.25), lengths, 3.3)
+        guide_y = {'start': 2, 'end': 14}[position]
         bars = []
         for x, length in zip((3.3, 9.6), lengths):
-            y = {'start': 4.35, 'center': 8 - length / 2, 'end': 11.65 - length}[position]
+            y = 4.35 if position == 'start' else 11.65 - length
             bars.append(rect(x, y, 3.1, length))
         body = union(*bars)
         rule = line((1.6, guide_y), (14.4, guide_y))
-        if position == 'center':
-            rule = sub(rule, union(body, outline(body, 2.5)))
         return body, rule
 
     for horizontal in (True,False):
         orient='horizontal' if horizontal else 'vertical'
         for position in ('start','center','end'):
             name=f'align-{position}-{orient}'
-            p, rule = aligned_pair(position, (5, 8))
+            p, rule = aligned_pair(position, (11.5, 6.0) if position == 'center' else (5, 8))
             if not horizontal: p,rule=transpose(p),transpose(rule)
             s(name,p,rule)
         for operation in ('distribute','justify'):
             for position in ('start','center','end'):
                 name=f'align-{orient}-{operation}-{position}'
-                y={'start':3,'center':8,'end':13}[position]
-                blocks=[]
-                if operation=='distribute':
+                if operation == 'distribute' and position == 'center':
+                    body, rules = centered_bars((3.45, 8, 12.55), (6.2, 11.5, 8.8), 2.6)
+                elif operation=='distribute':
                     centers = (3, 8, 13)
-                    widths = (2.9, 2.9, 2.9) if position == 'center' else (2.7, 3.3, 2.7)
-                    shift = {'start': -.5, 'center': 0, 'end': .5}[position]
+                    widths = (2.7, 3.3, 2.7)
+                    shift = {'start': -.5, 'end': .5}[position]
+                    blocks = []
                     ticks = []
                     for center, width in zip(centers, widths):
                         tick = center + shift * 2.7
@@ -352,9 +359,9 @@ def register(api):
                         blocks.append(rect(left, 5.2, width, 7.8))
                         ticks.append(line((tick, 1.7), (tick, 3)))
                     rules = union(*ticks)
+                    body = union(*blocks)
                 else:
-                    blocks, rules = aligned_pair(position, (4, 6.7))
-                body = union(*blocks) if operation == 'distribute' else blocks
+                    body, rules = aligned_pair(position, (5.8, 10.3) if position == 'center' else (4, 6.7))
                 if (operation=='distribute' and not horizontal) or (operation=='justify' and horizontal):
                     body,rules=transpose(body),transpose(rules)
                 s(name,body,rules)
@@ -782,9 +789,9 @@ def register(api):
         g('stroke-line-cap-'+cap,body,guides)
     for join in ('bevel','miter','round'):
         if join=='round':
-            sample = st('M2.5 13L8 3L13.5 13')
-            # Two normal cuts expose the flat free ends of the join sample.
-            body = inter(sample,path('M0 0H16V11.625L8 16.025L0 11.625Z'))
+            # Outline the full sample so its curved outer join and flat ends are visible.
+            body = st('M1.55 12.35L6.35 3.15A1.86 1.86 0 0 1 9.65 3.15'
+                      'L14.45 12.35L11.65 13.8L8 6.8L4.35 13.8Z')
         elif join=='miter': body=path('M.8 12.3L8 .5L15.2 12.3L12.6 13.7L8 6L3.4 13.7Z')
         else: body=path('M1 12L6.5 2.5H9.5L15 12L12.5 13.5L8 5.8L3.5 13.5Z')
         g('stroke-line-join-'+join,body)
@@ -828,15 +835,24 @@ def register(api):
             g(name,sheetpiece,arr(direction,12.5,10.3,.52))
     g('layers-2',planestroke,st('M1.5 9L8 12.5L14.5 9'))
     layer_back, layer_front = api['DRAWINGS']['layers'][:2]
-    for action,mark in [('plus',plus(13.05,13.1,.75)), ('minus',line((11.55,13.1),(14.55,13.1)))]:
-        clearance = rect(10.65,8.35,5.35,7.65,0)
+    layer_stroke = api['STYLE_OVERRIDES'].get('layers', {}).get('stroke')
+    if layer_stroke is None:
+        # Use the reviewed base on checkouts that predate its open-chevron recipe.
+        layer_back = path('M1.55 9.35L8 12.9L14.45 9.35V11.15L8 14.7L1.55 11.15Z')
+        layer_front = path('M1.55 5.5L8 1.95L14.45 5.5L8 9.05Z')
+        layer_stroke = union(outline(layer_front), st('M1.55 10.3L8 13.85L14.45 10.3'))
+    badge_y = 10.7
+    horizontal_mark = line((11.55, badge_y), (14.55, badge_y))
+    plus_mark = plus(13.05, badge_y, .75)
+    clearance = union(plus_mark, outline(plus_mark, 2.2))
+    for action, mark in [('plus', plus_mark), ('minus', horizontal_mark)]:
         name = 'layers-' + action
         back, front = sub(layer_back, clearance), sub(layer_front, clearance)
         g(name, back, front, mark)
         api['DUOTONE_GLYPHS'][name] = api['DUOTONE_GLYPHS']['layers']
         api['STYLE_OVERRIDES'][name] = {
             'duotone': [(sub(back, union(front,mark)), .4), (union(front,mark), 1)],
-            'stroke': union(sub(union(outline(layer_back), outline(layer_front)), clearance), mark),
+            'stroke': union(sub(layer_stroke, clearance), mark),
         }
     rear,front=rect(2,2,8.5,8.5),rect(5.5,5.5,8.5,8.5)
     for name,foreground,background in [('bring-to-front',front,rear),('send-to-back',rear,front)]:
