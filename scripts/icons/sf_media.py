@@ -57,7 +57,7 @@ def register(api):
     exposure = union(disc, stroke(circle(5.2,7.5,3.9),1.25))
     lock_body = rr(9.1,8.4,5.3,5.2,.8)
     lock = union(stroke(lock_body,1.25), st('M10.2 8.4V6.8C10.2 4.4 13.3 4.4 13.3 6.8V8.4',1.25))
-    g('exposure-lock', sub(exposure, union(lock_body,stroke(lock_body,2.6))), lock,
+    g('exposure-lock', sub(exposure, union(lock_body, lock, stroke(lock, 2))), lock,
       tags='auto exposure lock camera brightness hold ae')
     g('focus-auto', brackets(), st('M5 10.8L7.45 5.4Q8 4.2 8.55 5.4L11 10.8M6.1 8.7H9.9',1.25),
       tags='autofocus automatic camera lens sharpness af')
@@ -68,22 +68,21 @@ def register(api):
     # A listening position with an orbit, distinct from an audio waveform.
     head = circle(8,5.1,2.1)
     shoulders = st('M4.3 12.8V11.7C4.3 8.8 11.7 8.8 11.7 11.7V12.8',1.25)
-    orbit = st('M3.2 5.3C-.3 6.4 .2 10.8 3.2 11.6M12.8 5.3C16.3 6.4 15.8 10.8 12.8 11.6',1.25)
+    orbit = st('M3.5 5.3C.8 6.6 .8 9.9 2.8 11.1M12.5 5.3C15.2 6.6 15.2 9.9 13.2 11.1',1.35)
     g('audio-spatial', head, shoulders, orbit,
       tags='spatial surround immersive audio listening')
     # A shared speaker source and explicit output channels distinguish these
     # settings from generic circle marks and sound-volume wavefronts.
-    source = path('M1.6 6.3H3.2L5.8 4.2V11.8L3.2 9.7H1.6Z')
-    shape('audio-mono', source, stroke(circle(11,8,3),1.25),
+    source = path('M2.1 6H4.1L7.4 3.4V12.6L4.1 10H2.1Z')
+    shape('audio-mono', source, circle(11.6, 8, 1.15),
           'mono monaural single channel sound')
     shape('audio-stereo', source,
-          union(stroke(circle(11.3,4.4,2.35),1.25),
-                stroke(circle(11.3,11.6,2.35),1.25)),
+          union(circle(11.6, 5.45, 1.15), circle(11.6, 10.55, 1.15)),
           'stereo left right dual channel sound')
     # Headphone cups remain visible; the quiet center distinguishes ANC from mute.
     cups = union(rr(1.6,7,2.7,5.1,1.1),rr(11.7,7,2.7,5.1,1.1))
     band = st('M2.95 7V6C2.95-.2 13.05-.2 13.05 6V7',1.25)
-    quiet = st('M6.1 9H9.9',1.25)
+    quiet = st('M6.8 8.1H9.2',1.25)
     shape('noise-cancellation', cups, union(band,quiet),
           'active noise cancellation anc headphones quiet isolation')
     # Waveform to written lines communicates transcription without tiny letters.

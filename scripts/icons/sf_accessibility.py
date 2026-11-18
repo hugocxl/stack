@@ -66,13 +66,13 @@ def register(api):
     g('person-hiking', circle(8, 2.1, 1.4),
       st('M8.1 5L7 9.3L4.7 14.3M7 9.3L9.7 11.3L10.6 14.3'
          'M8.1 5L10.3 7.7H12.9M13 5.5V14.2'),
-      st('M5.5 4.8H4.2L3.4 8.4H5', 1.2),
+      path('M7.8 5L6.5 5.85L5.65 8.4Q5.4 9.2 4.5 9L3.3 8.7Q2.65 8.5 2.95 7.5L3.9 4.65Q4.2 3.7 5.15 4L6.6 4.6Z'),
       tags='hike hiking trekking trail walking outdoor activity backpack')
 
     # The chair is visibly separate from the sitter's back and upper legs.
     g('person-seated', circle(8.8, 2.3, 1.45),
       st('M8.2 5.3L7.9 8.8H11.1L12.2 13.7H14'
-         'M3 5.8V11.2H8.7M4.2 11.2V14.1', 1.35),
+         'M3.5 5.9V10.3H10.6M3.5 10.3V14.1', 1.35),
       tags='sitting seated person chair rest accessibility posture')
 
     # Forward-leaning posture and an open wheel contour communicate propulsion.

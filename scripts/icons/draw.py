@@ -133,14 +133,21 @@ def glyph(name,b,d,tags=''): add(name,b,d,False,tags)
 def check(x=8,y=8,s=1): return line((x-2.6*s,y),(x-.6*s,y+2*s),(x+3*s,y-2.2*s))
 def plus(x=8,y=8,s=1): return lines(f'M{x-2*s} {y}h{4*s}',f'M{x} {y-2*s}v{4*s}')
 def cross(x=8,y=8,s=1): return lines(f'M{x-2*s} {y-2*s}l{4*s} {4*s}',f'M{x+2*s} {y-2*s}l{-4*s} {4*s}')
-def arrow(angle=0): return transform(lines('M3 8H13','M9 4l4 4-4 4'),angle)
+def arrow(angle=0, size=1, dx=0, dy=0, width=1.35):
+    shaft = line((8-5*size, 8), (8+5*size, 8), width=width)
+    head = line((8+size, 8-4*size), (8+5*size, 8), (8+size, 8+4*size), width=width)
+    return transform(union(shaft, head), angle, dx=dx, dy=dy)
 
 CATEGORY='Navigation'
 for name,angle in [('right',0),('down',90),('left',180),('up',270),('up-right',-45),('down-right',45),('down-left',135),('up-left',225)]:
     glyph('arrow-'+name,transform(line((3,8),(13,8)),angle),transform(line((9,4),(13,8),(9,12)),angle))
-    glyph('chevron-'+name,transform(line((5,3),(10,8)),angle),transform(line((10,8),(5,13)),angle))
+    # A diagonal chevron's corner is two coordinates of its bounding box.
+    shift = 3 if angle % 90 else 0
+    dx, dy = shift * math.cos(math.radians(angle)), shift * math.sin(math.radians(angle))
+    glyph('chevron-'+name,transform(line((5,3),(10,8)),angle,dx=dx,dy=dy),
+          transform(line((10,8),(5,13)),angle,dx=dx,dy=dy))
 for name,angle in [('left',180),('right',0),('up',270),('down',90)]:
-    shape('circle-arrow-'+name,circle(),transform(arrow(),angle, .64))
+    shape('circle-arrow-'+name,circle(),arrow(angle, .62, width=1.25))
     glyph('chevrons-'+name,transform(line((2,4),(6,8),(2,12)),angle),transform(line((9,4),(13,8),(9,12)),angle))
 glyph('chevrons-up-down',line((5,6),(8,3),(11,6)),line((5,10),(8,13),(11,10)))
 glyph('chevrons-in',lines('M2 4l4 4-4 4'),lines('M14 4l-4 4 4 4'))
@@ -157,7 +164,9 @@ for name,reflect in [('refresh',False),('reset',True),('rotate-left',True),('rot
     glyph(name,f(stroke('M12.5 10.5A5.2 5.2 0 1 1 12.5 4.5')),f(line((9.2,4.5),(12.5,4.5),(12.5,1.2))))
 glyph('swap-horizontal',lines('M2 4.5H14','M11 1.5l3 3-3 3'),lines('M14 11.5H2','M5 8.5l-3 3 3 3'))
 glyph('swap-vertical',lines('M4.5 14V2','M1.5 5l3-3 3 3'),lines('M11.5 2V14','M8.5 11l3 3 3-3'))
-glyph('shuffle',stroke('M2 4H4L12 12H14M2 12H4L12 4H14'),lines('M12 2l2 2-2 2','M12 10l2 2-2 2'))
+glyph('shuffle',stroke('M1.65 4H3.5Q4.5 4 5.35 4.9L10.45 10.8Q11.4 12 12.6 12H14'
+                       'M1.65 12H3.5Q4.5 12 5.35 11.1L10.45 5.2Q11.4 4 12.6 4H14'),
+      lines('M11.7 1.7L14 4L11.7 6.3','M11.7 9.7L14 12L11.7 14.3'))
 glyph('repeat',stroke('M3 10V5Q3 3 5 3H13M13 6V11Q13 13 11 13H3'),lines('M11 1l2 2-2 2','M5 11l-2 2 2 2'))
 
 CATEGORY='Actions and status'
@@ -182,6 +191,7 @@ glyph('dot',circle(8,8,4),circle(8,8,1.5))
 glyph('ellipsis',dots((3,8),(8,8),(13,8),r=1.1),circle(8,8,1.1))
 glyph('ellipsis-vertical',dots((8,3),(8,8),(8,13),r=1.1),circle(8,8,1.1))
 shape('search',circle(6.7,6.7,4.7),line((10.3,10.3),(14,14)))
+STYLE_OVERRIDES['search'] = {'solid': union(ring(6.7,6.7,5.325,1.9),line((10.1,10.1),(14,14),width=1.65))}
 for name,detail in [('zoom-in',plus(6.7,6.7,.75)),('zoom-out',line((4.9,6.7),(8.5,6.7)))]: shape(name,circle(6.7,6.7,4.7),union(line((10.3,10.3),(14,14)),detail))
 shape('filter',path('M2 2H14L9.5 7.5V13L6.5 14V7.5Z'),line((5,4.5),(11,4.5)),'funnel refine')
 glyph('sort-ascending',lines('M2 4H7','M2 8H6','M2 12H5'),lines('M12 13V3','M9 6l3-3 3 3'))
@@ -193,10 +203,13 @@ shape('save',path('M3 2H11L14 5V13Q14 14 13 14H3Q2 14 2 13V3Q2 2 3 2Z'),union(st
 shape('trash',rr(4,4,8,10,1),lines('M2.5 4H13.5','M6 2H10','M6.5 7V11','M9.5 7V11'),'delete remove bin')
 shape('archive',rr(2.5,5,11,9,1.5),union(rr(1.5,2,13,3,1),line((6,8),(10,8))))
 for name,angle in [('download',90),('upload',270)]:
-    glyph(name,stroke('M2 10V13Q2 14 3 14H13Q14 14 14 13V10'),transform(arrow(),angle,.75,0,-2))
-shape('download-circle-fill',circle(),transform(arrow(),90,.65))
-glyph('link',stroke('M6.5 10.5L4.5 12.5A3 3 0 0 1 .5 8.5L4 5Q6 3 8 5'),stroke('M9.5 5.5L11.5 3.5A3 3 0 0 1 15.5 7.5L12 11Q10 13 8 11M5.5 10.5L10.5 5.5'))
-glyph('unlink',stroke('M5 11L4 12A3 3 0 0 1 0 8L3 5M11 5L12 4A3 3 0 0 1 16 8L13 11'),lines('M5 1l1 2','M1 5l2 1','M11 15l-1-2','M15 11l-2-1'))
+    glyph(name,stroke('M2 10V13Q2 14 3 14H13Q14 14 14 13V10'),arrow(angle, .78, dy=-1.9))
+shape('download-circle-fill',circle(),arrow(90, .65))
+link_loop = stroke('M7.1 11.15L5.8 12.45A2.65 2.65 0 0 1 2.05 8.7L4.8 5.95Q6.55 4.2 8.05 5.6')
+glyph('link', union(link_loop,transform(link_loop,180)),line((5.75,10.25),(10.25,5.75)))
+link_end = stroke('M4 7.7L2.8 8.9A3.05 3.05 0 0 0 7.1 13.2L8.3 12')
+glyph('unlink', union(link_end, transform(link_end, 180)),
+      lines('M3.4 3.4L5.2 5.2', 'M10.8 10.8L12.6 12.6'))
 shape('copy',union(rr(1.5,1.5,9,10,1.7),rr(5,5,9.5,9.5,1.7)),stroke(rr(5,5,9.5,9.5,1.7),1.25))
 shape('clipboard',rr(3,3,10,11,1.5),union(rr(5.5,1.5,5,3,1),lines('M5.5 7H10.5','M5.5 10H9')))
 shape('clipboard-check',rr(3,3,10,11,1.5),union(rr(5.5,1.5,5,3,1),check(8,9,.7)))
@@ -205,11 +218,23 @@ CATEGORY='Files and folders'
 FILE=path('M4 1.5H9L13.5 6V13Q13.5 14.5 12 14.5H4Q2.5 14.5 2.5 13V3Q2.5 1.5 4 1.5Z')
 FOLD=stroke('M9 1.5V6H13.5',1.2)
 FOLDER=path('M2 3H6L8 5H14Q15 5 15 6V12Q15 14 13 14H3Q1 14 1 12V4Q1 3 2 3Z')
-for name,detail in [('file',FOLD),('file-text',union(FOLD,lines('M5 8H11','M5 10.5H10'))),('file-plus',union(FOLD,plus(8,10,.7))),('file-minus',union(FOLD,line((5.5,10),(10.5,10)))),('file-check',union(FOLD,check(8,10,.65))),('file-x',union(FOLD,cross(8,10,.7))),('file-code',union(FOLD,lines('M6.5 8l-2 2 2 2','M9.5 8l2 2-2 2'))),('file-image',union(FOLD,circle(6,8,.7),line((4.5,12),(7,9.5),(9,11),(11,9)))),('file-table',union(FOLD,stroke('M5 8H11V12H5ZM5 10H11M8 8V12',1))),('file-symlink',union(FOLD,stroke('M5 12V10H10.5M8.5 8l2 2-2 2',1.1))),('file-lock',union(FOLD,rr(5.8,9.8,4.4,3,.6),stroke('M6.6 9.8V8.8A1.4 1.4 0 0 1 9.4 8.8V9.8',1))),('file-audio',union(FOLD,line((9,8),(9,11)),circle(7.8,11.5,1.2))),('file-video',union(FOLD,poly([(6,8),(10,10),(6,12)]))),('file-search',union(FOLD,ring(7,9.5,2,1),line((8.5,11),(10.5,13)))),('file-heart',union(FOLD,path('M8 12.5L5.3 10C3.8 8.5 6.2 7.2 8 9C9.8 7.2 12.2 8.5 10.7 10Z'))),('file-zip',union(FOLD,rr(7.3,7.5,1.4,1.4,.2),rr(8.5,9,1.4,1.4,.2),rr(7.3,10.5,1.4,1.4,.2)))]: shape(name,FILE,detail)
-for name,detail in [('folder',line((2,6),(14,6))),('folder-plus',plus(8,10,.8)),('folder-minus',line((5.5,10),(10.5,10))),('folder-check',check(8,10,.7)),('folder-x',cross(8,10,.7)),('folder-heart',path('M8 12.5L5 10C3.5 8.5 6 7 8 9C10 7 12.5 8.5 11 10Z')),('folder-lock',union(rr(6,9,4,3,1),stroke('M7 9V8A1 1 0 0 1 9 8V9',1))),('folder-search',union(ring(7.2,8.8,1.9,1.1),line((8.6,10.2),(10.2,11.8),width=1.1))),('folder-code',lines('M6 8l-2 2 2 2','M10 8l2 2-2 2')),('folder-zip',union(rr(7,6.8,1.4,1.4,.2),rr(8.4,8.2,1.4,1.4,.2),rr(7,9.6,1.4,1.4,.2),stroke('M7.6 12H9.4',1)))]: shape(name,FOLDER,detail)
-shape('folder-open',FOLDER,path('M2 7H14Q15 7 14.5 8.5L13 13H3Z'))
+def zipper(x, top, bottom):
+    # Two staggered teeth lead into a wider slider with a rounded pull.
+    return union(stroke(f'M{x} {top}V{bottom-1.5}M{x-1.35} {top+.35}H{x}'
+                        f'M{x} {top+1.8}h1.35', 1.1),
+                 stroke(rr(x-1.1, bottom-2.05, 2.2, 2.05, .8), 1.1))
+
+for name,detail in [('file',FOLD),('file-text',union(FOLD,lines('M5 8H11','M5 10.5H10'))),('file-plus',union(FOLD,plus(8,10,.7))),('file-minus',union(FOLD,line((5.5,10),(10.5,10)))),('file-check',union(FOLD,check(8,10,.65))),('file-x',union(FOLD,cross(8,10,.7))),('file-code',union(FOLD,stroke('M6.8 8.35L5.35 10L6.8 11.65M9.2 8.35L10.65 10L9.2 11.65',1.15))),('file-image',union(FOLD,circle(6,8,.7),line((4.5,12),(7,9.5),(9,11),(11,9)))),('file-table',union(FOLD,stroke('M5 8H11V12.65H5ZM5 10.3H11M8 8V12.65',1.05))),('file-symlink',union(FOLD,stroke('M5 12V10H10.5M8.5 8l2 2-2 2',1.1))),('file-lock',union(FOLD,rr(5.2,10.25,4.5,2.5,.6),stroke('M6.15 10.3V9.1A1.3 1.3 0 0 1 8.75 9.1V10.3',1.1))),('file-audio',union(FOLD, path('M6.95 11.1V7.4L9.7 8.05V9.35L8.1 8.9V11.45C8.1 13.1 4.65 13.75 4.65 12.25Q4.65 11 6.95 11.1Z'))),('file-video',union(FOLD,poly([(6,8),(10,10),(6,12)]))),('file-search',union(FOLD,ring(6.9,9.25,2.15,1.05),line((8.15,10.6),(9.75,12.1),width=1.15))),('file-heart',union(FOLD,path('M8 12.5L5.3 10C3.8 8.5 6.2 7.2 8 9C9.8 7.2 12.2 8.5 10.7 10Z'))),('file-zip',union(FOLD,zipper(7.2,7.5,12.6)))]: shape(name,FILE,detail)
+for name,detail in [('folder',line((2,6),(14,6))),('folder-plus',plus(8,10,.8)),('folder-minus',line((5.5,10),(10.5,10))),('folder-check',check(8,10,.7)),('folder-x',cross(8,10,.7)),('folder-heart',path('M8 11.9L5 9.4C3.5 7.9 6 6.4 8 8.4C10 6.4 12.5 7.9 11 9.4Z')),('folder-lock',union(rr(6,9,4,3,1),stroke('M7 9V8A1 1 0 0 1 9 8V9',1))),('folder-search',union(ring(7.2,8.8,1.9,1.1),line((8.6,10.2),(10.2,11.8),width=1.1))),('folder-code',stroke('M6.25 7.6L4.45 9.4L6.25 11.2M9.75 7.6L11.55 9.4L9.75 11.2',1.25)),('folder-zip',zipper(8,6.9,12))]: shape(name,FOLDER,detail)
+folder_back = path('M1.45 4Q1.45 3 2.55 3H5.7L7.7 4.8H11.9Q13 4.8 13 6V12.9H1.45Z')
+folder_flap = soften(path('M3.45 7.15H14.6L12.8 13.25H1.45Z'))
+shape('folder-open', union(folder_back, folder_flap), stroke(folder_flap, 1.25))
 shape('folders',union(transform(FOLDER,0,.8,-1,-2),transform(FOLDER,0,.8,1,1.5)),stroke(transform(FOLDER,0,.8,1,1.5),1.25))
-for name,detail in [('spreadsheet',stroke('M2 6H14M6 2V14M10 6V14M2 10H14',1.2)),('slides',union(lines('M4 5H12','M4 8H7','M4 10.5H7'),rr(9,8,3,4,.5))),('word',lines('M3.5 5l2 6 2.5-5 2.5 5 2-6')),('pdf',stroke('M3.7 10.8V5.2H4.7C6.5 5.2 6.5 8 4.7 8H3.7M7.2 5.2V10.8H8.1C10.4 10.8 10.4 5.2 8.1 5.2ZM10.9 10.8V5.2H13M10.9 8H12.6',.8)),('epub',stroke('M8 5Q5 3 3 4V11Q5 10 8 12Q11 10 13 11V4Q11 3 8 5ZM8 5V12',1)),('zip',lines('M7 3H9','M6 5H8','M7 7H9','M6 9H8','M7 11H9'))]: shape(name,rr(),detail)
+shape('pdf', rr(1.4, 2.3, 13.2, 11.4, 1.8),
+      stroke('M3.5 10.65V5.35H4.45C6.35 5.35 6.35 8.3 4.45 8.3H3.5'
+             'M7.05 5.35V10.65H7.65C10.1 10.65 10.1 5.35 7.65 5.35Z'
+             'M10.9 10.65V5.35H12.55M10.9 7.95H12.25', 1.05))
+for name,detail in [('spreadsheet',stroke('M2 6H14M6 2V14M10 6V14M2 10H14',1.2)),('slides',union(lines('M4 5H12','M4 8H7','M4 10.5H7'),rr(9,8,3,4,.5))),('word',stroke('M4.35 5.3L5.9 10.8L8 6.4L10.1 10.8L11.65 5.3',1.2)),('epub',stroke('M8 6Q6.3 4.8 4.4 5.1V10.5Q6.3 10.25 8 11.4Q9.7 10.25 11.6 10.5V5.1Q9.7 4.8 8 6ZM8 6V11.4',1)),('zip',union(stroke('M8 2V8.6M6.5 4H8M8 5.9H9.5M6.5 7.8H8', 1.15), stroke(rr(6.7, 8.7, 2.6, 3.4, 1), 1.1)))]: shape(name,rr(),detail)
 
 CATEGORY='Communication'
 BUBBLE=path('M4 2H12Q14 2 14 4V10Q14 12 12 12H7L3 14V12Q2 12 2 10V4Q2 2 4 2Z')
@@ -263,7 +288,7 @@ shape('timer',circle(8,9,5),union(line((8,9),(10,6.5)),lines('M6 1H10','M8 1V4',
 shape('hourglass',path('M3 2H13Q13 6 9.5 8Q13 10 13 14H3Q3 10 6.5 8Q3 6 3 2Z'),lines('M3 2H13','M3 14H13','M6 5H10','M6 12l2-2 2 2'))
 CAL=rr(2,3,12,11,2); CALTOP=lines('M5 1.5V4.5','M11 1.5V4.5','M2 6H14')
 for name,detail in [('calendar',dots((5,9),(8,9),(11,9),(5,12),(8,12))),('calendar-days',dots((5,9),(8,9),(11,9),(5,12),(8,12),(11,12))),('calendar-check',check(8,10,.7)),('calendar-plus',plus(8,10,.8)),('calendar-x',cross(8,10,.7)),('calendar-clock',union(ring(9,10,2.7,1),stroke('M9 8.5V10H10.5',1))),('calendar-range',union(line((5,10),(11,10),width=1.1),dots((5,10),(11,10),r=1)))]: shape(name,CAL,union(CALTOP,detail))
-shape('list-todo',rr(1.5,2,13,12,2),lines('M3.5 5l1 1 2-2','M8 5H12','M3.5 10l1 1 2-2','M8 10H12'))
+shape('list-todo',rr(1.5,2,13,12,2),lines('M3.5 5l1 1 2-2','M9 5H12','M3.5 10l1 1 2-2','M9 10H12'))
 shape('notebook',rr(3,1.5,10.5,13,1.5),lines('M1.5 4H4.5','M1.5 8H4.5','M1.5 12H4.5','M6.5 5H11','M6.5 8H10'))
 shape('sticky-note',path('M2 2H14V10L10 14H2Z'),stroke('M10 14V10H14M5 5H11M5 8H9',1.2))
 shape('flag',path('M3 2Q6 0 9 2T14 2V9Q11 11 8 9T3 9Z'),line((3,2),(3,14)))
@@ -295,7 +320,8 @@ shape('tv',rr(1.5,4,13,9,2),lines('M5 1l3 3 3-3','M5 15H11'))
 glyph('cast',stroke('M2 4V3Q2 2 3 2H13Q14 2 14 3V11Q14 12 13 12H11',1.35),union(stroke('M2 7A7 7 0 0 1 9 14M2 10A4 4 0 0 1 6 14',1.2),circle(2,14,.8)))
 shape('airplay',rr(1.5,2,13,10,2),poly([(8,8),(13,14),(3,14)]))
 glyph('waveform',lines('M2 6V10','M5 3V13','M8 1V15','M11 4V12','M14 6V10'),line((8,5),(8,11)))
-shape('disc',circle(),union(ring(8,8,1.5,.9),stroke('M4 5Q5 3.5 7 3M12 11Q11 12.5 9 13',1.2)))
+disc_glint = stroke('M4.65 6.6Q5.4 4.95 7 4.55',1.1)
+shape('disc',circle(),union(ring(8,8,1.55,1.05),disc_glint,transform(disc_glint,180)))
 glyph('podcast',stroke('M3.4 11A6 6 0 1 1 12.6 11M5.2 8.9A3.5 3.5 0 1 1 10.8 8.9',1.1),union(circle(8,6,1.25),rr(6.7,8.5,2.6,6,1.3)))
 
 CATEGORY='Layout'
@@ -324,8 +350,8 @@ shape('pipette',path('M3 10L8.5 4.5 11.5 7.5 6 13 2 14Z'),union(path('M8.5 4.5L1
 glyph('bold',stroke('M4 2.5V13.5',1.7),stroke('M4 2.5H8.5C12.5 2.5 12.5 7.5 8.5 7.5H4M8.5 7.5C13.5 7.5 13.5 13.5 8.5 13.5H4',1.7))
 glyph('italic',lines('M7 2H13','M3 14H9'),line((10,2),(6,14)))
 glyph('underline',stroke('M3 2V7A5 5 0 0 0 13 7V2'),line((2,14),(14,14)))
-glyph('strikethrough',stroke('M12 3Q5-1 4 4Q3 6 6 7M10 9Q15 10 11 13Q7 16 3 12'),line((1,8),(15,8)))
-glyph('font',line((2,13),(8,2),(14,13)),line((4,9),(12,9)))
+glyph('strikethrough',stroke('M11.8 3.45C9.4 1.3 4.3 1.75 4.3 4.7C4.3 8.15 11.9 7.35 11.9 11.1C11.9 14.2 6.6 14.9 3.65 12.4'),line((1.7,8),(14.3,8)))
+glyph('font',line((2,13),(8,2),(14,13)),line((4.55,8.95),(11.45,8.95)))
 for name,align in [('align-left','left'),('align-center','center'),('align-right','right'),('align-justify','justify')]:
     ds=[]
     for i,w in enumerate([12,8,12,8]):
@@ -334,7 +360,8 @@ for name,align in [('align-left','left'),('align-center','center'),('align-right
         ds.append(line((x,3+i*3),(x+w,3+i*3)))
     glyph(name,union(ds[0],ds[2]),union(ds[1],ds[3]))
 glyph('list',dots((2,4),(2,8),(2,12)),lines('M5 4H14','M5 8H14','M5 12H14'))
-glyph('list-ordered',lines('M2 2V6','M1 9H3L1 13H3'),lines('M6 4H14','M6 11H14'))
+glyph('list-ordered',stroke('M1.65 3.95L3 2.7V6.5M1.55 9.85C1.8 8.2 4.65 8.5 3.85 10.25Q3.4 11.25 1.6 13.2H4.05',1.15),
+      lines('M6.75 4.65H14','M6.75 11.1H14'))
 glyph('indent',lines('M2 2H14','M2 14H14','M9 6H14','M9 10H14'),line((2,5),(5,8),(2,11)))
 glyph('outdent',lines('M2 2H14','M2 14H14','M9 6H14','M9 10H14'),line((5,5),(2,8),(5,11)))
 glyph('wrap',lines('M2 3H14','M2 13H6'),stroke('M2 7H11A3 3 0 0 1 11 13H9M11 10L8 13 11 15'))
@@ -346,16 +373,18 @@ shape('text-select',rr(2,2,12,12,1),lines('M5 5H11','M8 5V11','M6 11H10'))
 CATEGORY='Technology and development'
 shape('terminal',WINDOW,lines('M4 6l3 3-3 3','M9 12H12'))
 shape('terminal-stack',union(transform(WINDOW,0,.8,-1,-1.5),transform(WINDOW,0,.8,1,1.5)),union(stroke(transform(WINDOW,0,.8,1,1.5),1.2),lines('M6 8l2 2-2 2','M10 12H12')))
-shape('code-block',WINDOW,lines('M5 6l-2 2 2 2','M11 6l2 2-2 2','M9 5l-2 6'))
+shape('code-block',WINDOW,stroke('M5.65 6.3L4.05 8L5.65 9.7M10.35 6.3L11.95 8L10.35 9.7M8.85 5.4L7.15 10.6',1.2))
 glyph('code',lines('M5 4L1 8 5 12','M11 4L15 8 11 12'),line((9,2),(7,14)))
 glyph('braces',stroke('M6 2H5Q4 2 4 4V6Q4 8 2 8Q4 8 4 10V12Q4 14 6 14'),stroke('M10 2H11Q12 2 12 4V6Q12 8 14 8Q12 8 12 10V12Q12 14 10 14'))
-glyph('command',union(ring(3.5,3.5,2,1.25),ring(12.5,3.5,2,1.25),ring(3.5,12.5,2,1.25),ring(12.5,12.5,2,1.25)),stroke('M5.5 3.5V12.5M10.5 3.5V12.5M3.5 5.5H12.5M3.5 10.5H12.5',1.25))
+glyph('command', stroke('M5.65 5.65H3.65A2 2 0 1 1 5.65 3.65V12.35'
+                        'A2 2 0 1 1 3.65 10.35H12.35A2 2 0 1 1 10.35 12.35V3.65'
+                        'A2 2 0 1 1 12.35 5.65Z',1.3), po.Path())
 shape('cpu',rr(4,4,8,8,1.5),union(rr(6.5,6.5,3,3,.5),lines('M5 1V4M8 1V4M11 1V4M5 12V15M8 12V15M11 12V15M1 5H4M1 8H4M1 11H4M12 5H15M12 8H15M12 11H15',)))
 shape('database',path('M2 4C2 0 14 0 14 4V12C14 16 2 16 2 12Z'),stroke('M2 4C2 8 14 8 14 4M2 8C2 12 14 12 14 8'))
 shape('server-rack',rr(2,1.5,12,13,2),union(lines('M2 6H14','M2 10H14'),dots((5,4),(5,8),(5,12)),lines('M9 4H11','M9 8H11','M9 12H11')))
 shape('cloud',path('M4.2 13C-.2 13 .2 6.5 4.2 6.5C4.3 .7 12.7 .5 13 6.5C17 7 16.5 13 12.3 13Z'))
-shape('cloud-upload',DRAWINGS['cloud'][0],transform(arrow(),270,.43,0,1))
-shape('cloud-download',DRAWINGS['cloud'][0],transform(arrow(),90,.43,0,1))
+shape('cloud-upload',DRAWINGS['cloud'][0],arrow(270, .45, dy=.8, width=1.2))
+shape('cloud-download',DRAWINGS['cloud'][0],arrow(90, .45, dy=.8, width=1.2))
 shape('monitor',rr(1.5,2,13,9,1.5),lines('M8 11V14','M5 14H11','M2 8H14'))
 shape('laptop',rr(3,2,10,9,1),path('M2 11H14L15 14H1Z'))
 shape('phone',rr(4,1,8,14,2),union(line((6.5,3),(9.5,3)),line((7,13),(9,13))))
@@ -388,47 +417,82 @@ GEAR=union(*(transform(GEAR_TOOTH,i*45) for i in range(8)))
 shape('settings',op(GEAR,circle(8,8,2.4),po.PathOp.DIFFERENCE))
 glyph('power',stroke('M4.1 3.8A5.8 5.8 0 1 0 11.9 3.8'),line((8,1.5),(8,7.5)))
 glyph('spinner',stroke('M13 11A5.8 5.8 0 1 1 8 2.2',1.35),stroke('M8 2.2A5.8 5.8 0 0 1 13.8 8',1.35))
-for name,n in [('gauge-low',-70),('gauge-medium',-25),('gauge-high',25),('gauge-max',65)]:
-    end=(8+4*math.sin(math.radians(n)),10-4*math.cos(math.radians(n)))
+for name,n in [('gauge-low',-65),('gauge-medium',0),('gauge-high',25),('gauge-max',65)]:
+    length = 2.55 if abs(n) == 65 else 4
+    end=(8+length*math.sin(math.radians(n)),10-length*math.cos(math.radians(n)))
     shape(name,path('M2 13A7 7 0 1 1 14 13Z'),union(line((8,10),end),circle(8,10,1),lines('M3 8H4','M12 8H13')))
 shape('logs',WINDOW,union(dots((4,5),(4,8),(4,11),r=.5),lines('M6 5H12','M6 8H10','M6 11H11')))
 shape('diff',rr(1.5,2,13,12,2),union(plus(8,5,.7),line((6,11),(10,11))))
 glyph('fold-vertical',lines('M2 8H14'),lines('M5 2l3 3 3-3','M5 14l3-3 3 3'))
-shape('cursor',path('M3 1.5L14 9 9 10 6 14Z'),line((9,10),(11,14)))
+shape('cursor',path('M3.1 1.8L13.5 8.5L9 9.2L11.2 13.15L9.1 14.35L6.85 10.3L3.65 13.5Z'))
 shape('themes',circle(),path('M8 2A6 6 0 0 1 8 14Z'))
 shape('lightbulb',path('M5 11C5 9 2.5 8 2.5 6A5.5 5.5 0 0 1 13.5 6C13.5 8 11 9 11 11Z'),lines('M5.5 13H10.5','M6.5 15H9.5','M8 11V7','M6 6l2 1 2-1'))
 STAR=path('M8 1.5L10 5.7 14.5 6.3 11.2 9.5 12 14 8 11.8 4 14 4.8 9.5 1.5 6.3 6 5.7Z')
 shape('star',STAR)
-shape('sparkles',path('M6 3.5Q6.8 8.2 11.5 9Q6.8 9.8 6 14.5Q5.2 9.8 .5 9Q5.2 8.2 6 3.5Z'),union(path('M12 1L13 3.5 15.5 4.5 13 5.5 12 8 11 5.5 8.5 4.5 11 3.5Z'),circle(3,2,.7)))
+def sparkle(x,y,r):
+    shoulder = .18*r
+    return path(f'M{x} {y-r}Q{x+shoulder} {y-shoulder} {x+r} {y}'
+                f'Q{x+shoulder} {y+shoulder} {x} {y+r}Q{x-shoulder} {y+shoulder} {x-r} {y}'
+                f'Q{x-shoulder} {y-shoulder} {x} {y-r}Z')
+
+shape('sparkles',sparkle(6.15,9.35,4.8),sparkle(12,3.95,2.65))
 shape('zap',path('M9 1L2 9H7L6 15 14 6H9Z'))
 
 CATEGORY='Charts and analytics'
 for name,detail in [('chart-bar',union(rr(3,8,2.5,5,.5),rr(7,4,2.5,9,.5),rr(11,6,2.5,7,.5))),('chart-line',line((3,11),(6,7),(9,9),(13,4))),('chart-area',poly([(3,12),(3,10),(6,6),(9,8),(13,3),(13,12)])),('trending-up',lines('M2 12L6 8 9 10 14 3','M10 3H14V7')),('trending-down',lines('M2 4L6 8 9 6 13 11.5','M9 11.5H13V7.5'))]: glyph(name,lines('M2 2V14H14'),detail)
-shape('chart-pie',circle(),stroke('M8 2V8H14'))
+pie = path('M7 2A5.9 5.9 0 1 0 14 9H7Z')
+quarter = path('M9.3 1.7A6 6 0 0 1 14.3 6.7H9.3Z')
+shape('chart-pie', union(pie, quarter))
 shape('chart-donut',ring(8,8,6,2.5),path('M8 2A6 6 0 0 1 14 8H10.5A2.5 2.5 0 0 0 8 5.5Z'))
 shape('activity',WINDOW,line((1.5,8),(5,8),(7,4),(9,12),(11,8),(14.5,8)))
 shape('workflow',union(poly([(8,1),(11,4),(8,7),(5,4)]),rr(1,11,5,4,1),rr(10,11,5,4,1)),stroke('M8 7V9H3.5V11M8 9H12.5V11'))
-glyph('git-compare',union(ring(3,12.5,1.5,1.1),stroke('M3 11V5Q3 3 5 3H7M5 1L7 3 5 5',1.2)),union(ring(13,3.5,1.5,1.1),stroke('M13 5V11Q13 13 11 13H9M11 11L9 13 11 15',1.2)))
+compare_end = union(ring(3.45,12.25,2.05,1.1),
+                    stroke('M3.45 10.25V5.6Q3.45 3.65 5.45 3.65H7.2M5.3 1.75L7.2 3.65L5.3 5.55',1.25))
+glyph('git-compare',compare_end,transform(compare_end,180))
 
 CATEGORY='Finance and commerce'
 shape('credit-card',rr(1.5,3,13,10,2),lines('M1.5 6H14.5','M4 10H7','M10 10H12'))
 shape('wallet',rr(1.5,3,13,11,2),union(rr(9,7,5.5,4,1),circle(11,9,.6),stroke('M3 3L11 1V3')))
 shape('banknote',rr(1,3,14,10,1),union(ring(8,8,2.3,1.2),dots((3.5,8),(12.5,8))))
-shape('coins',path('M2 5C2 2 10 2 10 5V11C10 14 2 14 2 11Z'),stroke('M2 5C2 8 10 8 10 5M2 8C2 11 10 11 10 8M11 7C15 6 16 9 14 10V13Q12 15 9 14'))
+# Cylindrical stacks share the same elliptical ends. Only the exposed
+# part of the taller rear stack contributes interior lines.
+def coin_stack(x, y, width, height):
+    rx, ry = width / 2, 1.65
+    return path(f'M{x} {y}a{rx} {ry} 0 1 1 {width} 0v{height}'
+                f'a{rx} {ry} 0 0 1 {-width} 0Z')
+
+front_coins = coin_stack(1.6, 8.5, 7.8, 3.3)
+rear_coins = coin_stack(6.5, 4.4, 7.9, 4.6)
+coin_rims = stroke('M6.5 4.4a3.95 1.65 0 0 0 7.9 0M6.5 6.8a3.95 1.65 0 0 0 7.9 0', 1.1)
+coin_seams = union(op(coin_rims, front_coins, po.PathOp.DIFFERENCE),
+                   stroke(front_coins, 1.25), stroke('M1.6 8.5a3.9 1.65 0 0 0 7.8 0', 1.15))
+shape('coins', union(front_coins, rear_coins), coin_seams)
+# The overlap line only cuts the rear stack. Across both faces the rim
+# follows one ellipse and stays clear of the outside wall.
+coin_front = union(front_coins, stroke(front_coins, 1.25))
+coin_back = union(rear_coins, stroke(rear_coins, 1.25))
+back_rims = stroke('M7.7 5.55Q10.45 6.8 13.2 5.55M10.8 8.4Q12.1 8.4 13.2 7.9', 1.15)
+front_rim = stroke('M2.8 9.65Q5.5 11 8.2 9.65', 1.15)
+STYLE_OVERRIDES['coins'] = {'solid': union(
+    op(coin_back, union(back_rims, coin_front, stroke(coin_front, 2)), po.PathOp.DIFFERENCE),
+    op(coin_front, front_rim, po.PathOp.DIFFERENCE))}
 shape('receipt',path('M3 1.5L5 3 7 1.5 9 3 11 1.5 13 3V14.5L11 13 9 14.5 7 13 5 14.5 3 13Z'),lines('M5.5 6H10.5','M5.5 9H10.5','M8 12H10.5'))
 shape('shopping-bag',rr(2.5,5,11,9,2),stroke('M5 6V4A3 3 0 0 1 11 4V6'))
 shape('shopping-cart',path('M3 4H15L13 10H5Z'),union(stroke('M1 1.5H2.5L5 10'),circle(6,13.5,1.2),circle(12,13.5,1.2)))
-shape('basket',path('M1 6H15L13 14H3Z'),lines('M4 6L7 2','M12 6L9 2','M6 9V11.5','M10 9V11.5'))
+shape('basket',path('M1.45 6.4H14.55L12.8 13.7H3.2Z'),
+      union(stroke('M4 6.4L7.3 2.75Q8 1.95 8.7 2.75L12 6.4',1.35),
+            stroke('M6.2 9V11M9.8 9V11',1.15)))
 AWNING=path('M3 2H13L14.5 6Q14.5 8 12.3 8Q10.2 8 10.2 6Q10.2 8 8 8Q5.8 8 5.8 6Q5.8 8 3.7 8Q1.5 8 1.5 6Z')
 shape('store',union(rr(2.5,6,11,8.5,1),AWNING),union(stroke(AWNING,1.1),stroke('M6.3 14V10H9.7V14',1.1),lines('M6.5 2L5.8 6','M9.5 2L10.2 6')))
 shape('tag',path('M2 2H8L14 8Q15 9 14 10L10 14Q9 15 8 14L2 8Z'),circle(5,5,1))
 shape('gift',rr(2,6,12,8,1),union(stroke('M8 6V14M1 6H15V9H1ZM8 6C1 6 3 0 6 2L8 6C15 6 13 0 10 2Z',1.2)))
 shape('package',path('M1.5 4.5L8 1.5 14.5 4.5V11.5L8 14.5 1.5 11.5Z'),stroke('M1.5 4.5L8 8 14.5 4.5M8 8V14.5M5 3L11.5 6.3'))
-shape('barcode',rr(1.5,3,13,10,1),lines('M4 5V11','M6 5V11','M9 5V11','M12 5V11'))
-shape('percent',circle(),union(line((5,11),(11,5)),circle(5,5,1),circle(11,11,1)))
-shape('dollar',circle(),transform(stroke('M10.5 5Q5 2 5 6Q5 8 8 8Q12 8 11 10Q10 13 5 11M8 3V13',1.2),scale=.78))
-shape('euro',circle(),transform(stroke('M11 4Q5 2 5 8Q5 14 11 12M3 7H10M3 9H9',1.2),scale=.78))
-shape('pound',circle(),transform(stroke('M5 12H11M4.5 8H10M6 12V6Q6 3 10 4',1.2),scale=.78))
+shape('barcode',rr(1.5,3,13,10,1.2),
+      union(*(rr(x,5,w,6,.25) for x,w in [(3.65,1.05),(5.7,1.75),(8.55,1.05),(10.65,1.7)])))
+shape('percent',circle(),union(line((5.55,10.9),(10.45,5.1),width=1.25),circle(5.7,5.7,.9),circle(10.3,10.3,.9)))
+shape('dollar', circle(), stroke('M10.1 5.65C8.5 4.25 5.7 4.95 5.7 6.45C5.7 8.45 10.3 7.45 10.3 9.65C10.3 11.35 7.25 11.85 5.65 10.45M8 3.95V4.95M8 11.05V12.05', 1.2))
+shape('euro', circle(), stroke('M10.55 5.05C7.8 3.45 6.1 5.35 6.1 8C6.1 10.8 7.9 12.5 10.55 10.95M4.85 6.85H9.05M4.85 9.15H8.7', 1.2))
+shape('pound', circle(), stroke('M5.55 11.15H10.6M5.3 8.15H9.25M6.6 11.15V6.65Q6.6 3.65 9.95 4.95', 1.2))
 
 CATEGORY='Work and education'
 shape('briefcase',rr(1.5,5,13,9,2),stroke('M5 5V2H11V5M1.5 8Q8 12 14.5 8M8 9V11'))
@@ -443,27 +507,34 @@ shape('medal',circle(8,10,4.5),union(path('M3 1H6L8 5 10 1H13L10 6H6Z'),circle(8
 shape('lightbulb-on',DRAWINGS['lightbulb'][0],union(DRAWINGS['lightbulb'][1],lines('M1 2L2 3','M14 3L15 2')))
 shape('flask',path('M5 1H11V3H10V7L14 13Q15 15 12 15H4Q1 15 2 13L6 7V3H5Z'),union(line((5,10),(11,10)),dots((7,12),(10,13),r=.5)))
 shape('test-tube',path('M4.5 1.5H11.5V10.5A3.5 3.5 0 0 1 4.5 10.5Z'),lines('M3.5 1.5H12.5','M4.5 8H11.5','M9 4.5H11'))
-ORBIT=stroke('M8 1A3 7 0 1 0 8 15A3 7 0 1 0 8 1Z',1)
-glyph('atom',union(ORBIT,transform(ORBIT,60),transform(ORBIT,-60)),circle(8,8,1.3))
+orbit = stroke('M8 1.55A2.25 6.45 0 1 0 8 14.45A2.25 6.45 0 1 0 8 1.55Z',1.05)
+glyph('atom',union(orbit,transform(orbit,60),transform(orbit,-60)),circle(8,8,.7))
 shape('rocket',path('M5 11C4 4 9 1 14 1C15 6 12 12 5 11Z'),union(ring(10,5,1.7,1),stroke('M5 6H2L1 11H5M10 11V14L5 15V11M4 12L2 14')))
 glyph('infinity',stroke('M8 8C0-3-3 18 8 8'),stroke('M8 8C19-3 16 18 8 8'))
 
 CATEGORY='Health and fitness'
 HEART=path('M8 14L2.7 8.7C-1.2 4.8 4.3 .2 8 4C11.7 .2 17.2 4.8 13.3 8.7Z')
 shape('heart',HEART)
-shape('heart-pulse',HEART,line((2,8),(5,8),(6.5,5),(8.5,11),(10,8),(14,8)))
+pulse = line((1.5,8),(4.75,8),(6.35,5.1),(8.45,10.8),(10,8),(14.5,8),width=1.25)
+shape('heart-pulse',HEART,op(pulse,HEART,po.PathOp.INTERSECTION))
 shape('medical-cross',rr(),plus(8,8,1.5))
 shape('first-aid',rr(1.5,4,13,10,2),union(plus(8,9,1),stroke('M5 4V1.5H11V4')))
-shape('pill',transform(rr(4,1,8,14,4),45),transform(line((4,8),(12,8)),45))
+capsule = rr(4.45,1.55,7.1,12.9,3.55)
+capsule_seam = op(line((4,8),(12,8),width=1.2),capsule,po.PathOp.INTERSECTION)
+shape('pill',transform(capsule,45),transform(capsule_seam,45))
 glyph('stethoscope',stroke('M2 2V6A4 4 0 0 0 10 6V2M2 2H3M9 2H10'),union(ring(13,8.5,1.6,1.1),stroke('M6 10V11.5Q6 14.5 9.5 14.5T13 11.5V10')))
 shape('thermometer',path('M6 3A2 2 0 0 1 10 3V9A3.5 3.5 0 1 1 6 9Z'),union(line((8,5),(8,11)),circle(8,11.5,1.3)))
 shape('bandage',transform(rr(1,4,14,8,3),-45),union(transform(rr(5,5.5,6,5,1),-45),transform(dots((3,7),(3,9),(13,7),(13,9),r=.45),-45)))
 shape('hospital',union(rr(3.5,1.5,9,13,1),rr(1,7,3,7.5,.5),rr(12,7,3,7.5,.5)),union(plus(8,5,.7),stroke('M6.5 14.5V10.5H9.5V14.5',1.1)))
-glyph('dumbbell',union(rr(1,4,3,8,1),rr(12,4,3,8,1)),union(line((4,8),(12,8)),lines('M5 5V11','M11 5V11')))
+weight_plates = union(rr(1.45,5.7,1.65,4.6,.55),rr(4.15,3.7,2.1,8.6,.7))
+glyph('dumbbell',union(weight_plates,mirror(weight_plates)),line((1.65,8),(14.35,8)))
 shape('weight',path('M5 6.5H11L14 13Q14.6 14.5 12.5 14.5H3.5Q1.4 14.5 2 13Z'),stroke('M5.5 6.5V4A2.5 2.5 0 0 1 10.5 4V6.5'))
 SOLE=path('M3.8 9.7C1.2 9.2 .8 6.6 2.1 4.3C3.1 2.8 5.8 3.1 5.8 5.4C5.8 6.7 4.2 7.1 4.4 8.5Q4.6 9.7 3.8 9.7Z')
-glyph('footprints',union(SOLE,transform(SOLE,0,1,7,-2)),union(rr(2.7,11.2,2.5,2.7,1.2),rr(9.7,9.2,2.5,2.7,1.2)))
-shape('bed',rr(1.5,6,13,6,1),union(rr(3,3,4,4,1),rr(9,3,4,4,1),lines('M1.5 3V14','M14.5 8V14','M2 10H14')))
+glyph('footprints', union(SOLE,transform(mirror(SOLE),dy=-2)),
+      union(rr(2.75,11.2,2.55,2.7,1.25),rr(10.7,9.2,2.55,2.7,1.25)))
+bed_frame = path('M2 8L3.2 4Q3.5 3 4.7 3H11.3Q12.5 3 12.8 4L14 8V12H2Z')
+pillows = union(rr(4, 5, 3.2, 1.8, .65), rr(8.8, 5, 3.2, 1.8, .65))
+shape('bed', bed_frame, union(pillows, lines('M2 10H14', 'M2 12V13.9', 'M14 12V13.9')))
 shape('moon',path('M10.7 1.8A6.4 6.4 0 1 0 14.2 10.7A5.2 5.2 0 0 1 10.7 1.8Z'))
 shape('apple',path('M8 5C1 1 0 9 4 13C5.5 15 6.5 13.5 8 13.5S10.5 15 12 13C16 9 15 1 8 5Z'),stroke('M8 5Q8 1 11 1'))
 shape('droplet',path('M8 1C6 5 2 7 2 10A6 6 0 0 0 14 10C14 7 10 5 8 1Z'),stroke('M5 10Q5 12 7 12'))
@@ -473,8 +544,8 @@ CATEGORY='Maps and travel'
 PIN=path('M8 15C4 10 2 8 2 6A6 6 0 0 1 14 6C14 8 12 10 8 15Z')
 shape('map-pin',PIN,ring(8,6,2.1,1.2))
 shape('map',path('M1.5 3L6 1.5 10 3 14.5 1.5V13L10 14.5 6 13 1.5 14.5Z'),lines('M6 1.5V13','M10 3V14.5'))
-shape('navigation',path('M14 2L9 14 6 9 1 6Z'),line((6,9),(10,5)))
-shape('globe',circle(),stroke('M2 8H14M8 2C3 5 3 11 8 14C13 11 13 5 8 2',1.2))
+shape('navigation',path('M14.2 1.8L9.3 14.2L7.2 8.8L1.8 6.7Z'))
+shape('globe',circle(),stroke('M2 8H14M8 2C4.5 5.5 4.5 10.5 8 14C11.5 10.5 11.5 5.5 8 2',1.15))
 glyph('route',stroke('M3 3H10Q15 3 14 7Q14 10 8 10H6Q2 10 3 14'),union(circle(3,3,1.5),circle(3,14,1.5)))
 shape('car',path('M3 6L5 2H11L13 6 14.5 7V12H1.5V7Z'),union(stroke('M3 6H13M2 12V14M14 12V14'),dots((4,9),(12,9),r=.9)))
 shape('truck',union(rr(1.5,3,8,8.5,1),path('M9.5 6H12.5L14.5 9V11.5H9.5Z')),union(ring(4.5,12,1.8,1.15),ring(12,12,1.8,1.15),stroke('M9.5 6V11.5M10 8.5H14',1.1)))
@@ -485,8 +556,10 @@ shape('plane',path('M8 1Q9 1 9 3V6L15 10V12L9 10V13L11 15H5L7 13V10L1 12V10L7 6V
 shape('ship',path('M1 9L8 7 15 9 13 13H3Z'),stroke('M4 8V3H12V8M7 3V1H9M1 15Q3 13 5 15Q7 13 9 15Q11 13 13 15H15'))
 shape('suitcase',rr(3,4,10,10,2),union(stroke('M6 4V1.5H10V4M5 6V12M11 6V12M5 14V15M11 14V15')))
 shape('ticket',path('M1 3H15V6C11 6 11 10 15 10V13H1V10C5 10 5 6 1 6Z'),lines('M10 5V6','M10 8V9','M10 11V12'))
-shape('tent',poly([(8,2),(15,14),(1,14)]),stroke('M8 2V14M8 8L4.5 14M8 8L11.5 14'))
-shape('mountain',poly([(1,14),(6,3),(9,8),(11,5),(15,14)]),line((4,7.5),(6,9),(7.5,7)))
+shape('tent',poly([(8,2),(14.5,13.8),(1.5,13.8)]),
+      stroke('M8 2V7.8M4.65 13.8L8 7.8L11.35 13.8',1.2))
+shape('mountain',poly([(1.45,13.8),(6.05,2.65),(9.3,8.45),(11.1,5.25),(14.55,13.8)]),
+      stroke('M4.25 7.05L5.55 8L6.75 6.75L7.55 7.5L8.25 6.65',1.15))
 shape('signpost',poly([(1.5,3),(11.5,3),(14.5,6),(11.5,9),(1.5,9)]),lines('M7 1V3','M7 9V15'))
 shape('parking',rr(),stroke('M6 12V4H9A2 2 0 0 1 9 8H6',1.5))
 shape('fuel',rr(2,2,8,12,1),union(rr(4,4,4,4,.5),stroke('M10 6H12V12Q15 15 15 11V6L12 3')))
@@ -495,39 +568,59 @@ CATEGORY='Weather and nature'
 shape('sun',circle(8,8,3.5),lines('M8 1V2','M8 14V15','M1 8H2','M14 8H15','M3 3l1 1','M12 12l1 1','M3 13l1-1','M12 4l1-1'))
 shape('sunrise',path('M3 12A5 5 0 0 1 13 12Z'),lines('M1 12H15','M3 14.5H13','M8 1.3V4.8','M5.7 3.6L8 1.3 10.3 3.6','M1 8H2','M14 8H15'))
 shape('sunset',path('M3 12A5 5 0 0 1 13 12Z'),lines('M1 12H15','M3 14.5H13','M8 1.3V4.8','M5.7 2.5L8 4.8 10.3 2.5','M1 8H2','M14 8H15'))
-for name,detail in [('cloud-rain',lines('M4 12L3 15','M8 12L7 15','M12 12L11 15')),('cloud-snow',dots((4,13),(8,14),(12,13))),('cloud-lightning',path('M9 9L5 13H8L7 16 12 11H9Z')),('cloud-fog',lines('M2 12H14','M4 15H12'))]:
-    shape(name,transform(DRAWINGS['cloud'][0],0,.85,0,-2),detail)
-SNOW_ARM=stroke('M8 1.5V8M5.8 3.3L8 5.5 10.2 3.3',1.1)
-glyph('snowflake',union(*(transform(SNOW_ARM,i*60) for i in range(6))),circle(8,8,1.1))
+for name,detail in [('cloud-rain',lines('M4 12L3 15','M8 12L7 15','M12 12L11 15')),('cloud-snow',dots((4,13),(8,14),(12,13))),('cloud-lightning',path('M8.3 10.7L5.6 13.25H7.9L7.35 15.2L10.7 12H8.55L9.2 10.7Z')),('cloud-fog',lines('M2.65 11.85H13.35','M4.2 14.4H11.8'))]:
+    cloud_y = -3 if name in {'cloud-fog','cloud-lightning'} else -2
+    shape(name,transform(DRAWINGS['cloud'][0],0,.85,0,cloud_y),detail)
+snow_axis = line((8, 1.45), (8, 14.55), width=1.25)
+snow_fork = line((6.4, 2.65), (8, 4.25), (9.6, 2.65), width=1.2)
+glyph('snowflake', union(*(transform(snow_axis, i*60) for i in range(3))),
+      union(*(transform(snow_fork, i*60) for i in range(6))))
 glyph('wind',stroke('M1 5H10Q14 5 13 2Q12 0 10 2M1 8H13Q16 8 15 11Q14 13 12 11'),stroke('M2 11H7Q10 11 9 14Q8 16 6 14'))
-shape('umbrella',path('M1 8A7 7 0 0 1 15 8Q12 6 10 8Q8 6 6 8Q3 6 1 8Z'),stroke('M8 8V12Q8 16 11 14M8 1V2'))
+shape('umbrella',path('M1.5 8.5A6.5 6.5 0 0 1 14.5 8.5Q12.5 6.8 10.15 8.5Q8 6.8 5.85 8.5Q3.5 6.8 1.5 8.5Z'),
+      stroke('M8 1.45V2M8 7.75V12.1Q8 14.1 9.65 14.1Q11.05 14.1 11.05 12.6',1.25))
 glyph('rainbow',stroke('M1.5 13V9A6.5 6.5 0 0 1 14.5 9V13',1.2),stroke('M4 13V9A4 4 0 0 1 12 9V13M6.5 13V9A1.5 1.5 0 0 1 9.5 9V13',1.2))
 shape('leaf',path('M2 13C0 3 8 1 14 2C15 10 10 16 2 13Z'),stroke('M2 13L11 5M6 9V5M6 9H10'))
 shape('tree',path('M8 1L14 7H11L15 12H1L5 7H2Z'),line((8,10),(8,15)))
-shape('flower',path('M8 4C3-2-1 5 4 8C-1 13 6 17 8 12C12 17 17 11 12 8C17 3 10-1 8 4Z'),ring(8,8,2.2,1.3))
-shape('sprout',path('M8 10C2 10 1 6 2 3C7 3 9 5 8 10C8 4 11 2 15 3C15 8 12 10 8 10Z'),line((8,8),(8,15)))
-shape('flame',path('M8 1C7 6 3 4 2 9C0 16 15 17 14 9Q13 5 11 4Q12 8 9 8Q7 7 8 1Z'),path('M8 8C8 11 5 10 5 12C5 16 12 15 11 12Z'))
+petal_quarter = 'C9.05 3.2 11.7 1.55 13.35 3.2C15 4.85 13.7 7.05 11.6 8'
+petal = path('M8 8V4.4' + petal_quarter + 'Z')
+flower_body = union(*(transform(petal,angle) for angle in (0,90,180,270)))
+shape('flower',flower_body,circle(8,8,1.25))
+sprout_leaves = path('M7.95 10.15C4.2 10.3 2.1 7.8 2.1 4.75C5.65 4.8 7.95 6.85 7.95 10.15Z'
+                     'M8.1 8.9C8.15 5 10.5 2.8 13.85 2.75C13.85 6.2 11.6 8.9 8.1 8.9Z')
+shape('sprout',sprout_leaves,line((8,8.6),(8,14),width=1.25))
+shape('flame',path('M8.15 1.5C8.25 5.4 3.05 5.9 2.65 10.1C2.2 15.4 12.65 16.1 13.35 10.1'
+                   'Q13.65 7.1 11.55 4.85Q11.65 7.1 9.7 7.9Q8.45 6 8.15 1.5Z'),
+      path('M7.8 9.15C7.45 10.5 5.85 10.95 6.25 12.4C6.7 14.05 9.8 13.95 9.95 12.3Q10 11 7.8 9.15Z'))
 RECYCLE_ARM=stroke('M5 4L7 1.7Q8 1 8.7 2.2L11 6M8 5.3L11 6 11.5 3',1.15)
 glyph('recycle',union(RECYCLE_ARM,transform(RECYCLE_ARM,120)),transform(RECYCLE_ARM,240))
 shape('paw',path('M4 11Q8 5 12 11Q15 16 10 14Q8 13 6 14Q1 16 4 11Z'),union(circle(2,6,1.5),circle(6,3,1.5),circle(10,3,1.5),circle(14,6,1.5)))
-shape('fish',path('M12 8C8-1 1 3 1 8C1 13 8 17 12 8L15 4V12Z'),union(circle(4,7,.7),stroke('M8 4Q10 8 8 12')))
+shape('fish',path('M10.65 7.25Q11.15 7.8 11.65 7.3L14.35 4.8V11.2L11.65 8.7'
+                  'Q11.15 8.2 10.65 8.75C7.3 14.5 1.6 12.4 1.6 8C1.6 3.6 7.3 1.5 10.65 7.25Z'),
+      union(circle(3.9,7.4,.65),stroke('M5.7 4.45Q8 8 5.7 11.55',1.15)))
 
 CATEGORY='Home and food'
 shape('coffee',rr(2,5,9,8,2),stroke('M11 6H13Q17 9 11 11M1 15H13M4 1V3M8 1V3'))
 shape('cup',path('M3 2H13L11 14H5Z'),line((4,5),(12,5)))
-glyph('utensils',stroke('M2 1.5V5Q2 7 4 7T6 5V1.5M4 1.5V14.5'),union(path('M13.5 1.5C10 1.5 9.5 5 9.5 8H13.5Z'),line((13.5,1.5),(13.5,14.5))))
-shape('pizza',path('M1 3Q8-1 15 3L8 15Z'),union(stroke('M2 5Q8 2 14 5'),dots((6,7),(10,6),(8,11),r=.8)))
+knife = path('M13.8 1.65V14.35H12.55V8.75H9.65Q9.65 3 13.8 1.65Z')
+glyph('utensils',stroke('M2.1 1.65V5Q2.1 7 4.15 7T6.2 5V1.65M4.15 1.65V14.35'),knife)
+pizza_slice = path('M1.6 3.7Q8 .4 14.4 3.7L8 14.15Z')
+pizza_crust = op(stroke('M1.4 6Q8 2.6 14.6 6',1.15),pizza_slice,po.PathOp.INTERSECTION)
+shape('pizza', pizza_slice, union(pizza_crust,dots((6.25,7.3),(9.6,6.85),(8,10.55),r=.7)))
 shape('cake',rr(2,7,12,7,1),union(stroke('M2 10Q4 12 6 10Q8 12 10 10Q12 12 14 10M5 7V4M11 7V4'),circle(5,2,.8),circle(11,2,.8)))
 shape('wine',path('M4 1.5H12V6A4 4 0 0 1 4 6Z'),stroke('M8 10V14M5 14H11M4 5H12'))
 shape('bottle',path('M6 1H10V5L12 8V14H4V8L6 5Z'),lines('M6 3H10','M4 10H12'))
 shape('chef-hat',path('M4 9C-1 9 0 3 4 3Q8-2 12 3C16 3 17 9 12 9V14H4Z'),stroke('M4 11H12M7 8V10M10 7V10'))
-shape('sofa',rr(3,3,10,8,2),union(rr(1,7,4,6,1),rr(11,7,4,6,1),lines('M5 10H11','M3 13V15','M13 13V15')))
+sofa_body = union(rr(2.4,3.3,11.2,8,2), rr(1.5,7.3,13,5.2,1.25))
+sofa_seam = stroke('M1.5 8.8Q1.5 7.3 3 7.3T4.5 8.8V10H11.5V8.8'
+                   'Q11.5 7.3 13 7.3T14.5 8.8', 1.2)
+shape('sofa', sofa_body, union(sofa_seam, lines('M3 12.5V14', 'M13 12.5V14')))
 shape('lamp',path('M5 2H11L14 9H2Z'),lines('M8 9V14','M5 14H11'))
 shape('door-open',path('M3 3L11 1V15L3 13Z'),union(stroke('M11 3H14V13H11'),circle(8.5,8,.65)))
 shape('key-round',circle(5,5,3.5),union(circle(5,5,1),stroke('M7.5 7.5L14 14H11V11H9V9')))
 shape('plug',rr(4,5,8,5,2),stroke('M5.5 1V5M10.5 1V5M8 10V15'))
-BLADE=path('M7.2 7.3C3 7 2.5 3 5.2 2.5C8.8 1.5 10.5 4.5 8.7 7.5Z')
-shape('fan',circle(8,8,6),union(*(transform(BLADE,i*120) for i in range(3)),circle(8,8,1)))
+fan_blade = path('M7.4 7.1C5.45 6.15 4.9 4.4 6.5 4C8.15 3.45 9.15 4.9 8.4 6.55L8.05 7.25Z')
+fan_blades = union(*(transform(fan_blade,i*120) for i in range(3)),circle(8,8,1.05))
+shape('fan',circle(),fan_blades)
 shape('gamepad',path('M4 4H12Q14 4 15 11Q16 15 12 13L10 11H6L4 13Q0 15 1 11Q2 4 4 4Z'),union(plus(5,8,.65),dots((10.5,7),(12.5,9),r=.7)))
 shape('puzzle',DRAWINGS['extension'][0])
 glyph('music-note',DRAWINGS['music'][0],DRAWINGS['music'][1])
@@ -536,9 +629,11 @@ shape('bell-ring',BELL,union(line((6,14),(10,14)),lines('M1 3L2 2','M14 2L15 3')
 CATEGORY='Editing and design'
 glyph('paperclip',stroke('M11 6L6 11Q4 12 4 10L10 4Q13 1 14 5Q15 7 12 10L8 14Q3 17 1 12Q0 9 3 6L8 1'),stroke('M10 4L4 10Q4 12 6 11L11 6'))
 CATEGORY='Technology and development'
-glyph('ssh',lines('M1.5 5V1.5H5','M11 14.5H14.5V11'),transform(arrow(),scale=.75))
+shape('ssh', rr(1.5, 2.8, 13, 10.4, 1.8),
+      union(stroke('M4 6.3L5.9 8.2L4 10.1', 1.25),
+            stroke('M8 10L11.8 6.2M8.8 6.2H11.8V9.2', 1.2)))
 CATEGORY='Actions and status'
-shape('refresh-circle-fill',circle(),transform(union(DRAWINGS['refresh'][0],DRAWINGS['refresh'][1]),scale=.62))
+shape('refresh-circle-fill', circle(), stroke('M10.7 9.5A3.05 3.05 0 1 1 10.5 6.15M8.3 6.15H10.5V4.3', 1.25))
 
 CATEGORY='Actions and status'
 glyph('menu',lines('M2 3H14','M2 13H14'),line((2,8),(14,8)))
@@ -550,8 +645,8 @@ glyph('bluetooth-off',DRAWINGS['bluetooth'][0],union(DRAWINGS['bluetooth'][1],li
 shape('cloud-off',DRAWINGS['cloud'][0],line((2,2),(14,14)))
 shape('git-fork',union(circle(3,3,1.7),circle(13,3,1.7),circle(8,13,1.7)),stroke('M3 5V6Q3 8 8 8Q13 8 13 6V5M8 8V11'))
 CATEGORY='Files and folders'
-for name,angle in [('folder-upload',270),('folder-download',90)]:shape(name,FOLDER,transform(arrow(),angle,.5,0,2))
-for name,angle in [('file-upload',270),('file-download',90)]:shape(name,FILE,union(FOLD,transform(arrow(),angle,.45,0,2)))
+for name,angle in [('folder-upload',270),('folder-download',90)]:shape(name, path('M1.6 4Q1.6 3 2.7 3H6L8 5H13.3Q14.4 5 14.4 6.1V12.5Q14.4 14 13 14H3Q1.6 14 1.6 12.5Z'), arrow(angle, .48, dy=1.45, width=1.25))
+for name,angle in [('file-upload',270),('file-download',90)]:shape(name,FILE,union(FOLD,arrow(angle, .43, dx=-.45, dy=2.05, width=1.2)))
 CATEGORY='Communication'
 for name,detail in [('mail-check',check(8,9.8,.55)),('mail-plus',plus(8,9.8,.6))]:
     shape(name,rr(1.5,3,13,10,2),union(line((2,4),(8,6.3),(14,4)),detail))
@@ -571,7 +666,7 @@ CATEGORY='Time and planning'
 shape('bookmark-check',path('M4 2H12V14L8 11 4 14Z'),check(8,6,.55))
 shape('calendar-heart',CAL,union(CALTOP,path('M8 12.5L5 10C3.5 8 6 7 8 9C10 7 12.5 8 11 10Z')))
 CATEGORY='Finance and commerce'
-shape('yen',circle(),stroke('M5 4L8 8 11 4M8 8V12M5 8H11M5 10H11',1.1))
+shape('yen', circle(), stroke('M5.65 4.95L8 7.85L10.35 4.95M8 7.85V11.9M5.7 7.85H10.3M5.9 10.05H10.1', 1.2))
 
 # Original coverage additions share the same authoring geometry and exports.
 from expansion import register as register_expansion
@@ -693,6 +788,8 @@ def main():
             mono=union(stroke(b,1.05),stroke(d,1.05))
         if name in {'thumbs-up','thumbs-down'}:
             mono=union(outer,stroke(d,1.1))
+        if name == 'layout-grid':
+            solid=union(*(rr(x,y,5.75,5.45,1) for x in (1.5,8.75) for y in (1.9,8.65)))
         if name == 'chart-area':
             mono=union(b,stroke(d,1.05))
         if name == 'chart-bar':
@@ -700,8 +797,7 @@ def main():
             mono=union(b,*(stroke(rr(x,y,2,12.1-y,.35),1) for x,y in [(4,8),(8,4),(12,6)]))
         if name == 'fan': mono=union(outer,stroke(d,1.05))
         if name == 'utensils':
-            knife=path('M13.5 1.5C10 1.5 9.5 5 9.5 8H13.5Z')
-            mono=union(b,stroke(knife,1.2),line((13.5,8),(13.5,14.5)))
+            mono=union(b,stroke('M13.2 14.35V1.8Q10.1 3.1 10.1 8.1H13.2',1.25))
         if name == 'chart-donut':
             # Preserve the central aperture and quarter-sector divisions.
             annulus=op(circle(8,8,6),circle(8,8,3.3),po.PathOp.DIFFERENCE)
@@ -725,8 +821,6 @@ def main():
             solid=union(op(union(b,outer),stroke('M5 9L7 7M9 7L11 9',1.1),po.PathOp.DIFFERENCE),line((8,1),(8,6)))
         if name == 'hourglass':
             solid=op(union(b,outer),union(rr(5.4,4,5.2,1.4,.5),poly([(6,12),(8,10),(10,12)])),po.PathOp.DIFFERENCE)
-        if name == 'bed':
-            solid=op(solid,stroke('M3 10H13',1.1),po.PathOp.DIFFERENCE)
         if name == 'printer':
             solid=op(solid,rr(5,10.7,6,3.1,.3),po.PathOp.DIFFERENCE)
         if name == 'gift':
@@ -737,18 +831,13 @@ def main():
             solid=op(union(b,outer,lines('M4 10V14','M12 10V14')),
                      op(lines('M4 5L7 10','M9 5L12 10'),interior,po.PathOp.INTERSECTION),po.PathOp.DIFFERENCE)
         if name == 'sofa':
-            # Upholstery seams define the seat and arms in the filled silhouette.
-            solid=op(solid,stroke('M5 7V10.5H11V7',1.05),po.PathOp.DIFFERENCE)
-            mono=union(stroke('M3 7V5Q3 3 5 3H11Q13 3 13 5V7',1.25),stroke(rr(1,7,4,6,1),1.1),stroke(rr(11,7,4,6,1),1.1),lines('M5 11H11','M3 13V15','M13 13V15'))
+            solid=op(union(b,outer,d),sofa_seam,po.PathOp.DIFFERENCE)
         if name == 'users':
             # Separate the rear torso from the foreground person, not a tiny slit.
             solid=op(solid,stroke('M9 11.5V14.7',1.25),po.PathOp.DIFFERENCE)
         if name == 'folder-open':
-            flap=soften(path('M2 7H14Q15 7 14.5 8.5L13 13H3Z'))
-            solid=union(op(union(b,outer),union(flap,stroke(flap,1.4)),po.PathOp.DIFFERENCE),flap)
-            # Hide the rear lower edge behind the open front panel.
-            rear=stroke('M1.5 5.7V4Q1.5 3 2.5 3H6L8 5H13.5Q14.5 5 14.5 5.7',1.25)
-            mono=union(rear,stroke(flap,1.1))
+            solid=stacked_solid(folder_back,folder_flap)
+            mono=union(outer,d)
         if name == 'airplay':
             foreground=poly([(8,8),(13,14),(3,14)])
             clearance=union(foreground,stroke(foreground,1.5))
@@ -757,6 +846,12 @@ def main():
             duo=[(op(p,clearance,po.PathOp.DIFFERENCE),a) for p,a in duo]+[(foreground,1)]
             mono=union(op(outer,clearance,po.PathOp.DIFFERENCE),foreground)
             solid=union(op(union(b,outer),clearance,po.PathOp.DIFFERENCE),foreground)
+        if name in {'clipboard', 'clipboard-check'}:
+            solid=op(solid,stroke('M5 2.9V4.1Q5 5.1 6 5.1H10Q11 5.1 11 4.1V2.9',1.05),po.PathOp.DIFFERENCE)
+        if name in {'notebook', 'contact'}:
+            bindings = [4,8,12] if name == 'notebook' else [5,11]
+            slots = union(*(line((2.7,y+1.1),(4.45,y+1.1),width=1.05) for y in bindings))
+            solid=op(solid,slots,po.PathOp.DIFFERENCE)
         if name == 'copy':
             solid=stacked_solid(rr(1.5,1.5,9,10,1.7),rr(5,5,9.5,9.5,1.7))
         if name == 'folders':

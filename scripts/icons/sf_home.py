@@ -37,34 +37,36 @@ def register(api):
       'kitchen baking cooking appliance oven')
 
     s('stove', rr(2, 2, 12, 12, 1.7),
-      union(*(st(circle(x, y, 1.65), 1.05)
+      union(*(st(circle(x, y, 1.35), 1.1)
               for x, y in ((5.1, 5.1), (10.9, 5.1),
                            (5.1, 10.9), (10.9, 10.9)))),
       'cooktop hob burners kitchen cooking appliance')
 
     s('dishwasher', appliance,
-      union(panel, line((5.4, 3.4), (10.6, 3.4), width=1.1),
-            st('M4.5 10.8V12H11.5V10.8M5.2 7.2V10M8 7.2V10M10.8 7.2V10')),
+      union(panel, controls, line((5.5, 7.65), (10.5, 7.65), width=1.35)),
       'dishes cleaning plates kitchen appliance')
 
+    # A shallow lower arc follows the curvature of the drum window.
     s('dryer', appliance,
-      union(panel, controls, st(circle(8, 9.7, 3.05)),
-            st('M6.4 8.2Q5.7 9 6.4 9.7Q7.1 10.4 6.4 11.2'
-               'M9.6 8.2Q8.9 9 9.6 9.7Q10.3 10.4 9.6 11.2', .9)),
+      union(panel, controls, st(circle(8, 9.7, 3.1), 1.15),
+            st('M6.65 10.2Q8 11.6 9.35 10.2', 1.05)),
       'laundry tumble dry clothes heat appliance')
 
     s('thermostat', circle(8, 8, 6),
-      union(st('M7 5V8.7A1.6 1.6 0 1 0 9 8.7V5A1 1 0 0 0 7 5Z'),
-            line((10.8, 5.5), (11.4, 5.5), width=1),
-            line((10.8, 7.7), (11.4, 7.7), width=1)),
+      union(st('M5.7 5.4V9A1.65 1.65 0 1 0 7.8 9V5.4A1.05 1.05 0 0 0 5.7 5.4Z'),
+            line((10, 5.8), (11, 5.8), width=1.1),
+            line((10, 8.25), (11.45, 8.25), width=1.1)),
       'temperature climate heating cooling room control')
 
-    # Side elevation separates this overhead fixture from the existing
-    # front-facing fan. A ceiling mount and shallow motor sit above/below
-    # the blades; no radiation-like three-paddle silhouette.
-    blades = path('M1.8 7.5H14.2V9.7H10.2Q10 12.5 8 12.5'
-                  'Q6 12.5 5.8 9.7H1.8Z')
-    s('ceiling-fan', blades, st('M8 3.5V7.5M5.5 3.5H10.5M5.8 9.7H10.2', 1.25),
+    # Side view of the suspended motor. Opposing pitched paddles attach
+    # at the motor's waist beneath the ceiling plate and downrod.
+    motor = rr(6.2, 6.55, 3.6, 3.6, 1.5)
+    left_blade = path('M6.5 7.5L2.1 5.95Q1.4 5.75 1.4 6.55V7.45'
+                      'Q1.4 8.05 2.05 8.2L6.5 8.9Z')
+    blades = union(left_blade, api['mirror'](left_blade))
+    s('ceiling-fan', union(motor, blades),
+      union(st('M5.9 2.4H10.1M8 2.4V6.55', 1.25),
+            st('M8 10.15V12.85', 1.05), circle(8, 13.2, .7)),
       'overhead ventilation cooling fan home')
 
     s('garage', path('M2 6L8 1.8L14 6V14H2Z'),
@@ -85,6 +87,12 @@ def register(api):
       union(line((1.5, 2.2), (14.5, 2.2)), st('M2.3 9H3.5M12.5 9H13.7')),
       'drapes curtain shade window home')
 
+    curtain_field = union(curtains, st(curtains, 1.25), line((1.5, 2.2), (14.5, 2.2)))
+    api['STYLE_OVERRIDES']['curtains'] = {'solid': api['op'](
+        curtain_field, st('M1 9H5.1M10.9 9H15', 1.1), api['po'].PathOp.DIFFERENCE)}
+    api['STYLE_OVERRIDES']['window-closed'] = {'solid': union(
+        st(frame, 1.75), st('M8 2V14M2.5 8H13.5', 1.65))}
+
     s('doorbell', rr(4.2, 1.7, 7.6, 12.6, 2.6),
       union(st(circle(8, 10.5, 1.65)), circle(8, 5, .75)),
       'entry door bell visitor button camera')
@@ -97,7 +105,7 @@ def register(api):
     s('smart-lock', rr(4, 1.7, 8, 12.6, 2),
       union(*(circle(x, y, .55) for x, y in
               ((6.5, 4), (9.5, 4), (6.5, 6.7), (9.5, 6.7))),
-            st('M6 10.5H10M8 10.5V12')),
+            st('M6.6 9.7V10.9H10', 1.35)),
       'keypad access lock door code security')
 
     s('light-switch', rr(3, 1.7, 10, 12.6, 1.5),
