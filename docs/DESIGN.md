@@ -113,11 +113,11 @@ Before accepting an addition:
    remain readable, and Stroke must preserve identifying interior information.
 4. Run the geometry/opacity/catalog gate, platform rendering tests, tree-shaking
    and type checks, packaging, and the macOS/iOS resource builds.
-5. Regenerate adapters, catalog, coverage documentation, and offline gallery.
+5. Regenerate adapters, catalog and coverage documentation, and rebuild the website browser.
 
 For visual review, AppKit contact sheets are used for actual SVG rendering in
 both tints. Live browser inspection was unavailable in the execution environment;
-gallery interaction is covered with DOM tests. Device-level React Native testing
+icon browser interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
 The [current full-catalog quality audit](QUALITY-AUDIT-2026-11-17.md) records a fresh

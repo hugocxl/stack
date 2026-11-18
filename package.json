@@ -12,7 +12,9 @@
     "typecheck": "tsc -p tests/tsconfig.json && tsc -p tests/tsconfig.native.json",
     "validate": "bash scripts/validate.sh",
     "test:swift": "swift test",
-    "build:site": "node scripts/build-site.mjs"
+    "build:site": "node scripts/build-site.mjs",
+    "check:site": "node scripts/check-site.mjs",
+    "sync:design-system": "node scripts/sync-design-system.mjs"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

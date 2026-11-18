@@ -1,6 +1,8 @@
 # Use Icons
 
-Bring the same rounded icon family to your website, app, or design. Choose your platform below.
+Icons is a family of rounded icons for websites, apps and designs. Every icon
+is a plain SVG file, and the same names ship as packages for JavaScript, React,
+React Native and Swift. Choose how you build below.
 
 ## Choose an integration
 
@@ -35,9 +37,10 @@ Inline an SVG in HTML to inherit CSS `color`. When loading SVGs through an
 `<img>` tag, parent CSS color does not propagate into the file. Native apps can
 load them as template images and apply their own tint.
 
-Open [`index.html`](../index.html) locally for a searchable, offline gallery with
-category/style filters, tint and size controls, SVG copying, and downloads.
-Browse the [complete catalog](../docs/CATALOG.md) for every available name.
+Use the [icon browser](https://hugocxl.github.io/icons/browse.html) to search by
+name or category, switch styles, preview sizes, and copy or download an SVG.
+Each icon also shows its import for every platform. The
+[complete catalog](../docs/CATALOG.md) lists every available name.
 
 ## Swift / SwiftUI
 
@@ -47,7 +50,7 @@ dependency using a release tag, or add it as a local package while developing.
 Then add `Icons` to your app target. For a `Package.swift` dependency:
 
 ```swift
-.package(url: "https://github.com/hugocxl/icons.git", from: "0.1.9")
+.package(url: "https://github.com/hugocxl/icons.git", from: "0.2.0")
 ```
 
 Add `.product(name: "Icons", package: "icons")` to your target's dependencies.
@@ -143,7 +146,7 @@ lockfile, not every older React Native release.
 ## Choose a drawing style
 
 Rounded Duotone remains the default, including all 81 retained brand marks.
-The 2,117 original UI icons also support Rounded Solid and Rounded Stroke.
+The 2,152 original UI icons also support Rounded Solid and Rounded Stroke.
 Brands are intentionally absent from those two style namespaces.
 
 ```tsx
@@ -169,3 +172,16 @@ and `nsImage` (AppKit). Existing names and imports remain available; the UI artw
 has been redrawn, including historical `*-fill` names, so upgrading changes their
 appearance. This release does not include Hugeicons or SF Symbols artwork.
 
+## License and attribution
+
+Original Icons artwork, Tab contributions and tooling are [MIT licensed](../LICENSE).
+The collection includes artwork adapted from Pierre Icons (Apache 2.0),
+Pierre's file icons (MIT), Simple Icons (CC0 1.0), LobeHub Icons (MIT), and
+Devicon (MIT). Upstream artwork retains its original license, so the collection
+is not solely MIT licensed. Keep [NOTICE](../NOTICE),
+[the upstream license texts](../THIRD_PARTY_LICENSES.md), and applicable copyright
+notices with redistributed artwork. `@hugocxl/icons/catalog.json` records the
+provenance of every icon.
+
+Brand marks remain the trademarks of their owners. Inclusion does not imply
+endorsement or grant trademark rights.

@@ -7,6 +7,10 @@
 - Join the @hugocxl stack: the repository is now `hugocxl/icons`, the npm package is
   `@hugocxl/icons` and the Swift package exposes the `Icons` library. Releases move
   to the 0.2 line. `@hugocxl/iconscxl` and the `IconsCXL` module are retired.
+- Rebuild the website on the P9 design system shared by the @hugocxl stack: a home
+  page, an icon browser with deep links and lazily loaded artwork, and docs rendered
+  from `docs/USAGE.md`. The 28 MB generated root `index.html` gallery is removed;
+  `icons.html` and `guide.html` redirect to `browse.html` and `docs.html`.
 
 ### Added
 

@@ -1,0 +1,83 @@
+{{head title="Browse · Icons" canonical="browse.html" description="Search and browse all {{count}} Icons in Duotone, Solid and Stroke. Preview, copy or download any icon."}}
+  <script type="module" src="browse.js"></script>
+</head>
+<body class="p9" data-layout="plain">
+{{masthead}}
+  <main>
+    <article class="p9-column p9-opening">
+      <hgroup class="p9-title">
+        <h1>Browse</h1>
+        <p>{{count}} icons in {{styles}} styles</p>
+      </hgroup>
+      <form class="p9-form" role="search" id="ui-search-form">
+        <label for="ui-search">Search by name or category</label>
+        <div class="p9-input">
+          <input type="search" id="ui-search" placeholder="Try calendar" autocomplete="off" spellcheck="false" aria-describedby="ui-count">
+          <button type="submit" aria-label="Show results">→</button>
+        </div>
+      </form>
+      <div class="p9-wide site-browser" id="ui-browser">
+        <div class="site-filters">
+          <span class="p9-label" id="ui-style-label">Style</span>
+          <div class="site-options" role="group" aria-labelledby="ui-style-label">
+            <button type="button" data-style="duotone" aria-pressed="true">Duotone</button>
+            <button type="button" data-style="solid" aria-pressed="false">Solid</button>
+            <button type="button" data-style="stroke" aria-pressed="false">Stroke</button>
+          </div>
+          <span class="p9-label" id="ui-size-label">Size</span>
+          <div class="site-options" role="group" aria-labelledby="ui-size-label">
+            <button type="button" data-size="16" aria-pressed="false">16</button>
+            <button type="button" data-size="24" aria-pressed="true">24</button>
+            <button type="button" data-size="32" aria-pressed="false">32</button>
+            <button type="button" data-size="48" aria-pressed="false">48</button>
+          </div>
+          <span class="p9-label" id="ui-category-label">Category</span>
+          <div class="site-options site-categories" role="group" aria-labelledby="ui-category-label">
+{{categories}}
+          </div>
+        </div>
+        <p class="p9-label site-count" id="ui-count" aria-live="polite">{{count}} icons</p>
+        <ul class="site-results" id="ui-results" data-size="24" aria-label="Icons"></ul>
+        <p class="site-empty" id="ui-empty" hidden>No icons match. <span class="p9-muted">Try a shorter word, another style or all categories.</span></p>
+      </div>
+    </article>
+  </main>
+  <dialog class="site-detail" id="ui-detail" aria-labelledby="ui-detail-name">
+    <div class="site-detail-head">
+      <hgroup class="p9-title">
+        <h2 id="ui-detail-name">Icon</h2>
+        <p id="ui-detail-category">Category</p>
+      </hgroup>
+      <button class="site-close" type="button" id="ui-close">Close</button>
+    </div>
+    <div class="p9-media"><div class="site-preview" id="ui-preview" role="img" aria-label="Icon preview"></div></div>
+    <ul class="site-sizes" id="ui-sizes" aria-label="Actual sizes">
+      <li><span class="site-art" data-px="16"></span><span class="p9-label">16</span></li>
+      <li><span class="site-art" data-px="24"></span><span class="p9-label">24</span></li>
+      <li><span class="site-art" data-px="32"></span><span class="p9-label">32</span></li>
+      <li><span class="site-art" data-px="48"></span><span class="p9-label">48</span></li>
+    </ul>
+    <div class="site-filters">
+      <span class="p9-label" id="ui-detail-style-label">Style</span>
+      <div class="site-options" role="group" aria-labelledby="ui-detail-style-label">
+        <button type="button" data-style="duotone" aria-pressed="true">Duotone</button>
+        <button type="button" data-style="solid" aria-pressed="false">Solid</button>
+        <button type="button" data-style="stroke" aria-pressed="false">Stroke</button>
+      </div>
+      <span class="p9-label" id="ui-platform-label">Platform</span>
+      <div class="site-options" role="group" aria-labelledby="ui-platform-label">
+        <button type="button" data-platform="svg" aria-pressed="false">SVG</button>
+        <button type="button" data-platform="js" aria-pressed="false">JS</button>
+        <button type="button" data-platform="react" aria-pressed="true">React</button>
+        <button type="button" data-platform="react-native" aria-pressed="false">React Native</button>
+        <button type="button" data-platform="swift" aria-pressed="false">Swift</button>
+      </div>
+    </div>
+    <div class="p9-code"><pre tabindex="0"><code id="ui-snippet"></code></pre><button type="button">Copy</button></div>
+    <p class="site-actions"><button class="site-link" type="button" id="ui-copy-svg">{{icon copy}}Copy SVG</button><a id="ui-download" href="svg/duotone/search.svg" download="search.svg">{{icon download}}Download SVG</a></p>
+    <output class="p9-feedback" id="ui-feedback" aria-live="polite"></output>
+  </dialog>
+  <script type="application/json" id="ui-catalog">{{catalog}}</script>
+{{footer}}
+</body>
+</html>

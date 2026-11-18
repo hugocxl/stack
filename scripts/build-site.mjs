@@ -1,124 +1,133 @@
-import {
-  readFileSync,
-  writeFileSync,
-  mkdirSync,
-  cpSync,
-  rmSync,
-} from "node:fs";
+// Build the GitHub Pages site from website/ into _site/.
+// Pages follow the P9 design system vendored in website/system (see scripts/sync-design-system.mjs).
+import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { marked } from "marked";
+
 const out = "_site";
+const read = (path) => readFileSync(path, "utf8");
+const escape = (text) =>
+  String(text).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const number = new Intl.NumberFormat("en");
+
+const catalog = JSON.parse(read("catalog.json"));
+const { version } = JSON.parse(read("packages/icons/package.json"));
+const STYLES = ["duotone", "solid", "stroke"];
+const source = (name, style) => (style === "duotone" ? `icons/${name}.svg` : `icons/styles/${style}/${name}.svg`);
+const categories = [...new Set(catalog.map((icon) => icon.category))].sort();
+const facts = {
+  count: number.format(catalog.length),
+  styles: String(STYLES.length),
+  full: number.format(catalog.filter((icon) => icon.styles.length === STYLES.length).length),
+  brands: number.format(catalog.filter((icon) => icon.category === "Brands").length),
+  "category-count": String(categories.length),
+  version,
+};
+
+// Inline artwork renders in ink through currentColor.
+const svg = (name, style, attributes = 'aria-hidden="true" focusable="false"') =>
+  read(source(name, style)).trim().replace("<svg ", `<svg ${attributes} `);
+const strokeIcon = (name) => svg(name, "stroke", 'class="p9-icon" aria-hidden="true" focusable="false"');
+
+const specimenNames = [
+  "home", "search", "heart", "star", "bell", "calendar",
+  "camera", "music", "cloud", "folder", "mail", "message-circle",
+  "settings", "globe", "map-pin", "sun", "moon", "zap",
+  "coffee", "gift", "bookmark", "clock", "compass", "sparkles",
+];
+const specimen = STYLES.map((style, index) => {
+  const name = style[0].toUpperCase() + style.slice(1);
+  const caption = `Fig. ${String(index + 1).padStart(2, "0")} / ${name}`;
+  return `<div class="site-specimen" data-style="${style}" data-caption="${caption}" role="img" aria-label="${specimenNames.length} icons in the ${name} style"${index ? " hidden" : ""}>${specimenNames.map((icon) => svg(icon, style)).join("")}</div>`;
+}).join("");
+
+// ─── Docs: docs/USAGE.md rendered into P9 sections ─────────────────────
+const slug = (text) => text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s/g, "-");
+const github = "https://github.com/hugocxl/icons/blob/main/";
+const renderer = new marked.Renderer();
+renderer.code = ({ text }) =>
+  `<div class="p9-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;
+const baseTable = renderer.table.bind(renderer);
+renderer.table = (token) =>
+  `<div class="p9-table-scroll" tabindex="0">${baseTable(token).replace("<table>", '<table class="p9-table">')}</div>\n`;
+renderer.heading = function ({ tokens, depth }) {
+  return `<h${depth}>${this.parser.parseInline(tokens)}</h${depth}>\n`;
+};
+renderer.link = function ({ href, title, tokens }) {
+  const target = href
+    .replace(/^\.\.\/docs\/CATALOG\.md$/, `${github}docs/CATALOG.md`)
+    .replace(/^\.\.\/(.+)$/, `${github}$1`)
+    .replace(/^(LICENSE|NOTICE|THIRD_PARTY_LICENSES\.md)$/, `${github}$1`);
+  return `<a href="${escape(target)}"${title ? ` title="${escape(title)}"` : ""}>${this.parser.parseInline(tokens)}</a>`;
+};
+
+const tokens = marked.lexer(read("docs/USAGE.md"));
+let docsTitle = "Docs";
+const groups = [{ id: null, heading: null, tokens: [] }];
+for (const token of tokens) {
+  if (token.type === "heading" && token.depth === 1) docsTitle = token.text;
+  else if (token.type === "heading" && token.depth === 2) groups.push({ id: slug(token.text), heading: token, tokens: [] });
+  else groups.at(-1).tokens.push(token);
+}
+const docs = groups
+  .filter((group) => group.heading || group.tokens.some((token) => token.type !== "space"))
+  .map((group) => {
+    const body = marked.parser(Object.assign(group.tokens, { links: tokens.links }), { renderer });
+    const heading = group.heading ? `<h2>${marked.parseInline(group.heading.text)}</h2>\n` : "";
+    return `      <section class="p9-section"${group.id ? ` id="${group.id}"` : ""}>\n${heading}${body}      </section>`;
+  })
+  .join("\n");
+
+// ─── Browser data ───────────────────────────────────────────────────────
+const categoryButtons = ["All", ...categories]
+  .map(
+    (category) =>
+      `            <button type="button" data-category="${escape(category)}" aria-pressed="${category === "All"}">${escape(category)} <span>${number.format(category === "All" ? catalog.length : catalog.filter((icon) => icon.category === category).length)}</span></button>`,
+  )
+  .join("\n");
+const browseData = JSON.stringify(
+  catalog.map((icon) => [icon.name, icon.category, icon.tags.join(" "), icon.styles.length === STYLES.length ? 1 : 0]),
+).replaceAll("</", "<\\/");
+
+// ─── Templates ──────────────────────────────────────────────────────────
+const partial = (name) => read(`website/partials/${name}.html`).replace(/\n$/, "");
+function render(template, values) {
+  const html = template
+    .replace(/\{\{([\w-]+)\}\}/g, (match, key) => (key in values ? values[key] : match))
+    .replace(/\{\{head ([^}]*)\}\}/, (_, args) => {
+      const attributes = Object.fromEntries([...args.matchAll(/(\w+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
+      return partial("head").replace(/\{\{(\w+)\}\}/g, (__, key) => attributes[key] ?? "");
+    })
+    .replace("{{masthead}}", partial("masthead"))
+    .replace("{{footer}}", partial("footer"))
+    .replace(/\{\{icon ([\w-]+)\}\}/g, (_, name) => strokeIcon(name));
+  const unknown = html.match(/\{\{[^}]*\}\}/);
+  if (unknown) throw new Error(`Unknown template value ${unknown[0]}`);
+  return html;
+}
+
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
-const read = (p) => readFileSync(p, "utf8");
-cpSync("website/assets", `${out}/assets`, { recursive: true });
-cpSync("website/styles.css", `${out}/styles.css`);
-cpSync("website/assets/preview.png", `${out}/preview.png`);
-const catalog = JSON.parse(read("catalog.json"));
-const icon = (name, style = "duotone") =>
-  read(
-    `icons/${style === "duotone" ? "" : `styles/${style}/`}${name}.svg`,
-  ).replace("<svg ", '<svg aria-hidden="true" ');
-const header = `<a class="skip" href="#main">Skip to content</a><header class="site-header wrap"><a class="wordmark" href="./">Icons</a><nav aria-label="Main navigation"><a href="icons.html">Icons</a><a href="guide.html">Guide</a><a href="https://github.com/hugocxl/icons">GitHub ↗</a></nav></header>`;
-const footer = `<footer class="wrap"><span>Made by <a href="https://github.com/hugocxl">Hugo</a>. Also behind <a href="https://hugocxl.github.io/tab/">Tab ↗</a></span><span>Free &amp; open source · <a href="guide.html#license-and-attribution">License &amp; attribution</a></span></footer>`;
-function page(title, body, file) {
-  writeFileSync(
-    `${out}/${file}`,
-    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — Icons</title><meta name="description" content="A family of rounded icons for apps and websites. Explore Duotone, Solid, and Stroke, with guides for web, React, React Native, and Swift."><meta name="theme-color" content="#f5f3ed"><link rel="canonical" href="https://hugocxl.github.io/icons/${file === "index.html" ? "" : file}"><meta property="og:image" content="https://hugocxl.github.io/icons/preview.png"><link rel="stylesheet" href="styles.css"><link rel="preload" href="assets/fonts/Junicode-Regular-latin.woff2" as="font" type="font/woff2" crossorigin></head><body>${header}${body}${footer}</body></html>`,
-  );
+cpSync("website/system", `${out}/system`, { recursive: true });
+for (const file of ["site.css", "home.js", "browse.js"]) cpSync(`website/${file}`, `${out}/${file}`);
+for (const style of STYLES) {
+  cpSync(style === "duotone" ? "icons" : `icons/styles/${style}`, `${out}/svg/${style}`, {
+    recursive: true,
+    filter: (path) => !path.endsWith(".DS_Store") && (style !== "duotone" || !path.startsWith("icons/styles")),
+  });
 }
-const names = [
-  "home",
-  "search",
-  "heart",
-  "star",
-  "bell",
-  "calendar",
-  "camera",
-  "music",
-  "cloud",
-  "folder",
-  "mail",
-  "message-circle",
-  "settings",
-  "globe",
-  "map-pin",
-  "sun",
-  "moon",
-  "zap",
-  "coffee",
-  "gift",
-  "bookmark",
-  "clock",
-  "compass",
-  "layers",
-  "palette",
-  "pencil",
-  "sparkles",
-  "terminal",
-  "umbrella",
-  "wallet",
-];
-page(
-  "Rounded icons for the things you build",
-  `<main id="main"><section class="hero wrap"><p class="eyebrow">One family. Every interface.</p><h1>Small details.<br>A whole lot<br><span>of character.</span></h1><div class="hero-bottom"><div><p class="description">Rounded icons for the things you build.<br>A little warmth. A shared rhythm. Right at home in your next app.</p><div class="actions"><a class="button" href="icons.html">Explore the icons ↗</a><a href="guide.html">Get started →</a></div></div><p class="small">${catalog.length.toLocaleString("en")} icons / 3 styles<br>Free &amp; open source</p></div></section><figure class="wrap" style="margin-block:0"><div class="specimen" role="img" aria-label="Thirty Icons symbols, from navigation and communication to creative tools">${names.map((n) => `<div>${icon(n)}</div>`).join("")}</div><figcaption class="caption small"><span>A small taste of a much bigger collection.</span><a href="icons.html">Find your next icon →</a></figcaption></figure><section class="section wrap"><p class="eyebrow">01 / Find your expression</p><div class="section-heading"><h2>Same family.<br>Different feeling.</h2><p>Keep a consistent character across your interface. Add depth, bring emphasis, or keep things light.</p></div><div class="styles">${[
-    [
-      "duotone",
-      "A quiet sense of depth. A second tone where it adds something.",
-    ],
-    ["solid", "A confident presence for the moments that need emphasis."],
-    ["stroke", "An airy, understated companion to your content."],
-  ]
-    .map(
-      ([style, description]) =>
-        `<article class="style-card"><div class="style-art">${["home", "heart", "camera"].map((n) => icon(n, style)).join("")}</div><h3>${style[0].toUpperCase() + style.slice(1)}</h3><p>${description}</p></article>`,
-    )
-    .join(
-      "",
-    )}</div><p class="small" style="margin-top:20px">${catalog.filter((entry) => entry.styles.length === 3).length.toLocaleString("en-US")} interface icons in all three styles. Plus 81 brand marks in their default style.</p></section><section class="section wrap"><p class="eyebrow">02 / Bring them with you</p><div class="section-heading"><h2>Wherever<br>you build.</h2><p>From a website to a native app, use the same familiar shapes. Pick your platform and make them yours.</p></div><div class="platforms">${[
-    ["SVG", "raw-svgs"],
-    ["JavaScript", "javascript-no-framework"],
-    ["React", "react"],
-    ["React Native / Expo", "react-native--expo"],
-    ["Swift / SwiftUI", "swift--swiftui"],
-  ]
-    .map(([name, id]) => `<a href="guide.html#${id}">${name} ↗</a>`)
-    .join(
-      "",
-    )}</div><p class="small">Use the icon browser to try sizes and colors, copy SVGs, and download individual icons.</p></section></main>`,
-  "index.html",
-);
-const slug = (s) =>
-  s
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s/g, "-");
-const renderer = new marked.Renderer();
-renderer.heading = function ({ tokens, depth, text }) {
-  return `<h${depth} id="${slug(text)}">${this.parser.parseInline(tokens)}</h${depth}>`;
-};
-let guide =
-  read("docs/USAGE.md") +
-  "\n" +
-  read("README.md").split("## License and attribution")[1];
-guide = guide.replace(
-  "\nOriginal Icons artwork",
-  "\n## License and attribution\n\nOriginal Icons artwork",
-);
-guide = guide
-  .replace(
-    /\]\(\.\.\/([^)]+)\)/g,
-    "](https://github.com/hugocxl/icons/blob/main/$1)",
-  )
-  .replace(
-    /\]\((LICENSE|NOTICE|THIRD_PARTY_LICENSES.md)\)/g,
-    "](https://github.com/hugocxl/icons/blob/main/$1)",
+
+const values = { ...facts, specimen, categories: categoryButtons, catalog: browseData, docs, "docs-title": escape(docsTitle) };
+for (const page of ["index.html", "browse.html", "docs.html"]) {
+  writeFileSync(`${out}/${page}`, render(read(`website/${page}`), values));
+}
+
+// Old addresses keep working.
+const redirect = (from, to, label) =>
+  writeFileSync(
+    `${out}/${from}`,
+    `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>${label} · Icons</title>\n<link rel="canonical" href="https://hugocxl.github.io/icons/${to}">\n<script>location.replace('${to}' + location.hash);</script>\n<meta http-equiv="refresh" content="0;url=${to}">\n</head><body><a href="${to}">${label}</a></body></html>\n`,
   );
-page(
-  "Getting started",
-  `<main class="wrap docs-layout" id="main"><aside class="docs-nav" aria-label="On this page">${[...guide.matchAll(/^## (.+)$/gm)].map((m) => `<a href="#${slug(m[1])}">${m[1]}</a>`).join("")}</aside><article class="prose">${marked.parse(guide, { renderer })}</article></main>`,
-  "guide.html",
-);
-let gallery = read("index.html").replaceAll("website/assets/", "assets/");
-writeFileSync(`${out}/icons.html`, gallery);
+redirect("icons.html", "browse.html", "Browse the icons");
+redirect("guide.html", "docs.html", "Read the docs");
 writeFileSync(`${out}/.nojekyll`, "");
-console.log(`Built site with ${catalog.length} icons.`);
+console.log(`Built site with ${facts.count} icons in ${STYLES.length} styles.`);
