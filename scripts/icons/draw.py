@@ -68,7 +68,16 @@ def union(*ps):
         if p: r = op(r, p, po.PathOp.UNION)
     return r
 
-def stroke(d, width=1.35):
+# One weight, one roundness: measured from SF Symbols Regular on this grid.
+# Every visible line, outline and detail uses STROKE; widths outside the
+# visible range are clearance cutters and offset tools and stay as given.
+STROKE = 1.1
+RADIUS = 1.25
+def weight(width):
+    return STROKE if .75 <= width <= 1.55 else width
+
+def stroke(d, width=STROKE):
+    width = weight(width)
     p = path(d) if isinstance(d, str) else po.Path(d)
     # Stroke at authoring resolution so Skia's curve tolerance cannot
     # introduce visibly different widths at different orientations.
@@ -79,8 +88,9 @@ def stroke(d, width=1.35):
     p=p.transform(1/resolution,0,0,1/resolution,0,0)
     return po.simplify(p)
 
-def rr(x=2,y=2,w=12,h=12,r=2):
-    r=min(r,w/2,h/2);k=r*.5522847498
+def rr(x=2,y=2,w=12,h=12,r=RADIUS):
+    # A positive radius always means the family corner; 0 keeps a sharp cutter.
+    r=min(RADIUS if r>0 else 0,w/2,h/2);k=r*.5522847498
     return path(f'M{x+r} {y}H{x+w-r}C{x+w-r+k} {y} {x+w} {y+r-k} {x+w} {y+r}V{y+h-r}C{x+w} {y+h-r+k} {x+w-r+k} {y+h} {x+w-r} {y+h}H{x+r}C{x+r-k} {y+h} {x} {y+h-r+k} {x} {y+h-r}V{y+r}C{x} {y+r-k} {x+r-k} {y} {x+r} {y}Z')
 
 def soften(p,r=.28):
@@ -94,13 +104,15 @@ def mirror(p): return p.transform(-1,0,0,1,16,0)
 def circle(x=8,y=8,r=6):
     return path(f'M{x-r} {y}a{r} {r} 0 1 0 {2*r} 0a{r} {r} 0 1 0 {-2*r} 0Z')
 
-def line(*points, width=1.35):
+def line(*points, width=STROKE):
     return stroke('M'+'L'.join(f'{x} {y}' for x,y in points),width)
 
 def lines(*ds): return union(*(stroke(d) for d in ds))
 def dots(*points,r=.7): return union(*(circle(x,y,r) for x,y in points))
 def poly(points): return soften(path('M'+'L'.join(f'{x} {y}' for x,y in points)+'Z'),.22)
-def ring(x=8,y=8,r=6,width=1.35): return op(circle(x,y,r),circle(x,y,r-width),po.PathOp.DIFFERENCE)
+def ring(x=8,y=8,r=6,width=STROKE):
+    # Outer edge stays at r; the band is always the family weight.
+    return stroke(circle(x,y,r-STROKE/2))
 def transform(p,angle=0,scale=1,dx=0,dy=0):
     a=math.radians(angle); c=math.cos(a)*scale; s=math.sin(a)*scale
     return p.transform(c,s,-s,c,8-8*c+8*s+dx,8-8*s-8*c+dy)
