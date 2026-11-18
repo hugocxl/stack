@@ -335,6 +335,21 @@ def register(api):
         rule = line((1.6, guide_y), (14.4, guide_y))
         return body, rule
 
+    def distributed_bars(position):
+        if position == 'center':
+            return centered_bars((3.45, 8, 12.55), (6.2, 11.5, 8.8), 2.6)
+        width = 2.75
+        boxes, guides = [], []
+        for center, length in zip((3.05, 8, 12.95), (5.6, 9.4, 7.35)):
+            left, top = center - width / 2, 8 - length / 2
+            box = rect(left, top, width, length)
+            edge = left if position == 'start' else left + width
+            guide = line((edge, top - 1.6), (edge, top + length + 1.6))
+            boxes.append(box)
+            # The rail shares the box edge; clear its ink from the box interior.
+            guides.append(sub(guide, box))
+        return union(*boxes), union(*guides)
+
     for horizontal in (True,False):
         orient='horizontal' if horizontal else 'vertical'
         for position in ('start','center','end'):
@@ -345,21 +360,8 @@ def register(api):
         for operation in ('distribute','justify'):
             for position in ('start','center','end'):
                 name=f'align-{orient}-{operation}-{position}'
-                if operation == 'distribute' and position == 'center':
-                    body, rules = centered_bars((3.45, 8, 12.55), (6.2, 11.5, 8.8), 2.6)
-                elif operation=='distribute':
-                    centers = (3, 8, 13)
-                    widths = (2.7, 3.3, 2.7)
-                    shift = {'start': -.5, 'end': .5}[position]
-                    blocks = []
-                    ticks = []
-                    for center, width in zip(centers, widths):
-                        tick = center + shift * 2.7
-                        left = tick - (.5 + shift) * width
-                        blocks.append(rect(left, 5.2, width, 7.8))
-                        ticks.append(line((tick, 1.7), (tick, 3)))
-                    rules = union(*ticks)
-                    body = union(*blocks)
+                if operation == 'distribute':
+                    body, rules = distributed_bars(position)
                 else:
                     body, rules = aligned_pair(position, (5.8, 10.3) if position == 'center' else (4, 6.7))
                 if (operation=='distribute' and not horizontal) or (operation=='justify' and horizontal):
@@ -368,8 +370,10 @@ def register(api):
         for behavior in ('around','between'):
             name=f'align-{orient}-space-{behavior}'
             if behavior=='around':
-                objects = union(rect(3, 5, 3, 7), rect(10, 5, 3, 7))
-                rules = union(*(line((x, 2), (x, 3.8)) for x in (1.4, 8, 14.6)))
+                objects = union(rect(4.05, 2.45, 2.7, 7.95), rect(9.25, 2.45, 2.7, 7.95))
+                # Each bracket spans one gap, from box edge to box edge or margin.
+                rules = union(*(line((x, 12.55), (x, 14), (x + 2.5, 14), (x + 2.5, 12.55))
+                                for x in (1.55, 6.75, 11.95)))
             else:
                 objects = union(rect(1.8, 3.5, 3, 9), rect(11.2, 3.5, 3, 9))
                 rules = line((6.8, 8), (9.2, 8))
