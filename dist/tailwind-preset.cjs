@@ -14,7 +14,23 @@ module.exports = {
         "rule": "var(--ds-rule)",
         "surface": "var(--ds-surface)",
         "accent": "var(--ds-accent)",
-        "accent-text": "var(--ds-accent-text)"
+        "accent-text": "var(--ds-accent-text)",
+        "red": "var(--ds-red)",
+        "orange": "var(--ds-orange)",
+        "yellow": "var(--ds-yellow)",
+        "green": "var(--ds-green)",
+        "teal": "var(--ds-teal)",
+        "sky": "var(--ds-sky)",
+        "blue": "var(--ds-blue)",
+        "violet": "var(--ds-violet)",
+        "purple": "var(--ds-purple)",
+        "pink": "var(--ds-pink)",
+        "brown": "var(--ds-brown)",
+        "success": "var(--ds-success)",
+        "warning": "var(--ds-warning)",
+        "error": "var(--ds-error)",
+        "info": "var(--ds-info)",
+        "neutral": "var(--ds-neutral)"
       },
       "fontFamily": {
         "sans": [

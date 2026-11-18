@@ -15,12 +15,16 @@ function block(selector) {
 
 const light = block(':root');
 const dark = block(':root[data-theme=dark]');
-const colors = Object.keys(light).filter(name => /^#/.test(light[name]));
+// A color is a hex value or an alias of another color, like the status roles (--ds-success: var(--ds-green)).
+const alias = value => value.match(/^var\(--ds-([a-z0-9-]+)\)$/)?.[1];
+const isColor = name => /^#/.test(light[name]) || (alias(light[name]) !== undefined && isColor(alias(light[name])));
+const colors = Object.keys(light).filter(isColor);
+const resolve = (vars, name) => { const value = vars[name] ?? light[name]; return alias(value) ? resolve(vars, alias(value)) : value; };
 const pick = prefix => Object.keys(light).filter(name => name.startsWith(prefix));
 const v = name => `var(--ds-${name})`;
 
 const tokens = {
-  color: { light: Object.fromEntries(colors.map(n => [n, light[n]])), dark: Object.fromEntries(colors.map(n => [n, dark[n] ?? light[n]])) },
+  color: { light: Object.fromEntries(colors.map(n => [n, resolve(light, n)])), dark: Object.fromEntries(colors.map(n => [n, resolve(dark, n)])) },
   font: { sans: light.sans, mono: light.mono },
   size: Object.fromEntries(pick('size-').map(n => [n.slice(5), light[n]])),
   space: Object.fromEntries(pick('space-').map(n => [n.slice(6), light[n]])),

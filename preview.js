@@ -36,6 +36,7 @@ const query = select('query');
 const feedback = select('figure-feedback');
 query.oninput = () => {
   query.removeAttribute('aria-invalid');
+  delete feedback.dataset.status;
   feedback.textContent = '';
 };
 select('figure-search').onsubmit = event => {
@@ -43,11 +44,13 @@ select('figure-search').onsubmit = event => {
   const requested = query.value.trim().toLowerCase();
   if (!requested) {
     query.setAttribute('aria-invalid', 'true');
+    feedback.dataset.status = 'error';
     feedback.textContent = 'Enter a vector name.';
     return;
   }
   const index = names.findIndex(name => name.toLowerCase() === requested);
   query.setAttribute('aria-invalid', String(index < 0));
+  feedback.dataset.status = index < 0 ? 'error' : 'success';
   feedback.textContent = index < 0 ? 'Choose ' + names.slice(0, -1).join(', ') + ', or ' + names.at(-1) + '.' : 'Showing ' + names[index];
   if (index >= 0) {
     cycle(index);

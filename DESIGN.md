@@ -13,6 +13,22 @@ colors:
     rule: "#1717171f"
     surface: "#ebebea"
     accent-text: "#ce7755"
+    red: "#c43d3d"
+    orange: "#bb702f"
+    yellow: "#a08005"
+    green: "#419445"
+    teal: "#378f99"
+    sky: "#388cb0"
+    blue: "#3f83ce"
+    violet: "#633cc7"
+    purple: "#993ab8"
+    pink: "#c23b62"
+    brown: "#8f6d53"
+    success: "#419445"
+    warning: "#a08005"
+    error: "#c43d3d"
+    info: "#3f83ce"
+    neutral: "#6e6e6e"
   dark:
     canvas: "#111111"
     ink: "#ededed"
@@ -21,6 +37,22 @@ colors:
     rule: "#ededed24"
     surface: "#1c1c1c"
     accent-text: "#fe9369"
+    red: "#c43d3d"
+    orange: "#c77b3b"
+    yellow: "#ceab3c"
+    green: "#4b9d4e"
+    teal: "#4da3ad"
+    sky: "#4c9fc3"
+    blue: "#3f83ce"
+    violet: "#7350dc"
+    purple: "#9e3fbd"
+    pink: "#c23b62"
+    brown: "#8f6d53"
+    success: "#4b9d4e"
+    warning: "#ceab3c"
+    error: "#c43d3d"
+    info: "#3f83ce"
+    neutral: "#7d7d7d"
 typography:
   title:
     fontFamily: Geist Sans
@@ -116,6 +148,18 @@ components:
   status-dot:
     backgroundColor: "{colors.accent}"
     rounded: "{rounded.pill}"
+  status-dot-success:
+    backgroundColor: "{colors.light.success}"
+    rounded: "{rounded.pill}"
+  status-dot-warning:
+    backgroundColor: "{colors.light.warning}"
+    rounded: "{rounded.pill}"
+  status-dot-error:
+    backgroundColor: "{colors.light.error}"
+    rounded: "{rounded.pill}"
+  status-dot-info:
+    backgroundColor: "{colors.light.info}"
+    rounded: "{rounded.pill}"
   statement-accent:
     textColor: "{colors.light.accent-text}"
     typography: "{typography.title}"
@@ -186,6 +230,58 @@ The paper and orange come from Superlogical, and the greys are neutral. Use colo
 The system keeps Superlogical's warm paper and orange but uses neutral greys instead of its green-tinted ink and muted tones. Superlogical's muted grey `#b3b3b3` fails WCAG AA for text, so it survives only as the light `faint` for placeholders, and `muted` is set to reach 4.5:1. The orange reaches 3:1 on paper only at title size, which is why `accent-text` exists and is used only there.
 
 **Accent budget:** at most two accent elements per page. That is one `.ds-accent` phrase of two or three words at the end of the `statement`, and one `.ds-dot` before a status label in `meta`. The accent never colors body text, links, buttons, backgrounds, rules or figures.
+
+### Hues
+
+Eleven hues color marks: [colored icons](#colored-icons) and status dots. They take after the [diffs.com icon palette](https://diffs.com/icons). The dark values are the reference's own, with violet and purple lifted to reach contrast. The light values are deepened along the same hue. Every hue reaches 3:1, the WCAG minimum for non-text marks, on both `canvas` and `surface` in its theme. The CSS custom property is `--ds-<hue>`.
+
+| Hue | Light | Dark | For example |
+| --- | --- | --- | --- |
+| `red` | `#c43d3d` | `#c43d3d` | npm, Ruby, YAML, errors |
+| `orange` | `#bb702f` | `#c77b3b` | HTML, Rust, Swift, RSS |
+| `yellow` | `#a08005` | `#ceab3c` | JavaScript, folders, archives, warnings |
+| `green` | `#419445` | `#4b9d4e` | Shell, tables, Vue, success |
+| `teal` | `#378f99` | `#4da3ad` | Prettier, formatters |
+| `sky` | `#388cb0` | `#4c9fc3` | Go, React, servers, layers |
+| `blue` | `#3f83ce` | `#3f83ce` | TypeScript, C, Docker, code, information |
+| `violet` | `#633cc7` | `#7350dc` | CSS, ESLint, Bootstrap, WebAssembly |
+| `purple` | `#993ab8` | `#9e3fbd` | Vite, Astro, fonts, MCP |
+| `pink` | `#c23b62` | `#c23b62` | GraphQL, Sass, images |
+| `brown` | `#8f6d53` | `#8f6d53` | Bun |
+
+Grey is not a hue: an uncolored icon takes the text color, and `neutral` covers the grey status.
+
+- Hues color marks only: an icon (`.ds-icon`) or a dot (`.ds-dot`). Never text, links, buttons, backgrounds, rules, figures or vectors.
+- A hue names a kind of thing, the same one everywhere: a language, a tool, a file type or a brand. Never pick a hue for decoration or variety.
+- The hues are not the accent. `orange` is a file-type color, and it never replaces `accent`. Hues do not count toward the accent budget.
+
+### Status
+
+Five roles give a hue a meaning. Each is an alias, `--ds-<role>`, so it follows the theme.
+
+| Role | Hue | Light | Dark | Means |
+| --- | --- | --- | --- | --- |
+| `success` | `green` | `#419445` | `#4b9d4e` | Done, live, passing, confirmed |
+| `warning` | `yellow` | `#a08005` | `#ceab3c` | Needs attention soon but still works |
+| `error` | `red` | `#c43d3d` | `#c43d3d` | Failed, down, invalid, blocked |
+| `info` | `blue` | `#3f83ce` | `#3f83ce` | Scheduled, planned, worth knowing |
+| `neutral` | `muted` | `#6e6e6e` | `#7d7d7d` | Inactive: draft, paused, archived |
+
+Set `data-status` on a `.ds-dot`, a `.ds-icon` or the form's `.ds-feedback` and it takes the role's color. A `.ds-dot` without `data-status` stays the accent.
+
+| Status label | Role | Mark |
+| --- | --- | --- |
+| Live, Stable, Operational, Shipped, Paid, Sent | `success` | dot, or `circle-check` |
+| Degraded, Deprecated, Expiring, Limited | `warning` | dot, or `triangle-alert` |
+| Down, Failed, Removed, Overdue, Invalid | `error` | dot, or `circle-x` |
+| Planned, Scheduled, Maintenance, Preview | `info` | dot, or `circle-info` |
+| Draft, Paused, Archived, Unlisted | `neutral` | dot |
+| Beta, New (the page's own status in `meta`) | accent | `.ds-dot` without `data-status` |
+
+- Color never carries a status alone. The words always name it, and the dot or icon goes before them.
+- Status text stays `ink`, or `muted` where the component already uses it. Only the mark takes the color.
+- One status per element and one mark per status: a dot or an icon, never both.
+- A status mark goes where a status label goes: a `meta` label, an `index` label, a table cell or the form feedback line.
 
 ## Typography
 
@@ -294,7 +390,7 @@ Home only: one sentence at title size, ending with an optional accent phrase of 
 
 ### `meta`
 
-One to three mono labels: status, version, date. Only a status label takes `.ds-dot`, and it comes first. Dates use `<time datetime>`.
+One to three mono labels: status, version, date. Only a status label takes `.ds-dot`, and it comes first. The page's own status (Beta, New) uses the accent dot. A state from [Status](#status) sets `data-status` on the dot, as in `<span class="ds-dot" data-status="success" aria-hidden="true"></span>Operational`. Dates use `<time datetime>`.
 
 <!-- specimen:meta -->
 ```html
@@ -410,11 +506,13 @@ A visible label, an underlined input with an icon submit button (`corner-down-le
 | State | Result |
 | --- | --- |
 | Idle | Placeholder in `faint`, feedback empty |
-| Invalid submit | Value kept, `aria-invalid="true"` on the input, the fix written in the feedback line |
-| Editing after an error | `aria-invalid` removed, feedback cleared |
-| Pending | Submit disabled, feedback reads “Sending…” |
-| Success | Feedback confirms in one sentence. Focus stays on the input. |
-| Failure | Value kept, feedback explains the failure and how to retry |
+| Invalid submit | Value kept, `aria-invalid="true"` on the input (a wavy `error` underline), `data-status="error"` on the feedback, the fix written in the feedback line |
+| Editing after an error | `aria-invalid` and `data-status` removed, feedback cleared |
+| Pending | Submit disabled, no `data-status`, feedback reads “Sending…” |
+| Success | `data-status="success"` on the feedback, which confirms in one sentence. Focus stays on the input. |
+| Failure | Value kept, `data-status="error"` on the feedback, which explains the failure and how to retry |
+
+With `data-status`, the feedback line starts with a dot in the status color. Its text stays `ink`.
 
 <!-- specimen:form -->
 ```html
@@ -455,7 +553,7 @@ Mono links at both ends with a hairline between them. It is the last element in 
 
 ## Icons and vectors
 
-Pages draw with two companion libraries and nothing else. [`@hugocxl/icons`](https://hugocxl.github.io/icons/) label actions and [`@hugocxl/vectors`](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent. No other icon set, illustration, emoji or symbol character may stand in for them.
+Pages draw with two companion libraries and nothing else. [`@hugocxl/icons`](https://hugocxl.github.io/icons/) label actions and [`@hugocxl/vectors`](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent. Only an icon may take a color, from the [hues](#hues) or the [status roles](#status). No other icon set, illustration, emoji or symbol character may stand in for them.
 
 ```sh
 npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors
@@ -492,9 +590,30 @@ import { BookOpenIcon } from '@hugocxl/icons/react/stroke';
 | External link | `arrow-up-right` |
 
 - One icon per element. Before words it never replaces a word; alone it needs an `aria-label`.
-- Only in links, the button, meta labels and icon buttons. Never in headings, the statement, body sentences or the footer.
+- Only in links, the button, meta labels and icon buttons, plus [colored icons](#colored-icons) in index labels and table cells. Never in headings, the statement, body sentences or the footer.
 - Icons carry `aria-hidden="true"`. The React components add it unless they receive an `aria-label`.
 - Never in the accent color, and never draw arrows, ◐ or other symbols as text instead.
+
+### Colored icons
+
+An icon takes a color only when the color carries meaning, in one of two ways:
+
+- **Kind.** `data-color="<hue>"` marks what a thing is: a language, a tool, a file type or a brand, such as `folder` in `yellow` or `terminal` in `green`. Use the hue the icon library assigns to the icon, so the same thing has the same color everywhere. These icons label items in a list, an `index` label or a table cell.
+- **Status.** `data-status="<role>"` marks a state, before the words that name it: `circle-check` for `success`, `triangle-alert` for `warning`, `circle-x` for `error`, `circle-info` for `info`.
+
+```html
+<!-- Kind: what the item is -->
+<td><svg class="ds-icon" data-icon="folder" data-color="yellow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>components</td>
+
+<!-- Status: the state, named by the words after it -->
+<li class="ds-label"><svg class="ds-icon" data-icon="circle-check" data-status="success" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Operational</li>
+```
+
+Colored icons can use the Duotone style, whose second layer is the same color at lower opacity, as well as Stroke. Everything else follows the icon rules above.
+
+- Action icons, such as those in links, the button and icon buttons, are never colored. They take the text color.
+- One color per icon, from the tokens. Never a hex value, a gradient or the accent.
+- The words beside a colored icon always say what it means. Color alone never does.
 
 ### Vectors
 
@@ -535,6 +654,7 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 
 - Never add a class, color, font, size, weight, radius or spacing value that is not a token.
 - Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures.
+- Never use a hue or status color on anything but an icon or a dot, or let color alone say what something is or what state it is in.
 - Never set text larger than the title or bolder than 500 (the wordmark is the exception).
 - Never use shadows, gradients, emoji, stock photography, symbol characters as icons, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`.
 - Never place two filled buttons on one page.

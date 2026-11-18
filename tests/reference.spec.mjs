@@ -176,6 +176,36 @@ test('icons and vectors draw in the text color at their documented sizes', async
   }
 });
 
+test('hues and status colors reach 3:1 and color only their marks', async ({ page }) => {
+  const hues = ['red', 'orange', 'yellow', 'green', 'teal', 'sky', 'blue', 'violet', 'purple', 'pink', 'brown'];
+  const roles = { success: 'green', warning: 'yellow', error: 'red', info: 'blue', neutral: 'muted' };
+  const luminance = hex => {
+    const [r, g, b] = hex.slice(1, 7).match(/../g).map(pair => parseInt(pair, 16) / 255).map(c => c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const contrast = (a, b) => { const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x); return (hi + 0.05) / (lo + 0.05) };
+  const rgb = hex => `rgb(${hex.slice(1).match(/../g).map(pair => parseInt(pair, 16)).join(', ')})`;
+  await page.goto('/');
+  for (const mode of ['light', 'dark']) {
+    const palette = colors[mode];
+    for (const hue of hues) for (const ground of ['canvas', 'surface']) expect(contrast(palette[hue], palette[ground]), `${mode} ${hue} on ${ground}`).toBeGreaterThanOrEqual(3);
+    for (const [role, hue] of Object.entries(roles)) expect(palette[role], `${mode} ${role}`).toBe(palette[hue]);
+
+    await page.evaluate(theme => { document.documentElement.dataset.theme = theme }, mode);
+    const dots = await page.locator('#status-example .ds-dot').evaluateAll(nodes => nodes.map(node => [node.dataset.status, getComputedStyle(node).backgroundColor, getComputedStyle(node.parentElement).color]));
+    expect(dots.map(([status]) => status)).toEqual(Object.keys(roles));
+    for (const [status, background, text] of dots) {
+      expect(background).toBe(rgb(palette[status]));
+      expect(text).toBe(rgb(palette.muted));
+    }
+    for (const icon of await page.locator('#colored-icon-example .ds-icon').all()) {
+      const { name, color, text } = await icon.evaluate(node => ({ name: node.dataset.color ?? node.dataset.status, color: getComputedStyle(node).color, text: getComputedStyle(node.parentElement).color }));
+      expect(color).toBe(rgb(palette[name]));
+      expect(text).toBe(rgb(palette.ink));
+    }
+  }
+});
+
 test('keyboard vector browsing and search feedback', async ({ page }) => {
   await page.goto('/');
   const caption = page.locator('#caption');
@@ -192,8 +222,10 @@ test('keyboard vector browsing and search feedback', async ({ page }) => {
   const feedback = page.locator('#figure-feedback');
   await search.press('Enter');
   await expect(feedback).toHaveText('Enter a vector name.');
+  await expect(feedback).toHaveAttribute('data-status', 'error');
   await search.fill('Unknown');
   await expect(feedback).toHaveText('');
+  await expect(feedback).not.toHaveAttribute('data-status');
   await search.press('Enter');
   await expect(feedback).toHaveText('Choose Product launch, Modular design, or Fast performance.');
   await expect(search).toHaveAttribute('aria-invalid', 'true');
@@ -203,6 +235,7 @@ test('keyboard vector browsing and search feedback', async ({ page }) => {
   await search.press('Enter');
   await expect(caption).toHaveText('Fig. 03 / Fast performance');
   await expect(feedback).toHaveText('Showing Fast performance');
+  await expect(feedback).toHaveAttribute('data-status', 'success');
   await expect(next).toBeFocused();
 });
 

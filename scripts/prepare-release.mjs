@@ -9,7 +9,7 @@ export function releaseVersion(runNumber) {
   if (!/^[1-9]\d*$/.test(String(runNumber)) || !Number.isSafeInteger(Number(runNumber))) {
     throw new Error('A positive, safe GitHub Actions run number is required');
   }
-  return `0.1.${runNumber}`;
+  return `0.2.${runNumber}`;
 }
 
 export function stampVersion(manifest, lock, version) {

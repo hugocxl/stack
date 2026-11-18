@@ -8,6 +8,22 @@
   --ds-surface: #ebebea;
   --ds-accent: #fe9369;
   --ds-accent-text: #ce7755;
+  --ds-red: #c43d3d;
+  --ds-orange: #bb702f;
+  --ds-yellow: #a08005;
+  --ds-green: #419445;
+  --ds-teal: #378f99;
+  --ds-sky: #388cb0;
+  --ds-blue: #3f83ce;
+  --ds-violet: #633cc7;
+  --ds-purple: #993ab8;
+  --ds-pink: #c23b62;
+  --ds-brown: #8f6d53;
+  --ds-success: var(--ds-green);
+  --ds-warning: var(--ds-yellow);
+  --ds-error: var(--ds-red);
+  --ds-info: var(--ds-blue);
+  --ds-neutral: var(--ds-muted);
   --ds-sans: "Geist Sans", Helvetica, Arial, sans-serif;
   --ds-mono: "Geist Mono", ui-monospace, Menlo, monospace;
   --ds-size-reading: min(calc(1rem + .36vw), 1.54rem);
@@ -43,6 +59,13 @@
   --ds-rule: #ededed24;
   --ds-surface: #1c1c1c;
   --ds-accent-text: #fe9369;
+  --ds-orange: #c77b3b;
+  --ds-yellow: #ceab3c;
+  --ds-green: #4b9d4e;
+  --ds-teal: #4da3ad;
+  --ds-sky: #4c9fc3;
+  --ds-violet: #7350dc;
+  --ds-purple: #9e3fbd;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -54,6 +77,13 @@
     --ds-rule: #ededed24;
     --ds-surface: #1c1c1c;
     --ds-accent-text: #fe9369;
+    --ds-orange: #c77b3b;
+    --ds-yellow: #ceab3c;
+    --ds-green: #4b9d4e;
+    --ds-teal: #4da3ad;
+    --ds-sky: #4c9fc3;
+    --ds-violet: #7350dc;
+    --ds-purple: #9e3fbd;
     color-scheme: dark;
   }
 }

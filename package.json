@@ -1,6 +1,6 @@
 {
   "name": "@hugocxl/design-system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The personal design system of @hugocxl: the signature across every project.",
   "type": "module",
   "files": [

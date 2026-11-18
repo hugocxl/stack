@@ -24,6 +24,26 @@
   --ds-accent: #fe9369;
   --ds-accent-text: #ce7755;
 
+  /* Hues: marks only (colored icons and status dots), never text or fills. Each reaches 3:1 on canvas and surface. */
+  --ds-red: #c43d3d;
+  --ds-orange: #bb702f;
+  --ds-yellow: #a08005;
+  --ds-green: #419445;
+  --ds-teal: #378f99;
+  --ds-sky: #388cb0;
+  --ds-blue: #3f83ce;
+  --ds-violet: #633cc7;
+  --ds-purple: #993ab8;
+  --ds-pink: #c23b62;
+  --ds-brown: #8f6d53;
+
+  /* Status roles: what a hue means. Always paired with words. */
+  --ds-success: var(--ds-green);
+  --ds-warning: var(--ds-yellow);
+  --ds-error: var(--ds-red);
+  --ds-info: var(--ds-blue);
+  --ds-neutral: var(--ds-muted);
+
   --ds-sans: "Geist Sans", Helvetica, Arial, sans-serif;
   --ds-mono: "Geist Mono", ui-monospace, Menlo, monospace;
 
@@ -65,6 +85,13 @@
   --ds-rule: #ededed24;
   --ds-surface: #1c1c1c;
   --ds-accent-text: #fe9369;
+  --ds-orange: #c77b3b;
+  --ds-yellow: #ceab3c;
+  --ds-green: #4b9d4e;
+  --ds-teal: #4da3ad;
+  --ds-sky: #4c9fc3;
+  --ds-violet: #7350dc;
+  --ds-purple: #9e3fbd;
   color-scheme: dark;
 }
 
@@ -135,7 +162,15 @@
 .ds-label { font: 400 var(--ds-size-label)/1.5 var(--ds-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ds-muted) }
 .ds-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-2) var(--ds-space-5); margin-top: var(--ds-space-6); list-style: none; padding: 0 }
 .ds-meta + * { margin-top: var(--ds-space-8) }
-.ds-dot { display: inline-block; width: .5rem; height: .5rem; margin-right: var(--ds-space-2); border-radius: 50%; background: var(--ds-accent); vertical-align: .05em }
+.ds-dot, .ds-feedback[data-status]::before { display: inline-block; width: .5rem; height: .5rem; margin-right: var(--ds-space-2); border-radius: 50%; background: var(--ds-status, var(--ds-accent)); vertical-align: .05em }
+.ds-feedback[data-status]::before { content: "" }
+
+/* Status: a dot or an icon in the status color, always before the words that name the status. */
+[data-status=success] { --ds-status: var(--ds-success) }
+[data-status=warning] { --ds-status: var(--ds-warning) }
+[data-status=error] { --ds-status: var(--ds-error) }
+[data-status=info] { --ds-status: var(--ds-info) }
+[data-status=neutral] { --ds-status: var(--ds-neutral) }
 
 /* ─── Masthead and footer ────────────────────────────────────────────── */
 .ds-masthead { display: flex; align-items: center; gap: var(--ds-space-5); padding-top: var(--ds-space-6); font-size: var(--ds-size-small) }
@@ -201,7 +236,7 @@
 .ds-input input::placeholder { color: var(--ds-faint) }
 .ds-input input:focus-visible { outline: none }
 .ds-input:has(input:focus-visible) { outline: 2px solid var(--ds-ink); outline-offset: 3px }
-.ds-input input[aria-invalid=true] { text-decoration: underline wavy var(--ds-muted) 1px; text-underline-offset: .25em }
+.ds-input input[aria-invalid=true] { text-decoration: underline wavy var(--ds-error) 1px; text-underline-offset: .25em }
 .ds-input button { flex: none; width: var(--ds-target); height: var(--ds-target); padding: 0; border: 0; color: var(--ds-muted); background: transparent; font: inherit; cursor: pointer }
 .ds-input button:hover { color: var(--ds-ink) }
 .ds-help { margin-top: var(--ds-space-5); color: var(--ds-muted) }
@@ -226,6 +261,19 @@
 /* Icons from @hugocxl/icons (Stroke): before the words of a link, button or label, or alone in an icon button. */
 .ds-icon { display: inline-block; width: 1em; height: 1em; margin-inline-end: var(--ds-space-2); vertical-align: -.125em; flex: none }
 :is(.ds-theme, .ds-pager button, .ds-input button) > .ds-icon { margin: 0 }
+/* Colored icons: a hue names a kind of thing (a language, a file type, a brand), a status names a state. */
+.ds-icon[data-status] { color: var(--ds-status) }
+.ds-icon[data-color=red] { color: var(--ds-red) }
+.ds-icon[data-color=orange] { color: var(--ds-orange) }
+.ds-icon[data-color=yellow] { color: var(--ds-yellow) }
+.ds-icon[data-color=green] { color: var(--ds-green) }
+.ds-icon[data-color=teal] { color: var(--ds-teal) }
+.ds-icon[data-color=sky] { color: var(--ds-sky) }
+.ds-icon[data-color=blue] { color: var(--ds-blue) }
+.ds-icon[data-color=violet] { color: var(--ds-violet) }
+.ds-icon[data-color=purple] { color: var(--ds-purple) }
+.ds-icon[data-color=pink] { color: var(--ds-pink) }
+.ds-icon[data-color=brown] { color: var(--ds-brown) }
 
 /* Vectors from @hugocxl/vectors: a 4:3 line illustration in place of a drawing, in ink. */
 .ds-vector { display: block; color: var(--ds-ink) }
