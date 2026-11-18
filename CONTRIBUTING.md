@@ -64,7 +64,7 @@ npx serve _site              # or any static server
 `website/system/` is a verbatim, committed copy of the design system so CI does
 not need a sibling checkout. Re-run the sync when the design system changes and
 commit the result. Never edit it by hand. Site-specific styles live only in
-`website/site.css` and use only `--p9-*` tokens.
+`website/site.css` and use only `--ds-*` tokens.
 
 ## Automatic releases
 

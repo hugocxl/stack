@@ -18,7 +18,7 @@ const fetchSvg = name => {
   return svgs.get(name);
 };
 const inline = (text, decorative) => {
-  const svg = text.replace(' xmlns="http://www.w3.org/2000/svg"', ' class="p9-vector"').replace(/ color="[^"]*"/, '');
+  const svg = text.replace(' xmlns="http://www.w3.org/2000/svg"', ' class="ds-vector"').replace(/ color="[^"]*"/, '');
   return decorative ? svg.replace('<svg ', '<svg aria-hidden="true" focusable="false" ') : svg;
 };
 const escapeHtml = text => text.replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
@@ -94,10 +94,10 @@ async function open(name) {
   code.replaceChildren(code.firstElementChild);
   for (const [label, text] of snippets(item)) {
     const heading = document.createElement('h3');
-    heading.className = 'p9-label';
+    heading.className = 'ds-label';
     heading.textContent = label;
     const block = document.createElement('div');
-    block.className = 'p9-code';
+    block.className = 'ds-code';
     block.innerHTML = '<pre tabindex="0"><code></code></pre><button type="button">Copy</button>';
     block.querySelector('code').textContent = text;
     code.append(heading, block);

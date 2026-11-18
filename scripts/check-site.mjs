@@ -12,20 +12,20 @@ let links = 0;
 
 for (const [name, doc] of docs) {
   // Page shell from the design system.
-  assert.equal(doc.body.className, 'p9', `${name}: body class`);
+  assert.equal(doc.body.className, 'ds', `${name}: body class`);
   assert.equal(doc.body.dataset.layout, pages[name], `${name}: layout`);
-  assert.ok(doc.querySelector('head link[rel=stylesheet][href="system/p9.css"]'), `${name}: p9.css`);
+  assert.ok(doc.querySelector('head link[rel=stylesheet][href="system/ds.css"]'), `${name}: ds.css`);
   assert.ok(doc.querySelector('head script[src="system/theme.js"]:not([type])'), `${name}: theme.js`);
-  assert.ok(doc.querySelector('head script[type=module][src="system/p9.js"]'), `${name}: p9.js`);
-  assert.equal(doc.body.firstElementChild.className, 'p9-masthead', `${name}: masthead first`);
-  assert.deepEqual([...doc.querySelectorAll('.p9-masthead a')].map(a => a.textContent), ['@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
-  assert.ok(doc.querySelector('.p9-masthead [data-p9-theme]'), `${name}: theme button`);
-  assert.deepEqual([...doc.querySelectorAll('.p9-footer a')].map(a => a.textContent),
+  assert.ok(doc.querySelector('head script[type=module][src="system/ds.js"]'), `${name}: ds.js`);
+  assert.equal(doc.body.firstElementChild.className, 'ds-masthead', `${name}: masthead first`);
+  assert.deepEqual([...doc.querySelectorAll('.ds-masthead a')].map(a => a.textContent), ['@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
+  assert.ok(doc.querySelector('.ds-masthead [data-ds-theme]'), `${name}: theme button`);
+  assert.deepEqual([...doc.querySelectorAll('.ds-footer a')].map(a => a.textContent),
     ['Icons', 'Vectors', 'Design system', 'npm', 'License', '@hugocxl'], `${name}: footer`);
   assert.equal(doc.querySelectorAll('h1').length, 1, `${name}: one h1`);
-  assert.ok(doc.querySelectorAll('.p9-accent, .p9-dot').length <= 2, `${name}: accent budget`);
-  assert.ok(doc.querySelectorAll('.p9-button').length <= 1, `${name}: one filled button`);
-  for (const svg of doc.querySelectorAll('svg.p9-vector')) {
+  assert.ok(doc.querySelectorAll('.ds-accent, .ds-dot').length <= 2, `${name}: accent budget`);
+  assert.ok(doc.querySelectorAll('.ds-button').length <= 1, `${name}: one filled button`);
+  for (const svg of doc.querySelectorAll('svg.ds-vector')) {
     assert.ok(!svg.hasAttribute('color'), `${name}: vector keeps a color attribute`);
     assert.ok(svg.querySelector('title')?.textContent && svg.querySelector('desc')?.textContent, `${name}: vector title/desc`);
   }
@@ -55,14 +55,14 @@ for (const asset of ['system/fonts/Geist-Variable.woff2', 'system/fonts/GeistMon
 // Home: recipe order, real vectors and real numbers.
 const home = docs.get('index.html');
 const order = [...home.querySelector('article').children].map(element =>
-  element.matches('.p9-statement') ? 'statement' : element.matches('.p9-meta') ? 'meta' :
-  element.matches('.p9-section') ? 'section' : element.matches('figure.p9-wide') ? 'figure-wide' :
-  element.matches('.p9-button') ? 'button' : element.tagName).join(' ');
+  element.matches('.ds-statement') ? 'statement' : element.matches('.ds-meta') ? 'meta' :
+  element.matches('.ds-section') ? 'section' : element.matches('figure.ds-wide') ? 'figure-wide' :
+  element.matches('.ds-button') ? 'button' : element.tagName).join(' ');
 assert.match(order, /^statement meta section figure-wide( section)* button$/, `home order: ${order}`);
-assert.equal(home.querySelectorAll('.p9-media > svg.p9-vector').length, 1);
-assert.match(home.querySelector('.p9-meta').textContent, new RegExp(catalog.length.toLocaleString('en-US')));
-assert.equal(home.querySelector('.p9-button').getAttribute('href'), 'browse.html');
-const accent = home.querySelector('.p9-statement .p9-accent').textContent.trim().split(/\s+/).length;
+assert.equal(home.querySelectorAll('.ds-media > svg.ds-vector').length, 1);
+assert.match(home.querySelector('.ds-meta').textContent, new RegExp(catalog.length.toLocaleString('en-US')));
+assert.equal(home.querySelector('.ds-button').getAttribute('href'), 'browse.html');
+const accent = home.querySelector('.ds-statement .ds-accent').textContent.trim().split(/\s+/).length;
 assert.ok(accent >= 2 && accent <= 3, 'accent phrase is two or three words');
 for (const { name } of JSON.parse(home.getElementById('home-figures').textContent)) assert.ok(names.has(name), name);
 
@@ -80,10 +80,10 @@ assert.ok(browse.querySelector('label[for="browse-query"]'), 'search has a visib
 // Docs: every h2 of USAGE.md is a section with an id, code and tables use system markup.
 const guide = docs.get('docs.html');
 const headings = [...readFileSync('docs/USAGE.md', 'utf8').matchAll(/^## (.+)$/gm)].map(match => match[1]);
-assert.deepEqual([...guide.querySelectorAll('.p9-section > h2')].map(h2 => h2.textContent), headings);
-assert.equal(guide.querySelectorAll('pre:not(.p9-code pre)').length, 0);
-assert.equal(guide.querySelectorAll('table:not(.p9-table)').length, 0);
-for (const table of guide.querySelectorAll('table')) assert.ok(table.parentElement.matches('.p9-table-scroll[tabindex="0"]'));
-for (const code of guide.querySelectorAll('.p9-code')) assert.equal(code.querySelector('button').textContent, 'Copy');
+assert.deepEqual([...guide.querySelectorAll('.ds-section > h2')].map(h2 => h2.textContent), headings);
+assert.equal(guide.querySelectorAll('pre:not(.ds-code pre)').length, 0);
+assert.equal(guide.querySelectorAll('table:not(.ds-table)').length, 0);
+for (const table of guide.querySelectorAll('table')) assert.ok(table.parentElement.matches('.ds-table-scroll[tabindex="0"]'));
+for (const code of guide.querySelectorAll('.ds-code')) assert.equal(code.querySelector('button').textContent, 'Copy');
 
 console.log(`Site verified: 3 pages, ${links} internal links, ${items.length} vectors, ${headings.length} guide sections.`);

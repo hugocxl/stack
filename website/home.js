@@ -6,7 +6,7 @@ const cache = new Map();
 let current = 0;
 
 export const inline = text => text
-  .replace(' xmlns="http://www.w3.org/2000/svg"', ' class="p9-vector"')
+  .replace(' xmlns="http://www.w3.org/2000/svg"', ' class="ds-vector"')
   .replace(/ color="[^"]*"/, '');
 
 async function show(index) {
