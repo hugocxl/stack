@@ -94,7 +94,7 @@ def main():
     for relative, content in files.items():
         path = ROOT/relative
         if args.check:
-            if not path.exists() or path.read_text(encoding="utf-8") != content:
+            if not path.exists() or not same_output(path.read_text(encoding="utf-8"), content):
                 stale.append(relative)
         else:
             path.parent.mkdir(exist_ok=True, parents=True)
@@ -104,6 +104,18 @@ def main():
     print(f"{'Verified' if args.check else 'Built'} {len(expected)} static SVGs and the use-case manifest.")
     if not args.check:
         print("Run python3 scripts/generate.py to update the npm and Swift packages.")
+
+
+NUMBER = re.compile(r"-?\d+(?:\.\d+)?")
+
+
+def same_output(committed, built):
+    """Floating-point rounding can move a coordinate by 0.01 between platforms. Accept that, and nothing else."""
+    if committed == built:
+        return True
+    if NUMBER.sub("#", committed) != NUMBER.sub("#", built):
+        return False
+    return all(abs(float(a) - float(b)) <= 0.0101 for a, b in zip(NUMBER.findall(committed), NUMBER.findall(built)))
 
 
 if __name__ == "__main__":
