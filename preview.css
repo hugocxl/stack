@@ -6,7 +6,7 @@ figcaption, footer { justify-content: space-between; border-top: 1px solid var(-
 .swatches small { display: block; letter-spacing: normal; font: .68rem var(--cxl-mono); color: var(--cxl-muted) }
 .chip { display: block; height: 4rem; border: 1px solid var(--cxl-line); margin-bottom: .5rem }
 figure { margin: 1.5rem 0 }
-#figure { height: clamp(11rem,30vw,18rem); background: var(--cxl-surface) }
+#figure { height: clamp(14rem, 35cqw, 30rem); background: var(--cxl-surface) }
 #figure svg { width: 100%; height: 100% }
 .cxl-pager { padding: 2px }
 figcaption button { min-width: 44px; height: 44px; border-radius: 50%; color: inherit; background: transparent; border: 0; font-size: 1.1rem; cursor: pointer; padding: .5rem }

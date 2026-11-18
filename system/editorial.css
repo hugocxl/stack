@@ -38,10 +38,11 @@
 .cxl-editorial a:hover { text-decoration: underline }
 .cxl-masthead > a:not(.cxl-wordmark), .cxl-theme { font-size: .84rem }
 .cxl-theme { background: transparent; color: inherit; cursor: pointer; border: 1px solid var(--cxl-line); border-radius: 50%; width: 44px; height: 44px; flex: none }
-.cxl-reading { max-width: 54ch; font-size: var(--cxl-prose-size); line-height: 1.49 }
+.cxl-editorial main { container-type: inline-size }
+.cxl-reading { margin-inline: auto; max-width: 60ch; font-size: var(--cxl-prose-size); line-height: 1.49 }
 .cxl-reading section { margin-block: 2.25em; scroll-margin-top: 2rem }
 .cxl-reading p { margin: 0 0 1.2em; text-wrap: pretty }
-.cxl-opening { padding-top: clamp(3rem,13vh,10rem) }
+.cxl-opening { padding-top: clamp(2.5rem,7vh,6rem) }
 .cxl-introduction { font-size: clamp(1.85rem,1.35rem + 1.55vw,3.3rem); line-height: 1.19; letter-spacing: -.036em; max-width: 32ch }
 .cxl-visually-hidden {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -64,3 +65,10 @@
 }
 .cxl-snippet code { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: .84rem }
 .cxl-snippet button { min-height: 44px; padding-inline: .75rem; color: var(--cxl-text); background: transparent; border: 0; cursor: pointer }
+
+/* Let an article illustration use the available space inside the page gutters. */
+.cxl-reading .cxl-wide-figure {
+  width: min(100cqw, 1280px);
+  margin-block: 1.8em 1em;
+  margin-inline: calc((100% - min(100cqw, 1280px)) / 2);
+}

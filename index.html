@@ -6,8 +6,8 @@
   <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, Apollo-inspired palette, and interactive figures.">
   <title>CXL Design System</title>
   <link rel="stylesheet" href="system/cxl.css?v=prose">
-  <link rel="stylesheet" href="system/editorial.css?v=prose">
-  <link rel="stylesheet" href="preview.css?v=prose">
+  <link rel="stylesheet" href="system/editorial.css?v=article">
+  <link rel="stylesheet" href="preview.css?v=article">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
@@ -19,16 +19,10 @@
   <main>
     <h1 class="cxl-visually-hidden">CXL Design System</h1>
     <div class="cxl-reading cxl-opening">
-      <p class="cxl-introduction">We build websites around the things people come to read, the tools they come to use, and the space each one needs.</p>
-      <p>A page can often begin with the explanation itself. Give the first sentence room. Let the next few sentences develop the idea while it’s still fresh in the reader’s mind. When someone needs an example, a drawing, or a way into the product, put it right there in the text.</p>
-      <section id="foundations" aria-label="Type and color">
-        <p>Across our projects, Geist Sans carries the whole conversation. We use the same face for an opening passage, a field label, and the button beside it. The passage gets a generous measure and a light weight. The button gets a short verb and a little more ink. A line of <span class="mono">Geist Mono</span> marks something you can type, copy, or look up.</p>
-        <p>Our colors come from Apollo. In dark mode, a near-black canvas carries soft white text, and a quieter gray sets off captions and supporting details. In daylight, we turn the paper light and bring the ink forward. The reading order holds in either appearance.</p>
-        <div class="swatches" aria-label="Apollo palette"></div>
-      </section>
-      <section id="components" aria-label="Figures and controls">
-        <p>Some things are easier to understand in your hands. Move across the keyboard below and watch the keys respond, then use the arrows to try a different figure. The drawing and its controls belong together, close to the passage that gives them a purpose.</p>
-        <figure>
+      <p class="cxl-introduction">CXL is the design system we use across our websites. It brings the writing, drawings, and controls together in one place.</p>
+      <section id="components" aria-label="Interactive figure">
+        <p>The keyboard below is one of the drawings we use to explain an interface. Move across its keys, then try the other figures. Each one responds in place, so you can explore it and carry on reading.</p>
+        <figure class="cxl-wide-figure">
           <div id="figure"></div>
           <figcaption><span class="cxl-label" id="caption">Fig. 01 / Keyboard</span>
             <span class="cxl-material cxl-pager" role="group" aria-label="Figure navigation"><button id="prev" aria-label="Previous figure">←</button><button id="next" aria-label="Next figure">→</button></span>
@@ -40,6 +34,12 @@
           <button class="cxl-button">Preview</button></div><output aria-live="polite"></output>
         </form>
       </section>
+      <section id="foundations" aria-label="Type and color">
+        <p>Across our projects, Geist Sans carries the whole conversation. We use the same face for an opening passage, a field label, and the button beside it. The passage gets a generous measure and a light weight. The button gets a short verb and a little more ink. A line of <span class="mono">Geist Mono</span> marks something you can type, copy, or look up.</p>
+        <p>Our colors come from Apollo. In dark mode, a near-black canvas carries soft white text, and a quieter gray sets off captions and supporting details. In daylight, we turn the paper light and bring the ink forward. The reading order holds in either appearance.</p>
+        <div class="swatches" aria-label="Apollo palette"></div>
+      </section>
+
       <section aria-label="Start a website">
         <p>Copy the <code>system/</code> folder into your project and load its stylesheet. The fonts, figures, and theme tokens travel together.</p>
         <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet link">Copy</button></div>
