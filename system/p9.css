@@ -53,12 +53,6 @@
   --p9-wide: 80rem;
   --p9-ease: 120ms ease-out;
 
-  /* Hairline figure palette, derived from the theme. */
-  --hairline-plate: var(--p9-canvas);
-  --hairline-hi: var(--p9-ink);
-  --hairline-edge: color-mix(in srgb, var(--p9-ink) 45%, var(--p9-canvas));
-  --hairline-mid: color-mix(in srgb, var(--p9-ink) 22%, var(--p9-canvas));
-  --hairline-lo: color-mix(in srgb, var(--p9-ink) 10%, var(--p9-canvas));
 
   accent-color: var(--p9-ink);
   color-scheme: light;
@@ -160,9 +154,8 @@
 .p9-footer a { text-decoration: none }
 .p9-footer a:hover { text-decoration: underline }
 
-/* ─── Figures ────────────────────────────────────────────────────────── */
-.p9-media { display: grid; place-items: center; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--p9-radius-media); background: var(--p9-surface); --hairline-plate: var(--p9-surface) }
-.p9-media > [data-figure] { width: auto; height: 82%; max-width: 92%; aspect-ratio: 5 / 4 }
+/* ─── Figures (vectors from @hugocxl/vectors) ────────────────────────────────────────────────────────── */
+.p9-media { display: grid; place-items: center; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--p9-radius-media); background: var(--p9-surface) }
 .p9-media > img { width: 100%; height: 100%; object-fit: cover }
 .p9-caption { display: flex; align-items: center; justify-content: space-between; gap: var(--p9-space-4); min-height: var(--p9-target); margin-top: var(--p9-space-3) }
 
@@ -173,7 +166,6 @@
 .p9-grid > li:first-child { padding-left: 0 }
 .p9-grid > li:last-child { padding-right: 0 }
 .p9-grid > li + li { border-left: 1px solid var(--p9-rule) }
-.p9-grid [data-figure] { width: 100%; aspect-ratio: 5 / 4; margin-block: var(--p9-space-5) }
 .p9-grid h3 { margin-top: auto; font-weight: 400 }
 .p9-grid p { margin-top: var(--p9-space-2); font-size: var(--p9-size-small); line-height: 1.4; color: var(--p9-muted) }
 @container (max-width: 34rem) {
@@ -231,10 +223,12 @@
   .p9-button:active, .p9-pager button:active { transform: scale(.96) }
 }
 
-/* Icons from @hugocxl/icons (Stroke): inline before a link, button or label, at the size and color of its text. */
+/* Icons from @hugocxl/icons (Stroke): before the words of a link, button or label, or alone in an icon button. */
 .p9-icon { display: inline-block; width: 1em; height: 1em; margin-inline-end: var(--p9-space-2); vertical-align: -.125em; flex: none }
+:is(.p9-theme, .p9-pager button, .p9-input button) > .p9-icon { margin: 0 }
 
 /* Vectors from @hugocxl/vectors: a 4:3 line illustration in place of a drawing, in ink. */
 .p9-vector { display: block; color: var(--p9-ink) }
+.p9-vector[hidden] { display: none }
 .p9-media > .p9-vector { width: auto; height: 82%; max-width: 92%; aspect-ratio: 4 / 3 }
 .p9-grid .p9-vector { width: 100%; height: auto; aspect-ratio: 4 / 3; margin-block: var(--p9-space-5) }

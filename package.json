@@ -1,7 +1,7 @@
 {
   "name": "@hugocxl/design-system",
   "version": "0.1.0",
-  "description": "A text-led design system for websites: tokens, components, page recipes and rules.",
+  "description": "The personal design system of @hugocxl: the signature across every project.",
   "type": "module",
   "files": [
     "system/p9.css",

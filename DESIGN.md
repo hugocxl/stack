@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Design system
-description: Text-led, technical design system. Large reading type, hairline figures, mono labels and one scarce orange accent.
+description: The personal design system of @hugocxl, the signature shared by every @hugocxl project. Large reading type, vectors and icons from the @hugocxl stack, mono labels and one scarce orange accent.
 colors:
   primary: "#171717"
   accent: "#fe9369"
@@ -135,15 +135,15 @@ components:
 ---
 ## Overview
 
-This is the @hugocxl design system for text-led technical websites. Large reading type leads every page. Hairline drawings and monospaced labels make it feel engineered, and a single orange accent appears at most twice per page. The visual reference is Superlogical: its paper and orange, its 21 px reading size, its centered or left-aligned column with a textured field, and its mono footer.
+This is the personal design system of @hugocxl: the signature shared by every @hugocxl project, so each one reads as part of the same body of work. Large reading type leads every page. Line vectors from `@hugocxl/vectors`, icons from `@hugocxl/icons` and monospaced labels make it feel engineered, and a single orange accent appears at most twice per page. The visual reference is Superlogical: its paper and orange, its 21 px reading size, its centered or left-aligned column with a textured field, and its mono footer.
 
 This file and [index.html](index.html) define the system completely. Anything not described here is not part of the system. When you build a page:
 
 1. Pick a recipe from [Page recipes](#page-recipes). The recipe sets the layout and the order of components.
-2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, figure names and IDs.
+2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, vector and icon names and IDs.
 3. Check the result against [Do's and Don'ts](#dos-and-donts).
 
-Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (figures and copy buttons, loaded as a module), `system/figures/` (33 hairline drawings, or [vectors](#vectors) from `@hugocxl/vectors`), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`.
+Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (copy buttons, loaded as a module), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`. Figures come from [`@hugocxl/vectors`](#vectors) and icons from [`@hugocxl/icons`](#icons); no other artwork is part of the system.
 
 ```html
 <!doctype html>
@@ -256,7 +256,7 @@ These thirteen components make up the whole vocabulary. Each markup block below 
 
 ### `masthead`
 
-Wordmark, up to three text links, and the theme button. It is the first element in the body.
+Wordmark, up to three text links, and the theme button with the `contrast` icon. It is the first element in the body.
 
 <!-- specimen:masthead -->
 ```html
@@ -264,7 +264,7 @@ Wordmark, up to three text links, and the theme button. It is the first element 
   <a class="p9-wordmark" href="/">Fieldwork</a>
   <a href="/changelog">Changelog</a>
   <a href="/docs">Docs</a>
-  <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme">◐</button>
+  <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme"><svg class="p9-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
 </header>
 ```
 <!-- /specimen -->
@@ -321,39 +321,39 @@ A muted `h2` followed by paragraphs, lists, `code` or `table`. The lead section 
 
 ### `figure-wide`
 
-One drawing (`data-figure`) or `<img>` on the surface at 3:2, with a caption that reads `Fig. NN / Name`. A drawing needs an `aria-label` and an image needs `alt`. Add the pager only when the figure cycles.
+One [vector](#vectors) or, for a product screenshot, an `<img>` on the surface at 3:2, with a caption that reads `Fig. NN / Name`. A vector keeps its `title`; an image needs `alt`. Add the pager, with `arrow-left` and `arrow-right` icons, only when the figure cycles.
 
 <!-- specimen:figure-wide -->
 ```html
 <figure class="p9-wide">
-  <div class="p9-media"><div data-figure="terrain" aria-label="Isometric terrain drawing"></div></div>
-  <figcaption class="p9-caption"><span class="p9-label">Fig. 01 / Terrain</span></figcaption>
+  <div class="p9-media"><svg class="p9-vector" data-vector="how-it-works" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>How it works</title><!-- paths from @hugocxl/vectors --></svg></div>
+  <figcaption class="p9-caption"><span class="p9-label">Fig. 01 / How it works</span></figcaption>
 </figure>
 ```
 <!-- /specimen -->
 
 ### `figure-grid`
 
-Two to four drawings separated by hairlines. Each has a `Fig 0.N` label, a title of up to four words and one sentence. Set `data-columns` to the item count. The grid stacks when its container is narrower than 34rem.
+Two to four [vectors](#vectors) separated by hairlines. Each has a `Fig 0.N` label, a title of up to four words and one sentence. Set `data-columns` to the item count. The grid stacks when its container is narrower than 34rem.
 
 <!-- specimen:figure-grid -->
 ```html
 <ul class="p9-grid p9-wide" data-columns="3">
   <li>
     <span class="p9-label">Fig 0.1</span>
-    <div data-figure="stack" aria-label="Stacked layers drawing"></div>
+    <svg class="p9-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Purpose-built</h3>
     <p>Shaped by the practices of teams who ship daily.</p>
   </li>
   <li>
     <span class="p9-label">Fig 0.2</span>
-    <div data-figure="relay" aria-label="Relay drawing"></div>
+    <svg class="p9-vector" data-vector="handoff" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Handoff</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Shared by people and agents</h3>
     <p>From the first draft to the merged change.</p>
   </li>
   <li>
     <span class="p9-label">Fig 0.3</span>
-    <div data-figure="terminal" aria-label="Terminal drawing"></div>
+    <svg class="p9-vector" data-vector="fast-performance" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Fast performance</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Designed for speed</h3>
     <p>Less noise, more momentum, every release.</p>
   </li>
@@ -361,7 +361,6 @@ Two to four drawings separated by hairlines. Each has a `Fig 0.N` label, a title
 ```
 <!-- /specimen -->
 
-Figure names: `basket`, `branches`, `cabinet`, `dish`, `drawer`, `elevator`, `exploded`, `format`, `hub`, `keyboard`, `laptop`, `lockers`, `loupe`, `padlock`, `patch`, `phone`, `phosphor`, `plot`, `plug`, `query`, `rail`, `rebuild`, `relay`, `riffle`, `router`, `settle`, `sieve`, `slow`, `stack`, `terminal`, `terrain`, `turntable`, `vault`.
 
 ### `index`
 
@@ -406,7 +405,7 @@ The single filled action on a page. Use `<a>` for navigation and `<button type="
 
 ### `form`
 
-A visible label, an underlined input with an icon submit button (`↩` or `→`, with an `aria-label`), optional help text and a live feedback line.
+A visible label, an underlined input with an icon submit button (`corner-down-left` to send or `arrow-right` to go, with an `aria-label`), optional help text and a live feedback line.
 
 | State | Result |
 | --- | --- |
@@ -423,7 +422,7 @@ A visible label, an underlined input with an icon submit button (`↩` or `→`,
   <label for="waitlist-email">Sign up to secure your place in the waitlist</label>
   <div class="p9-input">
     <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="waitlist-help waitlist-feedback">
-    <button type="submit" aria-label="Join the waitlist">↩</button>
+    <button type="submit" aria-label="Join the waitlist"><svg class="p9-icon" data-icon="corner-down-left" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
   </div>
   <p class="p9-help" id="waitlist-help">We’ll let you know when the beta is available.</p>
   <output class="p9-feedback" id="waitlist-feedback" aria-live="polite"></output>
@@ -456,18 +455,26 @@ Mono links at both ends with a hairline between them. It is the last element in 
 
 ## Icons and vectors
 
-Two companion libraries complete the system, and they are the only icons and illustrations a page may use. [Icons](https://hugocxl.github.io/icons/) label actions and [Vectors](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent.
+Pages draw with two companion libraries and nothing else. [`@hugocxl/icons`](https://hugocxl.github.io/icons/) label actions and [`@hugocxl/vectors`](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent. No other icon set, illustration, emoji or symbol character may stand in for them.
 
 ```sh
 npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors
 ```
 
+In the markup above, `<!-- paths from @hugocxl/icons -->` and `<!-- paths from @hugocxl/vectors -->` mark where the SVG's own content goes. Copy it from the package: the JavaScript export of each name is the SVG as a string, and the React components render it directly.
+
 ### Icons
 
-Use the **Stroke** style from `@hugocxl/icons`, inline before the words of a link, the `button` or a `meta` label. Give the SVG `class="p9-icon"`: it sizes to `1em`, takes the text color and keeps `space-2` before the words.
+Use the **Stroke** style. An icon either goes before the words of a link, the `button` or a `meta` label, or it is the whole content of an icon button that has an `aria-label`. Give the SVG `class="p9-icon"` and `data-icon` with its name: it sizes to `1em`, takes the text color and keeps `space-2` before the words. Inside an icon button the gap is removed.
 
 ```html
-<a href="/docs"><svg class="p9-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons, Stroke --></svg>Read the guide</a>
+<!-- Before words -->
+<a href="/docs"><svg class="p9-icon" data-icon="book-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Read the guide</a>
+<a class="p9-button" href="/browse"><svg class="p9-icon" data-icon="search" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Browse icons</a>
+<li class="p9-label"><svg class="p9-icon" data-icon="calendar" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg><time datetime="2026-11-18">18 November 2026</time></li>
+
+<!-- Alone, in an icon button -->
+<button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme"><svg class="p9-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
 ```
 
 ```jsx
@@ -476,27 +483,39 @@ import { BookOpenIcon } from '@hugocxl/icons/react/stroke';
 <a href="/docs"><BookOpenIcon className="p9-icon" />Read the guide</a>
 ```
 
-- One icon per element, before its words. An icon never replaces a word; arrows and ◐ stay as text characters.
-- Only in links, the button and meta labels. Never in headings, the statement, body sentences, the masthead or the footer.
-- Decorative icons carry `aria-hidden="true"`. The React components add it unless they receive an `aria-label`.
-- Never in the accent color and never on a filled shape.
+| Place | Icon |
+| --- | --- |
+| Theme button | `contrast` |
+| Pager | `arrow-left`, `arrow-right` |
+| Form submit | `corner-down-left` to send, `arrow-right` to go |
+| Search | `search` |
+| External link | `arrow-up-right` |
+
+- One icon per element. Before words it never replaces a word; alone it needs an `aria-label`.
+- Only in links, the button, meta labels and icon buttons. Never in headings, the statement, body sentences or the footer.
+- Icons carry `aria-hidden="true"`. The React components add it unless they receive an `aria-label`.
+- Never in the accent color, and never draw arrows, ◐ or other symbols as text instead.
 
 ### Vectors
 
-A vector from `@hugocxl/vectors` takes the place of a drawing in `figure-wide` or a `figure-grid` item. Inline the SVG, replace its root `xmlns` attribute with `class="p9-vector"` and remove its `color` attribute. It then draws in ink on the surface at its own 4:3 proportions.
+Every figure is a vector from `@hugocxl/vectors`. It fills `figure-wide` and each `figure-grid` item, drawn in ink on the surface at its own 4:3 proportions. Inline the SVG, replace its root `xmlns` attribute with `class="p9-vector"` and `data-vector` with its name, and remove its `color` attribute.
 
 ```html
 <figure class="p9-wide">
-  <div class="p9-media"><svg class="p9-vector" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor"><title>Modular design</title><desc>…</desc><!-- paths --></svg></div>
+  <div class="p9-media"><svg class="p9-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg></div>
   <figcaption class="p9-caption"><span class="p9-label">Fig. 02 / Modular design</span></figcaption>
 </figure>
 ```
 
-In a `figure-grid` item the vector replaces the `data-figure` element, between the label and the `h3`. In React, render the component with `className="p9-vector"`.
+```jsx
+import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 
-- Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) lists every one by use case. Name it in the caption.
-- Use one family of figures on a page: vectors or the built-in drawings, not both.
-- Keep the SVG's `title` and `desc`, or give it an `aria-label`.
+<div className="p9-media"><ModularDesignVector className="p9-vector" /></div>
+```
+
+- Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) lists all 2,000 by use case. Name it in the caption.
+- Keep the SVG's `title` and `desc`: they are its accessible name.
+- Use an `<img>` only for a screenshot of the product itself.
 - Never crop a vector, color it with the accent or place it on the field.
 
 ## Do's and Don'ts
@@ -505,10 +524,10 @@ In a `figure-grid` item the vector replaces the `data-figure` element, between t
 
 - Load `system/p9.css` and `system/theme.js` in the head and `system/p9.js` as a module.
 - Set `class="p9"` and the recipe's `data-layout` on the body.
-- Follow the recipe's component order. Copy component markup exactly and change only text, links, figure names and IDs.
+- Follow the recipe's component order. Copy component markup exactly and change only text, links, vector and icon names and IDs.
 - Write in sentence case. Keep the title to one line and the statement to one sentence.
 - Put supporting sentences in `.p9-muted`, inline after the main thought. Text on `surface` is always `ink`, because muted falls below 4.5:1 there.
-- Give every drawing an `aria-label`, every image `alt` text and every field a visible label.
+- Keep every vector's `title`, give every icon button an `aria-label`, every image `alt` text and every field a visible label.
 - Check the page at 320, 760, 761 and 1440px wide in both themes.
 
 ### Never
@@ -516,7 +535,7 @@ In a `figure-grid` item the vector replaces the `data-figure` element, between t
 - Never add a class, color, font, size, weight, radius or spacing value that is not a token.
 - Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures.
 - Never set text larger than the title or bolder than 500 (the wordmark is the exception).
-- Never use shadows, gradients, emoji, stock photography, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`.
+- Never use shadows, gradients, emoji, stock photography, symbol characters as icons, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`.
 - Never place two filled buttons on one page.
 - Never center or justify text. Only the column itself is centered.
 - Never invent copy, links, numbers, quotes or logos the brief does not supply. If a required input is missing, ask for it.

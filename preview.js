@@ -1,5 +1,9 @@
-// Behavior for this reference page. Listings are built from the specimens before figures mount,
-// so the code shown is exactly the markup on the page.
+// Behavior for this reference page. Listings are built from the specimens, so the code shown is
+// the markup on the page. Icon and vector paths are elided, as in DESIGN.md.
+function elide(html) {
+  return html.replace(/(<svg class="p9-(vector|icon)"[^>]*>)([\s\S]*?)<\/svg>/g, (_, open, kind, inner) =>
+    open + (kind === 'vector' ? (inner.match(/<title>[\s\S]*?<\/title>/) || [''])[0] : '') + `<!-- paths from @hugocxl/${kind}s -->` + '</svg>');
+}
 function dedent(html) {
   const lines = html.replace(/^\n+|\s+$/g, '').split('\n');
   const indent = Math.min(...lines.filter(line => line.trim()).map(line => line.match(/^ */)[0].length));
@@ -9,23 +13,20 @@ for (const specimen of document.querySelectorAll('.doc-specimen')) {
   const listing = document.createElement('div');
   listing.className = 'p9-code';
   listing.innerHTML = '<pre tabindex="0"><code></code></pre><button type="button">Copy</button>';
-  listing.querySelector('code').textContent = dedent(specimen.innerHTML);
+  listing.querySelector('code').textContent = dedent(elide(specimen.innerHTML));
   specimen.after(listing);
 }
 for (const form of document.querySelectorAll('.doc-specimen form, .doc-example form')) {
   form.addEventListener('submit', event => event.preventDefault());
 }
 
-const { show } = await import('./system/p9.js?v=2');
-
-const names = ['Keyboard', 'Terrain', 'Dish'];
 const select = id => document.getElementById(id);
-const figure = select('figure');
+const vectors = [...select('figure').querySelectorAll('.p9-vector')];
+const names = vectors.map(vector => vector.querySelector('title').textContent);
 let current = 0;
 function cycle(index) {
   current = (index + names.length) % names.length;
-  show(figure, names[current].toLowerCase());
-  figure.setAttribute('aria-label', 'Isometric ' + names[current].toLowerCase() + ' drawing');
+  vectors.forEach((vector, i) => vector.toggleAttribute('hidden', i !== current));
   select('caption').textContent = 'Fig. 0' + (current + 1) + ' / ' + names[current];
 }
 select('prev').onclick = () => cycle(current - 1);
@@ -42,12 +43,12 @@ select('figure-search').onsubmit = event => {
   const requested = query.value.trim().toLowerCase();
   if (!requested) {
     query.setAttribute('aria-invalid', 'true');
-    feedback.textContent = 'Enter a figure name.';
+    feedback.textContent = 'Enter a vector name.';
     return;
   }
   const index = names.findIndex(name => name.toLowerCase() === requested);
   query.setAttribute('aria-invalid', String(index < 0));
-  feedback.textContent = index < 0 ? 'Choose Keyboard, Terrain, or Dish.' : 'Showing ' + names[index];
+  feedback.textContent = index < 0 ? 'Choose ' + names.slice(0, -1).join(', ') + ', or ' + names.at(-1) + '.' : 'Showing ' + names[index];
   if (index >= 0) {
     cycle(index);
     select('opening-figure').scrollIntoView({ block: 'center' });

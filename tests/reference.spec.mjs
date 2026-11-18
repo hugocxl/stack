@@ -147,14 +147,14 @@ test('component listings show the specimen markup', async ({ page }) => {
   const listings = page.locator('.doc-specimen + .p9-code code');
   await expect(listings).toHaveCount(13);
   await expect(listings.nth(1)).toHaveText('<hgroup class="p9-title">\n  <h1>Public testing is beginning</h1>\n  <p>Fieldwork team</p>\n</hgroup>');
-  for (const listing of await listings.all()) await expect(listing).not.toContainText('data-hairline');
+  for (const listing of await listings.all()) await expect(listing).not.toContainText('<path');
 });
 
 test('icons and vectors draw in the text color at their documented sizes', async ({ page }) => {
   await page.goto('/');
   for (const theme of ['light', 'dark']) {
     await page.evaluate(theme => { document.documentElement.dataset.theme = theme }, theme);
-    const icon = await page.locator('#icon-example .p9-icon').evaluate(node => {
+    const icon = await page.locator('#icon-example a:not(.p9-button) .p9-icon').evaluate(node => {
       const link = getComputedStyle(node.closest('a'));
       const box = node.getBoundingClientRect();
       return { width: box.width, size: parseFloat(link.fontSize), color: getComputedStyle(node).color, linkColor: link.color, hidden: node.getAttribute('aria-hidden') };
@@ -172,32 +172,54 @@ test('icons and vectors draw in the text color at their documented sizes', async
   }
 });
 
-test('keyboard figure browsing and search feedback', async ({ page }) => {
+test('keyboard vector browsing and search feedback', async ({ page }) => {
   await page.goto('/');
   const caption = page.locator('#caption');
+  const visible = page.locator('#figure .p9-vector:visible');
   const next = page.getByRole('button', { name: 'Next figure' });
-  await expect(caption).toHaveText('Fig. 01 / Keyboard');
+  await expect(caption).toHaveText('Fig. 01 / Product launch');
+  await expect(visible).toHaveCount(1);
   await next.focus();
   await page.keyboard.press('Enter');
-  await expect(caption).toHaveText('Fig. 02 / Terrain');
-  await expect(page.locator('#figure')).toHaveAttribute('data-hairline', 'terrain');
+  await expect(caption).toHaveText('Fig. 02 / Modular design');
+  await expect(visible).toHaveAttribute('data-vector', 'modular-design');
 
-  const search = page.getByLabel('Find a figure');
+  const search = page.getByLabel('Find a vector');
   const feedback = page.locator('#figure-feedback');
   await search.press('Enter');
-  await expect(feedback).toHaveText('Enter a figure name.');
+  await expect(feedback).toHaveText('Enter a vector name.');
   await search.fill('Unknown');
   await expect(feedback).toHaveText('');
   await search.press('Enter');
-  await expect(feedback).toHaveText('Choose Keyboard, Terrain, or Dish.');
+  await expect(feedback).toHaveText('Choose Product launch, Modular design, or Fast performance.');
   await expect(search).toHaveAttribute('aria-invalid', 'true');
   await expect(search).toHaveValue('Unknown');
-  await search.fill(' dish ');
+  await search.fill(' fast performance ');
   await expect(search).not.toHaveAttribute('aria-invalid');
   await search.press('Enter');
-  await expect(caption).toHaveText('Fig. 03 / Dish');
-  await expect(feedback).toHaveText('Showing Dish');
+  await expect(caption).toHaveText('Fig. 03 / Fast performance');
+  await expect(feedback).toHaveText('Showing Fast performance');
   await expect(next).toBeFocused();
+});
+
+test('only @hugocxl icons and vectors draw on the page', async ({ page }) => {
+  await page.goto('/');
+  const stray = await page.evaluate(() => {
+    const glyphs = /[◐←→↩↑↓↗]/;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const found = [];
+    for (let node; (node = walker.nextNode());) {
+      if (node.parentElement.closest('pre, code, li, .doc-stack-example')) continue;
+      if (glyphs.test(node.textContent)) found.push(node.textContent.trim());
+    }
+    const svgs = [...document.querySelectorAll('svg')].filter(svg => !svg.matches('.p9-icon, .p9-vector') && !svg.closest('.p9-icon, .p9-vector'));
+    return { found, svgs: svgs.length, figures: document.querySelectorAll('[data-figure]').length };
+  });
+  expect(stray).toEqual({ found: [], svgs: 0, figures: 0 });
+  for (const button of await page.locator('.p9-theme, .p9-pager button, .p9-input button').all()) {
+    await expect(button.locator('svg.p9-icon')).toHaveCount(1);
+    await expect(button).toHaveAttribute('aria-label', /.+/);
+  }
 });
 
 test('theme selection persists across visits', async ({ page }) => {

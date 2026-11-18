@@ -26,9 +26,6 @@
     },
     "icon": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "A Stroke icon from @hugocxl/icons, rendered before the words with class p9-icon." },
     "vector": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "An illustration from @hugocxl/vectors, inlined with class p9-vector." },
-    "figure": {
-      "enum": ["basket", "branches", "cabinet", "dish", "drawer", "elevator", "exploded", "format", "hub", "keyboard", "laptop", "lockers", "loupe", "padlock", "patch", "phone", "phosphor", "plot", "plug", "query", "rail", "rebuild", "relay", "riffle", "router", "settle", "sieve", "slow", "stack", "terminal", "terrain", "turntable", "vault"]
-    },
     "paragraph": {
       "type": "object", "required": ["text"], "additionalProperties": false,
       "description": "Inline links use Markdown [label](href). 'muted' is appended in the muted color after 'text'.",
@@ -103,13 +100,11 @@
       "type": "object", "required": ["component", "caption"], "additionalProperties": false,
       "properties": {
         "component": { "const": "figure-wide" },
-        "figure": { "$ref": "#/$defs/figure" },
         "vector": { "$ref": "#/$defs/vector" },
         "image": { "type": "object", "required": ["src", "alt"], "additionalProperties": false, "properties": { "src": { "$ref": "#/$defs/text" }, "alt": { "$ref": "#/$defs/text" } } },
-        "label": { "type": "string", "description": "aria-label for a drawing or vector." },
-        "caption": { "type": "string", "pattern": "^Fig\\. [0-9]{2} / .+$" }
+                "caption": { "type": "string", "pattern": "^Fig\\. [0-9]{2} / .+$" }
       },
-      "oneOf": [{ "required": ["figure", "label"] }, { "required": ["vector"] }, { "required": ["image"] }]
+      "oneOf": [{ "required": ["vector"] }, { "required": ["image"] }]
     },
     "figure-grid": {
       "type": "object", "required": ["component", "items"], "additionalProperties": false,
@@ -118,12 +113,10 @@
         "items": {
           "type": "array", "minItems": 2, "maxItems": 4,
           "items": {
-            "type": "object", "required": ["label", "title", "text"], "additionalProperties": false,
-            "oneOf": [{ "required": ["figure"] }, { "required": ["vector"] }],
+            "type": "object", "required": ["vector", "label", "title", "text"], "additionalProperties": false,
             "properties": {
-              "figure": { "$ref": "#/$defs/figure" },
               "vector": { "$ref": "#/$defs/vector" },
-              "label": { "type": "string", "description": "aria-label for the drawing or vector." },
+              "label": { "type": "string", "pattern": "^Fig 0\\.[1-4]$", "description": "Figure label, Fig 0.N." },
               "title": { "type": "string", "maxLength": 32 },
               "text": { "type": "string", "maxLength": 90 }
             }
