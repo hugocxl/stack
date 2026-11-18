@@ -131,13 +131,16 @@ def register(api):
     shape('cherry', union(circle(4.2, 11.4, 2.65), circle(11.8, 10.1, 2.55)),
           stroke('M4.2 8.75Q4.65 5.1 7.55 3.55Q8.7 6.15 11.8 7.55M7.55 3.55Q9.2 .8 13.7 1.8Q12.1 5.8 7.55 3.55M7.55 3.55Q5.95 .9 2.25 1.9Q3.95 5.6 7.55 3.55'),
           'fruit food cherries produce')
-    # The apex and the two cut faces describe a single sandwich wedge.
-    sandwich = path('M1.55 5.8L14.45 2.75L8.3 8.75L1.55 5.8Z'
-                    'M1.55 5.8L8.3 8.75L14.45 2.75V8.45L8.3 14.25L1.55 11.25Z')
-    filling = lines('M1.55 5.8L8.3 8.75L14.45 2.75', 'M8.3 8.75V14.25',
-                    'M1.55 8.45Q3.05 8.25 4.9 9.8T8.3 11.55'
-                    'L10.3 9.65L11.65 10.2L12.7 7.3L14.45 5.65')
-    shape('sandwich', sandwich, filling, 'food bread snack lunch')
+    # Side elevation: rounded toast above a ruffled lettuce leaf, tomato
+    # slices and a folded cheese corner resting on the lower slice.
+    toast = path('M1.65 6.45Q1.25 5.8 1.8 5.15C3.5 2.4 5.9 3.15 8 3.35'
+                 'C10.45 3.55 12.85 2.8 14.15 4.85Q14.9 5.85 14.35 6.45'
+                 'V11.8Q14.35 13.05 13.1 13.05H2.9Q1.65 13.05 1.65 11.8Z')
+    layers = lines('M1.65 6.45Q4.1 5.85 7.1 6.45T14.35 6.45',
+                   'M1.65 8.35Q3 7.45 4.35 8.45T7 8.45Q8.4 7.3 9.85 8.45T12.35 8.5Q13.4 7.7 14.35 8.35',
+                   'M1.65 10.6H6.25L8.35 11.65L10.2 10.6H14.35',
+                   'M4.2 8.35Q4.4 9.7 5.65 10.6M11.25 8.95Q11.6 9.95 12.7 10.6')
+    shape('sandwich',toast,layers,'food bread snack lunch')
     shape('cookie',
           path('M9.5 1.5Q9 4 11 4Q10.5 6.5 14 6Q16 12 11 14Q4 17 1.5 10Q0 4 5 2Q7 1 9.5 1.5Z'),
           dots((5, 5.5), (4, 9.5), (8, 8), (9.5, 12), (12, 9), r=.7),

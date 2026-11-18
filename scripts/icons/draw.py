@@ -255,21 +255,25 @@ shape('pdf', rr(1.4, 2.3, 13.2, 11.4, 1.8),
              'M10.9 10.65V5.35H12.55M10.9 7.95H12.25', 1.05))
 for name,detail in [('spreadsheet',stroke('M2 6H14M6 2V14M10 6V14M2 10H14',1.2)),('slides',union(lines('M4 5H12','M4 8H7','M4 10.5H7'),rr(9,8,3,4,.5))),('word',stroke('M4.35 5.3L5.9 10.8L8 6.4L10.1 10.8L11.65 5.3',1.2)),('zip',union(stroke('M8 2V8.6M6.5 4H8M8 5.9H9.5M6.5 7.8H8', 1.15), stroke(rr(6.7, 8.7, 2.6, 3.4, 1), 1.1)))]: shape(name,rr(),detail)
 
-book_spread = path('M2 4Q5 2.55 8 4.4Q11 2.55 14 4V11.8Q11 10.55 8 12.5Q5 10.55 2 11.8Z')
-shape('epub', book_spread, lines('M8 4.4V12.5', 'M2 9.45Q5 8.2 8 10.15Q11 8.2 14 9.45'))
-
+reader = rr(1.55,1.45,12.9,13.1)
+book_spread = path('M3.8 4.35Q6 3.5 8 4.8Q10 3.5 12.2 4.35V9.35Q10 8.75 8 10Q6 8.75 3.8 9.35Z')
+shape('epub',reader,union(stroke(book_spread),stroke('M8 4.8V10M1.55 12.05H14.45')))
 CATEGORY='Communication'
 BUBBLE=path('M4 2H12Q14 2 14 4V10Q14 12 12 12H7L3 14V12Q2 12 2 10V4Q2 2 4 2Z')
-for name,detail in [('message',line((5,6),(11,6))),('message-text',lines('M5 6H11','M5 9H9')),('message-plus',plus(8,7,.8)),('message-check',check(8,7,.7)),('message-heart',path('M8 10L5 7.5C3.5 6 6 4 8 6C10 4 12.5 6 11 7.5Z')),('message-dots',dots((5,7),(8,7),(11,7))),('comment-text',lines('M5 6H11','M5 9H9')),('conversation',lines('M5 6H11','M5 9H9')),('conversation-add',plus(8,7,.8))]: shape(name,BUBBLE,detail)
+for name,detail in [('message',line((5.05,7.2),(10.95,7.2))),('message-text',lines('M5 6H11','M5 9H9')),('message-plus',plus(8,7,.8)),('message-check',check(8,7,.7)),('message-heart',path('M8 10L5 7.5C3.5 6 6 4 8 6C10 4 12.5 6 11 7.5Z')),('message-dots',dots((5,7),(8,7),(11,7))),('comment-text',lines('M5 6H11','M5 9H9')),('conversation',lines('M5 6H11','M5 9H9')),('conversation-add',plus(8,7,.8))]: shape(name,BUBBLE,detail)
 for name in ['mail','envelope']: shape(name,rr(1.5,3,13,10,2),line((2,4),(8,8.5),(14,4)))
-shape('mail-open',path('M1.5 6L8 1.5 14.5 6V13Q14.5 14 13 14H3Q1.5 14 1.5 13Z'),lines('M2 7l6 4 6-4','M2 14l4-4','M14 14l-4-4'))
+open_envelope = path('M1.65 6.45L8 1.65L14.35 6.45V12.9Q14.35 14 13.15 14H2.85Q1.65 14 1.65 12.9Z')
+open_folds = stroke('M1.65 6.45L8 10.5L14.35 6.45M1.65 14L6.25 9.5M14.35 14L9.75 9.5')
+shape('mail-open',open_envelope,op(open_folds,open_envelope,po.PathOp.INTERSECTION))
 shape('send',path('M2 2L14 7.2Q15 8 14 8.8L2 14 4 8Z'),line((4,8),(11,8)))
 shape('inbox',rr(1.5,2,13,12,2),stroke('M1.5 9H5L6 11H10L11 9H14.5'))
 BELL=path('M8 2A4 4 0 0 0 4 6V9L2 12H14L12 9V6A4 4 0 0 0 8 2Z')
 shape('bell',BELL,union(line((6,14),(10,14)),line((8,1),(8,2))))
 shape('bell-unread',op(BELL,circle(12.5,3,2.9),po.PathOp.DIFFERENCE),union(line((6,14),(10,14)),circle(12.5,3,1.65)))
 shape('bell-off',BELL,union(line((6,14),(10,14)),line((2,2),(14,14))))
-shape('megaphone',path('M2 6H6L13 2V12L6 9H2Z'),stroke('M5 9L6 14H8L7 10'))
+horn = path('M2.1 5.95H5.65L13.55 2.25V11.6L5.65 8.85H2.1Z')
+grip = path('M3.65 8.65H6.55L7.65 13.5Q6.1 14.35 5 13.9Z')
+shape('megaphone',union(horn,grip),line((3.95,8.85),(5.65,8.85)))
 shape('phone-call',path('M3 1.5L6 4.5 4.5 7Q6 10 9 11.5L11.5 10 14.5 13Q13 16 10 14.5C6 13 3 10 1.5 6Q0 3 3 1.5Z'),stroke('M10 2Q14 2 14 6M10 5Q11 5 11 6',1.1))
 shape('video-call',rr(1.5,4,9,8,2),path('M11 6L14.5 4V12L11 10Z'))
 glyph('at-sign',stroke('M12.3 12.8C5.5 17.8-.2 11 2.2 5C4.5-.7 14.5 1 14.5 7.3C14.5 11 10 11.5 10 8.5V5'),stroke('M10 6C7 3 4 6 5 8.8C6 11.5 10 10.5 10 7',1.2))
@@ -289,8 +293,11 @@ shape('contact',rr(2,1.5,12,13,2),union(circle(8,6,2),stroke('M5 11Q8 8 11 11'),
 glyph('accessibility',circle(8,2.5,1.5),lines('M2 6L8 7 14 6','M8 7V10','M8 10L4 14','M8 10L12 14'))
 glyph('wheelchair',ring(6,10,4,1.3),union(circle(7,2,1.4),stroke('M7 4V8H11L13 13H15')))
 for name,detail in [('smile',stroke('M5 9Q8 13 11 9')),('frown',stroke('M5 11Q8 7 11 11')),('meh',line((5,10),(11,10)))]: shape(name,circle(),union(dots((5.5,6),(10.5,6)),detail))
-HAND=union(rr(3,7.5,11,6.5,3),rr(2.7,3.3,1.5,6,.75),rr(6,1.5,1.5,7.8,.75),rr(9.3,2.3,1.5,7,.75),rr(12.6,4.3,1.5,5.5,.75),path('M5.5 13L1.4 9Q.2 7.6 1.5 6.8Q2.3 6.3 3.2 7.4L5.5 9Z'))
-shape('hand',HAND)
+hand_body = path('M4.45 9V4.15C4.45 2.6 6.9 2.6 6.9 4.15V2.65C6.9 1 9.35 1 9.35 2.65V3.55'
+                 'C9.35 1.95 11.8 1.95 11.8 3.55V5.1C11.8 3.55 14.2 3.55 14.2 5.1V9.25'
+                 'C14.2 12.6 12.15 14.45 9.45 14.45Q6.8 14.45 4.95 12.2L1.8 8.4'
+                 'C.7 6.95 2.3 5.65 3.4 6.9Z')
+shape('hand',hand_body,lines('M6.9 4.15V7.05','M9.35 3.55V6.85','M11.8 5.1V7.55'))
 shape('thumbs-up',path('M5 7L8 2Q10 1 10 4L9.5 6H13Q15 6 14 9L12.5 14H5Z'),rr(1.5,7,3.5,7,1))
 shape('thumbs-down',transform(DRAWINGS['thumbs-up'][0],180),transform(DRAWINGS['thumbs-up'][1],180))
 
@@ -307,7 +314,9 @@ shape('qr-code',union(rr(1.5,1.5,5,5,1),rr(9.5,1.5,5,5,1),rr(1.5,9.5,5,5,1)),uni
 shape('badge-check',badge_body(),check(s=.82))
 
 CATEGORY='Time and planning'
-for name,detail in [('clock',line((8,4),(8,8),(11,10))),('alarm-clock',union(line((8,4),(8,8),(11,8)),lines('M2.25 3.45L4.15 1.55','M11.85 1.55L13.75 3.45','M2.95 14.2L4.35 12.5','M11.65 12.5L13.05 14.2'))),('history',union(line((8,4),(8,8),(11,9)),line((1.5,1.5),(1.5,5),(5,5))))]: shape(name,circle(8,8,5.8),detail)
+for name,detail in [('clock',line((8,4),(8,8),(11,10))),('alarm-clock',union(line((8,4),(8,8),(11,8)),lines('M2.25 3.45L4.15 1.55','M11.85 1.55L13.75 3.45','M2.95 14.2L4.35 12.5','M11.65 12.5L13.05 14.2')))]: shape(name,circle(8,8,5.8),detail)
+history_return = stroke('M2.05 5.3A6.45 6.45 0 1 1 1.65 9.05M1.65 2.4V5.7H3.75')
+shape('history',circle(8,8,3.8),union(history_return,stroke('M8 6.15V8.2L9.55 9.05')))
 shape('timer',circle(8,9,5),union(line((8,9),(10,6.5)),lines('M6 1H10','M8 1V4','M12 4l1-1')))
 shape('hourglass',path('M3 2H13Q13 6 9.5 8Q13 10 13 14H3Q3 10 6.5 8Q3 6 3 2Z'),lines('M3 2H13','M3 14H13','M6 5H10','M6 12l2-2 2 2'))
 CAL=rr(2,3,12,11,2); CALTOP=lines('M5 1.5V4.5','M11 1.5V4.5','M2 6H14')
@@ -332,8 +341,15 @@ shape('volume',path('M2 6H5L9 2V14L5 10H2Z'),stroke('M12 4Q16 8 12 12M11 6Q13 8 
 shape('volume-off',path('M2 6H5L9 2V14L5 10H2Z'),cross(12.5,8,.6))
 shape('microphone',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M5.5 15H10.5',1.2))
 shape('microphone-off',rr(5,1.5,6,9,3),stroke('M2.5 7V8A5.5 5.5 0 0 0 13.5 8V7M8 13.5V15M2 2L14 14',1.2))
-glyph('headphones',stroke('M2.5 9V7A5.5 5.5 0 0 1 13.5 7V9',1.35),union(rr(1.5,7,3.5,6,1.4),rr(11,7,3.5,6,1.4)))
-glyph('music',stroke('M6 12V3L13 1.5V10'),union(circle(4,12,2),circle(11,10,2),line((6,5),(13,3.5))))
+headband = stroke('M3.05 7.9V6.8A4.95 4.95 0 0 1 12.95 6.8V7.9')
+earcups = union(rr(1.55,7.9,3.15,5.15),rr(11.3,7.9,3.15,5.15))
+glyph('headphones',headband,earcups)
+def notehead(x,y):
+    return circle(0,0,1).transform(1.85,-.52,.2,1.3,x,y)
+
+beam = stroke('M5.65 11.45V4.25L12.65 2.6V9.8M5.65 6.7L12.65 5.05')
+heads = union(notehead(4.35,11.95),notehead(11.35,10.3))
+glyph('music',beam,heads)
 shape('image',rr(1.5,2,13,12,2),union(circle(5,5.5,1.3),line((2,12),(6.5,8),(9,10),(11,7.5),(14,11))))
 shape('camera',path('M2 4H5L6 2H10L11 4H14V13H2Z'),union(ring(8,8.5,3,1.35),circle(12,6,.65)))
 DRAWINGS['camera-off'] = DRAWINGS['camera']
@@ -354,14 +370,20 @@ for name,detail in [('app-window',union(line((1.5,5.5),(14.5,5.5)),dots((4,3.8),
 glyph('maximize',lines('M2 6V2H6','M10 14H14V10'),lines('M10 2H14V6','M2 10V14H6'))
 glyph('minimize',lines('M2 6H6V2','M10 14V10H14'),lines('M10 2V6H14','M2 10H6V14'))
 glyph('fullscreen',lines('M1.5 5V1.5H5','M11 14.5H14.5V11'),lines('M11 1.5H14.5V5','M1.5 11V14.5H5'))
-shape('picture-in-picture',WINDOW,rr(8,8,5,4,1))
-glyph('layers',path('M1 9L8 13 15 9V11L8 15 1 11Z'),path('M1 5L8 1 15 5 8 9Z'))
+shape('picture-in-picture',WINDOW,rr(7.95,7.7,4.25,3.8))
+top_sheet = path('M1.55 5.5L8 1.95L14.45 5.5L8 9.05Z')
+lower_sheet = path('M1.55 9.35L8 12.9L14.45 9.35V11.15L8 14.7L1.55 11.15Z')
+glyph('layers',lower_sheet,top_sheet)
+STYLE_OVERRIDES['layers'] = {'stroke':union(stroke(top_sheet),stroke('M1.55 10.3L8 13.85L14.45 10.3'))}
 shape('multiplexer',union(rr(1.5,1.5,9.5,9.5,2),rr(5,5,9.5,9.5,2)),union(stroke(rr(5,5,9.5,9.5,2),1.25),lines('M10 5V14.5','M5 10H14.5')))
 
 CATEGORY='Editing and design'
 shape('pencil',path('M2 10L10 2Q11 1 12 2L14 4Q15 5 14 6L6 14 1.5 14.5Z'),stroke('M9 3L13 7M2 10L6 14'))
 shape('eraser',path('M2 8L8 2Q9 1 10 2L14 6Q15 7 14 8L8 14H5L2 11Q1 10 2 8Z'),stroke('M5 5L11 11M8 14H14'))
-shape('paintbrush',path('M5 9L10 2Q12 0 14 2Q16 4 14 6L7 11Z'),path('M5 9Q1 9 2 12Q2 14 1 15Q7 15 7 11Z'))
+brush = path('M1.7 14.3Q2.8 13.1 2.6 11.65Q2.35 9.05 5.2 8.65L10.75 2.25'
+             'C12.95 .1 15.9 3.25 13.75 5.35L7.3 10.95Q7.05 14.4 1.7 14.3Z')
+ferrule = line((5.15,8.65),(7.35,10.85))
+shape('paintbrush',brush,ferrule)
 shape('palette',path('M8 1.5C0 1.5-1 13 6 14.5Q10 15 9 12Q8 10 11 10C17 11 16 1.5 8 1.5Z'),dots((5,5),(9,4),(12,6),(3.5,8)))
 SWATCH=rr(2,2,4.5,12,1)
 SWATCH_DIAGONAL=SWATCH.transform(.7071,.7071,-.7071,.7071,9.553,-.257)
@@ -369,13 +391,17 @@ shape('swatch',union(SWATCH,SWATCH_DIAGONAL,rr(2,9.5,12,4.5,1)),union(stroke(rr(
 glyph('crop',stroke('M4 1V12H15'),stroke('M1 4H12V15'))
 shape('ruler',transform(rr(1.5,5,13,6,1),-45),transform(lines('M4 5V7','M7 5V8','M10 5V7'),-45))
 glyph('scissors',union(ring(4,4,2.5,1.35),ring(4,12,2.5,1.35)),lines('M6 5.5L14 13','M6 10.5L14 3'))
-shape('pen-tool',path('M2 14L4 5L10 2L14 6L11 12Z'),union(circle(8,8,1.15),line((2,14),(7.2,8.8)),line((10,2),(14,6))))
+nib = path('M2.1 13.95L4.2 5.3L9.15 2.05L13.95 6.85L10.75 11.9Z')
+shape('pen-tool',nib,union(circle(7.85,8.15,1.15),line((2.1,13.95),(7.35,8.65))))
 dropper = path('M1.75 14.1L2.85 10.05L9.75 3.15C12.55 .35 15.7 3.5 12.9 6.3L6 13.2Z')
 collar = line((7.25,4.55),(11.5,8.8))
 shape('pipette', dropper, collar)
 STYLE_OVERRIDES['pipette'] = {'solid': op(union(dropper, stroke(dropper)), collar, po.PathOp.DIFFERENCE)}
-glyph('bold', stroke('M4.7 2.8V13.2'),
-      stroke('M4.7 2.8H8.45C12.3 2.8 12.3 7.65 8.45 7.65H4.7M8.45 7.65C13 7.65 13 13.2 8.45 13.2H4.7'))
+bold_body = path('M3.1 1.65H8.65C13.15 1.65 14 6.1 11.2 7.65'
+                 'C14.85 9.1 13.95 14.35 9.25 14.35H3.1Z')
+bold_counters = path('M5.9 4.1V6.65H8.25C10.75 6.65 10.75 4.1 8.25 4.1Z'
+                     'M5.9 9.05V11.9H8.8C11.45 11.9 11.45 9.05 8.8 9.05Z')
+glyph('bold',op(bold_body,bold_counters,po.PathOp.DIFFERENCE),po.Path())
 glyph('italic',lines('M7 2H13','M3 14H9'),line((10,2),(6,14)))
 glyph('underline',stroke('M3 2V7A5 5 0 0 0 13 7V2'),line((2,14),(14,14)))
 glyph('strikethrough',stroke('M11.8 3.45C9.4 1.3 4.3 1.75 4.3 4.7C4.3 8.15 11.9 7.35 11.9 11.1C11.9 14.2 6.6 14.9 3.65 12.4'),line((1.7,8),(14.3,8)))
@@ -414,7 +440,10 @@ shape('cloud',path('M4.2 13C-.2 13 .2 6.5 4.2 6.5C4.3 .7 12.7 .5 13 6.5C17 7 16.
 shape('cloud-upload',DRAWINGS['cloud'][0],arrow(270, .45, dy=.8, width=1.2))
 shape('cloud-download',DRAWINGS['cloud'][0],arrow(90, .45, dy=.8, width=1.2))
 shape('monitor',rr(1.5,2,13,9,1.5),lines('M8 11V14','M5 14H11','M2 8H14'))
-shape('laptop',rr(3,2,10,9,1),path('M2 11H14L15 14H1Z'))
+laptop_screen = rr(3.15,2.35,9.7,8.55)
+laptop_base = path('M3.15 10.9H12.85L14.45 13.45H1.55Z')
+shape('laptop',union(laptop_screen,laptop_base),line((3.15,10.9),(12.85,10.9)))
+STYLE_OVERRIDES['laptop'] = {'solid':union(stroke(laptop_screen),laptop_base,stroke(laptop_base))}
 shape('phone',rr(4,1,8,14,2),union(line((6.5,3),(9.5,3)),line((7,13),(9,13))))
 shape('phone-android',rr(4,1,8,14,1.5),union(circle(8,3,.5),dots((6,13),(8,13),(10,13),r=.4)))
 shape('simulator',rr(4,1,8,14,2),union(poly([(6.5,5.5),(10,8),(6.5,10.5)]),line((7,13),(9,13))))
@@ -518,7 +547,10 @@ AWNING=path('M3 2H13L14.5 6Q14.5 8 12.3 8Q10.2 8 10.2 6Q10.2 8 8 8Q5.8 8 5.8 6Q5
 shape('store',union(rr(2.5,6,11,8.5,1),AWNING),union(stroke(AWNING,1.1),stroke('M6.3 14V10H9.7V14',1.1),lines('M6.5 2L5.8 6','M9.5 2L10.2 6')))
 shape('tag',path('M2 2H8L14 8Q15 9 14 10L10 14Q9 15 8 14L2 8Z'),circle(5,5,1))
 shape('gift',rr(2,6,12,8,1),union(stroke('M8 6V14M1 6H15V9H1ZM8 6C1 6 3 0 6 2L8 6C15 6 13 0 10 2Z',1.2)))
-shape('package',path('M1.5 4.5L8 1.5 14.5 4.5V11.5L8 14.5 1.5 11.5Z'),stroke('M1.5 4.5L8 8 14.5 4.5M8 8V14.5M5 3L11.5 6.3'))
+package_field = path('M1.65 4.75L8 1.65L14.35 4.75V11.45L8 14.4L1.65 11.45Z')
+package_lid = path('M1.65 4.75L8 1.65L14.35 4.75L8 8.05Z')
+tape = op(line((4.75,3.2),(11.2,6.4)),package_lid,po.PathOp.INTERSECTION)
+shape('package',package_field,union(tape,stroke('M1.65 4.75L8 8.05L14.35 4.75M8 8.05V14.4')))
 shape('barcode', rr(1.5,3,13,10),
       lines('M4 5.35V10.65', 'M6.3 5.35V10.65', 'M9.5 5.35V10.65', 'M12 5.35V10.65'))
 shape('percent',circle(),union(line((5.55,10.9),(10.45,5.1),width=1.25),circle(5.7,5.7,.9),circle(10.3,10.3,.9)))
@@ -552,7 +584,7 @@ glyph('infinity',stroke('M8 8C0-3-3 18 8 8'),stroke('M8 8C19-3 16 18 8 8'))
 CATEGORY='Health and fitness'
 HEART=path('M8 14L2.7 8.7C-1.2 4.8 4.3 .2 8 4C11.7 .2 17.2 4.8 13.3 8.7Z')
 shape('heart',HEART)
-pulse = line((1.5,8),(4.75,8),(6.35,5.1),(8.45,10.8),(10,8),(14.5,8),width=1.25)
+pulse = line((1.75,8),(4.55,8),(6.1,5.65),(8.05,10.45),(9.9,8),(14.25,8))
 shape('heart-pulse',HEART,op(pulse,HEART,po.PathOp.INTERSECTION))
 shape('medical-cross',rr(),plus(8,8,1.5))
 shape('first-aid',rr(1.5,4,13,10,2),union(plus(8,9,1),stroke('M5 4V1.5H11V4')))
@@ -562,9 +594,11 @@ shape('pill',transform(capsule,45),transform(capsule_seam,45))
 glyph('stethoscope',stroke('M2 2V6A4 4 0 0 0 10 6V2M2 2H3M9 2H10'),union(ring(13,8.5,1.6,1.1),stroke('M6 10V11.5Q6 14.5 9.5 14.5T13 11.5V10')))
 shape('thermometer',path('M6 3A2 2 0 0 1 10 3V9A3.5 3.5 0 1 1 6 9Z'),union(line((8,5),(8,11)),circle(8,11.5,1.3)))
 shape('bandage',transform(rr(1,4,14,8,3),-45),union(transform(rr(5,5.5,6,5,1),-45),transform(dots((3,7),(3,9),(13,7),(13,9),r=.45),-45)))
-shape('hospital',union(rr(3.5,1.5,9,13,1),rr(1,7,3,7.5,.5),rr(12,7,3,7.5,.5)),union(plus(8,5,.7),stroke('M6.5 14.5V10.5H9.5V14.5',1.1)))
-weight_plates = lines('M2.3 5.8V10.2', 'M4.8 3.7V12.3')
-glyph('dumbbell', union(weight_plates,mirror(weight_plates)), line((2.3,8),(13.7,8)))
+hospital_field = path('M1.55 7.4H4.2V1.7H11.8V7.4H14.45V14.2H1.55Z')
+shape('hospital',hospital_field,union(plus(8,5.1,.72),stroke('M6.45 14.2V10.2H9.55V14.2')))
+weight_plates = union(rr(1.35,5.55,2.45,4.9),rr(4.4,3.65,2.55,8.7))
+dumbbell_ends = union(weight_plates,mirror(weight_plates))
+glyph('dumbbell',transform(dumbbell_ends,-28),transform(line((3.5,8),(12.5,8)),-28))
 shape('weight',path('M5 6.5H11L14 13Q14.6 14.5 12.5 14.5H3.5Q1.4 14.5 2 13Z'),stroke('M5.5 6.5V4A2.5 2.5 0 0 1 10.5 4V6.5'))
 SOLE=path('M3.8 9.7C1.2 9.2 .8 6.6 2.1 4.3C3.1 2.8 5.8 3.1 5.8 5.4C5.8 6.7 4.2 7.1 4.4 8.5Q4.6 9.7 3.8 9.7Z')
 glyph('footprints', union(SOLE,transform(mirror(SOLE),dy=-2)),
@@ -575,7 +609,10 @@ shape('bed', bed_frame, union(pillows, lines('M2 10H14', 'M2 12V13.9', 'M14 12V1
 shape('moon',path('M10.7 1.8A6.4 6.4 0 1 0 14.2 10.7A5.2 5.2 0 0 1 10.7 1.8Z'))
 shape('apple',path('M8 5C1 1 0 9 4 13C5.5 15 6.5 13.5 8 13.5S10.5 15 12 13C16 9 15 1 8 5Z'),stroke('M8 5Q8 1 11 1'))
 shape('droplet',path('M8 1C6 5 2 7 2 10A6 6 0 0 0 14 10C14 7 10 5 8 1Z'),stroke('M5 10Q5 12 7 12'))
-shape('lungs',path('M6 5Q3 3 2 8Q-1 15 5 14Q7 13 7 10V5ZM10 5Q13 3 14 8Q17 15 11 14Q9 13 9 10V5Z'),stroke('M8 1V6M5 9L8 6 11 9'))
+lung_l = path('M5.65 4.6C4.05 4.55 2.55 7.6 1.85 11.5Q1.15 14.7 3.55 14'
+              'L5.65 13Q6.6 12.55 6.55 10.9L6.35 5.55Q6.3 4.65 5.65 4.6Z')
+airway = stroke('M8 1.55V5.55M5.15 8.85L8 5.55L10.85 8.85')
+shape('lungs',union(lung_l,mirror(lung_l)),airway)
 
 CATEGORY='Maps and travel'
 PIN=path('M8 15C4 10 2 8 2 6A6 6 0 0 1 14 6C14 8 12 10 8 15Z')
@@ -609,7 +646,7 @@ tent_shell = poly([(8,2.4),(14.55,13.7),(1.45,13.7)])
 shape('tent', tent_shell, stroke('M8 2.4V7.3M4.55 13.7L8 7.3L11.45 13.7'
                                'M4.15 9.05L8 7.3L11.85 9.05'))
 shape('mountain',poly([(1.45,13.8),(6.05,2.65),(9.3,8.45),(11.1,5.25),(14.55,13.8)]),
-      stroke('M4.25 7.05L5.55 8L6.75 6.75L7.55 7.5L8.25 6.65',1.15))
+      stroke('M4.2 7.05L5.65 8.25L6.8 6.85L7.95 7.05'))
 shape('signpost',poly([(1.5,3),(11.5,3),(14.5,6),(11.5,9),(1.5,9)]),lines('M7 1V3','M7 9V15'))
 shape('parking',rr(),stroke('M6 12V4H9A2 2 0 0 1 9 8H6',1.5))
 shape('fuel',rr(2,2,8,12,1),union(rr(4,4,4,4,.5),stroke('M10 6H12V12Q15 15 15 11V6L12 3')))
@@ -675,7 +712,9 @@ sofa_seam = stroke('M1.5 8.8Q1.5 7.3 3 7.3T4.5 8.8V10H11.5V8.8'
 shape('sofa', sofa_body, union(sofa_seam, lines('M8 3.3V10', 'M3 12.5V14', 'M13 12.5V14')))
 shape('lamp',path('M5 2H11L14 9H2Z'),lines('M8 9V14','M5 14H11'))
 shape('door-open',path('M3 3L11 1V15L3 13Z'),union(stroke('M11 3H14V13H11'),circle(8.5,8,.65)))
-shape('key-round',circle(5,5,3.5),union(circle(5,5,1),stroke('M7.5 7.5L14 14H11V11H9V9')))
+key_head = circle(5.35,5.4,3.5)
+key_bit = path('M6.7 8.15L8.15 6.7L14.3 12.85V14.2H11.15V11.95H8.95V10.2Z')
+shape('key-round', union(key_head,key_bit), stroke(circle(5.15,5.2,1.5)))
 shape('plug',rr(4,5,8,5,2),stroke('M5.5 1V5M10.5 1V5M8 10V15'))
 fan_blade = path('M7.6 7.45C6.35 6.8 5.25 5.2 6.35 4.25C7.75 3.05 9.8 4.1 9.2 5.7Q8.8 6.8 8.45 7.55Z')
 fan_blades = union(*(transform(fan_blade,i*120) for i in range(3)),circle(8,8,.85))
@@ -686,7 +725,9 @@ glyph('music-note',DRAWINGS['music'][0],DRAWINGS['music'][1])
 shape('bell-ring',BELL,union(line((6,14),(10,14)),lines('M1 3L2 2','M14 2L15 3')))
 
 CATEGORY='Editing and design'
-glyph('paperclip',stroke('M11 6L6 11Q4 12 4 10L10 4Q13 1 14 5Q15 7 12 10L8 14Q3 17 1 12Q0 9 3 6L8 1'),stroke('M10 4L4 10Q4 12 6 11L11 6'))
+clip_wire = path('M9.55 4.55V10.4A1.35 1.35 0 0 1 6.85 10.4V4.5A2.55 2.55 0 0 1 11.95 4.5V10.4'
+                 'A3.75 3.75 0 0 1 4.45 10.4V4.4')
+glyph('paperclip',stroke(transform(clip_wire,38)),po.Path())
 CATEGORY='Technology and development'
 shape('ssh', rr(1.5, 2.8, 13, 10.4, 1.8),
       union(stroke('M4 6.3L5.9 8.2L4 10.1', 1.25),
@@ -880,7 +921,8 @@ def main():
         if name == 'headphones':
             mono=union(b,stroke(d,1.1))
         if name == 'lungs':
-            solid=union(op(union(b,outer),stroke('M5 9L7 7M9 7L11 9',1.1),po.PathOp.DIFFERENCE),line((8,1),(8,6)))
+            field=union(b,outer)
+            solid=union(op(field,d,po.PathOp.DIFFERENCE),op(d,field,po.PathOp.DIFFERENCE))
         if name == 'hourglass':
             solid=op(union(b,outer),union(rr(5.4,4,5.2,1.4,.5),poly([(6,12),(8,10),(10,12)])),po.PathOp.DIFFERENCE)
         if name == 'printer':
