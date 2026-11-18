@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Rename P9 Figures to Vectors and join the @hugocxl stack: the repository is now
+- Join the @hugocxl stack: the repository is now
   `hugocxl/vectors` and the website is https://hugocxl.github.io/vectors/.
 - Rebuild the website on the @hugocxl design system, with a home page, a
   searchable browser for all 2,000 vectors and a documentation page.
@@ -23,9 +23,9 @@
   npm and GitHub releases with provenance.
 - `docs/USAGE.md`, the platform guide.
 
-## P9 Figures (unversioned)
+## First collection (unversioned)
 
 ### Added
 
-- 2,000 static isometric SVG illustrations, published as P9 Figures, with a
+- 2,000 static isometric SVG illustrations, published with a
   use-case manifest, a scene build and verification scripts.
