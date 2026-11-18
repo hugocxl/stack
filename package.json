@@ -50,8 +50,8 @@
     "access": "public"
   },
   "scripts": {
-    "sync": "node scripts/sync-design.mjs",
-    "check": "design.md lint DESIGN.md && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check",
+    "sync": "node scripts/sync-assets.mjs && node scripts/sync-design.mjs",
+    "check": "design.md lint DESIGN.md && node scripts/sync-assets.mjs --check && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check",
     "test": "npm run check && playwright test",
     "build": "node scripts/build-exports.mjs",
     "prepack": "node scripts/build-exports.mjs --check"
@@ -59,6 +59,8 @@
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
     "@google/design.md": "0.4.0",
+    "@hugocxl/icons": "^0.2.0",
+    "@hugocxl/vectors": "^0.1.0",
     "@playwright/test": "1.65.1",
     "yaml": "2.9.1"
   }
