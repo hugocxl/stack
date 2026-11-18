@@ -22,20 +22,21 @@
   --cxl-amber:var(--cxl-graphite);--cxl-sage:var(--cxl-graphite);
   --cxl-bg:var(--cxl-paper);--cxl-text:var(--cxl-ink);--cxl-surface:#ececec;--cxl-muted:#595959;--cxl-line:var(--cxl-silver);
   --cxl-serif:"Geist Serif",Georgia,serif;--cxl-sans:"Geist Sans",Arial,sans-serif;--cxl-mono:"Geist Mono",ui-monospace,monospace;
+  --cxl-tracking-sans: -.01em;
   --cxl-space-1:4px;--cxl-space-2:8px;--cxl-space-3:16px;--cxl-space-4:24px;--cxl-space-5:40px;--cxl-space-6:64px;
   --cxl-radius:6px;accent-color:var(--cxl-text);color-scheme:light
 }
 :root[data-theme=dark]{--cxl-bg:#101010;--cxl-text:#f5f5f5;--cxl-surface:#202020;--cxl-muted:#b5b5b5;--cxl-line:#444444;color-scheme:dark}
-.cxl-button,.cxl-field{font:500 14px var(--cxl-sans);border-radius:var(--cxl-radius);padding:12px 18px;border:1px solid var(--cxl-line)}
+.cxl-button,.cxl-field{letter-spacing:var(--cxl-tracking-sans);font:500 14px var(--cxl-sans);border-radius:var(--cxl-radius);padding:12px 18px;border:1px solid var(--cxl-line)}
 .cxl-button{display:inline-flex;align-items:center;gap:18px;background:var(--cxl-text);color:var(--cxl-bg);text-decoration:none;cursor:pointer;border-color:transparent}
 .cxl-button:hover{opacity:.84}
 .cxl-field{background:var(--cxl-bg);color:var(--cxl-text)}
 .cxl-label{font:11px/1.5 var(--cxl-mono);letter-spacing:.06em;text-transform:uppercase}
 :focus-visible{outline:2px solid var(--cxl-muted);outline-offset:4px}
 
-:where(body, button, input, select, textarea, h3, h4, h5, h6) { font-family: var(--cxl-sans); }
-:where(h1, h2) { font-family: var(--cxl-serif); }
-:where(code, pre, kbd, samp), .cxl-note { font-family: var(--cxl-mono); }
+:where(body, button, input, select, textarea, h3, h4, h5, h6) { font-family: var(--cxl-sans); letter-spacing: var(--cxl-tracking-sans); }
+:where(h1, h2) { font-family: var(--cxl-serif); letter-spacing: normal; }
+:where(code, pre, kbd, samp), .cxl-note { font-family: var(--cxl-mono); letter-spacing: normal; }
 
 /* A shared control surface for compact navigation groups. */
 .cxl-material {

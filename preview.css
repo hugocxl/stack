@@ -1,16 +1,16 @@
 .cxl-opening em { font-style: normal; color: var(--cxl-muted) }
 .guide-link { display: inline-flex; gap: 1.1rem; align-items: center; margin-top: 2rem; padding: .55rem .95rem; border: 1px solid var(--cxl-line); border-radius: 2rem; font-size: .86rem; text-decoration: none }
-.lead { font-size: clamp(1.15rem,1.75vw,1.5rem); line-height: 1.4; letter-spacing: -.025em }
+.lead { font-size: clamp(1.15rem,1.75vw,1.5rem); line-height: 1.4; letter-spacing: -.035em }
 .type-list { margin: 1.5rem 0 4rem }
 .type-list div, figcaption, footer, .controls { display: flex; align-items: center; gap: 1rem }
 .type-list div, figcaption, footer { justify-content: space-between; border-top: 1px solid var(--cxl-line); padding-block: .8rem }
 .type-list dt { font-size: clamp(1.15rem,2.5vw,1.6rem) }
 .type-list dd { margin: 0; font-size: .84rem; text-align: right; color: var(--cxl-muted) }
-.serif { font-family: var(--cxl-serif) }
-.mono { font-family: var(--cxl-mono) }
+.serif { font-family: var(--cxl-serif); letter-spacing: normal }
+.mono { font-family: var(--cxl-mono); letter-spacing: normal }
 .swatches { display: flex; margin: 1.5rem 0; gap: 2px }
 .swatches div { flex: 1; font-size: .8rem }
-.swatches small { display: block; font: .68rem var(--cxl-mono); color: var(--cxl-muted) }
+.swatches small { display: block; letter-spacing: normal; font: .68rem var(--cxl-mono); color: var(--cxl-muted) }
 .chip { display: block; height: 4rem; border: 1px solid var(--cxl-line); margin-bottom: .5rem }
 figure { margin: 1.5rem 0 }
 #figure { height: clamp(11rem,30vw,18rem); background: var(--cxl-surface) }
