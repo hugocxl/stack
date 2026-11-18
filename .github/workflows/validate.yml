@@ -23,7 +23,17 @@ jobs:
       - run: npm ci
       - run: python -m pip install -r requirements.txt
       - name: Check the SVGs and manifest are built from the scenes
-        run: python scripts/build.py --check --expect 2000
+        run: |
+          python scripts/build.py --expect 2000
+          git diff --name-only --exit-code -- figures catalog
+      - name: Upload the rebuilt files that differ
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rebuilt-figures
+          path: |
+            figures
+            catalog/manifest.json
       - run: npm run validate
   swift:
     runs-on: macos-15
