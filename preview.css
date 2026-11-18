@@ -6,8 +6,8 @@
 .type-list div, figcaption, footer { justify-content: space-between; border-top: 1px solid var(--cxl-line); padding-block: .8rem }
 .type-list dt { font-size: clamp(1.15rem,2.5vw,1.6rem) }
 .type-list dd { margin: 0; font-size: .84rem; text-align: right; color: var(--cxl-muted) }
-.serif { font-family: var(--cxl-serif); letter-spacing: normal }
-.mono { font-family: var(--cxl-mono); letter-spacing: normal }
+.serif { font-family: var(--cxl-serif); font-weight: 400; letter-spacing: normal }
+.mono { font-family: var(--cxl-mono); font-weight: 400; letter-spacing: normal }
 .swatches { display: flex; margin: 1.5rem 0; gap: 2px }
 .swatches div { flex: 1; font-size: .8rem }
 .swatches small { display: block; letter-spacing: normal; font: .68rem var(--cxl-mono); color: var(--cxl-muted) }
@@ -20,3 +20,5 @@ figcaption button { min-width: 44px; height: 44px; border-radius: 50%; color: in
 .controls { margin-top: .5rem; gap: .5rem }
 .controls input { flex: 1; min-width: 0 }
 footer { max-width: 64ch; margin-bottom: 2rem; font-size: .85rem }
+
+#copy-result { display: block; margin-block: .5rem 1rem; font-size: .85rem }

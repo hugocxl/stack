@@ -25,10 +25,19 @@ document.querySelector('form').onsubmit = event => {
   event.preventDefault();
   const query = select('query').value.trim().toLowerCase();
   const index = figures.findIndex(([name]) => name.toLowerCase() === query);
-  document.querySelector('output').textContent = index < 0 ? 'Choose Keyboard, Terrain, or Dish.' : 'Showing ' + figures[index][0];
+  document.querySelector('form output').textContent = index < 0 ? 'Choose Keyboard, Terrain, or Dish.' : 'Showing ' + figures[index][0];
   if (index >= 0) {
     show(index);
     document.querySelector('figure').scrollIntoView({block:'center'});
     select('next').focus({preventScroll:true});
+  }
+};
+
+select('copy-snippet').onclick = async () => {
+  try {
+    await navigator.clipboard.writeText(select('stylesheet-snippet').textContent);
+    select('copy-result').textContent = 'Copied stylesheet link.';
+  } catch {
+    select('copy-result').textContent = 'Select the snippet to copy it manually.';
   }
 };

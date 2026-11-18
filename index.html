@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="CXL’s interface guidelines, self-hosted typefaces, grayscale palette, and interactive figures.">
   <title>CXL Design System</title>
-  <link rel="stylesheet" href="system/cxl.css?v=tracking">
-  <link rel="stylesheet" href="system/editorial.css?v=tracking">
-  <link rel="stylesheet" href="preview.css?v=tracking">
+  <link rel="stylesheet" href="system/cxl.css?v=apollo">
+  <link rel="stylesheet" href="system/editorial.css?v=apollo">
+  <link rel="stylesheet" href="preview.css?v=apollo">
   <script src="system/theme.js"></script>
 </head>
 <body class="cxl-editorial" id="top">
@@ -53,12 +53,13 @@
       </section>
       <section><h2>Start a website</h2>
         <p>Copy the <code>system/</code> folder into your project and load its stylesheet. The fonts, figures, and theme tokens travel together.</p>
-        <pre><code>&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code></pre>
+        <div class="cxl-snippet"><code id="stylesheet-snippet">&lt;link rel="stylesheet" href="system/cxl.css"&gt;</code><button type="button" id="copy-snippet" aria-label="Copy stylesheet link">Copy</button></div>
+        <output id="copy-result" aria-live="polite"></output>
         <a href="https://github.com/hugocxl/cxl-design-system/tree/main/system">Browse the assets on GitHub ↗</a>
       </section>
     </div>
   </main>
   <footer><a href="system/interface-guidelines.html">Interface guidelines</a><a href="#top">Back to top ↑</a></footer>
-  <script type="module" src="preview.js?v=guide"></script>
+  <script type="module" src="preview.js?v=apollo"></script>
 </body>
 </html>
