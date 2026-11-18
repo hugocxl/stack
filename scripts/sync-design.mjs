@@ -24,7 +24,7 @@ function specimen(id) {
 
 // Icon and vector paths come from their packages; the markup keeps the element and its title.
 function elide(markup) {
-  return markup.replace(/(<svg class="p9-(vector|icon)"[^>]*>)([\s\S]*?)<\/svg>/g, (_, open, kind, inner) =>
+  return markup.replace(/(<svg class="ds-(vector|icon)"[^>]*>)([\s\S]*?)<\/svg>/g, (_, open, kind, inner) =>
     open + (kind === 'vector' ? (inner.match(/<title>[\s\S]*?<\/title>/) || [''])[0] : '') + `<!-- paths from @hugocxl/${kind}s -->` + '</svg>');
 }
 

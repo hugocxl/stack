@@ -11,7 +11,7 @@ const px = value => parseFloat(value);
 
 test('the opening paragraph links to every section of the article', async ({ page }) => {
   await page.goto('/');
-  const links = page.locator('.p9-opening > .p9-section').first().locator('a');
+  const links = page.locator('.ds-opening > .ds-section').first().locator('a');
   await expect(links).toHaveCount(11);
   for (const link of await links.all()) {
     const fragment = await link.getAttribute('href');
@@ -39,7 +39,7 @@ for (const layout of ['plain', 'field']) for (const width of [320, 760, 761, 144
     await page.evaluate(layout => { document.body.dataset.layout = layout }, layout);
     await page.evaluate(() => document.fonts.ready);
     const metrics = await page.evaluate(() => {
-      const article = document.querySelector('.p9-opening');
+      const article = document.querySelector('.ds-opening');
       const main = document.querySelector('main').getBoundingClientRect();
       const column = article.getBoundingClientRect();
       const figure = document.querySelector('#opening-figure').getBoundingClientRect();
@@ -56,9 +56,9 @@ for (const layout of ['plain', 'field']) for (const width of [320, 760, 761, 144
         figureWidth: figure.width,
         readingSize: parseFloat(style.fontSize),
         lineHeight: parseFloat(style.lineHeight) / parseFloat(style.fontSize),
-        titleSize: parseFloat(getComputedStyle(document.querySelector('.p9-title h1')).fontSize),
-        headingSize: parseFloat(getComputedStyle(document.querySelector('.p9-section > h2')).fontSize),
-        paragraphGap: parseFloat(getComputedStyle(document.querySelector('.p9-section p + p')).marginTop),
+        titleSize: parseFloat(getComputedStyle(document.querySelector('.ds-title h1')).fontSize),
+        headingSize: parseFloat(getComputedStyle(document.querySelector('.ds-section > h2')).fontSize),
+        paragraphGap: parseFloat(getComputedStyle(document.querySelector('.ds-section p + p')).marginTop),
         sectionGap: parseFloat(getComputedStyle(document.querySelector('#principles')).marginTop),
         fieldWidth: parseFloat(field.width),
       };
@@ -99,23 +99,23 @@ for (const mode of ['light', 'dark']) {
 
     const tokens = await page.evaluate(names => {
       const style = getComputedStyle(document.documentElement);
-      return Object.fromEntries(names.map(name => [name, style.getPropertyValue('--p9-' + name).trim()]));
+      return Object.fromEntries(names.map(name => [name, style.getPropertyValue('--ds-' + name).trim()]));
     }, Object.keys(colors[mode]));
     expect(tokens).toEqual(colors[mode]);
-    expect(await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--p9-accent').trim())).toBe(colors.accent);
+    expect(await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--ds-accent').trim())).toBe(colors.accent);
 
     await expect(page.getByRole('article')).toHaveCSS('font-weight', String(typography.reading.fontWeight));
-    await expect(page.locator('.p9-opening > .p9-title h1')).toHaveCSS('font-weight', String(typography.title.fontWeight));
+    await expect(page.locator('.ds-opening > .ds-title h1')).toHaveCSS('font-weight', String(typography.title.fontWeight));
     await expect(page.locator('#principles > h2')).toHaveCSS('font-weight', String(typography.heading.fontWeight));
     await expect(page.locator('#caption')).toHaveCSS('font-size', typography.label.fontSize);
-    await expect(page.locator('body > .p9-footer a').first()).toHaveCSS('font-size', typography.mono.fontSize);
-    await expect(page.locator('#c-button .p9-button')).toHaveCSS('font-size', typography.control.fontSize);
-    await expect(page.locator('#c-button .p9-button')).toHaveCSS('border-radius', rounded.control);
-    const button = await page.locator('#c-button .p9-button').evaluate(node => [getComputedStyle(node).color, getComputedStyle(node).backgroundColor]);
+    await expect(page.locator('body > .ds-footer a').first()).toHaveCSS('font-size', typography.mono.fontSize);
+    await expect(page.locator('#c-button .ds-button')).toHaveCSS('font-size', typography.control.fontSize);
+    await expect(page.locator('#c-button .ds-button')).toHaveCSS('border-radius', rounded.control);
+    const button = await page.locator('#c-button .ds-button').evaluate(node => [getComputedStyle(node).color, getComputedStyle(node).backgroundColor]);
     const rgb = hex => `rgb(${hex.slice(1).match(/../g).map(pair => parseInt(pair, 16)).join(', ')})`;
     expect(button).toEqual([rgb(colors[mode].canvas), rgb(colors[mode].ink)]);
-    await expect(page.locator('#opening-figure .p9-media')).toHaveCSS('border-radius', rounded.media);
-    await expect(page.locator('.p9-pager')).toHaveCSS('border-radius', rounded.pill);
+    await expect(page.locator('#opening-figure .ds-media')).toHaveCSS('border-radius', rounded.media);
+    await expect(page.locator('.ds-pager')).toHaveCSS('border-radius', rounded.pill);
     await expect(page.getByRole('button', { name: 'Next figure' })).toHaveCSS('height', spacing.target);
     const loadedFonts = await page.evaluate(() => Array.from(document.fonts).filter(font => font.status === 'loaded').map(font => font.family));
     expect(loadedFonts).toEqual(expect.arrayContaining(['Geist Sans', 'Geist Mono']));
@@ -133,24 +133,24 @@ test('the example home page follows its recipe and accent budget', async ({ page
   const example = page.locator('.doc-example-page');
   const sequence = await example.evaluate(root => {
     const names = {
-      'p9-masthead': 'masthead', 'p9-statement': 'statement', 'p9-meta': 'meta', 'p9-section': 'section',
-      'p9-grid': 'figure-grid', 'p9-form': 'form', 'p9-footer': 'footer', 'p9-button': 'button',
+      'ds-masthead': 'masthead', 'ds-statement': 'statement', 'ds-meta': 'meta', 'ds-section': 'section',
+      'ds-grid': 'figure-grid', 'ds-form': 'form', 'ds-footer': 'footer', 'ds-button': 'button',
     };
-    const blocks = [root.querySelector('.p9-masthead'), ...root.querySelector('.p9-column').children, root.querySelector('.p9-footer')];
+    const blocks = [root.querySelector('.ds-masthead'), ...root.querySelector('.ds-column').children, root.querySelector('.ds-footer')];
     return blocks.map(block => names[[...block.classList].find(name => names[name])]);
   });
   expect(sequence.join(' ')).toMatch(/^masthead statement( meta)? section (figure-wide|figure-grid)( section)*( button| form)? footer$/);
-  await expect(example.locator('.p9-accent, .p9-dot')).toHaveCount(2);
-  await expect(example.locator('.p9-button')).toHaveCount(0);
-  const accent = await example.locator('.p9-accent').evaluate(node => getComputedStyle(node).color);
+  await expect(example.locator('.ds-accent, .ds-dot')).toHaveCount(2);
+  await expect(example.locator('.ds-button')).toHaveCount(0);
+  const accent = await example.locator('.ds-accent').evaluate(node => getComputedStyle(node).color);
   expect(accent).toBe('rgb(206, 119, 85)');
 });
 
 test('component listings show the specimen markup', async ({ page }) => {
   await page.goto('/');
-  const listings = page.locator('.doc-specimen + .p9-code code');
+  const listings = page.locator('.doc-specimen + .ds-code code');
   await expect(listings).toHaveCount(13);
-  await expect(listings.nth(1)).toHaveText('<hgroup class="p9-title">\n  <h1>Public testing is beginning</h1>\n  <p>Fieldwork team</p>\n</hgroup>');
+  await expect(listings.nth(1)).toHaveText('<hgroup class="ds-title">\n  <h1>Public testing is beginning</h1>\n  <p>Fieldwork team</p>\n</hgroup>');
   for (const listing of await listings.all()) await expect(listing).not.toContainText('<path');
 });
 
@@ -158,7 +158,7 @@ test('icons and vectors draw in the text color at their documented sizes', async
   await page.goto('/');
   for (const theme of ['light', 'dark']) {
     await page.evaluate(theme => { document.documentElement.dataset.theme = theme }, theme);
-    const icon = await page.locator('#icon-example a:not(.p9-button) .p9-icon').evaluate(node => {
+    const icon = await page.locator('#icon-example a:not(.ds-button) .ds-icon').evaluate(node => {
       const link = getComputedStyle(node.closest('a'));
       const box = node.getBoundingClientRect();
       return { width: box.width, size: parseFloat(link.fontSize), color: getComputedStyle(node).color, linkColor: link.color, hidden: node.getAttribute('aria-hidden') };
@@ -166,7 +166,7 @@ test('icons and vectors draw in the text color at their documented sizes', async
     expect(icon.width).toBeCloseTo(icon.size, 0);
     expect(icon.color).toBe(icon.linkColor);
     expect(icon.hidden).toBe('true');
-    const vector = await page.locator('#vector-example .p9-vector').evaluate(node => {
+    const vector = await page.locator('#vector-example .ds-vector').evaluate(node => {
       const box = node.getBoundingClientRect();
       return { ratio: box.width / box.height, color: getComputedStyle(node).color, ink: getComputedStyle(document.body).color, title: node.querySelector('title')?.textContent };
     });
@@ -179,7 +179,7 @@ test('icons and vectors draw in the text color at their documented sizes', async
 test('keyboard vector browsing and search feedback', async ({ page }) => {
   await page.goto('/');
   const caption = page.locator('#caption');
-  const visible = page.locator('#figure .p9-vector:visible');
+  const visible = page.locator('#figure .ds-vector:visible');
   const next = page.getByRole('button', { name: 'Next figure' });
   await expect(caption).toHaveText('Fig. 01 / Product launch');
   await expect(visible).toHaveCount(1);
@@ -216,12 +216,12 @@ test('only @hugocxl icons and vectors draw on the page', async ({ page }) => {
       if (node.parentElement.closest('pre, code, li, .doc-stack-example')) continue;
       if (glyphs.test(node.textContent)) found.push(node.textContent.trim());
     }
-    const svgs = [...document.querySelectorAll('svg')].filter(svg => !svg.matches('.p9-icon, .p9-vector') && !svg.closest('.p9-icon, .p9-vector'));
+    const svgs = [...document.querySelectorAll('svg')].filter(svg => !svg.matches('.ds-icon, .ds-vector') && !svg.closest('.ds-icon, .ds-vector'));
     return { found, svgs: svgs.length, figures: document.querySelectorAll('[data-figure]').length };
   });
   expect(stray).toEqual({ found: [], svgs: 0, figures: 0 });
-  for (const button of await page.locator('.p9-theme, .p9-pager button, .p9-input button').all()) {
-    await expect(button.locator('svg.p9-icon')).toHaveCount(1);
+  for (const button of await page.locator('.ds-theme, .ds-pager button, .ds-input button').all()) {
+    await expect(button.locator('svg.ds-icon')).toHaveCount(1);
     await expect(button).toHaveAttribute('aria-label', /.+/);
   }
 });
@@ -229,7 +229,7 @@ test('only @hugocxl icons and vectors draw on the page', async ({ page }) => {
 test('theme selection persists across visits', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');
-  await page.locator('body > .p9-masthead .p9-theme').click();
+  await page.locator('body > .ds-masthead .ds-theme').click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');

@@ -1,55 +1,55 @@
 /* Styles for this reference page only. Sites built with the system do not load this file. */
-.doc-component { margin-top: var(--p9-space-8) }
-.doc-component > h3 code { font-size: var(--p9-size-label); letter-spacing: .08em; text-transform: uppercase }
-.doc-component > p { margin-top: var(--p9-space-2) }
+.doc-component { margin-top: var(--ds-space-8) }
+.doc-component > h3 code { font-size: var(--ds-size-label); letter-spacing: .08em; text-transform: uppercase }
+.doc-component > p { margin-top: var(--ds-space-2) }
 
 .doc-specimen {
   container-type: inline-size;
-  margin-top: var(--p9-space-5);
-  padding: var(--p9-space-6);
-  border: 1px solid var(--p9-rule);
-  border-radius: var(--p9-radius-media) var(--p9-radius-media) 0 0;
+  margin-top: var(--ds-space-5);
+  padding: var(--ds-space-6);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-media) var(--ds-radius-media) 0 0;
 }
 .doc-specimen::before {
   content: "Specimen / " attr(data-component);
   display: block;
-  margin: calc(-1 * var(--p9-space-4)) 0 var(--p9-space-5) calc(-1 * var(--p9-space-4));
-  font: 400 var(--p9-size-label)/1.5 var(--p9-mono);
+  margin: calc(-1 * var(--ds-space-4)) 0 var(--ds-space-5) calc(-1 * var(--ds-space-4));
+  font: 400 var(--ds-size-label)/1.5 var(--ds-mono);
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--p9-muted);
+  color: var(--ds-muted);
 }
-.doc-specimen + .p9-code { border-radius: 0 0 var(--p9-radius-control) var(--p9-radius-control) }
-.doc-specimen :where(.p9-masthead, .p9-meta, .p9-section, .p9-form) { margin-top: 0; padding-top: 0 }
-.doc-specimen .p9-footer { margin-top: 0; padding-bottom: 0 }
-.doc-specimen .p9-wide { margin-block: 0 }
-.doc-component[data-wide] > :is(.doc-specimen, .p9-code) { width: min(100cqw, var(--p9-wide)); margin-inline: calc((100% - min(100cqw, var(--p9-wide))) / 2) }
-.doc-note { margin-top: var(--p9-space-4); font-size: var(--p9-size-small) }
+.doc-specimen + .ds-code { border-radius: 0 0 var(--ds-radius-control) var(--ds-radius-control) }
+.doc-specimen :where(.ds-masthead, .ds-meta, .ds-section, .ds-form) { margin-top: 0; padding-top: 0 }
+.doc-specimen .ds-footer { margin-top: 0; padding-bottom: 0 }
+.doc-specimen .ds-wide { margin-block: 0 }
+.doc-component[data-wide] > :is(.doc-specimen, .ds-code) { width: min(100cqw, var(--ds-wide)); margin-inline: calc((100% - min(100cqw, var(--ds-wide))) / 2) }
+.doc-note { margin-top: var(--ds-space-4); font-size: var(--ds-size-small) }
 
 .doc-palette :where(td, th) { white-space: nowrap }
-.doc-chip { display: inline-block; width: 1.25em; height: 1.25em; margin-right: var(--p9-space-2); border: 1px solid var(--p9-rule); border-radius: 3px; vertical-align: -.25em }
-.doc-bar { display: block; height: .5rem; margin-top: .4em; background: var(--p9-ink) }
-.doc-type > li > div > .p9-label { margin-top: var(--p9-space-2) }
-.doc-type > li > div > p:first-child { color: var(--p9-ink) }
-.doc-small { font-size: var(--p9-size-small); line-height: 1.4 }
-.doc-mono { font: 400 var(--p9-size-mono)/1.4 var(--p9-mono); letter-spacing: 0 }
+.doc-chip { display: inline-block; width: 1.25em; height: 1.25em; margin-right: var(--ds-space-2); border: 1px solid var(--ds-rule); border-radius: 3px; vertical-align: -.25em }
+.doc-bar { display: block; height: .5rem; margin-top: .4em; background: var(--ds-ink) }
+.doc-type > li > div > .ds-label { margin-top: var(--ds-space-2) }
+.doc-type > li > div > p:first-child { color: var(--ds-ink) }
+.doc-small { font-size: var(--ds-size-small); line-height: 1.4 }
+.doc-mono { font: 400 var(--ds-size-mono)/1.4 var(--ds-mono); letter-spacing: 0 }
 .doc-recipes td code { white-space: normal; word-spacing: .2em }
-.doc-rule-head { margin-top: var(--p9-space-6); margin-bottom: var(--p9-space-3); font-weight: 400 }
+.doc-rule-head { margin-top: var(--ds-space-6); margin-bottom: var(--ds-space-3); font-weight: 400 }
 
 /* Layout schematics: the column, the wide region and the field, to scale. */
 .doc-schematic {
   position: relative;
   aspect-ratio: 16 / 10;
-  margin-block: var(--p9-space-5);
-  border: 1px solid var(--p9-rule);
-  border-radius: var(--p9-radius-control);
-  font: 400 .6875rem/1 var(--p9-mono);
+  margin-block: var(--ds-space-5);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-control);
+  font: 400 .6875rem/1 var(--ds-mono);
   letter-spacing: .06em;
-  color: var(--p9-muted);
+  color: var(--ds-muted);
 }
-.doc-schematic span { position: absolute; display: flex; align-items: flex-end; padding: 6px; border: 1px dashed color-mix(in srgb, var(--p9-ink) 35%, transparent) }
+.doc-schematic span { position: absolute; display: flex; align-items: flex-end; padding: 6px; border: 1px dashed color-mix(in srgb, var(--ds-ink) 35%, transparent) }
 .doc-schematic .doc-col { top: 22%; bottom: 0; border-bottom: 0 }
-.doc-schematic .doc-wide { top: 52%; height: 26%; border-style: solid; color: var(--p9-ink); background: var(--p9-surface) }
+.doc-schematic .doc-wide { top: 52%; height: 26%; border-style: solid; color: var(--ds-ink); background: var(--ds-surface) }
 .doc-schematic .doc-field { top: 4%; bottom: 4%; right: 2%; width: 28%; border: 0; border-radius: 4px; color: #fff; background: #777 url("system/images/gray-folds.png") center / cover }
 .doc-schematic[data-layout=field] .doc-col { left: 6%; width: 40% }
 .doc-schematic[data-layout=field] .doc-wide { left: 6%; width: 60% }
@@ -58,10 +58,10 @@
 
 /* The example home page: a plain, centered page inside a frame. */
 .doc-example {
-  padding: 0 var(--p9-space-6);
-  border: 1px solid var(--p9-rule);
-  border-radius: var(--p9-radius-media);
+  padding: 0 var(--ds-space-6);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-media);
 }
 .doc-example-page { container-type: inline-size; min-width: 0 }
-.doc-example-page .p9-opening { padding-top: var(--p9-space-9) }
-.doc-stack-example { margin-block: var(--p9-space-5) }
+.doc-example-page .ds-opening { padding-top: var(--ds-space-9) }
+.doc-stack-example { margin-block: var(--ds-space-5) }

@@ -1,7 +1,7 @@
 // Behavior for this reference page. Listings are built from the specimens, so the code shown is
 // the markup on the page. Icon and vector paths are elided, as in DESIGN.md.
 function elide(html) {
-  return html.replace(/(<svg class="p9-(vector|icon)"[^>]*>)([\s\S]*?)<\/svg>/g, (_, open, kind, inner) =>
+  return html.replace(/(<svg class="ds-(vector|icon)"[^>]*>)([\s\S]*?)<\/svg>/g, (_, open, kind, inner) =>
     open + (kind === 'vector' ? (inner.match(/<title>[\s\S]*?<\/title>/) || [''])[0] : '') + `<!-- paths from @hugocxl/${kind}s -->` + '</svg>');
 }
 function dedent(html) {
@@ -11,7 +11,7 @@ function dedent(html) {
 }
 for (const specimen of document.querySelectorAll('.doc-specimen')) {
   const listing = document.createElement('div');
-  listing.className = 'p9-code';
+  listing.className = 'ds-code';
   listing.innerHTML = '<pre tabindex="0"><code></code></pre><button type="button">Copy</button>';
   listing.querySelector('code').textContent = dedent(elide(specimen.innerHTML));
   specimen.after(listing);
@@ -21,7 +21,7 @@ for (const form of document.querySelectorAll('.doc-specimen form, .doc-example f
 }
 
 const select = id => document.getElementById(id);
-const vectors = [...select('figure').querySelectorAll('.p9-vector')];
+const vectors = [...select('figure').querySelectorAll('.ds-vector')];
 const names = vectors.map(vector => vector.querySelector('title').textContent);
 let current = 0;
 function cycle(index) {

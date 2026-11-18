@@ -143,7 +143,7 @@ This file and [index.html](index.html) define the system completely. Anything no
 2. For each block, copy the component markup from [Components](#components) exactly. Change only text, links, vector and icon names and IDs.
 3. Check the result against [Do's and Don'ts](#dos-and-donts).
 
-Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/p9.js` (copy buttons, loaded as a module), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`. The package also ships the tokens alone for other stacks, generated from `system/p9.css`: `@hugocxl/design-system/tailwind` (Tailwind v4), `/tailwind-preset` (Tailwind v3), `/tokens.css` and `/fonts.css` (plain CSS), `pkg:@hugocxl/design-system/scss` (Sass) and `/tokens` or `/tokens.json` (JavaScript). In Tailwind, use the token utilities (`bg-canvas`, `text-ink`, `text-reading`, `p-space-5`, `rounded-media`, `max-w-measure`) and never Tailwind's default palette, sizes or radii. Figures come from [`@hugocxl/vectors`](#vectors) and icons from [`@hugocxl/icons`](#icons); no other artwork is part of the system.
+Files: `system/ds.css` (all styles), `system/theme.js` (theme, loaded in the head), `system/ds.js` (copy buttons, loaded as a module), `system/fonts/`, `system/images/gray-folds.png` (field texture) and `system/plan.schema.json` (page plan schema). They ship together in the npm package `@hugocxl/design-system`. The package also ships the tokens alone for other stacks, generated from `system/ds.css`: `@hugocxl/design-system/tailwind` (Tailwind v4), `/tailwind-preset` (Tailwind v3), `/tokens.css` and `/fonts.css` (plain CSS), `pkg:@hugocxl/design-system/scss` (Sass) and `/tokens` or `/tokens.json` (JavaScript). In Tailwind, use the token utilities (`bg-canvas`, `text-ink`, `text-reading`, `p-space-5`, `rounded-media`, `max-w-measure`) and never Tailwind's default palette, sizes or radii. Figures come from [`@hugocxl/vectors`](#vectors) and icons from [`@hugocxl/icons`](#icons); no other artwork is part of the system.
 
 ```html
 <!doctype html>
@@ -152,14 +152,14 @@ Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the hea
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Page title</title>
-  <link rel="stylesheet" href="system/p9.css">
+  <link rel="stylesheet" href="system/ds.css">
   <script src="system/theme.js"></script>
-  <script type="module" src="system/p9.js"></script>
+  <script type="module" src="system/ds.js"></script>
 </head>
-<body class="p9" data-layout="plain">
+<body class="ds" data-layout="plain">
   <!-- masthead -->
   <main>
-    <article class="p9-column p9-opening">
+    <article class="ds-column ds-opening">
       <!-- title, meta, sections, figures, form … in recipe order -->
     </article>
   </main>
@@ -170,7 +170,7 @@ Files: `system/p9.css` (all styles), `system/theme.js` (theme, loaded in the hea
 
 ## Colors
 
-The paper and orange come from Superlogical, and the greys are neutral. Use colors only through these roles. The CSS custom property is `--p9-<role>`, and each one switches with `data-theme` on `<html>`.
+The paper and orange come from Superlogical, and the greys are neutral. Use colors only through these roles. The CSS custom property is `--ds-<role>`, and each one switches with `data-theme` on `<html>`.
 
 | Role | Light | Dark | Use |
 | --- | --- | --- | --- |
@@ -180,12 +180,12 @@ The paper and orange come from Superlogical, and the greys are neutral. Use colo
 | `faint` | `#b3b3b3` | `#737373` | Placeholder text only |
 | `rule` | `#1717171f` | `#ededed24` | Hairlines and borders |
 | `surface` | `#ebebea` | `#1c1c1c` | Figure media and code backgrounds |
-| `accent` | `#fe9369` | `#fe9369` | The status dot (`.p9-dot`) |
-| `accent-text` | `#ce7755` | `#fe9369` | One phrase at title size (`.p9-accent`) |
+| `accent` | `#fe9369` | `#fe9369` | The status dot (`.ds-dot`) |
+| `accent-text` | `#ce7755` | `#fe9369` | One phrase at title size (`.ds-accent`) |
 
 The system keeps Superlogical's warm paper and orange but uses neutral greys instead of its green-tinted ink and muted tones. Superlogical's muted grey `#b3b3b3` fails WCAG AA for text, so it survives only as the light `faint` for placeholders, and `muted` is set to reach 4.5:1. The orange reaches 3:1 on paper only at title size, which is why `accent-text` exists and is used only there.
 
-**Accent budget:** at most two accent elements per page. That is one `.p9-accent` phrase of two or three words at the end of the `statement`, and one `.p9-dot` before a status label in `meta`. The accent never colors body text, links, buttons, backgrounds, rules or figures.
+**Accent budget:** at most two accent elements per page. That is one `.ds-accent` phrase of two or three words at the end of the `statement`, and one `.ds-dot` before a status label in `meta`. The accent never colors body text, links, buttons, backgrounds, rules or figures.
 
 ## Typography
 
@@ -201,16 +201,16 @@ Geist Sans for everything people read and Geist Mono for labels, dates and code.
 | mono | 15px mono | 400 | 1.4 | 0 | Footer links |
 | control | 16px | 400 | 1 | −0.01em | Button text |
 
-Supporting sentences follow the main thought in the same paragraph, wrapped in `<span class="p9-muted">`. Write in sentence case.
+Supporting sentences follow the main thought in the same paragraph, wrapped in `<span class="ds-muted">`. Write in sentence case.
 
 ## Layout
 
-Set the layout with `data-layout` on `<body class="p9">`. There are two layouts:
+Set the layout with `data-layout` on `<body class="ds">`. There are two layouts:
 
 - **`plain`** is the default for every page, home included. The column is centered, and wide figures are centered on the column. Nothing sits beside the content.
 - **`field`** is an optional signature for a personal home page, such as hugocxl.me, and nowhere else. The column aligns to the left gutter and a fixed textured panel fills the right side at `clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)`, inset 12px with a 12px radius. At 760px and below the field becomes a 12px strip. Never use it on product, library or documentation sites.
 
-The column (`.p9-column`) is 30em of reading type, about 65 characters. `.p9-wide` elements (figures and grids) extend to `min(main width, 80rem)`. The gutter is `clamp(1.25rem, 4.5vw, 4rem)`. The opening padding is `clamp(80px, 8vw, 128px)`.
+The column (`.ds-column`) is 30em of reading type, about 65 characters. `.ds-wide` elements (figures and grids) extend to `min(main width, 80rem)`. The gutter is `clamp(1.25rem, 4.5vw, 4rem)`. The opening padding is `clamp(80px, 8vw, 128px)`.
 
 Use only these ten spacing steps:
 
@@ -240,7 +240,7 @@ A recipe fixes the layout and the component order. `?` means optional, `+` one o
 | `pricing` | plain | `masthead title section index table? section* button footer` |
 | `contact` | plain | `masthead title section form footer` |
 
-`masthead` goes before `<main>` and `footer` after it. All other components go inside `<article class="p9-column p9-opening">`, in order. The example home page in [index.html](index.html#recipes) is the reference output.
+`masthead` goes before `<main>` and `footer` after it. All other components go inside `<article class="ds-column ds-opening">`, in order. The example home page in [index.html](index.html#recipes) is the reference output.
 
 ## Elevation & Depth
 
@@ -260,11 +260,11 @@ Wordmark, up to three text links, and the theme button with the `contrast` icon.
 
 <!-- specimen:masthead -->
 ```html
-<header class="p9-masthead">
-  <a class="p9-wordmark" href="/">Fieldwork</a>
+<header class="ds-masthead">
+  <a class="ds-wordmark" href="/">Fieldwork</a>
   <a href="/changelog">Changelog</a>
   <a href="/docs">Docs</a>
-  <button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme"><svg class="p9-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
+  <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme"><svg class="ds-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
 </header>
 ```
 <!-- /specimen -->
@@ -275,7 +275,7 @@ The page name in ink with a muted byline. Use it on every recipe except home. Th
 
 <!-- specimen:title -->
 ```html
-<hgroup class="p9-title">
+<hgroup class="ds-title">
   <h1>Public testing is beginning</h1>
   <p>Fieldwork team</p>
 </hgroup>
@@ -288,19 +288,19 @@ Home only: one sentence at title size, ending with an optional accent phrase of 
 
 <!-- specimen:statement -->
 ```html
-<h1 class="p9-statement">Field notes for teams that ship <span class="p9-accent">every day.</span></h1>
+<h1 class="ds-statement">Field notes for teams that ship <span class="ds-accent">every day.</span></h1>
 ```
 <!-- /specimen -->
 
 ### `meta`
 
-One to three mono labels: status, version, date. Only a status label takes `.p9-dot`, and it comes first. Dates use `<time datetime>`.
+One to three mono labels: status, version, date. Only a status label takes `.ds-dot`, and it comes first. Dates use `<time datetime>`.
 
 <!-- specimen:meta -->
 ```html
-<ul class="p9-meta">
-  <li class="p9-label"><span class="p9-dot" aria-hidden="true"></span>Beta</li>
-  <li class="p9-label"><time datetime="2026-10-05">5 October 2026</time></li>
+<ul class="ds-meta">
+  <li class="ds-label"><span class="ds-dot" aria-hidden="true"></span>Beta</li>
+  <li class="ds-label"><time datetime="2026-10-05">5 October 2026</time></li>
 </ul>
 ```
 <!-- /specimen -->
@@ -311,9 +311,9 @@ A muted `h2` followed by paragraphs, lists, `code` or `table`. The lead section 
 
 <!-- specimen:section -->
 ```html
-<section class="p9-section" id="what-is-available">
+<section class="ds-section" id="what-is-available">
   <h2>What is available</h2>
-  <p>Initially, testing is limited to the macOS application. <span class="p9-muted">Linux and Windows follow once the first wave is stable.</span></p>
+  <p>Initially, testing is limited to the macOS application. <span class="ds-muted">Linux and Windows follow once the first wave is stable.</span></p>
   <p>Read the <a href="/docs">documentation</a> for setup.</p>
 </section>
 ```
@@ -325,9 +325,9 @@ One [vector](#vectors) or, for a product screenshot, an `<img>` on the surface a
 
 <!-- specimen:figure-wide -->
 ```html
-<figure class="p9-wide">
-  <div class="p9-media"><svg class="p9-vector" data-vector="how-it-works" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>How it works</title><!-- paths from @hugocxl/vectors --></svg></div>
-  <figcaption class="p9-caption"><span class="p9-label">Fig. 01 / How it works</span></figcaption>
+<figure class="ds-wide">
+  <div class="ds-media"><svg class="ds-vector" data-vector="how-it-works" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>How it works</title><!-- paths from @hugocxl/vectors --></svg></div>
+  <figcaption class="ds-caption"><span class="ds-label">Fig. 01 / How it works</span></figcaption>
 </figure>
 ```
 <!-- /specimen -->
@@ -338,22 +338,22 @@ Two to four [vectors](#vectors) separated by hairlines. Each has a `Fig 0.N` lab
 
 <!-- specimen:figure-grid -->
 ```html
-<ul class="p9-grid p9-wide" data-columns="3">
+<ul class="ds-grid ds-wide" data-columns="3">
   <li>
-    <span class="p9-label">Fig 0.1</span>
-    <svg class="p9-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg>
+    <span class="ds-label">Fig 0.1</span>
+    <svg class="ds-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Purpose-built</h3>
     <p>Shaped by the practices of teams who ship daily.</p>
   </li>
   <li>
-    <span class="p9-label">Fig 0.2</span>
-    <svg class="p9-vector" data-vector="handoff" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Handoff</title><!-- paths from @hugocxl/vectors --></svg>
+    <span class="ds-label">Fig 0.2</span>
+    <svg class="ds-vector" data-vector="handoff" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Handoff</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Shared by people and agents</h3>
     <p>From the first draft to the merged change.</p>
   </li>
   <li>
-    <span class="p9-label">Fig 0.3</span>
-    <svg class="p9-vector" data-vector="fast-performance" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Fast performance</title><!-- paths from @hugocxl/vectors --></svg>
+    <span class="ds-label">Fig 0.3</span>
+    <svg class="ds-vector" data-vector="fast-performance" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Fast performance</title><!-- paths from @hugocxl/vectors --></svg>
     <h3>Designed for speed</h3>
     <p>Less noise, more momentum, every release.</p>
   </li>
@@ -368,21 +368,21 @@ Rows divided by hairlines for changelogs, steps, plans and principles. The label
 
 <!-- specimen:index -->
 ```html
-<ol class="p9-index">
-  <li><span class="p9-label"><time datetime="2026-11-12">12 Nov 2026</time></span><div><h3>Persistent sessions</h3><p>Sessions survive restarts and reconnect where you left them.</p></div></li>
-  <li><span class="p9-label"><time datetime="2026-10-28">28 Oct 2026</time></span><div><h3>Remote hosts</h3><p>Connect to any machine running the server.</p></div></li>
+<ol class="ds-index">
+  <li><span class="ds-label"><time datetime="2026-11-12">12 Nov 2026</time></span><div><h3>Persistent sessions</h3><p>Sessions survive restarts and reconnect where you left them.</p></div></li>
+  <li><span class="ds-label"><time datetime="2026-10-28">28 Oct 2026</time></span><div><h3>Remote hosts</h3><p>Connect to any machine running the server.</p></div></li>
 </ol>
 ```
 <!-- /specimen -->
 
 ### `table`
 
-Comparisons and specifications. Column headings use `scope="col"` and row headings use `scope="row"`. Always wrap the table in `.p9-table-scroll` with `tabindex="0"` so it can be scrolled by keyboard.
+Comparisons and specifications. Column headings use `scope="col"` and row headings use `scope="row"`. Always wrap the table in `.ds-table-scroll` with `tabindex="0"` so it can be scrolled by keyboard.
 
 <!-- specimen:table -->
 ```html
-<div class="p9-table-scroll" tabindex="0">
-  <table class="p9-table">
+<div class="ds-table-scroll" tabindex="0">
+  <table class="ds-table">
     <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Hosts</th></tr></thead>
     <tbody>
       <tr><th scope="row">Personal</th><td>Free</td><td>3</td></tr>
@@ -399,7 +399,7 @@ The single filled action on a page. Use `<a>` for navigation and `<button type="
 
 <!-- specimen:button -->
 ```html
-<a class="p9-button" href="/download">Download for macOS</a>
+<a class="ds-button" href="/download">Download for macOS</a>
 ```
 <!-- /specimen -->
 
@@ -418,25 +418,25 @@ A visible label, an underlined input with an icon submit button (`corner-down-le
 
 <!-- specimen:form -->
 ```html
-<form class="p9-form" action="/waitlist" method="post">
+<form class="ds-form" action="/waitlist" method="post">
   <label for="waitlist-email">Sign up to secure your place in the waitlist</label>
-  <div class="p9-input">
+  <div class="ds-input">
     <input type="email" id="waitlist-email" name="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="waitlist-help waitlist-feedback">
-    <button type="submit" aria-label="Join the waitlist"><svg class="p9-icon" data-icon="corner-down-left" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
+    <button type="submit" aria-label="Join the waitlist"><svg class="ds-icon" data-icon="corner-down-left" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
   </div>
-  <p class="p9-help" id="waitlist-help">We’ll let you know when the beta is available.</p>
-  <output class="p9-feedback" id="waitlist-feedback" aria-live="polite"></output>
+  <p class="ds-help" id="waitlist-help">We’ll let you know when the beta is available.</p>
+  <output class="ds-feedback" id="waitlist-feedback" aria-live="polite"></output>
 </form>
 ```
 <!-- /specimen -->
 
 ### `code`
 
-A command or snippet on the surface with a Copy button. `system/p9.js` handles the copy. `tabindex="0"` on `pre` keeps long lines scrollable by keyboard.
+A command or snippet on the surface with a Copy button. `system/ds.js` handles the copy. `tabindex="0"` on `pre` keeps long lines scrollable by keyboard.
 
 <!-- specimen:code -->
 ```html
-<div class="p9-code"><pre tabindex="0"><code>brew install fieldwork</code></pre><button type="button">Copy</button></div>
+<div class="ds-code"><pre tabindex="0"><code>brew install fieldwork</code></pre><button type="button">Copy</button></div>
 ```
 <!-- /specimen -->
 
@@ -446,7 +446,7 @@ Mono links at both ends with a hairline between them. It is the last element in 
 
 <!-- specimen:footer -->
 ```html
-<footer class="p9-footer">
+<footer class="ds-footer">
   <ul><li><a href="/press">Press kit</a></li></ul>
   <ul><li><a href="/privacy">Privacy</a></li><li><a href="https://x.com/fieldwork">@fieldwork</a></li></ul>
 </footer>
@@ -465,22 +465,22 @@ In the markup above, `<!-- paths from @hugocxl/icons -->` and `<!-- paths from @
 
 ### Icons
 
-Use the **Stroke** style. An icon either goes before the words of a link, the `button` or a `meta` label, or it is the whole content of an icon button that has an `aria-label`. Give the SVG `class="p9-icon"` and `data-icon` with its name: it sizes to `1em`, takes the text color and keeps `space-2` before the words. Inside an icon button the gap is removed.
+Use the **Stroke** style. An icon either goes before the words of a link, the `button` or a `meta` label, or it is the whole content of an icon button that has an `aria-label`. Give the SVG `class="ds-icon"` and `data-icon` with its name: it sizes to `1em`, takes the text color and keeps `space-2` before the words. Inside an icon button the gap is removed.
 
 ```html
 <!-- Before words -->
-<a href="/docs"><svg class="p9-icon" data-icon="book-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Read the guide</a>
-<a class="p9-button" href="/browse"><svg class="p9-icon" data-icon="search" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Browse icons</a>
-<li class="p9-label"><svg class="p9-icon" data-icon="calendar" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg><time datetime="2026-11-18">18 November 2026</time></li>
+<a href="/docs"><svg class="ds-icon" data-icon="book-open" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Read the guide</a>
+<a class="ds-button" href="/browse"><svg class="ds-icon" data-icon="search" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg>Browse icons</a>
+<li class="ds-label"><svg class="ds-icon" data-icon="calendar" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg><time datetime="2026-11-18">18 November 2026</time></li>
 
 <!-- Alone, in an icon button -->
-<button class="p9-theme" type="button" data-p9-theme aria-label="Switch theme"><svg class="p9-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
+<button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme"><svg class="ds-icon" data-icon="contrast" viewBox="0 0 16 16" fill="none" aria-hidden="true"><!-- paths from @hugocxl/icons --></svg></button>
 ```
 
 ```jsx
 import { BookOpenIcon } from '@hugocxl/icons/react/stroke';
 
-<a href="/docs"><BookOpenIcon className="p9-icon" />Read the guide</a>
+<a href="/docs"><BookOpenIcon className="ds-icon" />Read the guide</a>
 ```
 
 | Place | Icon |
@@ -498,19 +498,19 @@ import { BookOpenIcon } from '@hugocxl/icons/react/stroke';
 
 ### Vectors
 
-Every figure is a vector from `@hugocxl/vectors`. It fills `figure-wide` and each `figure-grid` item, drawn in ink on the surface at its own 4:3 proportions. Inline the SVG, replace its root `xmlns` attribute with `class="p9-vector"` and `data-vector` with its name, and remove its `color` attribute.
+Every figure is a vector from `@hugocxl/vectors`. It fills `figure-wide` and each `figure-grid` item, drawn in ink on the surface at its own 4:3 proportions. Inline the SVG, replace its root `xmlns` attribute with `class="ds-vector"` and `data-vector` with its name, and remove its `color` attribute.
 
 ```html
-<figure class="p9-wide">
-  <div class="p9-media"><svg class="p9-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg></div>
-  <figcaption class="p9-caption"><span class="p9-label">Fig. 02 / Modular design</span></figcaption>
+<figure class="ds-wide">
+  <div class="ds-media"><svg class="ds-vector" data-vector="modular-design" viewBox="0 0 480 360" role="img" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><title>Modular design</title><!-- paths from @hugocxl/vectors --></svg></div>
+  <figcaption class="ds-caption"><span class="ds-label">Fig. 02 / Modular design</span></figcaption>
 </figure>
 ```
 
 ```jsx
 import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 
-<div className="p9-media"><ModularDesignVector className="p9-vector" /></div>
+<div className="ds-media"><ModularDesignVector className="ds-vector" /></div>
 ```
 
 - Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) lists all 2,000 by use case. Name it in the caption.
@@ -523,11 +523,11 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 
 ### Always
 
-- Load `system/p9.css` and `system/theme.js` in the head and `system/p9.js` as a module.
-- Set `class="p9"` and the recipe's `data-layout` on the body.
+- Load `system/ds.css` and `system/theme.js` in the head and `system/ds.js` as a module.
+- Set `class="ds"` and the recipe's `data-layout` on the body.
 - Follow the recipe's component order. Copy component markup exactly and change only text, links, vector and icon names and IDs.
 - Write in sentence case. Keep the title to one line and the statement to one sentence.
-- Put supporting sentences in `.p9-muted`, inline after the main thought. Text on `surface` is always `ink`, because muted falls below 4.5:1 there.
+- Put supporting sentences in `.ds-muted`, inline after the main thought. Text on `surface` is always `ink`, because muted falls below 4.5:1 there.
 - Keep every vector's `title`, give every icon button an `aria-label`, every image `alt` text and every field a visible label.
 - Check the page at 320, 760, 761 and 1440px wide in both themes.
 

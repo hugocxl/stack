@@ -4,8 +4,8 @@
   "description": "The personal design system of @hugocxl: the signature across every project.",
   "type": "module",
   "files": [
-    "system/p9.css",
-    "system/p9.js",
+    "system/ds.css",
+    "system/ds.js",
     "system/theme.js",
     "system/plan.schema.json",
     "system/figures",
@@ -17,10 +17,10 @@
     "dist"
   ],
   "exports": {
-    ".": "./system/p9.css",
-    "./p9.css": "./system/p9.css",
+    ".": "./system/ds.css",
+    "./ds.css": "./system/ds.css",
     "./theme.js": "./system/theme.js",
-    "./p9.js": "./system/p9.js",
+    "./ds.js": "./system/ds.js",
     "./css": "./dist/tokens.css",
     "./tokens.css": "./dist/tokens.css",
     "./fonts.css": "./dist/fonts.css",
@@ -39,7 +39,7 @@
     "./system/*": "./system/*",
     "./package.json": "./package.json"
   },
-  "style": "./system/p9.css",
+  "style": "./system/ds.css",
   "license": "MIT",
   "homepage": "https://hugocxl.github.io/design-system/",
   "repository": {
