@@ -1,0 +1,121 @@
+/* Vectors site additions. Layout only: every color, size, radius and space is a design-system token. */
+
+/* Home: the single button follows the last section. */
+.p9-column > .p9-button { margin-top: var(--p9-space-7) }
+
+/* Text-styled buttons, drawn exactly like the system's underlined links. */
+.browse-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--p9-target);
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: .2em;
+  cursor: pointer;
+}
+.browse-link:hover { text-decoration-color: currentColor }
+
+/* Browser: search, category filters and the count line. */
+.browse-search .p9-input { max-width: none }
+.browse-categories { margin-top: var(--p9-space-6) }
+.browse-categories > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--p9-space-2);
+  min-height: var(--p9-target);
+  list-style: none;
+  cursor: pointer;
+}
+.browse-categories > summary::-webkit-details-marker { display: none }
+.browse-categories > summary::after { content: "↓" }
+.browse-categories[open] > summary::after { content: "↑" }
+.browse-categories > summary > span { color: var(--p9-ink) }
+.browse-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  width: min(100cqw, var(--p9-wide));
+  margin-top: var(--p9-space-2);
+  margin-inline: calc((100% - min(100cqw, var(--p9-wide))) / 2);
+}
+.browse-filters > button {
+  min-height: var(--p9-target);
+  padding: 0 var(--p9-space-4) 0 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.browse-filters > button:hover { color: var(--p9-ink) }
+.browse-filters > button[aria-pressed=true] {
+  color: var(--p9-ink);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+}
+.browse-count { margin-top: var(--p9-space-6) }
+.browse-empty { margin-top: var(--p9-space-5) }
+
+/* Results: artwork in ink on canvas, divided by hairlines. */
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
+  margin-top: var(--p9-space-4);
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border-block: 1px solid var(--p9-rule);
+}
+@media (min-width: 761px) {
+  .browse-grid { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)) }
+}
+.browse-grid > li {
+  margin: -1px 0 0 -1px;
+  border-top: 1px solid var(--p9-rule);
+  border-left: 1px solid var(--p9-rule);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 15rem;
+  scroll-margin-top: var(--p9-space-6);
+}
+.browse-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p9-space-3);
+  height: 100%;
+  padding: var(--p9-space-4);
+  font-size: var(--p9-size-small);
+  line-height: 1.4;
+  text-decoration: none;
+}
+.browse-grid a:hover > span:last-child { text-decoration: underline }
+.browse-grid a:focus-visible { outline-offset: -2px }
+.browse-art { display: block; aspect-ratio: 4 / 3 }
+.browse-art > .p9-vector { width: 100%; height: 100% }
+
+/* Detail: a full-page view of one vector, opened from the grid or a #name link. */
+.browse-detail {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0 var(--p9-gutter) var(--p9-space-9);
+  border: 0;
+  color: var(--p9-ink);
+  background: var(--p9-canvas);
+}
+.browse-detail::backdrop { background: var(--p9-canvas) }
+.browse-detail-bar { padding-top: var(--p9-space-6) }
+.browse-detail .p9-title { margin-top: var(--p9-space-6) }
+.browse-detail .p9-wide { width: 100%; margin-inline: 0; margin-block: var(--p9-space-6) }
+.browse-detail h3 { margin-top: var(--p9-space-6); margin-bottom: var(--p9-space-3) }
+.browse-detail-end { margin-top: var(--p9-space-7) }
+.browse-actions { display: flex; flex-wrap: wrap; gap: 0 var(--p9-space-5) }
+.browse-actions a { display: inline-flex; align-items: center; min-height: var(--p9-target) }
+.browse-search input::-webkit-search-cancel-button { appearance: none }
