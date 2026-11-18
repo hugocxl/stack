@@ -1,0 +1,8 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path } from "react-native-svg";
+export const NoActivityYetVector = /*#__PURE__*/ forwardRef(function NoActivityYetVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "No activity yet", ...props, ref},
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".34", "d": "M170.03,124.44 145.34,136.78 M252.35,165.59 227.65,177.94 M334.66,206.75 309.97,219.10"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M182.38,94.27 177.84,94.49 173.48,95.15 169.46,96.23 165.93,97.67 91.81,134.73 88.92,136.50 86.77,138.51 85.45,140.69 85.00,142.96 85.00,159.42 85.45,161.69 86.77,163.87 88.92,165.88 91.81,167.64 281.18,262.33 284.70,263.77 288.72,264.85 293.08,265.51 297.62,265.73 302.16,265.51 306.52,264.85 310.54,263.77 314.07,262.33 388.19,225.27 391.08,223.50 393.23,221.49 394.55,219.31 395.00,217.04 395.00,200.58 394.55,198.31 393.23,196.13 391.08,194.12 388.19,192.36 198.82,97.67 195.30,96.23 191.28,95.15 186.92,94.49 182.38,94.27 M389.57,199.78 389.14,201.97 387.87,204.07 385.79,206.01 383.00,207.71 311.48,243.47 308.08,244.87 304.19,245.91 299.98,246.55 295.61,246.76 291.23,246.55 287.02,245.91 283.14,244.87 279.73,243.47 97.00,152.11 94.21,150.41 92.13,148.47 90.86,146.36 90.42,144.17"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M153.57,128.55 326.43,214.98"}));
+});

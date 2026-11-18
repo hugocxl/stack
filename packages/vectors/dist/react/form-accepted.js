@@ -1,0 +1,10 @@
+import { createElement, forwardRef } from "react";
+export const FormAcceptedVector = /*#__PURE__*/ forwardRef(function FormAcceptedVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Form accepted"),
+    createElement("desc", null, "A check badge aligns above an itemized slip."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".34", "d": "M206.19,175.19 206.19,169.47 M206.19,158.40 206.19,151.02 M206.19,139.96 206.19,132.58", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M243.78,187.15 304.27,217.40 M323.17,226.85 334.51,232.52 M213.54,202.28 274.02,232.52 M292.93,241.97 304.27,247.64 M183.29,217.40 243.78,247.64 M262.68,257.09 274.02,262.76 M153.05,232.52 213.54,262.76 M232.44,272.21 243.78,277.89", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M251.34,153.13 395.00,224.96 243.78,300.57 209.76,298.68 202.20,279.78 164.39,276.00 156.83,257.09 119.02,253.31 111.46,234.41 85.00,236.30 251.34,153.13 M235.21,87.46 246.88,107.32 267.91,92.13", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M251.56,65.27 286.60,94.47 281.92,131.84 251.56,137.68 221.19,101.48 216.52,59.43 251.56,65.27", "xmlns": "http://www.w3.org/2000/svg"}));
+});

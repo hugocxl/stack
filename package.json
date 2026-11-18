@@ -1,0 +1,33 @@
+{
+  "name": "vectors-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "generate": "python3 scripts/generate.py",
+    "check": "python3 scripts/generate.py --check",
+    "test": "node --test tests/*.test.mjs",
+    "build": "npm run generate",
+    "typecheck": "tsc -p tests/tsconfig.json && tsc -p tests/tsconfig.native.json",
+    "validate": "bash scripts/validate.sh",
+    "test:swift": "swift test",
+    "sync:design-system": "node scripts/sync-design-system.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "check:site": "node scripts/check-site.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "26.1.0",
+    "marked": "^15.0.12",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-native": "^0.82.0",
+    "react-native-svg": "^15.12.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

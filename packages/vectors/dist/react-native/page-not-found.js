@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path } from "react-native-svg";
+export const PageNotFoundVector = /*#__PURE__*/ forwardRef(function PageNotFoundVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "Page not found", ...props, ref},
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".34", "d": "M326.47,230.99 322.56,232.94 M316.68,235.88 312.77,237.84 M306.89,240.78 302.98,242.73 M297.11,245.67 293.19,247.63 M287.32,250.57 283.40,252.52 M277.53,255.46 274.26,257.09 M267.74,253.83 263.82,251.87 M257.95,248.93 254.03,246.98 M248.16,244.04 244.24,242.08 M238.37,239.14 234.45,237.19 M228.58,234.25 224.66,232.29 M218.79,229.36 214.87,227.40"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M385.48,201.76 393.37,205.70 329.74,237.51 293.84,219.57 275.89,218.75 274.26,209.78 253.05,208.96 205.74,232.62 85.00,172.25 94.52,167.49 M176.37,136.36 257.95,177.14 M161.68,143.70 233.47,179.59 M138.84,155.12 189.42,180.41 M122.53,163.28 187.79,195.91"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M184.53,114.33 372.16,208.14 M209.00,115.14 211.45,116.37 M218.79,120.04 221.24,121.26 M228.58,124.93 231.03,126.16"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M207.37,102.91 395.00,196.72 331.37,228.54 295.47,210.59 277.53,209.78 275.89,200.80 254.68,199.99 207.37,223.64 86.63,163.28 207.37,102.91"}));
+});
