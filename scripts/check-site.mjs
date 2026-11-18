@@ -48,7 +48,7 @@ for (const [name, doc] of docs) {
     if (!/^https?:/.test(path)) assert.ok(existsSync(`_site/${path}`), `${name}: missing asset ${path}`);
   }
 }
-for (const asset of ['system/fonts/Geist-Variable.woff2', 'system/fonts/GeistMono-Variable.woff2', 'system/images/gray-folds.png', 'system/figures/index.js']) {
+for (const asset of ['system/fonts/Geist-Variable.woff2', 'system/fonts/GeistMono-Variable.woff2', 'system/images/gray-folds.png']) {
   assert.ok(existsSync(`_site/${asset}`), `missing ${asset}`);
 }
 

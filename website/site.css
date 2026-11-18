@@ -34,8 +34,8 @@
   cursor: pointer;
 }
 .browse-categories > summary::-webkit-details-marker { display: none }
-.browse-categories > summary::after { content: "↓" }
-.browse-categories[open] > summary::after { content: "↑" }
+.browse-categories > summary > .p9-icon { margin: 0 }
+.browse-categories[open] > summary > .p9-icon { transform: rotate(180deg) }
 .browse-categories > summary > span { color: var(--p9-ink) }
 .browse-filters {
   display: grid;
