@@ -88,6 +88,54 @@ def register(api):
         # shoulder both reserves the badge's clearance and closes the host.
         return stroke(subtract(body, gap))
 
+    def host_drawing(source):
+        body, detail, outline, category, tags = api['DRAWINGS'][source]
+        # These baseline contours occupy the full bleed before outlining.
+        # Inset the unexpanded body by less than a tenth of a grid unit.
+        if source in ('cloud','map-pin','lightbulb','wrench'):
+            body = transform(body,scale=.985)
+        return body, detail, outline, category, tags
+
+    corner_badges = {}
+    def corner_host(source):
+        # Map the construction grid before expanding its lines. These small
+        # hosts retain the same bells, lid, handle and rack bays as the bases.
+        if source == 'alarm-clock':
+            cx, cy, s = 6.45, 6.9, .84
+            def centerline(d):
+                return stroke(path(d).transform(s,0,0,s,cx-8*s,cy-8*s))
+            return (circle(cx,cy,5.8*s),
+                    centerline('M8 4V8H11M2 3L4 1M12 1L14 3M3 14L4 12M12 12L13 14'))
+        if source == 'archive':
+            body = rr(2.2,4.8,8.6,7.75)
+            lid = rr(1.45,2.25,10.1,2.55)
+            return body, union(lid,stroke('M4.95 7.3H8.05'))
+        if source == 'server-rack':
+            rack = rr(1.7,1.75,9.2,11.55)
+            dividers = stroke('M1.7 5.6H10.9M1.7 9.45H10.9')
+            indicators = dots((3.85,3.7),(3.85,7.55),(3.85,11.4),r=.58)
+            slots = stroke('M6.5 3.7H8.4M6.5 7.55H8.4M6.5 11.4H8.4')
+            return rack, union(dividers,indicators,slots)
+        return host_drawing(source)[:2]
+
+    def badged(name, source, suffix, tags=None):
+        body, detail = corner_host(source)
+        if suffix == 'cog':
+            badge = mark(suffix,12,11.8,.68)
+        elif name == 'bell-dot':
+            badge = circle(12.9,3.1,1.5)
+        elif source in ('alarm-clock','archive'):
+            badge = compact(suffix,12.9,13,.76)
+        elif suffix == 'shield':
+            badge = stroke('M10 10L12.2 9L14.4 10V11.65Q14.4 13.45 12.2 14.55Q10 13.45 10 11.65Z')
+        elif suffix == 'star':
+            badge = stroke(transform(api['STAR'],scale=.39,dx=4,dy=3.65))
+        else:
+            badge = compact(suffix,11.65 if suffix in ('sync','pen') else 12.05,11.75,.92)
+        shape(name,body,union(detail,badge),tags or name.replace('-',' '))
+        # The badge clears the original drawing after its style has been composed.
+        corner_badges[name] = (source,body,detail,badge)
+
     # Shared silhouettes: interior variants are kept within the surface rather
     # than allowing the status symbol to collide with the outline.
     badge = api['badge_body']()
@@ -300,8 +348,11 @@ def register(api):
         if suffix == 'kanban':
             ink = stroke('M5.1 7.25V11.1M8 7.25V9.2M10.9 7.25V10.35')
         if suffix == 'tree':
-            ink = union(stroke('M5.25 6.9V10.95H9.9M5.25 7.9H8.3'),
-                        stroke(rr(7.9,6.45,3.2,2.35)),stroke(rr(9.25,10.05,3.2,2.35)))
+            ink = union(stroke('M4.5 6.35V10.65H9.4M4.5 7.35H7.15'),
+                        stroke(rr(7.15,6.35,2.65,2)),stroke(rr(9.4,9.65,2.65,2)))
+            tree_folder = path('M1.8 2.85H6L7.6 4.5H14.2V14H1.8Z')
+            shape('folder-tree',tree_folder,ink,'directory folder tree')
+            continue
         if suffix == 'users':
             ink = union(compact('user',6.5,9.15,.84),circle(10.45,7.75,.76),
                         stroke('M9.9 9.8Q11.15 9.65 11.65 10.95'))
@@ -359,23 +410,13 @@ def register(api):
     shape('messages-circle', union(transform(bubble_round,0,.72,-2,-2),transform(bubble_round,0,.72,2,2)), stroke('M5 9Q5 5 9.5 5Q14 5 14 9Q14 12.5 9.5 12.5H8L5.5 14L6 11.2Q5 10 5 9Z'), 'conversations messages')
     shape('messages-square', union(transform(bubble_square,0,.72,-2,-2),transform(bubble_square,0,.72,2,2)), stroke('M6 5H13Q14 5 14 6V11Q14 12 13 12H9L6 14V12H6Q5 12 5 11V6Q5 5 6 5Z'), 'conversations messages')
 
-    # A reduced body gives standalone badges their own clear space.
-    userbody = union(circle(5.5,4.5,2.3),path('M1.8 13.4V12Q1.8 8.5 5.5 8.5Q9.2 8.5 9.2 12V13.4Z'))
-    roundbody = union(circle(5.5,4.5,2.3),path('M1.8 13.5Q1.8 9 5.5 9Q9.2 9 9.2 13.5Z'))
-    star_badge = api['poly']([(8,4.9),(9,7),(11.25,7.35),(9.65,8.95),(10,11.2),
-                             (8,10.15),(6,11.2),(6.35,8.95),(4.75,7.35),(7,7)])
-    for prefix, body in (('user',userbody),('user-round',roundbody)):
-        for suffix in ('cog','exclamation-point','key','minus','pen','search','shield','star'):
-            if prefix == 'user' and suffix in ('star',): pass
-            if suffix in ('shield','star'):
-                detail = stroke('M10 8L12 7L14 8V10Q14 12 12 13Q10 12 10 10Z') if suffix == 'shield' else stroke(transform(star_badge,dx=3.65,dy=1.5))
-            else:
-                detail = gear(12,9.5,2.75) if suffix == 'cog' else compact(suffix,12.2,9.5,.82)
-            shape(prefix+'-'+suffix,body,detail,'person account '+suffix)
-    for suffix in ('arrow-left','check','plus','x'):
-        shape('user-round-'+suffix,roundbody,compact(suffix,12.2,9.5,.82),'person account '+suffix)
-    shape('user-lock',userbody,compact('lock',12.15,9.5,.9),'person account lock')
     shape('user-round',union(circle(8,4.5,2.7),path('M2.5 13.5Q2.5 9 8 9Q13.5 9 13.5 13.5Z')),None,'person profile')
+    for source in ('user','user-round'):
+        for suffix in ('cog','exclamation-point','key','minus','pen','search','shield','star'):
+            badged(source+'-'+suffix,source,suffix,'person account '+suffix)
+    for suffix in ('arrow-left','check','plus','x'):
+        badged('user-round-'+suffix,'user-round',suffix,'person account '+suffix)
+    badged('user-lock','user','lock','person account lock')
     side_heads = union(circle(3.2,6.2,1.45),circle(12.8,6.2,1.45))
     side_shoulders = path('M1.6 13.2V11.7Q1.6 9.4 3.4 9.4Q5.6 9.4 5.6 11.7V13.2Z')
     side_people = union(side_heads,side_shoulders,api['mirror'](side_shoulders))
@@ -403,23 +444,20 @@ def register(api):
 
     api['CATEGORY'] = 'Product tools'
     # Status marks sit outside reduced bodies, maintaining clear separation.
-    db = path('M2 4Q2 1.5 6.5 1.5Q11 1.5 11 4V11Q11 13.5 6.5 13.5Q2 13.5 2 11Z')
-    dbdetail = stroke('M2 4Q2 6.5 6.5 6.5Q11 6.5 11 4M2 7.5Q2 10 6.5 10Q8.5 10 10 9.4')
-    for suffix in ('check','cog','minus','plus','search','x'):
-        shape('database-'+suffix,db,union(dbdetail,(mark if suffix == 'cog' else compact)(suffix,12.35,12,.79)),'storage database '+suffix)
+    for suffix in ('check', 'cog', 'minus', 'plus', 'search', 'x'):
+        badged('database-'+suffix,'database',suffix,'storage database '+suffix)
+    db,dbdetail,*_ = host_drawing('database')
     shape('database-backup',db,union(dbdetail,stroke('M9.75 11.4A2.45 2.45 0 1 1 10.25 13.45M9.7 9.7V11.5H11.5')), 'database backup restore')
-    pack = path('M1.5 4L6.2 1.8L10.8 4V10L6.2 12.5L1.5 10Z')
-    packdetail=stroke('M1.5 4L6.2 6.5L10.8 4M6.2 6.5V12.5')
-    for suffix in ('check','minus','pen','plus','question-mark','search','x'):
-        shape('package-'+suffix,pack,union(packdetail,compact(suffix,12,11.6,.82)),'parcel package '+suffix)
+    for suffix in ('check', 'minus', 'pen', 'plus', 'question-mark', 'search', 'x'):
+        badged('package-'+suffix,'package',suffix,'parcel package '+suffix)
     shape('package-2',path('M2 4L8 1.5L14 4V12L8 14.5L2 12Z'),stroke('M2 4L8 7L14 4M8 7V14M5 2.8L11 5.5'),'parcel box shipping')
     carton = path('M1.4 6.85L3.45 4.7L2.05 3.3L6.25 1.4L8 2.95L9.75 1.4L13.95 3.3L12.55 4.7L14.6 6.85L12.55 7.85V11.75L8 14.25L3.45 11.75V7.85Z')
     flap_seams = stroke('M3.45 4.7L8 2.95L12.55 4.7L8 6.95ZM1.4 6.85L6.05 9.15L8 6.95L9.95 9.15L14.6 6.85M8 6.95V14.25')
     shape('package-open',carton,flap_seams,'parcel open box')
     shield = path('M6.4 1.8L11 3.5V7.2Q11 10.5 6.4 13Q1.8 10.5 1.8 7.2V3.5Z')
-    for suffix in ('cog','minus','plus','question-mark','user'):
-        shape('shield-'+suffix,shield,(mark if suffix == 'cog' else compact)(suffix,12.1,10.8,.88),'security protection '+suffix)
-    shape('shield-cog-corner',shield,mark('cog',10.8,12,.75),'security protection settings corner')
+    for suffix in ('cog', 'minus', 'plus', 'question-mark', 'user'):
+        badged('shield-'+suffix,'shield',suffix,'security protection '+suffix)
+    badged('shield-cog-corner','shield','cog','security protection settings corner')
     shape('shield-ellipsis',shield,dots((4.35,7),(6.4,7),(8.45,7),r=.65),'security protection more')
     shape('shield-half',path('M8 1.5L13.5 3.5V7.5Q13.5 11.5 8 14.5Q2.5 11.5 2.5 7.5V3.5Z'),stroke('M8 2V14'),'security protection half')
     shape('shield-ban',shield,stroke('M2.2 3.85L9.55 11.2'),'security forbidden')
@@ -427,8 +465,8 @@ def register(api):
     shape('shield-off',shield,line((2,2),(14,14)),'security protection disabled')
 
     star = path('M8 1.4L9.9 5.5L14.4 6L11 9.2L11.8 13.8L8 11.5L4.2 13.8L5 9.2L1.6 6L6.1 5.5Z')
-    for suffix in ('check','minus','plus','x'):
-        shape('star-'+suffix,transform(star,0,.72,-1.6,-1.5),compact(suffix,11.2,10.85,.88),'favorite star '+suffix)
+    for suffix in ('check', 'minus', 'plus', 'x'):
+        badged('star-'+suffix,'star',suffix,'favorite star '+suffix)
     shape('star-half',star,stroke('M8 2V11.5'),'favorite star half')
     shape('star-off',star,line((2,2),(14,14)),'favorite star disabled')
 
@@ -442,7 +480,7 @@ def register(api):
     percent = union(stroke('M5.6 10.9L10.4 5.1'),stroke(circle(5.65,5.65,1.18)),stroke(circle(10.35,10.35,1.18)))
     shape('circle-percent',circle(8,8,6),percent,'percentage ratio')
     shape('square-percent',rr(2,2,12,12),percent,'percentage ratio')
-    shape('diamond-percent',path('M8 1.6L14.4 8L8 14.4L1.6 8Z'),union(stroke('M6.2 10.35L9.8 5.65'),stroke(circle(6.25,6.25,1.13)),stroke(circle(9.75,9.75,1.13))),'percentage ratio')
+    shape('diamond-percent',path('M8 1.28L14.72 8L8 14.72L1.28 8Z'),union(stroke('M6.05 10.1L9.95 5.9'),stroke(circle(6.3,6.4,1.08)),stroke(circle(9.7,9.6,1.08))),'percentage ratio')
     shape('square-user',rr(2,2,12,12),compact('user',8,8,1.22),'account profile')
     shape('square-user-round',rr(2,2,12,12),union(stroke(circle(8,5.45,1.5)),stroke('M4.7 11.8Q4.7 9.2 8 9.2Q11.3 9.2 11.3 11.8')), 'account round profile')
     shape('circle-user-round',circle(8,8,6),compact('user',8,8,1.22),'account round profile')
@@ -452,14 +490,6 @@ def register(api):
 
     # Disabled versions reuse the actual subject, cut a channel through it,
     # and place the slash in that channel so the two marks remain legible.
-    def host_drawing(source):
-        body, detail, outline, category, tags = api['DRAWINGS'][source]
-        # These baseline contours occupy the full bleed before outlining.
-        # Inset the unexpanded body by less than a tenth of a grid unit.
-        if source in ('cloud','map-pin','lightbulb','wrench'):
-            body = transform(body,scale=.985)
-        return body, detail, outline, category, tags
-
     def disabled(name, source):
         b,d,outline,_,_ = host_drawing(source)
         clearance = line((2,2),(14,14),width=2.7)
@@ -511,7 +541,7 @@ def register(api):
         else:
             glyph(name,stroke(geom),None,name.replace('-',' '))
     # The three open terminals sweep around the outside of the triangle.
-    hook = union(stroke(circle(8,3.4,1.95)),stroke('M9.7 4.35L11.5 7.2'))
+    hook = stroke('M9.65 5.1A2.2 2.2 0 1 0 6.2 4.95L3.95 10.38')
     glyph('webhook',union(hook,transform(hook,120),transform(hook,240)),None,'webhook')
     for suffix, geom in {
         'minus':'M2 3.8H9.4M2 7.8H9.4M2 11.8H7.5M10.5 12.7H14',
@@ -534,19 +564,6 @@ def register(api):
     high = stroke('M2 5Q8 .5 14 5M4 8Q8 5 12 8M6 10.5Q8 9 10 10.5M8 13V13.1')
     for level, ink in (('zero',zero),('low',low),('high',high)):
         glyph('wifi-'+level,ink,None,'wireless signal '+level)
-
-    corner_badges = {}
-    def badged(name, source, suffix):
-        body, detail, _, _, _ = host_drawing(source)
-        if suffix == 'cog':
-            badge = mark(suffix,12,11.8,.68)
-        elif name == 'bell-dot':
-            badge = circle(12.9,3.1,1.5)
-        else:
-            badge = compact(suffix,11.65 if suffix in ('sync','pen') else 12.05,11.75,.92)
-        shape(name,body,union(detail,badge),name.replace('-',' '))
-        # The badge clears the original drawing after its style has been composed.
-        corner_badges[name] = (source,badge)
 
     for source, suffixes in {
         'archive':('arrow-down','arrow-up','x'),
@@ -582,12 +599,12 @@ def register(api):
     shape('touchpad',rr(1.8,2.5,12.4,11),stroke('M2 10H14M8 10V13'),'trackpad computer input')
     disabled('touchpad-off','touchpad')
     shape('webcam',circle(8,6.5,4.8),union(stroke(circle(8,6.5,1.7)),stroke('M8 11.3V13.5M5.5 14H10.5')),'camera video computer')
-    shape('headset',path('M2 8V7A6 6 0 0 1 14 7V8H12V7A4 4 0 0 0 4 7V8Z'),union(rr(2,7.5,2.7,4),rr(11.3,7.5,2.7,4),stroke('M14 10V12Q14 14 11 14H9.5')),'headphones microphone call')
+    shape('headset',path('M2 8V7.3A6 6 0 0 1 14 7.3V8H12V7.3A4 4 0 0 0 4 7.3V8Z'),union(rr(2,7.5,2.7,4),rr(11.3,7.5,2.7,4),stroke('M14 10V12Q14 14 11 14H9.5')),'headphones microphone call')
     shape('smartphone-user-round',rr(3,1.5,10,13),union(stroke('M6 3H10M7 13H9'),compact('user',8,7.95,.93)),'mobile phone account')
     shape('screen-share',rr(1.5,2,13,9),stroke('M8 11V14M5 14H11M8 8V4.2M6 6.2L8 4.2L10 6.2'),'display share presentation')
     disabled('screen-share-off','screen-share')
     shape('mouse-pointer',path('M3 1.8L12 9L8 9.6L10 13.5L8 14.5L6 10.3L3 13Z'),None,'cursor pointer')
-    shape('mouse-pointer-click',path('M4 5L12 10L8.5 10.5L10 13.5L8 14.5L6.5 11.3L4 13Z'),stroke('M3 1.5V3M1 4H2.5M6 2L5.3 3.3M1.5 7L2.7 6.2'),'cursor click')
+    shape('mouse-pointer-click',path('M4 5L12 10L8.5 10.5L10 13.5L8 14.5L6.5 11.3L4 13Z'),stroke('M3 1.5V3M1.3 4H2.65M6 2L5.3 3.3M1.5 7L2.7 6.2'),'cursor click')
     glyph('bluetooth-connected',stroke('M7 1.5V14.5L12 10.5L3 3.5M7 1.5L12 5.5L3 12.5'),dots((1.5,8),(14.5,8),r=.7),'wireless connected')
     glyph('bluetooth-searching',stroke('M6 1.5V14.5L11 10.5L2 3.5M6 1.5L11 5.5L2 12.5M13 4Q15 8 13 12'),None,'wireless searching')
     shape('volume-1',path('M2 6H5L9 2.5V13.5L5 10H2Z'),stroke('M11.5 6Q13.5 8 11.5 10'),'audio sound low')
@@ -597,7 +614,7 @@ def register(api):
         'heading-3':'M2 3V12M7 3V12M2 7.5H7M10 5Q12 3.5 13.5 5Q14.5 6.5 12 7.5Q14.5 8 14 10Q13.5 12 10 11',
         'heading-4':'M2 3V12M7 3V12M2 7.5H7M12.5 12V4L9 9.1H14',
         'languages':'M2 4H10M6 2V4M3.5 5Q4.35 7.95 8 10M8.5 5Q7.5 9 2.5 11M10 14L12.25 7.9L14.5 14M10.7 12.25H13.8',
-        'link-2':'M6 10L5 11A2.5 2.5 0 0 1 1.5 7.5L4 5A2.5 2.5 0 0 1 7.5 5M10 6L11 5A2.5 2.5 0 0 1 14.5 8.5L12 11A2.5 2.5 0 0 1 8.5 11M5.5 10.5L10.5 5.5',
+        'link-2':'M6 10L5 11A2.35 2.35 0 0 1 1.8 7.5L4 5A2.5 2.5 0 0 1 7.5 5M10 6L11 5A2.35 2.35 0 0 1 14.2 8.5L12 11A2.5 2.5 0 0 1 8.5 11M5.5 10.5L10.5 5.5',
         'loader':'M8 1.5V3.5M12.6 3.4L11.2 4.8M14.5 8H12.5M12.6 12.6L11.2 11.2M8 14.5V12.5M3.4 12.6L4.8 11.2M1.5 8H3.5M3.4 3.4L4.8 4.8',
         'sliders-vertical':'M3.25 2V5M3.25 8V14M2.1 5H4.4V8H2.1ZM8 2V8M8 11V14M6.85 8H9.15V11H6.85ZM12.75 2V4M12.75 7V14M11.6 4H13.9V7H11.6Z',
         'scan-barcode':'M2 5V2H5M11 2H14V5M2 11V14H5M11 14H14V11M4.65 5V11M7.6 5V11M11.35 5V11',
@@ -722,7 +739,7 @@ def register(api):
           stroke('M7 4.6V7.7H10.4V4.6M7.4 14.3V10.6H11.8V14.3'), 'save multiple files')
     searchbody=stroke(circle(6,6,4))
     for suffix in ('check','x'):
-        glyph('search-'+suffix,union(searchbody,line((9,9),(13,13))),compact(suffix,12.4,3.85,.83),'find search '+suffix)
+        glyph('search-'+suffix,union(searchbody,line((9,9),(13,13))),compact(suffix,12.65,3.15,.73),'find search '+suffix)
     glyph('search-code',union(searchbody,line((9,9),(13,13))),stroke('M4.9 4.95L3.85 6L4.9 7.05M7.1 4.95L8.15 6L7.1 7.05'),'find search code')
     glyph('settings-2',stroke('M2 4H6M9 4H14M2 8H9M12 8H14M2 12H4M7 12H14M6 2.5H9V5.5H6ZM9 6.5H12V9.5H9ZM4 10.5H7V13.5H4Z'),None,'settings adjustments sliders')
     glyph('share',stroke('M8 10V2M5 5L8 2L11 5M3 8V13H13V8'),None,'share upload')
@@ -853,7 +870,8 @@ def register(api):
             exterior = subtract(component,filled)
             (structural if exterior.area > component.area*.12 else counters).append(component)
         solid = union(subtract(filled,op(union(*counters),interior,po.PathOp.INTERSECTION)),*structural)
-        gap = union(badge,stroke(badge,1.9))
+        left,top,right,bottom = badge.bounds
+        gap = circle((left+right)/2,(top+bottom)/2,max(right-left,bottom-top)/2+1.5)
         if 'cog' in name:
             # Reserve the hub as well as the valleys between the teeth.
             left, top, right, bottom = badge.bounds
@@ -862,21 +880,22 @@ def register(api):
         overrides[name] = {'duotone':[(subtract(body,union(gap,ink)),.24),(ink,1)],
                            'stroke':ink,'solid':union(subtract(solid,gap),badge)}
 
-    for name, (source, badge) in corner_badges.items():
-        base, detail, outlined, _, _ = host_drawing(source)
+    for name, (source, base, detail, badge) in corner_badges.items():
         # Keep each subject's original silhouette, strokes and counters.
-        outline = stroke(base) if outlined else po.Path()
-        if source == 'server-rack':
-            # The activity window in the upper bay has its own open bezel.
-            detail = union(subtract(detail,rr(7,2.85,6,2.35,0)),stroke(rr(8.15,3,3.6,2)))
-        host = union(outline,detail) if outlined else union(base,detail)
+        outline = stroke(base)
+        host = union(outline,detail)
         left,top,right,bottom = badge.bounds
         gap = circle((left+right)/2,(top+bottom)/2,max(right-left,bottom-top)/2+1.4)
-        if name.endswith('-cog'):
-            gap = circle(12,11.8,3.68)
-        if name.endswith('-sync'):
-            gap = rr(8.45,8,7,7.3)
-        ink = union(recess(base,gap),subtract(host,gap),badge)
+        if 'cog' in name:
+            gap = circle(12,11.8,3.95)
+
+        if source in ('archive','alarm-clock','server-rack'):
+            # Interrupt only the real contours behind the mark. A stroke along
+            # the clearance would produce a second rim across the object.
+            gap = union(badge,stroke(badge,2.1)) if source == 'alarm-clock' else gap
+            ink = union(subtract(host,gap),badge)
+        else:
+            ink = union(recess(base,gap),subtract(host,gap),badge)
         host_solid = union(base,outline)
         counters, structure = [], []
         for component in api['components'](detail):
@@ -886,30 +905,12 @@ def register(api):
         solid = subtract(union(subtract(host_solid,clipped),*structure),gap)
         overrides[name] = {'stroke':ink,'duotone':[(subtract(base,union(gap,ink)),.24),(ink,1)],
                            'solid':union(solid,badge)}
-    for name in ('user-cog','user-round-cog'):
-        detach_badge(name,mark('cog',12,9.5,.68))
     for suffix in ('check','plus','x'):
         detach_badge('calendar-'+suffix+'-2',compact(suffix,12.35,12.35,.8))
     for suffix, direction in (('input','arrow-left'),('output','arrow-right')):
         detach_badge('file-'+suffix,compact(direction,11.6,9.1,.92))
     detach_badge('mail-badge',circle(12,3,1.6))
-    for name in ('user-lock','user-key','user-round-key','user-pen','user-round-pen',
-                 'user-search','user-round-search','user-round-arrow-left','user-round-check',
-                 'user-round-plus','user-round-x','user-exclamation-point','user-round-exclamation-point',
-                 'user-minus','user-round-minus'):
-        detach_badge(name,api['DRAWINGS'][name][1])
     detach_badge('database-backup',stroke('M9.75 11.4A2.45 2.45 0 1 1 10.25 13.45M9.7 9.7V11.5H11.5'))
-    for suffix in ('check','cog','minus','plus','search','x'):
-        detach_badge('database-'+suffix,(mark if suffix == 'cog' else compact)(suffix,12.35,12,.79))
-    for suffix in ('check','minus','pen','plus','question-mark','search','x'):
-        detach_badge('package-'+suffix,compact(suffix,12,11.6,.82))
-    for suffix in ('cog','minus','plus','question-mark','user'):
-        detach_badge('shield-'+suffix,(mark if suffix == 'cog' else compact)(suffix,12.1,10.8,.88))
-    detach_badge('shield-cog-corner',mark('cog',10.8,12,.75))
-    for prefix in ('user','user-round'):
-        for suffix in ('shield','star'):
-            detach_badge(prefix+'-'+suffix,api['DRAWINGS'][prefix+'-'+suffix][1])
-
     contact_cover, _, _, _, _ = api['DRAWINGS']['contact-round']
     binding = stroke('M1.5 5H3.5M1.5 8H3.5M1.5 11H3.5')
     cover = union(contact_cover,stroke(contact_cover))
