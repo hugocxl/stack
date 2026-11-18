@@ -241,12 +241,14 @@ def register(api):
     signal_arc = stroke('M2.15 7.3Q1.75 4.55 3.65 2.1M4.55 6.35Q4.45 4.7 5.55 3.55')
     G('radio-tower',union(signal_arc,api['mirror'](signal_arc),circle(8,4.2,.85)),
       stroke('M4.9 14.3L8 6.75L11.1 14.3M6.45 10.3H9.55M5.4 12.8H10.6'))
-    panel = rr(1.95,4.1,2.8,7.8)
-    panels = union(panel,api['mirror'](panel))
-    bus = rr(5.85,5.85,4.3,4.3)
-    antenna = stroke('M8 5.85V4.1M6.25 2.45Q6.75 4.1 8 4.1T9.75 2.45')
-    braces = stroke('M4.75 8H5.85M10.15 8H11.25M1.95 8H4.75M11.25 8H14.05')
-    S('satellite',transform(union(panels,bus),-34),transform(union(braces,antenna),-34))
+    panel = rr(.95,4.75,3.25,6.5)
+    panels = transform(union(panel,api['mirror'](panel)),45)
+    bus = transform(rr(6.4,6.4,3.2,3.2),45)
+    struts = transform(lines('M4.2 8H6.4','M9.6 8H11.8'),45)
+    grid = transform(lines('M.95 8H4.2','M11.8 8H15.05'),45)
+    S('satellite',union(panels,bus),union(struts,grid))
+    # Keep both solar cells open in Solid so the panel division survives at 16 px.
+    overrides['satellite']={'solid':union(bus,stroke(bus),stroke(panels),struts,grid)}
     bowl = path('M2.2 3.6Q5.75 7.85 12.55 10.2C7.55 13.55 1.35 10.2 2.2 3.6Z')
     S('satellite-dish',bowl,union(stroke('M7.15 8.15L9.8 4.25M7.25 11.3L5.95 14H10.8L8.9 11.4'),circle(10.15,3.65,1.05)))
     webcam= circle(8,6,4.5)
