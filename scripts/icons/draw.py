@@ -1147,7 +1147,9 @@ def register_full_catalog():
     """
     from full import design, product, technology, world
     import sf_home, sf_media, sf_accessibility, sf_interface
-    for module in (design, product, technology, world, sf_home, sf_media, sf_accessibility, sf_interface):
+    import sf_ext_windows, sf_ext_text, sf_ext_states, sf_ext_objects, sf_ext_world
+    for module in (design, product, technology, world, sf_home, sf_media, sf_accessibility, sf_interface,
+                   sf_ext_windows, sf_ext_text, sf_ext_states, sf_ext_objects, sf_ext_world):
         module.register(globals())
 
 if __name__=='__main__':
