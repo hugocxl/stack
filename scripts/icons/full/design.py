@@ -49,7 +49,6 @@ def register(api):
 
     def badged(name, body, detail, badge, clearance):
         s(name, body, union(detail, badge))
-        body=api['soften'](body)
         boundary=outline(body)
         primary=union(sub(union(boundary,detail),clearance),badge)
         secondary=sub(sub(body,clearance),primary)
@@ -80,9 +79,9 @@ def register(api):
                         else 'M6 4L10 8L6 12')
         return st(transform(skeleton, angle, scale, x-8, y-8))
 
-    def base_ink(name):
-        body, details, outlined = api['DRAWINGS'][name][:3]
-        return union(outline(body) if outlined else body, details)
+    def cancel_surface(name, body, details):
+        start, end = (2,2), (14,14)
+        badged(name, body, details, line(start,end), line(start,end,width=3.2))
 
     def slash(p, name):
         diagonal=line((2,2),(14,14))
@@ -106,7 +105,7 @@ def register(api):
         # One rounded corner and one centered dash per side.
         edge = w/2
         drop = h/2
-        radius = 1.25
+        radius = api['RADIUS']
         corner = st(f'M{x} {y+2.15}V{y+radius}a{radius} {radius} 0 0 1 {radius} {-radius}H{x+2.15}')
         return union(corner,corner.transform(-1,0,0,1,2*x+w,0),
                      corner.transform(1,0,0,-1,0,2*y+h),corner.transform(-1,0,0,-1,2*x+w,2*y+h),
@@ -310,7 +309,7 @@ def register(api):
         # Iteration uses a return loop rather than a circular refresh arrow.
         loop=union(st('M3 4H11Q14 4 14 7V10Q14 13 11 13H4'),line((6,10),(3,13),(6,15)))
         g('iteration-'+suffix,loop if clockwise else mirror(loop))
-    repeat=union(st('M2.5 9V5Q2.5 3 4.5 3H13M13.5 7V11Q13.5 13 11.5 13H3'),st('M10 1L13 3L10 5M6 11L3 13L6 15'))
+    repeat=st('M2.5 9V5Q2.5 3 4.5 3H13M13.5 7V11Q13.5 13 11.5 13H3M10.5 1.25L13 3L10.5 4.75M5.5 11.25L3 13L5.5 14.75')
     g('repeat-2',repeat)
     slash(repeat,'repeat-off')
     for inward in (True,False):
@@ -389,7 +388,7 @@ def register(api):
             s('grid-3x2',rr(),st('M6 2V14M10 2V14M2 8H14'))
         else:
             s(f'grid-{cols}x{rows}',cells(cols,rows))
-    slash(base_ink('grid-3x3'),'grid-3x3-off')
+    cancel_surface('grid-3x3-off', *api['DRAWINGS']['grid-3x3'][:2])
     for status,detail in [('check',check(12.1,12.3,.5)),('plus',plus(12.1,12.3,.6)),('x',cross(12.1,12.3,.6))]:
         body=union(rect(2,2,4.8,4.8),rect(9.2,2,4.8,4.8),rect(2,9.2,4.8,4.8))
         s('grid-2x2-'+status,body,detail)
@@ -706,7 +705,7 @@ def register(api):
     fold=st('M10 14V10H14')
     for status,detail in [('plus',plus(7.5,7,.7)),('minus',line((5,7),(10,7))),('x',cross(7.5,7,.65)),('check',check(7.5,7,.65))]:
         s('sticky-note-'+status,sticky,union(fold,detail))
-    slash(base_ink('sticky-note'),'sticky-note-off')
+    cancel_surface('sticky-note-off', *api['DRAWINGS']['sticky-note'][:2])
     g('sticky-notes',st('M11 1.6H3Q1.6 1.6 1.6 3V11'),outline(fit(sticky,9.4,9.4,.8)),placed_stroke('M10 14V10H14',9.4,9.4,.8))
 
     cat('Design tools')
@@ -731,8 +730,9 @@ def register(api):
         sparkle = path('M8 4Q8.7 7.3 12 8Q8.7 8.7 8 12Q7.3 8.7 4 8Q7.3 7.3 8 4Z')
         return fit(sparkle,x,y,radius/4)
 
-    s('pencil-sparkles',fit(pen,7.4,9.5,.76),
-      union(placed_stroke('M10 3L13 6',7.4,9.5,.76),sparkle_at(12.5,3,1.8),sparkle_at(4.3,3.5,1.45)))
+    pencil, divisions = api['DRAWINGS']['pencil'][:2]
+    highlights = union(sparkle_at(3.6,3.7,1.85),sparkle_at(12.55,12.25,1.55))
+    s('pencil-sparkles',pencil,union(divisions,highlights))
     brushbody = path('M2.1 14Q4 12.5 4 10.8Q4 7.2 7 7.4L11.8 2.3Q12.9 1.1 14 2.2Q15 3.2 13.8 4.4L9.1 9.4Q9 12.8 6.3 13.5Q4.7 14.1 2.1 14Z')
     s('brush',brushbody,inter(brushbody,st('M6.6 7L9.6 10')))
     brushvertical=path('M7.8 1.55Q9.4 1.55 9.4 3.1L9.15 6.5Q9.15 7.4 10.3 7.9L12 8.7V14H4V8.7L5.7 7.9Q6.85 7.4 6.85 6.5L6.6 3.1Q6.6 1.55 7.8 1.55Z')
@@ -844,7 +844,11 @@ def register(api):
     s('square-square',rr(),outline(rect(5.2,5.2,5.6,5.6)))
     g('square-stack',st('M1.5 10V2.5Q1.5 1.5 2.5 1.5H10M4 12V5Q4 4 5 4H12'),outline(rect(6.5,6.5,8,8)))
     for status,p in [('minus',line((7.5,9.5),(11.5,9.5))),('slash',line((7.65,11.35),(11.35,7.65)))]:
-        g('copy-'+status,st('M2 11V3Q2 2 3 2H10'),outline(rect(5,5,9,9)),p)
+        name = 'copy-'+status
+        copies, front_edge = api['DRAWINGS']['copy'][:2]
+        s(name, copies, union(front_edge,p))
+        solid = api['stacked_solid'](rect(1.5,1.5,9,10),rect(5,5,9.5,9.5))
+        api['STYLE_OVERRIDES'][name] = {'solid':sub(solid,p)}
     g('blend',sub(outline(circle(5.6,8,4.1)),circle(10.4,8,4.1)),outline(circle(10.4,8,4.1)),inter(circle(5.6,8,4.1),circle(10.4,8,4.1)))
     s('opacity',circle(),inter(circle(),rect(8,2,6,12,0)))
     # Keep the halftone plane within the circular body in all styles.
@@ -870,7 +874,7 @@ def register(api):
     s('square-mouse-pointer',rr(),outline(fit(pointer2,scale=.62)))
     slash(outline(rr()),'square-off')
     for name,p in [('square-dashed-plus',plus()),('square-dashed-x',cross()),('square-dashed-search',union(outline(circle(10.1,10.2,2.5)),st('M11.9 12L14.4 14.5'))),('square-dashed-mouse-pointer',outline(fit(pointer2,10.7,10.4,.59)))]:
-        g(name,sub(dash_square(),rect(7,7,9,9,0)) if name.endswith(('search','mouse-pointer')) else dash_square(),p)
+        g(name,sub(dash_square(),rect(6,6,10,10,0)) if name.endswith(('search','mouse-pointer')) else dash_square(),p)
     g('square-dashed-x-corner',sub(dash_square(),rect(8.7,8.7,7.3,7.3,0)),cross(12.4,12.4,.78))
     g('square-dashed-top-solid',sub(dash_square(),rect(0,0,16,5,0)),st('M2 4.15V3.25A1.25 1.25 0 0 1 3.25 2H12.75A1.25 1.25 0 0 1 14 3.25V4.15'))
     def scissors_mark(x, y, scale):
@@ -889,7 +893,6 @@ def register(api):
 
     cat('Maps and travel')
     world, meridians = api['DRAWINGS']['globe'][:2]
-    globe = union(outline(world),meridians)
     # Earth shows land masses rather than longitude lines.
     ocean = circle()
     americas = path('M1 1H8C8 3 7.4 4.4 5.7 5.1Q4.8 5.7 5.6 6.7L7.7 8.1Q8.8 8.9 7.7 10.7L6.5 13.4Q5.3 12.1 5.4 10.4Q5.5 9.3 4.1 8.5Q2 7.4 1 6Z')
@@ -900,14 +903,22 @@ def register(api):
     api['STYLE_OVERRIDES']['earth'] = {
         'duotone': [(sub(ocean, coast), .24), (coast, 1)],
         'solid': coast, 'stroke': union(outline(ocean), inter(ocean, outline(land)))}
-    for state,p in [('check',check(12.3,12.4,.5)),('plus',plus(12.3,12.4,.6)),('x',cross(12.3,12.4,.57)),
-                    ('ban',union(outline(circle(12.45,12.45,2.2)),line((10.9,10.9),(14,14)))),
-                    ('code',st('M10.3 10.4L8.6 12.1L10.3 13.8M13.1 10.4L14.75 12.1L13.1 13.8'))]:
-        cut=circle(12.45,12.45,3.9) if state!='code' else rect(7.1,9,8.9,7)
-        g('globe-'+state,sub(globe,cut),p)
-    slash(globe,'globe-off')
+    badge_x, badge_y = 13, 13
+    ban_rim = circle(badge_x,badge_y,1.68)
+    globe_badges = {
+        'check': check(badge_x,badge_y,.57),
+        'plus': plus(badge_x,badge_y,.75),
+        'x': cross(badge_x,badge_y,.68),
+        'ban': union(outline(ban_rim),st('M11.81 11.81L14.19 14.19')),
+        'code': st('M11.5 11.55L10.1 13L11.5 14.45M13.35 11.55L14.75 13L13.35 14.45'),
+    }
+    for state,mark in globe_badges.items():
+        footprint = union(ban_rim,mark) if state == 'ban' else mark
+        clearance = union(footprint,outline(footprint,1.9))
+        badged('globe-'+state,world,meridians,mark,clearance)
+    cancel_surface('globe-off', world, meridians)
     mappoly=path('M1.8 3.5L6 1.8L10 3.5L14.2 1.8V12.5L10 14.2L6 12.5L1.8 14.2Z')
-    for state,p in [('plus',plus(12.5,12,.65)),('minus',line((10.5,12),(14.5,12)))]:
+    for state,p in [('plus',plus(12.5,12,.75)),('minus',line((11,12),(14,12)))]:
         map_body, folds = api['DRAWINGS']['map'][:2]
         badged('map-'+state,map_body,folds,p,rect(9.2,9.85,6.8,6.15))
     pin=path('M8 14.5C6 12.5 2.5 8.5 2.5 5.8C2.5-.7 13.5-.7 13.5 5.8C13.5 8.5 10 12.5 8 14.5Z')
@@ -915,18 +926,18 @@ def register(api):
                     ('plus',plus(8,5.8,.55)),('x',cross(8,5.8,.57))]:
         name='map-pin-'+state+'-inside'
         s(name,pin,p)
+    base_pin, eye = api['DRAWINGS']['map-pin'][:2]
+    # Keep the original pin profile. The base's expansion scales its eye,
+    # so reconstruct that circle on its measured centerline before stroking.
+    x0,y0,x1,y1 = eye.bounds
+    eye = outline(circle((x0+x1)/2, (y0+y1)/2, (x1-x0)/2 - api['STROKE']/2))
+    # Fit the centerline of the supplied pin before adding its fixed-width outline.
+    base_pin = fit(base_pin, scale=.993)
     for state,p in [('check',check(12.2,12,.5)),('minus',line((10.5,12),(14.2,12))),
                     ('house',st('M10 11.45L12.2 9.2L14.4 11.45V14.15H10Z')),
                     ('pen',pencil_mark(11.5,11.5)),
                     ('search',union(outline(circle(12,11.7,1.9)),line((13.5,13.2),(14.7,14.5))))]:
         region=circle(12.2,12,3.2)
-        base_pin, eye = api['DRAWINGS']['map-pin'][:2]
-        # Keep the original pin profile. The base's expansion scales its eye,
-        # so reconstruct that circle on its measured centerline before stroking.
-        x0,y0,x1,y1 = eye.bounds
-        eye = outline(circle((x0+x1)/2, (y0+y1)/2, (x1-x0)/2 - api['STROKE']/2))
-        # Fit the centerline of the supplied pin before adding its fixed-width outline.
-        base_pin = fit(base_pin, scale=.993)
         badged('map-pin-'+state, base_pin, eye, p, union(region, outline(p,2.1)))
     pin_body = fit(pin, 8, 5.6, .58)
     pin_foreground = union(outline(pin_body), outline(circle(8,4.5,1.05)))
@@ -949,12 +960,12 @@ def register(api):
         if name == 'mouse-pointer-2':
             cancelled(name + '-off', outline(api['DRAWINGS'][name][0]), (2.4, 12.4), (13.6, 3.2))
         else:
-            slash(base_ink(name), name + '-off')
+            cancel_surface(name+'-off', *api['DRAWINGS'][name][:2])
     navigation, heading = api['DRAWINGS']['navigation'][:2]
     cancelled('navigation-off', union(outline(navigation), heading), (2, 3), (13.5, 14.5))
     hand = path('M5.1 13.8L2.1 9.6C.8 7.7 2.7 6.5 3.9 7.8L5.1 9.1V3.15C5.1 1.35 7.8 1.35 7.8 3.15L8 6.6C8.1 4.8 10.6 4.9 10.8 6.7C11.6 5.5 13.4 6.1 13.65 7.45L14 9.9Q14.4 14.2 10.8 14.2H6.4Q5.55 14.2 5.1 13.8Z')
     s('pointer',hand,st('M8 6.6V8.7M10.8 6.7V8.6'))
-    slash(base_ink('pointer'),'pointer-off')
+    cancel_surface('pointer-off', *api['DRAWINGS']['pointer'][:2])
     grab = path('M2.1 8Q1.8 6.2 3.5 6.2L3.4 5Q3.4 3.3 5.2 3.5Q5.7 1.6 7.5 2.3Q8.4 2.6 8.6 3.5Q9.2 2.4 10.5 2.9Q11.6 3.2 11.8 4.6Q13.9 4 14 6.2V9.8Q14 13.8 10 14H7Q4.6 14 3.4 11.7Z')
     s('hand-grab', grab, st('M3.5 6.2L6.2 6.8Q8.8 7.4 7.6 9Q6.9 10 5.7 9.4M5.2 3.5L5.7 5M8.6 3.5L9 5.6M11.8 4.6L12 6.2'))
     ban=union(outline(circle(12.2,12.2,2.4)),line((10.5,10.5),(13.9,13.9)))
@@ -965,7 +976,8 @@ def register(api):
     hangers = st('M3.6 5.9H2.7V7.4M12.4 5.9H13.3V7.4')
     supports = st('M4.7 14.4L8 5.9L11.3 14.4M3.5 14.4H12.5')
     g('ferris-wheel', wheel, cabins, spokes, hangers, supports)
-    g('roller-coaster',st('M1.6 9.7C3.7 9.7 3.8 2.2 7.1 2.2C10.5 2.2 9.8 10.8 12.5 10.8Q13.8 10.8 14.65 9'),st('M1.6 12C5.3 12 5.6 4.6 7.1 4.6C8.6 4.6 8.1 13.1 12.5 13.1Q13.7 13.1 14.65 12.3M3.9 10.9V14.3M7.1 4.6V14.3M12.5 13.1V14.3'))
+    track = 'M1.55 10.8C4.4 10.8 3.8 3.15 7.35 3.15C10.6 3.15 10.4 10.65 13 10.65Q13.95 10.65 14.65 9.55'
+    g('roller-coaster',st(track),st('M3.35 9.45V13.9M7.35 3.15V13.9M12.25 10.35V13.9'))
 
     cat('Transform and flow')
     for vertical in (False,True):
@@ -987,7 +999,7 @@ def register(api):
     g('scan-box',st('M1.5 5V1.5H5M11 1.5H14.5V5M1.5 11V14.5H5M11 14.5H14.5V11'),small_box(8,8,.59))
     g('view',st('M1.5 5V1.5H5M11 1.5H14.5V5M1.5 11V14.5H5M11 14.5H14.5V11'),st('M3.2 8Q8 1.8 12.8 8Q8 14.2 3.2 8Z'),circle(8,8,1.25))
     funnel, funnel_seam = api['DRAWINGS']['filter'][:2]
-    for state,p in [('plus',plus(12.9,12.4,.83)),('x',cross(12.9,12.4,.75))]:
+    for state,p in [('plus',plus(12.9,12.4,.75)),('x',cross(12.9,12.4,.68))]:
         badged('funnel-'+state, funnel, funnel_seam, p, union(p,outline(p,2.1)))
     s('search-exclamation-point',circle(6.7,6.7,4.6),union(line((10.3,10.3),(14,14)),line((6.7,3.8),(6.7,6.8)),circle(6.7,8.8,.6)))
     s('search-slash',circle(6.7,6.7,4.6),union(line((10.3,10.3),(14,14)),line((4.7,8.7),(8.7,4.7))))
@@ -999,7 +1011,7 @@ def register(api):
     s('cloud-backup',path('M4.6 12.9C.6 12.9 .5 6.6 4.2 6.4C4.5 .5 12.1 .5 12.4 6Q14.6 6.5 14.6 9.3Q14.6 12.9 11.6 12.9Z'),
       union(outline(circle(8,8.5,2.7)),st('M8 7.2V8.5L9 9.1')))
     keyboard_body, keys = api['DRAWINGS']['keyboard'][:2]
-    slash(union(outline(fit(keyboard_body,scale=.997)),keys),'keyboard-off')
+    cancel_surface('keyboard-off',fit(keyboard_body,scale=.997),keys)
     g('import',st('M9 2H13Q14 2 14 3V13Q14 14 13 14H9'),arr('right',5.8,8,.8))
 
     missing=set(NAMES)-made
