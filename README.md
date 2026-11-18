@@ -1,53 +1,36 @@
-# P9 Figures
+# Vectors
 
-2,000 static isometric SVG illustrations for website heroes, feature sections, documentation, product states, and industry pages.
+### Show the idea. Quietly.
 
-[Browse the gallery](https://hugocxl.github.io/p9-figures/) · [Search the use-case catalog](https://hugocxl.github.io/p9-figures/use-cases.html) · [Download the SVG files](figures/)
+**2,000 isometric line illustrations** for the moments a page needs to show, not just tell. Heroes, feature sections, empty states, docs and everything in between.
 
-| Modular design | Product architecture | Fast performance |
-| :---: | :---: | :---: |
-| [![Four independent modules on a common footprint](figures/modular-design.svg)](figures/modular-design.svg) | [![An exploded stack with a raised top layer](figures/product-architecture.svg)](figures/product-architecture.svg) | [![A pulse rising through a bank of fins](figures/fast-performance.svg)](figures/fast-performance.svg) |
+[Browse the vectors](https://hugocxl.github.io/vectors/browse.html) · [Read the docs](https://hugocxl.github.io/vectors/docs.html) · [Visit the website](https://hugocxl.github.io/vectors/)
 
-## Collections
+[![A selection of isometric line illustrations from the collection](.github/preview.png)](https://hugocxl.github.io/vectors/)
 
-- **Product** covers architecture, performance, responsive design, customization, integrations, and extensibility.
-- **Workflow** covers collaboration, automation, planning, scheduling, search, and publishing.
-- **Infrastructure** covers cloud services, storage, backups, load balancing, failover, and bandwidth.
-- **Data** covers analytics, growth, forecasting, monitoring, and experiments.
-- **Trust & control** covers security, permissions, privacy, approvals, recovery, and feature flags.
-- **Product states** covers empty workspaces, missing pages, maintenance, and confirmations.
-- **Commerce** covers checkout, fulfillment, receipts, returns, and product comparison.
-- **Editorial & media** covers documentation, video, photography, newsletters, and learning.
+## Drawn for a purpose
 
-The [illustration manifest](catalog/manifest.json) lists every SVG by use case, including where it can appear on a site. The [design review](DESIGN.md) documents the acceptance criteria and what the automated checks cover.
+Every vector illustrates a specific moment on a website or in a product: launching a feature, explaining a workflow, an empty inbox, a finished checkout. Start from what you want to say, and find the drawing that says it.
 
-## Use an SVG
+The collection is organized into 23 groups, from landing pages, onboarding and empty states to infrastructure, commerce, health, travel and climate.
 
-Copy any SVG from `figures/` into your project and reference it as an image. Every figure uses a transparent 480 × 360 viewBox and includes a title and description.
+## Made to feel at home
 
-```html
-<img src="/images/modular-design.svg"
-     alt="Four independent modules fit into one assembly"
-     width="480" height="360">
-```
+- **One quiet line.** Fine strokes and open space let each drawing sit beside your words without competing with them.
+- **Your colors.** Every vector takes the color of the text around it, in light and dark.
+- **Ready where you build.** The same drawings on the web, in React and React Native, and in native Apple apps.
+- **Free to use.** Open source, for personal and commercial work.
 
-To recolor a file, edit the root `color` attribute. For inline SVG, override its `color` with CSS. The separate stroke opacities preserve the hierarchy between highlights, contours, and construction lines.
+## Part of a stack
 
-## Build from source
+Three libraries, designed to work as one.
 
-The assets, gallery, and use-case page are checked in. To regenerate them, use Python 3.10–3.13 in a virtual environment.
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python scripts/build.py --expect 2000
-python scripts/build.py --check --expect 2000
-python scripts/verify.py --expect 2000 --similarity .965
-```
-
-The scene definitions live in `scripts/scenes/`. The build projects their 3D coordinates into SVG and removes hidden lines so the backdrop stays transparent. Open `index.html` to browse the gallery locally.
+- **[Icons](https://hugocxl.github.io/icons/)** label what people can do.
+- **[Vectors](https://hugocxl.github.io/vectors/)** illustrate what you mean.
+- **[Design system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
 
 ## License
 
-The artwork and source are [MIT licensed](LICENSE). The figure design draws on the visual rules in [Hairline by Lucas Marques](https://hairline.lucasmarkes.com/skills).
+The artwork is [MIT licensed](LICENSE). Its drawing rules take after [Hairline by Lucas Marques](https://hairline.lucasmarkes.com/skills).
+
+Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/vectors/issues).
