@@ -151,7 +151,19 @@ def register(api):
 
     def badged(name, source, suffix, tags=None):
         body, detail = corner_host(source)
-        if source in ('user','user-round'):
+        if suffix == 'minus' and source in ('star','shield','heart','database','package','image'):
+            # Keep the crossbar at its plus sibling's center. Seat the small
+            # host slightly lower so the dash stands above its bottom edge.
+            if source == 'image':
+                body, detail = host_drawing('image')[:2]
+                sun = circle(5,5.5,1.3)
+                detail = union(subtract(detail,sun),stroke(sun))
+                badge = line((9,5),(13,5))
+            else:
+                body = transform(body,dx=.35,dy=1.65)
+                detail = transform(detail,dx=.35,dy=1.65)
+                badge = line((10.45,11.35),(14.45,11.35))
+        elif source in ('user','user-round'):
             if suffix == 'cog':
                 badge = gear(12.35,10.45,2.75)
             elif suffix == 'star':
@@ -489,10 +501,17 @@ def register(api):
     glyph('users-round-collaboration',round_pair,exchange,'people collaboration')
 
     mail = rr(1.6,3.4,12.8,9.2)
-    for suffix in ('clock','dot','exclamation-point','minus','pen','question-mark','search','x'):
+    for suffix in ('clock','dot'):
         # Give the modifier its own panel beneath the flap.
         ink = compact(suffix,8,10.15,.75)
         shape('mail-'+suffix,rr(1.5,2.45,13,11.6),union(stroke('M2.05 3.05L8 6.05L13.95 3.05'),ink),'email message '+suffix)
+    envelope, flap = host_drawing('mail')[:2]
+    for suffix in ('exclamation-point','minus','pen','question-mark','search','x'):
+        badge = (line((10.75,12.25),(14.75,12.25)) if suffix == 'minus'
+                 else compact(suffix,12.75,12.25,.72))
+        name = 'mail-'+suffix
+        shape(name,envelope,union(flap,badge),'email message '+suffix)
+        corner_badges[name] = ('mail',envelope,flap,badge)
     shape('mail-badge',mail,union(stroke('M2 4L8 8L14 4'),circle(12,3,1.6)),'email notification')
     stack('mails',rr(1.6,2,10,8.1),rr(4.55,5.05,9.9,8.1),
           stroke('M4.98 5.55L9.5 8.55L14 5.55'),'multiple email messages')
@@ -973,7 +992,12 @@ def register(api):
             gap = circle((left+right)/2,(top+bottom)/2,max(right-left,bottom-top)/2+1.05)
         if source in ('user','user-round','tag'):
             gap = union(badge,stroke(badge,2.05))
-        if source in ('archive','alarm-clock','server-rack','user','user-round','tag'):
+        if source == 'mail':
+            # One open corner for the entire mail family, below the V flap.
+            gap = circle(12.75,12.25,4.05)
+        elif name.endswith('-minus') and source in ('star','shield','heart','database','package'):
+            gap = circle(12.45,11.35,3.65)
+        if source in ('archive','alarm-clock','server-rack','user','user-round','tag') or name == 'image-minus':
             ink = union(subtract(host,gap),badge)
         else:
             # Keep the host counter closed where the edge turns behind a badge.
