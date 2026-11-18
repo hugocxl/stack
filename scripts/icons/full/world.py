@@ -46,13 +46,13 @@ def register(api):
         duo,solid,mono=base_layers(base);slash=ln((2,2),(14,14));clear=st('M2 2L14 14',2.65)
         cut=lambda a:op(a,clear,po.PathOp.DIFFERENCE)
         g(n,un(cut(mono),slash));overrides[n]={'duotone':[(cut(a),v) for a,v in duo]+[(slash,1)],'solid':un(cut(solid),slash),'stroke':un(cut(mono),slash)}
-    def badge(n,base,mark,footprint=None):
+    def badge(n,base,mark,footprint=None,offset=(0,0)):
         duo,solid,mono=base_layers(base)
         # Reserve the entire badge footprint so its counters show through.
         footprint=mark if footprint is None else footprint
         clear=un(footprint,st(footprint,2.15))
         def cut(layer):
-            return op(layer,clear,po.PathOp.DIFFERENCE)
+            return op(tr(layer,dx=offset[0],dy=offset[1]),clear,po.PathOp.DIFFERENCE)
         ink=un(cut(mono),mark)
         g(n,ink)
         overrides[n]={'duotone':[(cut(a),v) for a,v in duo]+[(mark,1)],
@@ -64,17 +64,17 @@ def register(api):
       'amphora':('M6 1.7H10C9.4 3.8 9.9 4.9 10.9 6.4C13.2 9.8 10.8 12.7 8 14.3C5.2 12.7 2.8 9.8 5.1 6.4C6.1 4.9 6.6 3.8 6 1.7Z', un(st('M5.85 4.5C5.3 5.9 2 3.6 2 6.3C2 8 3.2 9.6 4.9 10.5'),api['mirror'](st('M5.85 4.5C5.3 5.9 2 3.6 2 6.3C2 8 3.2 9.6 4.9 10.5')))),
       'avocado':('M8 1C11 1 10 5 13 8C16 13 11 15 8 15C3 15 1 12 3 8C6 5 5 1 8 1Z',None),
       'bacon':('M5.6 1.6Q7.5 3.1 9.55 1.75L12.1 3.75Q10 6.25 11.45 9.25L9.3 14.3Q7.3 12.85 5.2 14.25L2.9 12.3Q4.7 9.8 3.3 6.9Z', 'M5.6 1.6Q7.6 4.4 5.9 7.1Q7.35 10.3 5.2 14.25M9.55 1.75Q10.8 4.2 8.65 7.05Q10.15 10.05 8.35 13.75'),
-      'barrel':('M4 2Q1 8 4 14H12Q15 8 12 2Z','M3 5H13M3 11H13M6 2Q4.5 8 6 14M10 2Q11.5 8 10 14'),
+      'barrel':('M4.1 2.1Q1.7 8 4.1 13.9H11.9Q14.3 8 11.9 2.1Z', 'M3.3 4.9H12.7M3.3 11.1H12.7M6.8 2.1Q5.3 8 6.8 13.9M9.2 2.1Q10.7 8 9.2 13.9'),
       'bean':('M11 2C16 2 15 9 11 12C7 16 1 15 1.5 10C2 6 6 9 7 6C7 3 8 2 11 2Z','M5 11Q10 11 11 6'),
       'beef':('M2.1 7Q1.8 4 4.8 3.4L10.4 2.3C14.5 1.6 16.1 6.7 12.6 8.7L10.1 10.2Q9 14.3 5.8 13.8C2.7 13.5 2 10.4 2.1 7Z',un(st(ci(10.8,5.5,1.5)),st('M4.3 7.6Q4.3 10.6 6.4 11',1.15))),
-      'beer':('M3 5H11V14H3Z','M11 6H13Q15 6 15 9Q15 12 11 12M5 7V12M8 7V12M3 5C0 2 4 0 6 2C8 0 11 1 11 5'),
+      'beer':('M3.2 5.1H10.9V13.8H3.2Z', 'M10.9 6.2H12.5C15.3 6.2 15.3 11.3 10.9 11.3M6.3 7.3V11.4M3.2 5.1C2.6 3.1 4.1 1.8 5.8 2.8Q9 1.2 10.9 5.1'),
       'blender':('M3 2H12L11 10H5Z','M5 10L3 14H13L11 10M12 3H14V7H12M6 5H8M7 12H9'),
-      'bottle-wine':('M6 1H10V5Q13 7 13 9V14H3V9Q3 7 6 5Z','M6 3H10M3 9H13'),
-      'broccoli':('M6 9C2 11 0 7 3 5C1 1 6 0 8 3C10 0 15 1 13 5C16 7 14 11 10 9L11 14H5Z','M6 6L8 9L11 6M8 9V13'),
+      'bottle-wine':('M6.5 1.6H9.5V5.6C9.5 7.2 11.4 7.5 11.4 9.1V14.3H4.6V9.1C4.6 7.5 6.5 7.2 6.5 5.6Z', 'M6.5 3.6H9.5M4.6 9.8H11.4'),
+      'broccoli':('M6.1 9.1C2.4 10.5 .7 7 3.2 5.4C2.2 2.3 5.7 1 8 3.1C10.3 1 13.8 2.3 12.8 5.4C15.3 7 13.6 10.5 9.9 9.1L10.7 14H5.3Z', 'M5.9 6.4L8 8.8L10.3 6.3M8 8.8V11.3'),
       'cake-slice':('M1.8 6.8L10.8 2.8Q13.6 3.8 14.2 6.2V12.6L1.8 13.4Z', 'M1.8 6.8L14.2 6.2M1.8 9.9Q3.3 8.4 4.8 9.7T8 9.5T11.2 9.3T14.2 9.1M5.8 9.95V13.1M10.3 8.95V12.9'),
       'can':(rr(4,2,8,12,2),'M4 5H12M4 12H12M7 3.5H9'),
-      'can-soda':(rr(4,2,8,12,2),'M4 5H12M4 12H12M7 3.5H9M7 7L9 9L7 10'),
-      'candy':('M5 4Q8 2 11 5Q14 8 11 11Q8 14 5 11Q2 8 5 4Z','M4 4L1 2V6L3 7M12 12L15 14V10L13 9M5 5L11 11'),
+      'can-soda':(rr(4,2,8,12,1.8), 'M4 4.8H12M4 11.7H12M5.8 9.7Q6.9 7 10.4 6.8'),
+      'candy':('M5.8 4.8C9.2 2.1 13.5 6.2 10.8 10.1L9.8 11.2C6.5 14 2.5 9.8 4.8 6Z', 'M5 5.8L3.2 4L1.5 8.4L4.4 8.7M10.8 10L12.8 12.1L14.5 7.8L11.7 7.4M5.4 10.8L9.8 5'),
       'carton':('M5 1H11L14 5V14H2V5Z','M2 5H14M5 1V5M11 1L8 5V14M10 8H12'),
       'cheese':('M2 7L12 2Q15 4 14 7V10Q11 10 12 13L14 14H2Z','M2 7H14M5 10H5.1M8 12H8.1'),
       'citrus':('M2 4.9L14 7.2C13.1 11.4 10.5 13.4 6.7 12.7C3 12 1.4 8.8 2 4.9Z', 'M2.3 5.1C2.4 11.3 10.8 13.5 13.8 7.3M8 6.1L5.3 9.6M8 6.1L9.4 10.6'),
@@ -110,7 +110,7 @@ def register(api):
         b,d,outlined,category,tags=drawings[n];drawings[n]=(b,un(d,st(center,1.1)),outlined,category,tags)
         if n=='donut':
             duo,solid,mono=base_layers(n);hole=ci(8,8,1.5);overrides[n]={'duotone':[(op(a,hole,po.PathOp.DIFFERENCE),v) for a,v in duo],'solid':op(solid,hole,po.PathOp.DIFFERENCE),'stroke':mono}
-    g('candy-cane','M5 14V5C5 0 13 0 13 5V7H10V5C10 3 8 3 8 5V14ZM5 8H8M5 11H8M7 2L9 4M10 2L12 4')
+    g('candy-cane',st('M4.55 14.25V5.5C4.55 .2 12.75 .2 12.75 5.5V6.9H10V5.4C10 3.65 7.35 3.65 7.35 5.4V14.25ZM4.55 9L7.35 7.1M4.55 12.45L7.35 10.55M5 3.45L7.4 5.4M9 1.65L10.65 4.45'))
     g('faucet','M2 8V14M2 10H9V7H14V10M5 10V5H10M7.5 5V2M5 2H10')
     s('fish-symbol','M3 8Q8 0 12 8Q8 16 3 8Z',un(ln((3,8),(1,5),(1,11),(3,8)),ci(9,7,.6)))
     berry=ci(0,0,2.1)
@@ -125,17 +125,22 @@ def register(api):
     s('groceries','M2 7H14L12 14H4Z',un(st('M4 7V3H6V7M9 7L11 2L13 3L12 7M6 10V12M10 10V12',1.1),ci(8,6,1.3)))
     s('hand-platter','M2.7 8C3.1 2.2 12.9 2.2 13.3 8Z','M1.6 8H14.4M8 1.8V3.7M1.8 11.9L4.2 10.35H8.6M2.4 14.25H8.4Q9.35 14.25 10 13.8L14.1 10.65')
     s('hop', 'M8 1.7C11.8 2.5 14.1 5.6 13.2 9C12.5 11.5 10.1 13.5 8 14.55C5.9 13.5 3.5 11.5 2.8 9C1.9 5.6 4.2 2.5 8 1.7Z', 'M3.8 4.5Q5.7 4.4 6.3 6Q7.5 4.5 8 4.3Q9.3 4.7 9.7 6Q10.6 4.5 12.2 4.5M8 1.7V4.3M2.6 7.4Q4.6 7.1 5.1 9Q5.6 7.1 6.3 6Q8 6.7 8 8.4Q8.8 6.7 9.7 6Q11 7.1 10.9 9Q11.6 7.1 13.4 7.4M5.1 9Q6.5 9.4 6.7 11Q7 9.1 8 8.4Q9.2 9.2 9.3 11Q9.8 9.5 10.9 9M3.5 4.9L4.3 7.65M12.5 4.9L11.7 7.65M8 13V14.55M4.3 11.2Q5.7 10.7 6.7 11Q7.7 11.7 8 13Q8.3 11.7 9.3 11Q10.3 10.7 11.7 11.2')
-    g('utensils-crossed','M2 1L7 6M1 3L6 8M4 1L8 5Q10 7 7 9L2 14M14 2Q8 4 10 8L14 14M14 2L10 8')
+    g('utensils-crossed',un(
+        st('M2 3.1L5.65 6.75Q6.75 7.85 7.8 6.8Q8.85 5.75 7.75 4.65L4.3 1.3'),
+        st('M3.15 2.2L6.6 5.65M7.7 6.8L14.1 13.65'),
+        st('M1.75 13.9L6.5 9.15M9.45 6.35Q9.35 3.3 14.15 1.65L10.6 6.8Z')))
     g('vegan','M2 5L7 14L13 3M8 7Q6 1 14 1Q14 8 8 7')
-    g('wheat','M3 14L12 3M6 11Q1 11 2 7Q6 7 6 11ZM8 8Q4 7 5 4Q9 4 8 8ZM10 6Q8 2 11 1Q13 3 10 6ZM6 11Q10 12 11 8Q8 7 6 11ZM9 8Q13 8 14 5Q11 4 9 8Z')
+    g('wheat',un(st('M2.1 14.35L11.85 3.7'),
+        st('M4.5 11.7Q1.25 11.45 1.55 8.4Q4.45 8.85 4.5 11.7ZM7 8.95Q3.25 8.35 3.9 5.1Q6.85 5.75 7 8.95ZM9.55 6.1Q6.35 5.25 7.15 2.1Q9.8 3 9.55 6.1ZM11.1 4.85Q10.35 1.7 13.6 1.35Q14 4.25 11.1 4.85Z'),
+        st('M2.25 14.25Q4.15 12.55 6.5 14.05Q4.8 15.3 2.25 14.25ZM4.5 11.7Q7.05 10.4 9.1 12.3Q7 14.45 4.5 11.7ZM7 8.95Q9.45 7.6 11.75 9.4Q10 11.8 7 8.95ZM9.55 6.1Q12.4 4.95 14.55 6.65Q12.55 8.8 9.55 6.1Z')))
     for n,base in [('bean-off','bean'),('beef-off','beef'),('beer-off','beer'),('candy-off','candy'),('carton-off','carton'),('egg-off','egg'),('fish-off','fish'),('hop-off','hop'),('milk-off','milk'),('nut-off','nut'),('wheat-off','wheat'),('wine-off','wine')]:off(n,base)
     homes={
       'air-vent':(rr(2,2,12,12,1.5),'M4 5H12M4 8H12M4 11H12'),
       'alarm-smoke':('M2 2.4H14V4.9Q14 6.7 11.8 6.7H4.2Q2 6.7 2 4.9Z', 'M4.7 4.55H6.2M9.8 4.55H11.3M5.8 9.1C3.4 11.4 7.2 11.9 5.3 14.2M10.8 9.1C8.4 11.4 12.2 11.9 10.3 14.2'),
-      'armchair':('M4 3H12V8H14V13H2V8H4Z','M4 8V10H12V8M4 13V15M12 13V15'),
-      'bed-double':('M2 5H14V13H2Z','M2 9H14M8 5V9M4 5V3H12V5M2 13V15M14 13V15'),
+      'armchair':('M2 8Q2 6.85 3.45 6.85H4V4.25Q4 2.65 5.6 2.65H10.4Q12 2.65 12 4.25V6.85H12.55Q14 6.85 14 8.15V12.8H2Z', 'M4 6.85Q5 6.85 5 8.1V9.45H11V8.1Q11 6.85 12 6.85M3.25 12.8V14.4M12.75 12.8V14.4M2.05 9.45H13.95'),
+      'bed-double':('M1.85 5.25H14.15V12.65H1.85Z', 'M1.9 9.1H14.1M8 5.25V9.1M2.55 5.25V3.65Q2.55 2.5 3.7 2.5H12.3Q13.45 2.5 13.45 3.65V5.25M1.85 12.65V14.55M14.15 12.65V14.55'),
       'bed-single':('M1.8 8H11.7Q14.3 8 14.3 10.1V11.4H1.8Z', 'M1.8 4.2V13.6M14.3 11.4V13.6M2 8V5.6H5.4Q7 5.6 7 8M7.1 8V6.4H11.2Q13.2 6.4 13.4 8.7'),
-      'blinds':(rr(2,2,12,10,1),'M2 5H14M2 8H14M11 2V14M10 14H12'),
+      'blinds':(rr(2.1,2,11.8,9.8), 'M2.1 5.25H13.9M2.1 8.5H13.9M10.85 2V14.35M9.85 14.35H11.85'),
       'fence':('M2 3L4 1L6 3V14H2ZM10 3L12 1L14 3V14H10Z','M1 6H15M1 11H15'),
       'fire-extinguisher':('M6 7Q6 5.7 7.5 5.3V4.5H10V5.3Q11.6 5.7 11.6 7V13Q11.6 14.3 10.3 14.3H7.3Q6 14.3 6 13Z', 'M7 4L12.8 2.2M8.5 4.3L12.6 4.8M7.5 4.6Q3 4.2 3 8.3V11M6.2 9H11.4'),
       'heater':(rr(2,4,12,9,1),'M5 6V11M8 6V11M11 6V11M4 13V15M12 13V15M4 1V2M8 1V2M12 1V2'),
@@ -151,7 +156,7 @@ def register(api):
       'towel-rack':('M6 4H12V14H6Z','M1 5H15M2 3V7M14 3V7M6 11H12M8 4V9'),
       'brush-cleaning':(rr(1.8,7.1,12.4,2.8), 'M4.1 7.1V5.7Q4.1 3.6 6.2 3.6H9.8Q11.9 3.6 11.9 5.7V7.1M2.5 9.9V13M5.25 9.9V13M8 9.9V13M10.75 9.9V13M13.5 9.9V13'),
       'mop':('M4.7 8.7L7.5 9.4Q8 11.3 10.3 13Q9.4 14.7 7.8 13.6Q6.4 15.1 4.8 13.6Q3 14.7 1.7 13.1Q4.1 11.3 4.7 8.7Z', 'M6.1 9L10.1 1.8M3.9 12.8L5 11.5'),
-      'toothbrush':(rr(6,1.5,3,5,1),'M7.5 6.5V14M3.5 2.5H6M3.5 4H6M3.5 5.5H6'),
+      'toothbrush':(rr(5.3,1.7,3.15,6.5), 'M6.9 8.2V14.35M2.8 2.8H5.4M2.8 5H5.4M2.8 7.2H5.4'),
     }
     for n,(b,d) in homes.items():s(n,b,d)
     g('bubbles',un(st(ci(5,10,4),1.2),st(ci(11,4,2.5),1.2),ci(13,12,1)))
@@ -161,18 +166,19 @@ def register(api):
     shine=p('M12.6 6.5Q13 8.7 15 9.1Q13 9.5 12.6 11.7Q12.2 9.5 10.2 9.1Q12.2 8.7 12.6 6.5Z')
     mop_body,mop_detail,*_=drawings['mop']
     s('mop-sparkles',mop_body,un(mop_detail,shine))
-    badge('toothbrush-sparkles','toothbrush',sparkle)
+    sparkle_face=p('M12.45 2.7Q12.95 4.85 14.65 5.4Q12.95 5.95 12.45 8.1Q11.95 5.95 10.25 5.4Q11.95 4.85 12.45 2.7Z')
+    badge('toothbrush-sparkles','toothbrush',st(sparkle_face),sparkle_face)
     lock_case=rr(10.3,11.4,4.3,3)
     lock_bow=st('M11.05 11.4V10.2A1.4 1.4 0 0 1 13.85 10.2V11.4')
     badge('door-closed-locked','door-closed',un(st(lock_case),lock_bow),un(lock_case,lock_bow))
     parcel=rr(9.25,9.5,5.2,4.85)
     badge('door-closed-package','door-closed',un(st(parcel),st('M9.4 11.8H14.3M11.85 9.6V11.8')),parcel)
     cog_face=ci(12.25,12.25,1.85)
-    tooth=st('M12.25 9.35V10.45')
-    teeth=[tooth.transform(1,0,0,1,-4.25,-4.25)]
-    cog=un(st(cog_face),*(tr(teeth[0],angle,dx=4.25,dy=4.25) for angle in range(0,360,60)))
+    tooth=st('M12.25 9.8V10.55')
+    tooth=tr(tooth,dx=-4.25,dy=-4.25)
+    cog=un(st(cog_face),*(tr(tooth,angle,dx=4.25,dy=4.25) for angle in range(0,360,60)))
     badge('door-closed-cog','door-closed',cog,ci(12.25,12.25,2.5))
-    badge('house-heart','home',mark('heart'),ci(12,12.25,2.5))
+    badge('house-heart','home',tr(mark('heart'),dx=.8,dy=.8),ci(12.85,13.15,2.1),(-.65,-.65))
     wifi=un(st('M9.45 10.7Q12 8.65 14.55 10.7M10.85 12.3Q12 11.35 13.15 12.3'),ci(12,14.1,.55))
     badge('house-wifi','home',wifi,ci(12,12,2.85))
     # Hand tools retain characteristic heads and working edges.
@@ -240,11 +246,11 @@ def register(api):
     # A park/tree grouping intentionally shows separate trunks and canopies.
     g('park','M3 11V15M1 15H15M1 8L3 2L5 8ZM7 10H14M8 10V13M13 10V13M8 7H14V10')
     pine=p('M4.7 2.1L8.1 8.9H6.2L7.6 11.1H5.3V14H4.1V11.1H1.6L3.1 8.9H1.5Z')
-    broadleaf=p('M10.7 4.1C12.1 3 14 4.1 13.8 5.9C16 7.4 14.5 10.7 12.1 10.7L12.3 14.1H9.95L10.2 10.7C7.7 11 6.4 8.2 8 6.4Q7.8 4.2 10.7 4.1Z')
+    broadleaf=p('M10.7 4.1C12.1 3 14 4.1 13.8 5.9C15.65 7.4 14.35 10.7 12.1 10.7L12.3 14.1H9.95L10.2 10.7C7.7 11 6.4 8.2 8 6.4Q7.8 4.2 10.7 4.1Z')
     stack('trees',[pine,broadleaf])
     # Board games and leisure symbols.
     g('bow-arrow','M2.2 2.7Q12.5 3.5 13.3 13.8L4.3 11.7ZM2.3 13.7L13.9 2.1M10.7 2.1H13.9V5.3')
-    s('bomb',ci(7,9,5),st('M10 5L12 3Q13 1 15 2M13 1V3',1.2))
+    s('bomb',ci(7.3,9.1,5.15),st('M10.6 5.1L11.7 3.6Q12.55 2.2 14.25 2.45'))
     leaf=p('M8 8C7.9 6.6 5.4 5.1 5.5 3.4C5.6 1.3 7.2 1.1 8 2.2C8.8 1.1 10.4 1.3 10.5 3.4C10.6 5.1 8.1 6.6 8 8Z')
     clover=un(*(tr(leaf,angle) for angle in (0,90,180,270)))
     s('clover',clover,st('M8 8Q10 12.8 13.6 14.1',1.2))
@@ -267,7 +273,7 @@ def register(api):
     s('playing-card',rr(3,1,10,14,1.5),poly([(8,5),(11,8),(8,11),(5,8)]))
     s('playing-cards',un(rr(1,1,9,12,1.5),rr(6,3,9,12,1.5)),un(st(rr(6,3,9,12,1.5),1.1),poly([(10.5,7),(12.5,9),(10.5,11),(8.5,9)])))
     fan_card=rr(5,2.6,6.6,10.9)
-    fan=[tr(fan_card,-23,dx=-2.4,dy=.2),tr(fan_card,-8,dx=-.7),tr(fan_card,12,dx=1.5,dy=.2)]
+    fan=[tr(fan_card,-23,dx=-2.2,dy=.2),tr(fan_card,-8,dx=-.7),tr(fan_card,12,dx=1.5,dy=.2)]
     stack('playing-cards-fan',fan,tr(un(st('M8.3 5.8L9.95 8L8.3 10.2L6.65 8Z'),st('M6.55 4.5H7.6M9 11.5H10.05')),12,dx=1.5,dy=.2))
     for n,text in [('scroll',False),('scroll-text',True)]:
         s(n,'M4 2H13Q15 2 15 4V5H12V12Q12 15 9 15H3Q1 15 1 12H4Z',st('M4 2V5M4 12H9Q8 15 9 15'+('M6 6H10M6 9H10' if text else ''),1.1))
@@ -310,7 +316,7 @@ def register(api):
       'azerbaijani-manat':'M2 13C2 0 14 0 14 13M8 1V14',
       'bangladeshi-taka':'M3 2L7 4V10Q7 15 12 12Q15 10 12 8M3 6H11',
       'belarusian-ruble':'M2.4 13V2.8H5.6C9.2 2.8 9.2 7.5 5.6 7.5H2.4M5.5 7.5C9.6 7.5 9.6 13 5.5 13H2.4M10.9 13V7.5M10.9 10Q11.8 7.5 14.1 7.5',
-      'bitcoin':'M5 3H9Q14 3 12 7Q15 12 9 13H4M5 3V13M4 7.5H10M7 1V3M10 1V3M7 13V15M10 13V15',
+      'bitcoin':'M5.25 3.45H9.05C12.95 3.45 12.95 7.85 9.05 7.85H5.25M9.05 7.85C13.65 7.85 13.65 12.55 9.05 12.55H4.05M5.25 3.45V12.55M4.05 3.45H5.25M6.85 1.55V3.45M10 1.55V3.45M6.85 12.55V14.45M10 12.55V14.45',
       'emirati-dirham':'M4 2H8C16 2 16 14 8 14H4M5 2V14M2 6H14M2 10H14',
       'georgian-lari':'M12 8C12 1 3 1 3 8Q3 14 8 14H13M6 1V9M9 1V9M2 14H13',
       'kazakh-tenge':'M2 2H14M2 5H14M8 5V14',
@@ -341,25 +347,28 @@ def register(api):
     badge_body=api['badge_body']()
     for typ in small_currency:
         s('badge-'+typ,badge_body,currency_mark(typ))
-    s('badge-percent',badge_body,un(st('M5.55 10.8L10.45 5.2'),st(ci(5.45,5.4,1.05)),st(ci(10.55,10.6,1.05))))
+    s('badge-percent',badge_body,un(st('M5.7 10.3L10.3 5.7'),st(ci(5.85,5.85,.93)),st(ci(10.15,10.15,.93))))
     receipt=p('M3.05 1.7L5.55 2.65L8 1.7L10.45 2.65L12.95 1.7V14.3L10.45 13.35L8 14.3L5.55 13.35L3.05 14.3Z')
     for typ in small_currency:
         if typ!='dollar-sign':
             s('receipt-'+typ,receipt,currency_mark(typ))
     s('receipt-text',p('M3 1L5 2L7 1L9 2L11 1L13 2V15L11 14L9 15L7 14L5 15L3 14Z'),'M5 5H11M5 8H11M5 11H9')
-    for n,typ in [('banknote-check','check'),('banknote-x','x')]:badge(n,'banknote',tr(mark(typ),dx=.45,dy=1.15),ci(12.6,13.35,2.65))
+    for n,typ in [('banknote-check','check'),('banknote-x','x')]:badge(n,'banknote',api['check'](12.35,13.4,.58) if typ=='check' else api['cross'](13.05,12.8,.75),offset=(0,-1.85))
     for n,d in [('banknote-arrow-down','M12 9V15M9.5 12.5L12 15L14.5 12.5'),('banknote-arrow-up','M12 15V9M9.5 11.5L12 9L14.5 11.5')]:badge(n,'banknote',st(d.replace('15','14.65')))
     s('credit-card-reader',rr(3,4,10,11,1.5),'M5 4V1H11V4M5 7H11M5 10H5.1M8 10H8.1M11 10H11.1M5 13H5.1M8 13H8.1')
     s('smartphone-nfc',rr(2,1,8,14,1.5),st('M5 12H7M12 5Q15 8 12 11M11 7Q12 8 11 9',1.1))
     s('hand-coins','M1.7 10.1L4 9.7L6 8.1Q6.6 7.7 7.4 7.9L9.3 8.4Q10.8 8.9 9.8 10.1L8 10.4L12.9 8.5Q14.1 8.2 14.3 9.2Q14.5 10 13.7 10.6L8.4 13.9Q7.8 14.3 6.8 14.1L2.4 13.3Z','M6 10.5L8 10.4M4.3 5.4A1.7 1.7 0 1 0 4.3 2A1.7 1.7 0 1 0 4.3 5.4ZM10.3 5.3A1.5 1.5 0 1 0 10.3 2.3A1.5 1.5 0 1 0 10.3 5.3Z')
-    s('cap','M2 10V8C2 0 12 0 12 8V10Z','M2 10H15Q14 14 7 12M7 3V8')
+    s('cap','M2.1 9.75V8.05C2.1 1.4 11.7 1.4 11.7 8.05V9.75Z','M6.9 3.25V7.7M6.7 9.75H14.5Q13.6 12.4 10.6 12Q8.05 11.75 6.7 9.75Z')
     s('handbag','M3 5H13L14 14H2Z','M5 5V3Q8-1 11 3V5M5 7V9M11 7V9')
     s('perfume-bottle',rr(3,6,10,8,2),'M6 6V3H10V6M5 3H11V1H5ZM6 9H10V12H6Z')
     s('shirt','M5 2L1 5L3 8L5 7V14H11V7L13 8L15 5L11 2Q8 6 5 2Z')
-    for n,t in [('shopping-cart-minus','minus'),('shopping-cart-plus','plus')]:badge(n,'shopping-cart',mark(t))
+    cart_body,cart_detail,*_=drawings['shopping-cart']
+    for kind in ('minus','plus'):
+        symbol=api['plus'](8.6,7,.61) if kind=='plus' else ln((7.25,7),(9.95,7))
+        s('shopping-cart-'+kind,cart_body,un(cart_detail,symbol))
     # Buildings distinguish rooflines, circulation, and specific functions.
     buildings={
-      'brick-wall':(rr(1,2,14,12,.4),'M1 6H15M1 10H15M5 2V6M11 2V6M8 6V10M4 10V14M12 10V14'),
+      'brick-wall':(rr(1.6,2.1,12.8,11.8), 'M1.6 6H14.4M1.6 10H14.4M5.35 2.1V6M10.65 2.1V6M8 6V10M5.35 10V13.9M10.65 10V13.9'),
       'castle':('M1 3H3V5H5V3H7V7H9V3H11V5H13V3H15V14H1Z','M6 14V10Q8 7 10 10V14'),
       'church':('M3 14V7L8 3L13 7V14Z','M8 1V4M6 2H10M6 14V10Q8 8 10 10V14'),
       'dam':('M7.5 3.7H10.8L14.3 13.5H6.3Z', 'M1.5 6.3Q3 5.1 4.5 6.3T7.2 6.3M1.5 9.8Q3 8.6 4.5 9.8T6.7 9.8M9.1 3.7L10.9 13.5'),
@@ -368,24 +377,30 @@ def register(api):
       'factory':('M1 14V7L6 4V7L11 4V8H15V14ZM12 8V1H14V8','M4 10V12M8 10V12M12 10V12'),
       'hotel':(rr(2,1,12,14,.5),'M5 4V8M11 4V8M5 6H11M6 15V11H10V15'),
       'lighthouse':('M5 5H11L12 14H4Z','M4 5H12M5 5V2H11V5M4 2L8 1L12 2M5 8H11M4.5 11H11.5M1 4H3M13 4H15'),
-      'mosque':('M4.55 8.15Q4.65 5.9 8 3.6Q11.35 5.9 11.45 8.15V13.95H4.55Z', 'M1.55 13.95V5.3H3.65V13.95ZM1.35 5.3L2.6 2.7L3.85 5.3M12.35 13.95V5.3H14.45V13.95ZM12.15 5.3L13.4 2.7L14.65 5.3M6.7 13.95V11.1Q8 8.9 9.3 11.1V13.95M8 3.6V1.85'),
+      'mosque':('M4.15 9.05C4.15 6.9 6.15 5.1 8 3.7C9.85 5.1 11.85 6.9 11.85 9.05V13.85H4.15Z', 'M1.6 13.85V5.55L2.85 2.5L4.1 5.55H1.6M14.4 13.85V5.55L13.15 2.5L11.9 5.55H14.4M1.6 13.85H4.15M11.85 13.85H14.4M6.65 13.85V11Q8 8.85 9.35 11V13.85'),
       'school':('M2 14V7H5V4L8 1L11 4V7H14V14Z',un(st('M6 14V10H10V14M3.5 9H3.6M12.5 9H12.6',1.1),st(ci(8,5.2,1.45),.85),st('M8 4.5V5.2H8.6',.65))),
-      'theater':('M1 2H9V8Q5 13 1 8ZM8 6H15V12Q11.5 17 8 12Z','M3 5H3.1M7 5H7.1M3 7Q5 9 7 7M10 9H10.1M13 9H13.1M10 13Q11.5 11 13 13'),
+      'theater':('M1.65 2.2H9.1V7.1Q9.1 9.25 5.4 11Q1.65 9.25 1.65 7.1Z', None),
       'university':('M1 6L8 1L15 6Z','M2 14H14M3 7V12M6 7V12M10 7V12M13 7V12'),
       'warehouse':('M1 14V6L8 2L15 6V14Z','M4 14V8H12V14M4 10H12M4 12H12'),
     }
     for n,(b,d) in buildings.items():s(n,b,d)
+    mask_back=drawings['theater'][0]
+    mask_front=p('M7.25 6.05H14.35V10.75Q14.35 12.95 10.8 14.6Q7.25 12.95 7.25 10.75Z')
+    expressions=un(dots((3.6,4.8),(7.05,4.8),(9.15,8.65),(12.55,8.65),r=.55),
+                   st('M3.15 7.15Q4.75 9.45 6.45 7.15ZM9.2 11.65Q10.8 10.15 12.4 11.65'))
+    del drawings['theater']
+    stack('theater',[mask_back,mask_front],expressions)
     g('utility-pole','M8 1V15M2 3H14M4 6H12M3 2V4M13 2V4M5 5V7M11 5V7')
     badge('house-cog','home',cog,ci(12.25,12.25,2.5))
-    badge('house-plus','home',mark('plus'))
+    badge('house-plus','home',api['plus'](13.2,13.3,.72),ci(13.2,13.3,1.8),(-.7,-.7))
     plug=st('M10.9 9.1V11.1M13.8 9.1V11.1M10.1 11.1H14.6Q14.55 13.45 12.35 13.45Q10.15 13.45 10.1 11.1ZM12.35 13.45V14.75')
-    badge('house-plug','home',plug,rr(10.05,9,4.6,5.6))
+    badge('house-plug','home',plug,rr(10.05,9,4.6,5.6),(-.75,-.75))
     house_face=drawings['home'][0]
     rear_house=tr(house_face,scale=.73,dx=-2.35,dy=-1.75)
     front_house=tr(house_face,scale=.74,dx=2.15,dy=1.8)
     stack('houses',[rear_house,front_house],st('M9 14.2V10.9H11.45V14.2'))
     transport={
-      'bus-front':(rr(3,1.5,10,12,2),'M3 5H13M3 9H13M5 11H5.1M11 11H11.1M4 13V15M12 13V15M1 5V8M15 5V8'),
+      'bus-front':(rr(3,2,10,11,1.8), un(st(rr(4.5,4.1,7,4.4,.7),1.15),dots((5.5,10.7),(10.5,10.7),r=.68),st('M4.5 13V14.4M11.5 13V14.4M1.5 5.2V7.2M14.5 5.2V7.2',1.25))),
       'car-battery':(rr(2,4,12,10,1),'M4 4V2H6V4M10 4V2H12V4M4 9H7M5.5 7.5V10.5M10 9H12'),
       'car-front':('M2 8L4 3H12L14 8V13H2Z','M2 8H14M4 10H5M11 10H12M3 13V15M13 13V15'),
       'car-taxi-front':('M2 8L4 4H12L14 8V13H2Z','M2 8H14M6 4V1H10V4M4 10H5M11 10H12M3 13V15M13 13V15'),
@@ -402,7 +417,7 @@ def register(api):
       'sailboat':('M1 11H15L12 15H4Z','M8 11V1L14 9H8M6 3L2 9H6Z'),
       'ship-cargo':('M1.6 10.2H14.4L12.4 13.8H4.4Z', 'M2.5 10.2V7.2H9.35V10.2M5.9 7.2V10.2M3.4 7.2V4.55H6.75V7.2M11.05 10.2V3.6H13.7V10.2'),
       'tractor':('M1.75 7.1V2H7.3L8.2 6.6H12.75Q14.2 6.6 14.2 8V9.4H8.8L7.4 10.3Q6.45 7.2 3.9 7.1Z', 'M1.75 5.3H7.95M5.1 2V5.3M8.2 6.6V9.9M11.5 6.6V4.3M11.1 6.65V9.4'),
-      'traffic-cone':('M7 1H9L13 13H3Z','M5 6H11M4 10H12M1 14H15'),
+      'traffic-cone':('M7.05 1.8H8.95L12.75 12.8H3.25Z', 'M5.7 5.75H10.3M4.5 9.15H11.5M1.65 14.65H14.35'),
       'trailer':(rr(2,4,11,8,1),'M13 10H15M4 12V14M11 12V14M5 4V12'),
       'train-front-tunnel':(rr(4.45,5.35,7.1,7.05), un(st('M1.65 13.25V7.1C1.65-.15 14.35-.15 14.35 7.1V13.25M5.8 12.4L4.75 14.5M10.2 12.4L11.25 14.5M4.5 8.8H11.5'),dots((6.65,10.6),(9.35,10.6),r=.55))),
       'tram-front':(rr(3,3,10,10,2),'M3 7H13M5 10H5.1M11 10H11.1M8 3V1M5 1H11M5 13L3 15M11 13L13 15'),
@@ -413,7 +428,7 @@ def register(api):
         b,d,o,c,t=drawings[n];drawings[n]=(b,un(d,st(ci(4,11.6,2.55),1.25),st(ci(12.2,12.1,1.8),1.25)),o,c,t)
     b,d,o,c,t=drawings['forklift']
     drawings['forklift']=(b,un(d,dots((2.9,13),(7.2,13),r=1.25)),o,c,t)
-    s('baggage-claim',rr(3,2,9,8,1),'M5 2V1H10V2M1 12H15M1 15H15M3 12V15M7 12V15M11 12V15')
+    s('baggage-claim',rr(3.5,4.9,9,5.9,1.1),'M6 4.9V2H10V4.9M2.4 12.2H13.6Q15.2 13.4 13.6 14.4H2.4Q.8 13.4 2.4 12.2Z')
     s('circle-gauge',ci(),un(st('M4 8A4 4 0 0 1 12 8M8 9L11 6',1.1),ci(8,9,.8)))
     s('octagon-minus',poly([(5,1),(11,1),(15,5),(15,11),(11,15),(5,15),(1,11),(1,5)]),'M4 8H12')
     g('drone',un(st('M4 4L12 12M4 12L12 4',1.4),*(st(ci(x,y,2.5),1.1) for x,y in [(3.5,3.5),(12.5,3.5),(3.5,12.5),(12.5,12.5)]),ci(8,8,1.5)))
@@ -422,30 +437,32 @@ def register(api):
     g('scooter',un(st(ci(3,13,2),1.1),st(ci(13,13,2),1.1),st('M3 13H10L12 2H9M12 2L13 13',1.2)))
     g('ship-wheel',un(st(ci(8,8,4.5),1.2),ci(8,8,1),st('M8 1V15M1 8H15M3 3L13 13M3 13L13 3',1.1)))
     g('train-track','M5 1L2 15M11 1L14 15M4.5 4H11.5M4 7H12M3.5 10H12.5M3 13H13')
-    badge('truck-electric','truck',poly([(12,8),(9,12),(12,12),(11,15),(15,10),(12,10)]))
+    truck_body,truck_detail,*_=drawings['truck']
+    s('truck-electric',truck_body,un(truck_detail,st('M6.6 4.8L4.5 7.1H6.7L4.65 9.6')))
     # Rotate the unexpanded airframe before outlining the wing and tail edges.
     for n,angle,dy in [('plane-takeoff',60,-1.9),('plane-landing',120,-.2)]:
         plane_body=tr(drawings['plane'][0],angle,.77,0,dy)
         s(n,plane_body,ln((2,14.1),(14,14.1)))
-    for typ in ['check','minus','plus','x']:
-        m=mark(typ) if typ!='percent' else un(st('M10 14L14 10',.9),ci(10,10,.55),ci(14,14,.55))
-        badge('ticket-'+typ,'ticket',m)
-    ticket_face=drawings['ticket'][0]
+    ticket_face,ticket_detail,*_=drawings['ticket']
+    for kind in ('check','minus','plus','x'):
+        symbol=tr(mark(kind),dx=-5.1,dy=-4)
+        s('ticket-'+kind,ticket_face,un(ticket_detail,symbol))
     percent=un(st('M6.15 10.45L9.85 5.55'),dots((5.95,5.85),(10.05,10.15),r=.65))
     s('ticket-percent',ticket_face,percent)
     off('ticket-slash','ticket')
-    duo,solid,mono=base_layers('ticket');front=lambda a:tr(a,scale=.75,dx=1.3,dy=2);back=lambda a:tr(a,scale=.75,dx=-1.3,dy=-2)
-    clear=un(front(solid),st(front(solid),1.6));g('tickets',un(op(back(mono),clear,po.PathOp.DIFFERENCE),front(mono)))
-    overrides['tickets']={'solid':un(op(back(solid),clear,po.PathOp.DIFFERENCE),front(solid))}
+    front_ticket=tr(ticket_face,scale=.80,dx=.9,dy=1.85)
+    back_ticket=tr(ticket_face,scale=.80,dx=-.9,dy=-2)
+    stack('tickets',[back_ticket,front_ticket],st('M10.75 7.75V8.5M10.75 10.65V11.4'))
     ticket_front=tr(ticket_face,scale=.83,dx=.7,dy=1.3)
     ticket_rear=tr(ticket_face,scale=.83,dx=-.7,dy=-1.7)
     plane_mark=st('M8.7 6.35V11.7M6.1 9.65L8.7 8.05L11.3 9.65M7.55 11.9L8.7 11.25L9.85 11.9')
     stack('tickets-plane',[ticket_rear,ticket_front],plane_mark)
     # Travel infrastructure and destination cues.
     g('bridge','M1 13H15M3 3V15M13 3V15M3 4Q8 13 13 4M5 7V13M8 9V13M11 7V13')
-    s('briefcase-business',rr(2,5,12,9,1.5),'M5 5V2H11V5M2 8Q8 12 14 8M7 9V11H9V9')
-    badge('briefcase-plus','briefcase',tr(mark('plus'),dx=.85,dy=1.2),ci(12.85,13.2,2.2))
-    s('briefcase-conveyor-belt',rr(3,3,10,7,1),'M6 3V1H10V3M1 12H15M1 15H15M3 12V15M7 12V15M11 12V15')
+    s('briefcase-business',rr(2,5.2,12,8.7,1.5),un(st('M5.3 5.2V2.3H10.7V5.2M2.2 8.1Q4.2 9.1 6.7 9.1M9.3 9.1Q11.8 9.1 13.8 8.1',1.2),rr(6.7,8.3,2.6,1.9,.55)))
+    bag_face,bag_detail,*_=drawings['briefcase']
+    s('briefcase-plus',bag_face,un(bag_detail,api['plus'](13.45,2.55,.6)))
+    s('briefcase-conveyor-belt',rr(3.1,4.6,9.8,6.6,1.2),'M5.8 4.6V2H10.2V4.6M3 11.4H13C15 11.4 15 14.4 13 14.4H3C1 14.4 1 11.4 3 11.4Z')
     s('cigarette',rr(1,9,13,4,.3),'M5 9V13M11 7Q13 5 11 3M14 7Q16 5 14 2')
     off('cigarette-off','cigarette')
     s('concierge-bell','M2 12C2 2 14 2 14 12Z','M1 14H15M8 5V2M6 2H10')
@@ -455,8 +472,8 @@ def register(api):
     # Human gestures and expression changes, with facial counters in Solid.
     for n,d in [('face-angry','M4 5L6.5 6M9.5 6L12 5M5 11Q8 8 11 11'),('face-expressionless','M4 6H6M10 6H12M5 11H11'),('face-grinning','M4.7 9H11.3Q10.6 12 8 12Q5.4 12 4.7 9Z')]:
         s(n,ci(),un(st(d,1.1),dots((5,6),(11,6),r=.55) if n!='face-expressionless' else po.Path()))
-    badge('face-slightly-smiling-plus','smile',mark('plus'))
-    s('balloon','M8 1C17 1 15 12 8 13C1 12-1 1 8 1Z','M8 13L7 15H9M8 15Q11 17 13 14')
+    badge('face-slightly-smiling-plus','smile',api['plus'](13.35,13.35,.72),offset=(-.7,-.7))
+    s('balloon','M8 1.65C11.25 1.65 13.1 3.9 13.1 6.45C13.1 9.4 10.8 11.8 8 12.5C5.2 11.8 2.9 9.4 2.9 6.45C2.9 3.9 4.75 1.65 8 1.65Z','M8 12.5L7.15 13.65H8.85ZM8 13.65Q8.7 15.05 10.45 14.35')
     s('biceps-flexed','M2 11.6L3.3 6.3Q3.6 5.1 4.4 3.8L5.3 2.4Q5.8 1.7 6.7 1.9L8.1 2.2Q9.2 2.5 8.9 3.6L8.6 4.6Q8.4 5.2 7.6 5.1L6.5 4.9L6.2 8.3C8.4 6.2 11.2 6.5 12.1 8.6Q14.1 8.3 14.2 10.7C14.3 13.2 11.6 14.2 8.2 14Q4.1 14 2 12.6Z','M6.2 8.3Q5.6 9.3 5.5 10.5')
     s('hand-helping','M1.7 11.1L4.3 10.5L6.1 8.5Q6.8 7.7 7.6 8.4Q8 8.9 7.6 9.6L6.9 10.6L9.7 9.7Q11 9.4 11 10.4Q11 10.9 10.3 11.4L7.2 13.6Q6.5 14.1 5.5 14L2 13.5Z','M14.1 2.4L10.8 2.5Q9.4 2.5 8.3 3.5L5.3 6.1Q4.9 6.7 5.7 7.1L9 5.3M9 5.3Q8.6 7 9.6 7Q10.3 7.2 11.1 6.3L12.6 4.9L14.3 4.8')
     s('hand-metal','M3 9V2Q5 0 5 3V7H7V5H9V7H11V2Q13 0 13 3V11Q13 15 9 15H6Q4 15 3 12L1 9Q1 7 3 9Z','M5 7V10M9 7V10')
@@ -481,7 +498,7 @@ def register(api):
         sun=ci(10.35,5.95,2.7)
         rays=st('M10.35 1.3V1.85M13.3 3L13.85 2.45M14.45 5.95H14.75')
         stack('cloud-sun'+('-rain' if wet else ''),[sun,front],un(rays,rain) if wet else rays)
-    stack('cloudy',[cloud(.71,2.05,-2.05),cloud(.76,-1.75,1.75)])
+    stack('cloudy',[cloud(.70,1.87,-2.05),cloud(.73,-1.52,1.75)])
     off('droplet-off','droplet');off('umbrella-off','umbrella')
     drops=[tr(drawings['droplet'][0],scale=.65,dx=-2.7,dy=1.8),
            tr(drawings['droplet'][0],scale=.43,dx=3.3,dy=-3.15)]
@@ -494,7 +511,7 @@ def register(api):
     def sunlight(cx,cy):
         ray=st('M8 3.3V4.2')
         return un(*(tr(ray,angle,dx=cx-8,dy=cy-8) for angle in range(0,360,45)))
-    s('sun-snow',ci(5.65,5.85,2.3),un(sunlight(5.65,5.85),snow(10.85,10.9,3.8)))
+    s('sun-snow',ci(5.95,6,2.25),un(sunlight(5.95,6),snow(10.85,10.9,3.8)))
     thermometer=p('M3.25 3.25A1.55 1.55 0 0 1 6.35 3.25V9.45A2.85 2.85 0 1 1 3.25 9.45Z')
     for kind in ('sun','snowflake'):
         symbol=un(st(ci(11.35,5.6,1.8)),st('M11.35 1.45V2M11.35 9.2V9.75M7.85 5.6H7.35M14.45 5.6H14.8')) if kind=='sun' else snow(11.35,6.4,3.35)
@@ -502,10 +519,13 @@ def register(api):
     g('tornado','M1 2H15M3 5H13M5 8H11M7 11H12M8 14H10')
     g('waves-horizontal','M1 3Q4 1 7 3T15 3M1 8Q4 6 7 8T15 8M1 13Q4 11 7 13T15 13')
     g('waves-vertical','M3 1Q1 4 3 7T3 15M8 1Q6 4 8 7T8 15M13 1Q11 4 13 7T13 15')
-    for base in ['waves','wind']:
-        for direction in ['down','up']:
-            m=st('M12 9V15M9.5 12.5L12 15L14.5 12.5' if direction=='down' else 'M12 15V9M9.5 11.5L12 9L14.5 11.5',1.1)
-            badge(base+'-arrow-'+direction,'waves-horizontal' if base=='waves' else base,m)
+    for direction in ('down','up'):
+        arrow=st('M12.05 8.9V14.55M9.7 12.2L12.05 14.55L14.4 12.2' if direction=='down' else
+                 'M12.05 14.55V8.9M9.7 11.25L12.05 8.9L14.4 11.25')
+        wave=st('M1.6 3.3Q4.45 1.45 7.8 3.3T14.4 3.3M1.6 7.6Q4.45 5.75 7.8 7.6M1.6 11.9Q4.45 10.05 7.8 11.9')
+        gust=st('M1.6 5H10.6Q13.85 5 13 2.9Q12.3 1.4 10.7 2.3M1.6 8.5H8M2 11.55H5.55Q8.55 11.55 7.75 13.65Q7 15.1 5.65 14')
+        g('waves-arrow-'+direction,un(wave,arrow))
+        g('wind-arrow-'+direction,un(gust,arrow))
     for n,counters in {
         'feather':st('M4.4 11.2Q7 8.4 10.3 5.6',1.2),
         'helicopter':p('M9.8 6.8Q12.1 7 13 8.7H10.7Z'),
