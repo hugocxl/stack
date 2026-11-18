@@ -1,6 +1,6 @@
 # Coverage catalog
 
-2242 names; 6564 SVG drawings across the available styles.
+2273 names; 6657 SVG drawings across the available styles.
 
 | Category | Names |
 | --- | ---: |
@@ -21,11 +21,11 @@
 | Interface controls | 102 |
 | Layout | 111 |
 | Maps and travel | 111 |
-| Math and symbols | 31 |
-| Media | 74 |
+| Math and symbols | 38 |
+| Media | 86 |
 | Media and communication | 54 |
 | Navigation | 158 |
-| People and accessibility | 38 |
+| People and accessibility | 39 |
 | Photography and optics | 34 |
 | Product tools | 177 |
 | Security | 16 |
@@ -34,7 +34,7 @@
 | Technology and development | 176 |
 | Time and planning | 23 |
 | Transform and flow | 20 |
-| Typography and text | 127 |
+| Typography and text | 138 |
 | Weather and nature | 71 |
 | Work and education | 37 |
 
@@ -108,11 +108,11 @@
 
 ## Math and symbols
 
-`ampersand`, `ampersands`, `circle-divide`, `circle-equal`, `copyleft`, `creative-commons`, `divide`, `equal-approximately`, `equal-approximately-not`, `equal-not`, `exclamation-mark`, `lambda`, `omega`, `phi`, `pilcrow`, `question-mark`, `section`, `sigma`, `square-asterisk`, `square-divide`, `square-equal`, `square-function`, `square-pi`, `square-pilcrow`, `square-sigma`, `tally-1`, `tally-2`, `tally-3`, `tally-4`, `tally-5`, `weight-tilde`
+`ampersand`, `ampersands`, `circle-divide`, `circle-equal`, `copyleft`, `creative-commons`, `divide`, `equal-approximately`, `equal-approximately-not`, `equal-not`, `exclamation-mark`, `greater-than`, `greater-than-equal`, `lambda`, `less-than`, `less-than-equal`, `multiply`, `omega`, `phi`, `pilcrow`, `question-mark`, `section`, `sigma`, `square-asterisk`, `square-divide`, `square-equal`, `square-function`, `square-pi`, `square-pilcrow`, `square-root`, `square-sigma`, `sum`, `tally-1`, `tally-2`, `tally-3`, `tally-4`, `tally-5`, `weight-tilde`
 
 ## Media
 
-`airplay`, `audio-mono`, `audio-spatial`, `audio-stereo`, `audio-transcription`, `bomb`, `bow-arrow`, `camera`, `camera-off`, `cast`, `chess-bishop`, `chess-king`, `chess-knight`, `chess-pawn`, `chess-queen`, `chess-rook`, `clover`, `crown`, `dice-1`, `dice-2`, `dice-3`, `dice-4`, `dice-5`, `dice-6`, `dices`, `disc`, `fast-forward`, `film`, `gamepad-2`, `gamepad-directional`, `gem`, `ghost`, `goal`, `headphone-off`, `headphones`, `image`, `image-down`, `image-play`, `image-plus`, `image-up`, `image-upscale`, `joystick`, `microphone`, `microphone-off`, `music`, `noise-cancellation`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `playback-speed`, `playing-card`, `playing-cards`, `playing-cards-fan`, `podcast`, `radio`, `rewind`, `scroll`, `scroll-text`, `skip-back`, `skip-forward`, `skull`, `stop`, `stop-circle`, `sword`, `swords`, `tic-tac-toe`, `tombstone`, `toy-brick`, `tv`, `video`, `volume`, `volume-off`, `waveform`
+`airplay`, `audio-mono`, `audio-spatial`, `audio-stereo`, `audio-transcription`, `bomb`, `bow-arrow`, `camera`, `camera-off`, `cast`, `chess-bishop`, `chess-king`, `chess-knight`, `chess-pawn`, `chess-queen`, `chess-rook`, `clover`, `crown`, `dice-1`, `dice-2`, `dice-3`, `dice-4`, `dice-5`, `dice-6`, `dices`, `disc`, `fast-forward`, `film`, `frame-backward`, `frame-forward`, `gamepad-2`, `gamepad-directional`, `gem`, `ghost`, `go-backward-10`, `go-backward-15`, `go-backward-30`, `go-forward-10`, `go-forward-15`, `go-forward-30`, `goal`, `headphone-off`, `headphones`, `image`, `image-down`, `image-play`, `image-plus`, `image-up`, `image-upscale`, `joystick`, `microphone`, `microphone-off`, `music`, `noise-cancellation`, `pause`, `pause-circle-fill`, `play`, `play-circle`, `play-pause`, `playback-speed`, `playing-card`, `playing-cards`, `playing-cards-fan`, `podcast`, `radio`, `record`, `rewind`, `scroll`, `scroll-text`, `skip-back`, `skip-forward`, `skull`, `slow-motion`, `stop`, `stop-circle`, `sword`, `swords`, `tic-tac-toe`, `timelapse`, `tombstone`, `toy-brick`, `tv`, `video`, `volume`, `volume-off`, `waveform`
 
 ## Media and communication
 
@@ -124,7 +124,7 @@
 
 ## People and accessibility
 
-`accessibility`, `assistive-listening`, `audio-description`, `baby`, `balloon`, `biceps-flexed`, `circle-user`, `contact`, `ear`, `ear-off`, `face-angry`, `face-expressionless`, `face-grinning`, `face-slightly-smiling-plus`, `frown`, `hand`, `hand-helping`, `hand-metal`, `hearing-aid`, `heart-crack`, `heart-handshake`, `id-card`, `meh`, `party-popper`, `person-hiking`, `person-running`, `person-seated`, `person-walking`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`, `wheelchair-active`
+`accessibility`, `assistive-listening`, `audio-description`, `baby`, `balloon`, `biceps-flexed`, `circle-user`, `contact`, `ear`, `ear-off`, `face-angry`, `face-expressionless`, `face-grinning`, `face-laugh`, `face-slightly-smiling-plus`, `frown`, `hand`, `hand-helping`, `hand-metal`, `hearing-aid`, `heart-crack`, `heart-handshake`, `id-card`, `meh`, `party-popper`, `person-hiking`, `person-running`, `person-seated`, `person-walking`, `smile`, `thumbs-down`, `thumbs-up`, `user`, `user-check`, `user-plus`, `user-x`, `users`, `wheelchair`, `wheelchair-active`
 
 ## Photography and optics
 
@@ -160,7 +160,7 @@
 
 ## Typography and text
 
-`a-arrow-down`, `a-arrow-up`, `a-large-small`, `baseline`, `binary`, `case-lower`, `case-sensitive`, `case-upper`, `circle-letter-a`, `circle-letter-b`, `circle-letter-c`, `circle-letter-d`, `circle-letter-e`, `circle-letter-f`, `circle-letter-g`, `circle-letter-h`, `circle-letter-i`, `circle-letter-j`, `circle-letter-k`, `circle-letter-l`, `circle-letter-m`, `circle-letter-n`, `circle-letter-o`, `circle-letter-p`, `circle-letter-p-off`, `circle-letter-q`, `circle-letter-r`, `circle-letter-s`, `circle-letter-t`, `circle-letter-u`, `circle-letter-v`, `circle-letter-w`, `circle-letter-x`, `circle-letter-y`, `circle-letter-z`, `decimals-arrow-left`, `decimals-arrow-right`, `heading-5`, `heading-6`, `letter-a`, `letter-c`, `letter-d`, `letter-e`, `letter-f`, `letter-g`, `letter-h`, `letter-i`, `letter-j`, `letter-k`, `letter-l`, `letter-m`, `letter-n`, `letter-o`, `letter-p`, `letter-q`, `letter-r`, `letter-s`, `letter-spacing`, `letter-t`, `letter-u`, `letter-v`, `letter-w`, `letter-x`, `letter-y`, `letter-z`, `letters`, `ligature`, `line-height`, `link-2-off`, `list-check`, `list-chevrons-down-up`, `list-chevrons-up-down`, `list-collapse`, `list-end`, `list-filter-plus`, `list-restart`, `list-start`, `numbers`, `pilcrow-left`, `pilcrow-right`, `remove-formatting`, `replace`, `replace-all`, `space`, `spell-check-2`, `square-letter-a`, `square-letter-b`, `square-letter-c`, `square-letter-d`, `square-letter-e`, `square-letter-f`, `square-letter-g`, `square-letter-h`, `square-letter-i`, `square-letter-j`, `square-letter-k`, `square-letter-l`, `square-letter-m`, `square-letter-n`, `square-letter-o`, `square-letter-p-off`, `square-letter-q`, `square-letter-r`, `square-letter-s`, `square-letter-t`, `square-letter-u`, `square-letter-v`, `square-letter-w`, `square-letter-x`, `square-letter-y`, `square-letter-z`, `subscript`, `summary`, `superscript`, `table-of-contents`, `text-align-justify-center`, `text-align-justify-end`, `text-align-justify-start`, `text-cursor-input`, `text-initial`, `text-pen`, `text-quote`, `text-search`, `text-wrap`, `type-outline`, `unlink-2`, `whole-word`
+`a-arrow-down`, `a-arrow-up`, `a-large-small`, `baseline`, `binary`, `case-lower`, `case-sensitive`, `case-upper`, `circle-letter-a`, `circle-letter-b`, `circle-letter-c`, `circle-letter-d`, `circle-letter-e`, `circle-letter-f`, `circle-letter-g`, `circle-letter-h`, `circle-letter-i`, `circle-letter-j`, `circle-letter-k`, `circle-letter-l`, `circle-letter-m`, `circle-letter-n`, `circle-letter-o`, `circle-letter-p`, `circle-letter-p-off`, `circle-letter-q`, `circle-letter-r`, `circle-letter-s`, `circle-letter-t`, `circle-letter-u`, `circle-letter-v`, `circle-letter-w`, `circle-letter-x`, `circle-letter-y`, `circle-letter-z`, `decimals-arrow-left`, `decimals-arrow-right`, `heading-5`, `heading-6`, `indent-decrease`, `indent-increase`, `letter-a`, `letter-c`, `letter-d`, `letter-e`, `letter-f`, `letter-g`, `letter-h`, `letter-i`, `letter-j`, `letter-k`, `letter-l`, `letter-m`, `letter-n`, `letter-o`, `letter-p`, `letter-q`, `letter-r`, `letter-s`, `letter-spacing`, `letter-t`, `letter-u`, `letter-v`, `letter-w`, `letter-x`, `letter-y`, `letter-z`, `letters`, `ligature`, `line-height`, `link-2-off`, `list-check`, `list-chevrons-down-up`, `list-chevrons-up-down`, `list-collapse`, `list-end`, `list-filter-plus`, `list-restart`, `list-start`, `numbers`, `pilcrow-left`, `pilcrow-right`, `placeholder-text`, `quote-level-decrease`, `quote-level-increase`, `remove-formatting`, `replace`, `replace-all`, `space`, `spell-check-2`, `square-letter-a`, `square-letter-b`, `square-letter-c`, `square-letter-d`, `square-letter-e`, `square-letter-f`, `square-letter-g`, `square-letter-h`, `square-letter-i`, `square-letter-j`, `square-letter-k`, `square-letter-l`, `square-letter-m`, `square-letter-n`, `square-letter-o`, `square-letter-p-off`, `square-letter-q`, `square-letter-r`, `square-letter-s`, `square-letter-t`, `square-letter-u`, `square-letter-v`, `square-letter-w`, `square-letter-x`, `square-letter-y`, `square-letter-z`, `subscript`, `summary`, `superscript`, `table-of-contents`, `text-align-justify-center`, `text-align-justify-end`, `text-align-justify-start`, `text-box`, `text-cursor-input`, `text-initial`, `text-pen`, `text-quote`, `text-search`, `text-shadow`, `text-size-larger`, `text-size-smaller`, `text-wrap`, `textformat-123`, `textformat-abc`, `type-outline`, `unlink-2`, `whole-word`
 
 ## Weather and nature
 

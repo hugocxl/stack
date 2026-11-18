@@ -10057,6 +10057,27 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "face-laugh",
+    "category": "People and accessibility",
+    "tags": [
+      "face",
+      "laugh",
+      "laughter",
+      "laughing",
+      "joy",
+      "happy",
+      "emoji",
+      "expression"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "face-slightly-smiling-plus",
     "category": "People and accessibility",
     "tags": [],
@@ -11989,6 +12010,48 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "frame-backward",
+    "category": "Media",
+    "tags": [
+      "media",
+      "reverse",
+      "step",
+      "previous",
+      "single",
+      "video",
+      "frame",
+      "backward"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "frame-forward",
+    "category": "Media",
+    "tags": [
+      "media",
+      "advance",
+      "step",
+      "next",
+      "single",
+      "video",
+      "frame",
+      "forward"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "frown",
     "category": "People and accessibility",
     "tags": [],
@@ -12773,6 +12836,132 @@
     "defaultColor": "sky"
   },
   {
+    "name": "go-backward-10",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "backward",
+      "rewind",
+      "replay",
+      "10",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "go-backward-15",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "backward",
+      "rewind",
+      "replay",
+      "15",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "go-backward-30",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "backward",
+      "rewind",
+      "replay",
+      "30",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "go-forward-10",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "forward",
+      "advance",
+      "skip",
+      "10",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "go-forward-15",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "forward",
+      "advance",
+      "skip",
+      "15",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "go-forward-30",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "seek",
+      "forward",
+      "advance",
+      "skip",
+      "30",
+      "seconds"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "goal",
     "category": "Media",
     "tags": [],
@@ -12877,6 +13066,44 @@
     ],
     "defaultTone": "duotone",
     "defaultColor": "pink"
+  },
+  {
+    "name": "greater-than",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "comparison",
+      "inequality",
+      "greater",
+      "than"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "greater-than-equal",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "comparison",
+      "inequality",
+      "greater",
+      "than",
+      "or",
+      "equal"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "grid-2x2",
@@ -14181,6 +14408,42 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "indent-decrease",
+    "category": "Typography and text",
+    "tags": [
+      "indent",
+      "decrease",
+      "paragraph",
+      "left",
+      "outdent"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "indent-increase",
+    "category": "Typography and text",
+    "tags": [
+      "indent",
+      "increase",
+      "paragraph",
+      "right",
+      "nest"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "indian-rupee",
     "category": "Finance and commerce",
     "tags": [],
@@ -15036,6 +15299,44 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "less-than",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "comparison",
+      "inequality",
+      "less",
+      "than"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "less-than-equal",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "comparison",
+      "inequality",
+      "less",
+      "than",
+      "or",
+      "equal"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "letter-a",
@@ -18401,6 +18702,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "multiply",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "arithmetic",
+      "multiply",
+      "product",
+      "times",
+      "cross"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "music",
     "category": "Media",
     "tags": [],
@@ -20181,6 +20501,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "placeholder-text",
+    "category": "Typography and text",
+    "tags": [
+      "placeholder",
+      "text",
+      "sample",
+      "skeleton",
+      "content",
+      "lorem",
+      "ipsum"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "plane",
     "category": "Maps and travel",
     "tags": [],
@@ -20258,6 +20598,25 @@
     "tags": [
       "play",
       "off"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "play-pause",
+    "category": "Media",
+    "tags": [
+      "media",
+      "playback",
+      "play",
+      "pause",
+      "resume",
+      "toggle"
     ],
     "origin": "original",
     "styles": [
@@ -20758,6 +21117,46 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "quote-level-decrease",
+    "category": "Typography and text",
+    "tags": [
+      "blockquote",
+      "citation",
+      "quotation",
+      "nesting",
+      "level",
+      "decrease",
+      "shallower"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "quote-level-increase",
+    "category": "Typography and text",
+    "tags": [
+      "blockquote",
+      "citation",
+      "quotation",
+      "nesting",
+      "level",
+      "increase",
+      "deeper"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "r",
     "category": "Brands",
     "tags": [],
@@ -21060,6 +21459,26 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "record",
+    "category": "Media",
+    "tags": [
+      "media",
+      "capture",
+      "record",
+      "recording",
+      "start",
+      "audio",
+      "video"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "rectangle-circle",
@@ -23515,6 +23934,26 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "slow-motion",
+    "category": "Media",
+    "tags": [
+      "slow",
+      "motion",
+      "camera",
+      "playback",
+      "speed",
+      "high",
+      "framerate"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "smart-lock",
     "category": "Home and food",
     "tags": [
@@ -25361,6 +25800,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "square-root",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "arithmetic",
+      "square",
+      "root",
+      "radical",
+      "algebra"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "square-round-corner",
     "category": "Design tools",
     "tags": [],
@@ -26146,6 +26604,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "sum",
+    "category": "Math and symbols",
+    "tags": [
+      "math",
+      "sum",
+      "summation",
+      "sigma",
+      "series",
+      "total"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "summary",
     "category": "Typography and text",
     "tags": [],
@@ -26866,6 +27343,26 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "text-box",
+    "category": "Typography and text",
+    "tags": [
+      "text",
+      "box",
+      "field",
+      "frame",
+      "type",
+      "insert",
+      "editable"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "duotone"
+  },
+  {
     "name": "text-cursor",
     "category": "Editing and design",
     "tags": [],
@@ -26950,6 +27447,25 @@
     "defaultTone": "duotone"
   },
   {
+    "name": "text-shadow",
+    "category": "Typography and text",
+    "tags": [
+      "text",
+      "font",
+      "shadow",
+      "offset",
+      "typography",
+      "effect"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "text-size",
     "category": "Editing and design",
     "tags": [],
@@ -26962,9 +27478,89 @@
     "defaultTone": "monochrome"
   },
   {
+    "name": "text-size-larger",
+    "category": "Typography and text",
+    "tags": [
+      "font",
+      "type",
+      "size",
+      "capital",
+      "larger",
+      "enlarge",
+      "increase"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "text-size-smaller",
+    "category": "Typography and text",
+    "tags": [
+      "font",
+      "type",
+      "size",
+      "capital",
+      "smaller",
+      "shrink",
+      "decrease"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
     "name": "text-wrap",
     "category": "Typography and text",
     "tags": [],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "textformat-123",
+    "category": "Typography and text",
+    "tags": [
+      "text",
+      "format",
+      "digits",
+      "numerals",
+      "numbers",
+      "123"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
+  },
+  {
+    "name": "textformat-abc",
+    "category": "Typography and text",
+    "tags": [
+      "text",
+      "format",
+      "alphabet",
+      "letters",
+      "abc",
+      "spelling",
+      "mixed",
+      "case"
+    ],
     "origin": "original",
     "styles": [
       "duotone",
@@ -27195,6 +27791,26 @@
       "stroke"
     ],
     "defaultTone": "duotone"
+  },
+  {
+    "name": "timelapse",
+    "category": "Media",
+    "tags": [
+      "time",
+      "lapse",
+      "camera",
+      "capture",
+      "interval",
+      "fast",
+      "motion"
+    ],
+    "origin": "original",
+    "styles": [
+      "duotone",
+      "solid",
+      "stroke"
+    ],
+    "defaultTone": "monochrome"
   },
   {
     "name": "timeline",

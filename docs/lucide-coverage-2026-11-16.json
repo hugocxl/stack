@@ -15,9 +15,9 @@
   },
   "local_snapshot": {
     "catalog_path": "catalog.json",
-    "catalog_sha256": "9ffce7c96d0320e46fd4f59048fca2d9bf9bd3310adf0721936ca0fd63124c73",
-    "catalog_count": 2242,
-    "original_ui_count": 2161,
+    "catalog_sha256": "852489487e43a87a7df578cb6aa7255873e267d01df56a71c43f518150ab2363",
+    "catalog_count": 2273,
+    "original_ui_count": 2192,
     "legacy_brand_count": 81
   },
   "methodology": {
@@ -18969,7 +18969,8 @@
         }
       ],
       "local_upstream_alias_matches": [
-        "outdent"
+        "outdent",
+        "indent-decrease"
       ],
       "status": "semantic-equivalent",
       "local_name": "outdent",
@@ -18996,7 +18997,8 @@
         }
       ],
       "local_upstream_alias_matches": [
-        "indent"
+        "indent",
+        "indent-increase"
       ],
       "status": "semantic-equivalent",
       "local_name": "indent",

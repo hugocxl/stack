@@ -16,7 +16,7 @@
     "dark"
   ],
   "counts": {
-    "pass": 2242
+    "pass": 2273
   },
   "entries": [
     {
@@ -15030,6 +15030,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "face-laugh",
+      "category": "People and accessibility",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a3896d9257d2340f30b4b324d028b4bcd6b99a20264c3449c05e857c38aa6099",
+        "solid": "e7ad58d0637b52fed05285b4d2cfc1e9e27413f5625025d8685ab8b4ede7de02",
+        "stroke": "ceb151b923dc30e2e374078007a93764e9af528ce271b6692da33664a6373d5b"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "face-slightly-smiling-plus",
       "category": "People and accessibility",
       "styles": [
@@ -17712,6 +17732,46 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "frame-backward",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "f3073cc5aadd9007bef5416f7ff50f4677df45abe19f1c1a19f51a386d8a9ef2",
+        "solid": "046297f72a86b1961272f5e3841c573fb0854127c39836ea14319446f8d00c42",
+        "stroke": "f3073cc5aadd9007bef5416f7ff50f4677df45abe19f1c1a19f51a386d8a9ef2"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "frame-forward",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "27164d6b8ec904426f712247c1260378ab2dbcc5ae3033009661f69456e79083",
+        "solid": "3ff95354caeb26796838da373d2cdc1c24aff6de837108c79ef4f46778cd03b3",
+        "stroke": "27164d6b8ec904426f712247c1260378ab2dbcc5ae3033009661f69456e79083"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "frown",
       "category": "People and accessibility",
       "styles": [
@@ -18908,6 +18968,126 @@
       "reviewSource": "audit-quality-baseline.json"
     },
     {
+      "name": "go-backward-10",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a6cfc6bf81bb48effdcf274ff24a18a27c67c4cde036f1ac8aa669b7b7747f4b",
+        "solid": "a6cfc6bf81bb48effdcf274ff24a18a27c67c4cde036f1ac8aa669b7b7747f4b",
+        "stroke": "a6cfc6bf81bb48effdcf274ff24a18a27c67c4cde036f1ac8aa669b7b7747f4b"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "go-backward-15",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "063987abadd49a1f45d0a52500dea89c2ed5dd8200c9e8639087ee009cf9cf75",
+        "solid": "063987abadd49a1f45d0a52500dea89c2ed5dd8200c9e8639087ee009cf9cf75",
+        "stroke": "063987abadd49a1f45d0a52500dea89c2ed5dd8200c9e8639087ee009cf9cf75"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "go-backward-30",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "08e6d5cff1edfdd13f8cbfae0d3d55463fb7a26b849eee8defc998209ac22243",
+        "solid": "08e6d5cff1edfdd13f8cbfae0d3d55463fb7a26b849eee8defc998209ac22243",
+        "stroke": "08e6d5cff1edfdd13f8cbfae0d3d55463fb7a26b849eee8defc998209ac22243"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "go-forward-10",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "39274e6822872e7f320116ed5043fe8b1ce2203b562466dea6c3a06e9e88d5d4",
+        "solid": "39274e6822872e7f320116ed5043fe8b1ce2203b562466dea6c3a06e9e88d5d4",
+        "stroke": "39274e6822872e7f320116ed5043fe8b1ce2203b562466dea6c3a06e9e88d5d4"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "go-forward-15",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "43318e259bef9d594c1b14d32ab09962bb631d0be1c1e7d4722dd07ada549323",
+        "solid": "43318e259bef9d594c1b14d32ab09962bb631d0be1c1e7d4722dd07ada549323",
+        "stroke": "43318e259bef9d594c1b14d32ab09962bb631d0be1c1e7d4722dd07ada549323"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "go-forward-30",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "6b6603b09132c7f04f98d0176bd878567e7601cf69726af10ca0c9e538a5446b",
+        "solid": "6b6603b09132c7f04f98d0176bd878567e7601cf69726af10ca0c9e538a5446b",
+        "stroke": "6b6603b09132c7f04f98d0176bd878567e7601cf69726af10ca0c9e538a5446b"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "goal",
       "category": "Media",
       "styles": [
@@ -19065,6 +19245,46 @@
         "row": 11
       },
       "reviewSource": "audit-quality-baseline.json"
+    },
+    {
+      "name": "greater-than",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "e6a36d8d95631343bff69b639b685f75619b99b5df6caf7faa3e15c64b201e38",
+        "solid": "e6a36d8d95631343bff69b639b685f75619b99b5df6caf7faa3e15c64b201e38",
+        "stroke": "e6a36d8d95631343bff69b639b685f75619b99b5df6caf7faa3e15c64b201e38"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "greater-than-equal",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "b8f12203cfe544aa2788f8e11d14968da792eb37ebb28abe64bcc8f5e4d268cf",
+        "solid": "b8f12203cfe544aa2788f8e11d14968da792eb37ebb28abe64bcc8f5e4d268cf",
+        "stroke": "b8f12203cfe544aa2788f8e11d14968da792eb37ebb28abe64bcc8f5e4d268cf"
+      },
+      "reviewSource": "audit-2026-11-18"
     },
     {
       "name": "grid-2x2",
@@ -21002,6 +21222,46 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "indent-decrease",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "921cfe88e470b57331fceed51379295231b45c5dbda3caa0e20258ed0ac4639f",
+        "solid": "921cfe88e470b57331fceed51379295231b45c5dbda3caa0e20258ed0ac4639f",
+        "stroke": "921cfe88e470b57331fceed51379295231b45c5dbda3caa0e20258ed0ac4639f"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "indent-increase",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "b8e23cf4cc444234449fe9394fae611ae438dea453c3ac55d1ed2cf716db635b",
+        "solid": "b8e23cf4cc444234449fe9394fae611ae438dea453c3ac55d1ed2cf716db635b",
+        "stroke": "b8e23cf4cc444234449fe9394fae611ae438dea453c3ac55d1ed2cf716db635b"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "indian-rupee",
       "category": "Finance and commerce",
       "styles": [
@@ -22358,6 +22618,46 @@
         "duotone": "c6537f9893bfcd89ada23e67e2c64321c542295119997cd74cfad56e3bc7a2e6",
         "solid": "c813165f7c69970e5d7d962fdcda0dee9a1c4ec010ca25686ddf1748d7f38cff",
         "stroke": "08e22086f9d5d23fd91bc0aab164cb3d6968e76b1c55f814c7fc83248d671de8"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "less-than",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a116992f70d20660d94cf596344617faf4222e492b849f2bf02e7115826eae67",
+        "solid": "a116992f70d20660d94cf596344617faf4222e492b849f2bf02e7115826eae67",
+        "stroke": "a116992f70d20660d94cf596344617faf4222e492b849f2bf02e7115826eae67"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "less-than-equal",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "6fe5d4db9e86500a58f2eff3dd2971ef6e01fd62b8c633f543496c6ae8a724e0",
+        "solid": "6fe5d4db9e86500a58f2eff3dd2971ef6e01fd62b8c633f543496c6ae8a724e0",
+        "stroke": "6fe5d4db9e86500a58f2eff3dd2971ef6e01fd62b8c633f543496c6ae8a724e0"
       },
       "reviewSource": "audit-2026-11-18"
     },
@@ -27225,6 +27525,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "multiply",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "ef5e4f08279073d29080747a071f996d6f3aaccb8b8c7ab7d9783ba5c361289a",
+        "solid": "ef5e4f08279073d29080747a071f996d6f3aaccb8b8c7ab7d9783ba5c361289a",
+        "stroke": "ef5e4f08279073d29080747a071f996d6f3aaccb8b8c7ab7d9783ba5c361289a"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "music",
       "category": "Media",
       "styles": [
@@ -29942,6 +30262,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "placeholder-text",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a759180c534a81663cf1b48a50fec298532c38814e40be352231cac4c79d7187",
+        "solid": "a759180c534a81663cf1b48a50fec298532c38814e40be352231cac4c79d7187",
+        "stroke": "a759180c534a81663cf1b48a50fec298532c38814e40be352231cac4c79d7187"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "plane",
       "category": "Maps and travel",
       "styles": [
@@ -30079,6 +30419,26 @@
         "duotone": "6aca5e5a5b1cd89a892b0fc1aa9f372652c09350f5bbc97759757ce82c02c010",
         "solid": "572dcc9c607609182ea44f1c01fb9f26dd28e526a69be35a784ce07beabb1319",
         "stroke": "572dcc9c607609182ea44f1c01fb9f26dd28e526a69be35a784ce07beabb1319"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "play-pause",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "5092d178afde387020f238a9d518f48f60547bd696e3ffc40eccf81ae9994745",
+        "solid": "9003a7b8e9b9cad1b3b4e8f1b0f62190dd2ea5809ce337ce9f4e33f82d3b5227",
+        "stroke": "5092d178afde387020f238a9d518f48f60547bd696e3ffc40eccf81ae9994745"
       },
       "reviewSource": "audit-2026-11-18"
     },
@@ -30840,6 +31200,46 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "quote-level-decrease",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "991c33eb3331f009c1167344c7d380111d07ba7643b00a5985ce0c1da2292ca6",
+        "solid": "991c33eb3331f009c1167344c7d380111d07ba7643b00a5985ce0c1da2292ca6",
+        "stroke": "991c33eb3331f009c1167344c7d380111d07ba7643b00a5985ce0c1da2292ca6"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "quote-level-increase",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a340df14c8125085027f39c801f27d511801e9e72c293d55cd5284f360ef3373",
+        "solid": "a340df14c8125085027f39c801f27d511801e9e72c293d55cd5284f360ef3373",
+        "stroke": "a340df14c8125085027f39c801f27d511801e9e72c293d55cd5284f360ef3373"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "r",
       "category": "Brands",
       "styles": [
@@ -31316,6 +31716,26 @@
         "duotone": "d76226c3f516eb947c06dced16879f7d6814760eb858f25f0a9c09f95f29188c",
         "solid": "228721bb4afc2a7f5198154f393271896d30b0a995cb839aa8ed30696927639c",
         "stroke": "e700ffe18d2b537f5c4e3a45a96e5cc6955737587ee110e70c68e5b8076814c7"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "record",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "b376a1fb75e80b9a5266f148bde05e5ebaf5ef14327155d5ff8d747d37930c31",
+        "solid": "b376a1fb75e80b9a5266f148bde05e5ebaf5ef14327155d5ff8d747d37930c31",
+        "stroke": "b376a1fb75e80b9a5266f148bde05e5ebaf5ef14327155d5ff8d747d37930c31"
       },
       "reviewSource": "audit-2026-11-18"
     },
@@ -34948,6 +35368,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "slow-motion",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "90563b7efc87482b7842c961cc78fb93351f006e036c90e0e49fb3567faa9f82",
+        "solid": "90563b7efc87482b7842c961cc78fb93351f006e036c90e0e49fb3567faa9f82",
+        "stroke": "90563b7efc87482b7842c961cc78fb93351f006e036c90e0e49fb3567faa9f82"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "smart-lock",
       "category": "Home and food",
       "styles": [
@@ -37708,6 +38148,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "square-root",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "999203648000ee9c65e2572a687100823f5a92aed14373e79994e0dc3a571c71",
+        "solid": "999203648000ee9c65e2572a687100823f5a92aed14373e79994e0dc3a571c71",
+        "stroke": "999203648000ee9c65e2572a687100823f5a92aed14373e79994e0dc3a571c71"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "square-round-corner",
       "category": "Design tools",
       "styles": [
@@ -38910,6 +39370,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "sum",
+      "category": "Math and symbols",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "980c05c79f23377278a57f69204c5c3cf92dedf192eacd6f3266f13505fdab2a",
+        "solid": "980c05c79f23377278a57f69204c5c3cf92dedf192eacd6f3266f13505fdab2a",
+        "stroke": "980c05c79f23377278a57f69204c5c3cf92dedf192eacd6f3266f13505fdab2a"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "summary",
       "category": "Typography and text",
       "styles": [
@@ -40024,6 +40504,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "text-box",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "bb3cfda36b199eda8b60358f42164db508705cc4ccac9a05f6ae81849c9acae3",
+        "solid": "5350ec05e5a64202a26c9d2c6c9c3f1455dfe350370de875137324be8267b465",
+        "stroke": "5c2572cdf7fbb8e44c113fb175b0882566e349f99489eed00b8ffcb09293f61a"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "text-cursor",
       "category": "Editing and design",
       "styles": [
@@ -40164,6 +40664,26 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "text-shadow",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "f847c4e88255862a3584e3add53b4bf993e25b431b30116f8240819e7c5b426f",
+        "solid": "f847c4e88255862a3584e3add53b4bf993e25b431b30116f8240819e7c5b426f",
+        "stroke": "f847c4e88255862a3584e3add53b4bf993e25b431b30116f8240819e7c5b426f"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "text-size",
       "category": "Editing and design",
       "styles": [
@@ -40184,6 +40704,46 @@
       "reviewSource": "audit-2026-11-18"
     },
     {
+      "name": "text-size-larger",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "85c49f07d48d57b231d8b4a3382967ee5b02e1f5ef89b15175e8c06dffe1937e",
+        "solid": "85c49f07d48d57b231d8b4a3382967ee5b02e1f5ef89b15175e8c06dffe1937e",
+        "stroke": "85c49f07d48d57b231d8b4a3382967ee5b02e1f5ef89b15175e8c06dffe1937e"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "text-size-smaller",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "af06d1375875c7793fa77e1300e3521fe9bd9e854f5ec2ad2e8c1b53c25fa53c",
+        "solid": "af06d1375875c7793fa77e1300e3521fe9bd9e854f5ec2ad2e8c1b53c25fa53c",
+        "stroke": "af06d1375875c7793fa77e1300e3521fe9bd9e854f5ec2ad2e8c1b53c25fa53c"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
       "name": "text-wrap",
       "category": "Typography and text",
       "styles": [
@@ -40200,6 +40760,46 @@
         "duotone": "de4fcd91b5ac47917a0ba2138e115a29251524a2a5a66dd937dad7fbcdf32481",
         "solid": "de4fcd91b5ac47917a0ba2138e115a29251524a2a5a66dd937dad7fbcdf32481",
         "stroke": "de4fcd91b5ac47917a0ba2138e115a29251524a2a5a66dd937dad7fbcdf32481"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "textformat-123",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "f0333f3221b9eeaebfe65d14373ee62ee46cb5633f599ab66a1b63bf81580475",
+        "solid": "f0333f3221b9eeaebfe65d14373ee62ee46cb5633f599ab66a1b63bf81580475",
+        "stroke": "f0333f3221b9eeaebfe65d14373ee62ee46cb5633f599ab66a1b63bf81580475"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "textformat-abc",
+      "category": "Typography and text",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "8d99e36cbdf6d1d9224aebf5c58fe617e0cf2ceca55ffff8999f8904da131890",
+        "solid": "8d99e36cbdf6d1d9224aebf5c58fe617e0cf2ceca55ffff8999f8904da131890",
+        "stroke": "8d99e36cbdf6d1d9224aebf5c58fe617e0cf2ceca55ffff8999f8904da131890"
       },
       "reviewSource": "audit-2026-11-18"
     },
@@ -40561,6 +41161,26 @@
         "duotone": "4d1c4ee8c31cbbc80a6cef2dd901ad4238521bf2e7da570db9f92af4df5cc540",
         "solid": "082befcc2f3a35444ac996aff31096a06edc9afe631b1a603bc3aa62d6541ed1",
         "stroke": "4515f13eacccc3e7eb4872d835a34e7e76642141cc9822085afe261ca9ed95ac"
+      },
+      "reviewSource": "audit-2026-11-18"
+    },
+    {
+      "name": "timelapse",
+      "category": "Media",
+      "styles": [
+        "duotone",
+        "solid",
+        "stroke"
+      ],
+      "verdict": "pass",
+      "finding": "New icon from the SF Symbols coverage expansion; drawn to the single-weight contract, inspected in all styles at 72, 24 and 16 px beside its existing siblings, and accepted after revision where needed.",
+      "evidence": [
+        "expansion review sheets (text lane)"
+      ],
+      "sha256": {
+        "duotone": "a1163222e459a34fdb040e3cc74cff4dfc92da9ff99867bae207c07f6973c907",
+        "solid": "a1163222e459a34fdb040e3cc74cff4dfc92da9ff99867bae207c07f6973c907",
+        "stroke": "a1163222e459a34fdb040e3cc74cff4dfc92da9ff99867bae207c07f6973c907"
       },
       "reviewSource": "audit-2026-11-18"
     },
