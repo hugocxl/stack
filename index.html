@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="50 static isometric SVG illustrations for websites and product pages.">
+<title>P9 Figures</title>
+<style>
+  :root { color-scheme: dark; --bg: #0b0c0e; --plate: #101215; --ink: #edf0f5; --soft: #a1a9b6; --border: #2a2e35; --hover: #414957; --art-brightness: 1.23; }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) { color-scheme: light; --bg: #fafafa; --plate: #f2f3f5; --ink: #171a21; --soft: #515b69; --border: #dfe2e7; --hover: #b2bac6; --art-brightness: .76; }
+  }
+  :root[data-theme="light"] { color-scheme: light; --bg: #fafafa; --plate: #f2f3f5; --ink: #171a21; --soft: #515b69; --border: #dfe2e7; --hover: #b2bac6; --art-brightness: .76; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "Inter", system-ui, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .shell { max-width: 1312px; margin: auto; padding-inline: clamp(18px, 5vw, 72px); }
+  header { border-bottom: 1px solid var(--border); }
+  .top { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-weight: 650; letter-spacing: -.035em; }
+  .tools { display: flex; gap: 16px; align-items: center; color: var(--soft); font-size: 13px; }
+  button, input { color: inherit; font: inherit; background: var(--plate); border: 1px solid var(--border); border-radius: 7px; }
+  button { padding: 6px 11px; cursor: pointer; }
+  .intro { padding-block: clamp(55px, 8vw, 120px) clamp(30px, 5vw, 60px); }
+  h1 { font-size: clamp(52px, 9vw, 116px); line-height: 1; letter-spacing: -.047em; font-weight: 650; margin: 0 0 20px; }
+  .intro p { font-size: clamp(16px, 2vw, 20px); color: var(--soft); margin: 0; }
+  .filters { padding-block: 15px; border-block: 1px solid var(--border); display: flex; gap: 12px 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  nav { display: flex; gap: 8px 22px; flex-wrap: wrap; color: var(--soft); font-size: 14px; }
+  nav a:hover, .tools a:hover, h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  input { padding: 7px 11px; width: min(100%, 240px); }
+  section { padding-block: 26px 12px; scroll-margin: 20px; }
+  h2 { font-size: 25px; line-height: 1.2; letter-spacing: -.03em; margin: 16px 0 20px; }
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; list-style: none; margin: 0; padding: 0; }
+  .card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .card:hover, button:hover, .download:hover { border-color: var(--hover); }
+  .art { display: block; background: var(--plate); border-bottom: 1px solid var(--border); }
+  .art:focus-visible { outline-offset: -4px; }
+  .art img { display: block; width: 100%; height: auto; filter: brightness(var(--art-brightness)); }
+  .card-info { padding: 15px 16px 16px; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  h3 { font-size: 15px; margin: 0 0 3px; line-height: 1.3; }
+  .card p { color: var(--soft); font-size: 13px; margin: 0; }
+  .download { width: 32px; height: 32px; flex: 0 0 32px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 6px; font-size: 19px; line-height: 1; color: var(--soft); }
+  footer { margin-top: 52px; border-top: 1px solid var(--border); color: var(--soft); padding-block: 25px; font-size: 13px; }
+  footer a { text-decoration: underline; text-underline-offset: 4px; }
+  @media(max-width: 820px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media(max-width: 500px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><div class="shell top">
+  <a href="./" class="brand">P9 Figures</a>
+  <div class="tools"><button id="theme" type="button" hidden></button><a href="https://github.com/hugocxl/p9-figures">GitHub ↗</a></div>
+</div></header>
+<main class="shell">
+  <div class="intro"><h1>P9 Figures</h1><p>50 isometric SVG illustrations for websites and product pages.</p></div>
+  <div class="filters"><nav aria-label="Collections"><a href="#product">Product</a>
+<a href="#workflow">Workflow</a>
+<a href="#infrastructure">Infrastructure</a>
+<a href="#data">Data</a>
+<a href="#trust-control">Trust &amp; control</a></nav>
+  <input id="search" type="search" aria-label="Find a figure" placeholder="Find a figure…" hidden></div>
+  <p id="empty" role="status" hidden>No matching figures.</p>
+  <section id="product"><h2>Product</h2><ul class="cards">
+<li class="card" data-figure>
+  <a class="art" href="figures/modular-design.svg" aria-label="Open Modular design SVG"><img src="figures/modular-design.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/modular-design.svg">Modular design</a></h3><p>Four independent modules fit into one assembly.</p></div>
+  <a class="download" href="figures/modular-design.svg" download aria-label="Download Modular design SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/product-architecture.svg" aria-label="Open Product architecture SVG"><img src="figures/product-architecture.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/product-architecture.svg">Product architecture</a></h3><p>An exploded stack reveals a single layer above the platform.</p></div>
+  <a class="download" href="figures/product-architecture.svg" download aria-label="Download Product architecture SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/fast-performance.svg" aria-label="Open Fast performance SVG"><img src="figures/fast-performance.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/fast-performance.svg">Fast performance</a></h3><p>A tightly spaced pulse rises through a bank of thin fins.</p></div>
+  <a class="download" href="figures/fast-performance.svg" download aria-label="Download Fast performance SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/responsive-design.svg" aria-label="Open Responsive design SVG"><img src="figures/responsive-design.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/responsive-design.svg">Responsive design</a></h3><p>Three screen sizes sit together in an isometric arrangement.</p></div>
+  <a class="download" href="figures/responsive-design.svg" download aria-label="Download Responsive design SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/customization.svg" aria-label="Open Customization SVG"><img src="figures/customization.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/customization.svg">Customization</a></h3><p>Four sliders set independent levels on a single control surface.</p></div>
+  <a class="download" href="figures/customization.svg" download aria-label="Download Customization SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/integrations.svg" aria-label="Open Integrations SVG"><img src="figures/integrations.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/integrations.svg">Integrations</a></h3><p>A bundled connection joins two separate devices.</p></div>
+  <a class="download" href="figures/integrations.svg" download aria-label="Download Integrations SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/scalability.svg" aria-label="Open Scalability SVG"><img src="figures/scalability.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/scalability.svg">Scalability</a></h3><p>A raised module extends a growing grid.</p></div>
+  <a class="download" href="figures/scalability.svg" download aria-label="Download Scalability SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/portability.svg" aria-label="Open Portability SVG"><img src="figures/portability.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/portability.svg">Portability</a></h3><p>A raised handle sits over a compact carrying case.</p></div>
+  <a class="download" href="figures/portability.svg" download aria-label="Download Portability SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/focus-states.svg" aria-label="Open Focus states SVG"><img src="figures/focus-states.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/focus-states.svg">Focus states</a></h3><p>Concentric rings mark the active surface of a stepped control.</p></div>
+  <a class="download" href="figures/focus-states.svg" download aria-label="Download Focus states SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/plugins.svg" aria-label="Open Plugins SVG"><img src="figures/plugins.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/plugins.svg">Plugins</a></h3><p>A raised cartridge lines up with an open slot on a baseboard.</p></div>
+  <a class="download" href="figures/plugins.svg" download aria-label="Download Plugins SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+</ul></section>
+<section id="workflow"><h2>Workflow</h2><ul class="cards">
+<li class="card" data-figure>
+  <a class="art" href="figures/collaboration.svg" aria-label="Open Collaboration SVG"><img src="figures/collaboration.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/collaboration.svg">Collaboration</a></h3><p>Four stations share a central platform.</p></div>
+  <a class="download" href="figures/collaboration.svg" download aria-label="Download Collaboration SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/automation.svg" aria-label="Open Automation SVG"><img src="figures/automation.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/automation.svg">Automation</a></h3><p>A conveyor feeds parts through an overhead machine.</p></div>
+  <a class="download" href="figures/automation.svg" download aria-label="Download Automation SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/handoff.svg" aria-label="Open Handoff SVG"><img src="figures/handoff.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/handoff.svg">Handoff</a></h3><p>A document travels between two stations.</p></div>
+  <a class="download" href="figures/handoff.svg" download aria-label="Download Handoff SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/project-planning.svg" aria-label="Open Project planning SVG"><img src="figures/project-planning.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/project-planning.svg">Project planning</a></h3><p>A priority card rises above a board of work in progress.</p></div>
+  <a class="download" href="figures/project-planning.svg" download aria-label="Download Project planning SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/scheduling.svg" aria-label="Open Scheduling SVG"><img src="figures/scheduling.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/scheduling.svg">Scheduling</a></h3><p>Raised time blocks occupy different rows on a calendar.</p></div>
+  <a class="download" href="figures/scheduling.svg" download aria-label="Download Scheduling SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/version-history.svg" aria-label="Open Version history SVG"><img src="figures/version-history.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/version-history.svg">Version history</a></h3><p>Successive document revisions fan out from the original.</p></div>
+  <a class="download" href="figures/version-history.svg" download aria-label="Download Version history SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/search.svg" aria-label="Open Search SVG"><img src="figures/search.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/search.svg">Search</a></h3><p>A loupe isolates a passage on a lined sheet.</p></div>
+  <a class="download" href="figures/search.svg" download aria-label="Download Search SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/version-control.svg" aria-label="Open Version control SVG"><img src="figures/version-control.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/version-control.svg">Version control</a></h3><p>Three parallel branches trace back to a single starting point.</p></div>
+  <a class="download" href="figures/version-control.svg" download aria-label="Download Version control SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/inbox.svg" aria-label="Open Inbox SVG"><img src="figures/inbox.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/inbox.svg">Inbox</a></h3><p>One piece of mail stands above the rest in a letter tray.</p></div>
+  <a class="download" href="figures/inbox.svg" download aria-label="Download Inbox SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/publishing.svg" aria-label="Open Publishing SVG"><img src="figures/publishing.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/publishing.svg">Publishing</a></h3><p>A finished piece lifts off the top step of a production sequence.</p></div>
+  <a class="download" href="figures/publishing.svg" download aria-label="Download Publishing SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+</ul></section>
+<section id="infrastructure"><h2>Infrastructure</h2><ul class="cards">
+<li class="card" data-figure>
+  <a class="art" href="figures/server-capacity.svg" aria-label="Open Server capacity SVG"><img src="figures/server-capacity.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/server-capacity.svg">Server capacity</a></h3><p>One blade slides out of a four-unit server rack.</p></div>
+  <a class="download" href="figures/server-capacity.svg" download aria-label="Download Server capacity SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/cloud-services.svg" aria-label="Open Cloud services SVG"><img src="figures/cloud-services.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/cloud-services.svg">Cloud services</a></h3><p>A layered cloud rises above three connected endpoints.</p></div>
+  <a class="download" href="figures/cloud-services.svg" download aria-label="Download Cloud services SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/storage.svg" aria-label="Open Storage SVG"><img src="figures/storage.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/storage.svg">Storage</a></h3><p>A platter floats above a stack of disks.</p></div>
+  <a class="download" href="figures/storage.svg" download aria-label="Download Storage SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/backups.svg" aria-label="Open Backups SVG"><img src="figures/backups.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/backups.svg">Backups</a></h3><p>A reel cartridge sits beside a second copy.</p></div>
+  <a class="download" href="figures/backups.svg" download aria-label="Download Backups SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/load-balancing.svg" aria-label="Open Load balancing SVG"><img src="figures/load-balancing.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/load-balancing.svg">Load balancing</a></h3><p>A single intake distributes requests across three workers.</p></div>
+  <a class="download" href="figures/load-balancing.svg" download aria-label="Download Load balancing SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/edge-network.svg" aria-label="Open Edge network SVG"><img src="figures/edge-network.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/edge-network.svg">Edge network</a></h3><p>A surface links four peripheral nodes to one hub.</p></div>
+  <a class="download" href="figures/edge-network.svg" download aria-label="Download Edge network SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/request-queue.svg" aria-label="Open Request queue SVG"><img src="figures/request-queue.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/request-queue.svg">Request queue</a></h3><p>Requests line up to pass through a single gate.</p></div>
+  <a class="download" href="figures/request-queue.svg" download aria-label="Download Request queue SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/data-pipeline.svg" aria-label="Open Data pipeline SVG"><img src="figures/data-pipeline.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/data-pipeline.svg">Data pipeline</a></h3><p>Four linked processing stages narrow the incoming stream.</p></div>
+  <a class="download" href="figures/data-pipeline.svg" download aria-label="Download Data pipeline SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/failover.svg" aria-label="Open Failover SVG"><img src="figures/failover.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/failover.svg">Failover</a></h3><p>A standby unit is ready beside the primary system.</p></div>
+  <a class="download" href="figures/failover.svg" download aria-label="Download Failover SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/bandwidth.svg" aria-label="Open Bandwidth SVG"><img src="figures/bandwidth.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/bandwidth.svg">Bandwidth</a></h3><p>Parallel fibers carry traffic between two terminal blocks.</p></div>
+  <a class="download" href="figures/bandwidth.svg" download aria-label="Download Bandwidth SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+</ul></section>
+<section id="data"><h2>Data</h2><ul class="cards">
+<li class="card" data-figure>
+  <a class="art" href="figures/growth.svg" aria-label="Open Growth SVG"><img src="figures/growth.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/growth.svg">Growth</a></h3><p>An ascending series of columns traces steady growth.</p></div>
+  <a class="download" href="figures/growth.svg" download aria-label="Download Growth SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/analytics.svg" aria-label="Open Analytics SVG"><img src="figures/analytics.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/analytics.svg">Analytics</a></h3><p>Three rows of raised bars compare a set of measurements.</p></div>
+  <a class="download" href="figures/analytics.svg" download aria-label="Download Analytics SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/forecasting.svg" aria-label="Open Forecasting SVG"><img src="figures/forecasting.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/forecasting.svg">Forecasting</a></h3><p>One observed trend splits into three projected outcomes.</p></div>
+  <a class="download" href="figures/forecasting.svg" download aria-label="Download Forecasting SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/monitoring.svg" aria-label="Open Monitoring SVG"><img src="figures/monitoring.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/monitoring.svg">Monitoring</a></h3><p>Three offset traces show a pulse across a bank of channels.</p></div>
+  <a class="download" href="figures/monitoring.svg" download aria-label="Download Monitoring SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/heat-map.svg" aria-label="Open Heat map SVG"><img src="figures/heat-map.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/heat-map.svg">Heat map</a></h3><p>A concentrated peak rises from a grid of measurements.</p></div>
+  <a class="download" href="figures/heat-map.svg" download aria-label="Download Heat map SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/segmentation.svg" aria-label="Open Segmentation SVG"><img src="figures/segmentation.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/segmentation.svg">Segmentation</a></h3><p>Three wedges separate into distinct cohorts.</p></div>
+  <a class="download" href="figures/segmentation.svg" download aria-label="Download Segmentation SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/a-b-testing.svg" aria-label="Open A/B testing SVG"><img src="figures/a-b-testing.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/a-b-testing.svg">A/B testing</a></h3><p>Two groups of samples sit on separate test platforms.</p></div>
+  <a class="download" href="figures/a-b-testing.svg" download aria-label="Download A/B testing SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/conversion.svg" aria-label="Open Conversion SVG"><img src="figures/conversion.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/conversion.svg">Conversion</a></h3><p>Five apertures narrow to a single outlet.</p></div>
+  <a class="download" href="figures/conversion.svg" download aria-label="Download Conversion SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/cohort-retention.svg" aria-label="Open Cohort retention SVG"><img src="figures/cohort-retention.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/cohort-retention.svg">Cohort retention</a></h3><p>Fewer samples remain on each successive shelf.</p></div>
+  <a class="download" href="figures/cohort-retention.svg" download aria-label="Download Cohort retention SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/activity-history.svg" aria-label="Open Activity history SVG"><img src="figures/activity-history.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/activity-history.svg">Activity history</a></h3><p>A line connects dated events along a common rail.</p></div>
+  <a class="download" href="figures/activity-history.svg" download aria-label="Download Activity history SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+</ul></section>
+<section id="trust-control"><h2>Trust &amp; control</h2><ul class="cards">
+<li class="card" data-figure>
+  <a class="art" href="figures/security.svg" aria-label="Open Security SVG"><img src="figures/security.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/security.svg">Security</a></h3><p>A rounded shackle secures a solid lock body.</p></div>
+  <a class="download" href="figures/security.svg" download aria-label="Download Security SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/permissions.svg" aria-label="Open Permissions SVG"><img src="figures/permissions.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/permissions.svg">Permissions</a></h3><p>Four nested tiers narrow access to a protected resource.</p></div>
+  <a class="download" href="figures/permissions.svg" download aria-label="Download Permissions SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/privacy.svg" aria-label="Open Privacy SVG"><img src="figures/privacy.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/privacy.svg">Privacy</a></h3><p>A screen obscures records and reveals only sparse outgoing traces.</p></div>
+  <a class="download" href="figures/privacy.svg" download aria-label="Download Privacy SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/identity.svg" aria-label="Open Identity SVG"><img src="figures/identity.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/identity.svg">Identity</a></h3><p>A credential floats over its matching reader.</p></div>
+  <a class="download" href="figures/identity.svg" download aria-label="Download Identity SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/approvals.svg" aria-label="Open Approvals SVG"><img src="figures/approvals.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/approvals.svg">Approvals</a></h3><p>A raised stamp is poised above an approval seal.</p></div>
+  <a class="download" href="figures/approvals.svg" download aria-label="Download Approvals SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/reliability.svg" aria-label="Open Reliability SVG"><img src="figures/reliability.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/reliability.svg">Reliability</a></h3><p>A deck distributes weight across two supports.</p></div>
+  <a class="download" href="figures/reliability.svg" download aria-label="Download Reliability SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/guardrails.svg" aria-label="Open Guardrails SVG"><img src="figures/guardrails.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/guardrails.svg">Guardrails</a></h3><p>Two raised edges keep work inside a defined lane.</p></div>
+  <a class="download" href="figures/guardrails.svg" download aria-label="Download Guardrails SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/recovery.svg" aria-label="Open Recovery SVG"><img src="figures/recovery.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/recovery.svg">Recovery</a></h3><p>A saved state rises from a stack of snapshots.</p></div>
+  <a class="download" href="figures/recovery.svg" download aria-label="Download Recovery SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/limits.svg" aria-label="Open Limits SVG"><img src="figures/limits.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/limits.svg">Limits</a></h3><p>A mechanical dial sets a usage threshold.</p></div>
+  <a class="download" href="figures/limits.svg" download aria-label="Download Limits SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+<li class="card" data-figure>
+  <a class="art" href="figures/feature-flags.svg" aria-label="Open Feature flags SVG"><img src="figures/feature-flags.svg" width="480" height="360" alt="" loading="lazy"></a>
+  <div class="card-info"><div><h3><a href="figures/feature-flags.svg">Feature flags</a></h3><p>Four toggles set independent options on a control panel.</p></div>
+  <a class="download" href="figures/feature-flags.svg" download aria-label="Download Feature flags SVG" title="Download SVG"><span aria-hidden="true">↓</span></a></div>
+</li>
+</ul></section>
+</main>
+<footer><div class="shell">MIT licensed. Inspired by <a href="https://hairline.lucasmarkes.com/skills">Hairline by Lucas Marques</a>.</div></footer>
+<script>
+  const search = document.querySelector("#search");
+  const theme = document.querySelector("#theme");
+  const sections = [...document.querySelectorAll("main section")];
+  const empty = document.querySelector("#empty");
+  const system = matchMedia("(prefers-color-scheme: dark)");
+  const root = document.documentElement;
+
+  const currentTheme = () => root.dataset.theme || (system.matches ? "dark" : "light");
+  function labelTheme() {
+    theme.textContent = currentTheme() === "dark" ? "Light mode" : "Dark mode";
+  }
+  theme.addEventListener("click", () => {
+    root.dataset.theme = currentTheme() === "dark" ? "light" : "dark";
+    labelTheme();
+  });
+  system.addEventListener("change", labelTheme);
+  labelTheme();
+  theme.hidden = false;
+
+  search.addEventListener("input", () => {
+    const terms = search.value.trim().toLowerCase().split(/\s+/);
+    for (const section of sections) {
+      const cards = [...section.querySelectorAll("[data-figure]")];
+      for (const card of cards) {
+        const text = card.textContent.toLowerCase();
+        card.hidden = !terms.every(term => text.includes(term));
+      }
+      section.hidden = cards.every(card => card.hidden);
+    }
+    empty.hidden = sections.some(section => !section.hidden);
+  });
+  search.hidden = false;
+</script>
+</body>
+</html>
