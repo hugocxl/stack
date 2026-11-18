@@ -20,8 +20,14 @@ export function verifyIntegrity(metadata, integrity, name, version) {
   }
 }
 
+// The registry can list a new version for a while before its tarball downloads.
+export async function tarballReady(metadata, request = fetch) {
+  return (await request(metadata.dist.tarball, { method: 'HEAD' })).ok;
+}
+
 export async function publishPackage({ name, version, file, integrity }, {
   lookup = registryVersion,
+  ready = tarballReady,
   publish = file => execFileSync('npm', ['publish', resolve(file), '--access', 'public', '--provenance', '--registry', registry], { stdio: 'inherit' }),
   pause = () => new Promise(resolve => setTimeout(resolve, 5000)),
 } = {}) {
@@ -29,16 +35,18 @@ export async function publishPackage({ name, version, file, integrity }, {
   if (existing) {
     verifyIntegrity(existing, integrity, name, version);
     console.log(`${name}@${version} already published with matching integrity.`);
-    return;
+  } else {
+    publish(file);
   }
-  publish(file);
   // Registry processing has taken over fifteen minutes for large packages after a successful publish.
   for (let attempt = 0; attempt < 540; attempt++) {
     const metadata = await lookup(name, version);
     if (metadata) {
       verifyIntegrity(metadata, integrity, name, version);
-      console.log(`Verified ${name}@${version} on npm.`);
-      return;
+      if (await ready(metadata)) {
+        console.log(`Verified ${name}@${version} on npm.`);
+        return;
+      }
     }
     await pause();
   }
