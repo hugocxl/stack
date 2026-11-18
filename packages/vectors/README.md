@@ -1,4 +1,4 @@
-# Vectors
+# @hugocxl/vectors
 
 **2,000 isometric line illustrations for websites and apps**, with typed,
 tree-shakeable exports for JavaScript, React, React Native and Expo.

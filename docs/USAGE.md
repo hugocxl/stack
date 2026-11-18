@@ -1,6 +1,6 @@
-# Use Vectors
+# Use @hugocxl/vectors
 
-Vectors is a library of 2,000 isometric line illustrations for websites and apps.
+@hugocxl/vectors is a library of 2,000 isometric line illustrations for websites and apps.
 Every platform uses the same names and the same artwork. Pick yours below.
 
 ## Choose an integration

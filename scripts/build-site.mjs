@@ -56,7 +56,7 @@ const masthead = `  <header class="ds-masthead">
     <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme">${icon('contrast')}</button>
   </header>`;
 const footer = `  <footer class="ds-footer">
-    <ul><li><a href="https://hugocxl.github.io/icons/">Icons</a></li><li><a href="${site}">Vectors</a></li><li><a href="https://hugocxl.github.io/design-system/">Design system</a></li></ul>
+    <ul><li><a href="https://hugocxl.github.io/icons/">@hugocxl/icons</a></li><li><a href="${site}">@hugocxl/vectors</a></li><li><a href="https://hugocxl.github.io/design-system/">@hugocxl/design-system</a></li></ul>
     <ul><li><a href="https://www.npmjs.com/package/@hugocxl/vectors">npm</a></li><li><a href="${repo}/blob/main/LICENSE">License</a></li><li><a href="https://github.com/hugocxl">@hugocxl</a></li></ul>
   </footer>`;
 const head = (title, description, file) => `  <meta charset="utf-8">
@@ -84,7 +84,7 @@ const homeFigures = ['modular-design', 'product-launch', 'collaboration', 'ai-as
   .map(name => catalog.find(item => item.name === name))
   .map(({ name, title }) => ({ name, title }));
 page('index.html', {
-  head: head('Vectors', `${count} isometric line illustrations for websites and apps, for SVG, JavaScript, React, React Native and Swift.`, 'index.html'),
+  head: head('@hugocxl/vectors', `${count} isometric line illustrations for websites and apps, for SVG, JavaScript, React, React Native and Swift.`, 'index.html'),
   figure: inlineVector(homeFigures[0].name),
   figureTitle: escape(homeFigures[0].title),
   figures: JSON.stringify(homeFigures),
@@ -98,7 +98,7 @@ const items = catalog.map(item =>
 const data = catalog.map(({ name, export: symbol, title, description, category, categoryId, placement }) =>
   ({ name, export: symbol, title, description, category, categoryId, placement }));
 page('browse.html', {
-  head: head('Browse vectors — Vectors', `Search ${count} isometric line illustrations by name, category and use case, then copy or download the SVG.`, 'browse.html'),
+  head: head('Browse vectors — @hugocxl/vectors', `Search ${count} isometric line illustrations by name, category and use case, then copy or download the SVG.`, 'browse.html'),
   filters,
   items,
   data: JSON.stringify(data).replaceAll('</', '<\\/'),
@@ -130,7 +130,7 @@ const content = [
   }),
 ].join('\n');
 page('docs.html', {
-  head: head('Docs — Vectors', 'Install and use Vectors on the web, in React and React Native, and in SwiftUI, UIKit and AppKit.', 'docs.html'),
+  head: head('Docs — @hugocxl/vectors', 'Install and use @hugocxl/vectors on the web, in React and React Native, and in SwiftUI, UIKit and AppKit.', 'docs.html'),
   title: escape(title),
   content,
 });

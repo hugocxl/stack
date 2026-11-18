@@ -1,4 +1,4 @@
-# Contributing to Vectors
+# Contributing to @hugocxl/vectors
 
 ## Development and validation
 

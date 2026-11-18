@@ -39,7 +39,7 @@ for (const [name, doc] of docs) {
   assert.deepEqual([...doc.querySelectorAll('.ds-masthead a')].map(a => a.textContent), ['@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
   assert.ok(doc.querySelector('.ds-masthead [data-ds-theme]'), `${name}: theme button`);
   assert.deepEqual([...doc.querySelectorAll('.ds-footer a')].map(a => a.textContent),
-    ['Icons', 'Vectors', 'Design system', 'npm', 'License', '@hugocxl'], `${name}: footer`);
+    ['@hugocxl/icons', '@hugocxl/vectors', '@hugocxl/design-system', 'npm', 'License', '@hugocxl'], `${name}: footer`);
   assert.equal(doc.querySelectorAll('h1').length, 1, `${name}: one h1`);
   assert.ok(doc.querySelectorAll('.ds-accent, .ds-dot').length <= 2, `${name}: accent budget`);
   assert.ok(doc.querySelectorAll('.ds-button').length <= 1, `${name}: one filled button`);
