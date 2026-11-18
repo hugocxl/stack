@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="preview.css?v=2">
   <script src="system/theme.js?v=2"></script>
 </head>
-<body class="p9" data-layout="field" id="top">
+<body class="p9" data-layout="plain" id="top">
   <header class="p9-masthead">
     <a class="p9-wordmark" href="./">@hugocxl/design-system</a>
     <a href="DESIGN.md" download>DESIGN.md</a>
@@ -118,20 +118,20 @@
 
       <section class="p9-section" id="layout">
         <h2>Layout</h2>
-        <p>Every page uses one of two layouts, set with <code>data-layout</code> on the body. <span class="p9-muted">Text sits in a 30em column, about 65 characters. Wide figures and grids extend to 80rem.</span></p>
+        <p>Every page uses <code>plain</code>, centered, unless it is a personal home page. <span class="p9-muted">Set the layout with <code>data-layout</code> on the body.</span> <span class="p9-muted">Text sits in a 30em column, about 65 characters. Wide figures and grids extend to 80rem.</span></p>
       </section>
       <ul class="p9-grid p9-wide" data-columns="2">
-        <li>
-          <span class="p9-label">Layout / field</span>
-          <div class="doc-schematic" data-layout="field" aria-hidden="true"><span class="doc-col">30em</span><span class="doc-wide">80rem</span><span class="doc-field">field</span></div>
-          <h3>Field</h3>
-          <p>Home and landing pages. The column aligns to the left gutter and a fixed textured panel fills the right: <code>clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)</code>. At 760px and below it becomes a 12px strip.</p>
-        </li>
         <li>
           <span class="p9-label">Layout / plain</span>
           <div class="doc-schematic" data-layout="plain" aria-hidden="true"><span class="doc-col">30em</span><span class="doc-wide">80rem</span></div>
           <h3>Plain</h3>
-          <p>Articles, docs, changelogs, pricing and contact. The column is centered and wide figures are centered on it. The gutter is <code>clamp(1.25rem, 4.5vw, 4rem)</code>.</p>
+          <p>The default for every page, home included. The column is centered and wide figures are centered on it. The gutter is <code>clamp(1.25rem, 4.5vw, 4rem)</code>.</p>
+        </li>
+        <li>
+          <span class="p9-label">Layout / field</span>
+          <div class="doc-schematic" data-layout="field" aria-hidden="true"><span class="doc-col">30em</span><span class="doc-wide">80rem</span><span class="doc-field">field</span></div>
+          <h3>Field</h3>
+          <p>Optional, for a personal home page only, such as hugocxl.me. Never on product, library or docs sites. The column aligns to the left gutter and a fixed textured panel fills the right: <code>clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)</code>. At 760px and below it becomes a 12px strip.</p>
         </li>
       </ul>
 
@@ -362,6 +362,7 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
           <li>Keep the SVG’s <code>title</code> and <code>desc</code>: they are its accessible name.</li>
           <li>Use screenshots as <code>&lt;img&gt;</code> only when the subject is the product itself.</li>
           <li>Never crop a vector, color it with the accent or place it on the field.</li>
+          <li>Use the <code>field</code> layout only on a personal home page.</li>
         </ul>
       </section>
 
@@ -372,7 +373,7 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
           <table class="p9-table doc-recipes">
             <thead><tr><th scope="col">Recipe</th><th scope="col">Layout</th><th scope="col">Sequence</th></tr></thead>
             <tbody>
-              <tr><th scope="row"><code>home</code></th><td>field</td><td><code>masthead statement meta? section (figure-wide | figure-grid) section* (button | form)? footer</code></td></tr>
+              <tr><th scope="row"><code>home</code></th><td>plain (field on a personal site)</td><td><code>masthead statement meta? section (figure-wide | figure-grid) section* (button | form)? footer</code></td></tr>
               <tr><th scope="row"><code>article</code></th><td>plain</td><td><code>masthead title meta section figure-wide? section+ form? footer</code></td></tr>
               <tr><th scope="row"><code>docs</code></th><td>plain</td><td><code>masthead title meta? section (section | figure-wide)* footer</code></td></tr>
               <tr><th scope="row"><code>changelog</code></th><td>plain</td><td><code>masthead title section? index footer</code></td></tr>
@@ -421,7 +422,6 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
             <ul><li><a href="#recipes">Privacy</a></li></ul>
           </footer>
         </div>
-        <div class="doc-example-field" aria-hidden="true"></div>
       </div>
 
       <section class="p9-section" id="rules">

@@ -16,7 +16,7 @@
     "blocks": { "type": "array", "minItems": 3, "items": { "$ref": "#/$defs/block" } }
   },
   "allOf": [
-    { "if": { "properties": { "recipe": { "const": "home" } } }, "then": { "properties": { "layout": { "const": "field" } } }, "else": { "properties": { "layout": { "const": "plain" } } } }
+    { "if": { "properties": { "recipe": { "const": "home" } } }, "then": { "properties": { "layout": { "description": "plain by default; field only on a personal home page." } } }, "else": { "properties": { "layout": { "const": "plain" } } } }
   ],
   "$defs": {
     "text": { "type": "string", "minLength": 1 },

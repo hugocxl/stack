@@ -32,10 +32,11 @@ test('DESIGN.md, the schema and the page name the same thirteen components', asy
   for (const id of specimens) expect(schema.$defs[id].properties.component.const).toBe(id);
 });
 
-for (const width of [320, 760, 761, 1440]) {
-  test(`field layout geometry at ${width}px`, async ({ page }) => {
+for (const layout of ['plain', 'field']) for (const width of [320, 760, 761, 1440]) {
+  test(`${layout} layout geometry at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
+    await page.evaluate(layout => { document.body.dataset.layout = layout }, layout);
     await page.evaluate(() => document.fonts.ready);
     const metrics = await page.evaluate(() => {
       const article = document.querySelector('.p9-opening');
@@ -64,9 +65,11 @@ for (const width of [320, 760, 761, 1440]) {
     });
 
     expect(metrics.scrollWidth).toBe(width);
-    expect(metrics.columnLeft).toBeCloseTo(metrics.mainLeft, 0);
-    expect(metrics.columnWidth).toBeCloseTo(Math.min(metrics.measure, metrics.mainWidth), 0);
-    expect(metrics.figureLeft).toBeCloseTo(metrics.mainLeft, 0);
+    const columnWidth = Math.min(metrics.measure, metrics.mainWidth);
+    const figureWidth = Math.min(metrics.mainWidth, 1280);
+    expect(metrics.columnWidth).toBeCloseTo(columnWidth, 0);
+    expect(metrics.columnLeft).toBeCloseTo(metrics.mainLeft + (layout === 'plain' ? (metrics.mainWidth - columnWidth) / 2 : 0), 0);
+    expect(metrics.figureLeft).toBeCloseTo(metrics.mainLeft + (layout === 'plain' ? (metrics.mainWidth - figureWidth) / 2 : 0), 0);
     expect(metrics.figureWidth).toBeCloseTo(Math.min(metrics.mainWidth, 1280), 0);
     expect(metrics.readingSize).toBeCloseTo(Math.min(16 + width * 0.0036, 16 * 1.54), 2);
     expect(metrics.lineHeight).toBeCloseTo(typography.reading.lineHeight, 2);
@@ -76,7 +79,8 @@ for (const width of [320, 760, 761, 1440]) {
     expect(metrics.sectionGap).toBe(px(spacing.section));
     const gutter = Math.min(Math.max(20, width * 0.045), 64);
     const field = width <= 760 ? 20 : Math.min(Math.max(width * 0.3, width - 2 * gutter - 47.6 * 16), width * 0.4);
-    expect(metrics.fieldWidth).toBeCloseTo(width <= 760 ? 12 : field - 12, 0);
+    if (layout === 'field') expect(metrics.fieldWidth).toBeCloseTo(width <= 760 ? 12 : field - 12, 0);
+    else expect(Number.isNaN(metrics.fieldWidth) || metrics.fieldWidth === 0).toBe(true);
   });
 }
 

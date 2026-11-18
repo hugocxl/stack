@@ -23,7 +23,7 @@
 .doc-specimen :where(.p9-masthead, .p9-meta, .p9-section, .p9-form) { margin-top: 0; padding-top: 0 }
 .doc-specimen .p9-footer { margin-top: 0; padding-bottom: 0 }
 .doc-specimen .p9-wide { margin-block: 0 }
-.doc-component[data-wide] > :is(.doc-specimen, .p9-code) { width: min(100cqw, var(--p9-wide)) }
+.doc-component[data-wide] > :is(.doc-specimen, .p9-code) { width: min(100cqw, var(--p9-wide)); margin-inline: calc((100% - min(100cqw, var(--p9-wide))) / 2) }
 .doc-note { margin-top: var(--p9-space-4); font-size: var(--p9-size-small) }
 
 .doc-palette :where(td, th) { white-space: nowrap }
@@ -56,22 +56,12 @@
 .doc-schematic[data-layout=plain] .doc-col { left: 30%; width: 40% }
 .doc-schematic[data-layout=plain] .doc-wide { left: 8%; width: 84% }
 
-/* The example home page, framed with its own field. */
+/* The example home page: a plain, centered page inside a frame. */
 .doc-example {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 16%;
-  gap: var(--p9-space-5);
-  padding: 0 var(--p9-space-3) 0 var(--p9-space-6);
+  padding: 0 var(--p9-space-6);
   border: 1px solid var(--p9-rule);
   border-radius: var(--p9-radius-media);
 }
 .doc-example-page { container-type: inline-size; min-width: 0 }
-.doc-example-page .p9-column { margin-inline: 0 }
 .doc-example-page .p9-opening { padding-top: var(--p9-space-9) }
-.doc-example-page .p9-wide { margin-inline: 0 }
-.doc-example-field { margin-block: var(--p9-space-3); border-radius: var(--p9-radius-media); background: #777 url("system/images/gray-folds.png") center / cover }
-@container (max-width: 40rem) {
-  .doc-example { grid-template-columns: minmax(0, 1fr) 12px; padding-left: var(--p9-space-4) }
-  .doc-example-field { border-radius: 5px }
-}
 .doc-stack-example { margin-block: var(--p9-space-5) }

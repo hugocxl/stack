@@ -207,8 +207,8 @@ Supporting sentences follow the main thought in the same paragraph, wrapped in `
 
 Set the layout with `data-layout` on `<body class="p9">`. There are two layouts:
 
-- **`field`** is for home only. The column aligns to the left gutter. A fixed textured panel fills the right side at `clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)`, inset 12px with a 12px radius. At 760px and below the field becomes a 12px strip.
-- **`plain`** is for every other recipe. The column is centered, and wide figures are centered on the column.
+- **`plain`** is the default for every page, home included. The column is centered, and wide figures are centered on the column. Nothing sits beside the content.
+- **`field`** is an optional signature for a personal home page, such as hugocxl.me, and nowhere else. The column aligns to the left gutter and a fixed textured panel fills the right side at `clamp(30vw, 100vw − 2 × gutter − 47.6rem, 40vw)`, inset 12px with a 12px radius. At 760px and below the field becomes a 12px strip. Never use it on product, library or documentation sites.
 
 The column (`.p9-column`) is 30em of reading type, about 65 characters. `.p9-wide` elements (figures and grids) extend to `min(main width, 80rem)`. The gutter is `clamp(1.25rem, 4.5vw, 4rem)`. The opening padding is `clamp(80px, 8vw, 128px)`.
 
@@ -233,7 +233,7 @@ A recipe fixes the layout and the component order. `?` means optional, `+` one o
 
 | Recipe | Layout | Sequence |
 | --- | --- | --- |
-| `home` | field | `masthead statement meta? section (figure-wide \| figure-grid) section* (button \| form)? footer` |
+| `home` | plain (field on a personal site) | `masthead statement meta? section (figure-wide \| figure-grid) section* (button \| form)? footer` |
 | `article` | plain | `masthead title meta section figure-wide? section+ form? footer` |
 | `docs` | plain | `masthead title meta? section (section \| figure-wide)* footer` |
 | `changelog` | plain | `masthead title section? index footer` |
@@ -517,6 +517,7 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 - Keep the SVG's `title` and `desc`: they are its accessible name.
 - Use an `<img>` only for a screenshot of the product itself.
 - Never crop a vector, color it with the accent or place it on the field.
+- Use the `field` layout only on a personal home page.
 
 ## Do's and Don'ts
 
