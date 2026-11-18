@@ -1,6 +1,6 @@
 // src/core/styles.ts
-var LIGHT = { plate: "#ffffff", hi: "#232327", edge: "#a4a4ac", mid: "#c3c3c9", lo: "#e0e0e4" };
-var DARK = { plate: "#08090a", hi: "#d0d6e0", edge: "#5b5d64", mid: "#3e3e44", lo: "#29292d" };
+var LIGHT = { plate: "#ffffff", hi: "#232323", edge: "#a5a5a5", mid: "#c3c3c3", lo: "#e0e0e0" };
+var DARK = { plate: "#090909", hi: "#d5d5d5", edge: "#5d5d5d", mid: "#3e3e3e", lo: "#292929" };
 var KEYS = ["plate", "hi", "edge", "mid", "lo"];
 var vars = (p) => KEYS.map((k) => `--hl-${k}:var(--hairline-${k},${p[k]});`).join("");
 var EASE = "cubic-bezier(0.5,0,0.1,1)";

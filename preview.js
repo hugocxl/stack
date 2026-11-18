@@ -1,4 +1,4 @@
-import {keyboard, terrain, dish} from './system/figures/index.js';
+import {keyboard, terrain, dish} from './system/figures/index.js?v=gray';
 const figures = Object.entries({Keyboard:keyboard, Terrain:terrain, Dish:dish});
 const select = id => document.getElementById(id);
 let current = 0;
@@ -17,7 +17,7 @@ select('theme').onclick = () => {
   localStorage.setItem('cxl-theme', document.documentElement.dataset.theme === 'light' ? 'dark' : 'light');
   applyTheme();
 };
-for (const name of ['Paper','Ink','Sage','Amber']) {
+for (const name of ['Paper','Silver','Graphite','Ink']) {
   const token = '--cxl-' + name.toLowerCase();
   const hex = getComputedStyle(document.documentElement).getPropertyValue(token).trim();
   const swatch = document.createElement('div');
