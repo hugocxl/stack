@@ -1,5 +1,7 @@
 // Check the built site in _site/: links, anchors, assets and the P9 page contract.
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import assert from "node:assert/strict";
 import { JSDOM } from "jsdom";
 
@@ -27,6 +29,17 @@ for (const [name, doc] of docs) {
     const path = (element.getAttribute("src") || element.getAttribute("href")).split(/[?#]/)[0];
     if (local(path)) assert.ok(existsSync(`${site}/${path}`), `${name}: missing asset ${path}`);
   }
+}
+
+// The design system is the installed @hugocxl/design-system package, copied verbatim.
+const system = join(dirname(createRequire(import.meta.url).resolve("@hugocxl/design-system/package.json")), "system");
+const files = (root) =>
+  readdirSync(root, { recursive: true }).map(String).filter((path) => statSync(join(root, path)).isFile()).sort();
+const systemFiles = files(system);
+for (const required of ["ds.css", "ds.js", "theme.js"]) assert.ok(systemFiles.includes(required), `package system/${required}`);
+assert.deepEqual(files(`${site}/system`), systemFiles, "_site/system matches the package file list");
+for (const path of systemFiles) {
+  assert.ok(readFileSync(join(system, path)).equals(readFileSync(join(site, "system", path))), `_site/system/${path} differs from the package`);
 }
 
 // Every page is a P9 page with the shared masthead and footer.
@@ -107,4 +120,6 @@ assert.doesNotMatch(css, /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|oklch\(/i, "site.css:
 assert.doesNotMatch(css, /box-shadow|text-shadow|gradient|font-family|font-weight|border-radius:\s*\d/i, "site.css: off-token style");
 for (const [, property] of css.matchAll(/var\((--[\w-]+)/g)) assert.match(property, /^--ds-/, `site.css: ${property}`);
 
-console.log(`Site verified: ${pages.length} pages, ${links} local links, ${catalog.length} icons with artwork.`);
+console.log(
+  `Site verified: ${pages.length} pages, ${links} local links, ${catalog.length} icons with artwork, ${systemFiles.length} design-system files.`,
+);

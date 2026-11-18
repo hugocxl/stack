@@ -13,10 +13,10 @@
     "validate": "bash scripts/validate.sh",
     "test:swift": "swift test",
     "build:site": "node scripts/build-site.mjs",
-    "check:site": "node scripts/check-site.mjs",
-    "sync:design-system": "node scripts/sync-design-system.mjs"
+    "check:site": "node scripts/check-site.mjs"
   },
   "devDependencies": {
+    "@hugocxl/design-system": "^0.2.7",
     "@types/react": "^19.0.0",
     "esbuild": "^0.28.2",
     "jsdom": "26.1.0",

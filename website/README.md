@@ -12,9 +12,11 @@ node --test tests/gallery.test.mjs
 
 Serve `_site` with any static HTTP server.
 
-- `system/` is the design system, copied verbatim from `../design-system/system/`
-  by `npm run sync:design-system` (`-- --check` reports drift). It is committed
-  because CI has no sibling checkout. Never edit it here.
+- The design system comes from the `@hugocxl/design-system` devDependency: the
+  build copies its `system/` folder to `_site/system/`. The Pages workflow
+  installs `@hugocxl/design-system@latest` before building, so every deploy
+  (including the ones a design-system release triggers) uses the newest release.
+  The icons on the site come from this repository.
 - `index.html` (recipe `home`), `browse.html` (layout `plain`) and `docs.html`
   (recipe `docs`) are templates. `scripts/build-site.mjs` fills in `{{…}}` values
   from `catalog.json` and `packages/icons/package.json`, inlines real artwork and

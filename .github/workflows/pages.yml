@@ -24,6 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm install --no-save @hugocxl/design-system@latest
       - run: npm run build:site
       - run: node scripts/check-site.mjs
       - run: node --test tests/gallery.test.mjs

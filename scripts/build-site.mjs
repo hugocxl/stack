@@ -1,9 +1,12 @@
 // Build the GitHub Pages site from website/ into _site/.
-// Pages follow the P9 design system vendored in website/system (see scripts/sync-design-system.mjs).
+// Pages follow the design system from the @hugocxl/design-system package; the icons come from this repository.
 import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import { marked } from "marked";
 
 const out = "_site";
+const designSystem = dirname(createRequire(import.meta.url).resolve("@hugocxl/design-system/package.json"));
 const read = (path) => readFileSync(path, "utf8");
 const escape = (text) =>
   String(text).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -107,7 +110,7 @@ function render(template, values) {
 
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
-cpSync("website/system", `${out}/system`, { recursive: true });
+cpSync(join(designSystem, "system"), `${out}/system`, { recursive: true });
 for (const file of ["site.css", "home.js", "browse.js"]) cpSync(`website/${file}`, `${out}/${file}`);
 for (const style of STYLES) {
   cpSync(style === "duotone" ? "icons" : `icons/styles/${style}`, `${out}/svg/${style}`, {
