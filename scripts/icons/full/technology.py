@@ -190,7 +190,8 @@ def register(api):
     G('printer-3d',ink)
     overrides['printer-3d']={'solid':union(ink,head,print_part)}
     S('projector',rr(1.8,5,12.4,7),union(ring(10.4,8.5,2.1),lines('M4 12L3.4 14M12 12L12.6 14M3.5 7.5H5.5M3.5 9.5H5.5')))
-    S('robot-vacuum',circle(8,8.8,5.75),union(stroke('M3.05 6.05Q8 9.85 12.95 6.05'),circle(9.9,10.45,1.05)))
+    vacuum = path('M2.05 8.2C2.05 4.65 4.7 2.35 8 2.35S13.95 4.65 13.95 8.2C13.95 10.15 13.2 12.25 11.65 13.2Q11.1 13.55 10.45 13.55H5.55Q4.9 13.55 4.35 13.2C2.8 12.25 2.05 10.15 2.05 8.2Z')
+    S('robot-vacuum',vacuum,stroke('M2.65 10.6Q8 11.3 13.35 10.6M7.35 5.25H8.65'))
     foot = rr(1.8,11.75,7,2.6)
     pivots = union(circle(4.6,9,1.45),circle(8.8,4.7,1.4))
     links = stroke('M4.6 11.75V10.45M5.65 7.95L7.8 5.7M10.2 4.7L12.05 4M12.05 4L12 2.2L14 1.6M12.05 4L13.25 5.55L14.65 5')
@@ -235,7 +236,7 @@ def register(api):
     cloud=path('M4.2 13C.3 13 .5 7 4.3 7C4.5 1.5 12 1.5 12.5 7C16.3 7 16 13 12.5 13Z')
     badge('cloud-cog',None,None,cog(),source='cloud',x=12,y=11.8,radius=3.9,min_area=1.3)
     S('cloud-exclamation-point',cloud,warn(8,9,.85))
-    for n,m in [('cog',cog()),('lock',lock()),('pen',stroke('M10 13.8L10.5 11.5L13.5 8.5L15 10L12 13Z')),('sync',stroke('M9.45 10.65Q11 7.65 14.1 10.05M14.1 8.4V10.35H12.15M14.35 12.65Q12.6 15.3 9.6 13.1M9.6 14.65V12.8H11.55'))]: badge('wifi-'+n,None,None,m,source='wifi',x=12,y=11.8,radius=3.55)
+    for n,m in [('cog',cog()),('lock',lock()),('pen',stroke('M10 13.8L10.5 11.5L13.2 8.75L14.7 10.25L12 13Z')),('sync',stroke('M9.45 10.65Q11 7.65 14.1 10.05M14.1 8.4V10.35H12.15M14.35 12.65Q12.6 15.3 9.6 13.1M9.6 14.65V12.8H11.55'))]: badge('wifi-'+n,None,None,m,source='wifi',x=12,y=11.8,radius=3.55)
     G('antenna',union(stroke('M3.5 6A5.5 5.5 0 0 1 12.5 6M5.5 7.8A3 3 0 0 1 10.5 7.8'),circle(8,8.6,.75)),lines('M8 11.1V14M5 14H11'))
     signal_arc = stroke('M2.15 7.3Q1.75 4.55 3.65 2.1M4.55 6.35Q4.45 4.7 5.55 3.55')
     G('radio-tower',union(signal_arc,api['mirror'](signal_arc),circle(8,4.2,.85)),
@@ -277,10 +278,10 @@ def register(api):
     for n,m in bookmarks.items(): S('book-'+n,book,union(spine,m))
     G('book-dashed',stroke('M5.5 2H4Q2.8 2 2.8 3.3V12.4Q2.8 13.7 4 13.7H5.5ZM8.1 2H9.3M11.8 2H13.25V4.65M13.25 7.3V9M13.25 11.6V13.7H11.65M8.95 13.7H8'))
     S('bot-message-square',path('M2 3H14V11H7L3 14V11H2Z'),union(dots((5.5,6.5),(10.5,6.5),r=.75),line((6,9),(10,9)),line((8,1),(8,3))))
-    off('bot-off',source='bot',center=(7.100,9.250),min_area=1.55)
+    off('bot-off',source='bot',center=(7.1,9.05),min_area=1.55)
     brain=path('M8 3Q4 0 2.5 3Q1 4 2.5 6Q.5 8 2 10Q2.8 12 4.5 11.5Q4 15 8 13Q12 15 11.5 11.5Q14.5 12 14.5 8Q15 6 13.5 5Q14.5 1 11 1.8Q9.5 1 8 3Z')
 
-    badge('brain-cog',None,None,cog(),source='brain',radius=3.8,min_area=1.3)
+    badge('brain-cog',None,None,cog(),source='brain',x=12.05,y=11.95,radius=3.8,min_area=1.3)
     S('brain-circuit',brain,stroke('M8 3V13M4.05 4.8V7.9H5.7M11.9 4.9V7.7H10.25V10.5'))
     off('brain-off',source='brain',min_area=1.7)
     off('bug-off',source='bug',min_area=1.8)
@@ -391,10 +392,11 @@ def register(api):
     S('mic-vocal',transform(union(grille,handle),39),
       transform(stroke('M5.3 4.6H10.7M6.25 7.1Q8 8.25 9.75 7.1'),39))
     off('headphone-off',source='headphones',center=(7.725,8.425),min_area=1.65)
-    bud = path('M5.65 2.3C3.5 1.55 1.65 2.6 1.95 4.65C2.15 6.4 3.65 7.65 5.55 7.65Q6.6 7.65 6.6 6.45V3.55Q6.6 2.65 5.65 2.3Z')
+    # Inward-facing acoustic heads extend from the outside of the angled stems.
+    bud = path('M2.25 5.3C1.6 3.25 3.1 2.3 4.85 2.75L6.45 3.25Q7.6 3.7 7.15 5.35Q6.8 6.85 5.05 6.65L4.6 6.55L5.7 11.95Q5.95 13.2 4.75 13.45Q3.65 13.6 3.45 12.4Z')
     buds = union(bud,api['mirror'](bud))
-    stems = stroke('M5.55 7.25V13.6M10.45 7.25V13.6')
-    S('earbuds',buds,stems)
+    vent = line((5.15,4.65),(5.9,4.85))
+    S('earbuds',buds,union(vent,api['mirror'](vent)))
     off('earbuds-off',source='earbuds',min_area=1.2)
     off('megaphone-off',source='megaphone',center=(8.175,7.825),min_area=2)
     radio=rr(1.5,5,13,9)
@@ -551,7 +553,7 @@ def register(api):
         overrides[name]={'solid':union(cut(shell,axis),cut(axis,shell))}
     S('mirror-rectangular',rr(3,1.5,10,10.5),union(lines('M8 12V14.5M5 14.5H11M5.5 6L7.45 4.05M6.8 8.55L10.25 5.1'),empty))
     S('mirror-round',circle(8,6.3,4.8),union(lines('M8 11.1V14.5M5 14.5H11M5.8 6.05L7.4 4.45M7.2 8.15L9.95 5.4')))
-    overlapping('rectangle-circle',rr(1.55,2.9,8.6,10.1),circle(10.45,9.1,4.05),empty,empty)
+    overlapping('rectangle-circle',rr(1.55,2.2,10.5,9.15),circle(11.4,11.35,3.1),empty,empty)
     S('contrast',circle(),path('M8 2V14A6 6 0 0 0 8 2Z'))
     S('eclipse',path('M8 2A6 6 0 1 0 14 8Q8 9 8 2Z'),stroke('M11 1.5V3M13.5 2.5L12.5 4M14.5 5.5H13'))
     for n,r in [('dim',2.3),('medium',3.3)]:
@@ -605,9 +607,12 @@ def register(api):
     barrel = path('M3.5 5.55L12 3.95V9.35L3.5 7.85Z')
     S('telescope',transform(barrel,-23),union(transform(stroke('M1.95 6.65H3.5M12 3.25V10.05'),-23),
       stroke('M7.9 8.65V10.45M4.65 14.3L7.9 10.45L11.15 14.3')))
-    dna=stroke('M4 1.5C4 6.5 12 9.5 12 14.5M12 1.5C12 6.5 4 9.5 4 14.5')
-    dnabars=stroke('M4 1.7H12M5.15 4.75H10.85M5.15 11.25H10.85M4 14.3H12')
-    G('dna',dna,dnabars)
+    # The two crossings bound a lens; clip all three rungs to its inner edges.
+    strand = path('M4.7 1.55C5.5 3.8 10.95 5.2 11.5 7.45C12.3 10.6 6.05 12 4.7 14.45')
+    helix = union(stroke(strand),stroke(api['mirror'](strand)))
+    middle = path('M8 3.95C10.1 5.1 11.8 6.35 11.55 8.05C11.2 9.8 9.65 10.9 8 11.8C6.35 10.9 4.8 9.8 4.45 8.05C4.2 6.35 5.9 5.1 8 3.95Z')
+    rungs = op(stroke('M3.8 5.75H12.2M3.8 8H12.2M3.8 10.25H12.2'),middle,po.PathOp.INTERSECTION)
+    G('dna',transform(union(helix,rungs),20))
     off('dna-off',source='dna',min_area=2.6)
     for n,is_germ in [('virus',False),('germ',True)]:
         body=path('M4.55 4.8Q6.75 2 9.65 4Q13 4 12.25 7.85Q13.85 10.8 10.85 12.25Q7.5 14.15 5.55 11.75Q2.45 10.9 3.75 8Q2.45 5.55 4.55 4.8Z') if is_germ else circle(8,8,4)
