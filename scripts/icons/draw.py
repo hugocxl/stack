@@ -81,8 +81,10 @@ RADIUS = 1.25
 def weight(width):
     return STROKE if .75 <= width <= 1.55 else width
 
-def stroke(d, width=STROKE):
-    width = weight(width)
+def stroke(d, width=STROKE, exact=False):
+    # exact=True keeps the given width for measurement and clearance tools;
+    # visible artwork always goes through the single family weight.
+    width = width if exact else weight(width)
     p = path(d) if isinstance(d, str) else po.Path(d)
     # Stroke at authoring resolution so Skia's curve tolerance cannot
     # introduce visibly different widths at different orientations.

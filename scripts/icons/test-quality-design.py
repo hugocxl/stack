@@ -24,7 +24,7 @@ class DesignQualityRegressionTests(unittest.TestCase):
             pieces = sorted(art.components(ink(name)), key=lambda p: p.area, reverse=True)
             self.assertGreaterEqual(len(pieces), 2, name)
             ring, mark = pieces[0], art.union(*pieces[1:])
-            clearance = art.op(ring, art.stroke(mark, .8), art.po.PathOp.INTERSECTION)
+            clearance = art.op(ring, art.stroke(mark, .8, exact=True), art.po.PathOp.INTERSECTION)
             self.assertLess(clearance.area, .01, name)
 
     def test_between_arrows_do_not_join_either_panel(self):
@@ -37,10 +37,11 @@ class DesignQualityRegressionTests(unittest.TestCase):
 
     def test_backup_clock_clears_the_cloud_contour(self):
         # Previously the clock merged into the bottom of the cloud.
+        # The clock is a ring with free-standing hands, so it may be several pieces.
         pieces = sorted(art.components(ink('cloud-backup')), key=lambda p: p.area, reverse=True)
-        self.assertEqual(len(pieces), 2)
-        cloud, clock = pieces
-        clearance = art.op(cloud, art.stroke(clock, .8), art.po.PathOp.INTERSECTION)
+        self.assertGreaterEqual(len(pieces), 2)
+        cloud, clock = pieces[0], art.union(*pieces[1:])
+        clearance = art.op(cloud, art.stroke(clock, .8, exact=True), art.po.PathOp.INTERSECTION)
         self.assertLess(clearance.area, .01)
 
     def test_cuboid_has_no_rear_edge_through_its_top_face(self):
