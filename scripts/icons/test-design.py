@@ -39,9 +39,12 @@ class DesignRegressionTests(unittest.TestCase):
             self.assertFalse(ink('sofa','stroke').contains(point),point)
 
     def test_recipe_check_accepts_identical_closed_contours_in_different_order(self):
-        # Actual Linux/x86 output of the recipe that blocked the release.
-        native=(ROOT/'icons/film.svg').read_text()
+        # Actual Linux/x86 output of the recipe that blocked the release. The
+        # native ordering is derived from it so redrawing film cannot stale it.
         linux=(ROOT/'tests/fixtures/film-linux.svg').read_text()
+        first=linux.split('d="',1)[1].split('"',1)[0]
+        contours=[c+'Z' for c in first.split('Z') if c]
+        native=linux.replace(first,''.join(reversed(contours)),1)
         self.assertNotEqual(native,linux)
         self.assertEqual(art.svg_comparison_key(native),art.svg_comparison_key(linux))
         # Geometry, winding, missing parts, opacity and layer order still matter.
