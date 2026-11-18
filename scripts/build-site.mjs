@@ -29,7 +29,7 @@ const inlineVector = name => read(`figures/${name}.svg`)
   .trim();
 
 const masthead = `  <header class="p9-masthead">
-    <a class="p9-wordmark" href="./">Vectors</a>
+    <a class="p9-wordmark" href="./">@hugocxl/vectors</a>
     <a href="browse.html">Browse</a>
     <a href="docs.html">Docs</a>
     <a href="${repo}">GitHub</a>

@@ -18,7 +18,7 @@ for (const [name, doc] of docs) {
   assert.ok(doc.querySelector('head script[src="system/theme.js"]:not([type])'), `${name}: theme.js`);
   assert.ok(doc.querySelector('head script[type=module][src="system/p9.js"]'), `${name}: p9.js`);
   assert.equal(doc.body.firstElementChild.className, 'p9-masthead', `${name}: masthead first`);
-  assert.deepEqual([...doc.querySelectorAll('.p9-masthead a')].map(a => a.textContent), ['Vectors', 'Browse', 'Docs', 'GitHub']);
+  assert.deepEqual([...doc.querySelectorAll('.p9-masthead a')].map(a => a.textContent), ['@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
   assert.ok(doc.querySelector('.p9-masthead [data-p9-theme]'), `${name}: theme button`);
   assert.deepEqual([...doc.querySelectorAll('.p9-footer a')].map(a => a.textContent),
     ['Icons', 'Vectors', 'Design system', 'npm', 'License', '@hugocxl'], `${name}: footer`);

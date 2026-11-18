@@ -149,7 +149,7 @@
 .p9-masthead a:hover { text-decoration: underline }
 .p9-wordmark { margin-right: auto; font-size: 1.125rem; font-weight: 600; letter-spacing: -.055em }
 .p9-masthead .p9-wordmark:hover { text-decoration: none }
-@media (max-width: 480px) { .p9-masthead { gap: var(--p9-space-3) } }
+@media (max-width: 480px) { .p9-masthead { flex-wrap: wrap; gap: 0 var(--p9-space-3) } .p9-wordmark { flex-basis: 100% } }
 .p9-theme { flex: none; width: var(--p9-target); height: var(--p9-target); border: 1px solid var(--p9-rule); border-radius: 50%; color: inherit; background: transparent; font: inherit; cursor: pointer }
 
 .p9-footer { display: flex; align-items: center; gap: var(--p9-space-5); margin-top: var(--p9-space-9); padding-bottom: var(--p9-space-7); font: 400 var(--p9-size-mono)/1.4 var(--p9-mono); letter-spacing: 0 }
