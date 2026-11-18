@@ -2,7 +2,7 @@
   "date": "2026-11-16",
   "reviewer": "audit_a",
   "scope": "Fresh independent visual review after coordinator fixes, cpp refinement, and proportional GraphQL scale correction.",
-  "sourceSnapshot": "/tmp/iconscxl-audit-a-final",
+  "sourceSnapshot": "/tmp/icons-audit-a-final",
   "sizesPoints": [
     16,
     24,
@@ -259,7 +259,7 @@
         }
       ],
       "reviewMatrixComplete": true,
-      "sourceSnapshot": "/tmp/iconscxl-audit-a-graphql"
+      "sourceSnapshot": "/tmp/icons-audit-a-graphql"
     }
   ],
   "sheets": [

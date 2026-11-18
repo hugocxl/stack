@@ -8,7 +8,7 @@ their default style. Together these account for **6,432 SVGs**. The
 local names and collision decisions; the [catalog](CATALOG.md) lists the
 available artwork.
 
-The new geometry is authored for IconsCXL's rounded 16-unit system. Lucide names
+The new geometry is authored for Icons's rounded 16-unit system. Lucide names
 and categories informed coverage; Lucide paths were not imported or copied.
 Existing brand marks retain their separate provenance and notices. See the
 [design system](DESIGN.md) and [drawing guide](../scripts/icons/STYLE.md) for

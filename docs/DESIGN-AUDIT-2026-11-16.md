@@ -84,13 +84,13 @@ records and rejects stale hashes; it cannot manufacture approval or refresh hash
 python3 scripts/icons/assemble-audit.py
 python3 -I scripts/icons/check-review.py --strict-design
 swift scripts/icons/render-audit.swift . review/current
-python3 -m venv /tmp/iconscxl-quality-venv
-/tmp/iconscxl-quality-venv/bin/pip install -r scripts/icons/requirements.txt
-/tmp/iconscxl-quality-venv/bin/python scripts/icons/draw.py --check
-/tmp/iconscxl-quality-venv/bin/python scripts/icons/test-design.py
+python3 -m venv /tmp/icons-quality-venv
+/tmp/icons-quality-venv/bin/pip install -r scripts/icons/requirements.txt
+/tmp/icons-quality-venv/bin/python scripts/icons/draw.py --check
+/tmp/icons-quality-venv/bin/python scripts/icons/test-design.py
 npm run validate
-xcodebuild -scheme IconsCXL -destination 'platform=macOS' test
-xcodebuild -scheme IconsCXL -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+xcodebuild -scheme Icons -destination 'platform=macOS' test
+xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
 New regression checks protect positive battery charge, badge clearance and syringe

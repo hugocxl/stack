@@ -2,7 +2,7 @@
   "date": "2026-11-16",
   "reviewer": "audit_a",
   "scope": "Independent fresh visual reassessment of all 292 names in nine assigned categories; baseline before coordinator corrections.",
-  "sourceSnapshot": "/tmp/iconscxl-audit-a-baseline",
+  "sourceSnapshot": "/tmp/icons-audit-a-baseline",
   "renderer": "AppKit NSImage template tint; scripts/icons/render-audit.swift; temporary identical 1x renderer changes only scale 2 to 1.",
   "sizesPoints": [
     16,

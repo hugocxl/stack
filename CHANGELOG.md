@@ -4,9 +4,9 @@
 
 ### Changed
 
-- Join the @hugocxl stack: the repository is now `hugocxl/icons`, the npm package is
+- Join the @hugocxl stack: the repository is `hugocxl/icons`, the npm package is
   `@hugocxl/icons` and the Swift package exposes the `Icons` library. Releases move
-  to the 0.2 line. `@hugocxl/iconscxl` and the `IconsCXL` module are retired.
+  to the 0.2 line.
 - Rebuild the website on the P9 design system shared by the @hugocxl stack: a home
   page, an icon browser with deep links and lazily loaded artwork, and docs rendered
   from `docs/USAGE.md`. The 28 MB generated root `index.html` gallery is removed;
@@ -47,7 +47,7 @@
 
 ### Previously added
 
-- Rename the repository and Swift library to IconsCXL and consolidate npm distribution as `@hugocxl/iconscxl`, with `/js`, `/react` and `/react-native` exports.
+- Consolidate npm distribution in a single package, with `/js`, `/react` and `/react-native` exports.
 - Add dependency-free JavaScript SVG exports and optional framework peers.
 - Publish the unified package to npm with OIDC provenance and verify registry integrity before publishing the GitHub release.
 

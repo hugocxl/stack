@@ -2,7 +2,7 @@
   "date": "2026-11-16",
   "scope": "All 565 assigned original design/text/layout/navigation concepts in the single-phase pinned coverage expansion.",
   "method": "Manually inspected every row of38 native AppKit pages at 1x and 2x: Duotone, Solid and Stroke at 16/24/32 pt in light and dark. Inspected 58 correction rows again after geometry and typography refinements; inspected the five final Boolean/opacity tone rows after alpha clipping. No approval was inferred from rendering or geometry checks alone.",
-  "sourceSnapshot": "/tmp/iconscxl-design-review",
+  "sourceSnapshot": "/tmp/icons-design-review",
   "sourceRecipeSha256": "0f0d1c8f9a52e659864a32e40fa5de6708a60d78b14346f1b75290e4a820d9c8",
   "sizesPoints": [
     16,

@@ -95,10 +95,10 @@ point tangencies lose geometry. Stroke expansion uses higher internal resolution
 to avoid visibly different cardinal and diagonal curves.
 
 ```sh
-python3 -m venv /tmp/iconscxl-artwork-venv
-/tmp/iconscxl-artwork-venv/bin/pip install -r scripts/icons/requirements.txt
-/tmp/iconscxl-artwork-venv/bin/python scripts/icons/test-design.py
-/tmp/iconscxl-artwork-venv/bin/python scripts/icons/draw.py --check
+python3 -m venv /tmp/icons-artwork-venv
+/tmp/icons-artwork-venv/bin/pip install -r scripts/icons/requirements.txt
+/tmp/icons-artwork-venv/bin/python scripts/icons/test-design.py
+/tmp/icons-artwork-venv/bin/python scripts/icons/draw.py --check
 npm run validate
 ```
 
