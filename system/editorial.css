@@ -72,3 +72,6 @@
   margin-block: 1.8em 1em;
   margin-inline: calc((100% - min(100cqw, 1280px)) / 2);
 }
+@container (min-width: 42rem) {
+  .cxl-reading { width: min(60ch, 84%) }
+}
