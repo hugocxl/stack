@@ -1,8 +1,8 @@
 # P9 Figures
 
-50 static isometric SVG illustrations for landing pages, feature sections, documentation, and product UI.
+79 static isometric SVG illustrations for landing pages, feature sections, documentation, and product UI.
 
-[Browse the gallery](https://hugocxl.github.io/p9-figures/) · [See all 50 SVG files](figures/)
+[Browse the gallery](https://hugocxl.github.io/p9-figures/) · [Search the use-case catalog](https://hugocxl.github.io/p9-figures/use-cases.html) · [Download the SVG files](figures/)
 
 | Modular design | Product architecture | Fast performance |
 | :---: | :---: | :---: |
@@ -15,6 +15,11 @@
 - **Infrastructure** covers cloud services, storage, backups, load balancing, failover, and bandwidth.
 - **Data** covers analytics, growth, forecasting, monitoring, and experiments.
 - **Trust & control** covers security, permissions, privacy, approvals, recovery, and feature flags.
+- **Product states** covers empty workspaces, missing pages, maintenance, and confirmations.
+- **Commerce** covers checkout, fulfillment, receipts, returns, and product comparison.
+- **Editorial & media** covers documentation, video, photography, newsletters, and learning.
+
+The [use-case catalog](catalog/) records planned briefs alongside available illustrations. The [design review](DESIGN.md) documents acceptance criteria and the review of the original set.
 
 ## Use an SVG
 
@@ -30,7 +35,7 @@ To recolor a file, edit the root `color` attribute. For inline SVG, override its
 
 ## Build from source
 
-The assets and gallery are checked in. To regenerate them, use Python 3.10–3.13 in a virtual environment.
+The assets, gallery, and use-case page are checked in. To regenerate them, use Python 3.10–3.13 in a virtual environment.
 
 ```sh
 python3 -m venv .venv

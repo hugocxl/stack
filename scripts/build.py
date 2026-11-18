@@ -5,7 +5,8 @@ import argparse
 import re
 
 from geometry import Scene, paths_for
-from scenes import product, workflow, infrastructure, data, control
+from scenes import commerce, control, data, editorial, infrastructure, new_states, product, workflow
+from catalog_page import render_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = [
@@ -14,6 +15,9 @@ COLLECTIONS = [
     ("Infrastructure", infrastructure.FIGURES),
     ("Data", data.FIGURES),
     ("Trust & control", control.FIGURES),
+    ("Product states", new_states.FIGURES),
+    ("Commerce", commerce.FIGURES),
+    ("Editorial & media", editorial.FIGURES),
 ]
 
 
@@ -60,13 +64,16 @@ def main():
         links.append(f'<a href="#{section_id}">{label}</a>')
         sections.append(f'<section id="{section_id}"><h2>{label}</h2><ul class="cards">\n' + "\n".join(cards) + "\n</ul></section>")
     expected = set(files)
-    if len(expected) != 50:
-        raise ValueError(f"Expected 50 figures, found {len(expected)}")
     extra = {f.relative_to(ROOT).as_posix() for f in (ROOT/"figures").glob("*.svg")} - expected
     if extra:
         raise ValueError(f"Unexpected figures: {', '.join(sorted(extra))}")
     template = (ROOT/"scripts/gallery.html").read_text(encoding="utf-8")
-    files["index.html"] = template.replace("<!-- COLLECTIONS -->", "\n".join(sections)).replace("<!-- CATEGORIES -->", "\n".join(links))
+    files["index.html"] = (
+        template.replace("<!-- COLLECTIONS -->", "\n".join(sections))
+        .replace("<!-- CATEGORIES -->", "\n".join(links))
+        .replace("{{figure_count}}", str(len(expected)))
+    )
+    files["use-cases.html"] = render_catalog(ROOT, expected)
     stale = []
     for relative, content in files.items():
         path = ROOT/relative
@@ -78,7 +85,7 @@ def main():
             path.write_text(content, encoding="utf-8")
     if stale:
         raise SystemExit("Regenerate these files with python scripts/build.py:\n" + "\n".join(stale))
-    print(f"{'Verified' if args.check else 'Built'} {len(expected)} static SVGs and the gallery.")
+    print(f"{'Verified' if args.check else 'Built'} {len(expected)} static SVGs, the gallery and use-case catalog.")
 
 
 if __name__ == "__main__":

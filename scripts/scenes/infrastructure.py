@@ -3,14 +3,18 @@ from geometry import BOLD, EDGE, DETAIL
 
 
 def server_rack(s):
-    s.box(0,0,0,84,63,9,6)
-    for z in [13,33,53,75]:
-        reach = 20 if z==53 else 0
-        s.box(4,2,z,76,59+reach,15,4,BOLD if reach else EDGE)
+    s.box(0,0,0,84,63,8,5)
+    s.box(0,0,8,84,7,88,4)
+    s.box(0,5,8,5,58,88,3)
+    s.box(79,5,8,5,58,88,3)
+    for z in (11,31,51,71):
+        reach = 23 if z==51 else 0
+        s.box(7,7,z,70,53+reach,15,3,BOLD if reach else EDGE)
         for i in range(6):
             x = 13+i*5
-            s.line([(x,61+reach,z+5),(x+2,61+reach,z+5)])
-        s.line([(61,61+reach,z+5),(69,61+reach,z+5)])
+            s.line([(x,60+reach,z+5),(x+2,60+reach,z+5)])
+        s.line([(61,60+reach,z+5),(69,60+reach,z+5)])
+    s.box(0,0,90,84,63,7,5)
 
 
 def cloud(s):
@@ -26,42 +30,42 @@ def cloud(s):
             weights = ((1-t)**3,3*(1-t)**2*t,3*(1-t)*t*t,t**3)
             outline.append(tuple(sum(w*v for w,v in zip(weights,coords)) for coords in zip(start,a,b,end)))
         start = end
-    for y in (0,12,24,36,47):
-        s.face([(x,y,z) for x,z in outline], BOLD if y==47 else EDGE)
     for x,dy in [(17,58),(54,78),(94,61)]:
         s.line([(x,45,27),(x,45,7),(x,dy,7)],dashed=True)
         s.disk(x,dy,0,7,7,6)
+    for y in (7,25,45):
+        s.face([(x,y,z) for x,z in outline], BOLD if y==45 else EDGE)
 
 
 def storage(s):
     for z in (0,13,27,42):
         s.disk(40,40,z,43,43,10)
-        s.ellipse(40,40,z+10,33,33)
     s.line([(40,40,51),(40,40,64)],dashed=True)
     s.disk(40,40,64,43,43,7,BOLD)
-    for r in (13,25,34):
-        s.ellipse(40,40,71,r,r)
+    s.ellipse(40,40,71,31,31)
     s.disk(40,40,71,7,7,5)
 
 
 def backup(s):
-    s.box(0,3,0,91,74,16,7)
-    s.box(8,9,16,75,62,4,4)
-    for x in (27,65):
-        s.ring(x,36,20,14,14,6,4)
-    s.line([(27,49,24),(34,61,24),(59,61,24),(65,49,24)])
-    s.box(105,15,0,40,61,13,5,BOLD)
-    s.line([(113,52,13),(135,52,13)])
-    s.line([(83,28,20),(108,28,20)],dashed=True)
+    s.line([(64,32,10),(77,32,10),(88,45,10),(102,45,10)],dashed=True)
+    for i,(x,y) in enumerate(((0,0),(94,23))):
+        s.box(x,y,0,74,52,11,5,BOLD if i else EDGE)
+        s.box(x+5,y+5,11,64,32,2,3,DETAIL)
+        for offset in (22,52):
+            s.ring(x+offset,y+21,13,10,10,3,3,DETAIL)
+        s.line([(x+19,y+44,11),(x+55,y+44,11)])
 
 
 def load_balancing(s):
-    s.box(45,-10,0,38,28,27,5,BOLD)
-    s.dots(59,-2,27,3,3)
-    for i,x in enumerate((0,45,90)):
-        s.line([(64,18,10),(64,37,10),(x+19,37,10),(x+19,68,10)],EDGE)
-        s.box(x,68,0,38,32,16+i*5,5)
-        s.dots(x+12,78,16+i*5,3,3)
+    s.box(0,0,0,143,99,5,6)
+    s.tube([(71,27,9),(71,50,9),(71,73,9)],1.8,EDGE)
+    s.tube([(71,50,9),(28,50,9),(26,54,9),(26,73,9)],1.8,DETAIL)
+    s.tube([(71,50,9),(114,50,9),(116,54,9),(116,73,9)],1.8,DETAIL)
+    s.box(48,7,5,46,23,21,5,BOLD)
+    s.dots(63,14,26,4,3)
+    for x in (10,55,100):
+        s.box(x,71,5,32,20,12,4)
+        s.line([(x+9,82,17),(x+23,82,17)])
 
 
 def edge_network(s):
@@ -71,8 +75,6 @@ def edge_network(s):
         s.line([(x,y,5),(46,49,5)])
     for x,y,h in nodes:
         s.disk(x,y,5,7+(h==13)*3,7+(h==13)*3,h,BOLD if h==13 else EDGE)
-    for r in (14,20,26):
-        s.ellipse(46,49,5,r,r,DETAIL,198,338)
 
 
 def queues(s):
@@ -86,34 +88,33 @@ def queues(s):
 
 
 def data_pipeline(s):
-    segments = [(0,0,24,49),(38,16,19,39),(76,28,15,31),(114,37,11,24)]
-    for (x,z,_,_), (next_x,next_z,_,_) in zip(segments,segments[1:]):
-        for y in (18,24,30):
-            s.line([(x+19,y,z+12),(next_x+1,y,next_z+7)],EDGE)
-    for i,(x,z,w,d) in enumerate(segments):
-        s.box(x,(49-d)/2,z,21,d,w,4,BOLD if i==2 else EDGE)
-        s.dots(x+7,(49-d)/2+6,z+w,2,4,4)
+    # One exposed conduit gives the stages a physically continuous path.
+    s.tube([(0,85,26),(151,10,26)],3.2,EDGE)
+    for x,y,d,h in ((13,76,42,45),(48,59,36,40),(83,42,30,37),(118,25,24,33)):
+        s.box(x,y-d/2,0,13,d,h,3,BOLD if x==83 else EDGE)
+        s.line([(x+6,y-d/2+5,h),(x+6,y+d/2-5,h)])
 
 
 def failover(s):
-    s.ellipse(94,68,0,31,31,DETAIL,25,320)
-    s.box(1,7,0,47,47,18,5)
-    s.box(70,44,0,47,47,18,5)
-    s.line([(45,25,19),(83,25,19),(83,55,19)],dashed=True)
-    s.box(4,10,24,41,41,26,5)
-    s.box(73,47,21,41,41,37,5,BOLD)
-    s.dots(86,59,58,4,4)
+    s.box(0,0,0,117,76,7,6)
+    s.box(10,8,7,39,35,25,5,DETAIL)
+    s.box(68,8,7,39,35,25,5,BOLD)
+    s.dots(80,19,32,4,3)
+    s.line([(30,42,7),(30,55,7),(58,61,7)],dashed=True)
+    s.tube([(87,41,9),(87,55,9),(58,61,9)],1.8,BOLD)
+    s.disk(58,61,7,7,7,4)
+    s.tube([(58,61,14),(72,58,27)],2)
 
 
 def bandwidth(s):
-    s.box(0,0,0,18,104,27,5)
-    s.box(126,0,0,18,104,27,5)
-    for i in range(7):
-        y = 10+i*14
-        points = [(18+108*k/40, y+7*sin(pi*k/40)*sin(i*.5), 12+37*sin(pi*k/40)) for k in range(41)]
-        s.line(points,BOLD if i==3 else EDGE)
-    s.dots(7,11,27,2,9,9)
-    s.dots(132,11,27,2,9,9)
+    s.box(0,0,0,22,99,19,5)
+    s.box(121,0,0,22,99,19,5)
+    for i in range(5):
+        y = 12+i*18
+        for x in (11,132):
+            s.disk(x,y,19,4,4,4,DETAIL)
+        points = [(11+121*k/40, y, 24+41*sin(pi*k/40)) for k in range(41)]
+        s.tube(points,1.45,BOLD if i==2 else DETAIL)
 
 
 FIGURES = [

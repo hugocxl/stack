@@ -5,8 +5,8 @@ from shapely.ops import unary_union
 
 BOLD = "1"
 EDGE = ".76"
-DETAIL = ".38"
-GUIDE = ".32"
+DETAIL = ".43"
+GUIDE = ".34"
 
 
 def project(point):
@@ -34,20 +34,35 @@ class Scene:
 
     def line(self, points, ink=DETAIL, dashed=False):
         if dashed:
+            phase = 0
             for a, b in zip(points, points[1:]):
                 length = sum((u-v)**2 for u, v in zip(a,b))**.5
-                for i in range(0, int(length), 6):
-                    p, q = i/length, min(i+2.4,length)/length
-                    self.line([tuple(u+(v-u)*t for u,v in zip(a,b)) for t in (p,q)], ink)
+                start = -phase
+                while start < length:
+                    end = min(start+2.4,length)
+                    if end > max(start,0):
+                        p, q = max(start,0)/length, end/length
+                        self.line([tuple(u+(v-u)*t for u,v in zip(a,b)) for t in (p,q)], ink)
+                    start += 6
+                phase = (phase+length) % 6
             return
         xy = list(map(project, points))
         if len(xy) >= 2:
             self.layers.append((LineString(xy), None, ink))
 
-    def face(self, points, ink=EDGE):
-        polygon = Polygon(list(map(project, points)))
+    def face(self, points, ink=EDGE, *, openings=()):
+        polygon = Polygon(
+            list(map(project, points)),
+            [list(map(project, opening)) for opening in openings],
+        )
         if polygon.is_valid and polygon.area > .01:
             self.layers.append((polygon.boundary, polygon, ink))
+
+    def tube(self, points, radius, ink=EDGE):
+        """Draw a constant-radius rod or cable from its projected centerline."""
+        centerline = LineString(list(map(project, points)))
+        polygon = centerline.buffer(radius, quad_segs=12)
+        self.layers.append((polygon.boundary, polygon, ink))
 
     def solid(self, foot, z, h, top=None, ink=EDGE, crease=True):
         top = top if top is not None else foot

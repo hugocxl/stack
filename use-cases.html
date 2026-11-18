@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Browse concrete use cases for isometric website illustrations.">
+<title>Use cases · P9 Figures</title>
+<style>
+  :root { color-scheme: dark; --bg: #0b0c0e; --plate: #13151a; --ink: #edf0f5; --muted: #a6afbc; --rule: #2d323a; }
+  @media (prefers-color-scheme: light) {
+    :root { color-scheme: light; --bg: #fafafa; --plate: #f1f3f5; --ink: #171a21; --muted: #525c6b; --rule: #dce0e6; }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 "Inter", system-ui, sans-serif; }
+  header { border-bottom: 1px solid var(--rule); }
+  .shell { max-width: 1088px; margin: auto; padding-inline: clamp(18px, 5vw, 64px); }
+  header .shell { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  a { color: inherit; text-underline-offset: 4px; }
+  header a { text-decoration: none; font-size: 14px; }
+  header a:first-child { font-weight: 650; }
+  .intro { padding-block: clamp(38px, 7vw, 82px) 28px; }
+  h1 { margin: 0 0 12px; font-size: clamp(44px, 7vw, 84px); line-height: 1.05; letter-spacing: -.05em; }
+  p { margin: 0; color: var(--muted); }
+  .controls { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; padding: 15px 0; border-block: 1px solid var(--rule); }
+  input, select { font: inherit; border: 1px solid var(--rule); border-radius: 6px; padding: 7px 10px; background: var(--plate); color: var(--ink); }
+  #filter { width: min(100%, 340px); }
+  #result-count { margin-left: auto; font-size: 13px; }
+  main { padding-bottom: 42px; }
+  h2 { margin: 33px 0 10px; font-size: 21px; letter-spacing: -.02em; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { padding: 12px 0; border-top: 1px solid var(--rule); display: flex; gap: 16px; align-items: start; justify-content: space-between; }
+  li > a, li > span { white-space: nowrap; font-size: 13px; }
+  li > span { color: var(--muted); }
+  h3 { margin: 0 0 1px; font-size: 15px; font-weight: 650; }
+  li p { font-size: 14px; }
+  a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  #empty { padding-block: 22px; }
+  @media(max-width: 575px) { .controls { gap: 8px; } #result-count { margin-left: 0; } }
+</style>
+</head>
+<body>
+<header><nav class="shell" aria-label="Site"><a href="./">P9 Figures</a><a href="https://github.com/hugocxl/p9-figures">GitHub ↗</a></nav></header>
+<main class="shell">
+  <div class="intro"><h1>Use-case catalog</h1><p>578 website illustration briefs, with 79 finished SVGs available.</p></div>
+  <div class="controls" hidden>
+    <input id="filter" type="search" placeholder="Find a use case…" aria-label="Find a use case">
+    <select id="availability" aria-label="Availability"><option value="">All cases</option><option value="1">SVG available</option><option value="0">Planned</option></select>
+    <p id="result-count" aria-live="polite"></p>
+  </div>
+  <p id="empty" hidden>No matching use cases.</p>
+  <section id="group-landing-and-marketing"><h2>Landing and marketing</h2>
+<ul>
+<li id="product-launch" data-asset="0"><div><h3>Product launch</h3><p>Launch-page opening hero</p><p>A hinged launch crate with the top panels fanned outward and one new device raised above the packing bed.</p></div><span>Planned</span></li>
+<li id="value-proposition" data-asset="0"><div><h3>Value proposition</h3><p>Homepage benefits overview</p><p>A large polished lens concentrates three thin rays onto one precise point.</p></div><span>Planned</span></li>
+<li id="how-it-works" data-asset="0"><div><h3>How it works</h3><p>Three-step explainer section</p><p>Three distinct tool heads align above an object at successive stages of assembly.</p></div><span>Planned</span></li>
+<li id="product-tour" data-asset="0"><div><h3>Product tour</h3><p>Interactive tour introduction</p><p>A rolling viewing frame tracks along three offset cutaway exhibits.</p></div><span>Planned</span></li>
+<li id="customer-story-outcome" data-asset="0"><div><h3>Customer story outcome</h3><p>Individual case-study results section</p><p>An original and improved specimen share a comparison jig with a measurable gap between them.</p></div><span>Planned</span></li>
+<li id="testimonials" data-asset="1"><div><h3>Testimonials</h3><p>Customer quote or endorsement block</p><p>One reader&#x27;s quote comes forward in a pair of speech panels.</p></div><a href="figures/testimonials.svg">Open SVG</a></li>
+<li id="partner-ecosystem" data-asset="0"><div><h3>Partner ecosystem</h3><p>Partners or marketplace overview</p><p>An orbital rail holds several independently mounted instruments around an open center.</p></div><span>Planned</span></li>
+<li id="product-comparison" data-asset="1"><div><h3>Product comparison</h3><p>Comparison-page hero or storefront decision aid</p><p>Two different products sit on a comparison balance.</p></div><a href="figures/product-comparison.svg">Open SVG</a></li>
+<li id="before-and-after" data-asset="0"><div><h3>Before and after</h3><p>Transformation section</p><p>A rough blank enters one side of a matched die while a finished casting emerges from the other.</p></div><span>Planned</span></li>
+<li id="get-started" data-asset="0"><div><h3>Get started</h3><p>Primary call-to-action block</p><p>A broad single step rises toward an open, illuminated threshold.</p></div><span>Planned</span></li>
+<li id="get-a-demo" data-asset="0"><div><h3>Get a demo</h3><p>Sales demo call-to-action block</p><p>A tabletop projector throws an isometric wireframe onto a small upright screen.</p></div><span>Planned</span></li>
+<li id="contact-sales" data-asset="0"><div><h3>Contact sales</h3><p>Enterprise contact section</p><p>An open appointment book sits beside a tactile brass desk bell.</p></div><span>Planned</span></li>
+<li id="fast-performance" data-asset="1"><div><h3>Fast performance</h3><p>Speed and responsiveness feature block</p><p>A tightly spaced pulse rises through a bank of thin fins.</p></div><a href="figures/fast-performance.svg">Open SVG</a></li>
+<li id="changelog" data-asset="0"><div><h3>Changelog</h3><p>Product updates index</p><p>A date wheel has rolled forward one notch behind a newly lifted update card.</p></div><span>Planned</span></li>
+<li id="coming-soon" data-asset="0"><div><h3>Coming soon</h3><p>Prelaunch teaser</p><p>A taut swatch drapes over a recognizable object outline, with a corner pulled away.</p></div><span>Planned</span></li>
+<li id="early-access" data-asset="0"><div><h3>Early access</h3><p>Private beta invitation</p><p>A single key rests in the front of a recessed tray, leading to an unpopulated row of key slots.</p></div><span>Planned</span></li>
+<li id="waitlist" data-asset="0"><div><h3>Waitlist</h3><p>Prelaunch signup confirmation</p><p>A ticket dispenser has just produced one numbered slip shape, with the print replaced by three tactile marks.</p></div><span>Planned</span></li>
+<li id="availability-by-region" data-asset="0"><div><h3>Availability by region</h3><p>Coverage lookup</p><p>A raised pin on a shallow world relief is surrounded by a single offset coverage ring.</p></div><span>Planned</span></li>
+<li id="brand-philosophy" data-asset="0"><div><h3>Brand philosophy</h3><p>About-page principles section</p><p>A precisely balanced mobile suspends three different materials from a common beam.</p></div><span>Planned</span></li>
+<li id="press-kit" data-asset="1"><div><h3>Press kit</h3><p>Newsroom resources</p><p>A media pack keeps a fact sheet and image cards together.</p></div><a href="figures/press-kit.svg">Open SVG</a></li>
+<li id="open-source" data-asset="0"><div><h3>Open source</h3><p>Open-source product section</p><p>An exploded transparent enclosure exposes its fasteners, rails, and internal assembly.</p></div><span>Planned</span></li>
+<li id="sustainability-claim" data-asset="0"><div><h3>Sustainability claim</h3><p>Impact section</p><p>A material sample moves through a circular track with visible repair and reuse stations.</p></div><span>Planned</span></li>
+<li id="community-led-product" data-asset="0"><div><h3>Community-led product</h3><p>Community growth section</p><p>A circular drafting table leaves equal openings for independent contributors, with one component assembled at its center.</p></div><span>Planned</span></li>
+<li id="product-migration" data-asset="0"><div><h3>Product migration</h3><p>Switching from another tool</p><p>A fitted carrying tray spans a narrow gap between an old workbench and a new one.</p></div><span>Planned</span></li>
+<li id="enterprise-edition" data-asset="0"><div><h3>Enterprise edition</h3><p>Enterprise-level product overview</p><p>A broad roof shelters several individual work bays beneath a single structural span.</p></div><span>Planned</span></li>
+<li id="platform-overview" data-asset="0"><div><h3>Platform overview</h3><p>Top-level platform landing</p><p>A compact instrument panel has removable modules with different physical functions.</p></div><span>Planned</span></li>
+<li id="multi-product-bundle" data-asset="0"><div><h3>Multi-product bundle</h3><p>Suite or bundle offer</p><p>Several differently shaped instruments nest tightly into a single fitted travel case.</p></div><span>Planned</span></li>
+<li id="modular-design" data-asset="1"><div><h3>Modular design</h3><p>Product architecture feature block</p><p>Four independent modules fit into one assembly.</p></div><a href="figures/modular-design.svg">Open SVG</a></li>
+<li id="product-architecture" data-asset="1"><div><h3>Product architecture</h3><p>Platform architecture feature block</p><p>An exploded stack reveals a single layer above the platform.</p></div><a href="figures/product-architecture.svg">Open SVG</a></li>
+<li id="portability" data-asset="1"><div><h3>Portability</h3><p>Cross-device or transferable-product section</p><p>A raised handle sits over a compact carrying case.</p></div><a href="figures/portability.svg">Open SVG</a></li>
+</ul></section>
+<section id="group-navigation-and-information-architecture"><h2>Navigation and information architecture</h2>
+<ul>
+<li id="site-search" data-asset="1"><div><h3>Site search</h3><p>Site search empty-query or feature section</p><p>A loupe isolates a passage on a lined sheet.</p></div><a href="figures/search.svg">Open SVG</a></li>
+<li id="explore-a-catalog" data-asset="0"><div><h3>Explore a catalog</h3><p>Directory entry or browse landing page</p><p>An angled display rack fans distinct compartments toward an open browsing side.</p></div><span>Planned</span></li>
+<li id="filter-results" data-asset="0"><div><h3>Filter results</h3><p>Search or listing filter controls</p><p>A mesh sieve retains larger pieces while fine particles collect in a shallow tray below.</p></div><span>Planned</span></li>
+<li id="sort-results" data-asset="0"><div><h3>Sort results</h3><p>Search listing or asset grid</p><p>Three blocks are arranged by thickness against a stepped height gauge.</p></div><span>Planned</span></li>
+<li id="breadcrumb-navigation" data-asset="0"><div><h3>Breadcrumb navigation</h3><p>Deep hierarchy guidance</p><p>Small milestones trace a path through a cutaway terrain toward a selected gate.</p></div><span>Planned</span></li>
+<li id="pagination" data-asset="0"><div><h3>Pagination</h3><p>Large index result footer</p><p>A strip of identical hinged index tabs bends over a flywheel, with one tab in the viewing window.</p></div><span>Planned</span></li>
+<li id="deep-linking" data-asset="0"><div><h3>Deep linking</h3><p>Shareable location or navigation help</p><p>A thin locator probe reaches one exact compartment inside a large cubby array.</p></div><span>Planned</span></li>
+<li id="related-content" data-asset="0"><div><h3>Related content</h3><p>Article footer recommendation block</p><p>Three adjacent folders extend from an open writing case, each exposing a different subject-shaped insert.</p></div><span>Planned</span></li>
+<li id="section-contents" data-asset="0"><div><h3>Section contents</h3><p>Long reference article sidebar</p><p>A narrow index comb is clipped against the edge of a thick open volume.</p></div><span>Planned</span></li>
+<li id="glossary" data-asset="0"><div><h3>Glossary</h3><p>Reference index hero</p><p>Two hinged index-card leaves expose a physical specimen and a small magnifier side by side.</p></div><span>Planned</span></li>
+<li id="tagging-content" data-asset="0"><div><h3>Tagging content</h3><p>Topic organization feature</p><p>A set of wire-loop tags hangs from different specimens on a common sorting rail.</p></div><span>Planned</span></li>
+<li id="category-directory" data-asset="0"><div><h3>Category directory</h3><p>Index of categories</p><p>A specimen cabinet opens to shelves shaped for different sample sizes.</p></div><span>Planned</span></li>
+<li id="saved-searches" data-asset="0"><div><h3>Saved searches</h3><p>Personalization feature or empty state</p><p>A small loupe sits inside a marked drawer with its last search target still under the glass.</p></div><span>Planned</span></li>
+<li id="recent-items" data-asset="0"><div><h3>Recent items</h3><p>Workspace navigation sidebar empty state</p><p>A sequence of worn and fresh punch marks leads to the most recent marker on a thin time strip.</p></div><span>Planned</span></li>
+<li id="favorites" data-asset="0"><div><h3>Favorites</h3><p>Saved-resource shortcut</p><p>A handkerchief fold bookmarks one corner of an opened folio, lifting a single page.</p></div><span>Planned</span></li>
+<li id="scroll-progress" data-asset="0"><div><h3>Scroll progress</h3><p>Long-form article experience</p><p>A spool has drawn a ribbon halfway past a fixed progress notch.</p></div><span>Planned</span></li>
+<li id="map-versus-list-view" data-asset="0"><div><h3>Map versus list view</h3><p>Location-directory view switcher</p><p>A map pin sits on a folded relief map alongside a vertical stack of slim location cards.</p></div><span>Planned</span></li>
+<li id="command-palette" data-asset="0"><div><h3>Command palette</h3><p>Keyboard navigation feature</p><p>A single recessed key opens a fan of physical shortcut slips.</p></div><span>Planned</span></li>
+<li id="sitemap" data-asset="0"><div><h3>Sitemap</h3><p>Footer index or information architecture service</p><p>A small architectural model exposes rooms and corridors across successive floors.</p></div><span>Planned</span></li>
+<li id="page-not-found" data-asset="1"><div><h3>Page not found</h3><p>404 error page or missing content state</p><p>An interrupted browser sheet marks the outline of a missing corner.</p></div><a href="figures/page-not-found.svg">Open SVG</a></li>
+<li id="merge-duplicate-records" data-asset="0"><div><h3>Merge duplicate records</h3><p>Directory admin data cleanup</p><p>Two identical impressions converge in a dovetail press before one embossed output is ejected.</p></div><span>Planned</span></li>
+<li id="external-link-handoff" data-asset="0"><div><h3>External link handoff</h3><p>Confirmation before leaving the current site</p><p>An outward-opening hatch bridges from a solid deck onto a separate short gangway.</p></div><span>Planned</span></li>
+<li id="saved-reading-position" data-asset="0"><div><h3>Saved reading position</h3><p>Long guide return banner</p><p>A narrow bookmark keeps one segment of a closed volume slightly raised.</p></div><span>Planned</span></li>
+<li id="jump-to-section" data-asset="0"><div><h3>Jump to section</h3><p>In-page anchors or accessibility documentation</p><p>A sliding index pointer aligns with one notch on a vertical reference scale.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-account-and-onboarding"><h2>Account and onboarding</h2>
+<ul>
+<li id="create-an-account" data-asset="0"><div><h3>Create an account</h3><p>Signup form illustration</p><p>A clean nameplate slides into the only open slot in a small credential press.</p></div><span>Planned</span></li>
+<li id="welcome-aboard" data-asset="0"><div><h3>Welcome aboard</h3><p>First-session welcome</p><p>A starter toolkit is opened with its three key instruments plainly visible.</p></div><span>Planned</span></li>
+<li id="set-up-a-workspace" data-asset="0"><div><h3>Set up a workspace</h3><p>First-run workspace creation</p><p>An unoccupied workbench has a mat, alignment guides, and one module waiting to be mounted.</p></div><span>Planned</span></li>
+<li id="invite-teammates" data-asset="0"><div><h3>Invite teammates</h3><p>First-run team setup</p><p>Extra stools are pulled out around a worktable with one prepared seat.</p></div><span>Planned</span></li>
+<li id="accept-an-invitation" data-asset="0"><div><h3>Accept an invitation</h3><p>Invitation landing page</p><p>A sealed envelope is lifted out of a recessed mail slot beside a newly open door.</p></div><span>Planned</span></li>
+<li id="create-a-first-project" data-asset="0"><div><h3>Create a first project</h3><p>Onboarding project-creation prompt</p><p>A small starter block is squared against two rulers on an otherwise bare drafting surface.</p></div><span>Planned</span></li>
+<li id="guided-setup" data-asset="0"><div><h3>Guided setup</h3><p>Setup wizard introduction</p><p>A rigid guide sleeve moves through sequential detents while a component takes shape underneath it.</p></div><span>Planned</span></li>
+<li id="onboarding-checklist" data-asset="0"><div><h3>Onboarding checklist</h3><p>Getting-started checklist empty or progress state</p><p>A row of actual toggle latches is mostly closed, with the final latch ready to engage.</p></div><span>Planned</span></li>
+<li id="import-existing-content" data-asset="0"><div><h3>Import existing content</h3><p>Onboarding migration option</p><p>A loaded transport tray is aligned with an open drawer equipped with matching internal rails.</p></div><span>Planned</span></li>
+<li id="sign-in" data-asset="0"><div><h3>Sign in</h3><p>Login split-screen side artwork</p><p>A single credential is poised above the matching contact-free reader in a compact assembly.</p></div><span>Planned</span></li>
+<li id="password-recovery" data-asset="0"><div><h3>Password recovery</h3><p>Forgot-password request screen</p><p>A rescue hook lifts a dropped key from a shallow groove beside the latch it fits.</p></div><span>Planned</span></li>
+<li id="email-verification" data-asset="0"><div><h3>Email verification</h3><p>Account confirmation screen</p><p>A closed envelope passes through a checking fixture that stamps a raised seal.</p></div><span>Planned</span></li>
+<li id="start-from-a-template" data-asset="0"><div><h3>Start from a template</h3><p>Template picker entry point</p><p>A cutting stencil lifts away from a freshly cut blank, exposing precisely matching profiles.</p></div><span>Planned</span></li>
+<li id="try-with-sample-data" data-asset="0"><div><h3>Try with sample data</h3><p>Demo workspace selector</p><p>An interchangeable tray of pre-filled specimen vials fits into an empty instrument housing.</p></div><span>Planned</span></li>
+<li id="personalize-your-profile" data-asset="0"><div><h3>Personalize your profile</h3><p>Account profile setup</p><p>A blank portrait medallion and two personal markers lie in a fitted badge case.</p></div><span>Planned</span></li>
+<li id="choose-preferences" data-asset="0"><div><h3>Choose preferences</h3><p>Setting first-run configuration</p><p>A dial set puts reachable options around a central pointer with detents at each stop.</p></div><span>Planned</span></li>
+<li id="set-a-passkey" data-asset="0"><div><h3>Set a passkey</h3><p>Passwordless setup</p><p>A fingerprint-shaped cell aligns with a hardware reader formed from shallow concentric traces.</p></div><span>Planned</span></li>
+<li id="connect-another-device" data-asset="0"><div><h3>Connect another device</h3><p>Device linking wizard</p><p>Two devices face each other across a short dock where their connector forms line up precisely.</p></div><span>Planned</span></li>
+<li id="switch-workspaces" data-asset="0"><div><h3>Switch workspaces</h3><p>Workspace chooser</p><p>A turntable with distinct workbenches rotates a single bay toward the front.</p></div><span>Planned</span></li>
+<li id="organization-setup" data-asset="0"><div><h3>Organization setup</h3><p>Admin where teams are first added</p><p>A building directory board receives a set of separate department tiles.</p></div><span>Planned</span></li>
+<li id="migrate-an-account" data-asset="0"><div><h3>Migrate an account</h3><p>Account transfer or ownership wizard</p><p>A carrying yoke has moved a secured instrument from one base socket toward another equally sized socket.</p></div><span>Planned</span></li>
+<li id="resume-setup" data-asset="0"><div><h3>Resume setup</h3><p>Onboarding reminder panel</p><p>A half-assembled object stays held in its jig while the remaining part sits within reach.</p></div><span>Planned</span></li>
+<li id="offboard-a-member" data-asset="0"><div><h3>Offboard a member</h3><p>Team removal sequence</p><p>One seat is gently withdrawn from a connected bench while its saved tool roll remains packed.</p></div><span>Planned</span></li>
+<li id="close-an-account" data-asset="0"><div><h3>Close an account</h3><p>Account closure consent screen</p><p>A fitted archival box is tied shut, with its retrieval slip kept outside the closure.</p></div><span>Planned</span></li>
+<li id="account-suspension" data-asset="0"><div><h3>Account suspension</h3><p>Restricted account remediation screen</p><p>A pad bar holds a guest door partly open for inspection without allowing passage.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-feedback-and-empty-states"><h2>Feedback and empty states</h2>
+<ul>
+<li id="no-search-results" data-asset="1"><div><h3>No search results</h3><p>Search does not match any item</p><p>A loupe sits in front of a completely empty results panel.</p></div><a href="figures/no-search-results.svg">Open SVG</a></li>
+<li id="empty-workspace" data-asset="1"><div><h3>Empty workspace</h3><p>Initial no-projects screen</p><p>An open presentation folder awaits its first file.</p></div><a href="figures/empty-workspace.svg">Open SVG</a></li>
+<li id="empty-cart" data-asset="0"><div><h3>Empty cart</h3><p>Cart has no products</p><p>A wire basket with folded handles reveals its empty floor through the open mesh.</p></div><span>Planned</span></li>
+<li id="empty-inbox" data-asset="0"><div><h3>Empty inbox</h3><p>Inbox caught up</p><p>An open mailbox shows uninterrupted daylight through its slightly tipped empty tray.</p></div><span>Planned</span></li>
+<li id="no-notifications" data-asset="1"><div><h3>No notifications</h3><p>Notifications panel with nothing new</p><p>A desk bell is still with its plunger raised.</p></div><a href="figures/no-notifications.svg">Open SVG</a></li>
+<li id="upload-in-progress" data-asset="0"><div><h3>Upload in progress</h3><p>File drop area transfer overlay</p><p>A paper strip feeds from a spool into an intake with most of the tail still visible.</p></div><span>Planned</span></li>
+<li id="processing" data-asset="0"><div><h3>Processing</h3><p>Processing or analysis pending</p><p>A part remains halfway inside a mechanical inspection tunnel with alignment marks along the entrance.</p></div><span>Planned</span></li>
+<li id="success-confirmation" data-asset="0"><div><h3>Success confirmation</h3><p>Generic successful form submission</p><p>A precise die has finished seating flush in its socket, with witness lines aligned.</p></div><span>Planned</span></li>
+<li id="something-went-wrong" data-asset="0"><div><h3>Something went wrong</h3><p>Generic recoverable error page</p><p>A small mechanism has one wheel out of mesh, with obvious room to refit it.</p></div><span>Planned</span></li>
+<li id="offline-mode" data-asset="1"><div><h3>Offline mode</h3><p>Disconnected banner or screen</p><p>A plug and its socket sit apart at the end of two cables.</p></div><a href="figures/offline-mode.svg">Open SVG</a></li>
+<li id="planned-maintenance" data-asset="1"><div><h3>Planned maintenance</h3><p>Maintenance page</p><p>Two traffic cones reserve a lane for maintenance work.</p></div><a href="figures/planned-maintenance.svg">Open SVG</a></li>
+<li id="access-denied" data-asset="0"><div><h3>Access denied</h3><p>Forbidden route or gated asset</p><p>A gate has a mechanical stop in the closed position, with the safe waiting area visible in front.</p></div><span>Planned</span></li>
+<li id="session-expired" data-asset="0"><div><h3>Session expired</h3><p>Reauthentication modal</p><p>A fine stream in an hourglass has run through, leaving only a small pile at the bottom.</p></div><span>Planned</span></li>
+<li id="unsaved-changes" data-asset="0"><div><h3>Unsaved changes</h3><p>Leave-page confirmation</p><p>A partly completed cutout is still held by a clamp on a drafting table.</p></div><span>Planned</span></li>
+<li id="changes-saved" data-asset="0"><div><h3>Changes saved</h3><p>Autosave confirmation panel</p><p>A notebook tab has clicked beneath its catch and sits flush with the completed sheet.</p></div><span>Planned</span></li>
+<li id="restore-a-draft" data-asset="0"><div><h3>Restore a draft</h3><p>Recovery prompt after interrupted editing</p><p>A curled sheet rises from a labeled-by-shape archive envelope, revealing a penciled outline.</p></div><span>Planned</span></li>
+<li id="try-again-later" data-asset="0"><div><h3>Try again later</h3><p>Temporary service failure</p><p>A shutter is mostly closed, leaving a slight opening and a mechanical timing wheel alongside it.</p></div><span>Planned</span></li>
+<li id="no-connection-retries-left" data-asset="0"><div><h3>No connection retries left</h3><p>Failed sync screen</p><p>Several recessed retry cells are spent; a single disconnected plug remains on its cradle.</p></div><span>Planned</span></li>
+<li id="file-rejected" data-asset="0"><div><h3>File rejected</h3><p>Invalid attachment error</p><p>A nonmatching object has stopped above a carefully shaped intake slot.</p></div><span>Planned</span></li>
+<li id="storage-full" data-asset="0"><div><h3>Storage full</h3><p>Storage quota blocking state</p><p>A drawer of fitted cartridges hits its stop because a final cartridge cannot lie flat.</p></div><span>Planned</span></li>
+<li id="caught-up" data-asset="0"><div><h3>Caught up</h3><p>Task completion dashboard</p><p>A neatly nested pile sits beneath a closed tray lid with no loose pieces remaining.</p></div><span>Planned</span></li>
+<li id="under-review" data-asset="0"><div><h3>Under review</h3><p>Moderation or approval pending panel</p><p>A document is suspended on a reading clamp halfway between receiving and completed shelves.</p></div><span>Planned</span></li>
+<li id="archived-content" data-asset="0"><div><h3>Archived content</h3><p>Archived result page</p><p>A long document case is held under a protective dust cover with one archive tab visible.</p></div><span>Planned</span></li>
+<li id="page-moved" data-asset="0"><div><h3>Page moved</h3><p>Redirect guidance or stale link notice</p><p>An exposed hinge swings from a blank doorway toward a neighboring open passage.</p></div><span>Planned</span></li>
+<li id="partial-completion" data-asset="0"><div><h3>Partial completion</h3><p>Multi-step operation that completed some items</p><p>A single tray has most fitted pegs seated, with two loose pegs beside empty holes.</p></div><span>Planned</span></li>
+<li id="beta-feedback" data-asset="0"><div><h3>Beta feedback</h3><p>Preview or early feature feedback panel</p><p>A prototype sits in a small open evaluation jig beside an instrument for taking measurements.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-product-and-interface-capabilities"><h2>Product and interface capabilities</h2>
+<ul>
+<li id="responsive-design" data-asset="1"><div><h3>Responsive design</h3><p>Feature section for layouts that adapt</p><p>Three screen sizes sit together in an isometric arrangement.</p></div><a href="figures/responsive-design.svg">Open SVG</a></li>
+<li id="customization" data-asset="1"><div><h3>Customization</h3><p>Personalization benefits section</p><p>Four sliders set independent levels on a single control surface.</p></div><a href="figures/customization.svg">Open SVG</a></li>
+<li id="integrations" data-asset="1"><div><h3>Integrations</h3><p>Integrations feature grid</p><p>A bundled connection joins two separate devices.</p></div><a href="figures/integrations.svg">Open SVG</a></li>
+<li id="scalability" data-asset="1"><div><h3>Scalability</h3><p>Capacity benefits section</p><p>A raised module extends a growing grid.</p></div><a href="figures/scalability.svg">Open SVG</a></li>
+<li id="theme-switching" data-asset="0"><div><h3>Theme switching</h3><p>Theme-feature or customization section</p><p>Twin cross-sections of one panel turn on a shared hinge to reveal opposite lighting.</p></div><span>Planned</span></li>
+<li id="responsive-typography" data-asset="0"><div><h3>Responsive typography</h3><p>Design-system docs</p><p>One set of grooves spreads to different widths on three type gauge plates.</p></div><span>Planned</span></li>
+<li id="templates" data-asset="0"><div><h3>Templates</h3><p>Template library hero</p><p>A family of cutout forms clearly originate from one reusable frame.</p></div><span>Planned</span></li>
+<li id="focus-states" data-asset="1"><div><h3>Focus states</h3><p>Keyboard-accessibility guide or feature card</p><p>A raised control sits within a visible focus ring.</p></div><a href="figures/focus-states.svg">Open SVG</a></li>
+<li id="plugins" data-asset="1"><div><h3>Plugins</h3><p>Extension platform overview</p><p>A raised cartridge lines up with an open slot on a baseboard.</p></div><a href="figures/plugins.svg">Open SVG</a></li>
+<li id="custom-domains" data-asset="0"><div><h3>Custom domains</h3><p>Hosted-site settings</p><p>An interchangeable nameplate slots into the outer face of a modular storefront.</p></div><span>Planned</span></li>
+<li id="white-labeling" data-asset="0"><div><h3>White labeling</h3><p>Agency or enterprise customization section</p><p>A blank faceplate lifts off a fitted mounting assembly, leaving all functional parts in place.</p></div><span>Planned</span></li>
+<li id="multitenancy" data-asset="0"><div><h3>Multitenancy</h3><p>Platform architecture section</p><p>Separate glazed rooms fit around a common mechanical core on independent supports.</p></div><span>Planned</span></li>
+<li id="embed-anywhere" data-asset="0"><div><h3>Embed anywhere</h3><p>Embed or share feature section</p><p>An independent frame docks inside a larger window without obscuring its outer architecture.</p></div><span>Planned</span></li>
+<li id="design-tokens" data-asset="0"><div><h3>Design tokens</h3><p>Design-system reference or product section</p><p>A small group of differently shaped swatches feeds a consistent set of finished components.</p></div><span>Planned</span></li>
+<li id="component-variants" data-asset="0"><div><h3>Component variants</h3><p>Design-system docs</p><p>Three knobs share one stem profile while their grips and heights differ.</p></div><span>Planned</span></li>
+<li id="offline-editing" data-asset="0"><div><h3>Offline editing</h3><p>Local-first capabilities page</p><p>A hand-cranked mechanism continues operating beside a disengaged motor coupling.</p></div><span>Planned</span></li>
+<li id="device-handoff" data-asset="0"><div><h3>Device handoff</h3><p>Cross-device continuity section</p><p>A document strip crosses a narrow gap from a desktop-sized frame into a handheld frame.</p></div><span>Planned</span></li>
+<li id="portable-configuration" data-asset="0"><div><h3>Portable configuration</h3><p>Import-export or workspace migration section</p><p>A removable control panel slides between two independent base stations.</p></div><span>Planned</span></li>
+<li id="extension-marketplace" data-asset="0"><div><h3>Extension marketplace</h3><p>Add-on discovery hero</p><p>A rail of interchangeable tool cartridges exposes unlabeled but distinct outlines.</p></div><span>Planned</span></li>
+<li id="compatibility-matrix" data-asset="0"><div><h3>Compatibility matrix</h3><p>Supported platforms section</p><p>A mechanical pinboard aligns plugs with matching slots, leaving several mismatches visibly unseated.</p></div><span>Planned</span></li>
+<li id="custom-rules" data-asset="0"><div><h3>Custom rules</h3><p>Configuration features or docs</p><p>Removable cams alter where the same follower stops across a pair of tracks.</p></div><span>Planned</span></li>
+<li id="workspace-isolation" data-asset="0"><div><h3>Workspace isolation</h3><p>Workspace safety section</p><p>Three open boxes share a carrier plate, each with a separate wall running down to the base.</p></div><span>Planned</span></li>
+<li id="rich-text-editor" data-asset="0"><div><h3>Rich text editor</h3><p>Writing or CMS feature section</p><p>A long page carries raised paragraph blocks, an inset image and a pull-quote-shaped space.</p></div><span>Planned</span></li>
+<li id="drag-and-drop" data-asset="0"><div><h3>Drag and drop</h3><p>No-code builder feature section</p><p>A slotted tile hangs just in front of an aligned cutout, with a ghosted guide tracing its move.</p></div><span>Planned</span></li>
+<li id="website-preview" data-asset="0"><div><h3>Website preview</h3><p>Editor-to-publish workflow</p><p>A miniature finished page stands upright against the wide drafting table that produced it.</p></div><span>Planned</span></li>
+<li id="component-inspection" data-asset="0"><div><h3>Component inspection</h3><p>Design-to-development handoff feature</p><p>A detached frame encloses one component with a small leader pointing at a material seam.</p></div><span>Planned</span></li>
+<li id="export-to-code" data-asset="0"><div><h3>Export to code</h3><p>Design tool developer feature</p><p>An opened retaining clip releases one self-contained assembly beside a compact set of parts.</p></div><span>Planned</span></li>
+<li id="keyboard-shortcuts" data-asset="0"><div><h3>Keyboard shortcuts</h3><p>Productivity help index</p><p>Three keys form a chord on a stepped keyboard corner, with only the active caps raised.</p></div><span>Planned</span></li>
+<li id="touch-first-interface" data-asset="0"><div><h3>Touch-first interface</h3><p>Mobile accessibility guidance</p><p>Two large recessed touch targets have generous separation, with one exposed tactile dome.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-workflow-and-collaboration"><h2>Workflow and collaboration</h2>
+<ul>
+<li id="collaboration" data-asset="1"><div><h3>Collaboration</h3><p>Shared workspaces or multiplayer feature block</p><p>Three chairs gather around a shared worktable.</p></div><a href="figures/collaboration.svg">Open SVG</a></li>
+<li id="automation" data-asset="1"><div><h3>Automation</h3><p>Workflow automation hero</p><p>A conveyor feeds parts through an overhead machine.</p></div><a href="figures/automation.svg">Open SVG</a></li>
+<li id="handoff" data-asset="1"><div><h3>Handoff</h3><p>Cross-team workflow feature card</p><p>A document travels between two stations.</p></div><a href="figures/handoff.svg">Open SVG</a></li>
+<li id="project-planning" data-asset="1"><div><h3>Project planning</h3><p>Projects landing or planning feature</p><p>A priority card rises above a board of work in progress.</p></div><a href="figures/project-planning.svg">Open SVG</a></li>
+<li id="scheduling" data-asset="1"><div><h3>Scheduling</h3><p>Calendar-feature section</p><p>Raised time blocks occupy different rows on a calendar.</p></div><a href="figures/scheduling.svg">Open SVG</a></li>
+<li id="version-history" data-asset="1"><div><h3>Version history</h3><p>Editing and versioning feature</p><p>Successive document revisions fan out from the original.</p></div><a href="figures/version-history.svg">Open SVG</a></li>
+<li id="inbox" data-asset="1"><div><h3>Inbox</h3><p>Unified inbox product area</p><p>One piece of mail stands above the rest in a letter tray.</p></div><a href="figures/inbox.svg">Open SVG</a></li>
+<li id="publishing" data-asset="1"><div><h3>Publishing</h3><p>Content-management workflow section</p><p>A finished proof emerges from a raised platen.</p></div><a href="figures/publishing.svg">Open SVG</a></li>
+<li id="task-assignment" data-asset="0"><div><h3>Task assignment</h3><p>Project-management feature section</p><p>A hook delivers a distinct job token to one named-by-shape position on a team rack.</p></div><span>Planned</span></li>
+<li id="task-dependencies" data-asset="0"><div><h3>Task dependencies</h3><p>Planning or timeline feature section</p><p>Mechanical linkages connect tasks, with one blocked arm that must move before another can travel.</p></div><span>Planned</span></li>
+<li id="recurring-tasks" data-asset="0"><div><h3>Recurring tasks</h3><p>Work recurring on a schedule</p><p>An eccentric cam issues one physical ticket per complete revolution.</p></div><span>Planned</span></li>
+<li id="comments-and-annotations" data-asset="0"><div><h3>Comments and annotations</h3><p>Review or feedback feature</p><p>A note marker clips directly to one corner of a drawing while two more rest by other review details.</p></div><span>Planned</span></li>
+<li id="real-time-editing" data-asset="0"><div><h3>Real-time editing</h3><p>Multiplayer document feature</p><p>Two slim moving instruments each mark a different area of one open sheet without collision.</p></div><span>Planned</span></li>
+<li id="version-control" data-asset="1"><div><h3>Version control</h3><p>Developer workflow feature</p><p>A branch leaves the main track and rejoins it downstream.</p></div><a href="figures/version-control.svg">Open SVG</a></li>
+<li id="design-review" data-asset="0"><div><h3>Design review</h3><p>Approval flow for design assets</p><p>An object rotates in a tilted inspection frame surrounded by three specialist tool rests.</p></div><span>Planned</span></li>
+<li id="decision-log" data-asset="0"><div><h3>Decision log</h3><p>Team knowledge or project governance section</p><p>Small uniquely cut seals sit in shallow slots along the spine of a permanent record.</p></div><span>Planned</span></li>
+<li id="standup" data-asset="0"><div><h3>Standup</h3><p>Agile practice article or team feature</p><p>Three small status stands are arranged around the open center of a morning check-in table.</p></div><span>Planned</span></li>
+<li id="meeting-notes" data-asset="0"><div><h3>Meeting notes</h3><p>Collaboration or transcription feature</p><p>A tabletop microphone sits beside an unrolling note strip with clear paragraph rhythm.</p></div><span>Planned</span></li>
+<li id="roadmap" data-asset="0"><div><h3>Roadmap</h3><p>Product planning overview</p><p>A long track recedes across terrain, with milestones mounted at unequal distances from one another.</p></div><span>Planned</span></li>
+<li id="backlog-prioritization" data-asset="0"><div><h3>Backlog prioritization</h3><p>Project backlog sorting tool</p><p>A weighted sorting arm moves a small number of high-priority cards to a single elevated rack.</p></div><span>Planned</span></li>
+<li id="work-in-progress-limits" data-asset="0"><div><h3>Work in progress limits</h3><p>Kanban policy guide</p><p>A short lane contains all its allowed fitted blocks while one waiting block stops at its entrance.</p></div><span>Planned</span></li>
+<li id="batch-operations" data-asset="0"><div><h3>Batch operations</h3><p>Admin operations feature section</p><p>A single carrying clamp lifts a row of independent pieces together.</p></div><span>Planned</span></li>
+<li id="merge-changes" data-asset="0"><div><h3>Merge changes</h3><p>Conflict-resolution docs</p><p>Two different thin laminates mate in an alignment frame to form one clean profile.</p></div><span>Planned</span></li>
+<li id="resolve-conflicts" data-asset="0"><div><h3>Resolve conflicts</h3><p>Version conflict screen</p><p>A pair of opposing clamps keeps two misaligned corners distinct, ready for adjustment.</p></div><span>Planned</span></li>
+<li id="shared-notes" data-asset="0"><div><h3>Shared notes</h3><p>Team knowledge section</p><p>A large paper roll unspools across two facing desks with both edges held firmly.</p></div><span>Planned</span></li>
+<li id="presence-indicators" data-asset="0"><div><h3>Presence indicators</h3><p>Real-time collaboration feature</p><p>A slotted rail holds quiet figure markers beside the active position on a shared panel.</p></div><span>Planned</span></li>
+<li id="subscribe-to-updates" data-asset="0"><div><h3>Subscribe to updates</h3><p>Watch or follow project feature</p><p>A small receiver clips onto a distribution line behind a set of document trays.</p></div><span>Planned</span></li>
+<li id="workspace-handover" data-asset="0"><div><h3>Workspace handover</h3><p>Team changes or succession guide</p><p>A ring of workbench keys passes from one open drawer toward a second fitted key hanger.</p></div><span>Planned</span></li>
+<li id="audit-a-workflow" data-asset="0"><div><h3>Audit a workflow</h3><p>Operations process-analysis page</p><p>A single tracing stylus follows the path between stations underneath a transparent sheet.</p></div><span>Planned</span></li>
+<li id="approval-routing" data-asset="0"><div><h3>Approval routing</h3><p>Conditional review workflows</p><p>A physical track selector routes a document toward one of two different stamps.</p></div><span>Planned</span></li>
+<li id="shift-handover" data-asset="0"><div><h3>Shift handover</h3><p>Operations workforce product</p><p>An open shift board pairs two work ledgers beside a shared handover slot.</p></div><span>Planned</span></li>
+<li id="field-inspection" data-asset="0"><div><h3>Field inspection</h3><p>Mobile workforce product</p><p>A rugged handheld terminal sits on a collapsible tripod beside the site marker it records.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-developer-and-infrastructure"><h2>Developer and infrastructure</h2>
+<ul>
+<li id="server-capacity" data-asset="1"><div><h3>Server capacity</h3><p>Hosting or infrastructure feature section</p><p>One blade slides out of a four-unit server rack.</p></div><a href="figures/server-capacity.svg">Open SVG</a></li>
+<li id="cloud-services" data-asset="1"><div><h3>Cloud services</h3><p>Hosting primary category hero</p><p>A layered cloud rises above three connected endpoints.</p></div><a href="figures/cloud-services.svg">Open SVG</a></li>
+<li id="storage" data-asset="1"><div><h3>Storage</h3><p>Infrastructure feature or plan details</p><p>A platter floats above a stack of disks.</p></div><a href="figures/storage.svg">Open SVG</a></li>
+<li id="backups" data-asset="1"><div><h3>Backups</h3><p>Platform resilience feature</p><p>A reel cartridge sits beside a second copy.</p></div><a href="figures/backups.svg">Open SVG</a></li>
+<li id="load-balancing" data-asset="1"><div><h3>Load balancing</h3><p>Scale and uptime architecture feature</p><p>A single intake distributes requests across three workers.</p></div><a href="figures/load-balancing.svg">Open SVG</a></li>
+<li id="api-access" data-asset="0"><div><h3>API access</h3><p>Developer landing page</p><p>A compact, keyed socket has a mating plug and a shallow patch of precisely routed traces.</p></div><span>Planned</span></li>
+<li id="documentation-and-sdks" data-asset="0"><div><h3>Documentation and SDKs</h3><p>Developer resources section</p><p>A field manual opens beside fitted connectors for several development environments.</p></div><span>Planned</span></li>
+<li id="deployment" data-asset="0"><div><h3>Deployment</h3><p>Developer workflow feature</p><p>A completed module lowers along guide posts toward a live environment housing.</p></div><span>Planned</span></li>
+<li id="self-hosting" data-asset="0"><div><h3>Self-hosting</h3><p>Hosting model comparison</p><p>An installable server drawer is fully contained inside a protective enclosure with a removable lid.</p></div><span>Planned</span></li>
+<li id="status-page" data-asset="0"><div><h3>Status page</h3><p>System status landing</p><p>Three independent indicator columns show operating state on a small equipment panel.</p></div><span>Planned</span></li>
+<li id="edge-network" data-asset="1"><div><h3>Edge network</h3><p>Infrastructure reach section</p><p>A surface links four peripheral nodes to one hub.</p></div><a href="figures/edge-network.svg">Open SVG</a></li>
+<li id="request-queue" data-asset="1"><div><h3>Request queue</h3><p>Asynchronous jobs feature or docs</p><p>Requests line up to pass through a single gate.</p></div><a href="figures/request-queue.svg">Open SVG</a></li>
+<li id="data-pipeline" data-asset="1"><div><h3>Data pipeline</h3><p>Platform processing capability section</p><p>Four linked processing stages narrow the incoming stream.</p></div><a href="figures/data-pipeline.svg">Open SVG</a></li>
+<li id="failover" data-asset="1"><div><h3>Failover</h3><p>High availability feature</p><p>A standby unit is ready beside the primary system.</p></div><a href="figures/failover.svg">Open SVG</a></li>
+<li id="bandwidth" data-asset="1"><div><h3>Bandwidth</h3><p>Network performance feature block</p><p>Parallel fibers carry traffic between two terminal blocks.</p></div><a href="figures/bandwidth.svg">Open SVG</a></li>
+<li id="continuous-integration" data-asset="0"><div><h3>Continuous integration</h3><p>Build and test feature or docs</p><p>Connected build stations run one token through different measuring and assembly tools.</p></div><span>Planned</span></li>
+<li id="release-rollback" data-asset="0"><div><h3>Release rollback</h3><p>Deployment or incident recovery docs</p><p>A rack-and-pinion fixture pulls a previously seated version back toward its original socket.</p></div><span>Planned</span></li>
+<li id="canary-release" data-asset="0"><div><h3>Canary release</h3><p>Gradual release guide</p><p>One testing outlet branches from the main trunk upstream of all production branches.</p></div><span>Planned</span></li>
+<li id="blue-green-deployment" data-asset="0"><div><h3>Blue-green deployment</h3><p>Deployment strategy guide</p><p>A two-position transfer arm aligns one of two full assemblies with the same active output.</p></div><span>Planned</span></li>
+<li id="sandbox-environment" data-asset="0"><div><h3>Sandbox environment</h3><p>API testing or enterprise trial</p><p>A shallow isolation tray contains a complete miniature service setup with detachable leads.</p></div><span>Planned</span></li>
+<li id="staging-environment" data-asset="0"><div><h3>Staging environment</h3><p>Release workflow guide</p><p>A near-full-scale trial assembly rests behind a raised temporary barrier before its final installed position.</p></div><span>Planned</span></li>
+<li id="container-runtime" data-asset="0"><div><h3>Container runtime</h3><p>Developer platform feature</p><p>Several sealed transit capsules fit separately into standard docking wells.</p></div><span>Planned</span></li>
+<li id="orchestration" data-asset="0"><div><h3>Orchestration</h3><p>Distributed compute feature</p><p>A gantry services several work cells with independent guide rails beneath it.</p></div><span>Planned</span></li>
+<li id="observability-traces" data-asset="0"><div><h3>Observability traces</h3><p>Developer monitoring feature</p><p>A single physical trace is elevated out of a bundle of surrounding paths, preserving its connected segments.</p></div><span>Planned</span></li>
+<li id="log-ingestion" data-asset="0"><div><h3>Log ingestion</h3><p>Logging product feature</p><p>Records arrive on narrow paper rolls through separate ports and collect in a shared spool.</p></div><span>Planned</span></li>
+<li id="cold-storage" data-asset="0"><div><h3>Cold storage</h3><p>Archival storage tier</p><p>A sealed cartridge sits deep within a vault cavity behind a thin insulation gap.</p></div><span>Planned</span></li>
+<li id="fast-cache" data-asset="0"><div><h3>Fast cache</h3><p>Performance feature or docs</p><p>One easily reached shelf holds duplicate parts directly above a deeper stock drawer.</p></div><span>Planned</span></li>
+<li id="cache-invalidation" data-asset="0"><div><h3>Cache invalidation</h3><p>Developer docs or operations guide</p><p>A scraper clears one stale seating pad of tokens while fresh tokens wait in the next compartment.</p></div><span>Planned</span></li>
+<li id="replication" data-asset="0"><div><h3>Replication</h3><p>Distributed data feature</p><p>One source die embosses the same runout mark in two isolated output stations.</p></div><span>Planned</span></li>
+<li id="database-sharding" data-asset="0"><div><h3>Database sharding</h3><p>Scale architecture explanation</p><p>A set of differently notched dividers assigns arriving pieces to separate storage bins.</p></div><span>Planned</span></li>
+<li id="event-streaming" data-asset="0"><div><h3>Event streaming</h3><p>Realtime infrastructure feature</p><p>Small capsules ride a continuous overhead wire between distinct sender and receiver housings.</p></div><span>Planned</span></li>
+<li id="webhook-delivery" data-asset="0"><div><h3>Webhook delivery</h3><p>Developer integrations guide</p><p>One tripped contact sends a short line of impulse marks to a detached receiver.</p></div><span>Planned</span></li>
+<li id="rate-limiting" data-asset="0"><div><h3>Rate limiting</h3><p>API policy or capacity controls</p><p>A calibrated aperture passes a steady row of tokens while surplus tokens accumulate above it.</p></div><span>Planned</span></li>
+<li id="secrets-storage" data-asset="0"><div><h3>Secrets storage</h3><p>Infrastructure security section</p><p>A small key canister sits inside a sealed enclosure with an isolated access feed.</p></div><span>Planned</span></li>
+<li id="ephemeral-environments" data-asset="0"><div><h3>Ephemeral environments</h3><p>Developer preview environments</p><p>A self-supporting temporary pod is poised just above a thin removable baseplate.</p></div><span>Planned</span></li>
+<li id="build-artifacts" data-asset="0"><div><h3>Build artifacts</h3><p>CI release downloads page</p><p>A completed part and its manifest slip share an open transit case following production.</p></div><span>Planned</span></li>
+<li id="cli-tooling" data-asset="0"><div><h3>CLI tooling</h3><p>Developer tools landing</p><p>A tactile row of keys routes a simple mechanical input through a narrow command strip.</p></div><span>Planned</span></li>
+<li id="schema-migration" data-asset="0"><div><h3>Schema migration</h3><p>Data platform admin docs</p><p>An old slotted tray feeds parts through a conversion gauge before a newly shaped slot accepts them.</p></div><span>Planned</span></li>
+<li id="database-indexing" data-asset="0"><div><h3>Database indexing</h3><p>Data platform optimization guide</p><p>A thin keyed comb lifts one indexed specimen from a dense fitted file rack.</p></div><span>Planned</span></li>
+<li id="versioned-api-requests" data-asset="0"><div><h3>Versioned API requests</h3><p>Developer reference for version compatibility</p><p>Selective mechanical collars let two revisions of a plug connect to the corresponding rings in one socket.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-data-and-intelligence"><h2>Data and intelligence</h2>
+<ul>
+<li id="growth" data-asset="1"><div><h3>Growth</h3><p>Analytics, results or progress section</p><p>An ascending series of columns traces steady growth.</p></div><a href="figures/growth.svg">Open SVG</a></li>
+<li id="analytics" data-asset="1"><div><h3>Analytics</h3><p>Data dashboard or analytics feature</p><p>Three rows of raised bars compare a set of measurements.</p></div><a href="figures/analytics.svg">Open SVG</a></li>
+<li id="forecasting" data-asset="1"><div><h3>Forecasting</h3><p>Planning and forecasting section</p><p>One observed trend splits into three projected outcomes.</p></div><a href="figures/forecasting.svg">Open SVG</a></li>
+<li id="monitoring" data-asset="1"><div><h3>Monitoring</h3><p>Analytics or status-monitoring feature</p><p>Three offset traces show a pulse across a bank of channels.</p></div><a href="figures/monitoring.svg">Open SVG</a></li>
+<li id="data-import" data-asset="0"><div><h3>Data import</h3><p>Analytics onboarding or integration page</p><p>An outer shipping container empties a uniform set of records into a calibrated intake tray.</p></div><span>Planned</span></li>
+<li id="data-export" data-asset="0"><div><h3>Data export</h3><p>Data portability or dashboard empty state</p><p>A tightly wound record strip is drawn out of a measurement device into a removable cartridge.</p></div><span>Planned</span></li>
+<li id="live-dashboard" data-asset="0"><div><h3>Live dashboard</h3><p>Analytics homepage feature</p><p>A set of differently shaped mechanical gauges rises above one linked control deck.</p></div><span>Planned</span></li>
+<li id="reports" data-asset="0"><div><h3>Reports</h3><p>Reporting feature or download gallery</p><p>A printed stack exposes distinct geometry for totals, trends, and detailed rows.</p></div><span>Planned</span></li>
+<li id="heat-map" data-asset="1"><div><h3>Heat map</h3><p>Data visualization feature</p><p>A concentrated peak rises from a grid of measurements.</p></div><a href="figures/heat-map.svg">Open SVG</a></li>
+<li id="segmentation" data-asset="1"><div><h3>Segmentation</h3><p>Audience or customer data platform feature</p><p>Three wedges separate into distinct cohorts.</p></div><a href="figures/segmentation.svg">Open SVG</a></li>
+<li id="a-b-testing" data-asset="1"><div><h3>A/B testing</h3><p>Experimentation or CRO feature block</p><p>Two groups of samples sit on separate test platforms.</p></div><a href="figures/a-b-testing.svg">Open SVG</a></li>
+<li id="conversion" data-asset="1"><div><h3>Conversion</h3><p>Analytics or demand generation feature</p><p>Three apertures narrow to a single output.</p></div><a href="figures/conversion.svg">Open SVG</a></li>
+<li id="cohort-retention" data-asset="1"><div><h3>Cohort retention</h3><p>Metrics or retention analytics feature</p><p>Fewer samples remain on each successive shelf.</p></div><a href="figures/cohort-retention.svg">Open SVG</a></li>
+<li id="activity-history" data-asset="1"><div><h3>Activity history</h3><p>User activity feature section</p><p>An event lifts from its place on the timeline.</p></div><a href="figures/activity-history.svg">Open SVG</a></li>
+<li id="data-validation" data-asset="0"><div><h3>Data validation</h3><p>Pipeline configuration or data quality section</p><p>A go/no-go gauge physically separates valid parts from one oversized sample.</p></div><span>Planned</span></li>
+<li id="data-normalization" data-asset="0"><div><h3>Data normalization</h3><p>Data preparation feature</p><p>Raw sample shapes enter a sizing fixture and emerge with matching registration edges.</p></div><span>Planned</span></li>
+<li id="data-enrichment" data-asset="0"><div><h3>Data enrichment</h3><p>Customer-data capabilities</p><p>One rotating arm adds a clearly distinct sleeve to each bare incoming token.</p></div><span>Planned</span></li>
+<li id="data-deduplication" data-asset="0"><div><h3>Data deduplication</h3><p>Cleaning and data hygiene feature</p><p>A comparing comb lifts only the duplicate tab from an aligned record pair.</p></div><span>Planned</span></li>
+<li id="outlier-detection" data-asset="0"><div><h3>Outlier detection</h3><p>Model monitoring or anomaly feature</p><p>A probe stands over the only unusually tall point on an otherwise low field.</p></div><span>Planned</span></li>
+<li id="confidence-intervals" data-asset="0"><div><h3>Confidence intervals</h3><p>Forecasting or results help article</p><p>Two framed rails spread around one central trajectory, with visible wide and narrow spans.</p></div><span>Planned</span></li>
+<li id="causal-analysis" data-asset="0"><div><h3>Causal analysis</h3><p>Measurement methodology page</p><p>A linked lever assembly separates one input that moves the outcome from adjacent idle inputs.</p></div><span>Planned</span></li>
+<li id="benchmarking" data-asset="0"><div><h3>Benchmarking</h3><p>Industry analytics product</p><p>A height gauge compares several samples against a fixed external standard.</p></div><span>Planned</span></li>
+<li id="kpi-target" data-asset="0"><div><h3>KPI target</h3><p>Performance dashboard goal</p><p>A ring cursor marks the expected height on an upright vessel with the current level visibly below it.</p></div><span>Planned</span></li>
+<li id="attribution" data-asset="0"><div><h3>Attribution</h3><p>Marketing analytics product</p><p>Several distinct tracks approach one measured outcome, with a physical meter on each track.</p></div><span>Planned</span></li>
+<li id="customer-journey" data-asset="0"><div><h3>Customer journey</h3><p>Lifecycle or product analytics page</p><p>A continuous track bends through a series of distinctly shaped touchpoint stations.</p></div><span>Planned</span></li>
+<li id="cohort-comparison" data-asset="0"><div><h3>Cohort comparison</h3><p>Product analytics report</p><p>Two strips of part counts run in parallel over shared interval markers.</p></div><span>Planned</span></li>
+<li id="funnel-drop-off" data-asset="0"><div><h3>Funnel drop-off</h3><p>Checkout or flow analytics</p><p>One step in a series contains a spillway that visibly ejects more pieces than the others.</p></div><span>Planned</span></li>
+<li id="time-series-sampling" data-asset="0"><div><h3>Time-series sampling</h3><p>Analytics docs</p><p>Evenly spaced sampling arms dip down onto an irregular trace at isolated points.</p></div><span>Planned</span></li>
+<li id="sensor-calibration" data-asset="0"><div><h3>Sensor calibration</h3><p>Measurement service or connected-device settings</p><p>A calibrated weight sits alongside the instrument where its reference needle rests on the central notch.</p></div><span>Planned</span></li>
+<li id="a-b-sample-size-planning" data-asset="0"><div><h3>A/B sample-size planning</h3><p>Experimentation methodology</p><p>Two small trays of trial tokens sit beside a single multi-row reference matrix showing the larger required total.</p></div><span>Planned</span></li>
+<li id="data-lineage" data-asset="0"><div><h3>Data lineage</h3><p>Governance or quality lineage feature</p><p>One trace travels upstream around intervening junctions to an identifiable source container.</p></div><span>Planned</span></li>
+<li id="dataset-annotation" data-asset="0"><div><h3>Dataset annotation</h3><p>Training or research data platform</p><p>Small hinged callout tags attach to specific features on a few varied specimen cutouts.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-assistive-and-generative-features"><h2>Assistive and generative features</h2>
+<ul>
+<li id="ai-assistant" data-asset="0"><div><h3>AI assistant</h3><p>Assistant-feature page or chat empty state</p><p>A compact articulated arm extends one simple output tile into a clear user work area.</p></div><span>Planned</span></li>
+<li id="summarization" data-asset="0"><div><h3>Summarization</h3><p>Writing or meetings capability</p><p>A layered stack passes below a thinning plane and exits as one crisp card with a few meaningful marks.</p></div><span>Planned</span></li>
+<li id="smart-suggestions" data-asset="0"><div><h3>Smart suggestions</h3><p>Editor assistance feature</p><p>A neutral rail holds several candidate pieces beside the one candidate whose geometry fits a gap.</p></div><span>Planned</span></li>
+<li id="natural-language-query" data-asset="0"><div><h3>Natural language query</h3><p>Analytics or knowledge-base feature</p><p>An incoming paper question feeds through an instrument with a short answer window on the opposite side.</p></div><span>Planned</span></li>
+<li id="semantic-search" data-asset="0"><div><h3>Semantic search</h3><p>Knowledge search capability</p><p>Objects with similar outlines find seats in the same sculpted basin despite differently marked labels.</p></div><span>Planned</span></li>
+<li id="retrieval-and-grounding" data-asset="0"><div><h3>Retrieval and grounding</h3><p>AI knowledge feature</p><p>An answer tile aligns with several clearly connected source tabs that remain attached to their original records.</p></div><span>Planned</span></li>
+<li id="document-extraction" data-asset="0"><div><h3>Document extraction</h3><p>PDF workflow feature</p><p>A grid clamp isolates parts of a document and raises each into its own aligned compartment.</p></div><span>Planned</span></li>
+<li id="classification" data-asset="0"><div><h3>Classification</h3><p>AI workflow or support triage</p><p>A rotating switchboard routes distinctly shaped tokens into separate receiving lanes.</p></div><span>Planned</span></li>
+<li id="transcription" data-asset="0"><div><h3>Transcription</h3><p>Media or meeting transcription hero</p><p>A roll with a waveform imprint approaches a narrow hinge from which a series of paragraph-like lines exits.</p></div><span>Planned</span></li>
+<li id="translation" data-asset="0"><div><h3>Translation</h3><p>Localization feature or AI writing tool</p><p>One set of glyph-like impressions enters a straight exchange rail and gets recast into a different set with matching rhythm.</p></div><span>Planned</span></li>
+<li id="audio-cleanup" data-asset="0"><div><h3>Audio cleanup</h3><p>Audio editor marketing section</p><p>A rough fluctuating profile passes through a fixed comb and emerges as a distinct continuous primary trace.</p></div><span>Planned</span></li>
+<li id="image-enhancement" data-asset="0"><div><h3>Image enhancement</h3><p>Creative tools feature</p><p>A single specimen plate passes beneath a contrast gauge, exposing progressively clearer edge detail.</p></div><span>Planned</span></li>
+<li id="image-generation" data-asset="0"><div><h3>Image generation</h3><p>Creative product landing</p><p>A finely patterned sample material emerges within the open window of an otherwise empty mold.</p></div><span>Planned</span></li>
+<li id="background-removal" data-asset="0"><div><h3>Background removal</h3><p>Photo editing feature</p><p>A specimen silhouette rises cleanly out of a textured backing, leaving an open cutout behind.</p></div><span>Planned</span></li>
+<li id="automatic-cropping" data-asset="0"><div><h3>Automatic cropping</h3><p>Creative automation feature</p><p>A frame adjusts around a visibly centered object while clipping surrounding border space.</p></div><span>Planned</span></li>
+<li id="recommendation-engine" data-asset="0"><div><h3>Recommendation engine</h3><p>Discovery or personalization feature</p><p>Several samples gather around one favored specimen on a rotating selector.</p></div><span>Planned</span></li>
+<li id="human-approval-of-ai-output" data-asset="0"><div><h3>Human approval of AI output</h3><p>Enterprise AI controls section</p><p>A generated output rests in an inspection slot while an independent approval lever is still held open.</p></div><span>Planned</span></li>
+<li id="prompt-templates" data-asset="0"><div><h3>Prompt templates</h3><p>AI tool resource library</p><p>A blank prompt strip reuses one stencil that leaves multiple clearly editable slots.</p></div><span>Planned</span></li>
+<li id="agent-task-execution" data-asset="0"><div><h3>Agent task execution</h3><p>Agent features or product overview</p><p>Several measuring heads execute distinct operations on one piece while a single control rod advances the steps.</p></div><span>Planned</span></li>
+<li id="model-evaluation" data-asset="0"><div><h3>Model evaluation</h3><p>AI quality or developer dashboard</p><p>A candidate assembly sits in a precise test jig with three independent measuring tips.</p></div><span>Planned</span></li>
+<li id="conversation-memory" data-asset="0"><div><h3>Conversation memory</h3><p>Assistant capabilities feature</p><p>An articulated rail retrieves one removable past context strip from a visibly indexed archive.</p></div><span>Planned</span></li>
+<li id="voice-assistant" data-asset="0"><div><h3>Voice assistant</h3><p>Conversational or accessibility feature</p><p>A near-field microphone receives ripples directed toward one suspended acoustic membrane.</p></div><span>Planned</span></li>
+<li id="inference-latency" data-asset="0"><div><h3>Inference latency</h3><p>Model performance metrics page</p><p>A short motion rail leaves a separate start and finish impression with a timing caliper between them.</p></div><span>Planned</span></li>
+<li id="model-version-selection" data-asset="0"><div><h3>Model version selection</h3><p>AI developer configuration</p><p>A mount accepts one of several keyed inference cartridges, with the current version engaged.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-trust-privacy-and-governance"><h2>Trust, privacy and governance</h2>
+<ul>
+<li id="security" data-asset="1"><div><h3>Security</h3><p>Trust or product security feature</p><p>A rounded shackle secures a solid lock body.</p></div><a href="figures/security.svg">Open SVG</a></li>
+<li id="permissions" data-asset="1"><div><h3>Permissions</h3><p>Admin or role-based access overview</p><p>Three key profiles fit specific slots, with one key lifted from its own slot.</p></div><a href="figures/permissions.svg">Open SVG</a></li>
+<li id="privacy" data-asset="1"><div><h3>Privacy</h3><p>Product privacy section or notice landing</p><p>A physical shutter slides over a camera lens.</p></div><a href="figures/privacy.svg">Open SVG</a></li>
+<li id="identity" data-asset="1"><div><h3>Identity</h3><p>Identity or sign-in capability</p><p>A credential floats over its matching reader.</p></div><a href="figures/identity.svg">Open SVG</a></li>
+<li id="approvals" data-asset="1"><div><h3>Approvals</h3><p>Approval workflow feature</p><p>A raised stamp is poised above an approval seal.</p></div><a href="figures/approvals.svg">Open SVG</a></li>
+<li id="reliability" data-asset="1"><div><h3>Reliability</h3><p>Uptime or reliability feature</p><p>A deck distributes weight across two supports.</p></div><a href="figures/reliability.svg">Open SVG</a></li>
+<li id="encryption" data-asset="0"><div><h3>Encryption</h3><p>Trust center encryption feature</p><p>A partially exposed keyed tumbler surrounds a secured disk and one precisely aligned key.</p></div><span>Planned</span></li>
+<li id="two-factor-authentication" data-asset="0"><div><h3>Two-factor authentication</h3><p>Account security setup</p><p>Two different physical key forms must align before a shared latch can turn.</p></div><span>Planned</span></li>
+<li id="consent-management" data-asset="0"><div><h3>Consent management</h3><p>Cookie preferences or compliance feature</p><p>A row of independently adjustable valves controls different outbound routes.</p></div><span>Planned</span></li>
+<li id="data-deletion" data-asset="0"><div><h3>Data deletion</h3><p>Privacy center rights flow</p><p>A sealed disposal chute contains a trimmed data tile with only an empty mount remaining on the source plate.</p></div><span>Planned</span></li>
+<li id="audit-log" data-asset="0"><div><h3>Audit log</h3><p>Governance or compliance overview</p><p>A permanent series of punched witness marks follows a completed sequence of mechanical actions.</p></div><span>Planned</span></li>
+<li id="guardrails" data-asset="1"><div><h3>Guardrails</h3><p>Automation or AI governance section</p><p>Two raised edges keep work inside a defined lane.</p></div><a href="figures/guardrails.svg">Open SVG</a></li>
+<li id="recovery" data-asset="1"><div><h3>Recovery</h3><p>Incident recovery feature section</p><p>A saved state rises from a stack of snapshots.</p></div><a href="figures/recovery.svg">Open SVG</a></li>
+<li id="limits" data-asset="1"><div><h3>Limits</h3><p>Rate or quota controls</p><p>A mechanical dial sets a usage threshold.</p></div><a href="figures/limits.svg">Open SVG</a></li>
+<li id="feature-flags" data-asset="1"><div><h3>Feature flags</h3><p>Feature rollout controls</p><p>Four toggles set independent options on a control panel.</p></div><a href="figures/feature-flags.svg">Open SVG</a></li>
+<li id="incident-response" data-asset="0"><div><h3>Incident response</h3><p>Security incident playbook or trust site</p><p>A sprung cutoff lever has just isolated one faulty compartment while the surrounding routes remain open.</p></div><span>Planned</span></li>
+<li id="data-anonymization" data-asset="0"><div><h3>Data anonymization</h3><p>Privacy or analytics feature</p><p>A small data specimen passes through a shield that conceals individual marks but leaves totals visible.</p></div><span>Planned</span></li>
+<li id="role-assignment" data-asset="0"><div><h3>Role assignment</h3><p>Enterprise admin and identity setup</p><p>Keys with different depths only reach matching stepped latch profiles.</p></div><span>Planned</span></li>
+<li id="least-privilege" data-asset="0"><div><h3>Least privilege</h3><p>Enterprise security docs</p><p>A narrow removable token fits one precise gate while adjacent wider openings remain blocked.</p></div><span>Planned</span></li>
+<li id="single-sign-on" data-asset="0"><div><h3>Single sign-on</h3><p>IT administration feature</p><p>A shared mechanical keyway extends a single access rotation to several independent doors.</p></div><span>Planned</span></li>
+<li id="session-management" data-asset="0"><div><h3>Session management</h3><p>Account devices or account security overview</p><p>Three connected session terminals surround one cut-off branch with separated contacts.</p></div><span>Planned</span></li>
+<li id="ip-allowlisting" data-asset="0"><div><h3>IP allowlisting</h3><p>Security settings section</p><p>A filter rack allows selected, keyed ingress plugs through and holds one mismatched plug outside the boundary.</p></div><span>Planned</span></li>
+<li id="data-residency" data-asset="0"><div><h3>Data residency</h3><p>Enterprise compliance section</p><p>A fitted storage cartridge stays inside one marked-by-outline region on a shallow ground relief.</p></div><span>Planned</span></li>
+<li id="retention-policy" data-asset="0"><div><h3>Retention policy</h3><p>Data governance settings</p><p>A circular filer ejects an aged insert when its marker reaches a fixed retention stop.</p></div><span>Planned</span></li>
+<li id="record-quarantine" data-asset="0"><div><h3>Record quarantine</h3><p>Content or operations moderation feature</p><p>A separate transparent container isolates an anomalous specimen without obscuring it.</p></div><span>Planned</span></li>
+<li id="tamper-evidence" data-asset="0"><div><h3>Tamper evidence</h3><p>Audit and provenance capability</p><p>A thin break-away seal has an obvious continuous bridge between a lid and its base.</p></div><span>Planned</span></li>
+<li id="access-request" data-asset="0"><div><h3>Access request</h3><p>Enterprise self-service gating</p><p>A request slip is fed into a low slot on the front of a closed mechanical gate.</p></div><span>Planned</span></li>
+<li id="security-incident-disclosure" data-asset="0"><div><h3>Security incident disclosure</h3><p>Trust center notification</p><p>An open case exposes the isolated failed component beside a retained inspection record.</p></div><span>Planned</span></li>
+<li id="compliance-certification" data-asset="0"><div><h3>Compliance certification</h3><p>Enterprise trust proof block</p><p>A round embossed seal sits next to the certified item and its precisely fitted recess on an official-looking folio.</p></div><span>Planned</span></li>
+<li id="service-level-commitment" data-asset="0"><div><h3>Service-level commitment</h3><p>Enterprise SLA section</p><p>A suspended weight holds a steady reference bar above a minimum stop.</p></div><span>Planned</span></li>
+<li id="vulnerability-reporting" data-asset="0"><div><h3>Vulnerability reporting</h3><p>Responsible disclosure page</p><p>An open inspection tray contains a defective part and a thin marker indicating one crack.</p></div><span>Planned</span></li>
+<li id="digital-watermarking" data-asset="0"><div><h3>Digital watermarking</h3><p>Media rights protection feature</p><p>A pressed identification pattern persists across differently cut pieces of the same source sheet.</p></div><span>Planned</span></li>
+<li id="legal-hold" data-asset="0"><div><h3>Legal hold</h3><p>Compliance research or data governance feature</p><p>A protected sleeve secures one record in an archive by clipping through its removal notch.</p></div><span>Planned</span></li>
+<li id="chain-of-custody" data-asset="0"><div><h3>Chain of custody</h3><p>Compliance or evidence management feature</p><p>A sealed container passes between indexed receipt hooks with the intact seal visible at each station.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-commerce-and-fulfillment"><h2>Commerce and fulfillment</h2>
+<ul>
+<li id="shopping-cart" data-asset="1"><div><h3>Shopping cart</h3><p>Shop cart or storefront feature</p><p>A rolling basket holds two selected products.</p></div><a href="figures/shopping-cart.svg">Open SVG</a></li>
+<li id="checkout" data-asset="1"><div><h3>Checkout</h3><p>Checkout-flow hero or purchase guidance</p><p>An angled checkout terminal accepts a card.</p></div><a href="figures/checkout.svg">Open SVG</a></li>
+<li id="order-shipped" data-asset="1"><div><h3>Order shipped</h3><p>Order confirmation or tracking update</p><p>A taped carton with a shipping label is on its way.</p></div><a href="figures/order-shipped.svg">Open SVG</a></li>
+<li id="store-pickup" data-asset="1"><div><h3>Store pickup</h3><p>Pickup option or ready-to-collect screen</p><p>A parcel protrudes from an opened pickup locker.</p></div><a href="figures/store-pickup.svg">Open SVG</a></li>
+<li id="product-return" data-asset="1"><div><h3>Product return</h3><p>Returns portal or help section</p><p>An open carton sits inside a returning route.</p></div><a href="figures/product-return.svg">Open SVG</a></li>
+<li id="gift-card" data-asset="1"><div><h3>Gift card</h3><p>Gifting page or offer feature</p><p>A ribbon-marked card lifts from a fitted sleeve.</p></div><a href="figures/gift-card.svg">Open SVG</a></li>
+<li id="receipt" data-asset="1"><div><h3>Receipt</h3><p>Payment or purchase confirmation</p><p>An itemized strip curls up from a countertop printer.</p></div><a href="figures/receipt.svg">Open SVG</a></li>
+<li id="payment-failed" data-asset="1"><div><h3>Payment failed</h3><p>Checkout remediation state</p><p>An alert rises beside a card with an interrupted chip.</p></div><a href="figures/payment-failed.svg">Open SVG</a></li>
+<li id="package-tracking" data-asset="1"><div><h3>Package tracking</h3><p>Order tracking landing or progress page</p><p>A parcel hovers over its current waypoint on a folded map.</p></div><a href="figures/package-tracking.svg">Open SVG</a></li>
+<li id="product-inventory" data-asset="0"><div><h3>Product inventory</h3><p>Store-management inventory feature</p><p>A stock rack shows filled bins, one empty bay, and a vertical tally strip.</p></div><span>Planned</span></li>
+<li id="product-details" data-asset="0"><div><h3>Product details</h3><p>Product-page specifications block</p><p>A tool caliper rests across one exploded product sample with clearly separated layers.</p></div><span>Planned</span></li>
+<li id="payment-methods" data-asset="0"><div><h3>Payment methods</h3><p>Checkout or ecommerce payment feature</p><p>A fan of physical payment media is arranged around a shared reader.</p></div><span>Planned</span></li>
+<li id="free-shipping-threshold" data-asset="0"><div><h3>Free shipping threshold</h3><p>Cart-spend incentive</p><p>A light parcel rests below a marked counterweight with an additional item raised above the remaining gap.</p></div><span>Planned</span></li>
+<li id="abandoned-cart" data-asset="0"><div><h3>Abandoned cart</h3><p>Recovery reminder or merchant dashboard</p><p>A partially filled trolley remains parked at the entrance to an otherwise open checkout lane.</p></div><span>Planned</span></li>
+<li id="bundle-builder" data-asset="0"><div><h3>Bundle builder</h3><p>Multi-item product selection</p><p>Three differently shaped products fit into corresponding compartments of an open configurable carrier.</p></div><span>Planned</span></li>
+<li id="product-variants" data-asset="0"><div><h3>Product variants</h3><p>Storefront configurator</p><p>Identical bodies sit beside interchangeable covers with distinguishable surface profiles.</p></div><span>Planned</span></li>
+<li id="low-stock" data-asset="0"><div><h3>Low stock</h3><p>Limited inventory product banner</p><p>One specimen remains visible on a shelf whose remaining holders lie open.</p></div><span>Planned</span></li>
+<li id="back-in-stock" data-asset="0"><div><h3>Back in stock</h3><p>Restock alert confirmation</p><p>A tall empty slot is now filled by a specimen still slightly raised over its matching cradle.</p></div><span>Planned</span></li>
+<li id="preorder" data-asset="0"><div><h3>Preorder</h3><p>Product launch storefront</p><p>A foreorder ticket is retained by a clip on the shoulder of a sealed prototype case.</p></div><span>Planned</span></li>
+<li id="discount-code" data-asset="0"><div><h3>Discount code</h3><p>Promo entry on checkout</p><p>A slender coupon fits into the keyway of a pricing dial and shifts a price marker one position.</p></div><span>Planned</span></li>
+<li id="loyalty-rewards" data-asset="0"><div><h3>Loyalty rewards</h3><p>Membership or retained customer feature</p><p>A punch card is almost full and the final engaging stamp is raised above the last slot.</p></div><span>Planned</span></li>
+<li id="damaged-delivery" data-asset="0"><div><h3>Damaged delivery</h3><p>Customer service claim flow</p><p>A crushed shipping corner is shown beside a clean replacement guard, with the contents still readable.</p></div><span>Planned</span></li>
+<li id="return-window" data-asset="0"><div><h3>Return window</h3><p>Returns policy guide</p><p>An open return slot sits under a timer slot that is partway through its visible travel.</p></div><span>Planned</span></li>
+<li id="size-guide" data-asset="0"><div><h3>Size guide</h3><p>Apparel or furniture detail page</p><p>Three gauge loops expand around the outline of one object, with a tape held open below.</p></div><span>Planned</span></li>
+<li id="order-customization" data-asset="0"><div><h3>Order customization</h3><p>Product personalization checkout step</p><p>A fitted engraving jig holds an adjustable plate above today&#x27;s chosen item.</p></div><span>Planned</span></li>
+<li id="wholesale-orders" data-asset="0"><div><h3>Wholesale orders</h3><p>B2B storefront features</p><p>A pallet holds evenly stacked cases under a single reusable strapping loop.</p></div><span>Planned</span></li>
+<li id="cold-chain-shipping" data-asset="0"><div><h3>Cold-chain shipping</h3><p>Perishable goods delivery feature</p><p>A cutaway insulated bin reveals a separate seal, chill pack, and neatly mounted thermometer strip.</p></div><span>Planned</span></li>
+<li id="international-shipping" data-asset="0"><div><h3>International shipping</h3><p>Cross-border delivery information</p><p>A sealed container rides a deck section across a narrow channel to a differently shaped receiving port.</p></div><span>Planned</span></li>
+<li id="customs-clearance" data-asset="0"><div><h3>Customs clearance</h3><p>Cross-border logistics help</p><p>A parcel sits in a control bay with its inspection flap open alongside a permanently attached document sleeve.</p></div><span>Planned</span></li>
+<li id="warehouse-picking" data-asset="0"><div><h3>Warehouse picking</h3><p>Fulfillment SaaS product</p><p>A long-armed reach tool extends from a mobile cart into a selected rack compartment.</p></div><span>Planned</span></li>
+<li id="lot-traceability" data-asset="0"><div><h3>Lot traceability</h3><p>Food or pharmaceutical order management</p><p>A stack of individually lot-marked collars sits above one parent batch sample.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-billing-and-finance"><h2>Billing and finance</h2>
+<ul>
+<li id="pricing-plans" data-asset="0"><div><h3>Pricing plans</h3><p>Pricing-page hero</p><p>Three stepped sample housings accommodate successively larger instrument packs.</p></div><span>Planned</span></li>
+<li id="subscription-management" data-asset="0"><div><h3>Subscription management</h3><p>Billing account landing</p><p>A rotatable calendar ring aligns with a regularly recurring payment contact.</p></div><span>Planned</span></li>
+<li id="invoice" data-asset="0"><div><h3>Invoice</h3><p>Billing download or invoice-automation feature</p><p>A thin tabbed invoice lies on a ruled folio beside a matched payment record.</p></div><span>Planned</span></li>
+<li id="trial-period" data-asset="0"><div><h3>Trial period</h3><p>Free trial offer block</p><p>A short duration sector is marked on a broad mechanical timer with the end notch clearly readable.</p></div><span>Planned</span></li>
+<li id="money-transfer" data-asset="0"><div><h3>Money transfer</h3><p>Payments product page</p><p>A money token moves between two independent pockets on a one-way mechanical rail.</p></div><span>Planned</span></li>
+<li id="budgeting" data-asset="0"><div><h3>Budgeting</h3><p>Budget product feature or onboarding</p><p>A cash envelope organizer exposes separate compartments and one pooled input.</p></div><span>Planned</span></li>
+<li id="payouts" data-asset="0"><div><h3>Payouts</h3><p>Service provider payments page</p><p>A recently released money token rolls from a payout tray into a removable provider cup.</p></div><span>Planned</span></li>
+<li id="metered-billing" data-asset="0"><div><h3>Metered billing</h3><p>Usage-based pricing explainer</p><p>A changing usage strip winds through a price register in clearly separated increments.</p></div><span>Planned</span></li>
+<li id="upgrade-plan" data-asset="0"><div><h3>Upgrade plan</h3><p>Upgrade confirmation or upsell</p><p>A larger working tool pack slides into the same mounting points as its smaller predecessor.</p></div><span>Planned</span></li>
+<li id="downgrade-plan" data-asset="0"><div><h3>Downgrade plan</h3><p>Billing change flow</p><p>A slim removable insert moves from a tall bay into a compact bay with the remaining cavity left visibly empty.</p></div><span>Planned</span></li>
+<li id="pause-subscription" data-asset="0"><div><h3>Pause subscription</h3><p>Billing settings panel</p><p>A retaining fork holds a turning cycle wheel without removing it from the mechanism.</p></div><span>Planned</span></li>
+<li id="payment-reminder" data-asset="0"><div><h3>Payment reminder</h3><p>Invoice overdue or upcoming banner</p><p>A small timed flag pops up above an unopened invoice envelope in a standing file.</p></div><span>Planned</span></li>
+<li id="credit-balance" data-asset="0"><div><h3>Credit balance</h3><p>Billing overview</p><p>A recessed holding tank has a separated reusable reserve level marked on its side.</p></div><span>Planned</span></li>
+<li id="refund-issued" data-asset="0"><div><h3>Refund issued</h3><p>Billing resolution confirmation</p><p>A released coin travels from a slot back into the original receiver trough.</p></div><span>Planned</span></li>
+<li id="recurring-charges" data-asset="0"><div><h3>Recurring charges</h3><p>Billing product feature</p><p>Several matching payment slips index one by one through a rotating monthly wheel.</p></div><span>Planned</span></li>
+<li id="expense-capture" data-asset="0"><div><h3>Expense capture</h3><p>Finance automation section</p><p>A curled receipt lies in a capture frame with only the relevant area framed by corner brackets.</p></div><span>Planned</span></li>
+<li id="expense-approval" data-asset="0"><div><h3>Expense approval</h3><p>Company-card or accounting workflow</p><p>A thin expense slip slides into one template-shaped recess below a mechanical approval pin.</p></div><span>Planned</span></li>
+<li id="reconciliation" data-asset="0"><div><h3>Reconciliation</h3><p>Accounting feature card</p><p>Two matching transaction strips align at corresponding notches across a reading guide.</p></div><span>Planned</span></li>
+<li id="cash-flow" data-asset="0"><div><h3>Cash flow</h3><p>Finance dashboard marketing</p><p>Two pipes feed and drain an open reservoir with visibly different opening sizes.</p></div><span>Planned</span></li>
+<li id="savings-goals" data-asset="0"><div><h3>Savings goals</h3><p>Personal finance product</p><p>A column of coins rises toward a marked line on the side of a tall transparent savings vessel.</p></div><span>Planned</span></li>
+<li id="shared-expenses" data-asset="0"><div><h3>Shared expenses</h3><p>Household finance or group payment feature</p><p>A center holding tray divides evenly into several clearly separated side trays.</p></div><span>Planned</span></li>
+<li id="foreign-exchange" data-asset="0"><div><h3>Foreign exchange</h3><p>Payments feature</p><p>Two coin die profiles are paired on opposite sides of a reversible press.</p></div><span>Planned</span></li>
+<li id="financial-risk" data-asset="0"><div><h3>Financial risk</h3><p>Lending or treasury product</p><p>A stabilized counterweight limits the downward travel of a tilting balance plate.</p></div><span>Planned</span></li>
+<li id="portfolio-allocation" data-asset="0"><div><h3>Portfolio allocation</h3><p>Investment dashboard</p><p>Five differently sized blocks fill a fixed-footprint grid with visible seams between allocations.</p></div><span>Planned</span></li>
+<li id="deposits-and-reserves" data-asset="0"><div><h3>Deposits and reserves</h3><p>Treasury product explainers</p><p>A lockable reserve tray slides into a deeper below-deck apartment while a liquid balance stays within reach.</p></div><span>Planned</span></li>
+<li id="tax-estimate" data-asset="0"><div><h3>Tax estimate</h3><p>Tax return workflow</p><p>A small fixed percentage sector is separated from an openly visible pool of equal-size tokens.</p></div><span>Planned</span></li>
+<li id="installment-payments" data-asset="0"><div><h3>Installment payments</h3><p>Payments product feature</p><p>One sealed packet has opened into several equal envelopes along a clearly spaced due-date rail.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-publishing-editorial-and-media"><h2>Publishing, editorial and media</h2>
+<ul>
+<li id="documentation" data-asset="1"><div><h3>Documentation</h3><p>Docs landing or feature section</p><p>An open reference book keeps two pages in view.</p></div><a href="figures/documentation.svg">Open SVG</a></li>
+<li id="video-library" data-asset="1"><div><h3>Video library</h3><p>Media catalog or course hub</p><p>A viewing gate selects a frame on a strip of film.</p></div><a href="figures/video-library.svg">Open SVG</a></li>
+<li id="audio-playback" data-asset="1"><div><h3>Audio playback</h3><p>Podcast or audio product feature</p><p>A continuous headband connects two cushioned earpieces.</p></div><a href="figures/audio-playback.svg">Open SVG</a></li>
+<li id="photo-gallery" data-asset="1"><div><h3>Photo gallery</h3><p>Portfolio or gallery feature</p><p>A framed landscape rises above adjoining prints.</p></div><a href="figures/photo-gallery.svg">Open SVG</a></li>
+<li id="newsletter" data-asset="1"><div><h3>Newsletter</h3><p>Email subscription section</p><p>An illustrated issue unfolds from its delivery sleeve.</p></div><a href="figures/newsletter.svg">Open SVG</a></li>
+<li id="case-studies" data-asset="1"><div><h3>Case studies</h3><p>Customer evidence or results hub</p><p>An open folio pairs a measured result with its written account.</p></div><a href="figures/case-studies.svg">Open SVG</a></li>
+<li id="multilingual-content" data-asset="1"><div><h3>Multilingual content</h3><p>Translation or localization feature block</p><p>Two versions of a page use different reading directions.</p></div><a href="figures/multilingual-content.svg">Open SVG</a></li>
+<li id="learning-path" data-asset="1"><div><h3>Learning path</h3><p>Course or documentation path</p><p>A continuous track connects four milestones and a finish flag.</p></div><a href="figures/learning-path.svg">Open SVG</a></li>
+<li id="blog-home" data-asset="0"><div><h3>Blog home</h3><p>Public articles hub hero</p><p>A recent issue is propped up in front of folded back issues with different page proportions.</p></div><span>Planned</span></li>
+<li id="reading-experience" data-asset="0"><div><h3>Reading experience</h3><p>Editorial or publication selling point</p><p>An open volume carries a clear page rhythm of text, margin notes and one picture window.</p></div><span>Planned</span></li>
+<li id="knowledge-base" data-asset="0"><div><h3>Knowledge base</h3><p>Support or internal knowledge hub</p><p>Open card files run under one bridging index comb with a drawer extended toward the reader.</p></div><span>Planned</span></li>
+<li id="embargoed-release" data-asset="0"><div><h3>Embargoed release</h3><p>Newsroom scheduling workflow</p><p>A publication tray is held behind a timed gate with a visibly constrained release mechanism.</p></div><span>Planned</span></li>
+<li id="editorial-calendar" data-asset="0"><div><h3>Editorial calendar</h3><p>Content planning or publishing tool</p><p>A set of shaped story slots lock into a horizontal production timeline.</p></div><span>Planned</span></li>
+<li id="author-profile" data-asset="0"><div><h3>Author profile</h3><p>Article author spotlight</p><p>A portrait plate rests in a shallow folded display stand beside one small book form.</p></div><span>Planned</span></li>
+<li id="content-syndication" data-asset="0"><div><h3>Content syndication</h3><p>Publishing distribution product</p><p>One physical master imprint is shared across differently proportioned output plates.</p></div><span>Planned</span></li>
+<li id="featured-article" data-asset="0"><div><h3>Featured article</h3><p>Content discovery hero</p><p>An individual broad sheet is turned toward the viewer high over a tapered rack of smaller sheets.</p></div><span>Planned</span></li>
+<li id="book-excerpts" data-asset="0"><div><h3>Book excerpts</h3><p>Book launch or ebook store</p><p>A marked section is lifted out of a thick bound volume and laid flat on a reading stand.</p></div><span>Planned</span></li>
+<li id="content-licensing" data-asset="0"><div><h3>Content licensing</h3><p>Digital library or photography marketplace</p><p>A physical permission token clips onto one selected image plate through its corner tab.</p></div><span>Planned</span></li>
+<li id="video-captions" data-asset="0"><div><h3>Video captions</h3><p>Media accessibility feature</p><p>A thin subtitle strip slides into a fitted lower rail on a video frame.</p></div><span>Planned</span></li>
+<li id="podcast-episodes" data-asset="0"><div><h3>Podcast episodes</h3><p>Podcast series overview</p><p>A set of audio spools shares one archive rail while the newest spool lies mounted for playback.</p></div><span>Planned</span></li>
+<li id="image-lightbox" data-asset="0"><div><h3>Image lightbox</h3><p>Photography viewing experience</p><p>A large standalone frame lifts out in front of a shallow field of individually inset thumbnails.</p></div><span>Planned</span></li>
+<li id="interactive-map-story" data-asset="0"><div><h3>Interactive map story</h3><p>Editorial or travel content hero</p><p>A folded relief map has two adjacent card-sized windows on a continuous cut route.</p></div><span>Planned</span></li>
+<li id="reading-list" data-asset="0"><div><h3>Reading list</h3><p>Bibliography, curation or recommendations</p><p>A few differently thick volumes fit into a long open clip that keeps their spines readable.</p></div><span>Planned</span></li>
+<li id="editorial-corrections" data-asset="0"><div><h3>Editorial corrections</h3><p>Publication transparency page</p><p>A single replaced insert with a different edge cut is visible amid an otherwise unchanged old sheet.</p></div><span>Planned</span></li>
+<li id="creative-asset-delivery" data-asset="0"><div><h3>Creative asset delivery</h3><p>Media download or client portfolio</p><p>A film canister, flat photo folio, and recording reel fit into distinct cavities in an open delivery case.</p></div><span>Planned</span></li>
+<li id="live-streaming" data-asset="0"><div><h3>Live streaming</h3><p>Live event media feature</p><p>A small camera faces a pulse-emitting transmitter with each on its own mounting foot.</p></div><span>Planned</span></li>
+<li id="media-transcoding" data-asset="0"><div><h3>Media transcoding</h3><p>Video platform developer page</p><p>A wide image band feeds through a casing and emerges as several bands of distinct widths.</p></div><span>Planned</span></li>
+<li id="rights-clearance" data-asset="0"><div><h3>Rights clearance</h3><p>Studio and licensing workflows</p><p>A group of asset plates sits in an archive, with one ownership chain represented by physical tags connected to its corner.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-service-booking-and-marketplaces"><h2>Service, booking and marketplaces</h2>
+<ul>
+<li id="appointment-booking" data-asset="0"><div><h3>Appointment booking</h3><p>Booking service page</p><p>A miniature calendar has several open bays and a single appointment marker seated in a morning position.</p></div><span>Planned</span></li>
+<li id="contact-support" data-asset="0"><div><h3>Contact support</h3><p>Support portal contact options</p><p>A tabletop call button links several short exchange lines to one operator headset outline.</p></div><span>Planned</span></li>
+<li id="help-center" data-asset="0"><div><h3>Help center</h3><p>Support and self-service landing</p><p>A practical toolkit lies open with immediately recognizable tools and quick-reference tabs.</p></div><span>Planned</span></li>
+<li id="service-availability" data-asset="0"><div><h3>Service availability</h3><p>Booking or coverage step</p><p>An angled service board has a single open bay under a clearly raised locator tab.</p></div><span>Planned</span></li>
+<li id="live-chat" data-asset="0"><div><h3>Live chat</h3><p>Support or sales feature section</p><p>Two quiet interlocking reply frames sit on a pen tray with the active frame closest to the viewer.</p></div><span>Planned</span></li>
+<li id="service-request" data-asset="0"><div><h3>Service request</h3><p>Customer service form hero</p><p>A short request slip approaches a centered slot beside a visible handoff indicator.</p></div><span>Planned</span></li>
+<li id="request-a-quote" data-asset="0"><div><h3>Request a quote</h3><p>Service website form</p><p>A material sample sits inside a light measuring fixture next to a blank estimate ticket.</p></div><span>Planned</span></li>
+<li id="reschedule-appointment" data-asset="0"><div><h3>Reschedule appointment</h3><p>Self-service appointment management</p><p>A marked calendar block is halfway between its earlier slot and an open later slot.</p></div><span>Planned</span></li>
+<li id="cancel-appointment" data-asset="0"><div><h3>Cancel appointment</h3><p>Booking management screen</p><p>A narrow appointment block lifts clear of a calendar rail without disturbing neighboring slots.</p></div><span>Planned</span></li>
+<li id="booking-confirmed" data-asset="0"><div><h3>Booking confirmed</h3><p>Reservation confirmation</p><p>A matching ticket seats precisely in a slot beside a still-standing reservation tag.</p></div><span>Planned</span></li>
+<li id="guest-check-in" data-asset="0"><div><h3>Guest check-in</h3><p>Hospitality or venue arrival page</p><p>A guest pass and room key rest near the open end of a low reception counter.</p></div><span>Planned</span></li>
+<li id="guest-check-out" data-asset="0"><div><h3>Guest check-out</h3><p>Hotel or rental workflow</p><p>A guest key hangs over a narrow return slot, with one receipt outside the slot.</p></div><span>Planned</span></li>
+<li id="service-area-map" data-asset="0"><div><h3>Service area map</h3><p>Local service business location page</p><p>A curved coverage boundary wraps only some of the homes within a low neighborhood relief.</p></div><span>Planned</span></li>
+<li id="service-technician-tracking" data-asset="0"><div><h3>Service technician tracking</h3><p>On-site support or field services</p><p>A technician vehicle advances along a visibly laid street toward a raised building marker.</p></div><span>Planned</span></li>
+<li id="provider-profile" data-asset="0"><div><h3>Provider profile</h3><p>Services marketplace directory</p><p>A work badge and provider-specific instrument occupy separate notches on a small resume stand.</p></div><span>Planned</span></li>
+<li id="provider-verification" data-asset="0"><div><h3>Provider verification</h3><p>Marketplace trust and safety section</p><p>A visible license plate matches the evidence inside one open, certified tool case.</p></div><span>Planned</span></li>
+<li id="matched-provider" data-asset="0"><div><h3>Matched provider</h3><p>Marketplace booking success</p><p>A distinct provider tool interlocks with one customer job fixture where the profiles fit.</p></div><span>Planned</span></li>
+<li id="availability-calendar-sync" data-asset="0"><div><h3>Availability calendar sync</h3><p>Booking product integrations section</p><p>Two date rails move together through a single shared pinion while keeping separate date tabs.</p></div><span>Planned</span></li>
+<li id="wait-time" data-asset="0"><div><h3>Wait time</h3><p>Customer service queue estimate</p><p>Small figures occupy positions before a staffed counter plus a large unoccupied waiting pad.</p></div><span>Planned</span></li>
+<li id="support-ticket-triage" data-asset="0"><div><h3>Support ticket triage</h3><p>Customer support software</p><p>Incoming tickets sort into differently shaped trays according to a multiple-arm switch.</p></div><span>Planned</span></li>
+<li id="ticket-escalated" data-asset="0"><div><h3>Ticket escalated</h3><p>Customer support workflow</p><p>A raised lift tray carries one ticket out of a seated row of ordinary tickets.</p></div><span>Planned</span></li>
+<li id="service-follow-up" data-asset="0"><div><h3>Service follow-up</h3><p>Post-service experience or help section</p><p>A small service tag remains tethered to a completed part with a visible retrieval loop.</p></div><span>Planned</span></li>
+<li id="customer-survey" data-asset="0"><div><h3>Customer survey</h3><p>Feedback request confirmation</p><p>A group of tactile response blocks sits next to a mail-in form with one response selected.</p></div><span>Planned</span></li>
+<li id="warranty-claim" data-asset="0"><div><h3>Warranty claim</h3><p>Manufacturer service portal</p><p>A cracked part sits just above its matching warranty envelope and serial receipt tab.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-accessibility-language-and-inclusion"><h2>Accessibility, language and inclusion</h2>
+<ul>
+<li id="screen-reader-support" data-asset="0"><div><h3>Screen-reader support</h3><p>Accessibility feature or statement</p><p>A narrow reader follows a continuous path past the leading edges of three content blocks.</p></div><span>Planned</span></li>
+<li id="keyboard-navigation" data-asset="0"><div><h3>Keyboard navigation</h3><p>Accessible product section</p><p>A clear connected route runs through large rectangular stops with one terminal key cap raised.</p></div><span>Planned</span></li>
+<li id="high-contrast-mode" data-asset="0"><div><h3>High-contrast mode</h3><p>Accessibility settings or feature section</p><p>A thick foreground profile separates clearly from a perforated background plate.</p></div><span>Planned</span></li>
+<li id="captions-and-transcripts" data-asset="0"><div><h3>Captions and transcripts</h3><p>Media accessibility section</p><p>An audio wave trace and a physical plain reading strip lie next to the same video panel.</p></div><span>Planned</span></li>
+<li id="text-scaling" data-asset="0"><div><h3>Text scaling</h3><p>Readability settings or docs</p><p>Three similarly proportioned type forms appear at increasing sizes with their baseline held by one rail.</p></div><span>Planned</span></li>
+<li id="reduced-motion" data-asset="0"><div><h3>Reduced motion</h3><p>Accessibility statement or settings</p><p>A motion linkage locks in a still position while its resting and travel limits stay outlined.</p></div><span>Planned</span></li>
+<li id="alternate-text" data-asset="0"><div><h3>Alternate text</h3><p>CMS accessibility feature</p><p>A raised description card remains beside a spare image frame with the two connected by a tangible tab.</p></div><span>Planned</span></li>
+<li id="reading-mode" data-asset="0"><div><h3>Reading mode</h3><p>Content-focused interface setting</p><p>A side frame retracts to reveal a single uninterrupted reading column on the central surface.</p></div><span>Planned</span></li>
+<li id="larger-touch-targets" data-asset="0"><div><h3>Larger touch targets</h3><p>Accessible mobile feature section</p><p>Oversized well-spaced touch plates on a compact control surface leave clearly open finger space.</p></div><span>Planned</span></li>
+<li id="page-language-selector" data-asset="0"><div><h3>Page language selector</h3><p>International site navigation</p><p>A revolving prism displays different shallow patterns on equally sized panels.</p></div><span>Planned</span></li>
+<li id="right-to-left-layouts" data-asset="0"><div><h3>Right-to-left layouts</h3><p>Internationalization feature block</p><p>Two layouts are mirrored around a shared hinge, with physical book spines and page starts on opposite sides.</p></div><span>Planned</span></li>
+<li id="regional-formatting" data-asset="0"><div><h3>Regional formatting</h3><p>Internationalization documentation</p><p>One set of numeric tokens seats into different spacings along separate formatting combs.</p></div><span>Planned</span></li>
+<li id="localized-imagery" data-asset="0"><div><h3>Localized imagery</h3><p>Localization translation guide</p><p>A shared image frame accepts two geographically recognizable inserts with equal footprints.</p></div><span>Planned</span></li>
+<li id="language-fallback" data-asset="0"><div><h3>Language fallback</h3><p>International CMS configuration</p><p>A temporary secondary sheet remains below one empty upper language holder ready to catch uncovered spaces.</p></div><span>Planned</span></li>
+<li id="localized-prices" data-asset="0"><div><h3>Localized prices</h3><p>International ecommerce settings</p><p>Two regional price plates sit side by side, each keyed to its own currency token and storefront insert.</p></div><span>Planned</span></li>
+<li id="time-zone-coordination" data-asset="0"><div><h3>Time zone coordination</h3><p>Distributed team or event product</p><p>Several offset local clock rings turn around an aligned central event pin.</p></div><span>Planned</span></li>
+<li id="interpreter-booking" data-asset="0"><div><h3>Interpreter booking</h3><p>Event accessibility or support services</p><p>Two listening stations connect through a central headset with separate microphone lines.</p></div><span>Planned</span></li>
+<li id="cognitive-accessibility" data-asset="0"><div><h3>Cognitive accessibility</h3><p>Accessibility resources or editorial guideline</p><p>A fitted path holds only a few separated task stepping stones within a plain open workspace.</p></div><span>Planned</span></li>
+<li id="audio-description" data-asset="0"><div><h3>Audio description</h3><p>Media accessibility feature</p><p>A secondary recorded narrative spool plays in parallel with a clearly distinct source video strip.</p></div><span>Planned</span></li>
+<li id="accessible-venue-routes" data-asset="0"><div><h3>Accessible venue routes</h3><p>Venue or campus access map</p><p>A gently sloped ramp curves around steps to reach the same raised threshold.</p></div><span>Planned</span></li>
+<li id="adjustable-contrast-testing" data-asset="0"><div><h3>Adjustable contrast testing</h3><p>Design-system accessibility docs</p><p>Two contrast plates slide apart beneath an illuminated sample frame so their edges can be compared.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-education-and-events"><h2>Education and events</h2>
+<ul>
+<li id="course-catalog" data-asset="0"><div><h3>Course catalog</h3><p>Learning platform homepage</p><p>A series of material samples and course folios sits on an educational display bench.</p></div><span>Planned</span></li>
+<li id="start-a-course" data-asset="0"><div><h3>Start a course</h3><p>Course landing or onboarding</p><p>A reel of lesson strips begins feeding through the first open learning station.</p></div><span>Planned</span></li>
+<li id="course-progress" data-asset="0"><div><h3>Course progress</h3><p>Learner dashboard</p><p>A clear circle of fitted milestones has several filled positions and a span of unmistakably open slots.</p></div><span>Planned</span></li>
+<li id="course-completion" data-asset="0"><div><h3>Course completion</h3><p>Certificate or celebration screen</p><p>A neatly rolled certificate and its seal occupy a shallow presentation rest.</p></div><span>Planned</span></li>
+<li id="event-registration" data-asset="0"><div><h3>Event registration</h3><p>Conference, webinar or event landing</p><p>A perforated admission ticket slides into an open venue slot beside an on-site badge.</p></div><span>Planned</span></li>
+<li id="event-schedule" data-asset="0"><div><h3>Event schedule</h3><p>Conference program hero</p><p>A set of program slats changes height and distance across clearly separated venue tracks.</p></div><span>Planned</span></li>
+<li id="event-speakers" data-asset="0"><div><h3>Event speakers</h3><p>Conference lineup page</p><p>A small line of lecture stands shows clearly different presentation card profiles.</p></div><span>Planned</span></li>
+<li id="live-webinar" data-asset="0"><div><h3>Live webinar</h3><p>Event promotion or virtual learning page</p><p>A projected image appears inside a screen between an operator microphone and a separate recording indicator.</p></div><span>Planned</span></li>
+<li id="workshop" data-asset="0"><div><h3>Workshop</h3><p>Hands-on educational event landing</p><p>Three small grouped tool sets surround a central workpiece on a clean learning bench.</p></div><span>Planned</span></li>
+<li id="student-assessment" data-asset="0"><div><h3>Student assessment</h3><p>Course evaluation feature</p><p>One specimen passes under a triad of independent evaluation needles.</p></div><span>Planned</span></li>
+<li id="practice-exercises" data-asset="0"><div><h3>Practice exercises</h3><p>Learning feature card</p><p>Matching blanks sit near a reusable practice tool with one shaped specimen completed.</p></div><span>Planned</span></li>
+<li id="flashcards" data-asset="0"><div><h3>Flashcards</h3><p>Study tool landing</p><p>A pivoted stack of little cards exposes one front card and its corresponding reverse panel.</p></div><span>Planned</span></li>
+<li id="grading-rubric" data-asset="0"><div><h3>Grading rubric</h3><p>Teacher tool feature</p><p>A stepped reference gauge checks several features of one submitted piece against fixed indicators.</p></div><span>Planned</span></li>
+<li id="portfolio-submission" data-asset="0"><div><h3>Portfolio submission</h3><p>Admissions or coursework portal</p><p>A stack of differently shaped pieces is neatly arranged inside an open submission folio.</p></div><span>Planned</span></li>
+<li id="waitlisted-event" data-asset="0"><div><h3>Waitlisted event</h3><p>Event signup status</p><p>An admission ticket sits on an exposed waiting rack just outside the full ticket holder.</p></div><span>Planned</span></li>
+<li id="event-check-in" data-asset="0"><div><h3>Event check-in</h3><p>Venue attendee workflow</p><p>A badge is held between the edge of a registration counter and a small upright reader.</p></div><span>Planned</span></li>
+<li id="seating-plan" data-asset="0"><div><h3>Seating plan</h3><p>Event venue seating selection</p><p>An auditorium relief exposes rows of seats wrapping around a central stage with one outlined seat.</p></div><span>Planned</span></li>
+<li id="event-replay" data-asset="0"><div><h3>Event replay</h3><p>Post-event follow-up or recorded content section</p><p>A narrow film strip leaves a ring-shaped rewind reel and winds back toward the screen.</p></div><span>Planned</span></li>
+<li id="live-polling" data-asset="0"><div><h3>Live polling</h3><p>Conference interaction feature</p><p>Tokens drop into transparent voting channels at visibly different heights.</p></div><span>Planned</span></li>
+<li id="funded-scholarship" data-asset="0"><div><h3>Funded scholarship</h3><p>Education donation or application section</p><p>A smaller award packet sits in an open support sleeve next to a course manual.</p></div><span>Planned</span></li>
+<li id="open-enrollment" data-asset="0"><div><h3>Open enrollment</h3><p>Cohort signup or education program</p><p>An open batch of student badge slots is visible and partly occupied by prepared badge plates.</p></div><span>Planned</span></li>
+<li id="credential-verification" data-asset="0"><div><h3>Credential verification</h3><p>Professional education feature</p><p>A circular seal pattern on a credential mates with a physical verification die.</p></div><span>Planned</span></li>
+<li id="laboratory-safety-training" data-asset="0"><div><h3>Laboratory safety training</h3><p>Science course landing</p><p>A pair of recognizable safety goggles sits fitted beside a contained lab specimen.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-health-and-wellness"><h2>Health and wellness</h2>
+<ul>
+<li id="clinician-appointment" data-asset="0"><div><h3>Clinician appointment</h3><p>Clinic booking or telehealth feature</p><p>A stethoscope-shaped tube coils neatly around a compact appointment plate and its marked time slot.</p></div><span>Planned</span></li>
+<li id="remote-consultation" data-asset="0"><div><h3>Remote consultation</h3><p>Telehealth benefits or appointment screen</p><p>A clinic instrument sits in front of a compact propped video terminal with a microphone.</p></div><span>Planned</span></li>
+<li id="medical-records" data-asset="0"><div><h3>Medical records</h3><p>Patient account feature</p><p>A fitted medical folder with shaped dividers is partially opened within the bounds of a privacy sleeve.</p></div><span>Planned</span></li>
+<li id="prescription-refill" data-asset="0"><div><h3>Prescription refill</h3><p>Pharmacy portal workflow</p><p>A prescription bottle seats beside an open refill chute receiving a fresh sealed packet.</p></div><span>Planned</span></li>
+<li id="care-plan" data-asset="0"><div><h3>Care plan</h3><p>Patient education or benefits page</p><p>A sequence of rounded visit markers leads outward from one central care folder.</p></div><span>Planned</span></li>
+<li id="lab-results" data-asset="0"><div><h3>Lab results</h3><p>Patient portal status or wellness dashboard</p><p>Two specimen vials and a sealed test report line up on a small receiving tray.</p></div><span>Planned</span></li>
+<li id="find-a-clinic" data-asset="0"><div><h3>Find a clinic</h3><p>Clinic directory hero</p><p>A low medical location marker rises from a modest site relief connected by three local walking routes.</p></div><span>Planned</span></li>
+<li id="dental-care" data-asset="0"><div><h3>Dental care</h3><p>Dental clinic services overview</p><p>A mirrored dental instrument and isolated tooth-shaped model sit in fitted tray recesses.</p></div><span>Planned</span></li>
+<li id="physical-therapy" data-asset="0"><div><h3>Physical therapy</h3><p>Rehabilitation service landing</p><p>A spring-resisted training arm rotates within a deliberately limited movement arc.</p></div><span>Planned</span></li>
+<li id="sleep-tracking" data-asset="0"><div><h3>Sleep tracking</h3><p>Wellness product overview</p><p>A low sleeping surface lies under a clear overnight arc marked with a few interval cuts.</p></div><span>Planned</span></li>
+<li id="hydration-reminder" data-asset="0"><div><h3>Hydration reminder</h3><p>Fitness website feature block</p><p>A calibrated upright bottle reveals the remaining gap between current level and the next intake mark.</p></div><span>Planned</span></li>
+<li id="workout-planning" data-asset="0"><div><h3>Workout planning</h3><p>Fitness product landing</p><p>Adjustable plates and differently spaced exercise markers sit on a continuous training rail.</p></div><span>Planned</span></li>
+<li id="heart-rate-trend" data-asset="0"><div><h3>Heart rate trend</h3><p>Connected fitness product</p><p>A periodic trace is projected from a small chest strap sensor onto a limited-length measuring plate.</p></div><span>Planned</span></li>
+<li id="movement-goal" data-asset="0"><div><h3>Movement goal</h3><p>Health tracking product</p><p>Footstep impressions rise across a short slope toward a physically marked landing.</p></div><span>Planned</span></li>
+<li id="meditation-session" data-asset="0"><div><h3>Meditation session</h3><p>Wellness onboarding or technique page</p><p>A smooth low bowl carries a concentric ripple spreading from one very small center point.</p></div><span>Planned</span></li>
+<li id="nutrition-plan" data-asset="0"><div><h3>Nutrition plan</h3><p>Meal planning or dietitian service</p><p>Several distinct dish portions align in a divided shallow plate with a serving scoop.</p></div><span>Planned</span></li>
+<li id="accessibility-aids-fitting" data-asset="0"><div><h3>Accessibility aids fitting</h3><p>Assistive healthcare service</p><p>A custom molded support shell hovers above its fitted measurement model.</p></div><span>Planned</span></li>
+<li id="wearable-data-sync" data-asset="0"><div><h3>Wearable data sync</h3><p>Patient monitoring product</p><p>A small band sensor sits in a charging and upload cradle, with one connecting trace clearly visible.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-travel-mobility-and-places"><h2>Travel, mobility and places</h2>
+<ul>
+<li id="destination-guide" data-asset="0"><div><h3>Destination guide</h3><p>Travel or city landing page</p><p>A folded miniature relief map opens around three distinct destination landmarks.</p></div><span>Planned</span></li>
+<li id="trip-itinerary" data-asset="0"><div><h3>Trip itinerary</h3><p>Travel planning feature</p><p>A continuous ribbon threads through three transport markers and ends beside a compact lodging model.</p></div><span>Planned</span></li>
+<li id="hotel-search" data-asset="0"><div><h3>Hotel search</h3><p>Accommodation directory hero</p><p>A set of clearly varied lodging silhouettes sits along the edge of a fitted city block map.</p></div><span>Planned</span></li>
+<li id="route-planning" data-asset="0"><div><h3>Route planning</h3><p>Mobility or fitness feature</p><p>A path has two plausible forks while one continuous selected route crosses a shallow relief.</p></div><span>Planned</span></li>
+<li id="find-a-nearby-location" data-asset="0"><div><h3>Find a nearby location</h3><p>Store locator or local business page</p><p>A single visible beacon casts a cut circular coverage line across a few nearby blocks.</p></div><span>Planned</span></li>
+<li id="transit-stops" data-asset="0"><div><h3>Transit stops</h3><p>Public transport route feature</p><p>A low rail gently curves between platform pads of different lengths and placements.</p></div><span>Planned</span></li>
+<li id="departure-board" data-asset="0"><div><h3>Departure board</h3><p>Travel or transport dashboard</p><p>A set of mechanical departure flaps turns on separate axles behind a shallow viewing frame.</p></div><span>Planned</span></li>
+<li id="boarding-pass" data-asset="0"><div><h3>Boarding pass</h3><p>Travel account or mobile app section</p><p>A single perforated travel card aligns over a narrow admission reader.</p></div><span>Planned</span></li>
+<li id="baggage-tracking" data-asset="0"><div><h3>Baggage tracking</h3><p>Travel service feature</p><p>A luggage tag aligns above a uniquely shaped case riding a looped baggage belt.</p></div><span>Planned</span></li>
+<li id="bike-share" data-asset="0"><div><h3>Bike share</h3><p>Urban mobility landing page</p><p>An empty docking hook is open next to a secured bicycle on its matching station.</p></div><span>Planned</span></li>
+<li id="ev-charging-station" data-asset="0"><div><h3>EV charging station</h3><p>Charging network directory</p><p>A compact charging island extends a clearly parked cable toward a vehicle-side socket.</p></div><span>Planned</span></li>
+<li id="parking-availability" data-asset="0"><div><h3>Parking availability</h3><p>Parking finder product</p><p>A low cutaway parking deck shows one remaining open bay beneath a lifted location frame.</p></div><span>Planned</span></li>
+<li id="road-closure" data-asset="0"><div><h3>Road closure</h3><p>Travel alert or mobility feed</p><p>A closed drawbar sends a visible secondary route around a missing bridge segment.</p></div><span>Planned</span></li>
+<li id="accessible-transport" data-asset="0"><div><h3>Accessible transport</h3><p>Mobility information page</p><p>A low-floor vehicle ramp aligns on an equal slope with a clearly visible boarding platform.</p></div><span>Planned</span></li>
+<li id="trail-conditions" data-asset="0"><div><h3>Trail conditions</h3><p>Outdoor guide or hiking conditions</p><p>Two successive ground samples show a stable route transitioning to rough exposed obstacles.</p></div><span>Planned</span></li>
+<li id="luggage-allowance" data-asset="0"><div><h3>Luggage allowance</h3><p>Airline ticket terms section</p><p>Two clearly different cases sit beside a compact dimensional luggage gauge.</p></div><span>Planned</span></li>
+<li id="trip-cancellation" data-asset="0"><div><h3>Trip cancellation</h3><p>Travel reservation management</p><p>A transport ticket lifts out of a date slot while a small shuttle waits intact on its dock.</p></div><span>Planned</span></li>
+<li id="multiple-stops" data-asset="0"><div><h3>Multiple stops</h3><p>Delivery or transport planning</p><p>A vehicle is clearly shown progressing past sequential drop-offs arranged along one loop.</p></div><span>Planned</span></li>
+<li id="car-rental-pickup" data-asset="0"><div><h3>Car rental pickup</h3><p>Vehicle rental assistance page</p><p>A vehicle key rises from a counter tray aligned with a matching parked vehicle.</p></div><span>Planned</span></li>
+<li id="accommodation-amenities" data-asset="0"><div><h3>Accommodation amenities</h3><p>Hotel feature grid overview</p><p>A tabletop cutaway room shows separate rest, wash, and storage zones within clear small walls.</p></div><span>Planned</span></li>
+<li id="fleet-dispatch" data-asset="0"><div><h3>Fleet dispatch</h3><p>Fleet operations application</p><p>A dispatcher carousel holds vehicle IDs in a visibly grouped sequence above two departure bays.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-real-estate-design-and-construction"><h2>Real estate, design and construction</h2>
+<ul>
+<li id="property-listing" data-asset="0"><div><h3>Property listing</h3><p>Real estate listing index hero</p><p>Two clearly different miniature house forms stand on separate shaped lots beside a simple path.</p></div><span>Planned</span></li>
+<li id="floor-plan" data-asset="0"><div><h3>Floor plan</h3><p>Property detail or architecture feature</p><p>A small overhead cutaway shows walls, door cuts and connected spaces with easy-to-read scale.</p></div><span>Planned</span></li>
+<li id="virtual-property-tour" data-asset="0"><div><h3>Virtual property tour</h3><p>Real estate feature or gallery</p><p>A camera field arc sweeps around the interior edge of a miniature room with open sides.</p></div><span>Planned</span></li>
+<li id="home-renovation" data-asset="0"><div><h3>Home renovation</h3><p>Remodeling services landing page</p><p>A lifted wall section exposes the new frame and old ground line beneath it.</p></div><span>Planned</span></li>
+<li id="site-survey" data-asset="0"><div><h3>Site survey</h3><p>Architecture or construction service</p><p>A survey tripod points at one peaked corner of a tiny terraced land model.</p></div><span>Planned</span></li>
+<li id="construction-milestones" data-asset="0"><div><h3>Construction milestones</h3><p>Builder project progress page</p><p>Four differently advanced models line up over a shared footing profile from foundation to roof.</p></div><span>Planned</span></li>
+<li id="property-valuation" data-asset="0"><div><h3>Property valuation</h3><p>Agent lead form or appraisal feature</p><p>A light comparative scale carries two visibly similar building models of different heights.</p></div><span>Planned</span></li>
+<li id="neighborhood-overview" data-asset="0"><div><h3>Neighborhood overview</h3><p>Real estate editorial section</p><p>Buildings of different proportions surround an open square with distinctly visible sidewalks.</p></div><span>Planned</span></li>
+<li id="home-inspection" data-asset="0"><div><h3>Home inspection</h3><p>Buyer resources or inspection service</p><p>A close-up cutaway of a house exposes roof seam, wall cavity and pipe section along one visible inspection route.</p></div><span>Planned</span></li>
+<li id="material-samples" data-asset="0"><div><h3>Material samples</h3><p>Design studio or builder resource page</p><p>A small stack of tiles spreads into an open fan with distinctive textures and edge treatments.</p></div><span>Planned</span></li>
+<li id="space-planning" data-asset="0"><div><h3>Space planning</h3><p>Interior design feature</p><p>Raised furniture templates sit over an open room grid with a visible uncluttered route between them.</p></div><span>Planned</span></li>
+<li id="modular-construction" data-asset="0"><div><h3>Modular construction</h3><p>Prefab builder product page</p><p>A complete room pod is lowered from above into a clearly framed neighboring structure.</p></div><span>Planned</span></li>
+<li id="contractor-estimate" data-asset="0"><div><h3>Contractor estimate</h3><p>Builder quote page</p><p>Several separately measured sample lengths sit in the same tabletop estimating guide.</p></div><span>Planned</span></li>
+<li id="building-maintenance" data-asset="0"><div><h3>Building maintenance</h3><p>Facilities or property-management feature</p><p>A removable building wall reveals easily reached mechanical panels on a utility spine.</p></div><span>Planned</span></li>
+<li id="home-energy-upgrade" data-asset="0"><div><h3>Home energy upgrade</h3><p>Retrofitting services feature</p><p>A window cutaway visibly gains a second insulating layer held by a single new frame bead.</p></div><span>Planned</span></li>
+<li id="move-in-checklist" data-asset="0"><div><h3>Move-in checklist</h3><p>Tenant onboarding guide</p><p>A moving crate sits beside a key rack and an open list folio on the room threshold.</p></div><span>Planned</span></li>
+<li id="building-permit" data-asset="0"><div><h3>Building permit</h3><p>City permitting portal</p><p>A miniature site plan lies under a footprint-shaped permit seal with a clean registration edge.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-climate-energy-and-civic-services"><h2>Climate, energy and civic services</h2>
+<ul>
+<li id="solar-energy" data-asset="0"><div><h3>Solar energy</h3><p>Renewable-energy feature block</p><p>An angled solar panel casts a distinct projected line toward a small inverter mounted below it.</p></div><span>Planned</span></li>
+<li id="energy-storage" data-asset="0"><div><h3>Energy storage</h3><p>Distributed energy product</p><p>A compact array of battery cells has one exposed connector row on a reinforced base.</p></div><span>Planned</span></li>
+<li id="emissions-reduction" data-asset="0"><div><h3>Emissions reduction</h3><p>Sustainability report or climate product</p><p>A trace descends between widely spaced measurement stations toward a designated low target.</p></div><span>Planned</span></li>
+<li id="recycling" data-asset="0"><div><h3>Recycling</h3><p>Circular product materials or local collection page</p><p>A single material sample splits into sorted streams and rejoins as a manufactured blank.</p></div><span>Planned</span></li>
+<li id="donate-to-a-cause" data-asset="0"><div><h3>Donate to a cause</h3><p>Nonprofit CTA section</p><p>A small weighted token seats into a communal collection tray whose edge reveals a shared fund level.</p></div><span>Planned</span></li>
+<li id="renewable-power-mix" data-asset="0"><div><h3>Renewable power mix</h3><p>Clean-energy dashboard</p><p>Distinct turbine, panel, and water channel forms feed one shared electrical rail.</p></div><span>Planned</span></li>
+<li id="grid-balancing" data-asset="0"><div><h3>Grid balancing</h3><p>Energy systems feature</p><p>Several floating weights coordinate to hold one horizontal electrical contact at its operating level.</p></div><span>Planned</span></li>
+<li id="electricity-usage" data-asset="0"><div><h3>Electricity usage</h3><p>Utility dashboard feature</p><p>A period strip advances under a visible power meter with distinct low and high sections.</p></div><span>Planned</span></li>
+<li id="home-energy-audit" data-asset="0"><div><h3>Home energy audit</h3><p>Utility service landing page</p><p>A room cross-section exposes the roof and windows in the direct path of a thermal measurement device.</p></div><span>Planned</span></li>
+<li id="water-conservation" data-asset="0"><div><h3>Water conservation</h3><p>Impact feature or utility advice page</p><p>An adjustable physical gate separates a full reserve area from a visibly steady small flow.</p></div><span>Planned</span></li>
+<li id="air-quality" data-asset="0"><div><h3>Air quality</h3><p>Environmental sensor or city dashboard</p><p>A sensor tower on a roadside base collects several distinctly spaced particle traces.</p></div><span>Planned</span></li>
+<li id="local-weather-alerts" data-asset="0"><div><h3>Local weather alerts</h3><p>Weather or civic safety service</p><p>A rain band crosses an outlined section of a relief map while the neighboring blocks stay clear.</p></div><span>Planned</span></li>
+<li id="waste-collection-schedule" data-asset="0"><div><h3>Waste collection schedule</h3><p>Local resident service page</p><p>A collection route carries several distinctly shaped bin slots under a simple date tab.</p></div><span>Planned</span></li>
+<li id="stormwater-management" data-asset="0"><div><h3>Stormwater management</h3><p>Civil infrastructure feature</p><p>A low terrain cross-section clearly drains water through planted channels into a retained basin.</p></div><span>Planned</span></li>
+<li id="report-a-local-issue" data-asset="0"><div><h3>Report a local issue</h3><p>Municipal web service</p><p>A lifted marker highlights one broken segment on a tiny street cross-section.</p></div><span>Planned</span></li>
+<li id="public-records-request" data-asset="0"><div><h3>Public records request</h3><p>Government transparency portal</p><p>A small request card enters an accessible central slot on a neatly packed records counter.</p></div><span>Planned</span></li>
+<li id="public-meeting" data-asset="0"><div><h3>Public meeting</h3><p>Local assembly or nonprofit page</p><p>A semicircular seating rail faces a raised speaker platform with a clear view corridor.</p></div><span>Planned</span></li>
+<li id="volunteer-signup" data-asset="0"><div><h3>Volunteer signup</h3><p>Nonprofit community feature</p><p>A rack of open volunteer equipment positions has just received one set of gloves and hand tools.</p></div><span>Planned</span></li>
+<li id="program-impact" data-asset="0"><div><h3>Program impact</h3><p>Nonprofit transparency section</p><p>A small set of contributions converges into a visibly complete center-supported structure.</p></div><span>Planned</span></li>
+<li id="resource-allocation" data-asset="0"><div><h3>Resource allocation</h3><p>Civic budget or allocation dashboard</p><p>A fixed supply block is separated into clear independently marked stock bays of different sizes.</p></div><span>Planned</span></li>
+<li id="site-habitat-restoration" data-asset="0"><div><h3>Site habitat restoration</h3><p>Environmental project page</p><p>An eroded terrain edge transitions across a clear boundary into new planted pockets and repaired slope.</p></div><span>Planned</span></li>
+<li id="watershed-monitoring" data-asset="0"><div><h3>Watershed monitoring</h3><p>Environmental analytics feature</p><p>An inset river carries three well-separated sensor markers linked to an accessible measurement bank.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-food-hospitality-and-agriculture"><h2>Food, hospitality and agriculture</h2>
+<ul>
+<li id="restaurant-menu" data-asset="0"><div><h3>Restaurant menu</h3><p>Restaurant or booking page hero</p><p>A simple table setting frames a small stand holding a few menu leaves with distinct silhouettes.</p></div><span>Planned</span></li>
+<li id="table-reservation" data-asset="0"><div><h3>Table reservation</h3><p>Restaurant booking flow</p><p>One selected table is outlined among several clearly separated dining arrangements.</p></div><span>Planned</span></li>
+<li id="food-delivery" data-asset="0"><div><h3>Food delivery</h3><p>Ordering service landing</p><p>A secured takeout carrier sits open enough to indicate its distinct fitted meal compartments.</p></div><span>Planned</span></li>
+<li id="menu-customization" data-asset="0"><div><h3>Menu customization</h3><p>Food ordering or dietary picker</p><p>Individual dish components move through obvious variations on the same serving base.</p></div><span>Planned</span></li>
+<li id="ingredient-sourcing" data-asset="0"><div><h3>Ingredient sourcing</h3><p>Restaurant or food impact page</p><p>A small trail leads from individual produce sections to a recognizably arranged preparation station.</p></div><span>Planned</span></li>
+<li id="allergen-information" data-asset="0"><div><h3>Allergen information</h3><p>Nutrition or restaurant detail page</p><p>A small sample identifier is physically separated from a shared ingredient tray by a visible divider.</p></div><span>Planned</span></li>
+<li id="recipe-steps" data-asset="0"><div><h3>Recipe steps</h3><p>Cooking-content guide</p><p>Three work stations expose preparation, assembly, and finished plating in a clear progression.</p></div><span>Planned</span></li>
+<li id="portion-scaling" data-asset="0"><div><h3>Portion scaling</h3><p>Recipe planning tool</p><p>Three measuring cups share a support rail with distinctly proportional fill volumes.</p></div><span>Planned</span></li>
+<li id="weekly-meal-plan" data-asset="0"><div><h3>Weekly meal plan</h3><p>Meal subscription product</p><p>Different neatly packed meals sit in a sequence of shallow day-sized holders.</p></div><span>Planned</span></li>
+<li id="pantry-inventory" data-asset="0"><div><h3>Pantry inventory</h3><p>Food planning product</p><p>Several pantry vessels and bins stand on a double shelf with two visibly empty spaces.</p></div><span>Planned</span></li>
+<li id="dining-delivery-status" data-asset="0"><div><h3>Dining delivery status</h3><p>Restaurant order progress panel</p><p>An insulated bag sits on a small route marker between prepared meal and destination.</p></div><span>Planned</span></li>
+<li id="catering-inquiry" data-asset="0"><div><h3>Catering inquiry</h3><p>Food service sales page</p><p>Different fitted serving trays nest into a compact travel catering case with a preparation order slip.</p></div><span>Planned</span></li>
+<li id="kitchen-order-display" data-asset="0"><div><h3>Kitchen order display</h3><p>Restaurant management feature</p><p>Two distinct order rails route tickets to differently arranged preparation stations.</p></div><span>Planned</span></li>
+<li id="temperature-controlled-storage" data-asset="0"><div><h3>Temperature-controlled storage</h3><p>Food safety or logistics feature</p><p>A shelving cutaway shows a separate cooling unit positioned over rows of protected ingredients.</p></div><span>Planned</span></li>
+<li id="food-waste-tracking" data-asset="0"><div><h3>Food waste tracking</h3><p>Kitchen sustainability software</p><p>Separated food scraps collect in matching bins on a common weighing platform.</p></div><span>Planned</span></li>
+<li id="crop-monitoring" data-asset="0"><div><h3>Crop monitoring</h3><p>Agriculture product page</p><p>A small hillside has clearly spaced crop rows, one traversing inspection rail, and visible sensor flags.</p></div><span>Planned</span></li>
+<li id="smart-irrigation" data-asset="0"><div><h3>Smart irrigation</h3><p>Agriculture or climate feature</p><p>A water line visibly splits into drip outlets over planted rows with one isolated dry branch.</p></div><span>Planned</span></li>
+<li id="harvest-planning" data-asset="0"><div><h3>Harvest planning</h3><p>Agriculture operations platform</p><p>Curving row strips have clearly different harvest readiness markers next to an open harvesting path.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-culture-membership-and-communities"><h2>Culture, membership and communities</h2>
+<ul>
+<li id="community-forum" data-asset="0"><div><h3>Community forum</h3><p>Community homepage hero</p><p>Distinct discussion panels stand in a circle around a shared open exchange surface.</p></div><span>Planned</span></li>
+<li id="member-directory" data-asset="0"><div><h3>Member directory</h3><p>Membership or internal community site</p><p>Slim profile cards sit in tiered slots and expose their different leading shapes.</p></div><span>Planned</span></li>
+<li id="membership-benefits" data-asset="0"><div><h3>Membership benefits</h3><p>Member landing page</p><p>A visible membership token opens a case containing several independently recognizable perks.</p></div><span>Planned</span></li>
+<li id="museum-collection" data-asset="0"><div><h3>Museum collection</h3><p>Cultural institution collection hub</p><p>Three distinct artifacts stand on a simple low display rail with different fitted holders.</p></div><span>Planned</span></li>
+<li id="exhibition-tickets" data-asset="0"><div><h3>Exhibition tickets</h3><p>Museum show or cultural event page</p><p>A perforated ticket sits before an open gallery section with one raised display plinth.</p></div><span>Planned</span></li>
+<li id="join-a-group" data-asset="0"><div><h3>Join a group</h3><p>Community or association onboarding</p><p>One open chair joins a small semicircle facing a shared activity board.</p></div><span>Planned</span></li>
+<li id="community-guidelines" data-asset="0"><div><h3>Community guidelines</h3><p>Forum conduct or values page</p><p>A center workspace has a clearly defined boundary and three distinct protected access ways.</p></div><span>Planned</span></li>
+<li id="threaded-discussion" data-asset="0"><div><h3>Threaded discussion</h3><p>Community forum feature</p><p>Reply strips fan out from one original note with attached physical hinges.</p></div><span>Planned</span></li>
+<li id="flag-inappropriate-content" data-asset="0"><div><h3>Flag inappropriate content</h3><p>Community moderation workflow</p><p>A small review marker clips directly to one piece in an otherwise ordinary media row.</p></div><span>Planned</span></li>
+<li id="member-achievement" data-asset="0"><div><h3>Member achievement</h3><p>Community or learning milestone</p><p>A distinctive raised honor medallion fits into an open long-term achievement stand.</p></div><span>Planned</span></li>
+<li id="mentorship" data-asset="0"><div><h3>Mentorship</h3><p>Community or professional education feature</p><p>Two work surfaces arranged at different heights share one sliding instruction rail.</p></div><span>Planned</span></li>
+<li id="club-events" data-asset="0"><div><h3>Club events</h3><p>Membership calendar page</p><p>Several distinct event badges rest between a single club token and a board of future dates.</p></div><span>Planned</span></li>
+<li id="membership-renewal" data-asset="0"><div><h3>Membership renewal</h3><p>Association billing reminder</p><p>An expired month tab rotates out while a fresh tab locks into the active seat.</p></div><span>Planned</span></li>
+<li id="venue-accessibility" data-asset="0"><div><h3>Venue accessibility</h3><p>Cultural visitor information</p><p>A continuous route leads from a wide entry into the seating area without interrupted steps.</p></div><span>Planned</span></li>
+<li id="artifact-conservation" data-asset="0"><div><h3>Artifact conservation</h3><p>Museum behind-the-scenes page</p><p>A delicate object is suspended in a fitted protective restoration cradle.</p></div><span>Planned</span></li>
+<li id="exhibition-map" data-asset="0"><div><h3>Exhibition map</h3><p>Museum visitor guide</p><p>An open floor relief shows multiple connected gallery rooms with one unmistakably selected show.</p></div><span>Planned</span></li>
+<li id="digital-archive" data-asset="0"><div><h3>Digital archive</h3><p>Library, museum or nonprofit collections</p><p>A small storage column reveals distinct media types stored under related physical index flags.</p></div><span>Planned</span></li>
+<li id="oral-history-project" data-asset="0"><div><h3>Oral history project</h3><p>Museum or nonprofit editorial section</p><p>A reel recorder stands next to open source cards and a transcript being printed.</p></div><span>Planned</span></li>
+<li id="collective-funding" data-asset="0"><div><h3>Collective funding</h3><p>Arts patronage or nonprofit donation feature</p><p>Different contributor weights form a stable balance that keeps one creative work elevated.</p></div><span>Planned</span></li>
+</ul></section>
+<section id="group-completion-and-notifications"><h2>Completion and notifications</h2>
+<ul>
+<li id="invite-sent" data-asset="1"><div><h3>Invite sent</h3><p>Team invitation confirmation</p><p>A card rises from the folds of an open envelope.</p></div><a href="figures/invite-sent.svg">Open SVG</a></li>
+<li id="upload-complete" data-asset="1"><div><h3>Upload complete</h3><p>Transfer completion or confirmation</p><p>A checked file floats above a receiving dock.</p></div><a href="figures/upload-complete.svg">Open SVG</a></li>
+<li id="setup-complete" data-asset="1"><div><h3>Setup complete</h3><p>Onboarding completion</p><p>A commissioning lever locks in beside a checked indicator.</p></div><a href="figures/setup-complete.svg">Open SVG</a></li>
+<li id="email-delivery-delayed" data-asset="0"><div><h3>Email delivery delayed</h3><p>Messaging product confirmation guidance</p><p>A slim mail token waits under a timing wheel in a sending tray.</p></div><span>Planned</span></li>
+<li id="notifications-muted" data-asset="0"><div><h3>Notifications muted</h3><p>Messaging preferences screen</p><p>A soft cover contains the clapper of a raised alert bell while leaving it visible.</p></div><span>Planned</span></li>
+<li id="new-message-received" data-asset="0"><div><h3>New message received</h3><p>Inbox or chat context</p><p>A single sealed paper tab peeks up from a shallow illustrated message window.</p></div><span>Planned</span></li>
+<li id="daily-digest" data-asset="0"><div><h3>Daily digest</h3><p>Notification or reporting setting</p><p>Many slim alert slips fit under a clamp and output as a single daily packet.</p></div><span>Planned</span></li>
+<li id="delivery-confirmation" data-asset="0"><div><h3>Delivery confirmation</h3><p>Messaging vendor or transactional product</p><p>One returned witness slip lies in the small compartment opposite an emptied dispatch chute.</p></div><span>Planned</span></li>
+<li id="read-receipt" data-asset="0"><div><h3>Read receipt</h3><p>Messaging capability</p><p>One opened envelope reveals a thin confirmation sheet halfway out of its fold.</p></div><span>Planned</span></li>
+<li id="saved-to-your-library" data-asset="0"><div><h3>Saved to your library</h3><p>Content curation confirmation</p><p>A chosen tile has just locked between neighboring tabs in an indexed personal rack.</p></div><span>Planned</span></li>
+<li id="file-download-ready" data-asset="0"><div><h3>File download ready</h3><p>Export or report completion state</p><p>A finished package is released onto an accessible tray away from its production station.</p></div><span>Planned</span></li>
+<li id="sync-complete" data-asset="0"><div><h3>Sync complete</h3><p>Cross-device synchronization confirmation</p><p>Two drive positions align at matching reference marks across a connected central shuttle.</p></div><span>Planned</span></li>
+<li id="data-import-complete" data-asset="0"><div><h3>Data import complete</h3><p>Migration or analytics workspace confirmation</p><p>A destination carousel is now filled with records while its transfer caddy stands empty behind it.</p></div><span>Planned</span></li>
+</ul></section>
+</main>
+<script>
+  const search = document.querySelector("#filter");
+  const availability = document.querySelector("#availability");
+  const result = document.querySelector("#result-count");
+  const empty = document.querySelector("#empty");
+  const sections = [...document.querySelectorAll("main section")].map(section => ({
+    section,
+    items: [...section.querySelectorAll("li")].map(node => ({
+      node,
+      text: node.firstElementChild.textContent.toLowerCase()
+    }))
+  }));
+  function update() {
+    const terms = search.value.trim().toLowerCase().split(/\s+/);
+    let count = 0;
+    for (const {section, items} of sections) {
+      let sectionCount = 0;
+      for (const {node, text} of items) {
+        const shown = terms.every(term => text.includes(term))
+          && (!availability.value || node.dataset.asset === availability.value);
+        node.hidden = !shown;
+        sectionCount += Number(shown);
+      }
+      section.hidden = sectionCount === 0;
+      count += sectionCount;
+    }
+    result.textContent = new Intl.NumberFormat().format(count) + " " + (count === 1 ? "case" : "cases");
+    empty.hidden = count > 0;
+  }
+  search.addEventListener("input", update);
+  availability.addEventListener("change", update);
+  update();
+  document.querySelector(".controls").hidden = false;
+</script>
+</body>
+</html>
