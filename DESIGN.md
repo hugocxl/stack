@@ -12,6 +12,17 @@ Every figure earns its place by illustrating a specific moment on a website. A u
 
 Mechanical checks catch stale outputs and broken cross-references. Browser review is required to judge the drawing.
 
+## Symbol-level redraw
+
+The library was audited against an SF Symbols bar: at 160 CSS pixels, a viewer who sees only the drawing names its concept. Most figures in the expansion packs paired generic props from a layout recipe and failed. The audit kept 45 figures and redrew the other 1,955, one module each in `scripts/scenes/redraws/`.
+
+- **One subject.** Each figure draws the real-world object that denotes its concept, such as a tooth, a parcel locker or a funnel. It shows at most three objects, without filler trays or platforms.
+- **One state vocabulary.** State is a badge that faces the viewer, so its glyph stays upright: check for done, x for failed, clock for pending, refresh for retry, plus for add, pause, lock and the warning triangle. Sibling states share an object and differ only by badge.
+- **Object-only.** The figures contain no people, words or numerals. A single letter appears only when the letter is the concept, as in A/B testing.
+- **Variety.** No single base form, such as a tilted document or a chart easel, carries more than about one figure in five within a group.
+
+Every redraw was reviewed in Chromium at 160 and 360 CSS pixels on light and dark backgrounds, compared with its siblings, and sent back until it passed.
+
 ## Review at 2,000 figures
 
 The build rejects self-intersecting projected faces and requires every catalog link to resolve to a shipped SVG. The release check also enforces the figure count, checks SVG elements and attributes, verifies all path coordinates and safe margins, and detects identical geometry. A normalized contour comparison surfaces near-duplicates for side-by-side review. Each file is rasterized in Chromium at 160 and 360 CSS pixels on light and dark backgrounds to check loading, visible ink, and clipping.

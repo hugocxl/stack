@@ -22,6 +22,11 @@ The scene definitions live in `scripts/scenes/`. `scripts/build.py` projects the
 3D coordinates into SVG, removes hidden lines and writes `figures/*.svg` and
 `catalog/manifest.json` (from `catalog/use-cases.json`). It needs Shapely.
 
+A module in `scripts/scenes/redraws/` replaces a figure's recipe composition. Name it
+after the figure (dashes become underscores) and define `DESCRIPTION` and `draw(s)`.
+Mark states with the shared badges in `scripts/scenes/redraws/_kit.py` (check, x,
+clock, plus, refresh and the rest) so the same state looks the same everywhere.
+
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate

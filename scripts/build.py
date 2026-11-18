@@ -8,6 +8,7 @@ import re
 from geometry import Scene, paths_for
 from scenes import commerce, control, data, editorial, infrastructure, new_states, product, workflow
 from expansion import attach_artwork, packs
+from scenes.redraws import REDRAWS
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = [
@@ -66,9 +67,13 @@ def main():
             file = f"figures/{slug(title)}.svg"
             if file in files:
                 raise ValueError(f"Duplicate figure {file}")
+            draw, description = REDRAWS.get(slug(title), (draw, description))
             files[file] = render_svg(draw, title, description)
     catalog = json.loads((ROOT/"catalog/use-cases.json").read_text(encoding="utf-8"))
-    expansion = list(packs())
+    expansion = [
+        (group, identifier, title, placement, *REDRAWS.get(identifier, (draw, visual))[::-1])
+        for group, identifier, title, placement, visual, draw in packs()
+    ]
     attach_artwork(catalog, expansion)
     for group in catalog["groups"]:
         group_entries = [entry for entry in expansion if entry[0] == group["id"]]
