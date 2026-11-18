@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
 
-const pages = { 'index.html': 'field', 'browse.html': 'plain', 'docs.html': 'plain' };
+const pages = { 'index.html': 'plain', 'browse.html': 'plain', 'docs.html': 'plain' };
 const docs = new Map(Object.keys(pages).map(name => [name, new JSDOM(readFileSync(`_site/${name}`, 'utf8')).window.document]));
 const catalog = JSON.parse(readFileSync('packages/vectors/dist/catalog.json', 'utf8'));
 const names = new Set(catalog.map(item => item.name));
