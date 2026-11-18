@@ -296,9 +296,10 @@ for name, symbol in [('user-plus',plus(12.35,7.35,.77)),
     shape(name,badge_person,symbol)
 shape('contact',rr(2,1.5,12,13,2),union(circle(8,6,2),stroke('M5 11Q8 8 11 11'),lines('M1 5H3','M1 11H3')))
 glyph('accessibility',circle(8,2.5,1.5),lines('M2 6L8 7 14 6','M8 7V10','M8 10L4 14','M8 10L12 14'))
-wheel = stroke('M4.8 7.8A3.65 3.65 0 1 0 9.65 11.6')
-glyph('wheelchair',wheel,union(circle(7.2,2.25,1.35),
-      stroke('M7.1 5.05V8.7H10.8L12.9 13.1H14.55')))
+wheel = stroke('M4.65 7.65A3.5 3.5 0 1 0 9.5 11.45')
+front_caster = ring(12.25,13.4,1.5)
+glyph('wheelchair',union(wheel,front_caster),union(circle(7.2,2.25,1.35),
+      stroke('M7.1 5.05V8.35H10.55L12.55 11.9H14.45')))
 for name,detail in [('smile',stroke('M5 9Q8 13 11 9')),('frown',stroke('M5 11Q8 7 11 11')),('meh',line((5,10),(11,10)))]: shape(name,circle(),union(dots((5.5,6),(10.5,6)),detail))
 hand_body = path('M4.45 9V4.15C4.45 2.6 6.9 2.6 6.9 4.15V2.65C6.9 1 9.35 1 9.35 2.65V3.55'
                  'C9.35 1.95 11.8 1.95 11.8 3.55V5.1C11.8 3.55 14.2 3.55 14.2 5.1V9.25'
@@ -660,7 +661,6 @@ airway = stroke('M8 1.55V5.55M5.15 8.85L8 5.55L10.85 8.85')
 shape('lungs',union(lung_l,mirror(lung_l)),airway)
 
 CATEGORY='Maps and travel'
-PIN=path('M8 15C4 10 2 8 2 6A6 6 0 0 1 14 6C14 8 12 10 8 15Z')
 pin_drop = path('M8 14.5C6.35 12.65 2.8 9.05 2.8 6.5A5.2 5.2 0 0 1 13.2 6.5C13.2 9.05 9.65 12.65 8 14.5Z')
 shape('map-pin', pin_drop, ring(8,6.45,2.25))
 shape('map',path('M1.5 3L6 1.5 10 3 14.5 1.5V13L10 14.5 6 13 1.5 14.5Z'),lines('M6 1.5V13','M10 3V14.5'))

@@ -78,7 +78,7 @@ def register(api):
     # Forward-leaning posture and an open wheel contour communicate propulsion.
     # Open upper-right arc leaves a clear channel around the active limbs.
     wheel = stroke('M4.95 7.8A3.55 3.55 0 1 0 9.85 11.95')
-    g('wheelchair-active', circle(9.55, 2.25, 1.4), wheel,
-      stroke('M8.65 4.9L6.95 8.65H10.55L12.5 12.9H14.25'
+    g('wheelchair-active', circle(9.55, 2.25, 1.4), wheel, api['front_caster'],
+      stroke('M8.65 4.9L6.95 8.65H10.55L12.55 11.9H14.45'
              'M8.65 4.9L5.65 4.45L3.8 6.6'),
       tags='active wheelchair mobility accessible adaptive sport propulsion')
