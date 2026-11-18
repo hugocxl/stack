@@ -152,17 +152,10 @@ def register(api):
     def badged(name, source, suffix, tags=None):
         body, detail = corner_host(source)
         if suffix == 'minus' and source in ('star','shield','heart','database','package','image'):
-            # Keep the crossbar at its plus sibling's center. Seat the small
-            # host slightly lower so the dash stands above its bottom edge.
-            if source == 'image':
-                body, detail = host_drawing('image')[:2]
-                sun = circle(5,5.5,1.3)
-                detail = union(subtract(detail,sun),stroke(sun))
-                badge = line((9,5),(13,5))
-            else:
-                body = transform(body,dx=.35,dy=1.65)
-                detail = transform(detail,dx=.35,dy=1.65)
-                badge = line((10.45,11.35),(14.45,11.35))
+            # Seat the host slightly lower so the shared corner dash clears its baseline.
+            body = transform(body,dx=.35,dy=1.65)
+            detail = transform(detail,dx=.35,dy=1.65)
+            badge = line((10.45,11.35),(14.45,11.35))
         elif source in ('user','user-round'):
             if suffix == 'cog':
                 badge = gear(12.35,10.45,2.75)
@@ -995,9 +988,9 @@ def register(api):
         if source == 'mail':
             # One open corner for the entire mail family, below the V flap.
             gap = circle(12.75,12.25,4.05)
-        elif name.endswith('-minus') and source in ('star','shield','heart','database','package'):
+        elif name.endswith('-minus') and source in ('star','shield','heart','database','package','image'):
             gap = circle(12.45,11.35,3.65)
-        if source in ('archive','alarm-clock','server-rack','user','user-round','tag') or name == 'image-minus':
+        if source in ('archive','alarm-clock','server-rack','user','user-round','tag'):
             ink = union(subtract(host,gap),badge)
         else:
             # Keep the host counter closed where the edge turns behind a badge.
