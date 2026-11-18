@@ -22,9 +22,9 @@
   --cxl-amber:var(--cxl-graphite);--cxl-sage:var(--cxl-graphite);
   --cxl-bg:var(--cxl-paper);--cxl-text:var(--cxl-ink);--cxl-surface:#ececec;--cxl-muted:#595959;--cxl-line:var(--cxl-silver);
   --cxl-serif:"Geist Serif",Georgia,serif;--cxl-sans:"Geist Sans",Arial,sans-serif;--cxl-mono:"Geist Mono",ui-monospace,monospace;
-  --cxl-weight-body: 375;
-  --cxl-weight-control: 475;
-  --cxl-weight-heading: 650;
+  --cxl-weight-body: 300;
+  --cxl-weight-control: 400;
+  --cxl-weight-heading: 600;
   --cxl-tracking-sans: -.01em;
   --cxl-space-1:4px;--cxl-space-2:8px;--cxl-space-3:16px;--cxl-space-4:24px;--cxl-space-5:40px;--cxl-space-6:64px;
   --cxl-radius:6px;accent-color:var(--cxl-text);color-scheme:light
