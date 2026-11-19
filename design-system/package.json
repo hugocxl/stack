@@ -1,0 +1,68 @@
+{
+  "name": "@hugocxl/design-system",
+  "version": "0.2.0",
+  "description": "The personal design system of @hugocxl: the signature across every project.",
+  "type": "module",
+  "files": [
+    "system/ds.css",
+    "system/ds.js",
+    "system/theme.js",
+    "system/plan.schema.json",
+    "system/figures",
+    "system/fonts",
+    "DESIGN.md",
+    "LICENSE",
+    "README.md",
+    "system/images",
+    "dist",
+    "skills"
+  ],
+  "exports": {
+    ".": "./system/ds.css",
+    "./ds.css": "./system/ds.css",
+    "./theme.js": "./system/theme.js",
+    "./ds.js": "./system/ds.js",
+    "./css": "./dist/tokens.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./tokens.scss": "./dist/tokens.scss",
+    "./scss": "./dist/tokens.scss",
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.js"
+    },
+    "./tokens.json": "./dist/tokens.json",
+    "./tailwind": "./dist/tailwind.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tailwind-preset": "./dist/tailwind-preset.cjs",
+    "./plan.schema.json": "./system/plan.schema.json",
+    "./DESIGN.md": "./DESIGN.md",
+    "./system/*": "./system/*",
+    "./package.json": "./package.json"
+  },
+  "style": "./system/ds.css",
+  "license": "MIT",
+  "homepage": "https://hugocxl.github.io/design-system/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocxl/design-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "sync": "node scripts/sync-assets.mjs && node scripts/sync-design.mjs",
+    "check": "design.md lint DESIGN.md && node scripts/sync-assets.mjs --check && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check && node scripts/check-skill.mjs",
+    "test": "npm run check && playwright test",
+    "build": "node scripts/build-exports.mjs",
+    "prepack": "node scripts/build-exports.mjs --check"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@google/design.md": "0.4.0",
+    "@hugocxl/icons": "^0.2.0",
+    "@hugocxl/vectors": "^0.1.0",
+    "@playwright/test": "1.65.1",
+    "yaml": "2.9.1"
+  }
+}
