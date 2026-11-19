@@ -1,0 +1,84 @@
+[
+ {
+  "name": "search",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "settings",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "trash",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "folder",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "github",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "circle-check",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ },
+ {
+  "name": "arrow-up-right",
+  "category": "Test",
+  "tags": [],
+  "origin": "original",
+  "styles": [
+   "duotone",
+   "solid",
+   "stroke"
+  ],
+  "defaultTone": "monochrome"
+ }
+]

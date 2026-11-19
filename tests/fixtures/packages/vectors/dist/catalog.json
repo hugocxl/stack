@@ -1,0 +1,24 @@
+[
+ {
+  "name": "empty-inbox",
+  "export": "EmptyInboxVector",
+  "title": "empty-inbox",
+  "description": "d",
+  "category": "Test",
+  "categoryId": "test",
+  "placement": "p",
+  "priority": "core",
+  "file": "figures/empty-inbox.svg"
+ },
+ {
+  "name": "payment-failed",
+  "export": "PaymentFailedVector",
+  "title": "payment-failed",
+  "description": "d",
+  "category": "Test",
+  "categoryId": "test",
+  "placement": "p",
+  "priority": "core",
+  "file": "figures/payment-failed.svg"
+ }
+]

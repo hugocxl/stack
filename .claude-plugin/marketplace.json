@@ -1,0 +1,46 @@
+{
+  "name": "hugocxl",
+  "description": "The @hugocxl stack for Claude Code: the design system, icons, vectors and sounds, each as an agent skill that matches its latest release.",
+  "owner": {
+    "name": "Hugo Corta",
+    "url": "https://github.com/hugocxl"
+  },
+  "plugins": [
+    {
+      "name": "stack",
+      "source": "./",
+      "description": "How the four @hugocxl libraries work together. Installs the design-system, icons, vectors and sounds plugins too.",
+      "category": "design",
+      "homepage": "https://github.com/hugocxl/stack",
+      "dependencies": ["design-system", "icons", "vectors", "sounds"]
+    },
+    {
+      "name": "design-system",
+      "source": { "source": "npm", "package": "@hugocxl/design-system" },
+      "description": "Type, color, spacing, page recipes and components from @hugocxl/design-system.",
+      "category": "design",
+      "homepage": "https://hugocxl.github.io/design-system/"
+    },
+    {
+      "name": "icons",
+      "source": { "source": "npm", "package": "@hugocxl/icons" },
+      "description": "Find, import, size and color @hugocxl/icons, with a catalog search.",
+      "category": "design",
+      "homepage": "https://hugocxl.github.io/icons/"
+    },
+    {
+      "name": "vectors",
+      "source": { "source": "npm", "package": "@hugocxl/vectors" },
+      "description": "Choose @hugocxl/vectors illustrations by meaning, with a catalog search.",
+      "category": "design",
+      "homepage": "https://hugocxl.github.io/vectors/"
+    },
+    {
+      "name": "sounds",
+      "source": { "source": "npm", "package": "@hugocxl/sounds" },
+      "description": "Match every control to its @hugocxl/sounds sound and haptic.",
+      "category": "design",
+      "homepage": "https://hugocxl.github.io/sounds/"
+    }
+  ]
+}
