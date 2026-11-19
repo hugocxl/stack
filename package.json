@@ -14,7 +14,8 @@
     "LICENSE",
     "README.md",
     "system/images",
-    "dist"
+    "dist",
+    "skills"
   ],
   "exports": {
     ".": "./system/ds.css",
@@ -51,7 +52,7 @@
   },
   "scripts": {
     "sync": "node scripts/sync-assets.mjs && node scripts/sync-design.mjs",
-    "check": "design.md lint DESIGN.md && node scripts/sync-assets.mjs --check && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check",
+    "check": "design.md lint DESIGN.md && node scripts/sync-assets.mjs --check && node scripts/sync-design.mjs --check && node scripts/build-exports.mjs --check && node scripts/check-skill.mjs",
     "test": "npm run check && playwright test",
     "build": "node scripts/build-exports.mjs",
     "prepack": "node scripts/build-exports.mjs --check"

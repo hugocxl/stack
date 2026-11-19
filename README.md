@@ -26,11 +26,16 @@ Thirteen components and six page recipes cover a home page, articles, docs, chan
 
 ## Part of a stack
 
-Three libraries, designed to work as one.
+Four libraries, designed to work as one.
 
 - **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
 - **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
+- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
 - **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+
+**Building with an AI agent?** The package ships an agent skill in `skills/design-system/`, and
+[hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the
+four libraries the same way.
 
 ## License
 
