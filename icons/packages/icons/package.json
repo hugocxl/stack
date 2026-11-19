@@ -112,13 +112,14 @@
   "license": "SEE LICENSE IN THIRD_PARTY_LICENSES.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugocxl/icons.git",
-    "directory": "packages/icons"
+    "url": "https://github.com/hugocxl/stack.git",
+    "directory": "icons/packages/icons"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "prepack": "python3 ../../scripts/generate.py --check"
-  }
+  },
+  "homepage": "https://hugocxl.github.io/stack/icons/"
 }

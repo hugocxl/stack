@@ -33,13 +33,13 @@
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "author": "Hugo Corta (https://hugocxl.me)",
-  "homepage": "https://hugocxl.github.io/sounds/",
+  "homepage": "https://hugocxl.github.io/stack/sounds/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugocxl/sounds.git",
-    "directory": "packages/sounds"
+    "url": "https://github.com/hugocxl/stack.git",
+    "directory": "sounds/packages/sounds"
   },
-  "bugs": "https://github.com/hugocxl/sounds/issues",
+  "bugs": "https://github.com/hugocxl/stack/issues",
   "publishConfig": {
     "access": "public"
   },

@@ -1,9 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { releaseVersion, stampVersion } from '../scripts/prepare-release.mjs';
+import { releaseVersion, releaseTag, stampVersion } from '../scripts/prepare-release.mjs';
 
 test('release versions are deterministic on retry and distinct across runs', () => {
-  assert.equal(releaseVersion('2'), '0.2.2');
+  assert.equal(releaseVersion('2'), '0.2.31');
   assert.equal(releaseVersion('2'), releaseVersion(2));
   assert.notEqual(releaseVersion(2), releaseVersion(3));
   for (const invalid of [undefined, 0, -1, '1.2', '01', 'abc', '9007199254740992']) {
@@ -11,16 +11,16 @@ test('release versions are deterministic on retry and distinct across runs', () 
   }
 });
 
-test('release stamping keeps package and lockfile versions aligned', () => {
+test('release stamping sets every published package version', () => {
   const manifests = {
     'packages/icons': { name: '@hugocxl/icons', version: '0.1.0' },
   };
-  const lock = { packages: structuredClone(manifests), lockfileVersion: 3 };
-  stampVersion(manifests, lock, '0.1.8');
-  assert.deepEqual(lock.packages, manifests);
+  stampVersion(manifests, '0.1.8');
   assert.equal(manifests['packages/icons'].version, '0.1.8');
-  assert.equal(lock.lockfileVersion, 3);
-  assert.throws(() => stampVersion(manifests, { packages: {} }, '0.1.9'));
+});
+
+test('release tags name the package', () => {
+  assert.equal(releaseTag('0.2.30'), 'icons-v0.2.30');
 });
 
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
@@ -62,7 +62,7 @@ if (args[1] === 'upload' && process.env.FAIL_UPLOAD === '1') process.exit(1);
 if (args[1] === 'edit') fs.writeFileSync(process.env.STATE, 'published');
 `, { mode: 0o755 });
     const env = { ...process.env, PATH: `${join(directory, 'bin')}:${process.env.PATH}`, STATE: state, CALLS: calls,
-      GH_REPO: 'test/icons', GITHUB_SHA: workGit('rev-parse', 'HEAD'), RELEASE_TAG: 'v0.1.2' };
+      GH_REPO: 'test/icons', GITHUB_SHA: workGit('rev-parse', 'HEAD'), RELEASE_TAG: 'icons-v0.1.2' };
     const run = extra => spawnSync('bash', [script], { cwd: work, env: { ...env, ...extra }, encoding: 'utf8' });
     const failedUpload = run({ FAIL_UPLOAD: '1' });
     assert.notEqual(failedUpload.status, 0);

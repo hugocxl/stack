@@ -12,6 +12,9 @@ else
   git push origin "refs/tags/$RELEASE_TAG"
 fi
 
+# Notes start from this package's previous release, not whichever package released last.
+PREVIOUS_TAG=$(git tag --list "${RELEASE_TAG%-v*}-v*" --sort=-v:refname | grep -vxF "$RELEASE_TAG" | head -n 1 || true)
+
 if gh release view "$RELEASE_TAG" --json isDraft >/dev/null 2>&1; then
   if test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = false; then
     echo "Release $RELEASE_TAG is already published; nothing to change."
@@ -19,7 +22,8 @@ if gh release view "$RELEASE_TAG" --json isDraft >/dev/null 2>&1; then
   fi
 else
   gh release create "$RELEASE_TAG" --verify-tag --draft --generate-notes \
-    --title "@hugocxl/icons $RELEASE_TAG"
+    --title "@hugocxl/icons ${RELEASE_TAG##*-}" \
+    ${PREVIOUS_TAG:+--notes-start-tag "$PREVIOUS_TAG"}
 fi
 
 # Recover incomplete drafts on retry. Publish only after every asset is uploaded.

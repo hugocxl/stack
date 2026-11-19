@@ -1,5 +1,5 @@
 {
-  "name": "@hugocxl/stack",
+  "name": "@hugocxl/ai",
   "version": "0.1.0",
   "description": "Set up any project so every AI agent uses the @hugocxl stack (design system, icons, vectors and sounds) the same way.",
   "keywords": [
@@ -32,10 +32,11 @@
   },
   "license": "MIT",
   "author": "Hugo Corta (https://hugocxl.me)",
-  "homepage": "https://github.com/hugocxl/stack#readme",
+  "homepage": "https://hugocxl.github.io/stack/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugocxl/stack.git"
+    "url": "https://github.com/hugocxl/stack.git",
+    "directory": "ai"
   },
   "bugs": "https://github.com/hugocxl/stack/issues",
   "publishConfig": {

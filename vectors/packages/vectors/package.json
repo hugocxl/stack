@@ -76,12 +76,12 @@
     "react",
     "react-native"
   ],
-  "homepage": "https://hugocxl.github.io/vectors/",
+  "homepage": "https://hugocxl.github.io/stack/vectors/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugocxl/vectors.git",
-    "directory": "packages/vectors"
+    "url": "https://github.com/hugocxl/stack.git",
+    "directory": "vectors/packages/vectors"
   },
   "publishConfig": {
     "access": "public"

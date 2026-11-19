@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@hugocxl/design-system": "^0.2.7",
+    "@hugocxl/icons": "workspace:*",
     "@types/react": "^19.0.0",
     "esbuild": "^0.28.2",
     "jsdom": "26.1.0",

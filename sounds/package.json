@@ -15,6 +15,7 @@
   "devDependencies": {
     "@hugocxl/design-system": "^0.2.10",
     "@hugocxl/icons": "^0.2.27",
+    "@hugocxl/sounds": "workspace:*",
     "@hugocxl/vectors": "^0.1.11",
     "esbuild": "^0.28.2",
     "marked": "^15.0.12",

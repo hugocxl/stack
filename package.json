@@ -1,0 +1,13 @@
+{
+  "name": "stack",
+  "private": true,
+  "description": "The @hugocxl stack: design system, icons, vectors, sounds and the agent tooling that ties them together.",
+  "packageManager": "pnpm@12.15.0",
+  "scripts": {
+    "test": "pnpm -r --workspace-concurrency=1 --if-present test",
+    "build:site": "node scripts/build-site.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
