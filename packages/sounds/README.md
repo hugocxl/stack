@@ -45,6 +45,9 @@ Browsers only start audio after a user gesture, so call `play` from an event han
 first time. The package is safe to import during server rendering. It does nothing until it
 plays.
 
+AI agents: the package ships a skill in `skills/sounds/` that maps every control to its
+sound.
+
 ## License
 
 MIT. See [NOTICE](NOTICE) for credits.

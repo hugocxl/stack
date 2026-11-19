@@ -37,9 +37,15 @@ tarball and its checksum.
 
 ## Part of a stack
 
+Four libraries, designed to work as one.
+
 - **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
 - **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
-- **@hugocxl/sounds** makes it feel like something.
+- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
 - **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+
+**Building with an AI agent?** The package ships an agent skill in `skills/sounds/`, and
+[hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the
+four libraries the same way.
 
 The kit grew out of a study of the SPEC-01 interface sounds. See [docs/STUDY.md](docs/STUDY.md).
