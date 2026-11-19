@@ -38,7 +38,7 @@ jobs:
         working-directory: .
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -scheme Vectors -destination 'platform=macOS' -derivedDataPath /tmp/vectors-macos test
+      - run: xcodebuild -scheme hugocxlStack-Package -destination 'platform=macOS' -derivedDataPath /tmp/vectors-macos -only-testing:VectorsTests test
       - run: xcodebuild -scheme Vectors -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/vectors-ios CODE_SIGNING_ALLOWED=NO build
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'

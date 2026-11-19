@@ -18,7 +18,7 @@ jobs:
         scheme: [Icons, Vectors]
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -scheme ${{ matrix.scheme }} -destination 'platform=macOS' -derivedDataPath /tmp/macos test
+      - run: xcodebuild -scheme hugocxlStack-Package -destination 'platform=macOS' -derivedDataPath /tmp/macos -only-testing:${{ matrix.scheme }}Tests test
       - run: xcodebuild -scheme ${{ matrix.scheme }} -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/ios CODE_SIGNING_ALLOWED=NO build
   # Swift Package Manager resolves plain semver tags, so the hugocxlStack package gets its own
   # unprefixed series. The run number is stable across retries and unique across pushes.
