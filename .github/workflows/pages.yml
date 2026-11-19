@@ -1,9 +1,11 @@
 name: Deploy website
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
-      version:
-        description: Version to show on the website. Defaults to the latest on npm.
+      sounds-version:
+        description: Version of @hugocxl/sounds to show on the website. Defaults to the latest on npm.
         required: false
 permissions:
   contents: read
@@ -21,19 +23,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm install --no-save @hugocxl/design-system@latest
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Each section shows the newest published design system and icons, as the separate sites did.
+      - run: pnpm --filter icons-workspace --filter vectors-workspace --filter sounds-workspace update --latest @hugocxl/design-system
+      - run: pnpm --filter vectors-workspace update --latest @hugocxl/icons
       - name: Build the website
         env:
-          SITE_VERSION: ${{ inputs.version }}
+          SITE_VERSION: ${{ inputs.sounds-version }}
         run: |
           if [ -z "$SITE_VERSION" ]; then SITE_VERSION=$(npm view @hugocxl/sounds version 2>/dev/null || true); fi
           export SITE_VERSION
-          npm run build:site
+          pnpm build:site
+      - run: pnpm check:site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

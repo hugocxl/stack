@@ -35,7 +35,7 @@ node <this skill's directory>/scripts/search.mjs --check search settings trash  
 It prints each match's name, export, styles, category and assigned color. Add `--json` for
 machine-readable output. In a project, the script reads
 `node_modules/@hugocxl/icons/catalog.json`; otherwise it reads the catalog bundled with this
-skill. The [icon browser](https://hugocxl.github.io/icons/browse.html) shows the same set.
+skill. The [icon browser](https://hugocxl.github.io/stack/icons/browse.html) shows the same set.
 
 Names are kebab-case (`arrow-up-right`, `circle-check`). The export is the name in PascalCase
 with an `Icon` suffix: `arrow-up-right` → `ArrowUpRightIcon`.
@@ -82,8 +82,8 @@ With `@hugocxl/design-system` markup, give the inline SVG `class="ds-icon"` and
 ### Swift
 
 ```swift
-.package(url: "https://github.com/hugocxl/icons.git", from: "0.2.0")
-// target dependency: .product(name: "Icons", package: "icons")
+.package(url: "https://github.com/hugocxl/stack.git", from: "0.1.0")   // the hugocxlStack package
+// target dependency: .product(name: "Icons", package: "stack")
 
 import Icons
 StrokeIcon.search.image.resizable().frame(width: 16, height: 16)
@@ -123,4 +123,4 @@ The words beside a colored icon always say what it means; color alone never does
 - One style per surface (Stroke with the design system).
 - Every icon-only control has an accessible label.
 
-Full documentation: https://hugocxl.github.io/icons/docs.html
+Full documentation: https://hugocxl.github.io/stack/icons/docs.html

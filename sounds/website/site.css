@@ -60,3 +60,11 @@
   .site-play, .site-text-button { transition: transform var(--ds-ease) }
   .site-play:active, .site-text-button:active { transform: scale(.96) }
 }
+
+/* ─── Stack navigation ───────────────────────────────────────────────── */
+/* The sections of hugocxl.github.io/stack/ as a row of labels above the wordmark,
+   the same on every site of the stack. The current section is in ink. */
+.ds-masthead { flex-wrap: wrap; row-gap: 0 }
+.site-stack { display: flex; flex-wrap: wrap; flex-basis: 100%; gap: 0 var(--ds-space-5) }
+.site-stack a[aria-current] { color: var(--ds-ink) }
+@media (max-width: 480px) { .site-stack { column-gap: var(--ds-space-3) } }

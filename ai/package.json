@@ -13,7 +13,7 @@
   ],
   "type": "module",
   "bin": {
-    "stack": "bin/stack.mjs"
+    "ai": "bin/ai.mjs"
   },
   "exports": {
     ".": "./src/check.mjs",

@@ -4,9 +4,9 @@
 
 The design system behind all my personal projects. Large reading type, quiet line vectors, rounded icons and a single orange accent, so every site I ship, from a product page to its docs, reads as part of the same body of work.
 
-[Read the system](https://hugocxl.github.io/design-system/) · [See the icons and vectors in use](https://hugocxl.github.io/design-system/#stack) · [Visit the website](https://hugocxl.github.io/design-system/)
+[Read the system](https://hugocxl.github.io/stack/design-system/) · [See the icons and vectors in use](https://hugocxl.github.io/stack/design-system/#stack) · [Visit the website](https://hugocxl.github.io/stack/design-system/)
 
-[![The design system's reference page](.github/preview.png)](https://hugocxl.github.io/design-system/)
+[![The design system's reference page](.github/preview.png)](https://hugocxl.github.io/stack/design-system/)
 
 ## Calm by default
 
@@ -28,10 +28,10 @@ Thirteen components and six page recipes cover a home page, articles, docs, chan
 
 Four libraries, designed to work as one.
 
-- **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
-- **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
-- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
-- **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+- **[@hugocxl/icons](https://hugocxl.github.io/stack/icons/)** labels what people can do.
+- **[@hugocxl/vectors](https://hugocxl.github.io/stack/vectors/)** illustrates what you mean.
+- **[@hugocxl/sounds](https://hugocxl.github.io/stack/sounds/)** makes it feel like something.
+- **[@hugocxl/design-system](https://hugocxl.github.io/stack/design-system/)** gives them the type, color and space to live in.
 
 **Building with an AI agent?** The package ships an agent skill in `skills/design-system/`, and
 [hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the
@@ -41,4 +41,4 @@ four libraries the same way.
 
 The system is [MIT licensed](LICENSE). It ships the [Geist](https://vercel.com/font) typefaces under their [own license](system/fonts/Geist-LICENSE.txt). Its paper, orange and reading scale take after [Superlogical](https://www.superlogical.com/).
 
-Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/design-system/issues).
+Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/stack/issues).

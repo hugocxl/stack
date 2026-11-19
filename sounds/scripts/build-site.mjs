@@ -69,7 +69,7 @@ const hapticButtons = Object.entries(feedback)
 
 // ─── Docs: docs/USAGE.md rendered into sections ─────────────────────────
 const slug = (text) => text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s/g, "-");
-const github = "https://github.com/hugocxl/sounds/blob/main/";
+const github = "https://github.com/hugocxl/stack/blob/main/sounds/";
 const renderer = new marked.Renderer();
 renderer.code = ({ text }) =>
   `<div class="ds-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;

@@ -4,9 +4,9 @@
 
 A family of **2,462 rounded icons** for the things you build. From everyday navigation to creative tools, they give your apps and websites one clear, consistent voice.
 
-[Browse the icons](https://hugocxl.github.io/icons/browse.html) · [Read the docs](https://hugocxl.github.io/icons/docs.html) · [Visit the website](https://hugocxl.github.io/icons/)
+[Browse the icons](https://hugocxl.github.io/stack/icons/browse.html) · [Read the docs](https://hugocxl.github.io/stack/icons/docs.html) · [Visit the website](https://hugocxl.github.io/stack/icons/)
 
-[![A selection of rounded icons from the collection](.github/preview.png)](https://hugocxl.github.io/icons/)
+[![A selection of rounded icons from the collection](.github/preview.png)](https://hugocxl.github.io/stack/icons/)
 
 ## One family. Three expressions.
 
@@ -27,10 +27,10 @@ Icons inherit text color by default. For file trees and tool lists, choose **Col
 
 Four libraries, designed to work as one.
 
-- **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
-- **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
-- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
-- **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+- **[@hugocxl/icons](https://hugocxl.github.io/stack/icons/)** labels what people can do.
+- **[@hugocxl/vectors](https://hugocxl.github.io/stack/vectors/)** illustrates what you mean.
+- **[@hugocxl/sounds](https://hugocxl.github.io/stack/sounds/)** makes it feel like something.
+- **[@hugocxl/design-system](https://hugocxl.github.io/stack/design-system/)** gives them the type, color and space to live in.
 
 **Building with an AI agent?** The package ships an agent skill in `skills/icons/`, and
 [hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the
@@ -40,4 +40,4 @@ four libraries the same way.
 
 The original artwork is [MIT licensed](LICENSE). Some icons are adapted from open-source collections and keep their own licenses, and brand marks belong to their owners. [NOTICE](NOTICE) has the details.
 
-Made by [Hugo](https://github.com/hugocxl), growing out of the icons for [Tab](https://hugocxl.github.io/tab/). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/icons/issues).
+Made by [Hugo](https://github.com/hugocxl), growing out of the icons for [Tab](https://hugocxl.github.io/tab/). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/stack/issues).

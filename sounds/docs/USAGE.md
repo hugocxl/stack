@@ -136,4 +136,4 @@ The [Listen](listen.html) page downloads every sound this way.
 
 ## Credits and license
 
-The code and the sounds are MIT licensed. The catalog grew out of a study of the interface sounds of [SPEC-01](https://spec-01.vercel.app), and the [study notes](https://github.com/hugocxl/sounds/blob/main/docs/STUDY.md) describe what was learned from it.
+The code and the sounds are MIT licensed. The catalog grew out of a study of the interface sounds of [SPEC-01](https://spec-01.vercel.app), and the [study notes](https://github.com/hugocxl/stack/blob/main/sounds/docs/STUDY.md) describe what was learned from it.

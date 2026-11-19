@@ -8,39 +8,56 @@
   "plugins": [
     {
       "name": "stack",
-      "source": "./",
+      "source": "./ai",
       "description": "How the four @hugocxl libraries work together. Installs the design-system, icons, vectors and sounds plugins too.",
       "category": "design",
-      "homepage": "https://github.com/hugocxl/stack",
-      "dependencies": ["design-system", "icons", "vectors", "sounds"]
+      "homepage": "https://hugocxl.github.io/stack/",
+      "dependencies": [
+        "design-system",
+        "icons",
+        "vectors",
+        "sounds"
+      ]
     },
     {
       "name": "design-system",
-      "source": { "source": "npm", "package": "@hugocxl/design-system" },
+      "source": {
+        "source": "npm",
+        "package": "@hugocxl/design-system"
+      },
       "description": "Type, color, spacing, page recipes and components from @hugocxl/design-system.",
       "category": "design",
-      "homepage": "https://hugocxl.github.io/design-system/"
+      "homepage": "https://hugocxl.github.io/stack/design-system/"
     },
     {
       "name": "icons",
-      "source": { "source": "npm", "package": "@hugocxl/icons" },
+      "source": {
+        "source": "npm",
+        "package": "@hugocxl/icons"
+      },
       "description": "Find, import, size and color @hugocxl/icons, with a catalog search.",
       "category": "design",
-      "homepage": "https://hugocxl.github.io/icons/"
+      "homepage": "https://hugocxl.github.io/stack/icons/"
     },
     {
       "name": "vectors",
-      "source": { "source": "npm", "package": "@hugocxl/vectors" },
+      "source": {
+        "source": "npm",
+        "package": "@hugocxl/vectors"
+      },
       "description": "Choose @hugocxl/vectors illustrations by meaning, with a catalog search.",
       "category": "design",
-      "homepage": "https://hugocxl.github.io/vectors/"
+      "homepage": "https://hugocxl.github.io/stack/vectors/"
     },
     {
       "name": "sounds",
-      "source": { "source": "npm", "package": "@hugocxl/sounds" },
+      "source": {
+        "source": "npm",
+        "package": "@hugocxl/sounds"
+      },
       "description": "Match every control to its @hugocxl/sounds sound and haptic.",
       "category": "design",
-      "homepage": "https://hugocxl.github.io/sounds/"
+      "homepage": "https://hugocxl.github.io/stack/sounds/"
     }
   ]
 }

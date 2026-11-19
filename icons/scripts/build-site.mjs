@@ -46,7 +46,7 @@ const specimen = STYLES.map((style, index) => {
 
 // ─── Docs: docs/USAGE.md rendered into P9 sections ─────────────────────
 const slug = (text) => text.toLowerCase().replace(/[^\w\s-]/g, "").replace(/\s/g, "-");
-const github = "https://github.com/hugocxl/icons/blob/main/";
+const github = "https://github.com/hugocxl/stack/blob/main/icons/";
 const renderer = new marked.Renderer();
 renderer.code = ({ text }) =>
   `<div class="ds-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;
@@ -137,7 +137,7 @@ for (const page of ["index.html", "browse.html", "docs.html"]) {
 const redirect = (from, to, label) =>
   writeFileSync(
     `${out}/${from}`,
-    `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>${label} · Icons</title>\n<link rel="canonical" href="https://hugocxl.github.io/icons/${to}">\n<script>location.replace('${to}' + location.hash);</script>\n<meta http-equiv="refresh" content="0;url=${to}">\n</head><body><a href="${to}">${label}</a></body></html>\n`,
+    `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>${label} · Icons</title>\n<link rel="canonical" href="https://hugocxl.github.io/stack/icons/${to}">\n<script>location.replace('${to}' + location.hash);</script>\n<meta http-equiv="refresh" content="0;url=${to}">\n</head><body><a href="${to}">${label}</a></body></html>\n`,
   );
 redirect("icons.html", "browse.html", "Browse the icons");
 redirect("guide.html", "docs.html", "Read the docs");

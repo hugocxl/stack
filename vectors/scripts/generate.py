@@ -164,6 +164,6 @@ for directory in [f'{PACKAGE}/dist', ASSETS]:
             else:
                 target.unlink()
 if failed:
-    sys.exit('Generated files out of date (run npm run generate): ' + ', '.join(failed[:20]) +
+    sys.exit('Generated files out of date (run pnpm run generate): ' + ', '.join(failed[:20]) +
              (f' and {len(failed) - 20} more' if len(failed) > 20 else ''))
 print(f'{len(figures)} vectors: generated files ' + ('verified' if check else 'written'))

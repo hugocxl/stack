@@ -14,5 +14,5 @@ working here produces the same result.
    `@hugocxl/design-system` tokens. Never add another icon set, illustration, UI kit, theme or
    sound library, and never use emoji or symbol characters as icons.
 3. Never guess an icon or vector name. Find it with the search script in its skill.
-4. Before you finish, run `npx @hugocxl/stack check` and fix every error.
-5. After upgrading a library, run `npx @hugocxl/stack sync` and commit the updated skills.
+4. Before you finish, run `npx @hugocxl/ai check` and fix every error.
+5. After upgrading a library, run `npx @hugocxl/ai sync` and commit the updated skills.

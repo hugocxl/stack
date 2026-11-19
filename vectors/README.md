@@ -4,9 +4,9 @@
 
 **2,000 isometric line illustrations** for the moments a page needs to show, not just tell. Heroes, feature sections, empty states, docs and everything in between.
 
-[Browse the vectors](https://hugocxl.github.io/vectors/browse.html) · [Read the docs](https://hugocxl.github.io/vectors/docs.html) · [Visit the website](https://hugocxl.github.io/vectors/)
+[Browse the vectors](https://hugocxl.github.io/stack/vectors/browse.html) · [Read the docs](https://hugocxl.github.io/stack/vectors/docs.html) · [Visit the website](https://hugocxl.github.io/stack/vectors/)
 
-[![A selection of isometric line illustrations from the collection](.github/preview.png)](https://hugocxl.github.io/vectors/)
+[![A selection of isometric line illustrations from the collection](.github/preview.png)](https://hugocxl.github.io/stack/vectors/)
 
 ## Drawn for a purpose
 
@@ -25,10 +25,10 @@ The collection is organized into 23 groups, from landing pages, onboarding and e
 
 Four libraries, designed to work as one.
 
-- **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
-- **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
-- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
-- **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+- **[@hugocxl/icons](https://hugocxl.github.io/stack/icons/)** labels what people can do.
+- **[@hugocxl/vectors](https://hugocxl.github.io/stack/vectors/)** illustrates what you mean.
+- **[@hugocxl/sounds](https://hugocxl.github.io/stack/sounds/)** makes it feel like something.
+- **[@hugocxl/design-system](https://hugocxl.github.io/stack/design-system/)** gives them the type, color and space to live in.
 
 **Building with an AI agent?** The package ships an agent skill in `skills/vectors/`, and
 [hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the
@@ -38,4 +38,4 @@ four libraries the same way.
 
 The artwork is [MIT licensed](LICENSE). Its drawing rules take after [Hairline by Lucas Marques](https://hairline.lucasmarkes.com/skills).
 
-Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/vectors/issues).
+Made by [Hugo](https://github.com/hugocxl). Ideas and contributions are welcome: [open an issue](https://github.com/hugocxl/stack/issues).

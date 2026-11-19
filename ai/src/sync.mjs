@@ -6,8 +6,8 @@ import { LIBRARIES, STACK_ROOT, libraries } from './project.mjs';
 
 /** Where skills are copied. `.agents/skills` is read by most agents; Claude Code reads `.claude/skills`. */
 export const SKILL_DIRS = ['.agents/skills', '.claude/skills'];
-export const BEGIN = '<!-- @hugocxl/stack:begin — managed by `npx @hugocxl/stack sync`. Edit outside these markers. -->';
-export const END = '<!-- @hugocxl/stack:end -->';
+export const BEGIN = '<!-- @hugocxl/ai:begin — managed by `npx @hugocxl/ai sync`. Edit outside these markers. -->';
+export const END = '<!-- @hugocxl/ai:end -->';
 const MANAGED_IDS = ['stack', ...LIBRARIES.map(library => library.id)];
 
 function filesIn(dir, base = dir) {

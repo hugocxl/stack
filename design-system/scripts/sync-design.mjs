@@ -42,7 +42,7 @@ const synced = design.replace(
 
 if (process.argv.includes('--check')) {
   if (synced !== design) {
-    console.error('DESIGN.md component markup is out of date. Run npm run sync.');
+    console.error('DESIGN.md component markup is out of date. Run pnpm run sync.');
     process.exit(1);
   }
   console.log(`DESIGN.md matches ${ids.length} specimens.`);

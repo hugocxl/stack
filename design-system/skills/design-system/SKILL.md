@@ -94,4 +94,4 @@ markup and classes from DESIGN.md wherever one fits instead of inventing a new o
 - Icons come from `@hugocxl/icons` (Stroke) and figures from `@hugocxl/vectors`.
 - The page works at 320, 760, 761 and 1440 px in light and dark.
 
-Reference page: https://hugocxl.github.io/design-system/
+Reference page: https://hugocxl.github.io/stack/design-system/

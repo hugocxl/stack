@@ -1,4 +1,4 @@
-// `stack check`: find the mistakes agents make with the stack, using the catalogs of the
+// `npx @hugocxl/ai check`: find the mistakes agents make with the stack, using the catalogs of the
 // libraries installed in the project.
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
@@ -180,7 +180,7 @@ export function checkText(file, text, k) {
       continue;
     }
     const pkg = entry.specifier.match(/^@hugocxl\/[a-z-]+/)?.[0];
-    if (!pkg || pkg === '@hugocxl/stack') continue;
+    if (!pkg || pkg === '@hugocxl/ai') continue;
     if (!k.installed.has(pkg)) { at('missing-library', `${pkg} is imported but not installed. Run npm install ${pkg}.`); continue; }
     if (pkg === '@hugocxl/icons') checkIconImport(entry, k, at);
     if (pkg === '@hugocxl/vectors') checkVectorImport(entry, k, at);
@@ -238,8 +238,8 @@ function checkManifest(root) {
 function checkAgentFiles(root) {
   const { write, remove } = plan(root);
   return [
-    ...write.map(({ path, created }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: created ? 'is missing. Run npx @hugocxl/stack sync.' : 'is out of date with the installed libraries. Run npx @hugocxl/stack sync.' })),
-    ...remove.map(({ path }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: 'belongs to a library or version that is no longer installed. Run npx @hugocxl/stack sync.' })),
+    ...write.map(({ path, created }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: created ? 'is missing. Run npx @hugocxl/ai sync.' : 'is out of date with the installed libraries. Run npx @hugocxl/ai sync.' })),
+    ...remove.map(({ path }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: 'belongs to a library or version that is no longer installed. Run npx @hugocxl/ai sync.' })),
   ];
 }
 

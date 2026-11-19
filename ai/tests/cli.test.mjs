@@ -21,7 +21,7 @@ test('init sets up a project, then check passes', async () => {
   const init = await run(main, ['init', '--cwd', root]);
   assert.equal(init.code, 0);
   assert.match(init.output, /created {2}AGENTS\.md/);
-  assert.match(init.output, /npx @hugocxl\/stack check/);
+  assert.match(init.output, /npx @hugocxl\/ai check/);
   assert.ok(existsSync(join(root, '.claude/skills/stack/SKILL.md')));
   const checked = await run(main, ['check', '--cwd', root]);
   assert.equal(checked.code, 0, checked.output);
@@ -50,6 +50,6 @@ test('check exits 1 on errors, and on warnings with --strict', async () => {
 });
 
 test('the bin runs', () => {
-  const output = execFileSync('node', [new URL('../bin/stack.mjs', import.meta.url).pathname, '--version'], { encoding: 'utf8' });
+  const output = execFileSync('node', [new URL('../bin/ai.mjs', import.meta.url).pathname, '--version'], { encoding: 'utf8' });
   assert.match(output, /^\d+\.\d+\.\d+/);
 });

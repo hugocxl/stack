@@ -18,7 +18,7 @@ function load(page, script, hash = '') {
   virtualConsole.on('jsdomError', error => errors.push(error));
   const requests = [];
   const dom = new JSDOM(readFileSync(`_site/${page}`, 'utf8'), {
-    url: `https://hugocxl.github.io/icons/${page}${hash}`,
+    url: `https://hugocxl.github.io/stack/icons/${page}${hash}`,
     runScripts: 'outside-only',
     virtualConsole,
   });
@@ -98,7 +98,7 @@ test('icon browser searches, filters, previews and deep links', async () => {
   click('#ui-detail [data-platform="svg"]');
   assert.match($('ui-snippet').textContent, /icons\/styles\/stroke\/search\.svg$/);
   click('#ui-detail [data-style="duotone"]');
-  assert.match($('ui-snippet').textContent, /\/main\/icons\/search\.svg$/);
+  assert.match($('ui-snippet').textContent, /\/hugocxl\/stack\/main\/icons\/icons\/search\.svg$/);
   click('#ui-detail [data-platform="js"]');
   assert.equal($('ui-snippet').textContent, "import { SearchIcon } from '@hugocxl/icons/js/search';\n\nelement.innerHTML = SearchIcon;");
 

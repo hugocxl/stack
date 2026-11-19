@@ -2,18 +2,18 @@
 
 ## Development and validation
 
-Use Node 22+, npm, Python 3.10–3.13 for the figure build (Python 3 with only the
+Use Node 22+, pnpm, Python 3.10–3.13 for the figure build (Python 3 with only the
 standard library for everything else), and Xcode with Swift 6+ for Apple builds.
 
 ```sh
-npm ci
-npm run generate       # regenerate the npm and Swift packages from figures/
-npm run validate       # SVG checks, generation drift, tests, types, packaging, website
-swift test             # or: xcodebuild -scheme Vectors -destination 'platform=macOS' test
+pnpm install
+pnpm run generate       # regenerate the npm and Swift packages from figures/
+pnpm run validate       # SVG checks, generation drift, tests, types, packaging, website
+(cd .. && swift test --filter VectorsTests)   # the Swift package is at the monorepo root
 ```
 
-`npm run validate` runs `scripts/validate.sh`: `scripts/verify.py`,
-`scripts/generate.py --check`, `npm test`, `npm run typecheck`, a dry-run
+`pnpm run validate` runs `scripts/validate.sh`: `scripts/verify.py`,
+`scripts/generate.py --check`, `pnpm test`, `pnpm run typecheck`, a dry-run
 `npm pack` and the website build and link check.
 
 ## Drawing and building figures
@@ -34,7 +34,7 @@ python -m pip install -r requirements.txt
 python scripts/build.py --expect 2000
 python scripts/build.py --check --expect 2000
 python scripts/verify.py --expect 2000 --similarity .965
-npm run generate
+pnpm run generate
 ```
 
 `figures/` is the source of truth for distribution. See [DESIGN.md](DESIGN.md) for
@@ -52,7 +52,7 @@ briefs.
   images) and `Sources/Vectors/Vector.swift`.
 
 Commit generated files so consumers need no Python or generation step. Never edit
-them by hand; `npm run check` (`generate.py --check`) fails on any drift, and
+them by hand; `pnpm run check` (`generate.py --check`) fails on any drift, and
 `npm pack` runs it before packing. `Sources/Vectors/Images.swift` is hand-written.
 
 ## Website
@@ -60,8 +60,8 @@ them by hand; `npm run check` (`generate.py --check`) fails on any drift, and
 The site is built from `website/` and `docs/USAGE.md` into `_site/` (ignored):
 
 ```sh
-npm run build:site
-npm run check:site           # links, anchors and assets
+pnpm run build:site
+pnpm run check:site           # links, anchors and assets
 npx serve _site              # or any static server
 ```
 

@@ -25,7 +25,7 @@ const synced = html
 const summary = `${icons.size} icons and ${vectors.size} vectors`;
 if (process.argv.includes('--check')) {
   if (synced !== html) {
-    console.error(`index.html artwork differs from the published packages. Run npm run sync.`);
+    console.error(`index.html artwork differs from the published packages. Run pnpm run sync.`);
     process.exit(1);
   }
   console.log(`index.html matches @hugocxl/icons and @hugocxl/vectors (${summary}).`);

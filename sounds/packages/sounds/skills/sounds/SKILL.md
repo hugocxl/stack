@@ -113,4 +113,4 @@ play({ layers: [...sounds.down.layers, { kind: 'tone', freq: 784, level: 0.1, de
 - No audio files or other sound libraries were added.
 - Sounds play only for direct actions, and the product has a way to turn them off.
 
-Full documentation: https://hugocxl.github.io/sounds/docs.html
+Full documentation: https://hugocxl.github.io/stack/sounds/docs.html

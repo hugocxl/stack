@@ -198,8 +198,8 @@ export function snippet(platform, style, name, colored = false) {
   const color = `defaultColor('${name}')`;
   switch (platform) {
     case 'svg':
-      if (colored) return `curl -O https://hugocxl.github.io/icons/${url(style, name, true)}`;
-      return `curl -O https://raw.githubusercontent.com/hugocxl/icons/main/icons/${style === 'duotone' ? '' : `styles/${style}/`}${name}.svg`;
+      if (colored) return `curl -O https://hugocxl.github.io/stack/icons/${url(style, name, true)}`;
+      return `curl -O https://raw.githubusercontent.com/hugocxl/stack/main/icons/icons/${style === 'duotone' ? '' : `styles/${style}/`}${name}.svg`;
     case 'js':
       return `import { ${component} } from '@hugocxl/icons/js${sub}/${name}';${colorImport}\n\nelement.innerHTML = ${component};` +
         (colored ? `\nelement.querySelector('svg').style.color = ${color};` : '');

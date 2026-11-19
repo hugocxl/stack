@@ -39,7 +39,7 @@ node <this skill's directory>/scripts/search.mjs --check product-launch empty-in
 Each match shows its name, export, title, where it fits on a site and what it draws. Add
 `--json` for machine-readable output. In a project, the script reads
 `node_modules/@hugocxl/vectors/catalog.json`; otherwise it reads the catalog bundled with this
-skill. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) shows the same
+skill. The [vectors browser](https://hugocxl.github.io/stack/vectors/browse.html) shows the same
 set by use case.
 
 Names are kebab-case (`modular-design`). The export is the name in PascalCase with a `Vector`
@@ -86,8 +86,8 @@ the caption. In React, pass `className="ds-vector"`.
 ### Swift
 
 ```swift
-.package(url: "https://github.com/hugocxl/vectors.git", from: "0.1.0")
-// target dependency: .product(name: "Vectors", package: "vectors")
+.package(url: "https://github.com/hugocxl/stack.git", from: "0.1.0")   // the hugocxlStack package
+// target dependency: .product(name: "Vectors", package: "stack")
 
 import Vectors
 Vector.emptyInbox.image
@@ -115,4 +115,4 @@ Every SVG has `role="img"`, a `<title>` and a `<desc>`, and the components rende
 - No stock art, emoji, other illustration set or generated image is on the page.
 - Vectors keep their 4:3 ratio, one color and their accessible name.
 
-Full documentation: https://hugocxl.github.io/vectors/docs.html
+Full documentation: https://hugocxl.github.io/stack/vectors/docs.html

@@ -5,7 +5,7 @@ tree-shakeable exports for JavaScript, React, React Native, and Expo.
 
 Choose Duotone, Solid, or Stroke for 2,381 UI icons, plus 81 brand marks in the
 default style: 7,224 SVG drawings in total. SwiftUI, UIKit, and AppKit are also
-supported through the [Swift package](https://hugocxl.github.io/icons/docs.html).
+supported through the [Swift package](https://hugocxl.github.io/stack/icons/docs.html).
 
 ```sh
 npm install @hugocxl/icons
@@ -28,8 +28,8 @@ should install `react-native-svg` (Expo: `npx expo install react-native-svg`).
 The package root is the pure JavaScript adapter. Framework peers are optional;
 install the peers needed by the adapter you use.
 
-[Browse the complete catalog](https://github.com/hugocxl/icons/blob/main/docs/CATALOG.md)
-or read the [full integration guide](https://hugocxl.github.io/icons/docs.html).
+[Browse the complete catalog](https://github.com/hugocxl/stack/blob/main/icons/docs/CATALOG.md)
+or read the [full integration guide](https://hugocxl.github.io/stack/icons/docs.html).
 Redistribute LICENSE, NOTICE and THIRD_PARTY_LICENSES.md with the artwork.
 
 Style imports use `/js/solid`, `/react/solid`, `/react-native/solid` or the

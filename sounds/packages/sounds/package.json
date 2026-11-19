@@ -45,6 +45,6 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p .",
-    "prepack": "cp ../../LICENSE ../../NOTICE . && npm run build"
+    "prepack": "cp ../../LICENSE ../../NOTICE . && pnpm run build"
   }
 }

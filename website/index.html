@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>@hugocxl/stack</title>
+  <meta name="description" content="The @hugocxl stack: a design system, icons, vectors and sounds designed to work as one, and the agent tooling that teaches AI agents to use them together.">
+  <link rel="canonical" href="https://hugocxl.github.io/stack/">
+  <link rel="stylesheet" href="design-system/system/ds.css">
+  <link rel="stylesheet" href="site.css">
+  <script src="design-system/system/theme.js"></script>
+  <script type="module" src="design-system/system/ds.js"></script>
+</head>
+<body class="ds" data-layout="plain">
+  <header class="ds-masthead">
+    <nav class="ds-label site-stack" aria-label="The @hugocxl stack">
+      <a href="./" aria-current="page">Stack</a>
+      <a href="design-system/">Design system</a>
+      <a href="icons/">Icons</a>
+      <a href="vectors/">Vectors</a>
+      <a href="sounds/">Sounds</a>
+    </nav>
+    <a class="ds-wordmark" href="./">@hugocxl/stack</a>
+    <a href="#agents">Agents</a>
+    <a href="https://github.com/hugocxl/stack">GitHub</a>
+    <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme">{{icon contrast}}</button>
+  </header>
+  <main>
+    <article class="ds-column ds-opening">
+      <h1 class="ds-statement">One stack. Every agent builds it <span class="ds-accent">the same way.</span></h1>
+      <ul class="ds-meta">
+        <li class="ds-label">4 libraries</li>
+        <li class="ds-label">1 agent toolkit</li>
+        <li class="ds-label">MIT license</li>
+      </ul>
+      <section class="ds-section">
+        <p>The @hugocxl stack is four libraries designed to work as one, and the instructions that teach AI agents to use them together. <span class="ds-muted">Whichever agent you work with (Claude Code, Codex, Cursor, Copilot, Gemini…) and whichever project you start, the result follows the same rules.</span></p>
+      </section>
+      <ul class="ds-grid ds-wide" data-columns="4">
+        <li>
+          <span class="ds-label">Fig 0.1</span>
+          {{vector design-tokens}}
+          <h3><a href="design-system/">@hugocxl/design-system</a></h3>
+          <p>Gives everything its type, color and space.</p>
+        </li>
+        <li>
+          <span class="ds-label">Fig 0.2</span>
+          {{vector contextual-toolbar}}
+          <h3><a href="icons/">@hugocxl/icons</a></h3>
+          <p>Labels what people can do.</p>
+        </li>
+        <li>
+          <span class="ds-label">Fig 0.3</span>
+          {{vector vectorization}}
+          <h3><a href="vectors/">@hugocxl/vectors</a></h3>
+          <p>Illustrates what you mean.</p>
+        </li>
+        <li>
+          <span class="ds-label">Fig 0.4</span>
+          {{vector tactile-feedback}}
+          <h3><a href="sounds/">@hugocxl/sounds</a></h3>
+          <p>Makes it feel like something.</p>
+        </li>
+      </ul>
+      <section class="ds-section" id="agents">
+        <h2>Set up a project for agents</h2>
+        <p>Each library ships its own agent skill inside its npm package, so the instructions always match the version a project has installed. <span class="ds-muted">@hugocxl/ai adds what no single library can say: which library covers which need, how colors and sounds pair with the design system, and the rules every project shares.</span></p>
+        <div class="ds-code"><pre tabindex="0"><code>npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors @hugocxl/sounds
+npx @hugocxl/ai init</code></pre><button type="button">Copy</button></div>
+        <p><code>init</code> writes a managed section in <code>AGENTS.md</code> for Codex, Cursor, Copilot, Gemini and most other agents, a <code>CLAUDE.md</code> for Claude Code, and the skills in <code>.agents/skills/</code> and <code>.claude/skills/</code>. <span class="ds-muted">Commit them, and run <code>npx @hugocxl/ai sync</code> after installing or upgrading a library.</span></p>
+      </section>
+      <section class="ds-section" id="check">
+        <h2>Check what they build</h2>
+        <p>The check reads the catalogs of the installed libraries and reports icons, vectors and sounds that do not exist, other icon libraries and raw colors. <span class="ds-muted">It exits with 1 on errors, so it works in CI and in an agent's own loop.</span></p>
+        <div class="ds-code"><pre tabindex="0"><code>npx @hugocxl/ai check</code></pre><button type="button">Copy</button></div>
+      </section>
+      <section class="ds-section" id="claude-code">
+        <h2>Every Claude Code session</h2>
+        <p>To have the skills in every session without setting up each project, add the stack as a Claude Code plugin marketplace. <span class="ds-muted">The <code>stack</code> plugin installs the design-system, icons, vectors and sounds plugins with it, each from its latest npm release.</span></p>
+        <div class="ds-code"><pre tabindex="0"><code>claude plugin marketplace add hugocxl/stack
+claude plugin install stack@hugocxl</code></pre><button type="button">Copy</button></div>
+      </section>
+      <section class="ds-section" id="open-source">
+        <h2>Free and open source</h2>
+        <p>All of it lives in <a href="https://github.com/hugocxl/stack">one repository</a> and is free to use under the MIT license. <span class="ds-muted">Each library keeps its own docs and releases, linked from the navigation at the top of every page.</span></p>
+      </section>
+      <a class="ds-button" href="design-system/">{{icon book-open}}Start with the design system</a>
+    </article>
+  </main>
+  <footer class="ds-footer">
+    <ul><li><a href="design-system/">@hugocxl/design-system</a></li><li><a href="icons/">@hugocxl/icons</a></li><li><a href="vectors/">@hugocxl/vectors</a></li><li><a href="sounds/">@hugocxl/sounds</a></li></ul>
+    <ul><li><a href="https://www.npmjs.com/package/@hugocxl/ai">npm</a></li><li><a href="https://github.com/hugocxl/stack">GitHub</a></li><li><a href="https://github.com/hugocxl">@hugocxl</a></li></ul>
+  </footer>
+</body>
+</html>

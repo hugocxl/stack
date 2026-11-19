@@ -140,7 +140,7 @@ function main(argv) {
   }
   const results = search(catalog, rest.join(' '), options);
   if (options.json) console.log(JSON.stringify(results.map(icon => ({ ...icon, export: exportName(icon.name) })), null, 2));
-  else if (results.length === 0) console.log('No icons match. Try a broader word, or browse https://hugocxl.github.io/icons/browse.html');
+  else if (results.length === 0) console.log('No icons match. Try a broader word, or browse https://hugocxl.github.io/stack/icons/browse.html');
   else console.log(results.map(describe).join('\n'));
   return results.length ? 0 : 1;
 }

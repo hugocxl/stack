@@ -123,7 +123,7 @@ function main(argv) {
   }
   const results = search(catalog, rest.join(' '), options);
   if (options.json) console.log(JSON.stringify(results, null, 2));
-  else if (results.length === 0) console.log('No vectors match. Try other words, or browse https://hugocxl.github.io/vectors/browse.html');
+  else if (results.length === 0) console.log('No vectors match. Try other words, or browse https://hugocxl.github.io/stack/vectors/browse.html');
   else console.log(results.map(v => `${v.name}  (${v.export})\n  ${v.title} · ${v.placement}\n  ${v.description}`).join('\n\n'));
   return results.length ? 0 : 1;
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hugocxl.github.io/design-system/system/plan.schema.json",
+  "$id": "https://hugocxl.github.io/stack/design-system/system/plan.schema.json",
   "title": "Design system page plan",
   "description": "One page as data. Render each block by copying its component markup from DESIGN.md and replacing only the slot values.",
   "type": "object",

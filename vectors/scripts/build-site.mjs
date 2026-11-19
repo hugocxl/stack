@@ -11,8 +11,9 @@ const require = createRequire(import.meta.url);
 const designSystem = dirname(require.resolve('@hugocxl/design-system/package.json'));
 
 const out = '_site';
-const site = 'https://hugocxl.github.io/vectors/';
-const repo = 'https://github.com/hugocxl/vectors';
+const site = 'https://hugocxl.github.io/stack/vectors/';
+const repo = 'https://github.com/hugocxl/stack/tree/main/vectors';
+const source = 'https://github.com/hugocxl/stack/blob/main/vectors';
 const read = path => readFileSync(path, 'utf8');
 const escape = text => String(text).replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 const number = value => value.toLocaleString('en-US');
@@ -49,6 +50,13 @@ for (const name of icons.keys()) {
 const icon = name => icons.get(name);
 
 const masthead = `  <header class="ds-masthead">
+    <nav class="ds-label site-stack" aria-label="The @hugocxl stack">
+      <a href="../">Stack</a>
+      <a href="../design-system/">Design system</a>
+      <a href="../icons/">Icons</a>
+      <a href="../vectors/" aria-current="true">Vectors</a>
+      <a href="../sounds/">Sounds</a>
+    </nav>
     <a class="ds-wordmark" href="./">@hugocxl/vectors</a>
     <a href="browse.html">Browse</a>
     <a href="docs.html">Docs</a>
@@ -56,8 +64,8 @@ const masthead = `  <header class="ds-masthead">
     <button class="ds-theme" type="button" data-ds-theme aria-label="Switch theme">${icon('contrast')}</button>
   </header>`;
 const footer = `  <footer class="ds-footer">
-    <ul><li><a href="https://hugocxl.github.io/icons/">@hugocxl/icons</a></li><li><a href="${site}">@hugocxl/vectors</a></li><li><a href="https://hugocxl.github.io/design-system/">@hugocxl/design-system</a></li></ul>
-    <ul><li><a href="https://www.npmjs.com/package/@hugocxl/vectors">npm</a></li><li><a href="${repo}/blob/main/LICENSE">License</a></li><li><a href="https://github.com/hugocxl">@hugocxl</a></li></ul>
+    <ul><li><a href="https://hugocxl.github.io/stack/icons/">@hugocxl/icons</a></li><li><a href="${site}">@hugocxl/vectors</a></li><li><a href="https://hugocxl.github.io/stack/design-system/">@hugocxl/design-system</a></li></ul>
+    <ul><li><a href="https://www.npmjs.com/package/@hugocxl/vectors">npm</a></li><li><a href="${source}/LICENSE">License</a></li><li><a href="https://github.com/hugocxl">@hugocxl</a></li></ul>
   </footer>`;
 const head = (title, description, file) => `  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -106,7 +114,7 @@ page('browse.html', {
 
 // Docs, rendered from docs/USAGE.md with the design system's section, code and table markup.
 const slug = text => text.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-');
-const markdown = read('docs/USAGE.md').replace(/\]\(\.\.\/([^)]+)\)/g, `](${repo}/blob/main/$1)`);
+const markdown = read('docs/USAGE.md').replace(/\]\(\.\.\/([^)]+)\)/g, `](${source}/$1)`);
 const [, title, body] = markdown.match(/^# (.+)\n([\s\S]*)$/);
 const renderer = new marked.Renderer();
 renderer.code = ({ text }) => `<div class="ds-code"><pre tabindex="0"><code>${escape(text)}</code></pre><button type="button">Copy</button></div>\n`;

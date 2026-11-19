@@ -5,9 +5,9 @@
 Use Node 22+, npm, Python 3, and Xcode with Swift 6+ for Apple builds.
 
 ```sh
-npm ci
-npm run generate       # regenerate adapters after editing icons/
-npm run validate       # artwork, generation drift, rendering, types, packaging
+pnpm install
+pnpm run generate       # regenerate adapters after editing icons/
+pnpm run validate       # artwork, generation drift, rendering, types, packaging
 xcodebuild -scheme Icons -destination 'platform=macOS' test
 xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
@@ -23,7 +23,7 @@ need app-level verification.
 
 Assign kind-based colors in `scripts/icons/default-hues.json`. Each name
 belongs to at most one design-system hue. Run the drawing recipe to refresh
-the catalog, then `npm run generate` and
+the catalog, then `pnpm run generate` and
 `python3 scripts/icons/compare-lucide.py --require-complete`. The generator
 reads light and dark values from the installed design-system package.
 

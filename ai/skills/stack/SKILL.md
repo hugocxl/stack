@@ -29,7 +29,7 @@ ships inside its npm package, so it always matches the installed version.
    and check every name before you finish.
 4. **Meaning first.** An icon labels an action, a vector explains an idea, a sound confirms what
    the hand did. None of them is decoration.
-5. **Check before you finish.** Run `npx @hugocxl/stack check` and fix every error.
+5. **Check before you finish.** Run `npx @hugocxl/ai check` and fix every error.
 
 ## Icon or vector?
 
@@ -66,12 +66,12 @@ ships inside its npm package, so it always matches the installed version.
 
 ```sh
 npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors @hugocxl/sounds
-npx @hugocxl/stack init
+npx @hugocxl/ai init
 ```
 
 `init` writes the stack's section into `AGENTS.md`, points `CLAUDE.md` at it, and copies the
 skills of the installed libraries into `.agents/skills/` and `.claude/skills/`. Run
-`npx @hugocxl/stack sync` after upgrading any library, and commit the result.
+`npx @hugocxl/ai sync` after upgrading any library, and commit the result.
 
 Then choose the integration the project needs:
 
@@ -91,12 +91,12 @@ Then choose the integration the project needs:
    icon, vector and sound goes.
 3. Search for every icon and vector name and read its description.
 4. Build it with tokens and the libraries' own exports.
-5. Run `npx @hugocxl/stack check`, fix every error, and look at the result in light and dark at
+5. Run `npx @hugocxl/ai check`, fix every error, and look at the result in light and dark at
    phone and desktop widths.
 
-## What `stack check` catches
+## What `npx @hugocxl/ai check` catches
 
 Errors: icon or vector names that do not exist, sound names that do not exist, imports from
 other icon libraries, and agent files that are out of date with the installed libraries.
 Warnings: Tailwind's default palette and raw color values in a project that uses the design
-system. Run `npx @hugocxl/stack check --help` for options.
+system. Run `npx @hugocxl/ai check --help` for options.

@@ -13,12 +13,14 @@ const docs = new Map(
   [...pages, ...redirects].map((name) => [name, new JSDOM(readFileSync(`${site}/${name}`, "utf8")).window.document]),
 );
 const local = (href) => !/^(https?:|mailto:|data:)/.test(href);
+// Links to the other sections of hugocxl.github.io/stack/ are checked by the root check:site.
+const otherSection = (href) => href.startsWith("../");
 let links = 0;
 
 for (const [name, doc] of docs) {
   for (const a of doc.querySelectorAll("a[href]")) {
     const href = a.getAttribute("href");
-    if (!local(href)) continue;
+    if (!local(href) || otherSection(href)) continue;
     links++;
     const [path, hash] = href.split("#");
     const target = !path || path === "./" ? (path ? "index.html" : name) : path;
@@ -56,18 +58,24 @@ for (const name of pages) {
   assert.equal(body.firstElementChild.className, "ds-masthead", `${name}: masthead first`);
   assert.equal(body.lastElementChild.className, "ds-footer", `${name}: footer last`);
   assert.deepEqual(linkList(doc.querySelector(".ds-masthead")), [
+    "Stack ../",
+    "Design system ../design-system/",
+    "Icons ../icons/",
+    "Vectors ../vectors/",
+    "Sounds ../sounds/",
     "@hugocxl/icons ./",
     "Browse browse.html",
     "Docs docs.html",
-    "GitHub https://github.com/hugocxl/icons",
+    "GitHub https://github.com/hugocxl/stack/tree/main/icons",
   ]);
+  assert.equal(doc.querySelector(".ds-masthead > nav.site-stack [aria-current]")?.textContent, "Icons", `${name}: current section`);
   assert.ok(doc.querySelector(".ds-masthead > button.ds-theme[data-ds-theme]"), `${name}: theme button`);
   assert.deepEqual(linkList(doc.querySelector(".ds-footer")), [
-    "@hugocxl/icons https://hugocxl.github.io/icons/",
-    "@hugocxl/vectors https://hugocxl.github.io/vectors/",
-    "@hugocxl/design-system https://hugocxl.github.io/design-system/",
+    "@hugocxl/icons https://hugocxl.github.io/stack/icons/",
+    "@hugocxl/vectors https://hugocxl.github.io/stack/vectors/",
+    "@hugocxl/design-system https://hugocxl.github.io/stack/design-system/",
     "npm https://www.npmjs.com/package/@hugocxl/icons",
-    "License https://github.com/hugocxl/icons/blob/main/LICENSE",
+    "License https://github.com/hugocxl/stack/blob/main/icons/LICENSE",
     "@hugocxl https://github.com/hugocxl",
   ]);
   assert.ok(doc.querySelectorAll(".ds-accent, .ds-dot").length <= 2, `${name}: accent budget`);

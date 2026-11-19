@@ -1,7 +1,8 @@
 # Working on @hugocxl/vectors
 
 2,000 isometric line illustrations, published as one npm package (`packages/vectors`: JS,
-React, React Native) and one Swift package (`Sources/Vectors`).
+React, React Native) and the `Vectors` library of the `hugocxlStack` Swift package (`Sources/Vectors`, declared in the
+monorepo root `Package.swift`).
 [CONTRIBUTING.md](CONTRIBUTING.md) has the full development guide.
 
 ## Where things come from
@@ -18,16 +19,16 @@ figures/ + catalog/manifest.json  →  scripts/generate.py  →  packages/vector
   contrast in light and dark) are in [DESIGN.md](DESIGN.md). Use-case briefs are in
   [catalog/README.md](catalog/README.md).
 - Everything under `packages/vectors/dist`, `Sources/Vectors/Resources` and
-  `Sources/Vectors/Vector.swift` is generated and committed. Run `npm run generate`; never
+  `Sources/Vectors/Vector.swift` is generated and committed. Run `pnpm run generate`; never
   edit it by hand.
 
 ## Check before you commit
 
 ```sh
-npm ci
+pnpm install
 python -m pip install -r requirements.txt
 python scripts/build.py --check --expect 2000
-npm run validate        # SVG checks, generation drift, tests, types, packing, website
+pnpm run validate        # SVG checks, generation drift, tests, types, packing, website
 ```
 
 Swift builds need macOS and Xcode; CI runs them. Judge a drawing in a browser at 160 and
@@ -43,6 +44,8 @@ checks every name and import in it.
 
 ## Releases and websites
 
-Every push to `main` that passes CI publishes a new npm version, a GitHub release and a Swift
-tag, then redeploys the websites that use the vectors. Work on a branch and merge when it is
+Every push to `main` that changes `vectors/` and passes `.github/workflows/vectors.yml` publishes a new
+npm version and a GitHub release tagged `vectors-v<version>`, then redeploys the stack website and
+the other sites that use the vectors. Swift changes also pass `.github/workflows/swift.yml`, which
+tags the `hugocxlStack` package with a plain `0.1.<run>` version. Work on a branch and merge when it is
 ready. Write commit messages as a short imperative sentence ("Redraw 1,955 vectors…").

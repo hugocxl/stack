@@ -1,36 +1,48 @@
-name: Validate
+name: Icons
 on:
   push:
     branches: ['**']
+    paths: ['icons/**', '.github/workflows/icons.yml', 'pnpm-workspace.yaml']
   pull_request:
+    paths: ['icons/**', '.github/workflows/icons.yml', 'pnpm-workspace.yaml']
 permissions:
   contents: read
 concurrency:
-  group: validate-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  group: icons-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    working-directory: icons
 jobs:
   packages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: npm ci
-      - run: python -m pip install -r requirements.txt
-      - name: Check the SVGs and manifest are built from the scenes
-        run: python scripts/build.py --check --expect 2000
-      - run: npm run validate
+      - run: python -m pip install -r scripts/icons/requirements.txt
+      - run: python scripts/icons/draw.py --check
+      - run: python scripts/icons/test-design.py
+      - run: python scripts/icons/test-quality-design.py
+      - run: pnpm run validate
   swift:
     runs-on: macos-15
+    defaults:
+      run:
+        working-directory: .
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -scheme Vectors -destination 'platform=macOS' -derivedDataPath /tmp/vectors-macos test
-      - run: xcodebuild -scheme Vectors -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/vectors-ios CODE_SIGNING_ALLOWED=NO build
+      - run: xcodebuild -scheme Icons -destination 'platform=macOS' -derivedDataPath /tmp/icons-macos test
+      - run: xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/icons-ios CODE_SIGNING_ALLOWED=NO build
+      - run: swift scripts/icons/render-sheet.swift icons /tmp/tab-icons-preview.png --size 16 --scale 2
+        working-directory: icons
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: [packages, swift]
@@ -38,18 +50,20 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: npm ci
       - name: Package release
         id: package
         run: node scripts/prepare-release.mjs
@@ -61,7 +75,11 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ steps.package.outputs.tag }}
         run: bash scripts/publish-release.sh
-      - name: Rebuild the sites that use the vectors
+      - name: Rebuild the stack website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main
+      - name: Rebuild the sites that use the icons
         env:
           GH_TOKEN: ${{ secrets.STACK_DEPLOY_TOKEN }}
         run: |

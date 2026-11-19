@@ -14,10 +14,10 @@ Tactile interface sounds synthesized with Web Audio, published as one npm packag
 ## Check before you commit
 
 ```sh
-npm ci
-npm run typecheck
-npm test               # builds, checks the catalog, the skill and what npm ships
-npm run dev            # website at http://localhost:4321 — listen to every change
+pnpm install
+pnpm run typecheck
+pnpm test               # builds, checks the catalog, the skill and what npm ships
+pnpm run dev            # website at http://localhost:4321 — listen to every change
 ```
 
 Listen to a changed sound before committing; tests cannot judge it.
@@ -31,6 +31,7 @@ haptic, update the skill's table in the same commit; `tests/skill.test.mjs` fail
 
 ## Releases
 
-Every push to `main` that passes CI publishes a new npm version and a GitHub release, then
-redeploys the website. Work on a branch and merge when it is ready. Write commit messages as a
+Every push to `main` that changes `sounds/` and passes `.github/workflows/sounds.yml` publishes
+a new npm version and a GitHub release tagged `sounds-v<version>`, then redeploys the stack
+website with it. Work on a branch and merge when it is ready. Write commit messages as a
 short imperative sentence.

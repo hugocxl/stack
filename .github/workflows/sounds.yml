@@ -1,45 +1,54 @@
-name: Validate
+name: Sounds
 on:
   push:
     branches: ['**']
+    paths: ['sounds/**', '.github/workflows/sounds.yml', 'pnpm-workspace.yaml']
   pull_request:
+    paths: ['sounds/**', '.github/workflows/sounds.yml', 'pnpm-workspace.yaml']
 permissions:
   contents: read
 concurrency:
-  group: validate-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  group: sounds-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    working-directory: sounds
 jobs:
-  reference:
+  package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - run: npm test
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm test
+      - run: node scripts/build-site.mjs
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [reference]
+    needs: [package]
     runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
-      - run: npm ci
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - name: Package release
         id: package
         run: node scripts/prepare-release.mjs
-      - name: Publish and verify npm package
+      - name: Publish and verify the npm package
         run: node scripts/publish-npm.mjs
       - name: Publish GitHub release
         env:
@@ -47,15 +56,7 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ steps.package.outputs.tag }}
         run: bash scripts/publish-release.sh
-      - name: Rebuild the sites that use the design system
+      - name: Deploy the website with the new version
         env:
-          GH_TOKEN: ${{ secrets.STACK_DEPLOY_TOKEN }}
-        run: |
-          if [ -z "$GH_TOKEN" ]; then
-            echo "::warning::STACK_DEPLOY_TOKEN is not set, so the sites were not rebuilt."
-            exit 0
-          fi
-          for repo in icons vectors tab quickshot agentkit; do
-            gh workflow run pages.yml --repo "hugocxl/$repo" --ref main
-            echo "Started the hugocxl/$repo site deploy."
-          done
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main -f sounds-version=${{ steps.package.outputs.version }}

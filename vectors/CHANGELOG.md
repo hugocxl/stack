@@ -5,7 +5,7 @@
 ### Changed
 
 - Join the @hugocxl stack: the repository is now
-  `hugocxl/vectors` and the website is https://hugocxl.github.io/vectors/.
+  `hugocxl/vectors` and the website is https://hugocxl.github.io/stack/vectors/.
 - Rebuild the website on the @hugocxl design system, with a home page, a
   searchable browser for all 2,000 vectors and a documentation page.
 - `scripts/build.py` no longer writes `index.html` or `use-cases.html`; it still

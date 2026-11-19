@@ -3,7 +3,7 @@ import { check, RULES } from './check.mjs';
 import { findRoot, stackVersion } from './project.mjs';
 import { SKILL_DIRS, sync } from './sync.mjs';
 
-const HELP = `Usage: stack <command> [options]
+const HELP = `Usage: npx @hugocxl/ai <command> [options]
 
 Set up a project so every AI agent uses the @hugocxl stack the same way.
 
@@ -73,11 +73,11 @@ export async function main(argv, { log = console.log, error = console.error } = 
       return options.command ? 0 : 2;
     case 'init':
     case 'sync': {
-      log(`@hugocxl/stack ${options.command} in ${relative(process.cwd(), root) || '.'}`);
+      log(`@hugocxl/ai ${options.command} in ${relative(process.cwd(), root) || '.'}`);
       printSync(root, sync(root), log);
       if (options.command === 'init') {
         log('\nCommit AGENTS.md, CLAUDE.md and the skill folders. Before finishing any task, agents run:');
-        log('  npx @hugocxl/stack check');
+        log('  npx @hugocxl/ai check');
       }
       return 0;
     }

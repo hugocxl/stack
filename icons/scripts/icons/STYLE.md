@@ -19,7 +19,7 @@ python3 -m venv /tmp/icons-artwork-venv
 /tmp/icons-artwork-venv/bin/pip install -r scripts/icons/requirements.txt
 /tmp/icons-artwork-venv/bin/python scripts/icons/draw.py
 python3 -I scripts/icons/normalize.py icons
-npm run generate
+pnpm run generate
 ```
 
 `draw.py --check` verifies that all original drawings and catalog entries match
@@ -52,7 +52,7 @@ third-party packages. Canonical SVGs are checked in.
 swift scripts/icons/render-sheet.swift icons /tmp/icons-16.png --size 16 --scale 4
 swift scripts/icons/render-sheet.swift icons/styles/solid /tmp/solid-32.png --size 32 --scale 2
 swift scripts/icons/render-sheet.swift icons/styles/stroke /tmp/stroke-32.png --size 32 --scale 2
-npm run validate
+pnpm run validate
 xcodebuild -scheme Icons -destination 'platform=macOS' test
 xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
@@ -69,7 +69,7 @@ See [the quality audit](../../docs/AUDIT.md) and its per-icon record,
 `swift scripts/icons/render-audit.swift . review/final` for paginated category
 sheets with every supported style, three sizes and two tints. Run
 `python scripts/icons/test-design.py` in the authoring environment for topology
-and symmetry regressions. `npm run validate` rejects stale review hashes. Inspect
+and symmetry regressions. `pnpm run validate` rejects stale review hashes. Inspect
 changed rows before updating their records; never approve artwork by bulk
 rehashing without looking at its rendered result.
 

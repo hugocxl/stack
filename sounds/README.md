@@ -19,12 +19,12 @@ noise and tone layers that are easy to read, tweak and port to Swift.
 
 ```sh
 npm install
-npm run dev          # website at http://localhost:4321
-npm test             # build the package, check the catalog and what npm ships
-npm run pack:check   # list the files a publish would include
+pnpm run dev          # website at http://localhost:4321
+pnpm test             # build the package, check the catalog and what npm ships
+pnpm run pack:check   # list the files a publish would include
 ```
 
-The website follows [@hugocxl/design-system](https://hugocxl.github.io/design-system/).
+The website follows [@hugocxl/design-system](https://hugocxl.github.io/stack/design-system/).
 `scripts/build-site.mjs` builds it from `website/` and `docs/USAGE.md` into `_site/`, and
 GitHub Pages deploys it after every release. The Listen page plays every sound and haptic,
 lets you try typing, and downloads any sound as a WAV file.
@@ -39,10 +39,10 @@ tarball and its checksum.
 
 Four libraries, designed to work as one.
 
-- **[@hugocxl/icons](https://hugocxl.github.io/icons/)** labels what people can do.
-- **[@hugocxl/vectors](https://hugocxl.github.io/vectors/)** illustrates what you mean.
-- **[@hugocxl/sounds](https://hugocxl.github.io/sounds/)** makes it feel like something.
-- **[@hugocxl/design-system](https://hugocxl.github.io/design-system/)** gives them the type, color and space to live in.
+- **[@hugocxl/icons](https://hugocxl.github.io/stack/icons/)** labels what people can do.
+- **[@hugocxl/vectors](https://hugocxl.github.io/stack/vectors/)** illustrates what you mean.
+- **[@hugocxl/sounds](https://hugocxl.github.io/stack/sounds/)** makes it feel like something.
+- **[@hugocxl/design-system](https://hugocxl.github.io/stack/design-system/)** gives them the type, color and space to live in.
 
 **Building with an AI agent?** The package ships an agent skill in `skills/sounds/`, and
 [hugocxl/stack](https://github.com/hugocxl/stack) sets up any project so every agent uses the

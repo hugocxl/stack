@@ -348,7 +348,7 @@ Radii: 6px for the button, code blocks and table edges, 12px for media and the f
 
 ## Components
 
-These thirteen components make up the whole vocabulary. Each markup block below is copied from the live specimen in `index.html` by `npm run sync`, so it is exactly what the reference renders. Keep every class and attribute.
+These thirteen components make up the whole vocabulary. Each markup block below is copied from the live specimen in `index.html` by `pnpm run sync`, so it is exactly what the reference renders. Keep every class and attribute.
 
 ### `masthead`
 
@@ -553,7 +553,7 @@ Mono links at both ends with a hairline between them. It is the last element in 
 
 ## Icons and vectors
 
-Pages draw with two companion libraries and nothing else. [`@hugocxl/icons`](https://hugocxl.github.io/icons/) label actions and [`@hugocxl/vectors`](https://hugocxl.github.io/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent. Only an icon may take a color, from the [hues](#hues) or the [status roles](#status). No other icon set, illustration, emoji or symbol character may stand in for them.
+Pages draw with two companion libraries and nothing else. [`@hugocxl/icons`](https://hugocxl.github.io/stack/icons/) label actions and [`@hugocxl/vectors`](https://hugocxl.github.io/stack/vectors/) illustrate ideas. Both draw in `currentColor`, so they follow the theme and never touch the accent. Only an icon may take a color, from the [hues](#hues) or the [status roles](#status). No other icon set, illustration, emoji or symbol character may stand in for them.
 
 ```sh
 npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors
@@ -632,7 +632,7 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 <div className="ds-media"><ModularDesignVector className="ds-vector" /></div>
 ```
 
-- Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/vectors/browse.html) lists all 2,000 by use case. Name it in the caption.
+- Choose a vector for what it means. The [vectors browser](https://hugocxl.github.io/stack/vectors/browse.html) lists all 2,000 by use case. Name it in the caption.
 - Keep the SVG's `title` and `desc`: they are its accessible name.
 - Use an `<img>` only for a screenshot of the product itself.
 - Never crop a vector, color it with the accent or place it on the field.
@@ -683,4 +683,4 @@ Give the agent this file at a pinned commit and a page plan. A page plan is JSON
 
 ### Verify
 
-`npm test` lints this file, checks that its markup matches the specimens, and runs browser tests on the reference: computed tokens in both themes, column and figure geometry at 320, 760, 761 and 1440px, the accent budget, keyboard behavior and an axe WCAG 2.2 AA scan. For a generated page, check the same things plus the recipe order. To compare screenshots, fix the browser, viewport, scale, theme, locale and motion settings, and wait for fonts and figures to load.
+`pnpm test` lints this file, checks that its markup matches the specimens, and runs browser tests on the reference: computed tokens in both themes, column and figure geometry at 320, 760, 761 and 1440px, the accent budget, keyboard behavior and an axe WCAG 2.2 AA scan. For a generated page, check the same things plus the recipe order. To compare screenshots, fix the browser, viewport, scale, theme, locale and motion settings, and wait for fonts and figures to load.

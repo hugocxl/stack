@@ -5,11 +5,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build -w @hugocxl/sounds",
+    "build": "pnpm --filter @hugocxl/sounds build",
     "typecheck": "tsc -p packages/sounds --noEmit",
-    "test": "npm run build && node --test tests/*.test.mjs",
-    "build:site": "npm run build && node scripts/build-site.mjs",
-    "dev": "npm run build:site && npx --yes serve _site -l 4321",
+    "test": "pnpm run build && node --test tests/*.test.mjs",
+    "build:site": "pnpm run build && node scripts/build-site.mjs",
+    "dev": "pnpm run build:site && pnpm dlx serve _site -l 4321",
     "pack:check": "npm pack -w @hugocxl/sounds --dry-run"
   },
   "devDependencies": {

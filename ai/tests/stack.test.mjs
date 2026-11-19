@@ -50,10 +50,10 @@ test('the export paths the stack skill uses exist', () => {
 });
 
 test('the marketplace lists the stack and one plugin per library', () => {
-  const marketplace = json(join(root, '.claude-plugin/marketplace.json'));
+  const marketplace = json(join(root, '../.claude-plugin/marketplace.json'));
   assert.equal(marketplace.name, 'hugocxl');
   const [stack, ...rest] = marketplace.plugins;
-  assert.deepEqual([stack.name, stack.source], ['stack', './']);
+  assert.deepEqual([stack.name, stack.source], ['stack', './ai']);
   assert.deepEqual(stack.dependencies, LIBRARIES.map(library => library.id));
   assert.deepEqual(rest.map(plugin => [plugin.name, plugin.source]), LIBRARIES.map(library => [library.id, { source: 'npm', package: library.package }]));
 });
@@ -66,5 +66,5 @@ test('the published libraries pass their own checks in an empty project', async 
 test('the npm package ships the CLI, the skill and the template only', () => {
   const [pack] = JSON.parse(execFileSync('npm', ['pack', '--dry-run', '--json', '--ignore-scripts'], { cwd: root, encoding: 'utf8' }));
   const files = pack.files.map(file => file.path).sort();
-  assert.deepEqual(files, ['LICENSE', 'README.md', 'bin/stack.mjs', 'package.json', 'skills/stack/SKILL.md', 'src/check.mjs', 'src/cli.mjs', 'src/project.mjs', 'src/sync.mjs', 'templates/AGENTS.md']);
+  assert.deepEqual(files, ['LICENSE', 'README.md', 'bin/ai.mjs', 'package.json', 'skills/stack/SKILL.md', 'src/check.mjs', 'src/cli.mjs', 'src/project.mjs', 'src/sync.mjs', 'templates/AGENTS.md']);
 });

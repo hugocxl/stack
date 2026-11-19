@@ -4,7 +4,7 @@ Tactile interface sounds for the web. Every sound is synthesized live with Web A
 few layers of filtered noise and tone, so there are no audio files to load and nothing
 plays the same way twice.
 
-[Listen to the sounds](https://hugocxl.github.io/sounds/listen.html) · [Read the docs](https://hugocxl.github.io/sounds/docs.html)
+[Listen to the sounds](https://hugocxl.github.io/stack/sounds/listen.html) · [Read the docs](https://hugocxl.github.io/stack/sounds/docs.html)
 
 ```sh
 npm install @hugocxl/sounds

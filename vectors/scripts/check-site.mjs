@@ -36,7 +36,9 @@ for (const [name, doc] of docs) {
   assert.ok(doc.querySelector('head script[src="system/theme.js"]:not([type])'), `${name}: theme.js`);
   assert.ok(doc.querySelector('head script[type=module][src="system/ds.js"]'), `${name}: ds.js`);
   assert.equal(doc.body.firstElementChild.className, 'ds-masthead', `${name}: masthead first`);
-  assert.deepEqual([...doc.querySelectorAll('.ds-masthead a')].map(a => a.textContent), ['@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
+  assert.deepEqual([...doc.querySelectorAll('.ds-masthead a')].map(a => a.textContent),
+    ['Stack', 'Design system', 'Icons', 'Vectors', 'Sounds', '@hugocxl/vectors', 'Browse', 'Docs', 'GitHub']);
+  assert.equal(doc.querySelector('.ds-masthead > nav.site-stack [aria-current]')?.textContent, 'Vectors', `${name}: current section`);
   assert.ok(doc.querySelector('.ds-masthead [data-ds-theme]'), `${name}: theme button`);
   assert.deepEqual([...doc.querySelectorAll('.ds-footer a')].map(a => a.textContent),
     ['@hugocxl/icons', '@hugocxl/vectors', '@hugocxl/design-system', 'npm', 'License', '@hugocxl'], `${name}: footer`);
@@ -68,7 +70,8 @@ for (const [name, doc] of docs) {
   // Links, anchors and assets.
   for (const a of doc.querySelectorAll('a[href]')) {
     const href = a.getAttribute('href');
-    if (/^(https?:|mailto:)/.test(href)) continue;
+    // Links to the other sections of hugocxl.github.io/stack/ are checked by the root check:site.
+    if (/^(https?:|mailto:|\.\.\/)/.test(href)) continue;
     links++;
     const [path, hash] = href.split('#');
     const target = path === './' || path === '' && name === 'index.html' ? 'index.html' : path || name;

@@ -15,7 +15,7 @@ Every platform uses the same names and the same artwork. Pick yours below.
 
 Every illustration is drawn on a transparent 480 × 360 canvas (4:3) and has a
 stable kebab-case name, such as `modular-design`. Each SVG carries a `<title>`
-and a `<desc>`. Use the [browser](https://hugocxl.github.io/vectors/browse.html)
+and a `<desc>`. Use the [browser](https://hugocxl.github.io/stack/vectors/browse.html)
 to search by name, category or use case.
 
 ## Install
@@ -47,11 +47,11 @@ development servers fast too.
 ## SVG files
 
 Every illustration is a standalone file in
-[`figures/`](https://github.com/hugocxl/vectors/tree/main/figures). Download one
+[`figures/`](https://github.com/hugocxl/stack/tree/main/vectors/figures). Download one
 from the browser, or clone the repository. No build step is needed.
 
 ```sh
-git clone https://github.com/hugocxl/vectors.git
+git clone https://github.com/hugocxl/stack.git   # the figures are in stack/vectors/figures
 ```
 
 ```html
@@ -130,14 +130,15 @@ the label or `accessible={false}` when it is decorative.
 ## Swift
 
 The Swift package exposes the `Vectors` library for Swift 6, macOS 12, iOS 15,
-tvOS 15 and watchOS 8 or later. Add the repository with Swift Package Manager,
-using a release tag:
+tvOS 15 and watchOS 8 or later. It ships in the `hugocxlStack` package at the root
+of the [stack](https://github.com/hugocxl/stack) monorepo, together with `Icons`. Add the
+repository with Swift Package Manager, using a release tag:
 
 ```swift
-.package(url: "https://github.com/hugocxl/vectors.git", from: "0.1.0")
+.package(url: "https://github.com/hugocxl/stack.git", from: "0.1.0")
 ```
 
-Then add `.product(name: "Vectors", package: "vectors")` to your target. The
+Then add `.product(name: "Vectors", package: "stack")` to your target. The
 `Vector` enum has one case per illustration, named in camelCase.
 
 ```swift
@@ -187,7 +188,7 @@ lines stay crisp and thin at any size. Keep the 4:3 aspect ratio.
 - In SwiftUI, use `.resizable()` with `.aspectRatio(4 / 3, contentMode: .fit)`.
 
 The illustrations read well from about 160 points wide. Below that, prefer an
-icon from [@hugocxl/icons](https://hugocxl.github.io/icons/).
+icon from [@hugocxl/icons](https://hugocxl.github.io/stack/icons/).
 
 ## Accessibility
 
@@ -217,7 +218,7 @@ const empty = catalog.filter(item => item.categoryId === 'feedback-and-empty-sta
 
 ## License
 
-The artwork and code are [MIT licensed](https://github.com/hugocxl/vectors/blob/main/LICENSE).
+The artwork and code are [MIT licensed](https://github.com/hugocxl/stack/blob/main/vectors/LICENSE).
 Use them in personal and commercial work and keep the license notice with copies of
 the source. The drawing style draws on the visual rules in
 [Hairline by Lucas Marques](https://hairline.lucasmarkes.com/skills).

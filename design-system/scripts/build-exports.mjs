@@ -116,7 +116,7 @@ for (const [path, content] of Object.entries(files)) {
   }
 }
 if (stale.length) {
-  console.error(`Out of date: ${stale.join(', ')}. Run npm run build.`);
+  console.error(`Out of date: ${stale.join(', ')}. Run pnpm run build.`);
   process.exit(1);
 }
 console.log(`${process.argv.includes('--check') ? 'Verified' : 'Wrote'} ${Object.keys(files).length} export files from ${Object.keys(light).length} tokens.`);
