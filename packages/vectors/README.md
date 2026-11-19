@@ -27,4 +27,7 @@ illustration's title and description for assistive technology.
 [Read the guide](https://hugocxl.github.io/vectors/docs.html) ·
 [Source](https://github.com/hugocxl/vectors)
 
+AI agents: the package ships a skill in `skills/vectors/` with the rules and a search by
+meaning (`node node_modules/@hugocxl/vectors/skills/vectors/scripts/search.mjs empty inbox`).
+
 MIT licensed.
