@@ -1,0 +1,42 @@
+name: Deploy website
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to show on the website. Defaults to the latest on npm.
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save @hugocxl/design-system@latest
+      - name: Build the website
+        env:
+          SITE_VERSION: ${{ inputs.version }}
+        run: |
+          if [ -z "$SITE_VERSION" ]; then SITE_VERSION=$(npm view @hugocxl/sounds version 2>/dev/null || true); fi
+          export SITE_VERSION
+          npm run build:site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment

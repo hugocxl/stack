@@ -1,0 +1,62 @@
+/* Sounds site additions to the design system. Only --ds-* properties and the documented
+   spacing and radius tokens are used here: no new colors, fonts, sizes,
+   weights, radii, shadows or gradients. */
+
+.ds-opening > .ds-button { margin-top: var(--ds-space-7) }
+.ds-section > .ds-code { margin-top: var(--ds-space-5) }
+
+/* ─── Sound list: index rows with a play control and a download ─────── */
+.site-sounds { list-style: none; padding: 0; border-bottom: 1px solid var(--ds-rule) }
+.site-sounds > li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  gap: var(--ds-space-2) var(--ds-space-5);
+  align-items: start;
+  padding-block: var(--ds-space-4);
+  border-top: 1px solid var(--ds-rule);
+}
+.site-sounds > li > .ds-label { display: flex; align-items: center; min-height: var(--ds-target) }
+.site-sounds p { margin-top: 0; color: var(--ds-muted) }
+.site-sounds .site-layers { display: block; margin-top: var(--ds-space-2) }
+@container (max-width: 30rem) {
+  .site-sounds > li { grid-template-columns: minmax(0, 1fr) auto }
+  .site-sounds > li > .ds-label { display: none }
+}
+
+.site-play {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ds-target);
+  padding: 0;
+  border: 0;
+  color: var(--ds-ink);
+  background: transparent;
+  font: 400 var(--ds-size-reading)/1.3 var(--ds-sans);
+  letter-spacing: -.01em;
+  cursor: pointer;
+}
+.site-play:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em }
+
+/* Mono text buttons: downloads and haptics. */
+.site-options { display: flex; flex-wrap: wrap; gap: 0 var(--ds-space-5); margin-top: var(--ds-space-4) }
+.site-text-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ds-target);
+  padding: 0;
+  border: 0;
+  color: var(--ds-muted);
+  background: transparent;
+  font: 400 var(--ds-size-label)/1.5 var(--ds-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.site-text-button:hover { color: var(--ds-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .3em }
+
+.site-typing { max-width: none; margin-top: var(--ds-space-5) }
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-play, .site-text-button { transition: transform var(--ds-ease) }
+  .site-play:active, .site-text-button:active { transform: scale(.96) }
+}
