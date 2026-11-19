@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body class="ds" data-layout="plain">
+{{masthead}}
+  <main>
+    <article class="ds-column ds-opening">
+      <h1 class="ds-statement">Line illustrations for the moments your product needs to <span class="ds-accent">explain itself.</span></h1>
+      <ul class="ds-meta">
+        <li class="ds-label"><span class="ds-dot" aria-hidden="true"></span>Free and open source</li>
+        <li class="ds-label">{{count}} vectors</li>
+        <li class="ds-label">{{categories}} categories</li>
+      </ul>
+      <section class="ds-section">
+        <p>@hugocxl/vectors is a library of isometric drawings for websites and apps. <span class="ds-muted">Each one shows a specific moment, from a product launch to an empty inbox, in thin lines that take the color of your text.</span></p>
+      </section>
+      <figure class="ds-wide" id="home-figure">
+        <div class="ds-media" id="home-media">{{figure}}</div>
+        <figcaption class="ds-caption">
+          <span class="ds-label" id="home-caption">Fig. 01 / {{figureTitle}}</span>
+          <span class="ds-pager" role="group" aria-label="Figure navigation"><button type="button" id="home-prev" aria-label="Previous figure">{{icon arrow-left}}</button><button type="button" id="home-next" aria-label="Next figure">{{icon arrow-right}}</button></span>
+        </figcaption>
+      </figure>
+      <section class="ds-section" id="moments">
+        <h2>Drawn for real moments</h2>
+        <p>Every vector has a place on a site in mind: a launch page, a failed payment, a booking that went through. <span class="ds-muted">They are grouped by what you want to say, so the right one is quick to find.</span></p>
+      </section>
+      <section class="ds-section" id="colors">
+        <h2>Your colors, any size</h2>
+        <p>The lines follow the color of the text around them, so they sit naturally in light and dark themes. <span class="ds-muted">They stay thin and sharp, from a small card to a full-width hero.</span></p>
+      </section>
+      <section class="ds-section" id="platforms">
+        <h2>Wherever you build</h2>
+        <p>Download an SVG, or install one package for JavaScript, React and React Native. <span class="ds-muted">A Swift package brings the same drawings to SwiftUI, UIKit and AppKit.</span></p>
+        <p>The <a href="docs.html">guide</a> shows how to add them to your project.</p>
+      </section>
+      <section class="ds-section" id="license">
+        <h2>Free to use</h2>
+        <p>Use them in personal and commercial work under the MIT license. <span class="ds-muted">Keep the license with any copies of the source files.</span></p>
+      </section>
+      <a class="ds-button" href="browse.html">Browse all {{count}} vectors</a>
+    </article>
+  </main>
+{{footer}}
+  <script type="application/json" id="home-figures">{{figures}}</script>
+  <script type="module" src="home.js"></script>
+</body>
+</html>

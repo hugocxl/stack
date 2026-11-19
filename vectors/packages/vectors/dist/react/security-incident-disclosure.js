@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const SecurityIncidentDisclosureVector = /*#__PURE__*/ forwardRef(function SecurityIncidentDisclosureVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Security incident disclosure"),
+    createElement("desc", null, "A standing incident notice carries a warning triangle beside its headline."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M172.18,144.94 296.33,207.01 M172.18,167.93 282.53,223.11 M168.15,186.04 271.61,237.76 M164.13,204.14 235.40,239.78", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M187.12,57.00 181.37,59.87 M181.37,59.87 180.30,64.70 M297.79,296.26 302.07,298.40 M302.07,298.40 307.82,295.53 343.46,135.17 187.12,57.00 M302.07,298.40 337.71,138.04 181.37,59.87 M175.63,62.75 172.18,64.47 M172.18,64.47 157.40,130.96 M157.16,132.07 136.54,224.83 M136.54,224.83 292.88,303.00 M292.88,303.00 296.33,301.28 325.07,171.95 304.37,127.12 175.63,62.75 M292.88,303.00 321.54,174.01 M300.62,128.69 172.18,64.47 M300.93,128.85 294.03,159.88 321.62,173.68 300.93,128.85 M237.13,128.56 299.20,159.60 M232.53,149.25 283.11,174.54 M190.34,94.75 184.82,97.51 157.23,131.72 212.41,159.31 217.93,156.55 190.34,94.75 M157.23,131.72 212.41,159.31 184.82,97.51 157.23,131.72", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M184.80,110.96 184.80,128.24 M184.80,135.92 184.80,137.84", "xmlns": "http://www.w3.org/2000/svg"}));
+});

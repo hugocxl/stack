@@ -1,0 +1,121 @@
+/* Vectors site additions. Layout only: every color, size, radius and space is a design-system token. */
+
+/* Home: the single button follows the last section. */
+.ds-column > .ds-button { margin-top: var(--ds-space-7) }
+
+/* Text-styled buttons, drawn exactly like the system's underlined links. */
+.browse-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ds-target);
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: .2em;
+  cursor: pointer;
+}
+.browse-link:hover { text-decoration-color: currentColor }
+
+/* Browser: search, category filters and the count line. */
+.browse-search .ds-input { max-width: none }
+.browse-categories { margin-top: var(--ds-space-6) }
+.browse-categories > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  min-height: var(--ds-target);
+  list-style: none;
+  cursor: pointer;
+}
+.browse-categories > summary::-webkit-details-marker { display: none }
+.browse-categories > summary > .ds-icon { margin: 0 }
+.browse-categories[open] > summary > .ds-icon { transform: rotate(180deg) }
+.browse-categories > summary > span { color: var(--ds-ink) }
+.browse-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  width: min(100cqw, var(--ds-wide));
+  margin-top: var(--ds-space-2);
+  margin-inline: calc((100% - min(100cqw, var(--ds-wide))) / 2);
+}
+.browse-filters > button {
+  min-height: var(--ds-target);
+  padding: 0 var(--ds-space-4) 0 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.browse-filters > button:hover { color: var(--ds-ink) }
+.browse-filters > button[aria-pressed=true] {
+  color: var(--ds-ink);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+}
+.browse-count { margin-top: var(--ds-space-6) }
+.browse-empty { margin-top: var(--ds-space-5) }
+
+/* Results: artwork in ink on canvas, divided by hairlines. */
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8rem), 1fr));
+  margin-top: var(--ds-space-4);
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border-block: 1px solid var(--ds-rule);
+}
+@media (min-width: 761px) {
+  .browse-grid { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)) }
+}
+.browse-grid > li {
+  margin: -1px 0 0 -1px;
+  border-top: 1px solid var(--ds-rule);
+  border-left: 1px solid var(--ds-rule);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 15rem;
+  scroll-margin-top: var(--ds-space-6);
+}
+.browse-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+  height: 100%;
+  padding: var(--ds-space-4);
+  font-size: var(--ds-size-small);
+  line-height: 1.4;
+  text-decoration: none;
+}
+.browse-grid a:hover > span:last-child { text-decoration: underline }
+.browse-grid a:focus-visible { outline-offset: -2px }
+.browse-art { display: block; aspect-ratio: 4 / 3 }
+.browse-art > .ds-vector { width: 100%; height: 100% }
+
+/* Detail: a full-page view of one vector, opened from the grid or a #name link. */
+.browse-detail {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0 var(--ds-gutter) var(--ds-space-9);
+  border: 0;
+  color: var(--ds-ink);
+  background: var(--ds-canvas);
+}
+.browse-detail::backdrop { background: var(--ds-canvas) }
+.browse-detail-bar { padding-top: var(--ds-space-6) }
+.browse-detail .ds-title { margin-top: var(--ds-space-6) }
+.browse-detail .ds-wide { width: 100%; margin-inline: 0; margin-block: var(--ds-space-6) }
+.browse-detail h3 { margin-top: var(--ds-space-6); margin-bottom: var(--ds-space-3) }
+.browse-detail-end { margin-top: var(--ds-space-7) }
+.browse-actions { display: flex; flex-wrap: wrap; gap: 0 var(--ds-space-5) }
+.browse-actions a { display: inline-flex; align-items: center; min-height: var(--ds-target) }
+.browse-search input::-webkit-search-cancel-button { appearance: none }

@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const PlatformFootprintVector = /*#__PURE__*/ forwardRef(function PlatformFootprintVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Platform footprint"),
+    createElement("desc", null, "An upright folded map outlines a single deployment district across its folds."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M85.56,222.76 176.41,263.31 M177.30,263.47 299.24,253.73 M300.13,253.89 394.44,295.04 M85.11,170.82 123.58,182.82 150.22,220.58 176.86,232.46 M176.86,232.46 230.08,233.39 283.31,211.03 299.69,212.31 M299.69,212.31 335.39,235.65 365.14,225.35 394.89,246.09", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M85.11,64.76 85.11,222.56 85.11,230.32 176.47,271.09 M176.50,97.79 85.11,57.00 85.11,64.76 M176.86,105.71 176.86,263.51 176.86,271.27 299.30,261.49 M299.30,88.17 176.86,97.95 176.86,105.71 M299.69,95.90 299.69,253.70 299.69,261.46 394.89,303.00 394.89,295.24 394.89,137.44 394.89,129.68 299.69,88.14 299.69,95.90", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M176.86,141.92 144.30,117.05 117.66,133.61 144.30,179.13 176.86,201.42 M176.86,141.92 234.18,119.24 275.12,136.66 299.69,134.70 M176.86,201.42 225.99,187.15 275.12,193.57 299.69,178.68 M299.69,134.70 341.34,158.05 362.16,193.01 323.49,189.06 299.69,178.68", "xmlns": "http://www.w3.org/2000/svg"}));
+});

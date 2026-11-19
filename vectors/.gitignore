@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.DS_Store
+
+node_modules/
+.build/
+.swiftpm/
+*.tgz
+release/
+
+# Generated GitHub Pages site
+_site/

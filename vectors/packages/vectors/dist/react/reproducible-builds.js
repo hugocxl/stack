@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const ReproducibleBuildsVector = /*#__PURE__*/ forwardRef(function ReproducibleBuildsVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Reproducible builds"),
+    createElement("desc", null, "An equals sign joins two identical software cartons."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M170.25,131.89 116.00,159.01 116.00,166.76 M183.17,138.34 128.92,165.47 128.92,173.22 M351.08,148.03 296.83,175.16 296.83,182.91 M364.00,154.49 309.75,181.61 309.75,189.36", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M139.25,116.39 213.90,153.71 M85.27,143.37 139.25,116.39 M214.17,200.34 160.16,227.35 M160.13,180.86 214.17,153.84 214.17,200.34 M85.00,190.01 159.92,227.47 159.92,180.97 85.00,143.51 85.00,190.01 M105.67,171.93 94.04,175.16 105.67,190.01 M117.29,197.11 127.62,181.61 M139.25,188.72 150.88,203.57 139.25,206.80 M320.08,132.53 394.73,169.85 M266.10,159.52 320.08,132.53 M395.00,216.49 340.99,243.49 M340.97,197.01 395.00,169.99 395.00,216.49 M265.83,206.16 340.75,243.61 340.75,197.11 265.83,159.66 265.83,206.16 M286.50,188.07 274.88,191.30 286.50,206.16 M298.12,213.26 308.46,197.76 M320.08,204.86 331.71,219.72 320.08,222.95", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M223.85,183.88 256.15,183.88 M223.85,172.57 256.15,172.57", "xmlns": "http://www.w3.org/2000/svg"}));
+});

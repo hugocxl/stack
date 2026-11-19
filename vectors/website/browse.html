@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head}}
+</head>
+<body class="ds" data-layout="plain">
+{{masthead}}
+  <main>
+    <article class="ds-column ds-opening">
+      <hgroup class="ds-title">
+        <h1>Browse vectors</h1>
+        <p>{{count}} illustrations in {{categories}} categories</p>
+      </hgroup>
+      <form class="ds-form browse-search" role="search" id="browse-form">
+        <label for="browse-query">Search by name, use case or description</label>
+        <div class="ds-input">
+          <input type="search" id="browse-query" name="q" placeholder="Try checkout" autocomplete="off" spellcheck="false" aria-describedby="browse-count" aria-controls="results">
+          <button type="submit" aria-label="Show results">{{icon search}}</button>
+        </div>
+      </form>
+      <details class="browse-categories" id="browse-categories" open>
+        <summary class="ds-label">Category <span id="browse-category-name">All</span>{{icon chevron-down}}</summary>
+        <div class="browse-filters" role="group" aria-label="Category">
+          <button type="button" class="ds-label" data-category="" aria-pressed="true">All</button>
+{{filters}}
+        </div>
+      </details>
+      <p class="ds-label browse-count" id="browse-count" role="status">{{count}} vectors</p>
+      <ul class="browse-grid ds-wide" id="results" aria-label="Vectors">
+{{items}}
+      </ul>
+      <p class="browse-empty" id="browse-empty" hidden>No vectors match your search. <span class="ds-muted">Try a shorter word or another category.</span></p>
+    </article>
+  </main>
+{{footer}}
+  <dialog class="browse-detail" id="browse-detail" aria-labelledby="detail-title">
+    <div class="ds-column">
+      <p class="browse-detail-bar"><button type="button" class="browse-link" id="detail-close">{{icon arrow-left}}All vectors</button></p>
+      <hgroup class="ds-title">
+        <h2 id="detail-title"></h2>
+        <p id="detail-category"></p>
+      </hgroup>
+      <figure class="ds-wide">
+        <div class="ds-media" id="detail-media"></div>
+        <figcaption class="ds-caption">
+          <span class="ds-label" id="detail-caption"></span>
+          <span class="ds-pager" role="group" aria-label="Vector navigation"><button type="button" id="detail-prev" aria-label="Previous vector">{{icon arrow-left}}</button><button type="button" id="detail-next" aria-label="Next vector">{{icon arrow-right}}</button></span>
+        </figcaption>
+      </figure>
+      <section class="ds-section">
+        <p id="detail-description"></p>
+        <p><span class="ds-muted">Suggested use:</span> <span id="detail-placement"></span></p>
+        <p class="browse-actions"><button type="button" class="browse-link" id="detail-copy">Copy SVG</button> <a id="detail-download" href="#" download>Download SVG</a></p>
+      </section>
+      <section class="ds-section" id="detail-code">
+        <h2>Add it to your project</h2>
+      </section>
+      <p class="browse-detail-end"><a href="docs.html">Read the guide</a> for sizing, colors and accessibility.</p>
+    </div>
+  </dialog>
+  <script type="application/json" id="browse-data">{{data}}</script>
+  <script type="module" src="browse.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const ReturnToCollectionVector = /*#__PURE__*/ forwardRef(function ReturnToCollectionVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Return to collection"),
+    createElement("desc", null, "A thick tabbed collection folder has a curved return arrow printed on its raised tab."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M372.77,179.48 375.95,151.19 M104.05,244.98 351.92,292.55 355.12,209.58 M140.64,223.20 209.60,236.44", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M376.31,147.97 277.02,128.91 260.19,78.18 149.86,57.00 131.66,68.51 123.39,142.02 M354.80,289.31 361.45,290.59 376.31,158.42 376.31,147.97 M361.45,280.14 372.73,179.79 355.68,199.94 M352.67,291.57 361.45,280.14 M103.69,244.91 103.69,255.36 351.92,303.00 355.48,210.63 355.48,200.18 342.19,184.34 107.75,139.34 103.69,244.91 M141.24,207.81 237.77,226.33", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M235.65,120.97 242.27,121.48 247.24,120.34 250.53,117.89 252.12,114.45 251.99,110.36 250.12,105.93 246.50,101.49 241.10,97.38 233.90,93.90 224.89,91.40 205.58,87.70 175.24,81.87 M202.39,79.49 175.24,81.87 192.22,92.73", "xmlns": "http://www.w3.org/2000/svg"}));
+});

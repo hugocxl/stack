@@ -1,0 +1,67 @@
+Stratified sampling | Survey methodology article | split | gridrack hex square
+Cluster sampling | Sampling design help | index | plan gridrack matrix
+Systematic sampling | Research sampling guide | queue | gridrack ruler tags
+Population coverage | Audience analysis page | alignment | matrix map
+Weighting adjustment | Survey calibration tool | bench | calipers balance
+Missingness pattern | Statistical data quality view | inspect | gridrack matrix
+Imputation preview | Preprocessing workflow | replace | gridrack matrix
+Range checks | Validity constraints setup | gate | scatter calipers
+Type coercion | Data contracts documentation | convert | square disk
+Unit conversion | Measurement analytics reference | exchange | ruler meter
+Formula evaluation | Calculated fields editor | relay | terminal receipt bars
+Seasonal decomposition | Forecast workbench | split | wave pulse spark
+Trend extraction | Signal processing feature | convert | wave spark
+Threshold crossing | Event detection rule setup | gate | spark beacon
+Precision and recall | Classification performance report | compare | matrix meter
+Class balance | Model training data report | compare | gridrack balance
+Fold validation | Cross-validation explainer | orbit | gridrack chip tags
+Model drift | Statistical model monitoring page | replace | scatter quantile
+Feature importance | Model interpretation feature | inspect | chip bars
+Interaction effects | Experimental results article | merge | bars wave scatter
+Cumulative probability | Probability distribution documentation | bench | quantile ruler
+Density estimate | Data explorer visualization gallery | surface | scatter wave
+Tail risk | Risk analytics explainer | boundary | quantile warning
+Rank order | Sorting settings in data explorer | queue | disk square hex
+Percentile rank | Comparison analysis dashboard | watched | quantile meter
+Skew and asymmetry | Statistical distribution walkthrough | independent | spectrum bars
+Variance decomposition | Risk measurement tools | split | scatter wave bars
+Forecast recalibration | Prediction operations view | bench | spark calipers
+Scenario comparison | Planning feature | compare | spark plan
+Stress testing | Portfolio modeling overview | gate | balance warning
+Backtesting | Performance methodology | feedback | clock spark
+Bootstrapping | Statistical uncertainty explainer | feedback | gridrack scatter
+Simulation runs | What-if analysis overview | stations | plan chip quantile
+Sampling bias | Survey validation article | protected | matrix scatter
+Regression baseline | Predictive analytics introduction | alignment | scatter spark
+Model error budget | ML platform control view | boundary | scatter meter
+Approval rate | Conversion scoring dashboard | gate | funnel bars
+Demand model | Retail data science feature | merge | plan clock bars
+Renewal forecast | Revenue intelligence page | relay | clock spark bars
+Price sensitivity | Pricing research feature | inspect | tags scatter
+Customer lifetime value | Revenue analytics overview | flow | credential clock bars
+Audience overlap | Audience analysis dashboard | merge | credential credential matrix
+Segment profiling | Customer research section | split | tags matrix bars
+Behavior clustering | Audience modeling feature | orbit | scatter gridrack tags
+Channel performance | Marketing analysis dashboard | stations | funnel spectrum bars
+Engagement depth | Content analytics section | elevation | list bars
+Session duration | Traffic analytics dashboard | watched | clock tablet
+Click path analysis | Website analytics feature | surface | phone track
+Depth-of-scroll analysis | Content retention chart | relay | tablet ruler bars
+Traffic seasonality | Acquisition analytics article | compare | wave clock
+Time on task | Usability testing dashboard | compare | form clock
+Research recruitment matrix | Research ops interview planning | merge | credential form gridrack
+Survey response coding | Research analysis project | stations | form tags archive
+Sentiment distribution | Feedback analytics feature | flow | note chip spectrum
+Topic frequency | Text analysis dashboard | compare | transcript bars
+Content duplication | Quality cleanup review | compare | note note
+Citation network | Research knowledge feature | orbit | network note archive
+Document similarity | Document discovery dashboard | independent | note template
+Relevance scoring | Search quality analytics | watched | lens meter
+Query popularity | Search analytics page | flow | lens spool bars
+Query latency distribution | Search performance diagnostics | inspect | lens quantile
+Feature uptake | Product analytics section | alignment | phone bars
+Activation milestones | Growth dashboard onboarding | stations | play form seal
+Adoption lag | Rollout measurement | watched | clock gridrack
+Saturation point | Growth curve methodology | bench | spark lever
+Metric guardrail | Experiment control policy dashboard | boundary | bars shield
+Metric reconciliation | Financial analytics workflow | merge | receipt bars seal

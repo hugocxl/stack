@@ -1,0 +1,499 @@
+# Title | composition | subjects | placement
+[commerce]
+Product inventory|station|stock parcel marker|
+Product details|desk|gaugecase sample|
+Payment methods|station|terminal cardpay wallet|
+Free shipping threshold|station|parcel scale marker|
+Abandoned cart|route|cart counter|
+Bundle builder|grid|parcel bin cartridge tray|
+Product variants|sequence|sample material cover|
+Low stock|lift|shelves parcel|
+Back in stock|fit|stock parcel|
+Preorder|station|case clip ticket|
+Discount code|fit|terminal tag|
+Loyalty rewards|station|punch cardpay token|
+Damaged delivery|compare|crushed parcel|
+Return window|station|clock carton ticket|
+Size guide|desk|ruler swatch|
+Order customization|station|press parcel stylus|
+Wholesale orders|pair|pallet packet|
+Cold-chain shipping|desk|chiller speedometer|
+International shipping|route|boat container|
+Customs clearance|station|parcel tray profile|
+Warehouse picking|pair|forklift stock|
+Lot traceability|sequence|pallet tag parcel|
+[finance]
+Pricing plans|sequence|tray case cabinet|
+Subscription management|desk|dategrid stampwheel|
+Invoice|desk|receipt sheet|
+Trial period|pair|timer cardpay|
+Money transfer|route|wallet coin|
+Budgeting|station|partition envelope coins|
+Payouts|route|coin wallet|
+Metered billing|station|speedometer receipt stampwheel|
+Upgrade plan|compare|case cabinet|
+Downgrade plan|compare|cabinet cartridge|
+Pause subscription|fit|stampwheel latch|
+Payment reminder|pair|envelope bell|
+Credit balance|desk|wallet coins|
+Refund issued|route|coin terminal|
+Recurring charges|sequence|stampwheel wallet receipt|
+Expense capture|fit|receipt lensframe|
+Expense approval|station|receipt stamp profile|
+Reconciliation|compare|receipt tabs|
+Cash flow|desk|tank valve|
+Savings goals|pair|coins tank|
+Shared expenses|station|coins partition envelope|
+Foreign exchange|station|coin press wallet|
+Financial risk|desk|scale weight|
+Portfolio allocation|grid|sample rough cover notch|
+Deposits and reserves|station|drawer wallet lock|
+Tax estimate|station|coins receipt gaugecase|
+Installment payments|sequence|envelope dategrid coins|
+[service]
+Appointment booking|fit|dategrid marker|
+Contact support|station|headset bell phone|
+Help center|station|case tool tabs|
+Service availability|lift|dategrid pin|
+Live chat|desk|bubble stylus|
+Service request|desk|mailbox ticket|
+Request a quote|station|gaugecase ticket sample|
+Reschedule appointment|compare|dategrid ticket|
+Cancel appointment|lift|dategrid stop|
+Booking confirmed|fit|notch ticket|
+Guest check-in|station|counter fob profile|
+Guest check-out|station|fob mailbox receipt|
+Service area map|grid|terrain house townhouse pin|
+Service technician tracking|route|flatbed house|
+Provider profile|desk|profile tool|
+Provider verification|station|profile case badge|
+Matched provider|fit|notch tool|
+Availability calendar sync|station|dategrid stampwheel tabs|
+Wait time|station|seatmap counter timer|
+Support ticket triage|sequence|packet drawer tabs|
+Ticket escalated|lift|tabs ticket|
+Service follow-up|pair|sample tag|
+Customer survey|station|sheet keys marker|
+Warranty claim|station|rough envelope profile|
+[building]
+Property listing|compare|house townhouse|
+Floor plan|desk|floorcut ruler|
+Virtual property tour|station|floorcut lensframe tripod|
+Home renovation|pair|framehouse material|
+Site survey|desk|terrain tripod|
+Construction milestones|sequence|terrain framehouse house|
+Property valuation|station|house scale townhouse|
+Neighborhood overview|grid|house townhouse terrain street|
+Home inspection|station|floorcut lensframe windowpair|
+Material samples|desk|material swatch|
+Space planning|station|floorcut stencil seating|
+Modular construction|fit|framehouse floorcut|
+Contractor estimate|station|gaugecase receipt material|
+Building maintenance|pair|floorcut heater|
+Home energy upgrade|compare|window windowpair|
+Move-in checklist|station|carton fob sheet|
+Building permit|station|floorcut stamp receipt|
+[civic]
+Solar energy|desk|solar batteryarray|
+Energy storage|pair|batteryarray socket|
+Emissions reduction|desk|chart sensor|
+Recycling|sequence|collectionbin partition sample|
+Donate to a cause|lift|donationbox coin|
+Renewable power mix|sequence|solar wind valve|
+Grid balancing|station|scale batteryarray weight|
+Electricity usage|desk|speedometer batteryarray|
+Home energy audit|station|floorcut speedometer windowpair|
+Water conservation|station|tank valve gaugecase|
+Air quality|pair|sensor street|
+Local weather alerts|station|terrain sensor warning|
+Waste collection schedule|route|collectionbin dategrid|
+Stormwater management|sequence|terrain plantrow fountain|
+Report a local issue|station|street pin warning|
+Public records request|station|mailbox packet ticket|
+Public meeting|pair|assembly microphone|
+Volunteer signup|station|rack tool profile|
+Program impact|sequence|donationbox tool framehouse|
+Resource allocation|grid|partition bin tray sample|
+Site habitat restoration|sequence|terrain tree plantrow|
+Watershed monitoring|station|terrain fountain sensor|
+[food]
+Restaurant menu|desk|platter tabs|
+Table reservation|station|seating dategrid tag|
+Food delivery|route|mealbox lunchbag|
+Menu customization|station|mealbox bowl platter|
+Ingredient sourcing|sequence|produce knife stove|
+Allergen information|station|produce partition tag|
+Recipe steps|sequence|knife stove platter|
+Portion scaling|station|cup scale bowl|
+Weekly meal plan|station|mealbox dategrid bowl|
+Pantry inventory|station|shelves jar produce|
+Dining delivery status|route|lunchbag house|
+Catering inquiry|station|tray mealbox sheet|
+Kitchen order display|station|tabs stove ticket|
+Temperature-controlled storage|station|fridge speedometer mealbox|
+Food waste tracking|sequence|produce collectionbin scale|
+Crop monitoring|station|plantrow sensor position|
+Smart irrigation|station|plantrow valve tank|
+Harvest planning|sequence|plantrow produce silo|
+
+[commerce]
+Shelf replenishment|route|pallet stock|Retail stockroom replenishment task
+Cross-dock transfer|sequence|flatbed conveyor container|Distribution cross-dock explainer
+Receiving inspection|desk|crushed sheet|Warehouse receiving checklist
+Pallet staging|compare|pallet conveyor|Dispatch staging bay overview
+Fragile goods packing|fit|carton vials|Protective packaging guide
+Restock shelf map|station|stock map pin|Store replenishment locator
+Free gift at checkout|fit|carton packet|Cart promotion module
+Carton size selection|compare|carton gaugecase|Packing workstation size decision
+Gift note insertion|lift|parcel sheet|Gift checkout note editor
+Mixed-case fulfillment|grid|pallet vials packet parcel|Wholesale parcel grouping guide
+Insulated shipment handoff|route|chiller flatbed|Perishable courier handoff update
+Packing material selection|desk|carton material|Merchant packaging materials guide
+Shipment handover receipt|station|flatbed parcel receipt|Carrier custody confirmation
+Reverse logistics intake|route|crushed stock|Return warehouse intake
+Retail shelf scan|station|stock reader phone|Store handheld counting feature
+Label alignment|fit|parcel stencil|Shipping label print setup
+Scheduled delivery slot|station|dategrid flatbed ticket|Scheduled delivery selector
+Consolidated orders|sequence|packet carton pallet|Bulk merchant order consolidation
+Merchant onboarding kit|grid|carton profile reader packet|New merchant setup page
+Shipping address correction|station|parcel map profile|Address correction recovery flow
+Parcel surcharge comparison|station|parcel gaugecase speedometer|Oversize shipping calculator
+Shipper account identity|fit|container profile|Carrier account settings
+Warehouse transfer order|route|stock forklift|Stock transfer request
+Serial-tracked returns|station|crushed reader tag|Returns inspection workflow
+Replacement dispatch|compare|crushed flatbed|Replacement shipment confirmation
+Manufacturer batch certificate|station|pallet stamp sheet|Order documentation panel
+Tamper-evident packaging|station|parcel latch lens|Package assurance feature
+Packing-line throughput|station|conveyor speedometer carton|Pack station operations dashboard
+Loading dock appointment|station|container dategrid sign|Loading dock appointment scheduler
+Courier equipment check|desk|flatbed tool|Courier preflight instructions
+Shipping rate shopping|compare|boat flatbed|Carrier comparison tool
+Long-item storage|station|rack ruler parcel|Warehousing capability page
+Multi-carrier drop-off|grid|locker flatbed boat mailbox|Merchant handoff options
+Staggered item dispatch|sequence|parcel dategrid locker|Split-order dispatch history
+Buy online collect later|route|terminal locker|Local click-and-collect option
+Refrigerated parcel packaging|fit|chiller vials|Packing chilled items instructions
+Restricted-product checkout|station|parcel terminal stop|Cart eligibility warning
+Shipment paperwork pouch|lift|container envelope|Cross-border documentation help
+Delivered into locker|fit|locker parcel|Locker delivery confirmation
+Cancel local pickup|desk|locker stop|Collection cancellation flow
+Merchant stock take|desk|stock chart|Inventory count overview
+Consignment intake|station|stock tag ticket|Resale item acceptance
+Seller packaging standard|desk|pallet ruler|Marketplace shipping policy
+Order cutoff|station|conveyor clock packet|Same-day fulfillment timer
+Package barcode lookup|station|parcel reader lensframe|Tracking search interface
+Repacking fragile return|lift|crushed material|Returns packaging guide
+Shipment weight capture|station|parcel scale cardpay|Shipping rate calculation
+Warehouse aisle navigation|route|forklift map|Picking aisle directions
+Pallet load limit|station|pallet scale warning|Handling equipment safety note
+Freight quote|station|container receipt ruler|Bulk shipping quote form
+Dock loading order|sequence|conveyor forklift flatbed|Shipping dock schedule
+Distribution bin assignment|fit|stock bin|Inventory slot assignment
+Reusable shipper deposit|station|chiller wallet fob|Reusable packaging deposit prompt
+Seasonal stock rotation|sequence|dategrid stock cart|Seasonal store merchandising feature
+Carrier scan event|lift|parcel reader|Tracking progress event
+Multi-item packaging check|station|carton tape ruler|Pre-dispatch packing audit
+Customer delivery proof|station|parcel threshold profile|Delivery proof detail page
+Tabletop packing station|station|carton tape tag|Warehouse workstation design
+
+[finance]
+Escrow deposit|lift|lock coin|Marketplace escrow explanation
+Price-lock guarantee|station|terminal lock tag|Locked quote feature block
+Monthly account statement|station|dategrid wallet sheet|Statement archive overview
+Balance alert threshold|station|wallet bell marker|Low balance alert setup
+Cost-center budget|station|partition gaugecase receipt|Budget allocation settings
+Scheduled transfer|station|dategrid coin channel|Recurring transfer planner
+Split tender checkout|station|terminal cardpay coin|Split payment checkout option
+Overpayment credit|lift|wallet receipt|Billing adjustment confirmation
+Outstanding invoice queue|sequence|receipt tabs mailbox|Accounts receivable dashboard
+Failed bank transfer|route|wallet stop|Transfer status recovery message
+Contactless tap to pay|lift|terminal phone|Tap payment checkout instructions
+Paid invoice archive|fit|drawer receipt|Paid invoices archive
+Payment reconciliation proof|station|receipt lensframe stamp|Bookkeeping evidence panel
+Vendor remittance|route|wallet mailbox|Supplier payment confirmation
+Payroll approval cycle|station|dategrid stamp coins|Payroll administrator feature
+Tax payment schedule|station|dategrid receipt wallet|Estimated payment scheduler
+Tax document delivery|route|receipt envelope|Annual tax forms delivery
+Spending category breakdown|grid|wallet coin receipt partition|Personal finance budget dashboard
+Available credit|station|wallet speedometer coins|Credit dashboard
+Credit limit increase|compare|wallet gaugecase|Credit setting change flow
+Merchant settlement period|pair|terminal dategrid|Payments operations documentation
+Cash drawer audit|station|drawer coins receipt|Cash register reconciliation
+Failed invoice delivery|station|mailbox receipt stop|Billing delivery error state
+Bank deposit slip|sequence|sheet wallet stamp|Deposit confirmation screen
+Remote check deposit|lift|terminal sheet|Mobile deposit workflow
+Account opening deposit|fit|wallet coin|Bank welcome onboarding
+Invoice due date change|station|dategrid receipt slider|Invoice management setting
+Interest-rate lock expiration|station|lock clock receipt|Lending rate deadline notice
+Finance document vault|desk|drawer lock|Loan application document storage
+Emergency fund|station|tank lock coin|Savings feature block
+Budget rollover|sequence|wallet partition dategrid|Month-end budget summary
+Investment contribution|route|coin cabinet|Investment funding onboarding
+Quarterly financial close|grid|dategrid receipt wallet stamp|Close process documentation
+Operational expense cap|station|wallet scale marker|Department spend policy
+Discretionary allowance|compare|partition wallet|Funding decisions explainer
+Cash on delivery|route|flatbed coins|Cash checkout option
+Credit note application|station|receipt cardpay socket|Billing credit-note application
+Petty cash reimbursement|station|coins receipt tray|Office expense repayment request
+Invoice line adjustment|station|receipt slider stylus|Invoice line editing tool
+Company card issue|fit|wallet cardpay|Corporate card enrollment
+Card replacement|compare|cardpay reader|Card replacement confirmation
+Terminal transaction report|fit|terminal receipt|Merchant device report
+Equipment rental deposit|station|tool wallet lock|Equipment booking payment step
+Donation match|compare|coin donationbox|Nonprofit matched gifts page
+Donation receipt archive|fit|drawer donationbox|Donor fiscal records page
+Bank account switch|station|wallet switch cardpay|Billing account change
+Accelerated payout|route|terminal speedometer|Payout speed option
+Fee breakdown|station|receipt coins partition|Customer fee detail
+Exchange rate notification|station|coins bell chart|Currency alert setting
+Balance carryforward|sequence|coins dategrid wallet|Accounting period transition
+Reserve reconciliation|desk|tank ruler|Treasury reserve statement
+Reimbursement request|route|receipt wallet|Expense reimbursement submission
+Invoice payment link|route|receipt terminal|Pay-by-link billing feature
+
+[service]
+After-hours service|pair|counter clock|Support hours landing section
+Same-day service call|route|flatbed clock|Local services urgent booking
+Callback request|station|headset phone ticket|Support callback form
+In-person consultation|station|counter profile seat|Consultation booking page
+Virtual consultation|station|screen headset dategrid|Remote appointment feature
+Team appointment coverage|grid|dategrid headset profile seatmap|Team coverage dashboard
+Standby booking list|sequence|ticket seatmap dategrid|Waiting list flow
+Calendar buffer time|station|dategrid timer partition|Booking setup settings
+On-site arrival alert|route|flatbed bell|Field technician arrival status
+Late arrival policy|pair|clock ticket|Reservation help article
+No-show follow-up|route|dategrid envelope|Appointment exception procedure
+Service disruption banner|station|counter warning clock|Service status page
+Emergency dispatch|route|flatbed warning|Priority repair ticket response
+Service provider handoff|sequence|profile tool counter|Field service workflow
+Worksite callback|station|house phone headset|Trade service callback request
+Scheduled recurring visit|station|flatbed stampwheel dategrid|Maintenance plan
+One-time service visit|station|flatbed dategrid marker|One-off appointment setup
+Multiple booking locations|sequence|house map counter|Location selector
+Local pickup appointment|station|locker dategrid tag|Order pickup slot
+Curbside handoff|route|flatbed locker|Curbside fulfillment confirmation
+Self-service kiosk|station|terminal counter profile|Venue service kiosk feature
+Guest identity check|desk|counter reader|Hospitality arrival verification
+After-hours key drop|fit|mailbox fob|Hotel key return information
+Visitor reception|station|counter profile bell|Office visitor welcome
+Access pass retrieval|fit|locker profile|Visitor access credentials handoff
+Venue capacity|desk|seatmap speedometer|Venue listing capacity block
+Accessible booking request|station|seatmap dategrid ticket|Accessible seat booking
+Class booking pass|fit|dategrid profile|Class booking enrollment
+Group appointment|station|seatmap dategrid counter|Group booking module
+Book a fitting|station|dategrid swatch fob|Retail fitting appointment
+Workshop enrollment|station|bench ticket tool|Community workshop signup
+Patient reception desk|station|counter profile dategrid|Clinic arrival logistics
+Pet groomer appointment|station|dategrid clip tag|Local pet services booking
+Studios by the hour|compare|floorcut seatmap|Studio rental scheduling
+Boardroom reservation|desk|seating dategrid|Office space reservation
+Equipment collection window|station|tool dategrid locker|Rental collection scheduling
+Locker access time|desk|locker clock|Access restrictions help
+Appointment verification call|desk|headset profile|Appointment verification instructions
+Support feedback tag|desk|headset tag|Support closing survey
+Maintenance technician credential|station|tool profile flatbed|Service provider identification
+License renewal check|station|profile dategrid stamp|Provider credential renewals
+Trade service terms|desk|tool bound|Contractor terms of service
+Repair status page|route|rough tool|Repair ticket tracker
+Pre-visit instructions|desk|ticket book|Appointment reminder landing
+Offsite consultation preparation|station|house sheet tool|Onsite consultation prep
+Field job evidence upload|station|tool lensframe packet|Provider job completion flow
+Dispatch route selection|station|map flatbed pin|Dispatch management
+Part reservation|fit|locker sample|Repair part hold
+Repair collection confirmation|station|locker tool check|Completed repair pickup notice
+Service abandonment recovery|route|ticket bell|Incomplete booking recovery
+Booking deposit confirmation|station|dategrid coins check|Reservation payment completion
+Bid deadline|desk|dategrid receipt|Supplier estimate deadline
+Equipment return time|station|tool timer mailbox|Rental return scheduling
+Visit summary|station|counter book sheet|Post-visit portal
+Event help desk|station|seatmap headset bell|Event attendee services
+Provider cancellation|desk|profile stop|Marketplace booking change
+
+[building]
+Residential roof replacement|compare|house material|Roofing quote page
+Commercial fit-out|station|floorcut bench ruler|Construction project service block
+Prefabricated facade panel|fit|framehouse windowpair|Prefab facade manufacturer product
+Foundation preparation|compare|terrain framehouse|New build site preparation guide
+Property boundary survey|station|terrain tripod position|Land surveyor service page
+Open house sign-in|station|house profile dategrid|Open house registration
+Apartment move-out|route|floorcut carton|Tenant move-out instructions
+Tenant handover pack|station|fob bound house|Rental lease welcome experience
+Living room layout|station|floorcut seat table|Furniture planning consultation
+Housing accessibility retrofit|pair|floorcut steps|Accessible remodeling service feature
+Sound isolation retrofit|fit|floorcut material|Acoustic insulation remodeling service
+HVAC replacement quote|station|heater gaugecase receipt|Heating installer quote page
+Heating system service|station|heater tool valve|HVAC service booking
+Water meter installation|station|valve speedometer heater|Property utility upgrade guide
+Garage door service|station|framehouse tool latch|Residential repair service
+Keyed entry upgrade|station|window lock fob|Entry security upgrade option
+Lock change at turnover|station|lock fob carton|Landlord turnover checklist
+Real estate option payment|station|house wallet receipt|Property offer options
+Lease signing session|station|floorcut sheet profile|Rental document signing step
+Commercial space availability|compare|townhouse floorcut|Commercial listing directory
+Available floor location|station|townhouse map marker|Building vacancy directory
+Model-home appointment|station|house dategrid ticket|Homebuilder model tour booking
+Land parcel comparison|compare|terrain street|Lot search feature card
+Subdivision street alignment|grid|street house house townhouse|Site masterplan overview
+Construction delivery staging|station|flatbed framehouse rack|Construction site logistics
+Material quantity check|station|material ruler stock|Building materials ordering tool
+Home insulation estimate|station|windowpair gaugecase receipt|Installer cost estimate
+Roof drainage inspection|station|house valve lensframe|Home drainage checklist
+Concrete finish approval|station|material stamp gaugecase|Architectural material selection
+Building fixture schedule|station|tool floorcut dategrid|Construction specifications dashboard
+Elevated access maintenance|station|townhouse ladder tool|Facilities service procedures
+Residential storage design|station|floorcut shelves drawer|Interior storage service landing
+Apartment inventory check|station|floorcut jar sheet|Rental inventory procedure
+Architectural scale model|station|floorcut tripod gaugecase|Design firm case study
+Architectural finish selection|station|swatch floorcut material|Interior finish options
+Daylight study|desk|windowpair lamp|Architecture daylight analysis page
+Blind installation guide|fit|window ruler|Window furnishings installation
+Thermal bridge repair|compare|framehouse heater|Building efficiency retrofit explanation
+Heating zone layout|station|floorcut heater marker|Residential HVAC zoning feature
+Shared building amenities|grid|townhouse seating terrain locker|Rental amenities page
+Building parcels collection|station|townhouse locker parcel|Apartment package room feature
+Construction supply receiving|station|pallet framehouse profile|Site delivery acceptance flow
+Building code review|desk|framehouse sheet|Permit application support
+Planning permission evidence|station|terrain stamp floorcut|Permit evidence submission
+Tenant maintenance triage|station|floorcut warning ticket|Property maintenance ticket triage
+Change-order pricing|station|framehouse receipt tool|Construction project change order
+General contractor site briefing|station|framehouse bound sign|Preconstruction briefing resource
+Permit inspection schedule|station|framehouse dategrid stamp|Inspection booking tool
+Permit issuance confirmation|fit|stamp floorcut|Building permit confirmation page
+Private courtyard layout|station|floorcut terrain seating|Landscape planning service
+Rain garden installation|station|floorcut plantrow fountain|Residential landscaping project
+Soil drainage test|station|terrain cup gaugecase|Landscape or foundation site test
+Foundation moisture check|station|terrain sensor floorcut|Property condition report
+Balcony load inspection|station|townhouse scale marker|Building condition report
+Refinishing cabinet fronts|fit|cabinet material|Interior restoration service
+Emergency apartment access|station|floorcut fob warning|Tenant emergency property information
+Storage-room access allocation|station|floorcut locker fob|Building storage allocation page
+Homebuyer closing packet|station|house envelope fob|Property closing instructions
+New-build warranty schedule|station|house dategrid profile|New construction aftercare
+Architectural site feasibility|grid|terrain tripod house gaugecase|Architecture feasibility package
+Construction equipment return|route|tool framehouse|Construction equipment rental return
+Interior paint sample review|station|swatch floorcut lamp|Interior design material review
+As-built drawing archive|fit|drawer floorcut|Facilities property records archive
+
+[civic]
+Home solar installation|station|house solar batteryarray|Residential energy landing page
+Community solar enrollment|station|solar profile donationbox|Community energy membership
+Household load monitoring|station|house speedometer batteryarray|Household energy usage feature
+Peak demand reduction|station|speedometer batteryarray valve|Energy efficiency product benefit
+Solar export metering|station|solar speedometer socket|Utility export meter help
+Rooftop solar compatibility|compare|solar house|Solar assessment step
+Backup outage power|station|batteryarray house stop|Backup energy system explainer
+Solar panels in shade|station|solar tree sensor|Solar system planning page
+Home battery placement|fit|floorcut batteryarray|Battery siting guidance
+Onsite battery commissioning|station|batteryarray tool check|Installer commissioning task
+Wind turbine blade inspection|station|wind lensframe tripod|Wind farm maintenance service
+Wind power site appraisal|station|terrain wind tripod|Turbine site suitability assessment
+Grid outage indicator|station|house warning batteryarray|Utility outage status banner
+Community outage map|grid|street house warning pin|Utility outage map help
+Equipment failure monitoring|station|wind sensor warning|Generation site fault indicator
+Village microgrid|grid|wind house solar batteryarray|Microgrid feature overview
+Vehicle charging point|station|flatbed socket batteryarray|Electric vehicle charging page
+Meter reading submission|desk|speedometer phone|Utility reading input flow
+Home water meter reading|station|valve speedometer sheet|Public water meter reporting
+Reservoir capacity monitoring|station|tank speedometer sensor|Reservoir operations feature
+Water shutoff instructions|desk|valve stop|Plumbing emergency guide
+Rainwater harvesting|station|house fountain tank|Water reuse feature
+Rainwater barrel overflow|station|tank fountain warning|Water collection threshold reminder
+Water channel sweep|sequence|street valve fountain|Drainage works resource
+Sewer inspection scheduling|station|valve dategrid flatbed|Public works appointment
+Public drinking fountain locator|station|street fountain map|Community water portal
+Street lighting repair|station|street lamp warning|Municipal fix request
+Protected bike lane|station|street cone map|Public mobility project page
+Public parking permit|station|street profile stamp|Municipal parking credentials
+Accessible sidewalk planning|station|street steps marker|Accessibility improvement program
+Waste container replacement|compare|collectionbin carton|Garbage bin replacement
+Bulky waste pickup booking|station|collectionbin flatbed dategrid|Municipal bulky pickup scheduler
+E-waste processing|sequence|batteryarray collectionbin partition|Electronics recycling program
+Food scraps collection|station|produce collectionbin tray|Organics pickup service
+Paper recycling intake|station|collectionbin packet material|Local recycling sorting guide
+Volunteer tool pickup|station|tool locker profile|Community volunteer coordination
+Neighborhood cleanup event|station|street collectionbin dategrid|Community cleanup information
+Municipal document pickup|fit|locker packet|City document pickup instructions
+Public facility booking|station|assembly dategrid ticket|City facility reservation portal
+City hall public comment|desk|microphone envelope|Local participation guide
+Civic form submission tracking|route|mailbox profile|Municipal service request status
+Municipal fee payment|station|stamp terminal receipt|City payment service
+Emergency assembly area|station|street assembly pin|Local preparedness map
+Community grant application|station|sheet donationbox stamp|Grant program information
+Mutual-aid supply station|grid|carton donationbox stock tray|Aid station overview
+Housing assistance intake|station|house packet donationbox|Local housing support intake
+Donation amount selection|compare|donationbox wallet|Charity campaigns donation form
+Funding disbursement location|route|donationbox counter|Program funding distribution
+Impact measurement stations|station|donationbox chart sensor|Nonprofit results section
+Community garden signup|station|plantrow dategrid tag|Municipal plot allocation
+Riparian tree planting|station|terrain tree fountain|Habitat restoration project
+Urban canopy mapping|grid|tree street house sensor|Municipal tree inventory map
+Drought restriction alert|station|valve plantrow warning|Water authority notice
+Dust monitoring station|station|sensor terrain flatbed|Construction air quality control
+River maintenance access|station|fountain street tripod|Civic waterway maintenance
+Compost plot management|station|collectionbin plantrow ruler|Community compost initiative
+Urban heat study|station|street sensor tree|Urban environment report
+Neighborhood flood response|station|street fountain warning|Flood preparedness resource
+
+[food]
+Counter pickup meal|station|lunchbag counter ticket|Restaurant pickup information
+Ready-for-pickup meal|fit|locker lunchbag|Online order completion update
+In-store dining pickup|route|mealbox counter|Food ordering pickup flow
+Preorder tasting menu|station|platter ticket dategrid|Restaurant special-menu scheduling
+Chef collaboration dinner|station|platter knife seating|Dining feature page
+Sample menu briefing|station|platter sheet bowl|Catering planning content
+Private dining consult|station|seating profile tabs|Restaurant group services
+Indoor seating request|station|seating floorcut pin|Reservation preferences
+Outdoor dining tables|station|seating terrain tree|Restaurant patio information
+Family meal bundle|grid|mealbox bowl platter lunchbag|Online family-size menu
+Individual meal pickup|pair|mealbox ticket|Pickup service configuration
+Takeaway packaging options|compare|mealbox lunchbag|Ordering packaging preferences
+Thermal bag cleaning|station|lunchbag valve tool|Delivery equipment maintenance
+Insulated drink delivery|station|lunchbag cup dategrid|Beverage delivery planning
+Delivery route preparation|station|lunchbag map tool|Restaurant operations route list
+Delivery handover counter|station|counter lunchbag receipt|Courier order pickup process
+Restaurant cancellation terms|station|seating ticket stop|Restaurant cancellation help
+Digital menu order|station|phone platter ticket|Tableside ordering feature
+QR table ordering stand|station|seating reader tag|Tableside ordering solution
+Weekly lunch schedule|station|dategrid platter lunchbag|Meal delivery schedule
+Substituted ingredient choice|compare|produce mealbox|Food order substitutions
+Allergen label verification|station|jar tag lensframe|Food packaging safety check
+Cross-contact separation|station|partition knife produce|Kitchen prep safety training
+Ingredient trace-back|station|produce tag sheet|Restaurant supply traceability
+Locally grown produce|route|plantrow produce|Farm sourcing story
+Farmers market stall|station|produce counter wallet|Local food marketplace vendor page
+Seasonal produce availability|station|produce dategrid marker|Seasonal ingredients menu
+Unexpected item outage|station|stock produce warning|Restaurant ingredient stockout
+Food stock labeling|station|jar tag reader|Pantry label management
+Weekly pantry purchasing|station|jar cart dategrid|Meal planning shopping list
+Certified food storage|station|fridge profile stamp|Kitchen compliance information
+Fridge storage zoning|station|fridge produce mealbox|Ingredient storage guide
+Freezer placement|compare|fridge floorcut|Kitchen equipment placement
+Cooking duration check|station|stove timer ticket|Recipe timer state
+Ingredient preparation stage|station|knife produce cup|Recipe mise en place step
+Stovetop heat profile|station|stove speedometer sensor|Cooking equipment usage guidance
+Recipe revision card|station|knife sheet stampwheel|Recipe development tracking
+Kitchen water shutoff|station|stove valve stop|Restaurant maintenance alert
+Thermometer probe calibration|station|stove gaugecase speedometer|Equipment calibration procedure
+Measuring cup equivalents|compare|cup bowl|Ingredient measurement conversion
+Reusable catering carrier|station|mealbox lunchbag coin|Carrier deposit program
+Buffet setup sequence|sequence|platter counter seating|Buffet service arrangements
+Staff meal allowance|station|mealbox wallet token|Restaurant employee benefits
+Breakfast service setup|station|platter cup tabs|Hotel food service overview
+Hydration station setup|station|cup tank counter|Hospitality amenities
+Beverage keg storage|station|tank fridge valve|Restaurant cellar requirements
+Coffee service station|station|cup counter mealbox|Catering beverage options
+Community food pantry|grid|shelves produce donationbox jar|Food support landing page
+Donate surplus meals|route|mealbox donationbox|Food recovery donation flow
+Restaurant recycling setup|station|collectionbin partition mealbox|Restaurant waste reduction
+Kiosk cafeteria layout|station|counter mealbox floorcut|Cafeteria design case study
+Catering load-in access|route|lunchbag flatbed|Venue catering delivery instructions
+Commissary ingredient dispatch|route|produce flatbed|Central kitchen supply workflow
+Harvest batch intake|station|produce silo stock|Agricultural harvest receipt
+Grain sample inspection|station|silo cup lensframe|Agricultural quality screening
+Produce ripeness inspection|station|produce gaugecase lens|Freshness quality control
+Farm equipment appointment|station|plantrow flatbed dategrid|Farm machinery service scheduling
+Irrigation valve replacement|station|plantrow valve tool|Irrigation repair guide
+Crop row inspection route|route|plantrow tripod|Field management task
+Container garden design|station|terrain plantrow cup|Home food growing tutorial
+Farm cold-room loading|station|fridge stock produce|Harvest cold storage workflow
+Farm visitor hospitality|station|plantrow seating produce|Agritourism site overview

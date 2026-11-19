@@ -1,0 +1,8 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path } from "react-native-svg";
+export const ResolveDuplicateRequestVector = /*#__PURE__*/ forwardRef(function ResolveDuplicateRequestVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "Resolve duplicate request", ...props, ref},
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M138.18,145.07 210.86,161.06 M127.82,168.93 174.85,179.28 M257.93,235.29 330.61,251.28 M247.57,259.15 294.60,269.50"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M201.10,90.24 203.35,66.17 161.67,57.00 155.95,63.68 101.44,189.27 208.32,212.78 214.04,206.10 258.82,102.94 201.10,90.24 M101.44,189.27 208.32,212.78 253.09,109.62 195.38,96.92 197.63,72.85 155.95,63.68 101.44,189.27 M149.63,118.70 210.55,132.10 M320.85,180.46 323.10,156.39 281.42,147.22 275.69,153.90 221.18,279.49 328.06,303.00 333.79,296.32 378.56,193.16 320.85,180.46 M221.18,279.49 328.06,303.00 372.84,199.84 315.12,187.14 317.37,163.07 275.69,153.90 221.18,279.49 M269.37,208.92 330.30,222.32"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M237.12,74.17 278.13,85.65 301.90,103.16 317.95,128.80 318.62,165.80 M331.08,139.93 318.62,165.80 305.37,148.15"}));
+});

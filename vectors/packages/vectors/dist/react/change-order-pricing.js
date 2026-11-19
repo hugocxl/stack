@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const ChangeOrderPricingVector = /*#__PURE__*/ forwardRef(function ChangeOrderPricingVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Change-order pricing"),
+    createElement("desc", null, "A change order crosses out an original amount and highlights its revised price with a plus and a currency mark."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M367.50,98.73 354.56,130.76 385.36,135.99 M166.13,154.96 232.12,166.17 M276.12,173.65 320.12,181.13", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M175.02,57.00 167.32,64.70 86.94,263.73 317.92,303.00 325.61,295.30 393.06,128.29 375.20,91.03 175.02,57.00 M86.94,263.73 317.92,303.00 385.36,135.99 367.50,98.73 167.32,64.70 86.94,263.73 M178.71,117.98 189.80,90.52 236.00,98.38 224.91,125.83 202.91,122.09 208.46,108.36 195.26,106.12 189.71,119.85 178.71,117.98 M256.50,111.64 322.49,122.86 M266.75,179.40 330.41,173.10 M128.12,231.62 308.50,262.28 328.83,211.95 148.45,181.29 128.12,231.62 M153.68,209.07 208.68,218.42 M242.77,224.22 262.57,227.58 M248.51,236.19 256.83,215.60", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M304.47,225.12 299.81,219.54 291.19,218.07 282.91,221.46 281.10,225.94 284.23,229.59 295.90,234.92 299.03,238.57 297.22,243.06 288.95,246.44 280.32,244.97 275.67,239.39 M297.31,214.32 282.82,250.19", "xmlns": "http://www.w3.org/2000/svg"}));
+});

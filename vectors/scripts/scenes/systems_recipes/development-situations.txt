@@ -1,0 +1,90 @@
+Edge computing | Distributed compute landing page | split | cabinet chip sensor
+Local development | Getting-started setup | bench | terminal chip
+Remote builds | Build service overview | exchange | terminal cabinet
+Build acceleration | CI performance comparison | flow | archive processor drawer
+Dependency graph | Package relationship explorer | watched | network terminal
+Dependency pinning | Dependency update configuration | dock | chip seal
+Dependency vendoring | Packaging and offline build guide | shelter | template archive
+Artifact registry | Registry browsing screen | index | cabinet archive capsule
+Container image signing | Provenance on an image registry | protected | capsule seal
+Immutable releases | Release retention feature | protected | drawer vault
+Release channels | Stable and preview selector | split | cabinet drive capsule
+Feature branch preview | Code review deployment status | lift | terminal phone
+Compiler diagnostics | Syntax and type checking feature | inspect | terminal warning
+Build logs | Compilation run detail | index | terminal note spool
+Reproducible builds | Build integrity and provenance | independent | capsule seal
+Build queue | Job queue status page | queue | note chip cabinet
+Build matrix | Multi-platform CI feature | stations | terminal tablet cabinet
+Integration test harness | Test infrastructure documentation | bench | port calipers
+Visual regression testing | Screenshot comparison report | compare | building photo
+Synthetic monitoring | Simulated service checks overview | watched | phone pulse
+Availability probes | Health checks in infrastructure docs | split | beacon port relay
+Dead-letter queue | Failed jobs and replay tab | isolated | track warning cabinet
+Background jobs | Async processing overview | flow | note cabinet spool
+Scheduled jobs | Cron and planned jobs UI | relay | clock track cabinet
+Job retry | Failed delivery details page | feedback | cabinet warning
+Graceful shutdown | Shutdown and resource cleanup guide | outside | switch cabinet
+Circuit breaker | Resilience configuration docs | boundary | pulse switch
+Regional failback | Recovery procedure docs | pivot | cabinet relay
+Endpoint health checks | Load distribution settings | inspect | port pulse
+Websocket session | Streaming connection overview | exchange | terminal relay
+Connection pooling | Connection management docs | merge | plug port cabinet
+Gateway routing | Upstream route configuration | split | network port terminal
+Domain verification | Custom domain setup | relay | port credential seal
+DNS failover | Alias configuration overview | replace | port relay
+Certificate renewal | Renewal settings and status | handover | clock credential shield
+Certificate rotation | Network certificate lifecycle | orbit | credential archive seal
+Certificate pinning | Trust policy in client app docs | protected | credential phone
+Health endpoint | Service API reference page | watched | relay pulse
+Service mesh | Platform topology section | merge | chip network cabinet
+Ingress routing | Cluster networking page | conduit | plug port
+Geographic distribution | Regions and deployment overview | split | network tower cabinet
+Network peering | Private links configuration | exchange | tower port
+Secure tunnel | Private connection setup | conduit | lock terminal
+Tunnel retirement | Exit from developer tunnel setup | outside | railoff port
+Proxy diagnostics | Forwarding debug view | stations | terminal pulse relay
+Device gateway | Telemetry onboarding | merge | sensor phone relay
+Device firmware upgrade | Embedded update wizard | replace | sensor chip
+Signed firmware | Upgrade validation guide | relay | processor seal cabinet
+Over-the-air update | Device update guide | handover | tower chip phone
+Embedded debugging | Hardware debugging feature | bench | processor calipers
+Sensor telemetry | Device monitoring feature | exchange | sensor spectrum
+Power fallback | Hardware capacity and reserve docs | pivot | battery relay
+Power budget | Device fleet power detail | independent | battery meter
+Thermal throttling | Compute cooling notice | watched | cooler meter
+CPU profiler | Process performance inspector | inspect | processor spark
+Memory profiler | Application memory inspector | inspect | terminal matrix
+Garbage collection | Runtime internals guide | gate | gridrack drawer
+Process isolation | Runtime security guide | shelter | processor cabinet
+Thread contention | Runtime performance article | merge | track track processor
+Message ordering | Messaging delivery guarantees | queue | gridrack clock spool
+Exactly-once delivery | Processing guarantee docs | convert | spool seal
+Batch processing | Offline queue overview | flow | gridrack processor archive
+Adaptive batching | Throughput settings page | pivot | gridrack processor
+Idempotent writes | API write semantics guide | feedback | archive chip
+Transaction boundary | Database consistency guide | boundary | plan drive
+Transaction replay | Operations journal recovery | feedback | spool cabinet
+Write-ahead logging | Storage engine documentation | conduit | spool drive
+Read replica | Multi-replica configuration | split | drive drawer archive
+Index rebuild | Database maintenance planner | replace | archive gridrack
+Index validation | Search optimization guide | bench | archive calipers
+Query execution plan | Database query inspector | surface | network terminal
+Query timeout | Database runtime error detail | watched | clock terminal
+Connection lease | Database server capacity docs | relay | clock port drive
+Storage compaction | Database space optimization | convert | archive capsule
+Disk cleanup | Storage usage detail | outside | drive archive
+Durable snapshots | Persistent storage feature overview | lift | drive archive
+Incremental restore | Restore wizard | handover | drive archive chip
+Portable volume | Storage migration interface | dock | drive capsule
+Network disk mount | Remote volume setup | relay | cabinet plug drive
+Encrypted volume mount | Disk-level protection setup | shelter | drive lock
+Storage allocation | Capacity editor | alignment | drive meter
+Quota tracking | Resource usage dashboard | compare | drive bars
+Tiered storage | Storage policy configuration | elevation | archive drive
+Retention tagging | Data cleanup control | inspect | drive tags
+Service restart | Process operations runbook | feedback | tower clock
+Binary compatibility | System API changelog and SDK | compare | chip port
+System diagnostics bundle | Support troubleshooting workflow | index | terminal spectrum note
+Health summary | System overview dashboard | stations | pulse meter beacon
+Maintenance scheduler | Service settings | alignment | clock plan
+Disaster recovery rehearsal | Failover exercise documentation | stations | vault terminal beacon

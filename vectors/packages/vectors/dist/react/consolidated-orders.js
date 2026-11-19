@@ -1,0 +1,9 @@
+import { createElement, forwardRef } from "react";
+export const ConsolidatedOrdersVector = /*#__PURE__*/ forwardRef(function ConsolidatedOrdersVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"viewBox": "0 0 480 360", "role": "img", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round", "xmlns": "http://www.w3.org/2000/svg"}, width: size, height: size * 360 / 480, color, ...props, ref},
+    createElement("title", null, "Consolidated orders"),
+    createElement("desc", null, "Two incoming paths merge into one downward arrow inside an open shipping carton."),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M223.75,175.36 177.73,198.37 M112.75,165.88 223.75,110.38 223.75,175.36", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M367.81,182.02 390.85,140.55 296.04,93.14 M287.00,88.62 265.53,77.89 231.91,104.03 M224.07,175.51 302.27,214.62 M367.25,182.13 258.89,127.95 M250.12,123.56 247.95,122.47 M112.16,165.79 89.15,133.58 181.98,87.17 223.39,110.17 M367.64,247.30 256.59,302.83 M367.64,231.45 367.64,247.30 M367.64,182.32 256.56,237.86 M256.59,238.28 295.70,267.03 388.53,220.61 367.64,182.32 M112.36,231.06 256.25,303.00 256.25,238.45 M112.36,215.20 112.36,231.06 M112.36,166.08 256.25,238.02 216.79,267.03 91.47,204.37 112.36,166.08", "xmlns": "http://www.w3.org/2000/svg"}),
+    createElement("path", {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M191.26,57.00 195.91,77.89 209.83,94.13 230.72,109.22 242.32,121.98 249.28,137.07 M307.30,57.00 302.66,77.89 288.74,94.13 267.85,109.22 256.25,121.98 249.28,137.07 249.28,160.27 M264.60,142.40 249.28,160.27 233.97,127.09", "xmlns": "http://www.w3.org/2000/svg"}));
+});

@@ -1,0 +1,508 @@
+# Existing briefs use ID and composition. New briefs use title, placement, and composition.
+[land]
+product-launch	float crate panel
+value-proposition	aim lens target
+how-it-works	staged ruler press sample
+product-tour	transfer rack lensframe floorplan
+customer-story-outcome	comparison rough chart
+partner-ecosystem	arc port plug hub
+before-and-after	comparison rough sample
+get-started	gate threshold steps
+get-a-demo	aim projector screen
+contact-sales	corner book bell
+changelog	vertical stampwheel sheet
+coming-soon	float notch cover
+early-access	recess rack key
+waitlist	edge chute ticket
+availability-by-region	fit map pin
+brand-philosophy	gather weight swatch scale
+open-source	lift rack layer
+sustainability-claim	arc rough sample tool
+community-led-product	gather seat bench table
+product-migration	transfer bin tray drawer
+enterprise-edition	gather shelves bench roof
+platform-overview	fit panel cartridge
+multi-product-bundle	gather tool lens case
+
+[nav]
+explore-a-catalog	recess rack tabs
+filter-results	fit tray mesh
+sort-results	staged rough sample ruler
+breadcrumb-navigation	ridge route marker threshold
+pagination	sweep wheel tabs
+deep-linking	aim stylus shelves
+related-content	gather folder tabs bound
+section-contents	edge book tabs
+glossary	corner book lens
+tagging-content	lead rack tag
+category-directory	corner shelves vials
+saved-searches	fit drawer lens
+recent-items	edge route token
+favorites	fit book tag
+scroll-progress	lead loom ruler
+map-versus-list-view	pair map stack
+command-palette	lift keys ticket
+sitemap	vertical floorplan ladder
+merge-duplicate-records	fork sheet plain press
+external-link-handoff	lead threshold beam
+saved-reading-position	edge bound tag
+jump-to-section	guide ruler marker
+
+[account]
+create-an-account	fit reader profile
+welcome-aboard	solo starter
+set-up-a-workspace	gather stylus lamp bench
+invite-teammates	gather seat seat table
+accept-an-invitation	face threshold envelope
+create-a-first-project	bench ruler sample
+guided-setup	staged notch press peg
+onboarding-checklist	gather switch token latch
+import-existing-content	transfer tray stack drawer
+sign-in	lift reader key
+password-recovery	lead latch key
+email-verification	fit envelope stamp
+start-from-a-template	fit plain stencil
+try-with-sample-data	fit tray vials
+personalize-your-profile	corner profile swatch
+choose-preferences	gather switch slider dial
+set-a-passkey	fit reader print
+connect-another-device	lead phone laptop
+switch-workspaces	arc laptop cabinet wheel
+organization-setup	fit shelves tabs
+migrate-an-account	transfer reader profile dock
+resume-setup	bench clamp bolt
+offboard-a-member	edge table seat
+close-an-account	corner case receipt
+account-suspension	gate threshold stop
+
+[state]
+empty-cart	aside cart tag
+empty-inbox	aside mailbox tray
+upload-in-progress	lead loom chute
+processing	gate press cartridge
+success-confirmation	fit socket peg
+something-went-wrong	ends gear wheel
+access-denied	gate threshold lock
+session-expired	corner timer ticket
+unsaved-changes	fit bench clamp
+changes-saved	edge bound latch
+restore-a-draft	lift folder sheet
+try-again-later	face partition clock
+no-connection-retries-left	ends fuse plug
+file-rejected	gate chute warning
+storage-full	recess cabinet cartridge
+caught-up	fit drawer cover
+under-review	bench sheet lensframe
+archived-content	edge cover tag
+page-moved	sweep threshold panel
+partial-completion	gather peg peg notch
+beta-feedback	bench sample ruler
+
+[product]
+theme-switching	solo dualpanel
+responsive-typography	ridge sheet tablet phone
+templates	ridge stencil blank sample
+custom-domains	face window blank
+white-labeling	float dock blank
+multitenancy	gather partition floorplan hub
+embed-anywhere	fit browser layer
+design-tokens	gather swatch peg sample
+component-variants	comparison dial stampwheel
+offline-editing	ends tablet plug
+device-handoff	transfer laptop sheet phone
+portable-configuration	transfer dock keys reader
+extension-marketplace	recess rack cartridge
+compatibility-matrix	solo matrix
+custom-rules	lead gear ruler
+workspace-isolation	gather bin partition tray
+rich-text-editor	bench tablet pencil
+drag-and-drop	fit notch sample
+website-preview	vertical bench browser
+component-inspection	corner cartridge lensframe
+export-to-code	lead clip cartridge
+keyboard-shortcuts	edge keys token
+touch-first-interface	pair tablet switch
+
+[work]
+task-assignment	lead rack ticket
+task-dependencies	branch clamp rail notch
+recurring-tasks	lead gear ticket
+comments-and-annotations	bench sheet clip
+real-time-editing	gather stylus pencil sheet
+design-review	bench swatch lensframe
+decision-log	edge bound token
+standup	gather seat sign table
+meeting-notes	corner microphone receipt
+roadmap	ridge map route marker
+backlog-prioritization	staged stack bin rack
+work-in-progress-limits	gate channel sample
+batch-operations	fit tray clamp
+merge-changes	fork sheet stencil press
+resolve-conflicts	comparison clamp slider
+shared-notes	transfer table sheet table
+presence-indicators	fit seatmap token
+subscribe-to-updates	lead port tray
+workspace-handover	transfer drawer key rack
+audit-a-workflow	aim stylus route
+approval-routing	branch branch stamp badge
+shift-handover	transfer bound ticket stack
+field-inspection	pair tablet marker
+
+[finish]
+email-delivery-delayed	edge mailbox timer
+notifications-muted	fit bell bellcap
+new-message-received	fit mailbox envelope
+daily-digest	fit stack packet
+delivery-confirmation	staged chute receipt check
+read-receipt	lift openmail receipt
+saved-to-your-library	fit rack bound
+file-download-ready	recess chute packet
+sync-complete	lead reader dock
+data-import-complete	transfer tray cartridge hub
+
+[land]
+Product reveal	Launch teaser hero	float bench layer
+Service overview	Introductory section for a managed service	bench table headset
+Feature spotlight	Feature launch hero	fit swatch lamp
+Request a callback	Consultation lead form	lead phone bell
+Audience fit	Homepage section introducing intended roles	gather profile tag seatmap
+Product lineage	About page showing a change in product direction	ridge rough sample cartridge
+Services at a glance	Service menu overview	recess shelves sign
+Signature process	Process differentiator on an agency homepage	staged stencil tool sample
+Discovery call	Early engagement CTA	edge headset book
+Proof of concept	Experimental feature overview	fit notch layer
+Minimum viable product	Early version of a feature page	fit plain cartridge
+Architecture at a glance	Technical homepage summary	gather port wheel floorplan
+Practical benefits	Benefits summary below a product hero	staged tool dial check
+Customer logo wall	Customer adoption proof section	gather blank blank rack
+Product range	Different tiers of a physical product family	ridge blank swatch cabinet
+Customization demo	Marketing demo of configurable hardware	bench dial swatch
+Customer implementation spotlight	Adoption implementation story	corner floorplan tool
+Private preview	Invite-only preview wait screen	gate window key
+Flagship showcase	Main product tile on a multi-product homepage	support case sample
+Support promise	Homepage support pledge	lead headset badge
+Behind the scenes	Making-of section for a design product	corner cover clamp
+Founding story	Company origin section	bench bound marker
+Team introduction	About-page team preview	gather profile seat sign
+Company milestones	About-page timeline	ridge book marker badge
+Editorial endorsement	Product review quote block	corner bubble stamp
+Principle in practice	Operating-principles section	bench scale weight
+Commitment to support	Service model feature block	pair bell headset
+Release highlights	Promotional section for a release	gather sheet ticket marker
+Feature teaser	Soon-to-launch feature card	float token cover
+Compact footprint	Space efficiency claim	bench case ruler
+Designed for teams	Team-focused landing page overview	gather dock laptop table
+Flexible modules	Configurable architecture sales page	branch hub cartridge notch
+Interoperability claim	Compatibility benefits section	fork plug wire port
+Free trial onboarding	Trial CTA card	gate threshold sample
+Product walkthrough	Guided live walkthrough CTA	aim screen stylus
+Early prototype	Demonstration of an early version	fit bench rough
+Sourcing transparency	Materials overview	bench swatch tag
+Modernization case	Services section comparing old and new tools	comparison wheel port
+Local availability	Sales page coverage callout	corner map sign
+Process reliability	Quality commitment claim	staged ruler clamp badge
+Customer advisory board	Invitation to product advisory group	gather book seat seatmap
+Trusted implementation	Onboarding implementation benefits	bench floorplan badge
+Partnership tiers	Channel partner program section	ridge tag stamp case
+Platform footprint	High-level deployment overview	arc map pin port
+Open beta callout	Invitation to help evaluate a new release	aside warning lensframe
+Upgrade announcement	New model or package introduction	comparison sample cabinet
+Direct installation	Service installation CTA	lead tool socket
+
+[nav]
+Section overview	Overview of major parts of a help center	recess shelves map
+Expand a section	Expandable navigation group	fit rack dial
+Open detail drawer	List row detail view	lift drawer profile
+Hierarchical filters	Category and subcategory filters	ridge rack mesh tray
+Clear filters	Return to an unfiltered result list	pair mesh plain
+Search suggestions	Typeahead previews by query	gather ticket tag lens
+Advanced filters	Multi-control result refinement	gather slider switch mesh
+Sitewide search	Search across multiple content sections	aim lens shelves
+Filter by date	Limit results by time period	bench clock mesh
+Filter by owner	Limit results to one contributor	bench profile mesh
+Filter by location	Restrict catalog to a specific region	corner map mesh
+Filter by file type	Restrict results to a supported format	fit folder mesh
+Cross-reference	Related entry in a technical book	lead book tag
+Tabbed content	Tab-based switcher above content	recess tabs panel
+Back to overview	Return to list from item detail	sweep browser stack
+Back to top	Return to a document's top boundary	ridge bound route marker
+Forward navigation	Continue from a previous view	lead route threshold
+Show more results	Expand a shortened result list	lift bin stack
+Collapse results	Hide extended result rows	fit stack cover
+Saved filter preset	Select a saved combination of filters	gather mesh dial bound
+Filter applied	Indicator that result refinement is active	fit mesh check
+Location jump	Scroll to precise position on a map	guide map marker
+Result preview	Preview a result before opening it	corner stack lensframe
+Section anchor	Anchor link to a specific article heading	edge sheet pin
+Contents drawer	Table of contents in a slide-out panel	recess drawer tabs
+Parent category	Return one level up in the category tree	fork folder tabs shelves
+Sibling category	Move laterally between related sections	lead tabs rack
+Next lesson	Choose the next item from a study sequence	lead book steps
+Browse by topic	Topic grouping landing page	gather tag tag folder
+Browse by format	Filter guide by usable output formats	gather sheet panel folder
+Search recent history	Reopen a previously executed search	corner route lens
+Archive browsing	Navigate older issues by volume	recess cabinet bound
+Catalog range	Display grouped inventory sections	gather tray rack shelves
+List density	Choose compact or spacious result rows	comparison stack tabs
+Visible columns	Choose columns to show in a table	fit partition tablet
+Jump history	Navigator history stack	ridge stack browser threshold
+Focus current result	Jump from match list to active result	aim target browser
+Inline definition	Definition launched from a term in running copy	edge sheet bubble
+Return to collection	View parent collection after reading a record	fork receipt sheet folder
+Navigation shortcut	Shortcut into a deeply nested section	guide keys threshold
+Personal dashboard link	Shortcut into a signed-in dashboard	lead profile panel
+Saved place marker	Reopen a stored geographic point	corner bound pin
+
+[account]
+Pending registration	New account still awaiting registration	fit profile timer
+Account activated	First successful account activation	fit reader badge
+Activation link expired	Open an expired account link	ends ticket clock
+Activation link resent	Resend an account activation message	lead stamp envelope
+Choose display name	Set a public identity during signup	fit profile blank
+Add profile photo	Upload an avatar into a new profile	fit profile lensframe
+Configure profile visibility	Control discoverability on signup	corner profile switch
+Choose meeting hours	Configure public appointment availability	bench clock dial
+Accept terms	Confirm terms before continuing	edge sheet stamp
+Acknowledge policy	Read and acknowledge required policy text	edge bound check
+Read onboarding guide	Early first-run orientation	corner book steps
+Set default workspace	Choose the entry workspace	bench sign floorplan
+Skip optional setup	Move past a voluntary configuration	lead route steps
+Connect headset	Connect first input device	lead headset plug
+Choose input device	Select a microphone source	pair microphone dial
+Pair a security key	Connect a credential to a device	lead key print
+Register backup device	Add a fallback device for account access	staged reader phone battery
+Sign out	Session close initiated by an account holder	sweep reader threshold
+Stay signed in	Keep a trusted session available	fit lock check
+Switch accounts	Choose another credential profile	comparison reader profile
+Account merge confirmation	Confirm joining duplicate accounts	fork profile ticket reader
+Remove trusted device	Unlink old trusted hardware	ends print phone
+Recovery codes ready	Show printable access backup information	edge lock receipt
+Restore login with backup code	Recover access from a printed token	lead receipt lock
+Login approval pending	Await confirmation on a second device	corner phone timer
+Account unlocked	Recover after account lockout	ends lock key
+Profile complete	Confirm all required profile details	fit profile badge
+Email address changed	Confirm changing primary account email	staged openmail stamp mailbox
+Primary email pending verification	Account email not yet verified	edge envelope timer
+Secondary account contact	Add a secondary recipient for notices	fork profile envelope mailbox
+Personal workspace ready	Successful creation of a first workspace	fit bench badge
+Team workspace ready	Successful creation of a shared workspace	gather profile badge table
+Invite link generated	Reusable invitation share screen	fit ticket key
+Invitation expired	Recipient opens a stale invitation	corner openmail clock
+Invitation accepted	Owner notification of successful invite	gate threshold profile
+Decline invitation	Recipient dismisses a shared-workspace invite	ends envelope threshold
+Managed seat assignment	Workspace administrator selects a seat	fit seatmap profile
+Join an existing team	Discover and enter an existing organization	guide profile table
+Organization profile	Company identity settings	corner floorplan profile
+Default notification settings	Configure account notices	bench switch bell
+Set account locale	Choose region for locale and language	bench pin swatch
+Set working timezone	Pick a timezone for scheduled activity	corner clock map
+Pause account access	Temporarily pause personal sign-in	fit reader stop
+Account data ready	Export account copy after request	fit drawer packet
+Account closure scheduled	Await future account closure date	corner case clock
+Account restored	Reopen a recoverable account	lift case profile
+First contact created	Add a first address-book entry	fit blank profile
+First draft created	Welcome state when initial draft exists	corner bound pencil
+Reset preference values	Restore defaults in settings	fit dial cover
+
+[state]
+Nothing uploaded	File area before first upload	aside tray cartridge
+No saved items	Saved collection empty state	aside rack tag
+No draft yet	Publishing tool empty draft list	aside folder pencil
+No assigned work	Personal work queue is empty	aside channel profile
+No matching files	File picker returns no compatible file	ends mesh folder
+Nothing shared yet	Shared area before first share	aside table sheet
+No activity yet	Wait for first event on an empty timeline	solo unmarked
+No team seats available	Team invitation blocked by seat capacity	gate seatmap stop
+No available appointment	Calendar search yields no times	ends book clock
+No new version	Version check reports unchanged artifact	aside stampwheel bound
+Payment processing	Wait for background payment handler	gate press receipt
+Retry in progress	Retransmission after transient request error	lead warning gear
+Reconnecting device	Wait during reconnection attempt	lead plug socket
+Connection restored	Confirm application regained a network link	fit port check
+Link no longer valid	Error from stale shared resource link	ends wire tag
+Shared item removed	Shared asset no longer available	ends rack sheet
+Workspace unavailable	Service error when accessing a workspace	gate floorplan warning
+Permission requested	Gated action during access request	fork key ticket latch
+Permission request declined	User lacks requested edit access	gate reader warning
+Access request accepted	User granted a pending permission	fit latch badge
+Viewing restricted mode	Read-only mode with disabled controls	gate panel stop
+Temporary read-only mode	Editor restrictions during maintenance	edge tablet stop
+Required field missing	Validation state in a form	fit blank warning
+Field length exceeded	Validation warning about too much content	bench receipt ruler
+Invalid file format	File extension not accepted by upload	ends notch cartridge
+File too large	File size exceeds configured maximum	comparison packet socket
+Upload interrupted	Transfer stopped before completion	ends rail cartridge
+Upload paused	Upload suspended before arrival	gate rail stop
+Malware scan pending	Attachment view before scan completion	aim lensframe packet
+File ready to replace	Selected overwrite has not happened yet	transfer bin blank tray
+Replace file failed	Existing file stays after replacement error	ends drawer blank
+Revision restored	Revert completed in file or editor	lift stack sheet
+Undo unavailable	Undo action disabled on empty history	aside dial stack
+Draft auto-saving	Editor debounce progress indication	edge bound timer
+Temporarily disabled option	Preference control cannot be changed	fit switch stop
+Changes discarded	Editor confirms leaving with discard	ends tablet sheet
+Form submission blocked	Submit prevented by validation	gate tablet warning
+Form queued	Offline submission queued but unsent	fit chute folder
+Request cancelled	User cancels a pending operation	edge ticket stop
+Attempt limit reached	Retry budget is exhausted	gate dial stop
+Account needs attention	Action required banner in profile view	edge profile warning
+Unsynchronized edit	Local work pending cloud connection	ends pencil port
+Local changes retained	Offline edit remains stored on device	fit tablet cover
+Version conflict detected	Two editors saved incompatible revisions	comparison sheet sheet
+Update required	Old client stopped by version gate	gate cartridge warning
+Update ready to install	Update has transferred and awaits installation	fit socket cartridge
+Update paused	User paused the installation step	gate press stop
+System recovering	Service restart after outage	ridge fuse plug port
+
+[product]
+Compact mode	Condensed UI density setting	comparison browser tablet
+Wide layout	Wider content area setting	fit panel beam
+Left navigation	Persistent left-hand navigation capability	edge panel tabs
+Search inside a document	Document editor find command	bench bound lens
+Pinned editor tools	Always-visible tools for an editor	pair pencil rack
+Formatting presets	Document format preset chooser	gather sheet stampwheel tabs
+Rich media embed	Insert an interactive media frame into text	solo embed
+Contextual toolbar	Editor action strip for one selected object	edge tablet keys
+Image cropping	Resize a crop around an image	fit tablet stencil
+Image replacement	Swap an image while preserving its placement	transfer screen layer panel
+Inline attachment	View an attachment directly in prose	fit sheet clip
+Link preview	Preview appearance and title of an inserted link	edge browser tag
+Content grouping	Group several related interface components	gather folder clip tray
+Reorder components	Change vertical or horizontal order of modules	staged cartridge slider rack
+Autosize content	Frame that responds to changing content	fit tablet layer
+Media alignment	Keep two distinct media pieces aligned	bench panel ruler
+Align to grid	Snap a component to layout guides	fit bench peg
+Smart guides	Spatial cues revealed during alignment	guide layer slider
+Editable region	Distinct area of a page allowed to change	fit partition stylus
+Saved layout preset	Reuse a layout arrangement	fit floorplan packet
+Duplicate a page	Produce a new copy of a page design	comparison browser browser
+Move block between pages	Outline transferring a content module	transfer panel sample browser
+Component detach	Detach a single instance from its master	ends sample notch
+Restore component link	Reconnect a detached component	lead sample notch
+Toggle component visibility	Hide selected component while preserving it	fit cartridge cover
+Create component group	Declare reusable component set	gather sample dial dock
+Layer reordering	Rearrange z-order on design surface	lift layer slider
+Lock layer position	Fix a component's layout position	fit tablet lock
+Measure a component	Inspect its physical spacing or size	bench sample weight
+Scale proportionally	Resize while maintaining relative proportions	ridge stencil sample layer
+Theme preview	Preview a theme before applying it	aim lamp panel
+Save theme changes	Store edited theme values	gather swatch latch bound
+Import design library	Bring a library into an editor	transfer shelves packet rack
+Export design assets	Send selected artwork out as assets	transfer bench swatch case
+Font fallback	Define a secondary face for missing primary glyphs	staged sheet swatch tabs
+Low contrast warning	Flag insufficient contrast in an editor	edge lamp warning
+Component slot fallback	Display an alternate element when empty	sweep socket blank
+Open inspector from canvas	View property panel for selected item	lead tablet lensframe
+Cross-device preview	Inspect same layout in three widths	gather laptop tablet screen
+Content version comparison	Compare a published version to a managed draft	comparison sheet bound
+Publish single component	Release one component without publishing all	recess rack badge
+Region-specific theme	Show localized theme styling	corner swatch pin
+Preview account permissions	View appearance for different roles	gather reader profile panel
+Live settings preview	Preview changes to an interface while editing	aim slider screen
+Reset canvas zoom	Return workspace to default magnification	fit lens target
+Presentation mode	Show a clean large output view	lead browser projector
+Hide secondary panels	Minimize distractions in a design editor	fit partition cover
+Scripting hook	Attach a custom script trigger to a component	fork latch port keys
+Share a theme	Package and distribute a color and layout theme	lead swatch envelope
+
+[work]
+Task created	First step of a task lifecycle	fit channel ticket
+Task started	Task status transitioned to active	lead ticket gear
+Task blocked	Task cannot advance without intervention	gate rail latch
+Task completed	One task accepted as complete	fit ticket badge
+Task reopened	Return a closed assignment to active work	sweep check rack
+Task rescheduled	Choose a future time for assigned work	corner ticket dial
+Task split	Divide a single task into multiple work items	branch ticket stack folder
+Tasks bundled	Group items with one common work owner	fit stack clip
+Task reassigned	Switch ownership between team members	transfer profile ticket seat
+Task handed back	Return a task to the previous owner	transfer rack ticket profile
+Assign reviewer	Choose a person to review requested work	aim profile lensframe
+Reserve review slot	Book time in a review queue	bench lensframe clock
+Review changes requested	Ask for concrete improvements in review	edge lensframe pencil
+Review approved	Reviewer signs off on a submission	fit lensframe badge
+Review paused	Await continuation of a review	edge lensframe timer
+Review reminder	Prompt a pending reviewer	corner lensframe bell
+Resolve comment	Mark an addressed issue in a discussion	fit bubble check
+Mention a teammate	Notify a contributor in collaborative content	lead bubble profile
+Open comment thread	View contextual discussion in an editor	lift bubble stack
+Follow a discussion	Subscribe to new replies in a thread	lead bubble bell
+Unfollow a discussion	Stop receiving replies to a thread	ends bubble bell
+Pin a decision	Keep a key decision visible to the group	edge bound pin
+Revisit a decision	Open an earlier team decision for review	sweep token book
+Change proposal	Present a proposal before implementing it	fit clamp sheet
+Proposal accepted	Choose one proposed change for implementation	fit sheet badge
+Meeting agenda	Outline discussion items before a meeting	bench table tabs
+Cancel meeting	Conference reservation withdrawn	edge microphone stop
+Move meeting to another room	Change the venue in a meeting invite	transfer table ticket floorplan
+Meeting recording ready	Announce completed meeting recording	lead microphone loom
+Share a meeting summary	Distribute decisions after a meeting	fork microphone receipt mailbox
+Workshop materials	Provide collaboration templates to participants	gather stencil stylus case
+Workshop outputs	Display decisions produced during a workshop	gather swatch receipt bench
+Workload balancing	Balance assignments between two contributors	comparison seat scale
+Reserve a workbench	Block a limited shared resource	corner bench clock
+Release a shared resource	Free a reserved workspace for teammates	ends bench latch
+Ownership transferred	New team owner confirmed	transfer seat key table
+New contributor joined	Workspace event for new participant	gate seatmap profile
+Book a handover session	Schedule a team transfer meeting	bench key clock
+Estimation round	Collect effort estimates before planning	gather ticket scale table
+Escalate a blocker	Route a blocked task to an owner	fork stop ticket sign
+Risk register	Maintain a record of delivery risks	edge bound cone
+Inspect service metric	Review operational performance in a workflow	bench chart lensframe
+Check acceptance criteria	Verify requirements before publishing	staged sheet ruler badge
+Approve batch changes	Approve a group of grouped records	fit stack stamp
+Unbundle tasks	Return a batch to separate work items	branch packet ticket folder
+Select multiple items	Choose a subset for bulk editing	gather tag sample mesh
+Change approval policy	Change decision thresholds for a review	gather badge dial stamp
+Review queue	Create one entry in the current review line	lead rail lensframe
+Resolve duplicate request	Consolidate requests into one workflow	fork ticket envelope press
+Export meeting notes	Download an edited meeting transcript	transfer microphone receipt case
+Sync shift availability	Align the schedule between shift teams	lead clock seatmap
+Tag workflow exception	Mark an exceptional instance for inspection	corner chute tag
+Field check completed	Mark site inspection as passed	fit marker badge
+
+[finish]
+New comment alert	Notify document owner of new comment	edge bubble bell
+Mention alert	Notify one user about a mention	fit profile bubble
+New follower alert	Notice that another person followed a profile	pair profile pin
+New assignment alert	Tell user about newly assigned work	lead bell ticket
+Due soon alert	Soon-due item reminder	edge clock marker
+Task overdue alert	Notice a missed due date	corner clock warning
+Overdue item resolved	Notice an overdue item was resolved	fit clock check
+Quiet hours started	Confirmation that a private quiet window began	fit clock bellcap
+Quiet hours ended	Notice that alerts have resumed	lead clock bell
+Delivery attempt failed	Undelivered message notification	ends envelope warning
+Delivery retried	Send-status message after retry attempt	lead timer mailbox
+Unsubscribe confirmed	Confirmation that alerts are disabled	ends bell switch
+Subscription renewed	Billing-related continuation toast	fit receipt token
+Form received	Successful submission confirmation	fit tray receipt
+Form accepted	Successful validation after review	fit receipt badge
+Notification read	Mark a previously unread alert as read	edge bell check
+Notification cleared	Confirmation that one alert was cleared	ends bell tray
+Notifications grouped	Grouped alert batch for a single topic	fork bell bubble packet
+Message queued	Pending delivery on a messaging service	gate mailbox ticket
+Message delivered	A short direct message has arrived	fit mailbox bubble
+Attachment unavailable	Pending shared attachment could not be loaded	ends clip tray
+Attachment uploaded	Completed upload associated with a message	fit envelope clip
+Attachment delivered	Confirmation for delivered attachment	transfer clip sheet mailbox
+Import validated	File was imported and verified for structure	fit notch badge
+Import partially completed	Some rows imported, others pending	gather packet warning chute
+Import retry scheduled	Failed import will run later	corner chute clock
+Export queued	Background file export waiting	gate drawer ticket
+Export complete	Ready to access output from a previous export	lift drawer packet
+Archive complete	Items stored successfully	fit cabinet latch
+Shortcut saved	User stored a new quick action	fit keys tag
+Settings synchronized	Success state for replicated preferences	lead slider dial
+Link copied	Copy action confirmation for shareable link	edge clip wire
+File moved	Payload moved to a different location	transfer rack sheet bin
+File renamed	Existing file gained a new label	edge sheet tag
+File restored	Recoverable file successfully restored	lift cover sheet
+File deletion scheduled	Undoable scheduled removal notice	corner bin timer
+Password changed	Account security notification after password change	fit lock key
+Key rotated	Successful replacement of a trusted key	arc key key lock
+Trusted device added	Confirmation after authorizing a device	fit phone badge
+Device reconnect complete	Success after reconnecting offline device	lead port phone
+Theme applied	Selected theme now shown	fit panel swatch
+Preferences reset	Confirm defaults restored successfully	edge dial badge
+System update installed	Software version update completed	fit cartridge badge
+Image saved	Artwork saved from an editor	fit tablet check
+Workspace launched	Success screen after enabling a workspace	fit floorplan marker

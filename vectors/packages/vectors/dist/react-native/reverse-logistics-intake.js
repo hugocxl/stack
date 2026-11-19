@@ -1,0 +1,8 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path } from "react-native-svg";
+export const ReverseLogisticsIntakeVector = /*#__PURE__*/ forwardRef(function ReverseLogisticsIntakeVector({size = 480, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "Reverse logistics intake", ...props, ref},
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".43", "d": "M223.31,169.27 176.02,192.92 M109.25,159.53 223.31,102.50 223.31,169.27 M137.46,202.65 163.69,215.77 M137.46,214.58 178.00,234.85"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".76", "d": "M371.33,176.11 395.00,133.50 268.18,70.09 M249.94,81.79 223.62,102.26 M223.63,169.43 303.98,209.61 M370.75,176.22 275.78,128.73 M270.99,126.34 259.35,120.52 M249.27,115.48 241.44,111.57 M236.66,109.17 223.67,102.68 M108.64,159.44 85.00,126.35 180.38,78.65 222.93,102.29 M371.15,243.19 257.05,300.24 M371.15,226.90 371.15,243.19 M371.15,176.42 257.01,233.49 M257.05,233.92 297.23,263.46 392.62,215.77 371.15,176.42 M108.85,226.50 256.69,300.42 256.69,234.10 M108.85,210.21 108.85,226.50 M108.85,159.73 256.69,233.65 216.15,263.46 87.38,199.08 108.85,159.73"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M323.46,59.58 287.69,59.58 271.00,61.96 259.08,70.31 254.31,84.62 254.31,151.38 M271.48,131.35 254.31,151.38 237.14,114.18"}));
+});
