@@ -1,0 +1,87 @@
+{
+  "name": "readout",
+  "title": "Readout",
+  "group": "instruments",
+  "summary": "One setting read at a distance: a mono label over a large value with its unit.",
+  "use": [
+    "For the settings that define a state: lens 24 mm, mode AUTO, ISO 250, tempo 128.0.",
+    "Group them in a grid of hairline cells; tap one to change it."
+  ],
+  "anatomy": [
+    "Label (mono)",
+    "Value (large, tabular)",
+    "Optional unit (small, raised)",
+    "Optional live dot (accent)"
+  ],
+  "options": [
+    {
+      "name": "label",
+      "values": [
+        "text"
+      ],
+      "default": null,
+      "description": "What the value is."
+    },
+    {
+      "name": "value",
+      "values": [
+        "text or number"
+      ],
+      "default": null,
+      "description": "The value as people read it."
+    },
+    {
+      "name": "unit",
+      "values": [
+        "text"
+      ],
+      "default": null,
+      "description": "mm, %, s, kHz."
+    },
+    {
+      "name": "dim",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "In faint, for a value that is off or not in use."
+    },
+    {
+      "name": "live",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "An accent dot after the label, for the value being set now."
+    }
+  ],
+  "states": [
+    "default",
+    "dim",
+    "live"
+  ],
+  "tokens": [
+    "ink",
+    "faint",
+    "muted",
+    "accent",
+    "mono",
+    "size-title",
+    "size-label",
+    "space-1",
+    "space-2"
+  ],
+  "rules": [
+    "The value is at title size, never larger.",
+    "At most one live readout at a time."
+  ],
+  "accessibility": [
+    "The label and value are read together, as “Lens, 24 mm”."
+  ],
+  "platforms": {
+    "react": "Readout",
+    "swift": "DSReadout"
+  }
+}

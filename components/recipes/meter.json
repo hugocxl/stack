@@ -1,0 +1,79 @@
+{
+  "name": "meter",
+  "title": "Meter",
+  "group": "instruments",
+  "summary": "A level read at a glance: a row of segments that light up to the value, with its label and reading.",
+  "use": [
+    "For a level that changes on its own: CPU, input gain, storage, battery.",
+    "Not for task progress; that is a progress bar."
+  ],
+  "anatomy": [
+    "Label (mono)",
+    "Reading (mono, tabular)",
+    "Segments: lit to the value, unlit on the rule"
+  ],
+  "options": [
+    {
+      "name": "value",
+      "values": [
+        "0–1"
+      ],
+      "default": null,
+      "description": "The level."
+    },
+    {
+      "name": "segments",
+      "values": [
+        "8–40"
+      ],
+      "default": 24,
+      "description": "How many segments the row has."
+    },
+    {
+      "name": "variant",
+      "values": [
+        "bars",
+        "dots"
+      ],
+      "default": "bars",
+      "description": "Thin vertical bars, or dots."
+    },
+    {
+      "name": "tone",
+      "values": [
+        "accent",
+        "success",
+        "warning",
+        "error",
+        "info"
+      ],
+      "default": "accent",
+      "description": "The color of the lit segments. A status tone when the level has a meaning."
+    }
+  ],
+  "states": [
+    "idle",
+    "live"
+  ],
+  "tokens": [
+    "accent",
+    "rule",
+    "muted",
+    "ink",
+    "mono",
+    "size-label",
+    "space-2",
+    "space-3"
+  ],
+  "rules": [
+    "Only lit segments take a color; everything else is ink, muted or rule.",
+    "The reading always shows the number, so color never carries the level alone."
+  ],
+  "accessibility": [
+    "Exposed as a meter with its value, minimum and maximum."
+  ],
+  "platforms": {
+    "react": "Meter",
+    "swift": "DSMeter"
+  }
+}

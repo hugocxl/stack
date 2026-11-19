@@ -38,3 +38,5 @@ export type {
 export { Page, Masthead, Footer } from "./layout.js";
 export type { PageProps, MastheadProps, FooterProps, NavLink } from "./layout.js";
 export { cx } from "./utils.js";
+export { Meter, Knob, Slider, SlideSwitch, Readout, ReadoutGrid } from "./instruments.js";
+export type { MeterProps, KnobProps, SliderProps, SliderMark, SlideSwitchProps, SlideSwitchOption, ReadoutProps, ReadoutGridProps } from "./instruments.js";

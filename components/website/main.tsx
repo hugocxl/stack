@@ -8,7 +8,6 @@ import {
   Checkbox,
   CodeBlock,
   Footer,
-  FigureGrid,
   List,
   Masthead,
   Meta,
@@ -30,9 +29,6 @@ import {
 import recipes from "@hugocxl/components/recipes.json";
 import { ArrowLeftIcon } from "@hugocxl/icons/react/arrow-left";
 import { ArrowRightIcon } from "@hugocxl/icons/react/arrow-right";
-import { ComponentVariantsVector } from "@hugocxl/vectors/react/component-variants";
-import { DeviceHandoffVector } from "@hugocxl/vectors/react/device-handoff";
-import { WebsitePreviewVector } from "@hugocxl/vectors/react/website-preview";
 import { examples } from "./examples.js";
 
 type Recipe = {
@@ -55,6 +51,7 @@ const groups: { id: string; title: string; text: string }[] = [
   { id: "foundations", title: "Foundations", text: "The theme and the type every component is set in." },
   { id: "actions", title: "Actions", text: "What people click to do something or go somewhere." },
   { id: "inputs", title: "Inputs", text: "What people type into, pick and switch." },
+  { id: "instruments", title: "Instruments", text: "Meters, knobs, faders and readouts for values people tune and watch." },
   { id: "feedback", title: "Feedback", text: "What the interface says back." },
   { id: "content", title: "Content", text: "Headings, text, code, lists and figures." },
   { id: "layout", title: "Layout", text: "The page or screen everything sits in." },
@@ -76,7 +73,26 @@ function useRoute() {
   return route;
 }
 
-const platformsLabel = (recipe: Recipe) => [recipe.platforms.react && "React", recipe.platforms.swift && "Swift"].filter(Boolean).join(" · ");
+// Cards that need the room of two columns; the rest fill one.
+const wideCards = new Set(["meter", "slider", "readout", "list", "table", "figure", "figure-grid", "code-block", "masthead", "footer", "notice", "progress", "knob"]);
+
+function Card({ recipe, number }: { recipe: Recipe; number: number }) {
+  const entry = examples[recipe.name];
+  const first = entry?.examples[0];
+  const wide = wideCards.has(recipe.name);
+  const fill = !entry?.card && first?.fill;
+  return (
+    <section className="site-card" data-span={wide ? 2 : undefined} aria-labelledby={`card-${recipe.name}`}>
+      <a className="site-card-head" href={`#/${recipe.name}`} id={`card-${recipe.name}`}>
+        <span className="site-card-number">{String(number).padStart(2, "0")}</span>
+        {recipe.title}
+      </a>
+      <div className="site-card-body" data-fill={fill ? "" : undefined}>
+        {entry?.card ? entry.card() : first?.render()}
+      </div>
+    </section>
+  );
+}
 
 function Home() {
   return (
@@ -85,32 +101,18 @@ function Home() {
       <Meta items={[<Status key="s">Preview</Status>, `${all.length} components`, "React · Swift"]} />
       <Section>
         <p>
-          Each component starts as a recipe: what it is for, its parts, its options and the rules it keeps, written once and
-          independent of any platform. <Muted>React and Swift build the same recipe with the design system's tokens, so a button is the same button on the web and on a phone.</Muted>
+          Each component starts as a recipe: what it is for, its parts, its options and the rules it keeps. <Muted>React and Swift build the same recipe with the design system's tokens. Open any card for its examples, code and recipe.</Muted>
         </p>
       </Section>
-      <FigureGrid
-        items={[
-          { media: <ComponentVariantsVector />, title: "One recipe", text: "Anatomy, options, states and rules, as JSON." },
-          { media: <WebsitePreviewVector />, title: "React", text: "@hugocxl/components/react on the web." },
-          { media: <DeviceHandoffVector />, title: "Swift", text: "The Components library for SwiftUI." },
-        ]}
-      />
+      <div className="site-grid dsc-wide">
+        {ordered.map((recipe, index) => (
+          <Card key={recipe.name} recipe={recipe} number={index + 1} />
+        ))}
+      </div>
       <Section heading="Install" id="install">
         <CodeBlock label="React" code={'pnpm add @hugocxl/components\n\nimport "@hugocxl/components/styles.css";\nimport { Button } from "@hugocxl/components/react";'} />
         <CodeBlock label="Swift Package Manager" code={'.package(url: "https://github.com/hugocxl/stack", branch: "main")\n\nimport Components\nContentView().dsTheme()'} />
       </Section>
-      {groups.map((group) => (
-        <Section key={group.id} heading={group.title} id={group.id}>
-          <p>{group.text}</p>
-          <List
-            density="compact"
-            items={all
-              .filter((recipe) => recipe.group === group.id)
-              .map((recipe) => ({ key: recipe.name, title: recipe.title, trailing: platformsLabel(recipe), href: `#/${recipe.name}` }))}
-          />
-        </Section>
-      ))}
       <Section heading="See them together" id="examples">
         <p>Screens built only from these components, to judge them as a whole.</p>
         <ButtonGroup>

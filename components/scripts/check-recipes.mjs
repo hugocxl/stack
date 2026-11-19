@@ -13,7 +13,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const groups = ["foundations", "actions", "inputs", "feedback", "content", "layout"];
+const groups = ["foundations", "actions", "inputs", "feedback", "instruments", "content", "layout"];
 const fields = ["name", "title", "group", "summary", "use", "anatomy", "options", "states", "tokens", "rules", "accessibility", "platforms"];
 const problems = [];
 
@@ -35,7 +35,7 @@ for (const { file, recipe } of recipes) {
 
 // 2. React
 const react = await import(pathToFileURL(join(root, "packages/components/dist/react/index.js")).href);
-const helpers = new Set(["ButtonGroup", "Muted", "Accent", "useTheme", "themeScript", "cx"]);
+const helpers = new Set(["ButtonGroup", "ReadoutGrid", "Muted", "Accent", "useTheme", "themeScript", "cx"]);
 const reactNames = new Set(recipes.map(({ recipe }) => recipe.platforms.react).filter(Boolean));
 for (const name of reactNames) if (!(name in react)) problems.push(`React: ${name} is not exported`);
 for (const name of Object.keys(react)) {

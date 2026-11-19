@@ -1,0 +1,86 @@
+{
+  "name": "slider",
+  "title": "Slider",
+  "group": "instruments",
+  "summary": "A fader on a ruler: a hairline track filled in ink up to an accent pointer, with ticks below.",
+  "use": [
+    "For a value on a continuous or finely stepped range: volume, exposure, opacity, tempo."
+  ],
+  "anatomy": [
+    "Label and reading (mono)",
+    "Track (rule) filled in ink",
+    "Pointer (accent line)",
+    "Ruler: minor ticks, major ticks with optional numbers"
+  ],
+  "options": [
+    {
+      "name": "value",
+      "values": [
+        "min–max"
+      ],
+      "default": null,
+      "description": "The current value."
+    },
+    {
+      "name": "min / max / step",
+      "values": [
+        "numbers"
+      ],
+      "default": "0 / 100 / 1",
+      "description": "The range and its steps."
+    },
+    {
+      "name": "ticks",
+      "values": [
+        "count"
+      ],
+      "default": 21,
+      "description": "Ticks on the ruler; every fifth is major."
+    },
+    {
+      "name": "format",
+      "values": [
+        "function"
+      ],
+      "default": null,
+      "description": "How the reading is written: 64, +1⅓, 1/125."
+    },
+    {
+      "name": "centered",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "Fill from the middle, for ranges around zero such as exposure."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "dragging",
+    "focus",
+    "disabled"
+  ],
+  "tokens": [
+    "rule",
+    "ink",
+    "faint",
+    "accent",
+    "mono",
+    "size-mono",
+    "size-label",
+    "target"
+  ],
+  "rules": [
+    "The pointer is the only accent; the fill is ink.",
+    "Clicking anywhere on the track moves the pointer there."
+  ],
+  "accessibility": [
+    "Exposed as a slider with its written value; arrow, Page and Home/End keys work."
+  ],
+  "platforms": {
+    "react": "Slider",
+    "swift": "DSSlider"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "slide-switch",
+  "title": "Slide switch",
+  "group": "instruments",
+  "summary": "A hardware switch with two to four labelled positions on a short track.",
+  "use": [
+    "For a mode that changes how something works, set once and left: output, quality, input source."
+  ],
+  "anatomy": [
+    "Label (mono)",
+    "Track (ink)",
+    "Flat thumb",
+    "Stops: a tick and a mono label each; the picked one in ink with an accent dash"
+  ],
+  "options": [
+    {
+      "name": "options",
+      "values": [
+        "value, label"
+      ],
+      "default": null,
+      "description": "Two to four positions."
+    },
+    {
+      "name": "value",
+      "values": [
+        "option value"
+      ],
+      "default": null,
+      "description": "The picked position."
+    },
+    {
+      "name": "orientation",
+      "values": [
+        "vertical",
+        "horizontal"
+      ],
+      "default": "vertical",
+      "description": "Vertical reads like hardware; horizontal fits a row."
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "disabled"
+  ],
+  "tokens": [
+    "ink",
+    "canvas",
+    "rule",
+    "muted",
+    "accent",
+    "mono",
+    "size-label",
+    "target"
+  ],
+  "rules": [
+    "One or two short words per position, uppercased by the label style.",
+    "For views of the same content use a segmented control instead."
+  ],
+  "accessibility": [
+    "Exposed as a radio group; arrow keys move between positions and every label is a target."
+  ],
+  "platforms": {
+    "react": "SlideSwitch",
+    "swift": "DSSlideSwitch"
+  }
+}

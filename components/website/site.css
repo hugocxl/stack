@@ -19,3 +19,21 @@
 .site-swatch { width: var(--ds-target); height: var(--ds-target); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-control) }
 .site-demo-screen { padding: var(--ds-space-6); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-media) }
 .site-demo-screen > * + * { margin-top: var(--ds-space-6) }
+
+/* Home: every component in a card, numbered like a spec sheet. */
+.site-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: row dense; gap: var(--ds-space-4) }
+.site-card { display: flex; flex-direction: column; min-width: 0; min-height: 15rem; padding: var(--ds-space-4) var(--ds-space-5) var(--ds-space-5); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-media) }
+.site-card[data-span="2"] { grid-column: span 2 }
+.site-card-head { display: flex; align-items: center; gap: var(--ds-space-3); min-height: var(--ds-target); margin-top: calc(-1 * var(--ds-space-2)); font: 400 var(--ds-size-label)/1.5 var(--ds-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ds-muted); text-decoration: none }
+.site-card-head::after { content: ""; flex: 1; height: 1px; background: var(--ds-rule) }
+.site-card-head:hover { color: var(--ds-ink) }
+.site-card-number { color: var(--ds-accent-text) }
+.site-card-body { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: var(--ds-space-4); padding-top: var(--ds-space-4); font-size: var(--ds-size-small); line-height: 1.4 }
+.site-card-body[data-fill] { align-items: stretch }
+.site-card-body > .dsc-stack { width: 100%; max-width: 20em }
+.site-card-body .dsc-field { width: 100% }
+.site-card-body .dsc-figure, .site-card-body .dsc-grid { width: 100% }
+@media (max-width: 1100px) { .site-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 680px) { .site-grid { grid-template-columns: minmax(0, 1fr) } .site-card[data-span="2"] { grid-column: auto } }
+
+.site-panel { display: flex; flex-direction: column; gap: var(--ds-space-5); width: 100% }

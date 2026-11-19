@@ -47,8 +47,8 @@ export function Masthead({ wordmark, href = "/", links = [], nav, themeToggle = 
     <header {...props} className={cx("dsc-masthead", className)}>
       {nav && (
         <nav className="dsc-masthead-nav" aria-label={nav.label}>
-          {nav.links.map((link) => (
-            <a key={link.href} href={link.href} aria-current={link.current ? "page" : undefined}>
+          {nav.links.map((link, index) => (
+            <a key={`${index}-${link.href}`} href={link.href} aria-current={link.current ? "page" : undefined}>
               {link.label}
             </a>
           ))}
@@ -57,8 +57,8 @@ export function Masthead({ wordmark, href = "/", links = [], nav, themeToggle = 
       <a className="dsc-wordmark" href={href}>
         {wordmark}
       </a>
-      {links.map((link) => (
-        <a key={link.href} href={link.href} aria-current={link.current ? "page" : undefined}>
+      {links.map((link, index) => (
+        <a key={`${index}-${link.href}`} href={link.href} aria-current={link.current ? "page" : undefined}>
           {link.label}
         </a>
       ))}
@@ -79,8 +79,8 @@ export type FooterProps = Omit<ComponentPropsWithoutRef<"footer">, "children"> &
 export function Footer({ links, secondary = [], className, ...props }: FooterProps) {
   const group = (items: NavLink[]) => (
     <ul>
-      {items.map((link) => (
-        <li key={link.href}>
+      {items.map((link, index) => (
+        <li key={`${index}-${link.href}`}>
           <a href={link.href}>{link.label}</a>
         </li>
       ))}

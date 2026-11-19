@@ -8,6 +8,7 @@ public enum DSGallery {
         "theme", "text",
         "button", "icon-button", "link",
         "text-field", "checkbox", "switch", "radio-group", "select", "segmented-control",
+        "meter", "knob", "slider", "slide-switch", "readout",
         "status", "notice", "dialog", "progress",
         "title", "statement", "meta", "section", "divider", "code-block", "list", "figure", "figure-grid",
         "page",
@@ -89,6 +90,38 @@ public enum DSGallery {
                 DSOption("react", label: "React", icon: StrokeIcon.code),
                 DSOption("swift", label: "Swift", icon: StrokeIcon.phone),
             ])
+        case "meter":
+            DSMeter(value: 0.68, label: "CPU")
+            DSMeter(value: 0.42, label: "Input", segments: 16, variant: .dots)
+            DSMeter(value: 0.91, label: "Storage", tone: .warning) { "\(Int(($0 * 64).rounded())) of 64 GB" }
+        case "knob":
+            HStack(spacing: DSSpace.s3) {
+                DSKnob("Tone", value: .constant(30))
+                DSKnob("Drive", value: .constant(72))
+                DSKnob("Space", value: .constant(50))
+                DSKnob("Mix", value: .constant(18))
+            }
+        case "slider":
+            DSSlider("Volume", value: .constant(64), in: 0...127, ticks: 33, majorEvery: 4)
+            DSSlider("Exposure", value: .constant(4.0 / 3), in: -3...3, step: 1.0 / 3, ticks: 19, majorEvery: 3, centered: true) { _ in "+1 ⅓" }
+        case "slide-switch":
+            HStack(alignment: .top, spacing: DSSpace.s7) {
+                DSSlideSwitch("Output", selection: .constant("cue"), options: [
+                    DSOption("main", label: "Main"), DSOption("cue", label: "Cue"), DSOption("both", label: "Both"),
+                ])
+                DSSlideSwitch("Quality", selection: .constant("mid"), options: [
+                    DSOption("lo", label: "Lo"), DSOption("mid", label: "Mid"), DSOption("hi", label: "Hi"),
+                ], orientation: .horizontal)
+            }
+        case "readout":
+            DSReadoutGrid(columns: 3) {
+                DSReadout("Lens", value: "24", unit: "mm")
+                DSReadout("Mode", value: "Auto", live: true)
+                DSReadout("Preset", value: "Off", dim: true)
+                DSReadout("Speed", value: "1/125", selected: true) {}
+                DSReadout("ISO", value: "250") {}
+                DSReadout("WB", value: "5600", unit: "K") {}
+            }
         case "status":
             HStack(spacing: DSSpace.s5) {
                 DSStatus("Beta")

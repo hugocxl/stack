@@ -77,3 +77,19 @@ test("page shell", () => {
   assert.match(markup, /<main><article class="dsc-column dsc-opening">content<\/article><\/main>/);
   assert.match(markup, /aria-label="Switch theme"/);
 });
+
+test("instruments expose their values", () => {
+  const meter = html(h(C.Meter, { label: "CPU", value: 0.68, segments: 10 }));
+  assert.match(meter, /role="meter"[^>]*aria-valuenow="68"/);
+  assert.equal((meter.match(/data-lit=""/g) ?? []).length, 7);
+  const knob = html(h(C.Knob, { label: "Tone", defaultValue: 30 }));
+  assert.match(knob, /role="slider"[^>]*aria-valuemin="0"[^>]*aria-valuemax="100"[^>]*aria-valuenow="30"/);
+  const slider = html(h(C.Slider, { label: "EV", min: -3, max: 3, step: 0.5, value: 1, format: (v) => `+${v}` }));
+  assert.match(slider, /aria-valuetext="\+1"/);
+  assert.match(slider, /class="dsc-slider-pointer" style="left:66.66/);
+  const slide = html(h(C.SlideSwitch, { label: "Output", defaultValue: "cue", options: [{ value: "main", label: "Main" }, { value: "cue", label: "Cue" }] }));
+  assert.match(slide, /role="radiogroup"/);
+  assert.match(slide, /aria-checked="true" tabindex="0"[^>]*>.*Cue/);
+  assert.match(html(h(C.Readout, { label: "ISO", value: 250, onPress() {}, selected: true })), /<button[^>]*aria-pressed="true"/);
+  assert.match(html(h(C.Readout, { label: "Lens", value: "24", unit: "mm", dim: true })), /data-dim=""/);
+});

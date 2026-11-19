@@ -1,6 +1,6 @@
 // Live examples for every recipe: the React specimen, its code, and the Swift code that
 // draws the same thing (the Swift captures come from DSGallery in Sources/Components).
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   Button,
   ButtonGroup,
@@ -10,17 +10,25 @@ import {
   Divider,
   Figure,
   FigureGrid,
+  Footer,
   IconButton,
+  Knob,
   Link,
   List,
+  Masthead,
   Meta,
+  Meter,
   Muted,
   Notice,
   Progress,
   RadioGroup,
+  Readout,
+  ReadoutGrid,
   Section,
   SegmentedControl,
   Select,
+  SlideSwitch,
+  Slider,
   Statement,
   Status,
   Switch,
@@ -52,7 +60,8 @@ export type Example = {
   react: string;
 };
 
-export type RecipeExamples = { examples: Example[]; swift?: string };
+/** card: what the component's card on the home grid shows, when not its first example. */
+export type RecipeExamples = { examples: Example[]; swift?: string; card?: () => ReactNode };
 
 const code = (strings: TemplateStringsArray) => {
   const lines = strings.raw.join("").replace(/^\n/, "").replace(/\s+$/, "").split("\n");
@@ -144,8 +153,57 @@ function FigurePagerDemo() {
   );
 }
 
+const formatEv = (value: number) => {
+  if (Math.abs(value) < 1e-6) return "±0";
+  const sign = value > 0 ? "+" : "−";
+  const thirds = Math.round(Math.abs(value) * 3);
+  const whole = Math.floor(thirds / 3);
+  const rest = thirds % 3;
+  return `${sign}${whole || rest === 0 ? whole : ""}${rest ? (whole ? " " : "") + (rest === 1 ? "⅓" : "⅔") : ""}`;
+};
+
+function LiveMeters() {
+  const [level, setLevel] = useState(0.4);
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = setInterval(() => setLevel((current) => Math.min(1, Math.max(0.05, current + (Math.random() - 0.5) * 0.3))), 140);
+    return () => clearInterval(timer);
+  }, []);
+  return (
+    <>
+      <Meter label="CPU" value={0.68} />
+      <Meter label="Input" value={level} variant="dots" segments={16} />
+      <Meter label="Storage" value={0.91} tone="warning" format={(v) => `${Math.round(v * 64)} of 64 GB`} />
+    </>
+  );
+}
+
+function CameraPanel() {
+  const [active, setActive] = useState("speed");
+  const [ev, setEv] = useState(1 + 1 / 3);
+  return (
+    <div className="site-panel">
+      <ReadoutGrid columns={3}>
+        <Readout label="Lens" value="24" unit="mm" />
+        <Readout label="Mode" value="Auto" live />
+        <Readout label="Preset" value="Off" dim />
+        <Readout label="Speed" value="1/125" onPress={() => setActive("speed")} selected={active === "speed"} />
+        <Readout label="ISO" value={250} onPress={() => setActive("iso")} selected={active === "iso"} />
+        <Readout label="WB" value="5600" unit="K" onPress={() => setActive("wb")} selected={active === "wb"} />
+      </ReadoutGrid>
+      <Slider label="EV" min={-3} max={3} step={1 / 3} value={ev} onValueChange={setEv} centered ticks={19} majorEvery={3} format={formatEv} />
+    </div>
+  );
+}
+
 export const examples: Record<string, RecipeExamples> = {
   theme: {
+    card: () => (
+      <>
+        <ThemeToggle />
+        <Text variant="label">Switch the whole page</Text>
+      </>
+    ),
     examples: [
       {
         title: "Set up once",
@@ -680,6 +738,178 @@ export const examples: Record<string, RecipeExamples> = {
       DSProgress(label: "Preparing the export")
     `,
   },
+  meter: {
+    examples: [
+      {
+        title: "Bars and dots",
+        fill: true,
+        render: () => <LiveMeters />,
+        react: code`
+          <Meter label="CPU" value={0.68} />
+          <Meter label="Input" value={level} variant="dots" segments={16} />
+          <Meter label="Storage" value={0.91} tone="warning" format={(v) => \`\${Math.round(v * 64)} of 64 GB\`} />
+        `,
+      },
+    ],
+    swift: code`
+      DSMeter(value: 0.68, label: "CPU")
+      DSMeter(value: level, label: "Input", segments: 16, variant: .dots)
+      DSMeter(value: 0.91, label: "Storage", tone: .warning) { "\(Int(($0 * 64).rounded())) of 64 GB" }
+    `,
+  },
+  knob: {
+    examples: [
+      {
+        title: "A bank of knobs",
+        render: () => (
+          <div className="site-row" style={{ gap: "var(--ds-space-5)" }}>
+            <Knob label="Tone" defaultValue={30} />
+            <Knob label="Drive" defaultValue={72} />
+            <Knob label="Space" defaultValue={50} />
+            <Knob label="Mix" defaultValue={18} />
+          </div>
+        ),
+        react: code`
+          <Knob label="Tone" defaultValue={30} />
+          <Knob label="Drive" defaultValue={72} />
+          <Knob label="Space" defaultValue={50} />
+          <Knob label="Mix" defaultValue={18} />
+        `,
+      },
+      {
+        title: "Sizes and readings",
+        render: () => (
+          <div className="site-row" style={{ gap: "var(--ds-space-6)", alignItems: "flex-end" }}>
+            <Knob size="small" label="Pan" min={-50} max={50} defaultValue={0} format={(v) => (v === 0 ? "C" : v < 0 ? `L${-v}` : `R${v}`)} />
+            <Knob label="Gain" min={-24} max={24} step={0.5} defaultValue={0} format={(v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} dB`} />
+            <Knob size="large" label="Tempo" min={60} max={200} defaultValue={128} format={(v) => `${v} BPM`} />
+          </div>
+        ),
+        react: code`
+          <Knob size="small" label="Pan" min={-50} max={50} defaultValue={0}
+            format={(v) => (v === 0 ? "C" : v < 0 ? \`L\${-v}\` : \`R\${v}\`)} />
+          <Knob label="Gain" min={-24} max={24} step={0.5} defaultValue={0}
+            format={(v) => \`\${v > 0 ? "+" : ""}\${v.toFixed(1)} dB\`} />
+          <Knob size="large" label="Tempo" min={60} max={200} defaultValue={128} format={(v) => \`\${v} BPM\`} />
+        `,
+      },
+    ],
+    swift: code`
+      DSKnob("Tone", value: $tone, defaultValue: 50)
+      DSKnob("Gain", value: $gain, in: -24...24, step: 0.5, size: .large) { String(format: "%+.1f dB", $0) }
+    `,
+  },
+  slider: {
+    examples: [
+      {
+        title: "Volume",
+        fill: true,
+        render: () => <Slider label="Volume" defaultValue={64} max={127} ticks={33} majorEvery={4} />,
+        react: code`<Slider label="Volume" defaultValue={64} max={127} ticks={33} majorEvery={4} />`,
+      },
+      {
+        title: "Around zero, with marks",
+        fill: true,
+        render: () => (
+          <Slider
+            label="Exposure"
+            min={-3}
+            max={3}
+            step={1 / 3}
+            defaultValue={1 + 1 / 3}
+            centered
+            ticks={19}
+            majorEvery={3}
+            marks={[-3, -2, -1, 0, 1, 2, 3].map((v) => ({ value: v, label: v > 0 ? `+${v}` : String(v) }))}
+            format={formatEv}
+          />
+        ),
+        react: code`
+          <Slider label="Exposure" min={-3} max={3} step={1 / 3} defaultValue={4 / 3} centered ticks={19} majorEvery={3}
+            marks={[-3, -2, -1, 0, 1, 2, 3].map((v) => ({ value: v, label: v > 0 ? \`+\${v}\` : String(v) }))}
+            format={formatEv} />
+        `,
+      },
+    ],
+    swift: code`
+      DSSlider("Volume", value: $volume, in: 0...127, ticks: 33, majorEvery: 4)
+      DSSlider("Exposure", value: $ev, in: -3...3, step: 1.0 / 3, ticks: 19, majorEvery: 3, centered: true, format: formatEV)
+    `,
+  },
+  "slide-switch": {
+    examples: [
+      {
+        title: "Vertical and horizontal",
+        render: () => (
+          <div className="site-row" style={{ gap: "var(--ds-space-7)", alignItems: "flex-start" }}>
+            <SlideSwitch
+              label="Output"
+              defaultValue="cue"
+              options={[
+                { value: "main", label: "Main" },
+                { value: "cue", label: "Cue" },
+                { value: "both", label: "Both" },
+              ]}
+            />
+            <SlideSwitch
+              label="Quality"
+              orientation="horizontal"
+              defaultValue="mid"
+              options={[
+                { value: "lo", label: "Lo" },
+                { value: "mid", label: "Mid" },
+                { value: "hi", label: "Hi" },
+              ]}
+            />
+          </div>
+        ),
+        react: code`
+          <SlideSwitch label="Output" defaultValue="cue" options={[
+            { value: "main", label: "Main" },
+            { value: "cue", label: "Cue" },
+            { value: "both", label: "Both" },
+          ]} />
+          <SlideSwitch label="Quality" orientation="horizontal" defaultValue="mid" options={[
+            { value: "lo", label: "Lo" }, { value: "mid", label: "Mid" }, { value: "hi", label: "Hi" },
+          ]} />
+        `,
+      },
+    ],
+    swift: code`
+      DSSlideSwitch("Output", selection: $output, options: [
+          DSOption("main", label: "Main"), DSOption("cue", label: "Cue"), DSOption("both", label: "Both"),
+      ])
+      DSSlideSwitch("Quality", selection: $quality, options: qualities, orientation: .horizontal)
+    `,
+  },
+  readout: {
+    examples: [
+      {
+        title: "An instrument panel",
+        fill: true,
+        render: () => <CameraPanel />,
+        react: code`
+          <ReadoutGrid columns={3}>
+            <Readout label="Lens" value="24" unit="mm" />
+            <Readout label="Mode" value="Auto" live />
+            <Readout label="Preset" value="Off" dim />
+            <Readout label="Speed" value="1/125" onPress={editSpeed} selected />
+            <Readout label="ISO" value={250} onPress={editIso} />
+            <Readout label="WB" value="5600" unit="K" onPress={editWhiteBalance} />
+          </ReadoutGrid>
+        `,
+      },
+    ],
+    swift: code`
+      DSReadoutGrid(columns: 3) {
+          DSReadout("Lens", value: "24", unit: "mm")
+          DSReadout("Mode", value: "Auto", live: true)
+          DSReadout("Preset", value: "Off", dim: true)
+          DSReadout("Speed", value: "1/125", selected: editing == .speed) { editing = .speed }
+          DSReadout("ISO", value: "250", selected: editing == .iso) { editing = .iso }
+      }
+    `,
+  },
   title: {
     examples: [
       {
@@ -944,7 +1174,8 @@ export const examples: Record<string, RecipeExamples> = {
     examples: [
       {
         title: "Wordmark, links and the theme toggle",
-        render: () => <Text tone="muted">The masthead at the top of this page.</Text>,
+        fill: true,
+        render: () => <Masthead style={{ paddingTop: 0, width: "100%" }} wordmark="Fieldwork" href="#/" links={[{ label: "Changelog", href: "#/" }, { label: "Docs", href: "#/" }]} />,
         react: code`
           <Masthead wordmark="Fieldwork" href="/" links={[
             { label: "Changelog", href: "/changelog" },
@@ -958,7 +1189,8 @@ export const examples: Record<string, RecipeExamples> = {
     examples: [
       {
         title: "Two groups of links",
-        render: () => <Text tone="muted">The footer at the end of this page.</Text>,
+        fill: true,
+        render: () => <Footer style={{ margin: 0, padding: 0, width: "100%" }} links={[{ label: "Docs", href: "#/" }, { label: "Changelog", href: "#/" }]} secondary={[{ label: "npm", href: "#/" }, { label: "GitHub", href: "#/" }]} />,
         react: code`
           <Footer
             links={[{ label: "Docs", href: "/docs" }, { label: "Changelog", href: "/changelog" }]}

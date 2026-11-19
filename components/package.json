@@ -11,7 +11,7 @@
     "typecheck": "tsc -p packages/components --noEmit && tsc -p website --noEmit",
     "test": "pnpm run build && pnpm run check && pnpm run typecheck && node --test tests/*.test.mjs",
     "test:swift": "cd .. && swift test --filter ComponentsTests",
-    "snapshots": "cd .. && COMPONENTS_SNAPSHOTS=\"$PWD/components/website/swift\" swift test --filter ComponentsTests/SnapshotTests",
+    "snapshots": "cd .. && COMPONENTS_SNAPSHOTS=\"$PWD/components/website/swift\" swift test --filter ComponentsTests.SnapshotTests",
     "build:site": "pnpm run build && node scripts/build-site.mjs",
     "dev": "pnpm run build && node scripts/build-site.mjs --serve"
   },
