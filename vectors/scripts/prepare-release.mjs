@@ -6,7 +6,7 @@ import { pathToFileURL } from 'node:url';
 
 // Versions published before the package moved into the hugocxl/stack monorepo, whose run
 // numbers start again from 1.
-export const PREVIOUS_RELEASES = 11;
+export const PREVIOUS_RELEASES = 14;
 
 // The workflow run number is stable across retries and unique across pushes.
 export function releaseVersion(runNumber) {

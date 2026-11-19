@@ -59,7 +59,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   for (const filename of files) {
     const file = `release/${filename}`;
     const { name, version } = JSON.parse(execFileSync('tar', ['-xOf', file, 'package/package.json'], { encoding: 'utf8' }));
-    if (name !== '@hugocxl/stack') {
+    if (name !== '@hugocxl/ai') {
       throw new Error(`Unexpected package: ${name}`);
     }
     const integrity = `sha512-${createHash('sha512').update(readFileSync(file)).digest('base64')}`;

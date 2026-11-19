@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { releaseVersion, releaseTag, stampVersion } from '../scripts/prepare-release.mjs';
 
 test('release versions are deterministic on retry and distinct across runs', () => {
-  assert.equal(releaseVersion('2'), '0.1.13');
+  assert.equal(releaseVersion('2'), '0.1.16');
   assert.equal(releaseVersion('2'), releaseVersion(2));
   assert.notEqual(releaseVersion(2), releaseVersion(3));
   for (const invalid of [undefined, 0, -1, '1.2', '01', 'abc', '9007199254740992']) {
@@ -20,7 +20,7 @@ test('release stamping sets every published package version', () => {
 });
 
 test('release tags name the package', () => {
-  assert.equal(releaseTag('0.1.12'), 'vectors-v0.1.12');
+  assert.equal(releaseTag('0.1.15'), 'vectors-v0.1.15');
 });
 
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
