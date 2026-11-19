@@ -1,0 +1,16 @@
+{
+  "name": "theme",
+  "title": "Theme",
+  "group": "foundations",
+  "summary": "Loads the tokens and the Geist faces, follows the system appearance and lets people switch between light and dark.",
+  "use": ["Set it up once at the root of every app or site, before any other component."],
+  "anatomy": ["Tokens for the light and dark appearance", "Geist Sans and Geist Mono", "The theme toggle (an icon button with the contrast icon)"],
+  "options": [
+    { "name": "appearance", "values": ["system", "light", "dark"], "default": "system", "description": "Follow the system until the person picks one. The choice is remembered." }
+  ],
+  "states": [],
+  "tokens": ["canvas", "ink", "sans", "mono"],
+  "rules": ["Every color comes from a token, so both appearances work without extra code.", "The toggle always uses the contrast icon and is labelled “Switch theme”."],
+  "accessibility": ["The toggle has an accessible label and a 44pt target."],
+  "platforms": { "react": "ThemeToggle", "swift": "DSTheme" }
+}

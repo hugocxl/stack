@@ -1,0 +1,18 @@
+{
+  "name": "switch",
+  "title": "Switch",
+  "group": "inputs",
+  "summary": "Turns a setting on or off immediately.",
+  "use": ["For settings that apply the moment they change."],
+  "anatomy": ["Label", "Optional description", "Track (ink when on)", "Thumb"],
+  "options": [
+    { "name": "checked", "values": [true, false], "default": false, "description": "Whether it is on." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the setting, not the state." },
+    { "name": "description", "values": ["text"], "default": null, "description": "One muted sentence." }
+  ],
+  "states": ["default", "hover", "focus", "on", "disabled"],
+  "tokens": ["ink", "canvas", "surface", "rule", "muted", "radius-pill", "target"],
+  "rules": ["The label goes before the switch; the switch sits at the end of the row."],
+  "accessibility": ["Exposed as a switch with its on or off state."],
+  "platforms": { "react": "Switch", "swift": "DSSwitch" }
+}

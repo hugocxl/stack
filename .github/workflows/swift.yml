@@ -2,9 +2,9 @@ name: Swift package
 on:
   push:
     branches: ['**']
-    paths: ['Package.swift', 'icons/Sources/**', 'icons/tests/IconsTests/**', 'vectors/Sources/**', 'vectors/tests/VectorsTests/**', '.github/workflows/swift.yml']
+    paths: ['Package.swift', 'icons/Sources/**', 'icons/tests/IconsTests/**', 'vectors/Sources/**', 'vectors/tests/VectorsTests/**', 'components/Sources/**', 'components/tests/ComponentsTests/**', 'components/recipes/**', '.github/workflows/swift.yml']
   pull_request:
-    paths: ['Package.swift', 'icons/Sources/**', 'icons/tests/IconsTests/**', 'vectors/Sources/**', 'vectors/tests/VectorsTests/**', '.github/workflows/swift.yml']
+    paths: ['Package.swift', 'icons/Sources/**', 'icons/tests/IconsTests/**', 'vectors/Sources/**', 'vectors/tests/VectorsTests/**', 'components/Sources/**', 'components/tests/ComponentsTests/**', 'components/recipes/**', '.github/workflows/swift.yml']
 permissions:
   contents: read
 concurrency:
@@ -15,7 +15,7 @@ jobs:
     runs-on: macos-15
     strategy:
       matrix:
-        scheme: [Icons, Vectors]
+        scheme: [Icons, Vectors, Components]
     steps:
       - uses: actions/checkout@v4
       - run: xcodebuild -scheme hugocxlStack-Package -destination 'platform=macOS' -derivedDataPath /tmp/macos -only-testing:${{ matrix.scheme }}Tests test

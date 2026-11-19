@@ -1,0 +1,16 @@
+{
+  "name": "list",
+  "title": "List",
+  "group": "content",
+  "summary": "Rows between hairlines, each with an optional mono label, a title, a sentence and a trailing detail.",
+  "use": ["For changelogs, plans, settings, search results and anything people scan."],
+  "anatomy": ["Hairlines", "Optional label column (mono)", "Title", "Optional sentence (muted)", "Optional trailing detail or chevron"],
+  "options": [
+    { "name": "items", "values": ["label, title, description, trailing, href"], "default": null, "description": "A row with an href or an action is one target." }
+  ],
+  "states": ["default", "hover (rows with an action)", "focus"],
+  "tokens": ["rule", "muted", "size-label", "space-2", "space-5"],
+  "rules": ["Labels are dates, versions or short kinds, never sentences."],
+  "accessibility": ["A list; a row with an action is a single link or button."],
+  "platforms": { "react": "List", "swift": "DSList" }
+}

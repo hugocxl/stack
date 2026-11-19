@@ -6,6 +6,7 @@
 //   _site/icons/            icons/_site      (pnpm run build:site in icons/)
 //   _site/vectors/          vectors/_site    (pnpm run build:site in vectors/)
 //   _site/sounds/           sounds/_site     (pnpm run build:site in sounds/, reads SITE_VERSION)
+//   _site/components/       components/_site (pnpm run build:site in components/)
 //
 // Usage: SITE_VERSION=<sounds version> node scripts/build-site.mjs
 import { execFileSync } from "node:child_process";
@@ -19,7 +20,7 @@ const read = (path) => readFileSync(join(root, path), "utf8");
 const notJunk = (path) => !path.endsWith(".DS_Store");
 
 // ─── Sections built by their packages ───────────────────────────────────
-const built = ["icons", "vectors", "sounds"];
+const built = ["icons", "vectors", "sounds", "components"];
 for (const name of built) {
   console.log(`\n▸ ${name}: pnpm run build:site`);
   execFileSync("pnpm", ["run", "build:site"], { cwd: join(root, name), stdio: "inherit", env: process.env });

@@ -1,0 +1,18 @@
+{
+  "name": "page",
+  "title": "Page",
+  "group": "layout",
+  "summary": "The canvas, gutter and reading column every page or screen sits in.",
+  "use": ["Once per page or screen, around everything else."],
+  "anatomy": ["Canvas", "Gutter", "Reading column (30em)", "Optional masthead and footer (web)"],
+  "options": [
+    { "name": "layout", "values": ["plain", "field"], "default": "plain", "description": "field adds the textured panel, for a personal home page only." },
+    { "name": "masthead", "values": ["masthead"], "default": null, "description": "Web only." },
+    { "name": "footer", "values": ["footer"], "default": null, "description": "Web only." }
+  ],
+  "states": [],
+  "tokens": ["canvas", "ink", "measure", "wide", "space-9", "space-10"],
+  "rules": ["Content stays in the column; only figures and grids go wide."],
+  "accessibility": ["One main landmark."],
+  "platforms": { "react": "Page", "swift": "DSPage" }
+}

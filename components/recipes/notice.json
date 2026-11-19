@@ -1,0 +1,19 @@
+{
+  "name": "notice",
+  "title": "Notice",
+  "group": "feedback",
+  "summary": "A short message about the page or a task, in a hairline frame with a status icon.",
+  "use": ["For something people should know before going on: a result, a warning, a failure, a tip."],
+  "anatomy": ["Hairline frame", "Status icon", "Title", "Optional sentence", "Optional action and dismiss button"],
+  "options": [
+    { "name": "tone", "values": ["info", "success", "warning", "error", "neutral"], "default": "info", "description": "What the message is." },
+    { "name": "title", "values": ["text"], "default": null, "description": "Required. One short sentence." },
+    { "name": "action", "values": ["button"], "default": null, "description": "One ghost button." },
+    { "name": "dismissible", "values": [true, false], "default": false, "description": "Adds an x icon button." }
+  ],
+  "states": [],
+  "tokens": ["rule", "radius-control", "muted", "space-4", "space-5"],
+  "rules": ["No fills: the frame is a hairline and only the icon is colored.", "One notice per view."],
+  "accessibility": ["Errors and warnings are announced (role alert); others are polite (role status)."],
+  "platforms": { "react": "Notice", "swift": "DSNotice" }
+}

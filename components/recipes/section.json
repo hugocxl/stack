@@ -1,0 +1,17 @@
+{
+  "name": "section",
+  "title": "Section",
+  "group": "content",
+  "summary": "A muted heading followed by paragraphs, lists, code or a table.",
+  "use": ["To group content under a heading. The first one after the title has no heading and acts as the lead."],
+  "anatomy": ["Optional heading (muted)", "Content"],
+  "options": [
+    { "name": "heading", "values": ["text"], "default": null, "description": "Leave empty for the lead." },
+    { "name": "id", "values": ["slug"], "default": null, "description": "When something links to it." }
+  ],
+  "states": [],
+  "tokens": ["muted", "space-4", "space-5", "space-7"],
+  "rules": ["Supporting sentences follow the main one in the same paragraph, in muted."],
+  "accessibility": ["The heading is a second level heading."],
+  "platforms": { "react": "Section", "swift": "DSSection" }
+}

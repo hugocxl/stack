@@ -1,0 +1,18 @@
+{
+  "name": "segmented-control",
+  "title": "Segmented control",
+  "group": "inputs",
+  "summary": "Switches between two to five views or modes, in a hairline pill.",
+  "use": ["To switch the view of the same content: a period, a layout, a platform."],
+  "anatomy": ["Pill with a hairline", "Segments (the picked one on surface)", "Optional icon per segment"],
+  "options": [
+    { "name": "options", "values": ["value, label, icon"], "default": null, "description": "Two to five short labels." },
+    { "name": "value", "values": ["option value"], "default": null, "description": "The picked segment." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the control for assistive technology." }
+  ],
+  "states": ["default", "hover", "focus", "selected", "disabled"],
+  "tokens": ["rule", "surface", "ink", "muted", "radius-pill", "target", "size-control"],
+  "rules": ["One or two words per segment.", "The picked segment uses surface, never ink or the accent."],
+  "accessibility": ["Arrow keys move between segments."],
+  "platforms": { "react": "SegmentedControl", "swift": "DSSegmentedControl" }
+}

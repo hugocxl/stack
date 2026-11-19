@@ -1,15 +1,17 @@
 # Working on the stack monorepo
 
-A pnpm workspace with five independently published packages. Each folder has its own
+A pnpm workspace with six independently published packages. Each folder has its own
 `AGENTS.md` with its layout, checks and rules. Read it before changing that folder.
 
 - `design-system/`: `@hugocxl/design-system`, the package and its reference page.
 - `icons/`, `vectors/`: npm workspaces (`packages/<name>`) plus the Swift sources.
 - `sounds/`: `@hugocxl/sounds` (`packages/sounds`) and its website.
+- `components/`: `@hugocxl/components` (`packages/components`, React), the `Components` Swift
+  library and their website, built from one recipe per component in `components/recipes/`.
 - `ai/`: `@hugocxl/ai`, the CLI and the `stack` skill that teach agents to use the libraries
   together.
-- `Package.swift`: the `hugocxlStack` Swift package (`Icons`, `Vectors`). Its targets point
-  into `icons/` and `vectors/`. Swift tooling runs from the root.
+- `Package.swift`: the `hugocxlStack` Swift package (`Icons`, `Vectors`, `Components`). Its
+  targets point into `icons/`, `vectors/` and `components/`. Swift tooling runs from the root.
 - `.claude-plugin/marketplace.json`: the Claude Code marketplace (`stack` from `./ai`, the
   libraries from npm).
 - `scripts/build-site.mjs`: builds every package's site into one `_site/` for

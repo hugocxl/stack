@@ -1,0 +1,16 @@
+{
+  "name": "figure-grid",
+  "title": "Figure grid",
+  "group": "content",
+  "summary": "Two to four vectors side by side between hairlines, each with a label, a title and one sentence.",
+  "use": ["To present features or parts of an idea at the same weight."],
+  "anatomy": ["Items between hairlines", "Fig 0.N label", "Vector", "Title (up to four words)", "One sentence (muted)"],
+  "options": [
+    { "name": "items", "values": ["label, vector, title, text"], "default": null, "description": "Two to four." }
+  ],
+  "states": [],
+  "tokens": ["rule", "muted", "size-small", "space-5", "space-6"],
+  "rules": ["Stacks into one column when narrow."],
+  "accessibility": ["A list; each vector keeps its title."],
+  "platforms": { "react": "FigureGrid", "swift": "DSFigureGrid" }
+}

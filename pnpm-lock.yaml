@@ -181,6 +181,58 @@ importers:
         specifier: ^0.1.11
         version: 0.1.11(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
 
+  components:
+    devDependencies:
+      '@hugocxl/components':
+        specifier: workspace:*
+        version: link:packages/components
+      '@hugocxl/design-system':
+        specifier: ^0.2.14
+        version: 0.2.14
+      '@hugocxl/icons':
+        specifier: ^0.2.36
+        version: 0.2.36(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
+      '@hugocxl/vectors':
+        specifier: ^0.1.19
+        version: 0.1.19(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: ^19.0.0
+        version: 19.3.0(@types/react@19.3.0)
+      esbuild:
+        specifier: ^0.28.2
+        version: 0.28.2
+      react:
+        specifier: ^19.0.0
+        version: 19.3.1
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.3.1(react@19.3.1)
+      typescript:
+        specifier: ^5.9.0
+        version: 5.9.3
+
+  components/packages/components:
+    dependencies:
+      '@hugocxl/design-system':
+        specifier: ^0.2.14
+        version: 0.2.14
+      '@hugocxl/icons':
+        specifier: ^0.2.36
+        version: 0.2.36(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.0
+        version: 19.3.0
+      react:
+        specifier: ^19.0.0
+        version: 19.3.1
+      typescript:
+        specifier: ^5.9.0
+        version: 5.9.3
+
   design-system:
     devDependencies:
       '@axe-core/playwright':
@@ -684,6 +736,9 @@ packages:
   '@hugocxl/design-system@0.2.10':
     resolution: {integrity: sha512-O/f+cOG6Eg23V6BOhp1JH6iFVXyvj2smsJ5o62EIG7639MiBa7NcrypBAVicVrF0QuMKb8DmECNIPeUdonmvFg==}
 
+  '@hugocxl/design-system@0.2.14':
+    resolution: {integrity: sha512-7y80h8v5nSJDPtg4DShECF7lH1eQBwLAr53dDSATTZ9tt18Mv9PL/WBe+KBr5IkIxubibWGJ6g434GlHZKp0vg==}
+
   '@hugocxl/icons@0.2.0':
     resolution: {integrity: sha512-8aeIkuWNIDwk67JDl/wMzxM+x85VS5V8ZMnzNsAbh6PJVkdb+tWIS1hy5T9XiSiR6hjnCGlVskxP9+Zv9QtDcg==}
     peerDependencies:
@@ -700,6 +755,20 @@ packages:
 
   '@hugocxl/icons@0.2.29':
     resolution: {integrity: sha512-X0OaZ9LyV6jBSG3CAsEeF8eZEEN2fgpbYszwqOR+tAEBw5EMzkM0UoZjNiJ56V2+C8TmR6eAttl9GywEoX/tYQ==}
+    peerDependencies:
+      react: '>=18'
+      react-native: '>=0.72'
+      react-native-svg: '>=13'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-native:
+        optional: true
+      react-native-svg:
+        optional: true
+
+  '@hugocxl/icons@0.2.36':
+    resolution: {integrity: sha512-P/c4UhUd4ER8nHQvZarR3y0i7Y4m0oLAxtSdglmi/39DsI0T0aKUbtiGEUW3kLTvFeUilYcsJfVijhdN2JFkbg==}
     peerDependencies:
       react: '>=18'
       react-native: '>=0.72'
@@ -731,6 +800,20 @@ packages:
 
   '@hugocxl/vectors@0.1.11':
     resolution: {integrity: sha512-eZe2uarWiho7BQPUc6Q7xEWZ00eINjAw4lWNxDIC/ouoVkA0J0XLfX1EOqUY1Or0ptgxq6uN35zMkaEA/gD4mg==}
+    peerDependencies:
+      react: '>=18'
+      react-native: '>=0.72'
+      react-native-svg: '>=13'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-native:
+        optional: true
+      react-native-svg:
+        optional: true
+
+  '@hugocxl/vectors@0.1.19':
+    resolution: {integrity: sha512-+Tz7/fYogQRF0YU2u5dDHrcaQ6Mnvvph9AHn2xOi1f+FjSYa1uDBq3bsynnkkPv6qg0WsdEFo8Oc93KcY3J52g==}
     peerDependencies:
       react: '>=18'
       react-native: '>=0.72'
@@ -912,6 +995,11 @@ packages:
 
   '@types/node@26.6.6':
     resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
+
+  '@types/react-dom@19.3.0':
+    resolution: {integrity: sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==}
+    peerDependencies:
+      '@types/react': ^19.3.0
 
   '@types/react@19.3.0':
     resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
@@ -2576,6 +2664,8 @@ snapshots:
 
   '@hugocxl/design-system@0.2.10': {}
 
+  '@hugocxl/design-system@0.2.14': {}
+
   '@hugocxl/icons@0.2.0(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)':
     optionalDependencies:
       react: 19.3.1
@@ -2583,6 +2673,12 @@ snapshots:
       react-native-svg: 15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
 
   '@hugocxl/icons@0.2.29(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)':
+    optionalDependencies:
+      react: 19.3.1
+      react-native: 0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
+      react-native-svg: 15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
+
+  '@hugocxl/icons@0.2.36(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)':
     optionalDependencies:
       react: 19.3.1
       react-native: 0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
@@ -2597,6 +2693,12 @@ snapshots:
       react-native-svg: 15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
 
   '@hugocxl/vectors@0.1.11(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)':
+    optionalDependencies:
+      react: 19.3.1
+      react-native: 0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
+      react-native-svg: 15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
+
+  '@hugocxl/vectors@0.1.19(react-native-svg@15.16.1(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1))(react-native@0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)':
     optionalDependencies:
       react: 19.3.1
       react-native: 0.82.1(@babel/core@7.29.13(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
@@ -2830,6 +2932,10 @@ snapshots:
   '@types/node@26.6.6':
     dependencies:
       undici-types: 8.9.0
+
+  '@types/react-dom@19.3.0(@types/react@19.3.0)':
+    dependencies:
+      '@types/react': 19.3.0
 
   '@types/react@19.3.0':
     dependencies:

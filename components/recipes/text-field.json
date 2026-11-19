@@ -1,0 +1,21 @@
+{
+  "name": "text-field",
+  "title": "Text field",
+  "group": "inputs",
+  "summary": "Lets people type a value, on a hairline, with its label above and help or an error below.",
+  "use": ["For short values (one line) or longer text (multiline)."],
+  "anatomy": ["Label", "Field on a hairline", "Optional trailing action (icon button)", "Help or error line"],
+  "options": [
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Sentence case, no colon." },
+    { "name": "placeholder", "values": ["text"], "default": null, "description": "An example value in faint, never the label." },
+    { "name": "help", "values": ["text"], "default": null, "description": "One muted sentence below the field." },
+    { "name": "error", "values": ["text"], "default": null, "description": "Replaces the help with an error dot and the message." },
+    { "name": "multiline", "values": [true, false], "default": false, "description": "Grows with its content." },
+    { "name": "action", "values": ["icon button"], "default": null, "description": "One trailing action, such as submit, clear or reveal." }
+  ],
+  "states": ["default", "hover", "focus", "invalid", "disabled"],
+  "tokens": ["rule", "ink", "faint", "muted", "error", "target", "space-3", "space-4"],
+  "rules": ["No boxes: the field is a hairline that darkens on hover and focus.", "An error says what to do, not only what is wrong."],
+  "accessibility": ["The label is tied to the field.", "Errors set aria-invalid and are announced."],
+  "platforms": { "react": "TextField", "swift": "DSTextField" }
+}

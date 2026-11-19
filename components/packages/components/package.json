@@ -1,0 +1,58 @@
+{
+  "name": "@hugocxl/components",
+  "version": "0.1.0",
+  "description": "The @hugocxl design system as components: one recipe per component, built for React and Swift.",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./components.css": "./dist/components.css",
+    "./recipes.json": "./dist/recipes.json",
+    "./recipes/*": "./dist/recipes/*",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/react/index.js",
+  "types": "./dist/react/index.d.ts",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@hugocxl/design-system": "^0.2.14",
+    "@hugocxl/icons": "^0.2.36"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "license": "MIT",
+  "homepage": "https://hugocxl.github.io/stack/components/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocxl/stack.git",
+    "directory": "components/packages/components"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}

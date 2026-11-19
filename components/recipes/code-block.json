@@ -1,0 +1,17 @@
+{
+  "name": "code-block",
+  "title": "Code block",
+  "group": "content",
+  "summary": "Code or commands in mono on the surface, with a copy button.",
+  "use": ["For anything people paste: install commands, snippets, configuration."],
+  "anatomy": ["Surface", "Optional file name label", "Code", "Copy button"],
+  "options": [
+    { "name": "code", "values": ["text"], "default": null, "description": "The exact text that is copied." },
+    { "name": "label", "values": ["text"], "default": null, "description": "A file name or language." }
+  ],
+  "states": ["default", "copied"],
+  "tokens": ["surface", "radius-control", "mono", "size-label", "space-4", "space-5"],
+  "rules": ["No syntax colors."],
+  "accessibility": ["The code scrolls sideways and is focusable; the copy result is announced."],
+  "platforms": { "react": "CodeBlock", "swift": "DSCodeBlock" }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "status",
+  "title": "Status",
+  "group": "feedback",
+  "summary": "Names a state with words and a mark in the state's color.",
+  "use": ["In meta lines, list labels, table cells and next to anything that has a state."],
+  "anatomy": ["Mark: a dot or the status icon", "Words"],
+  "options": [
+    { "name": "tone", "values": ["accent", "success", "warning", "error", "info", "neutral"], "default": "accent", "description": "accent only for the page's own status, such as Beta or New." },
+    { "name": "mark", "values": ["dot", "icon"], "default": "dot", "description": "icon uses circle-check, triangle-alert, circle-x and circle-info." },
+    { "name": "appearance", "values": ["label", "text"], "default": "label", "description": "label is mono uppercase; text follows the surrounding type." }
+  ],
+  "states": [],
+  "tokens": ["accent", "success", "warning", "error", "info", "neutral", "size-label"],
+  "rules": ["Color never carries a state alone; the words always name it.", "One mark per status, before the words.", "The words stay ink or muted; only the mark takes the color."],
+  "accessibility": ["The mark is hidden from assistive technology; the words carry the meaning."],
+  "platforms": { "react": "Status", "swift": "DSStatus" }
+}

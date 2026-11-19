@@ -1,0 +1,18 @@
+{
+  "name": "figure",
+  "title": "Figure",
+  "group": "content",
+  "summary": "One vector or screenshot on the surface at 3:2, with a Fig. caption.",
+  "use": ["To explain an idea with a vector from @hugocxl/vectors, or to show a product screenshot."],
+  "anatomy": ["Media on surface (3:2, media radius)", "Vector or image", "Caption: Fig. NN / Name", "Optional pager"],
+  "options": [
+    { "name": "caption", "values": ["text"], "default": null, "description": "Written Fig. 01 / Name." },
+    { "name": "wide", "values": [true, false], "default": true, "description": "Web only: extend past the column." },
+    { "name": "pager", "values": ["previous, next"], "default": null, "description": "Only when the figure cycles." }
+  ],
+  "states": [],
+  "tokens": ["surface", "radius-media", "ink", "size-label", "space-3", "space-8"],
+  "rules": ["Figures come only from @hugocxl/vectors or real screenshots.", "Vectors are ink, never colored."],
+  "accessibility": ["A vector keeps its title; an image needs alt text."],
+  "platforms": { "react": "Figure", "swift": "DSFigure" }
+}

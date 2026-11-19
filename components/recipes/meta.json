@@ -1,0 +1,16 @@
+{
+  "name": "meta",
+  "title": "Meta",
+  "group": "content",
+  "summary": "One to three mono labels under the title: status, version, date.",
+  "use": ["Under a title or statement."],
+  "anatomy": ["Labels, the status one first"],
+  "options": [
+    { "name": "items", "values": ["text or status"], "default": null, "description": "One to three." }
+  ],
+  "states": [],
+  "tokens": ["size-label", "muted", "space-2", "space-5", "space-6"],
+  "rules": ["Only the status label takes a dot, and it comes first.", "Dates are written out: 5 October 2026."],
+  "accessibility": ["A list, so its length is announced."],
+  "platforms": { "react": "Meta", "swift": "DSMeta" }
+}

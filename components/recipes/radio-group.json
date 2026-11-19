@@ -1,0 +1,18 @@
+{
+  "name": "radio-group",
+  "title": "Radio group",
+  "group": "inputs",
+  "summary": "Picks exactly one option from two to six that are all worth reading.",
+  "use": ["When people should compare every option. For more options use a select; for two or three short ones in a toolbar, a segmented control."],
+  "anatomy": ["Group label", "Options: a circle, a label and an optional description"],
+  "options": [
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the choice." },
+    { "name": "options", "values": ["value, label, description"], "default": null, "description": "Two to six options." },
+    { "name": "value", "values": ["option value"], "default": null, "description": "The picked option." }
+  ],
+  "states": ["default", "hover", "focus", "selected", "disabled"],
+  "tokens": ["ink", "muted", "radius-pill", "target", "space-2", "space-3"],
+  "rules": ["Always start with one option picked when there is a sensible default."],
+  "accessibility": ["Arrow keys move between options."],
+  "platforms": { "react": "RadioGroup", "swift": "DSRadioGroup" }
+}

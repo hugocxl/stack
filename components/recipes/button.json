@@ -1,0 +1,20 @@
+{
+  "name": "button",
+  "title": "Button",
+  "group": "actions",
+  "summary": "Starts an action. The primary button is the one ink fill on a view.",
+  "use": ["primary for the main action of a view, at most one.", "secondary for the other actions next to it.", "ghost for quiet actions in toolbars and lists."],
+  "anatomy": ["Container", "Optional leading icon", "Label"],
+  "options": [
+    { "name": "variant", "values": ["primary", "secondary", "ghost"], "default": "primary", "description": "How much the action stands out." },
+    { "name": "icon", "values": ["any icon from @hugocxl/icons"], "default": null, "description": "Goes before the label." },
+    { "name": "fullWidth", "values": [true, false], "default": false, "description": "Fill the container, for forms and narrow screens." },
+    { "name": "disabled", "values": [true, false], "default": false, "description": "Shown at 40% opacity and ignores input." },
+    { "name": "href", "values": ["URL"], "default": null, "description": "Web only: renders a link that looks like a button." }
+  ],
+  "states": ["default", "hover", "pressed", "focus", "disabled"],
+  "tokens": ["ink", "canvas", "rule", "surface", "radius-control", "target", "size-control", "space-3", "space-5"],
+  "rules": ["One primary button per view.", "Labels are a verb or a verb and a noun, in sentence case.", "Pressed scales to 96% unless the reader prefers reduced motion."],
+  "accessibility": ["At least 44 × 44pt.", "Focus shows a 2px ink outline 3px away."],
+  "platforms": { "react": "Button", "swift": "DSButton" }
+}

@@ -7,6 +7,8 @@ packages:
   - vectors/packages/*
   - sounds
   - sounds/packages/*
+  - components
+  - components/packages/*
 
 allowBuilds:
   esbuild: true

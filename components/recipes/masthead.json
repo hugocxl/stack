@@ -1,0 +1,17 @@
+{
+  "name": "masthead",
+  "title": "Masthead",
+  "group": "layout",
+  "summary": "The wordmark, up to three links and the theme toggle, at the top of every web page.",
+  "use": ["First thing on every web page."],
+  "anatomy": ["Wordmark", "Up to three links", "Theme toggle"],
+  "options": [
+    { "name": "wordmark", "values": ["text"], "default": null, "description": "The project name." },
+    { "name": "links", "values": ["label, href"], "default": null, "description": "Up to three." }
+  ],
+  "states": [],
+  "tokens": ["size-small", "target", "space-5", "space-6"],
+  "rules": ["Apps use the platform's navigation bar instead."],
+  "accessibility": ["A banner landmark."],
+  "platforms": { "react": "Masthead", "swift": null }
+}

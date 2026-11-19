@@ -1,0 +1,17 @@
+{
+  "name": "footer",
+  "title": "Footer",
+  "group": "layout",
+  "summary": "Two groups of mono links on either side of a hairline, at the end of every web page.",
+  "use": ["Last thing on every web page."],
+  "anatomy": ["First group of links", "Hairline", "Second group of links"],
+  "options": [
+    { "name": "links", "values": ["label, href"], "default": null, "description": "The project's own pages." },
+    { "name": "secondary", "values": ["label, href"], "default": null, "description": "Elsewhere: npm, GitHub, the author." }
+  ],
+  "states": [],
+  "tokens": ["mono", "size-mono", "rule", "space-5", "space-7", "space-9"],
+  "rules": ["Apps leave it out."],
+  "accessibility": ["A contentinfo landmark."],
+  "platforms": { "react": "Footer", "swift": null }
+}

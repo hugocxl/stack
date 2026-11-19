@@ -1,0 +1,17 @@
+{
+  "name": "table",
+  "title": "Table",
+  "group": "content",
+  "summary": "Rows and columns of data on hairlines, with mono headings and tabular figures.",
+  "use": ["For data people compare across columns: plans, specs, limits."],
+  "anatomy": ["Mono column headings", "Row headers in ink", "Cells", "Hairlines between rows"],
+  "options": [
+    { "name": "columns", "values": ["text"], "default": null, "description": "Column headings." },
+    { "name": "rows", "values": ["cells"], "default": null, "description": "The first cell is the row header." }
+  ],
+  "states": [],
+  "tokens": ["rule", "muted", "size-small", "size-label", "space-3", "space-4"],
+  "rules": ["Numbers are right aligned only when compared; otherwise everything aligns left."],
+  "accessibility": ["Real table markup with column and row headers; scrolls sideways when narrow."],
+  "platforms": { "react": "Table", "swift": null }
+}

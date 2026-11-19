@@ -1,0 +1,71 @@
+name: Components
+on:
+  push:
+    branches: ['**']
+    paths: ['components/**', '.github/workflows/components.yml', 'pnpm-workspace.yaml']
+  pull_request:
+    paths: ['components/**', '.github/workflows/components.yml', 'pnpm-workspace.yaml']
+permissions:
+  contents: read
+concurrency:
+  group: components-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    working-directory: components
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: node scripts/build-site.mjs
+  swift:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - run: xcodebuild -scheme hugocxlStack-Package -destination 'platform=macOS' -derivedDataPath /tmp/components-macos -only-testing:ComponentsTests test
+      - run: xcodebuild -scheme Components -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/components-ios CODE_SIGNING_ALLOWED=NO build
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [package, swift]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - name: Package release
+        id: package
+        run: node scripts/prepare-release.mjs
+      - name: Publish and verify the npm package
+        run: node scripts/publish-npm.mjs
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ steps.package.outputs.tag }}
+        run: bash scripts/publish-release.sh
+      - name: Rebuild the stack website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "${{ github.repository }}" --ref main

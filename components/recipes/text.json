@@ -1,0 +1,17 @@
+{
+  "name": "text",
+  "title": "Text",
+  "group": "foundations",
+  "summary": "Every piece of copy, set in one of the system's type styles.",
+  "use": ["Use it for any text that is not part of another component."],
+  "anatomy": ["The words"],
+  "options": [
+    { "name": "variant", "values": ["reading", "heading", "title", "small", "label", "mono"], "default": "reading", "description": "reading for body copy, heading for item titles, title for the page name, small for supporting text, label for mono uppercase labels, mono for code and footers." },
+    { "name": "tone", "values": ["ink", "muted", "accent"], "default": "ink", "description": "accent only at title size, for one phrase of two or three words." }
+  ],
+  "states": [],
+  "tokens": ["ink", "muted", "accent-text", "size-reading", "size-title", "size-small", "size-label", "size-mono"],
+  "rules": ["Nothing is larger than title.", "Three weights: 300 reading, 400 headings and controls, 500 title.", "Sentence case everywhere; labels are uppercased by the style, not by the copy."],
+  "accessibility": ["Sizes scale with the reader's text size (rem on the web, Dynamic Type in Swift)."],
+  "platforms": { "react": "Text", "swift": "DSText" }
+}

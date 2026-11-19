@@ -1,0 +1,33 @@
+{
+  "name": "components-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm --filter @hugocxl/components build",
+    "sync": "node scripts/sync-swift.mjs",
+    "check": "node scripts/sync-swift.mjs --check && node scripts/check-recipes.mjs",
+    "typecheck": "tsc -p packages/components --noEmit && tsc -p website --noEmit",
+    "test": "pnpm run build && pnpm run check && pnpm run typecheck && node --test tests/*.test.mjs",
+    "test:swift": "cd .. && swift test --filter ComponentsTests",
+    "snapshots": "cd .. && COMPONENTS_SNAPSHOTS=\"$PWD/components/website/swift\" swift test --filter ComponentsTests/SnapshotTests",
+    "build:site": "pnpm run build && node scripts/build-site.mjs",
+    "dev": "pnpm run build && node scripts/build-site.mjs --serve"
+  },
+  "devDependencies": {
+    "@hugocxl/components": "workspace:*",
+    "@hugocxl/design-system": "^0.2.14",
+    "@hugocxl/icons": "^0.2.36",
+    "@hugocxl/vectors": "^0.1.19",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "esbuild": "^0.28.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

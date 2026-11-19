@@ -1,0 +1,16 @@
+{
+  "name": "statement",
+  "title": "Statement",
+  "group": "content",
+  "summary": "One sentence at title size that opens a home page, ending with an optional accent phrase.",
+  "use": ["Home pages and welcome screens only."],
+  "anatomy": ["Sentence", "Optional accent phrase of two or three words"],
+  "options": [
+    { "name": "accent", "values": ["text"], "default": null, "description": "The last two or three words." }
+  ],
+  "states": [],
+  "tokens": ["size-title", "ink", "accent-text"],
+  "rules": ["One accent phrase per page."],
+  "accessibility": ["The statement is the page's first level heading."],
+  "platforms": { "react": "Statement", "swift": "DSStatement" }
+}

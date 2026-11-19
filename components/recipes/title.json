@@ -1,0 +1,16 @@
+{
+  "name": "title",
+  "title": "Title",
+  "group": "content",
+  "summary": "The name of the page or screen in ink, with an optional muted byline.",
+  "use": ["Once, at the top of every page except a home page (which uses a statement)."],
+  "anatomy": ["Heading", "Optional byline"],
+  "options": [
+    { "name": "byline", "values": ["text"], "default": null, "description": "Who or what it is from." }
+  ],
+  "states": [],
+  "tokens": ["size-title", "ink", "muted"],
+  "rules": ["The heading fits on one line."],
+  "accessibility": ["The heading is the page's first level heading."],
+  "platforms": { "react": "Title", "swift": "DSTitle" }
+}

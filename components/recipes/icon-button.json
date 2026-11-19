@@ -1,0 +1,17 @@
+{
+  "name": "icon-button",
+  "title": "Icon button",
+  "group": "actions",
+  "summary": "An action shown only as an icon, in a 44pt circle.",
+  "use": ["For actions everyone recognizes by their icon: close, more, previous, next, theme."],
+  "anatomy": ["Circle", "Icon"],
+  "options": [
+    { "name": "variant", "values": ["outline", "ghost"], "default": "outline", "description": "outline has a hairline ring; ghost has none and suits toolbars and fields." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Read by assistive technology and shown as a tooltip." }
+  ],
+  "states": ["default", "hover", "pressed", "focus", "disabled"],
+  "tokens": ["rule", "surface", "ink", "muted", "radius-pill", "target"],
+  "rules": ["Never use an icon button for an action whose icon needs explaining; use a button with a label."],
+  "accessibility": ["The label is mandatory.", "44 × 44pt target."],
+  "platforms": { "react": "IconButton", "swift": "DSIconButton" }
+}

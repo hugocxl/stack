@@ -1,0 +1,18 @@
+{
+  "name": "link",
+  "title": "Link",
+  "group": "actions",
+  "summary": "Takes people somewhere. Inline in a sentence, or standalone in navigation.",
+  "use": ["inline inside running text.", "standalone in mastheads, footers and lists of destinations."],
+  "anatomy": ["Optional leading icon", "Words", "A 1px underline at 40% of the text color (inline only)"],
+  "options": [
+    { "name": "variant", "values": ["inline", "standalone"], "default": "inline", "description": "standalone has no underline until hover and a 44pt target." },
+    { "name": "icon", "values": ["any icon from @hugocxl/icons"], "default": null, "description": "Goes before the words." },
+    { "name": "external", "values": [true, false], "default": false, "description": "Opens in a new tab on the web and in the browser in apps." }
+  ],
+  "states": ["default", "hover", "focus"],
+  "tokens": ["ink", "target"],
+  "rules": ["Links keep the text color; the accent never colors a link."],
+  "accessibility": ["The words describe the destination on their own."],
+  "platforms": { "react": "Link", "swift": "DSLink" }
+}

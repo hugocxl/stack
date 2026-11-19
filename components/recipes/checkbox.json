@@ -1,0 +1,18 @@
+{
+  "name": "checkbox",
+  "title": "Checkbox",
+  "group": "inputs",
+  "summary": "Turns one option on or off when the choice is applied later, as in a form.",
+  "use": ["For opt-ins and for picking several options from a list."],
+  "anatomy": ["Box (ink when checked, with a check icon)", "Label", "Optional description"],
+  "options": [
+    { "name": "checked", "values": [true, false], "default": false, "description": "Whether it is on." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Required." },
+    { "name": "description", "values": ["text"], "default": null, "description": "One muted sentence." }
+  ],
+  "states": ["default", "hover", "focus", "checked", "disabled"],
+  "tokens": ["ink", "canvas", "muted", "radius-control", "target", "space-3"],
+  "rules": ["Use a switch instead when the change applies at once."],
+  "accessibility": ["The whole row is the target and toggles with Space."],
+  "platforms": { "react": "Checkbox", "swift": "DSCheckbox" }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dialog",
+  "title": "Dialog",
+  "group": "feedback",
+  "summary": "Asks for a decision or a few values before going on, above a veil of the canvas.",
+  "use": ["To confirm something that cannot be undone, or for a short task that must finish first."],
+  "anatomy": ["Veil (canvas at 84%)", "Panel on canvas with a hairline and the media radius", "Title", "Optional description", "Content", "Actions: secondary then primary, at the end"],
+  "options": [
+    { "name": "open", "values": [true, false], "default": false, "description": "Whether it is shown." },
+    { "name": "title", "values": ["text"], "default": null, "description": "Required. A question or the task." },
+    { "name": "description", "values": ["text"], "default": null, "description": "One muted sentence." },
+    { "name": "actions", "values": ["buttons"], "default": null, "description": "One primary, at most one secondary." }
+  ],
+  "states": ["open", "closed"],
+  "tokens": ["canvas", "rule", "radius-media", "muted", "space-5", "space-6"],
+  "rules": ["No shadows: the veil and the hairline separate the panel.", "Escape and the cancel action close it."],
+  "accessibility": ["Focus moves into the dialog and returns when it closes.", "Exposed as a modal."],
+  "platforms": { "react": "Dialog", "swift": "DSDialog" }
+}

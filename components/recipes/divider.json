@@ -1,0 +1,14 @@
+{
+  "name": "divider",
+  "title": "Divider",
+  "group": "content",
+  "summary": "A 1px hairline that separates groups when space alone is not enough.",
+  "use": ["Between groups in a list or a panel."],
+  "anatomy": ["Hairline"],
+  "options": [],
+  "states": [],
+  "tokens": ["rule"],
+  "rules": ["Prefer space; reach for a hairline only between groups of the same kind."],
+  "accessibility": ["A separator, unless it is purely decorative."],
+  "platforms": { "react": "Divider", "swift": "DSDivider" }
+}

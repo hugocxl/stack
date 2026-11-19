@@ -1,0 +1,19 @@
+{
+  "name": "select",
+  "title": "Select",
+  "group": "inputs",
+  "summary": "Picks one option from a list too long to show at once, on the same hairline as a text field.",
+  "use": ["For seven or more options, or when space is short."],
+  "anatomy": ["Label", "Current value on a hairline", "Chevron-down icon", "Help or error line"],
+  "options": [
+    { "name": "label", "values": ["text"], "default": null, "description": "Required." },
+    { "name": "options", "values": ["value, label"], "default": null, "description": "The list." },
+    { "name": "value", "values": ["option value"], "default": null, "description": "The picked option." },
+    { "name": "help", "values": ["text"], "default": null, "description": "One muted sentence below." }
+  ],
+  "states": ["default", "hover", "focus", "disabled"],
+  "tokens": ["rule", "ink", "muted", "target"],
+  "rules": ["Use the platform's own menu, so it works with every input method."],
+  "accessibility": ["Native control on every platform."],
+  "platforms": { "react": "Select", "swift": "DSSelect" }
+}

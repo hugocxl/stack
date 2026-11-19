@@ -106,7 +106,9 @@ const redirect = (doc) => doc.querySelector('meta[http-equiv="refresh"]');
 let navigated = 0;
 for (const page of pages) {
   const doc = documentOf(page);
-  if (redirect(doc) || page.startsWith("design-system/system/")) continue;
+  // The components website is a preview: its own navigation lists Components, which the other
+  // sections add when they move onto the components.
+  if (redirect(doc) || page.startsWith("design-system/system/") || page.startsWith("components/")) continue;
   const section = page.includes("/") ? page.split("/")[0] + "/" : "";
   const nav = doc.querySelector("body > .ds-masthead > nav.site-stack:first-child");
   assert.ok(nav, `${page}: no stack navigation first in the masthead`);

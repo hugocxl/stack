@@ -1,0 +1,17 @@
+{
+  "name": "progress",
+  "title": "Progress",
+  "group": "feedback",
+  "summary": "Shows how far a task has come, or that it is working, on a hairline track.",
+  "use": ["For uploads, imports and anything over a second."],
+  "anatomy": ["Optional label and value", "Track (rule)", "Fill (ink)"],
+  "options": [
+    { "name": "value", "values": ["0–1"], "default": null, "description": "Leave empty when the length is unknown." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Says what is in progress." }
+  ],
+  "states": ["determinate", "indeterminate"],
+  "tokens": ["rule", "ink", "radius-pill", "size-label"],
+  "rules": ["The fill is ink, never the accent."],
+  "accessibility": ["Exposed as a progress bar with its value."],
+  "platforms": { "react": "Progress", "swift": "DSProgress" }
+}
