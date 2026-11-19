@@ -6,79 +6,31 @@ import sys
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
-# The current audit records explicit unresolved verdicts instead of inheriting
-# the historical all-approved claim. Hash integrity and design acceptance are
-# separate gates; --strict-design rejects any unresolved design finding.
-current = root / 'docs/design-audit-2026-11-18.json'
-if current.exists():
-    audit = json.loads(current.read_text())
-    catalog = json.loads((root / 'catalog.json').read_text())
-    entries = {entry['name']: entry for entry in audit['entries']}
-    assert len(entries) == len(audit['entries']), 'Duplicate current audit entries'
-    assert set(entries) == {icon['name'] for icon in catalog}, 'Current audit coverage differs from catalog'
-    assert audit['sizesPoints'] == [16,24,32] and audit['rasterScales'] == [1,2]
-    assert audit['tints'] == ['light','dark']
-    unresolved=[]
-    count=0
-    for icon in catalog:
-        entry=entries[icon['name']]
-        assert entry['category'] == icon['category']
-        assert entry['verdict'] in {'pass','fail','needs-review'}
-        assert entry['finding'].strip() and entry['evidence']
-        assert set(entry['sha256']) == set(icon['styles'])
-        for style in icon['styles']:
-            relative = f"{icon['name']}.svg" if style == 'duotone' else f"styles/{style}/{icon['name']}.svg"
-            actual=hashlib.sha256((root/'icons'/relative).read_bytes()).hexdigest()
-            assert actual == entry['sha256'][style], f"Stale visual review: {icon['name']}/{style}"
-            count+=1
-        if entry['verdict'] != 'pass': unresolved.append(icon['name'])
-    print(f'Current visual audit hashes verified: {len(entries)} names, {count} SVGs; {len(unresolved)} unresolved design findings.')
-    if '--strict-design' in sys.argv and unresolved:
-        sys.exit('Strict design acceptance blocked: '+', '.join(unresolved))
-    sys.exit(0)
-
-review = json.loads((root / 'docs/icon-review.json').read_text())
-# Preserve the original review as a historical baseline. A narrowly scoped,
-# visually inspected tone revision can supersede a default hash without
-# falsely closing the separate strict audit's geometry/meaning findings.
-tone_review = json.loads((root / 'docs/tone-review.json').read_text())
-assert tone_review['scope'] == 'selective-tone'
-tone_entries = {entry['name']: entry for entry in tone_review['icons']}
-assert len(tone_entries) == len(tone_review['icons']), 'Duplicate tone reviews'
-observed_tone_styles = set()
+# docs/audit.json holds one visual verdict per name, bound to the SHA-256 of every
+# style's SVG. Hash integrity and design acceptance are separate gates:
+# --strict-design also rejects any unresolved design finding.
+current = root / 'docs/audit.json'
+audit = json.loads(current.read_text())
 catalog = json.loads((root / 'catalog.json').read_text())
-entries = {entry['name']: entry for entry in review['icons']}
-assert len(entries) == len(review['icons']), 'Duplicate review entries'
-assert set(entries) == {c['name'] for c in catalog}, 'Review coverage differs from catalog'
-assert review['sizesPoints'] == [16, 24, 32] and review['tints'] == ['light', 'dark']
-sheets = {}
-for sheet in review['sheets']:
-    for name in sheet['names']:
-        assert name not in sheets, f'Duplicate sheet coverage: {name}'
-        sheets[name] = sheet
-assert set(sheets) == set(entries), 'Sheet coverage differs from reviewed icons'
-count = 0
+entries = {entry['name']: entry for entry in audit['entries']}
+assert len(entries) == len(audit['entries']), 'Duplicate current audit entries'
+assert set(entries) == {icon['name'] for icon in catalog}, 'Current audit coverage differs from catalog'
+assert audit['sizesPoints'] == [16,24,32] and audit['rasterScales'] == [1,2]
+assert audit['tints'] == ['light','dark']
+unresolved=[]
+count=0
 for icon in catalog:
-    name = icon['name']
-    entry = entries[name]
-    assert entry['category'] == icon['category'] == sheets[name]['category']
-    assert entry['sheet'] == sheets[name]['file']
-    assert entry['result'] == 'reviewed' and entry['assessment'].strip()
-    assert not entry['unresolvedFindings'], f'Unresolved findings: {name}'
-    assert set(entry['sha256']) == set(icon['styles']), f'Style coverage: {name}'
+    entry=entries[icon['name']]
+    assert entry['category'] == icon['category']
+    assert entry['verdict'] in {'pass','fail','needs-review'}
+    assert entry['finding'].strip() and entry['evidence']
+    assert set(entry['sha256']) == set(icon['styles'])
     for style in icon['styles']:
-        relative = f'{name}.svg' if style == 'duotone' else f'styles/{style}/{name}.svg'
-        actual = hashlib.sha256((root / 'icons' / relative).read_bytes()).hexdigest()
-        expected = entry['sha256'][style]
-        if name in tone_entries and style in tone_entries[name]['styles']:
-            tone = tone_entries[name]
-            assert tone['result'] == 'pass'
-            assert tone['assessment'].strip() and tone['evidence'], f'Missing tone inspection: {name}'
-            assert tone['beforeSha256'][style] == expected, f'Tone review baseline drift: {name}/{style}'
-            assert tone['defaultTone'] == icon['defaultTone'], f'Tone decision drift: {name}'
-            expected = tone['sha256'][style]
-            observed_tone_styles.add((name,style))
-        assert actual == expected, f'Stale visual review: {name}/{style}; render and inspect the change before updating the record'
-        count += 1
-assert observed_tone_styles == {(name,style) for name,tone in tone_entries.items() for style in tone['styles']}, 'Orphan tone reviews'
-print(f'Review hashes current: {len(entries)} names, {count} SVGs; {len(tone_entries)} selective-tone follow-ups. Separate strict-audit findings remain open.')
+        relative = f"{icon['name']}.svg" if style == 'duotone' else f"styles/{style}/{icon['name']}.svg"
+        actual=hashlib.sha256((root/'icons'/relative).read_bytes()).hexdigest()
+        assert actual == entry['sha256'][style], f"Stale visual review: {icon['name']}/{style}"
+        count+=1
+    if entry['verdict'] != 'pass': unresolved.append(icon['name'])
+print(f'Current visual audit hashes verified: {len(entries)} names, {count} SVGs; {len(unresolved)} unresolved design findings.')
+if '--strict-design' in sys.argv and unresolved:
+    sys.exit('Strict design acceptance blocked: '+', '.join(unresolved))

@@ -2,8 +2,7 @@
 
 @hugocxl/icons is a rounded family with selective duotone for product interfaces.
 The collection contains 2,462 names: 2,381 original UI symbols and 81 retained
-brand marks. The November 17 expansion adds 35 concepts inspired by SF Symbols'
-semantic breadth, with subtle polish to three existing symbols.
+brand marks.
 [The generated catalog](CATALOG.md) defines the delivered set;
 [`catalog.json`](../catalog.json) is its machine-readable counterpart.
 
@@ -122,20 +121,15 @@ both tints. Live browser inspection was unavailable in the execution environment
 icon browser interaction is covered with DOM tests. Device-level React Native testing
 and exhaustive human review on every display size are still separate checks.
 
-The [current full-catalog quality audit](QUALITY-AUDIT-2026-11-18.md) records the
-single-weight redraw. The [previous audit](QUALITY-AUDIT-2026-11-17.md) recorded a fresh
-review of every icon and supersedes the earlier visual assessments. Its
-[before/after comparison](quality-changes-2026-11-17.html) shows every correction.
-The [expansion review](SF-EXPANSION-2026-11-17.md) remains a historical record of additions.
-The [Lucide coverage comparison](COVERAGE-2026-11-16.md) records complete coverage
-of the pinned reference inventory.
+The [quality audit](AUDIT.md) records the single-weight redraw: one stroke width
+and one corner radius across the family, enforced by `draw.py` and a raster gate.
+[`audit.json`](audit.json) holds the current verdict for every name, bound to the
+hash of each style's SVG, and validation rejects stale entries. The
+[Lucide coverage comparison](COVERAGE.md) records complete coverage of the pinned
+reference inventory. Earlier reviews remain in the git history.
 
-The historical [full artwork review](REVIEW.md) records the earlier per-icon inspection
-and corrections. Solid construction preserves structural parts separately from
-negative interior details; complex occlusion is authored explicitly. Round body
-corners, high-resolution stroke expansion and area-checked Boolean operations
-prevent the geometric failures found in that review. Review hashes are checked
-by validation; changed artwork must be rendered and inspected again.
-
-The [selective-duotone review](TONE-REVIEW.md) records the subsequent tone-policy
-correction, reviewed changes, and regression protection.
+Solid construction preserves structural parts separately from negative interior
+details; complex occlusion is authored explicitly. Round body corners,
+high-resolution stroke expansion and area-checked Boolean operations prevent
+known geometric failures. Changed artwork must be rendered and inspected again
+before its audit entry is updated.

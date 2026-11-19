@@ -64,7 +64,8 @@ accepting a passing automated gate as sufficient.
 
 ## Full family audit
 
-See [the review report](../../docs/REVIEW.md) and per-icon record. Run
+See [the quality audit](../../docs/AUDIT.md) and its per-icon record,
+[`docs/audit.json`](../../docs/audit.json). Run
 `swift scripts/icons/render-audit.swift . review/final` for paginated category
 sheets with every supported style, three sizes and two tints. Run
 `python scripts/icons/test-design.py` in the authoring environment for topology
@@ -87,18 +88,16 @@ occlusion or Solid counters. Their faded and opaque paths must not overlap,
 and each linear mark stays opaque. Surface compositions stored as glyphs need
 an explicit `DUOTONE_GLYPHS` rationale. A style override is not a visual approval.
 
-`assemble-audit.py` combines explicit reviewer ledgers in precedence order and
-rejects any stale SVG hash. The full audit keeps disagreements and their
-coordinator adjudication available in separate source ledgers.
-
 ## SF-inspired additions
 
-`sf_home.py`, `sf_media.py`, and `sf_accessibility.py` add original semantic
-families through `draw.py`. Reference only concepts and optical design principles;
+The `sf_*.py` and `sf_ext_*.py` modules add original semantic families through
+`draw.py`. Reference only concepts and optical design principles;
 keep the existing stroke widths, corner language, and selective tone policy.
 
-Reproduce the focused native review without changing its approval records:
+Render a focused native review of some names, given as a JSON array, without
+changing any approval record:
 
 ```sh
-python3 scripts/icons/render-focused.py docs/audit-sf-2026-11-17.json review/sf-expansion
+echo '["search", "settings"]' > /tmp/names.json
+python3 scripts/icons/render-focused.py /tmp/names.json review/focused
 ```

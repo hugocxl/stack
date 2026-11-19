@@ -6,8 +6,7 @@ same stroke width and corner roundness throughout. Earlier audits had passed
 icons that were clearly broken, so this audit changed the method, not just the
 verdicts.
 
-[Per-icon ledger](design-audit-2026-11-18.json) ·
-[SF Symbols gap analysis](SF-GAP-2026-11-18.md)
+[Per-icon ledger](audit.json)
 
 ## What was wrong
 

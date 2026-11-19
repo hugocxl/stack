@@ -107,7 +107,7 @@
     "added_canonical_count": 29,
     "catalog_count_after": 579,
     "covered_reference_names_after": 436,
-    "handshake_status_then": "Deferred after ambiguous 16-point prototype review; its failed evidence remains in audit-2026-11-16-expansion.json.",
+    "handshake_status_then": "Deferred after ambiguous 16-point prototype review.",
     "handshake_status_now": "exact-name"
   },
   "full_expansion_progress": {

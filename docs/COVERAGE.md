@@ -13,7 +13,7 @@ The catalog contains **2,462 names**: 2,381 original UI names and 81 retained br
 - Upstream archive SHA-256: `f5469fa3574960f5e62780160204512766e1463d5d8b0a9c95515d058fd6062c`.
 - Metadata-only inventory SHA-256: `f8da62ef9b13b3ba9fdd62ba31bed8966ce2dc1a9cbc194e6cb2d13ce5466962`.
 - Rebuild with `python3 scripts/icons/compare-lucide.py --require-complete`; check coverage and report currency without writing with `--check --require-complete`. `--inventory METADATA.json` accepts another snapshot with the same schema.
-- The [machine-readable report](lucide-coverage-2026-11-16.json) lists every canonical name, resolved category, upstream alias and local mapping. Its snapshot hash changes when the catalog changes.
+- The [machine-readable report](lucide-coverage.json) lists every canonical name, resolved category, upstream alias and local mapping. Its snapshot hash changes when the catalog changes.
 
 Reference metadata supplies names and semantics only. All new geometry is authored in this repository under [DESIGN.md](DESIGN.md) and [STYLE.md](../scripts/icons/STYLE.md); no Lucide paths are imported.
 
@@ -197,7 +197,7 @@ Reference categories overlap and can inherit through `$extends:` entries. All re
 | Full single-phase expansion | 2,198 | 2,055 / 2,055 | 0 | 0 |
 | Current catalog including later additions | 2,462 | 2,055 / 2,055 | 0 | 0 |
 
-The first extension added 29 accepted concepts. Its handshake prototype was deferred after an ambiguous 16-point review; that historical failure remains in [the original extension audit](audit-2026-11-16-expansion.json). The full phase authors the handshake concept anew and records its current assessment separately. Earlier audit verdicts are retained as historical evidence rather than rewritten as current approvals.
+The first extension added 29 accepted concepts. Its handshake prototype was deferred after an ambiguous 16-point review. The full phase authors the handshake concept anew and records its current assessment separately. Earlier audit verdicts remain in the git history rather than being rewritten as current approvals.
 
 ## Verification boundary
 

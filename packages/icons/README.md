@@ -1,11 +1,11 @@
 # @hugocxl/icons
 
-**2,233 rounded icons for apps, websites, and developer tools**, with typed,
+**2,462 rounded icons for apps, websites, and developer tools**, with typed,
 tree-shakeable exports for JavaScript, React, React Native, and Expo.
 
-Choose Duotone, Solid, or Stroke for 2,152 UI icons, plus 81 brand marks in the
-default style: 6,432 SVG drawings in total. SwiftUI, UIKit, and AppKit are also
-supported through the [Swift package](https://github.com/hugocxl/icons#swift--swiftui).
+Choose Duotone, Solid, or Stroke for 2,381 UI icons, plus 81 brand marks in the
+default style: 7,224 SVG drawings in total. SwiftUI, UIKit, and AppKit are also
+supported through the [Swift package](https://hugocxl.github.io/icons/docs.html).
 
 ```sh
 npm install @hugocxl/icons
@@ -29,7 +29,7 @@ The package root is the pure JavaScript adapter. Framework peers are optional;
 install the peers needed by the adapter you use.
 
 [Browse the complete catalog](https://github.com/hugocxl/icons/blob/main/docs/CATALOG.md)
-or read the [full integration guide](https://github.com/hugocxl/icons#readme).
+or read the [full integration guide](https://hugocxl.github.io/icons/docs.html).
 Redistribute LICENSE, NOTICE and THIRD_PARTY_LICENSES.md with the artwork.
 
 Style imports use `/js/solid`, `/react/solid`, `/react-native/solid` or the
@@ -45,3 +45,6 @@ Use an assigned color for a language, tool, file type or brand by passing
 `@hugocxl/icons/colors`. The web value follows the design-system hue token or
 CSS color scheme. Pass `'light'` or `'dark'` as the second argument for a native
 hex value. The catalog’s optional `defaultColor` field names the hue.
+
+AI agents: the package ships a skill in `skills/icons/` with the rules and a catalog
+search (`node node_modules/@hugocxl/icons/skills/icons/scripts/search.mjs trash`).

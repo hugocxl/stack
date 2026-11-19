@@ -246,7 +246,7 @@ data = {
     'first_extension_history': {
         'added_names': extension_names, 'added_canonical_count': len(extension_names),
         'catalog_count_after': 579, 'covered_reference_names_after': 436,
-        'handshake_status_then': 'Deferred after ambiguous 16-point prototype review; its failed evidence remains in audit-2026-11-16-expansion.json.',
+        'handshake_status_then': 'Deferred after ambiguous 16-point prototype review.',
         'handshake_status_now': by_name.get('handshake', {}).get('status', 'not-in-reference'),
     },
     'full_expansion_progress': {
@@ -270,7 +270,7 @@ lines = [
     f'- Upstream archive SHA-256: `{upstream["archive_sha256"]}`.',
     f'- Metadata-only inventory SHA-256: `{data["reference"]["metadata_sha256"]}`.',
     '- Rebuild with `python3 scripts/icons/compare-lucide.py --require-complete`; check coverage and report currency without writing with `--check --require-complete`. `--inventory METADATA.json` accepts another snapshot with the same schema.',
-    '- The [machine-readable report](lucide-coverage-2026-11-16.json) lists every canonical name, resolved category, upstream alias and local mapping. Its snapshot hash changes when the catalog changes.', '',
+    '- The [machine-readable report](lucide-coverage.json) lists every canonical name, resolved category, upstream alias and local mapping. Its snapshot hash changes when the catalog changes.', '',
     'Reference metadata supplies names and semantics only. All new geometry is authored in this repository under [DESIGN.md](DESIGN.md) and [STYLE.md](../scripts/icons/STYLE.md); no Lucide paths are imported.', '',
     '## Full single-phase expansion', '',
     f'The earlier foundation covered 436 / 2,055 reference concepts, leaving 1,613 missing concepts and six shape/state mismatches. This phase implements all 1,619 remaining concepts with {len(new_names)*3:,} default, Solid and Stroke SVGs. The four authoring groups are ownership boundaries within this one phase:', '',
@@ -306,13 +306,13 @@ lines += ['', '## Earlier snapshots', '',
           '| First extension | 579 | 436 / 2,055 | 1,613 | 6 |',
           f'| Full single-phase expansion | {579+len(new_names):,} | {covered:,} / {len(lucide):,} | {gap:,} | 0 |',
           f'| Current catalog including later additions | {len(catalog):,} | {covered:,} / {len(lucide):,} | {gap:,} | 0 |', '',
-          'The first extension added 29 accepted concepts. Its handshake prototype was deferred after an ambiguous 16-point review; that historical failure remains in [the original extension audit](audit-2026-11-16-expansion.json). The full phase authors the handshake concept anew and records its current assessment separately. Earlier audit verdicts are retained as historical evidence rather than rewritten as current approvals.', '',
+          'The first extension added 29 accepted concepts. Its handshake prototype was deferred after an ambiguous 16-point review. The full phase authors the handshake concept anew and records its current assessment separately. Earlier audit verdicts remain in the git history rather than being rewritten as current approvals.', '',
           '## Verification boundary', '',
           'This comparison establishes canonical concept/name coverage against the pinned metadata. Current geometry, opacity, native rendering and platform integration are evaluated by their own gates and per-name review records. Snapshot hashes make report currency reproducible. Public package/release state is verified separately from local coverage.']
 
 outputs = {
-    ROOT/'docs/lucide-coverage-2026-11-16.json': json.dumps(data, indent=2, ensure_ascii=False)+'\n',
-    ROOT/'docs/COVERAGE-2026-11-16.md': '\n'.join(lines)+'\n',
+    ROOT/'docs/lucide-coverage.json': json.dumps(data, indent=2, ensure_ascii=False)+'\n',
+    ROOT/'docs/COVERAGE.md': '\n'.join(lines)+'\n',
 }
 if args.check:
     stale = [str(path.relative_to(ROOT)) for path, content in outputs.items() if not path.exists() or path.read_text() != content]
