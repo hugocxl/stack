@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const EllipseIcon = /*#__PURE__*/ forwardRef(function EllipseIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M0.95 8Q0.95 6.7242 1.5894 5.6787Q2.1729 4.7245 3.2361 4.0484Q4.2075 3.4307 5.4777 3.1076Q6.687 2.8 8 2.8Q9.313 2.8 10.5223 3.1076Q11.7925 3.4307 12.7639 4.0484Q13.8271 4.7245 14.4106 5.6787Q15.05 6.7242 15.05 8Q15.05 9.2758 14.4106 10.3213Q13.8271 11.2755 12.7639 11.9516Q11.7925 12.5693 10.5223 12.8924Q9.313 13.2 8 13.2Q6.687 13.2 5.4777 12.8924Q4.2075 12.5693 3.2361 11.9516Q2.1729 11.2755 1.5894 10.3213Q0.95 9.2758 0.95 8Z", "fill": "currentColor"}));
+});

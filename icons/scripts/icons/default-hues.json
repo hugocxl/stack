@@ -1,0 +1,13 @@
+{
+  "red": ["java", "npm", "ruby", "scala", "yml"],
+  "orange": ["claude", "git", "gitlab", "html", "postcss", "rss", "rust", "svelte", "swift", "xml", "zig"],
+  "yellow": ["archive", "babel", "file-zip", "folder", "folder-closed", "folder-open", "folder-open-dot", "folder-root", "folder-symlink", "folder-tree", "folder-zip", "folders", "javascript", "pnpm", "python", "svg"],
+  "green": ["bash", "droid", "file-table", "file-terminal", "gitcafe", "node", "sheet", "square-terminal", "table", "table-2", "terminal", "terminal-stack", "vim", "vue"],
+  "teal": ["biome", "prettier"],
+  "sky": ["dart", "go", "layers", "layers-2", "react", "server-nas", "server-rack", "tailwind", "webpack", "yarn"],
+  "blue": ["binary", "bitbucket", "braces", "c", "code", "code-block", "code-xml", "cpp", "docker", "file-braces", "file-braces-corner", "file-code", "file-code-corner", "kubernetes", "lua", "objc", "powershell", "r", "square-code", "typescript", "vscode"],
+  "violet": ["bootstrap", "css", "eslint", "php", "wasm"],
+  "purple": ["astro", "csharp", "elixir", "file-type", "file-type-corner", "font", "haskell", "kotlin", "mcp", "terraform", "vite"],
+  "pink": ["file-image", "graphql", "image", "images", "sass"],
+  "brown": ["bun", "homebrew"]
+}

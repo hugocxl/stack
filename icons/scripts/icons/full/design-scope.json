@@ -1,0 +1,7895 @@
+[
+  {
+    "lucide_name": "a-arrow-down",
+    "categories": [
+      "text",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "a-arrow-up",
+    "categories": [
+      "text",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "a-large-small",
+    "categories": [
+      "text",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-center-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-center-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-end-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-end-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-distribute-center",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-distribute-end",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-distribute-start",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-justify-center",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-justify-end",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-justify-start",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-space-around",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-horizontal-space-between",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-start-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-start-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-distribute-center",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-distribute-end",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-distribute-start",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-justify-center",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-justify-end",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-justify-start",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-space-around",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "align-vertical-space-between",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ampersand",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ampersands",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "angle",
+    "categories": [
+      "math",
+      "design"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "app-window-mac",
+    "categories": [
+      "layout",
+      "development"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-down",
+    "categories": [
+      "arrows",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-down-dash",
+    "categories": [
+      "arrows",
+      "gaming",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-left",
+    "categories": [
+      "arrows",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-left-dash",
+    "categories": [
+      "arrows",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-right",
+    "categories": [
+      "arrows",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-right-dash",
+    "categories": [
+      "arrows",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-up",
+    "categories": [
+      "arrows",
+      "text",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-big-up-dash",
+    "categories": [
+      "arrows",
+      "text",
+      "gaming"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-0-1",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-01",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-1-0",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-10",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-a-z",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-az",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-from-line",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-narrow-wide",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-to-dot",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-wide-narrow",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "sort-desc",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-down-z-a",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-za",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-left-from-line",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-left-to-line",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-right-from-line",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-right-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-right-to-line",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-0-1",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-01",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-1-0",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-10",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-a-z",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-az",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-from-dot",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-from-line",
+    "categories": [
+      "arrows",
+      "files",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-narrow-wide",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "sort-asc",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-wide-narrow",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrow-up-z-a",
+    "categories": [
+      "arrows",
+      "text",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-za",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "arrows-up-from-line",
+    "categories": [
+      "arrows",
+      "transportation"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "asterism",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "astroid",
+    "categories": [
+      "shapes",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "axis-3d",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "axis-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "baseline",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "between-horizontal-end",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "between-horizonal-end",
+        "deprecated": true,
+        "deprecationReason": "alias.typo"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "between-horizontal-start",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "between-horizonal-start",
+        "deprecated": true,
+        "deprecationReason": "alias.typo"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "between-vertical-end",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "between-vertical-start",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "binary",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "blend",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-a",
+    "categories": [
+      "text",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-bookmark",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "book-marked",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-copy",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-exclamation-point",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "book-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-open-check",
+    "categories": [
+      "text",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-open-text",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "book-type",
+    "categories": [
+      "text",
+      "design",
+      "gaming"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "box",
+    "categories": [
+      "shapes",
+      "gaming",
+      "development",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "boxes",
+    "categories": [
+      "shapes",
+      "gaming",
+      "development"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "bring-to-front",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "brush",
+    "categories": [
+      "text",
+      "design",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "case-lower",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "case-sensitive",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "case-upper",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "chevron-first",
+    "categories": [
+      "arrows",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "chevron-last",
+    "categories": [
+      "arrows",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "chevrons-down-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "chevrons-left-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-arrow-down-left-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-left-from-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-arrow-out-down-left",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-arrow-down-right-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-right-from-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-arrow-out-down-right",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-arrow-up-left-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-left-from-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-arrow-out-up-left",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-arrow-up-right-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-right-from-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-arrow-out-up-right",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevron-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-down-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevron-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-left-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevron-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-right-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevron-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-up-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevrons-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevrons-left",
+    "categories": [
+      "arrows",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevrons-right",
+    "categories": [
+      "arrows",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-chevrons-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-dashed",
+    "categories": [
+      "shapes",
+      "development"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-dashed-check",
+    "categories": [
+      "shapes",
+      "development",
+      "notifications"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-divide",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "divide-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-dot",
+    "categories": [
+      "shapes",
+      "development"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-dot-dashed",
+    "categories": [
+      "shapes",
+      "development"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-equal",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-fading-arrow-up",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-a",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-b",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-c",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "copyright"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-d",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-e",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-f",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-g",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-h",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-i",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-j",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-k",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-l",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-m",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-n",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-o",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-p",
+    "categories": [
+      "letters-digits",
+      "navigation",
+      "transportation"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "parking-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-parking",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-p-off",
+    "categories": [
+      "letters-digits",
+      "navigation",
+      "transportation"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "parking-circle-off",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "circle-parking-off",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-q",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-r",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-s",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-t",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-u",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-v",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-w",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-x",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-y",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-letter-z",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-off",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-pile",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "circle-small",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "clipboard-pen-line",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "clipboard-signature",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "clipboard-type",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "cloud-backup",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "club",
+    "categories": [
+      "shapes",
+      "gaming"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "columns-3",
+    "categories": [
+      "layout",
+      "design",
+      "text"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panels-left-right",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "columns-3-cog",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "columns-settings",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "table-config",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "columns-4",
+    "categories": [
+      "layout",
+      "design",
+      "text"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "component",
+    "categories": [
+      "design",
+      "development"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "cone",
+    "categories": [
+      "shapes",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "copy-minus",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "copy-slash",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "copyleft",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-down-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-down-right",
+    "categories": [
+      "arrows",
+      "text",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-left-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-left-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-right-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-right-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-up-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "corner-up-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "creative-commons",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "cross",
+    "categories": [
+      "shapes",
+      "medical"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "cuboid",
+    "categories": [
+      "shapes",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "cylinder",
+    "categories": [
+      "shapes",
+      "design",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "decimals-arrow-left",
+    "categories": [
+      "design",
+      "text",
+      "arrows",
+      "math"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "decimals-arrow-right",
+    "categories": [
+      "design",
+      "text",
+      "arrows",
+      "math"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "diagram-flow-horizontal",
+    "categories": [
+      "design",
+      "charts"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "diagram-flow-vertical",
+    "categories": [
+      "design",
+      "charts",
+      "development"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "diameter",
+    "categories": [
+      "shapes",
+      "math",
+      "design",
+      "tools"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "diamond",
+    "categories": [
+      "shapes",
+      "gaming"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "divide",
+    "categories": [
+      "math",
+      "development"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "dock",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "drafting-compass",
+    "categories": [
+      "math",
+      "design",
+      "tools"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "earth",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [
+      {
+        "name": "globe-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ellipse",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "equal-approximately",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "equal-approximately-not",
+    "categories": [
+      "math",
+      "development",
+      "science"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "equal-not",
+    "categories": [
+      "math",
+      "development"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "exclamation-mark",
+    "categories": [
+      "letters-digits",
+      "text",
+      "notifications"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "expand",
+    "categories": [
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ferris-wheel",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "fold-horizontal",
+    "categories": [
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "frame",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "funnel-plus",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "funnel-x",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "filter-x",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gallery-horizontal",
+    "categories": [
+      "layout",
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gallery-horizontal-end",
+    "categories": [
+      "layout",
+      "photography",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gallery-thumbnails",
+    "categories": [
+      "layout",
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gallery-vertical",
+    "categories": [
+      "layout",
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gallery-vertical-end",
+    "categories": [
+      "layout",
+      "photography",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gap-horizontal",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "gap-vertical",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-ban",
+    "categories": [
+      "navigation",
+      "connectivity",
+      "security"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-check",
+    "categories": [
+      "navigation",
+      "connectivity"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-code",
+    "categories": [
+      "navigation",
+      "connectivity",
+      "development"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-off",
+    "categories": [
+      "navigation",
+      "connectivity"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-plus",
+    "categories": [
+      "navigation",
+      "connectivity"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "globe-x",
+    "categories": [
+      "navigation",
+      "connectivity"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-2x2",
+    "categories": [
+      "text",
+      "layout",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-2-x-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-2x2-check",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-2-x-2-check",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-2x2-plus",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-2-x-2-plus",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-2x2-x",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-2-x-2-x",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-3x2",
+    "categories": [
+      "text",
+      "layout",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-3-x-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-3x3",
+    "categories": [
+      "text",
+      "layout",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "grid-3-x-3",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "grid-3x3-off",
+    "categories": [
+      "text",
+      "layout",
+      "design"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "grid-3-x-3-off",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "group",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "hand-grab",
+    "categories": [
+      "cursors",
+      "design",
+      "layout"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [
+      {
+        "name": "grab",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "handle-bottom-right",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "heading-5",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "heading-6",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "hexagon",
+    "categories": [
+      "shapes",
+      "development"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "import",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "iteration-ccw",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "iteration-cw",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "keyboard-off",
+    "categories": [
+      "text",
+      "devices",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "lambda",
+    "categories": [
+      "letters-digits",
+      "development",
+      "math",
+      "science",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "land-plot",
+    "categories": [
+      "math",
+      "navigation"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "lasso",
+    "categories": [
+      "design",
+      "cursors"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "lasso-select",
+    "categories": [
+      "design",
+      "cursors"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layer-arrow-down",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layer-arrow-up",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layers-2",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layers-arrow-down",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layers-arrow-up",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layers-minus",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layers-plus",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-arrow-down",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-arrow-right",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-freeform",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-grid-circles",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-grid-plus",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-panel-left",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "layout-panel-top",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-a",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-c",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-d",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-e",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-f",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-g",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-h",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "heading"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-i",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-j",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-k",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-l",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-m",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-n",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-o",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-p",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-q",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-r",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-s",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-spacing",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-t",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-u",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-v",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-w",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-x",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-y",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letter-z",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "letters",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "library-big",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ligature",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "line-height",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "line-squiggle",
+    "categories": [
+      "shapes",
+      "math",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "line-style",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "link-2-off",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-check",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-chevrons-down-up",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-chevrons-up-down",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-collapse",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-end",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-filter-plus",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-restart",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "list-start",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "loader-pinwheel",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "locate-off",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "magnet",
+    "categories": [
+      "design",
+      "science"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-minus",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-check",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-check-inside",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-house",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-minus",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-minus-inside",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-pen",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [
+      {
+        "name": "location-edit",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-plus-inside",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-search",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pin-x-inside",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-pinned",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "map-plus",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-bottom",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-horizontal",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-left",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-right",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-top",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "margin-vertical",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "maximize-2",
+    "categories": [
+      "layout",
+      "design",
+      "arrows"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "milestone",
+    "categories": [
+      "arrows",
+      "navigation",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "minimize-2",
+    "categories": [
+      "layout",
+      "design",
+      "arrows"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "mouse-pointer-2",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "mouse-pointer-2-off",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "mouse-pointer-ban",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-3d",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "move-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-diagonal",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-diagonal-2",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-down-left",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-down-right",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-horizontal",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-up-left",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-up-right",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "move-vertical",
+    "categories": [
+      "arrows",
+      "cursors"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "navigation-2",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "navigation-2-off",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "navigation-off",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "notebook-dot",
+    "categories": [
+      "text",
+      "notifications"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "notebook-pen",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "notebook-text",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "notepad-text",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "notepad-text-dashed",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "numbers",
+    "categories": [
+      "letters-digits",
+      "text",
+      "math"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "octagon",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "octagon-pause",
+    "categories": [
+      "shapes",
+      "multimedia"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [
+      {
+        "name": "pause-octagon",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "omega",
+    "categories": [
+      "letters-digits",
+      "math",
+      "text",
+      "science"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "opacity",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "paint-bucket",
+    "categories": [
+      "design",
+      "tools"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "paint-roller",
+    "categories": [
+      "design",
+      "home",
+      "tools"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "paintbrush-vertical",
+    "categories": [
+      "text",
+      "design",
+      "photography",
+      "home",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "paintbrush-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-bottom-close",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-bottom-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panel-bottom-inactive",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-bottom-open",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-left-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panel-left-inactive",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-left-right-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-right-close",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-right-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panel-right-inactive",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-right-open",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-top-bottom-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-top-close",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-top-dashed",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panel-top-inactive",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panel-top-open",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panels-left-bottom",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panels-right-bottom",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "panels-top-left",
+    "categories": [
+      "layout",
+      "design",
+      "development"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "layout",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pen",
+    "categories": [
+      "text",
+      "design",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "edit-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pen-line",
+    "categories": [
+      "text",
+      "design",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "edit-3",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pen-off",
+    "categories": [
+      "text",
+      "design",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pencil-line",
+    "categories": [
+      "text",
+      "design",
+      "tools"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pencil-off",
+    "categories": [
+      "design",
+      "cursors",
+      "tools",
+      "text"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pencil-sparkles",
+    "categories": [
+      "design",
+      "cursors",
+      "tools",
+      "text"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pentagon",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "phi",
+    "categories": [
+      "letters-digits",
+      "math",
+      "science"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pilcrow",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pilcrow-left",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pilcrow-right",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pointer",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pointer-off",
+    "categories": [
+      "cursors"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "proportions",
+    "categories": [
+      "layout",
+      "design",
+      "photography",
+      "devices"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "pyramid",
+    "categories": [
+      "shapes",
+      "math",
+      "travel"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "question-mark",
+    "categories": [
+      "text",
+      "notifications"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "radar",
+    "categories": [
+      "navigation",
+      "security",
+      "communication"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "radius",
+    "categories": [
+      "shapes",
+      "math",
+      "design",
+      "tools"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "ratio",
+    "categories": [
+      "layout",
+      "design",
+      "photography"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rectangle-ellipsis",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "form-input",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rectangle-horizontal",
+    "categories": [
+      "shapes",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rectangle-vertical",
+    "categories": [
+      "shapes",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "redo-2",
+    "categories": [
+      "text",
+      "arrows"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "redo-dot",
+    "categories": [
+      "text",
+      "arrows"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "refresh-ccw",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "refresh-ccw-dot",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "refresh-cw",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "refresh-cw-off",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "remove-formatting",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "repeat-2",
+    "categories": [
+      "arrows",
+      "multimedia",
+      "social"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "repeat-off",
+    "categories": [
+      "arrows",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "replace",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "replace-all",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "roller-coaster",
+    "categories": [
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rotate-3d",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "rotate-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rotate-ccw-square",
+    "categories": [
+      "arrows",
+      "design",
+      "photography"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rotate-cw-clock",
+    "categories": [
+      "arrows",
+      "time"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rotate-cw-square",
+    "categories": [
+      "arrows",
+      "design",
+      "photography"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "route-arrow-right",
+    "categories": [
+      "navigation",
+      "arrows"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "route-off",
+    "categories": [
+      "navigation"
+    ],
+    "primary_category": "navigation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rows-3",
+    "categories": [
+      "layout",
+      "design",
+      "text"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "panels-top-bottom",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "rows-4",
+    "categories": [
+      "layout",
+      "design",
+      "text"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "scale-3d",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "scale-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "scaling",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "scan-box",
+    "categories": [
+      "design",
+      "devices",
+      "shopping"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "scissors-line-dashed",
+    "categories": [
+      "design",
+      "tools"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "search-exclamation-point",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "search-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "search-slash",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "section",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "send-to-back",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "shapes",
+    "categories": [
+      "shapes",
+      "gaming"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sheet",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "shrink",
+    "categories": [
+      "layout",
+      "arrows"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sigma",
+    "categories": [
+      "letters-digits",
+      "text",
+      "math",
+      "science"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "signature",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "signpost-big",
+    "categories": [
+      "arrows",
+      "navigation"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "slice",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "space",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "spade",
+    "categories": [
+      "shapes",
+      "gaming"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sparkle",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "spell-check-2",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "spline",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "spline-pointer",
+    "categories": [
+      "design",
+      "cursors"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "spray-can",
+    "categories": [
+      "design",
+      "tools"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-enter",
+    "categories": [
+      "arrows",
+      "files"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-left-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-left-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-left-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-left-from-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-arrow-out-down-left",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-right-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-right-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-down-right-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-down-right-from-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-arrow-out-down-right",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-left-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-left-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-left-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-right",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-right-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-right-enter",
+    "categories": [
+      "arrows",
+      "account",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-right-exit",
+    "categories": [
+      "arrows",
+      "account",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-exit",
+    "categories": [
+      "arrows",
+      "files",
+      "social"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-left-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-left-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-left-exit",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-left-from-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-arrow-out-up-left",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-right",
+    "categories": [
+      "arrows",
+      "social"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-right-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-right-enter",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-arrow-up-right-exit",
+    "categories": [
+      "arrows",
+      "social"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "arrow-up-right-from-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-arrow-out-up-right",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-asterisk",
+    "categories": [
+      "text",
+      "security",
+      "math",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "asterisk-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-bottom-dashed-scissors",
+    "categories": [
+      "text",
+      "design",
+      "tools",
+      "files",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "scissors-square-dashed-bottom",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-centerline-dashed-horizontal",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "flip-horizontal",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-centerline-dashed-vertical",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "flip-vertical",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevron-down",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-down-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevron-left",
+    "categories": [
+      "arrows"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-left-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevron-right",
+    "categories": [
+      "arrows",
+      "development"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-right-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevron-up",
+    "categories": [
+      "arrows",
+      "math"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [
+      {
+        "name": "chevron-up-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevrons-down",
+    "categories": [
+      "arrows",
+      "navigation",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevrons-left",
+    "categories": [
+      "arrows",
+      "navigation",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevrons-right",
+    "categories": [
+      "arrows",
+      "navigation",
+      "multimedia"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-chevrons-up",
+    "categories": [
+      "arrows",
+      "navigation",
+      "multimedia",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-code",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "code-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed",
+    "categories": [
+      "design",
+      "cursors"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "box-select",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-mouse-pointer",
+    "categories": [
+      "cursors",
+      "development"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [
+      {
+        "name": "mouse-pointer-square-dashed",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-plus",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-search",
+    "categories": [
+      "design",
+      "cursors"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-top-solid",
+    "categories": [
+      "design",
+      "development",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-x",
+    "categories": [
+      "design",
+      "development",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dashed-x-corner",
+    "categories": [
+      "design",
+      "development",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-dimensions",
+    "categories": [
+      "design",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-divide",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "divide-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-equal",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [
+      {
+        "name": "equal-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-function",
+    "categories": [
+      "letters-digits",
+      "development",
+      "math"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "function-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-a",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-b",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-c",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-d",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-e",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-f",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-g",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-h",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-i",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-j",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-k",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-l",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-m",
+    "categories": [
+      "letters-digits",
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "m-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-m",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-n",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-o",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-p-off",
+    "categories": [
+      "letters-digits",
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "parking-square-off",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-parking-off",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-q",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-r",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-s",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-t",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-u",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-v",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-w",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-x",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-y",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-letter-z",
+    "categories": [
+      "letters-digits"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-library",
+    "categories": [
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "library-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-menu",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "menu-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-mouse-pointer",
+    "categories": [
+      "cursors",
+      "development"
+    ],
+    "primary_category": "cursors",
+    "lucide_aliases": [
+      {
+        "name": "inspect",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-off",
+    "categories": [
+      "shapes",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-bottom",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-horizontal",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-left",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-right",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-top",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-padding-vertical",
+    "categories": [
+      "layout",
+      "design"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-pen",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "pen-box",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "edit",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "pen-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-pi",
+    "categories": [
+      "letters-digits",
+      "development",
+      "math"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "pi-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-pilcrow",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "pilcrow-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-round-corner",
+    "categories": [
+      "design",
+      "development",
+      "layout"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-scissors",
+    "categories": [
+      "text",
+      "design",
+      "tools",
+      "files",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "scissors-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-sigma",
+    "categories": [
+      "letters-digits",
+      "text",
+      "math"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [
+      {
+        "name": "sigma-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-split-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "split-square-horizontal",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-split-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [
+      {
+        "name": "split-square-vertical",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-square",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-stack",
+    "categories": [
+      "text",
+      "files",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "square-text",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squares-exclude",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squares-intersect",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squares-subtract",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squares-unite",
+    "categories": [
+      "design"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squircle",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "squircle-dashed",
+    "categories": [
+      "shapes",
+      "development",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stamp",
+    "categories": [
+      "design",
+      "tools"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-note-check",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-note-minus",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-note-off",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-note-plus",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-note-x",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "sticky-notes",
+    "categories": [
+      "text",
+      "social"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stretch-horizontal",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stretch-vertical",
+    "categories": [
+      "layout"
+    ],
+    "primary_category": "layout",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-cap-butt",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-cap-round",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-cap-square",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-join-bevel",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-join-miter",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "stroke-line-join-round",
+    "categories": [
+      "design",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "subscript",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "summary",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "superscript",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "table-2",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "table-columns-split",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "table-of-contents",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "table-properties",
+    "categories": [
+      "text",
+      "files",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "table-rows-split",
+    "categories": [
+      "text",
+      "files"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tally-1",
+    "categories": [
+      "math",
+      "gaming"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tally-2",
+    "categories": [
+      "math",
+      "gaming"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tally-3",
+    "categories": [
+      "math",
+      "gaming"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tally-4",
+    "categories": [
+      "math",
+      "gaming"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tally-5",
+    "categories": [
+      "math",
+      "gaming"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "tangent",
+    "categories": [
+      "shapes",
+      "math",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-align-justify-center",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-align-justify-end",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-align-justify-start",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-cursor-input",
+    "categories": [
+      "text",
+      "layout"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-initial",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "letter-text",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-pen",
+    "categories": [
+      "text",
+      "development"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-quote",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-search",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "text-wrap",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [
+      {
+        "name": "wrap-text",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "torus",
+    "categories": [
+      "shapes",
+      "design",
+      "math",
+      "food-beverage"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "triangle",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "triangle-dashed",
+    "categories": [
+      "shapes"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "triangle-right",
+    "categories": [
+      "shapes",
+      "math"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "triangles-centerline-dashed-horizontal",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "flip-horizontal-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "triangles-centerline-dashed-vertical",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "flip-vertical-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "type-outline",
+    "categories": [
+      "letters-digits",
+      "text"
+    ],
+    "primary_category": "letters-digits",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "undo-2",
+    "categories": [
+      "text",
+      "arrows"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "undo-dot",
+    "categories": [
+      "text",
+      "arrows"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "unfold-horizontal",
+    "categories": [
+      "arrows",
+      "layout"
+    ],
+    "primary_category": "arrows",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "unlink-2",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "vector-polygon",
+    "categories": [
+      "design",
+      "math",
+      "shapes"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "vector-square",
+    "categories": [
+      "shapes",
+      "math",
+      "design"
+    ],
+    "primary_category": "shapes",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "view",
+    "categories": [
+      "design",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "wand",
+    "categories": [
+      "design",
+      "gaming",
+      "cursors",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "wand-sparkles",
+    "categories": [
+      "design",
+      "gaming",
+      "cursors",
+      "photography"
+    ],
+    "primary_category": "design",
+    "lucide_aliases": [
+      {
+        "name": "wand-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "weight-tilde",
+    "categories": [
+      "math"
+    ],
+    "primary_category": "math",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  },
+  {
+    "lucide_name": "whole-word",
+    "categories": [
+      "text"
+    ],
+    "primary_category": "text",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "03"
+  }
+]

@@ -1,0 +1,77 @@
+name: Validate
+on:
+  push:
+    branches: ['**']
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  packages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python -m pip install -r scripts/icons/requirements.txt
+      - run: python scripts/icons/draw.py --check
+      - run: python scripts/icons/test-design.py
+      - run: python scripts/icons/test-quality-design.py
+      - run: npm run validate
+  swift:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: xcodebuild -scheme Icons -destination 'platform=macOS' -derivedDataPath /tmp/icons-macos test
+      - run: xcodebuild -scheme Icons -destination 'generic/platform=iOS Simulator' -derivedDataPath /tmp/icons-ios CODE_SIGNING_ALLOWED=NO build
+      - run: swift scripts/icons/render-sheet.swift icons /tmp/tab-icons-preview.png --size 16 --scale 2
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [packages, swift]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Package release
+        id: package
+        run: node scripts/prepare-release.mjs
+      - name: Publish and verify npm packages
+        run: node scripts/publish-npm.mjs
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ steps.package.outputs.tag }}
+        run: bash scripts/publish-release.sh
+      - name: Rebuild the sites that use the icons
+        env:
+          GH_TOKEN: ${{ secrets.STACK_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::STACK_DEPLOY_TOKEN is not set, so the sites were not rebuilt."
+            exit 0
+          fi
+          for repo in vectors tab quickshot agentkit; do
+            gh workflow run pages.yml --repo "hugocxl/$repo" --ref main
+            echo "Started the hugocxl/$repo site deploy."
+          done

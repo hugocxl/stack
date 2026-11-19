@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const MarginLeftIcon = /*#__PURE__*/ forwardRef(function MarginLeftIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM8.75 5.45Q8.0044 5.45 7.4772 5.9772Q6.95 6.5044 6.95 7.25V8.75Q6.95 9.4956 7.4772 10.0228Q8.0044 10.55 8.75 10.55H10.25Q10.9956 10.55 11.5228 10.0228Q12.05 9.4956 12.05 8.75V7.25Q12.05 6.5044 11.5228 5.9772Q10.9956 5.45 10.25 5.45ZM5.1 2.35H4V13.65H5.1ZM8.75 6.55H10.25Q10.54 6.55 10.745 6.755Q10.95 6.9601 10.95 7.25V8.75Q10.95 9.04 10.745 9.245Q10.54 9.45 10.25 9.45H8.75Q8.46 9.45 8.255 9.245Q8.05 9.04 8.05 8.75V7.25Q8.05 6.9601 8.255 6.755Q8.46 6.55 8.75 6.55Z", "fill": "currentColor"}));
+});

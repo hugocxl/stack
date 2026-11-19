@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const MessageCircleIcon = /*#__PURE__*/ forwardRef(function MessageCircleIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M1.45 7Q1.45 4.2424 3.1479 2.8275Q4.8009 1.45 8 1.45Q11.1991 1.45 12.8521 2.8275Q14.55 4.2424 14.55 7Q14.55 9.7576 12.8521 11.1725Q11.1991 12.55 8 12.55H6.1665L3.8262 14.1102Q3.7581 14.1556 3.6826 14.1868Q3.607 14.218 3.5268 14.2339Q3.4466 14.2497 3.3649 14.2496Q3.2831 14.2496 3.203 14.2335Q3.1228 14.2175 3.0473 14.1861Q2.9718 14.1548 2.9039 14.1093Q2.836 14.0638 2.7782 14.0059Q2.7205 13.9481 2.6752 13.8801Q2.5902 13.7526 2.5563 13.6033Q2.5224 13.4539 2.5441 13.3023L2.9176 10.6874Q1.45 9.0941 1.45 7Z", "fill": "currentColor"}));
+});

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const EggIcon = /*#__PURE__*/ forwardRef(function EggIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M8 1.15Q9.0432 1.15 10.1791 2.2389Q11.1204 3.1414 11.9882 4.6364Q12.8098 6.0519 13.3166 7.5573Q13.85 9.1419 13.85 10.3Q13.85 12.4391 11.9448 13.6853Q11.1382 14.2129 10.0853 14.4883Q9.0852 14.75 8 14.75Q6.9148 14.75 5.9147 14.4883Q4.8618 14.2129 4.0552 13.6853Q2.15 12.4391 2.15 10.3Q2.15 9.1419 2.6834 7.5573Q3.1902 6.0519 4.0118 4.6364Q4.8796 3.1414 5.8209 2.2389Q6.9568 1.15 8 1.15Z", "fill": "currentColor"}));
+});

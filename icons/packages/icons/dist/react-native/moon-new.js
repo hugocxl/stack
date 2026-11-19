@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const MoonNewIcon = /*#__PURE__*/ forwardRef(function MoonNewIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M1.3 8Q1.3 6.6373 1.8267 5.3919Q2.3353 4.1894 3.2624 3.2624Q4.1894 2.3353 5.3919 1.8267Q6.6373 1.3 8 1.3Q9.3627 1.3 10.6081 1.8267Q11.8106 2.3353 12.7376 3.2624Q13.6647 4.1894 14.1733 5.3919Q14.7 6.6373 14.7 8Q14.7 9.3627 14.1733 10.6081Q13.6647 11.8106 12.7376 12.7376Q11.8106 13.6647 10.6081 14.1733Q9.3627 14.7 8 14.7Q6.6373 14.7 5.3919 14.1733Q4.1894 13.6647 3.2624 12.7376Q2.3353 11.8106 1.8267 10.6081Q1.3 9.3627 1.3 8Z", "fill": "currentColor"}));
+});

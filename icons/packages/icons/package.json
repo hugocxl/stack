@@ -1,0 +1,124 @@
+{
+  "name": "@hugocxl/icons",
+  "version": "0.2.0",
+  "description": "Rounded icons for JavaScript, React and React Native.",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "skills",
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_LICENSES.md",
+    "README.md",
+    "colors.js",
+    "colors.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/js/index.d.ts",
+      "import": "./dist/js/index.js",
+      "default": "./dist/js/index.js"
+    },
+    "./js": {
+      "types": "./dist/js/index.d.ts",
+      "import": "./dist/js/index.js",
+      "default": "./dist/js/index.js"
+    },
+    "./js/*": {
+      "types": "./dist/js/*.d.ts",
+      "import": "./dist/js/*.js",
+      "default": "./dist/js/*.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./react/*": {
+      "types": "./dist/react/*.d.ts",
+      "import": "./dist/react/*.js",
+      "default": "./dist/react/*.js"
+    },
+    "./react-native": {
+      "types": "./dist/react-native/index.d.ts",
+      "import": "./dist/react-native/index.js",
+      "react-native": "./dist/react-native/index.js",
+      "default": "./dist/react-native/index.js"
+    },
+    "./react-native/*": {
+      "types": "./dist/react-native/*.d.ts",
+      "import": "./dist/react-native/*.js",
+      "react-native": "./dist/react-native/*.js",
+      "default": "./dist/react-native/*.js"
+    },
+    "./package.json": "./package.json",
+    "./js/duotone": {
+      "types": "./dist/js/index.d.ts",
+      "import": "./dist/js/index.js",
+      "default": "./dist/js/index.js"
+    },
+    "./js/duotone/*": {
+      "types": "./dist/js/*.d.ts",
+      "import": "./dist/js/*.js",
+      "default": "./dist/js/*.js"
+    },
+    "./react/duotone": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./react/duotone/*": {
+      "types": "./dist/react/*.d.ts",
+      "import": "./dist/react/*.js",
+      "default": "./dist/react/*.js"
+    },
+    "./react-native/duotone": {
+      "types": "./dist/react-native/index.d.ts",
+      "import": "./dist/react-native/index.js",
+      "react-native": "./dist/react-native/index.js",
+      "default": "./dist/react-native/index.js"
+    },
+    "./react-native/duotone/*": {
+      "types": "./dist/react-native/*.d.ts",
+      "import": "./dist/react-native/*.js",
+      "react-native": "./dist/react-native/*.js",
+      "default": "./dist/react-native/*.js"
+    },
+    "./catalog.json": "./dist/catalog.json",
+    "./colors": {
+      "types": "./colors.d.ts",
+      "default": "./colors.js"
+    }
+  },
+  "main": "./dist/js/index.js",
+  "types": "./dist/js/index.d.ts",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.72",
+    "react-native-svg": ">=13"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    }
+  },
+  "license": "SEE LICENSE IN THIRD_PARTY_LICENSES.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugocxl/icons.git",
+    "directory": "packages/icons"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepack": "python3 ../../scripts/generate.py --check"
+  }
+}

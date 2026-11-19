@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const SquaresUniteIcon = /*#__PURE__*/ forwardRef(function SquaresUniteIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M2.95 1.15H8.65Q9.3956 1.15 9.9228 1.6772Q10.45 2.2044 10.45 2.95V5.55H13.05Q13.7956 5.55 14.3228 6.0772Q14.85 6.6044 14.85 7.35V13.05Q14.85 13.7956 14.3228 14.3228Q13.7956 14.85 13.05 14.85H7.35Q6.6044 14.85 6.0772 14.3228Q5.55 13.7956 5.55 13.05V10.45H2.95Q2.2044 10.45 1.6772 9.9228Q1.15 9.3956 1.15 8.65V2.95Q1.15 2.2044 1.6772 1.6772Q2.2044 1.15 2.95 1.15Z", "fill": "currentColor"}));
+});

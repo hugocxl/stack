@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const UsersRoundIcon = /*#__PURE__*/ forwardRef(function UsersRoundIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M9.025 10.1494Q9.8191 9.45 11.15 9.45Q14.45 9.45 14.45 13.75H9.025V10.1494ZM1.55 13.75Q1.55 9.45 4.85 9.45Q6.1809 9.45 6.975 10.1494V13.75ZM13.15 5C13.15 6.1046 12.2546 7 11.15 7C10.0454 7 9.15 6.1046 9.15 5C9.15 3.8954 10.0454 3 11.15 3C12.2546 3 13.15 3.8954 13.15 5ZM2.85 5C2.85 3.8954 3.7454 3 4.85 3C5.9546 3 6.85 3.8954 6.85 5C6.85 6.1046 5.9546 7 4.85 7C3.7454 7 2.85 6.1046 2.85 5Z", "fill": "currentColor"}));
+});

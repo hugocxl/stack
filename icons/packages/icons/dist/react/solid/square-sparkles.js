@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const SquareSparklesIcon = /*#__PURE__*/ forwardRef(function SquareSparklesIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM7 4.15Q6.45 7.95 3.9 8.7Q6.45 9.45 7 12Q7.55 9.45 10.1 8.7Q7.55 7.95 7 4.15ZM10.9 3.8Q10.6 5.05 9.4 5.4Q10.6 5.75 10.9 7Q11.2 5.75 12.4 5.4Q11.2 5.05 10.9 3.8Z", "fill": "currentColor"}));
+});

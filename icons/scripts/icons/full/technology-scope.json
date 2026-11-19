@@ -1,0 +1,3948 @@
+[
+  {
+    "lucide_name": "ad",
+    "categories": [
+      "multimedia",
+      "accessibility"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "alarm-clock-minus",
+    "categories": [
+      "devices",
+      "notifications",
+      "time"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "alarm-minus",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "alarm-clock-plus",
+    "categories": [
+      "devices",
+      "notifications",
+      "time"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "alarm-plus",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "antenna",
+    "categories": [
+      "devices",
+      "multimedia",
+      "communication",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "aperture",
+    "categories": [
+      "photography"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "audio-lines",
+    "categories": [
+      "multimedia",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "audio-lines-off",
+    "categories": [
+      "multimedia",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "audio-lines-x",
+    "categories": [
+      "multimedia",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "badge-question-mark",
+    "categories": [
+      "accessibility",
+      "social"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [
+      {
+        "name": "badge-help",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "ball-wave",
+    "categories": [
+      "sports"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "battery-exclamation-point",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "battery-warning"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "battery-medium",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "battery-plus",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "beaker",
+    "categories": [
+      "science",
+      "gaming"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "bell-electric",
+    "categories": [
+      "devices",
+      "notifications",
+      "home"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "biohazard",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "blocks",
+    "categories": [
+      "development",
+      "layout"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "bone-fracture",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "book-audio",
+    "categories": [
+      "multimedia",
+      "text"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-dashed",
+    "categories": [
+      "development",
+      "text"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "book-template",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-down",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-headphones",
+    "categories": [
+      "multimedia",
+      "text"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-image",
+    "categories": [
+      "photography",
+      "text",
+      "multimedia"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-key",
+    "categories": [
+      "development",
+      "security",
+      "gaming"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-up",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "book-up-2",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "boom-box",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "bot-message-square",
+    "categories": [
+      "development",
+      "social"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "bot-off",
+    "categories": [
+      "development",
+      "social"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "boxes-linked",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "brain-circuit",
+    "categories": [
+      "science",
+      "development"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "brain-cog",
+    "categories": [
+      "science",
+      "development"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "brain-off",
+    "categories": [
+      "medical",
+      "science",
+      "development"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "bug-off",
+    "categories": [
+      "development",
+      "animals"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "bug-play",
+    "categories": [
+      "development",
+      "animals"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "cable",
+    "categories": [
+      "connectivity",
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "card-sim",
+    "categories": [
+      "connectivity",
+      "communication",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "cassette-tape",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-bar-big",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart-horizontal-big",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-bar-decreasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-bar-increasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-bar-stacked",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-bell-curve",
+    "categories": [
+      "charts",
+      "math"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-candlestick",
+    "categories": [
+      "charts",
+      "finance"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "candlestick-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-column-big",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart-big",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-column-decreasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-column-increasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart-4",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-gantt",
+    "categories": [
+      "charts",
+      "time"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-network",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-no-axes-column",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-no-axes-column-decreasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-no-axes-column-increasing",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "bar-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-no-axes-combined",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-no-axes-gantt",
+    "categories": [
+      "charts",
+      "time",
+      "development"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "gantt-chart",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-quadrant",
+    "categories": [
+      "charts",
+      "science",
+      "math"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-radar",
+    "categories": [
+      "charts",
+      "shapes",
+      "science"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chart-spline",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "chevrons-left-right-ellipsis",
+    "categories": [
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "circle-fading-play",
+    "categories": [
+      "multimedia",
+      "social"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "circle-power",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "power-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "circle-slash",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "circle-slash-2",
+    "categories": [
+      "development",
+      "math",
+      "shapes"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "circle-slashed",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "circle-star",
+    "categories": [
+      "sports",
+      "gaming"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "circuit-board",
+    "categories": [
+      "science",
+      "development",
+      "devices"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "clapperboard",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "clef-alto",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "clef-bass",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "clef-treble",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "closed-caption",
+    "categories": [
+      "accessibility",
+      "multimedia"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "cloud-cog",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "cloud-exclamation-point",
+    "categories": [
+      "development",
+      "notifications",
+      "weather"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "cloud-alert"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "combine",
+    "categories": [
+      "development",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "computer",
+    "categories": [
+      "devices",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "container",
+    "categories": [
+      "development",
+      "transportation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "contrast",
+    "categories": [
+      "photography",
+      "accessibility",
+      "design"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "cpu-ai",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "crosshair",
+    "categories": [
+      "photography"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "database-arrow-down",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "database-arrow-up",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "database-zap",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "diamond-minus",
+    "categories": [
+      "multimedia",
+      "design"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "diamond-plus",
+    "categories": [
+      "multimedia",
+      "design"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "disc-2",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "disc-3",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "disc-album",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "dna",
+    "categories": [
+      "medical",
+      "science"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "dna-off",
+    "categories": [
+      "medical",
+      "science",
+      "food-beverage"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "drama",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "drum",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "earbuds",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "earbuds-off",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "eclipse",
+    "categories": [
+      "science",
+      "design",
+      "accessibility"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "eighth-note",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [
+      {
+        "name": "music-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "eject",
+    "categories": [
+      "devices",
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "eye-closed",
+    "categories": [
+      "accessibility",
+      "photography",
+      "design",
+      "security"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "eye-dashed",
+    "categories": [
+      "accessibility",
+      "photography",
+      "design",
+      "security"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "fishing-hook",
+    "categories": [
+      "sports",
+      "travel"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "fishing-rod",
+    "categories": [
+      "sports",
+      "travel"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "flag-triangle-left",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "flag-triangle-right",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "flashlight",
+    "categories": [
+      "photography",
+      "devices"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "flashlight-off",
+    "categories": [
+      "photography",
+      "devices"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "flask-conical-off",
+    "categories": [
+      "science",
+      "gaming"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "flask-round",
+    "categories": [
+      "science",
+      "gaming"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "focus",
+    "categories": [
+      "photography"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "form",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "galaxy",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "germ",
+    "categories": [
+      "medical",
+      "science"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "germ-off",
+    "categories": [
+      "medical",
+      "science"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "git-branch-minus",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-branch-plus",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-commit-vertical",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-compare-arrows",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-graph",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-merge-conflict",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-pull-request-arrow",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-pull-request-closed",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-pull-request-create",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-pull-request-create-arrow",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "git-pull-request-draft",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "glasses",
+    "categories": [
+      "accessibility"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "gpu",
+    "categories": [
+      "devices",
+      "gaming"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "graph-hub",
+    "categories": [
+      "connectivity",
+      "development"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "graph-ring",
+    "categories": [
+      "charts"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "graph-star",
+    "categories": [
+      "development",
+      "charts"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "guitar",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "guitar-electric",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "half-note",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [
+      {
+        "name": "music-3",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "hard-drive-download",
+    "categories": [
+      "development",
+      "devices",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "hard-drive-upload",
+    "categories": [
+      "development",
+      "devices",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "hd",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "hdmi-port",
+    "categories": [
+      "devices",
+      "multimedia",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "headphone-off",
+    "categories": [
+      "multimedia",
+      "devices"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "hiking-stick",
+    "categories": [
+      "sports",
+      "travel",
+      "nature",
+      "navigation"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "hockey-stick",
+    "categories": [
+      "sports"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "image-down",
+    "categories": [
+      "photography",
+      "text",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "image-play",
+    "categories": [
+      "photography",
+      "text",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "image-up",
+    "categories": [
+      "photography",
+      "text",
+      "multimedia",
+      "files"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "image-upscale",
+    "categories": [
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "iv-bag",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "kanban",
+    "categories": [
+      "charts",
+      "development"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "keyboard-music",
+    "categories": [
+      "multimedia",
+      "devices"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "laptop-minimal",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "laptop-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "laptop-minimal-check",
+    "categories": [
+      "devices",
+      "notifications"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "lens",
+    "categories": [
+      "photography",
+      "science",
+      "tools"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "lens-concave",
+    "categories": [
+      "science",
+      "tools"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "lens-convex",
+    "categories": [
+      "science",
+      "tools"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "life-buoy",
+    "categories": [
+      "accessibility",
+      "medical"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "line-dot-bottom-vertical",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "line-dot-left-horizontal",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "line-dot-right-horizontal",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "line-dot-top-vertical",
+    "categories": [
+      "development",
+      "navigation"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "list-music",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "list-video",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mars",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "mars-stroke",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "megaphone-off",
+    "categories": [
+      "multimedia",
+      "notifications",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "merge",
+    "categories": [
+      "development",
+      "arrows"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "metronome",
+    "categories": [
+      "multimedia",
+      "time"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mic-audio-lines",
+    "categories": [
+      "devices",
+      "communication",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mic-signal",
+    "categories": [
+      "devices",
+      "communication",
+      "multimedia",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "podcast",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [
+      "podcast"
+    ],
+    "status": "missing",
+    "local_name": null,
+    "rejected_upstream_alias_reason": "Local podcast is a person/broadcast motif; current Lucide mic-signal specifically depicts a broadcasting microphone.",
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mic-vocal",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "mic-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "microchip",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "microscope",
+    "categories": [
+      "science",
+      "medical"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "midi-port",
+    "categories": [
+      "multimedia",
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mirror-rectangular",
+    "categories": [
+      "science",
+      "home"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "mirror-round",
+    "categories": [
+      "science",
+      "home"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "monitor-activity",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-check",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-cloud",
+    "categories": [
+      "devices",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-dot",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-down",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-pause",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-pc",
+    "categories": [
+      "devices",
+      "development",
+      "gaming"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-play",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-smartphone",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-speaker",
+    "categories": [
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-stop",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-up",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "monitor-x",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "moon-star",
+    "categories": [
+      "accessibility",
+      "weather"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "mouse-left",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mouse-off",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mouse-right",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "mouth",
+    "categories": [
+      "medical",
+      "accessibility",
+      "communication"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "mouth-off",
+    "categories": [
+      "medical",
+      "accessibility",
+      "communication"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "non-binary",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "option",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "orbit",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "parentheses",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "pc-case",
+    "categories": [
+      "devices",
+      "gaming"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "person-standing",
+    "categories": [
+      "accessibility",
+      "people"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "phone-forwarded",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "phone-log",
+    "categories": [
+      "connectivity",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "piano",
+    "categories": [
+      "multimedia",
+      "devices"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "picture-in-picture-2",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "pill-bottle",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "play-off",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "plug-2",
+    "categories": [
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "plug-zap",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "plug-zap-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "podium",
+    "categories": [
+      "sports",
+      "gaming"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "printer-3d",
+    "categories": [
+      "devices",
+      "tools"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "printer-3-d",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "printer-check",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "printer-x",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "projector",
+    "categories": [
+      "multimedia",
+      "devices",
+      "communication"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "radiation",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "radical",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "radio-off",
+    "categories": [
+      "devices",
+      "multimedia",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "radio-tower",
+    "categories": [
+      "devices",
+      "multimedia",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "rectangle-circle",
+    "categories": [
+      "development",
+      "text"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "rectangle-goggles",
+    "categories": [
+      "devices",
+      "gaming",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "repeat-1",
+    "categories": [
+      "multimedia",
+      "arrows"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "robot-arm",
+    "categories": [
+      "science",
+      "tools"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "robot-vacuum",
+    "categories": [
+      "devices",
+      "home"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "rugby-ball",
+    "categories": [
+      "sports"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "satellite",
+    "categories": [
+      "connectivity",
+      "science"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "satellite-dish",
+    "categories": [
+      "connectivity",
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "scan-eye",
+    "categories": [
+      "photography",
+      "security",
+      "account"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "scan-heart",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "scan-line",
+    "categories": [
+      "devices",
+      "shopping"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "scan-search",
+    "categories": [
+      "photography",
+      "multimedia",
+      "accessibility"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "scan-square",
+    "categories": [
+      "photography",
+      "design"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "scratch-blocks",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "server-crash",
+    "categories": [
+      "development",
+      "devices"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "server-nas",
+    "categories": [
+      "development",
+      "devices",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "server-plus",
+    "categories": [
+      "development",
+      "devices"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "siren",
+    "categories": [
+      "medical",
+      "notifications"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "siren-off",
+    "categories": [
+      "medical",
+      "notifications"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "sixteenth-notes",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [
+      {
+        "name": "music-4",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "slash",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "smartphone-charging",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "speech",
+    "categories": [
+      "accessibility",
+      "communication"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "split",
+    "categories": [
+      "development",
+      "arrows"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "sport-shoe",
+    "categories": [
+      "sports"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "spotlight",
+    "categories": [
+      "devices",
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-activity",
+    "categories": [
+      "medical",
+      "social",
+      "science",
+      "multimedia"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [
+      {
+        "name": "activity-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "square-bookmark",
+    "categories": [
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [
+      {
+        "name": "album",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-chart-gantt",
+    "categories": [
+      "charts",
+      "time",
+      "development"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "gantt-chart-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      },
+      {
+        "name": "square-gantt-chart",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-dashed-bottom",
+    "categories": [
+      "development",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-dashed-bottom-code",
+    "categories": [
+      "development",
+      "files"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-dashed-kanban",
+    "categories": [
+      "charts",
+      "development"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "kanban-square-dashed",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-dot",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "dot-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-kanban",
+    "categories": [
+      "charts",
+      "development"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [
+      {
+        "name": "kanban-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-kanban-plus",
+    "categories": [
+      "charts",
+      "development",
+      "design",
+      "layout"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-pause",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-play",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [
+      {
+        "name": "play-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-power",
+    "categories": [
+      "devices"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "power-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-radical",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-slash",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "slash-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-sparkles",
+    "categories": [
+      "photography",
+      "multimedia"
+    ],
+    "primary_category": "photography",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-star",
+    "categories": [
+      "sports",
+      "gaming"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "square-stop",
+    "categories": [
+      "multimedia"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "square-terminal",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [
+      {
+        "name": "terminal-square",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "step-back",
+    "categories": [
+      "multimedia",
+      "arrows"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "step-forward",
+    "categories": [
+      "multimedia",
+      "arrows"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "sun-dim",
+    "categories": [
+      "accessibility",
+      "weather"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "sun-medium",
+    "categories": [
+      "accessibility",
+      "weather"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "sun-moon",
+    "categories": [
+      "accessibility"
+    ],
+    "primary_category": "accessibility",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "tablet-smartphone",
+    "categories": [
+      "devices",
+      "design",
+      "development"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "tablets",
+    "categories": [
+      "medical"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "telescope",
+    "categories": [
+      "science",
+      "tools"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "test-tube-diagonal",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [
+      {
+        "name": "test-tube-2",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "test-tubes",
+    "categories": [
+      "science"
+    ],
+    "primary_category": "science",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "transgender",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "trending-up-down",
+    "categories": [
+      "charts",
+      "arrows"
+    ],
+    "primary_category": "charts",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "tube-lotion",
+    "categories": [
+      "medical",
+      "home",
+      "shopping",
+      "travel"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "turntable",
+    "categories": [
+      "multimedia",
+      "home"
+    ],
+    "primary_category": "multimedia",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "tv-minimal",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [
+      {
+        "name": "tv-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "tv-minimal-play",
+    "categories": [
+      "devices",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "unplug",
+    "categories": [
+      "devices",
+      "development",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "usb-c-port",
+    "categories": [
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "variable",
+    "categories": [
+      "development",
+      "math"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "venus",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "venus-and-mars",
+    "categories": [
+      "medical",
+      "people"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "vibrate",
+    "categories": [
+      "devices",
+      "notifications"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "vibrate-off",
+    "categories": [
+      "devices",
+      "notifications"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "videotape",
+    "categories": [
+      "devices",
+      "photography",
+      "files",
+      "multimedia"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "virus",
+    "categories": [
+      "medical",
+      "science",
+      "security"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "virus-off",
+    "categories": [
+      "medical",
+      "science",
+      "security"
+    ],
+    "primary_category": "medical",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "volleyball",
+    "categories": [
+      "sports",
+      "travel"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "wallpaper",
+    "categories": [
+      "devices",
+      "photography"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "waves-ladder",
+    "categories": [
+      "sports",
+      "home"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "webcam-off",
+    "categories": [
+      "devices",
+      "communication"
+    ],
+    "primary_category": "devices",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "webhook-off",
+    "categories": [
+      "development"
+    ],
+    "primary_category": "development",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "whistle",
+    "categories": [
+      "sports",
+      "notifications"
+    ],
+    "primary_category": "sports",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "05"
+  },
+  {
+    "lucide_name": "wifi-cog",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "wifi-lock",
+    "categories": [
+      "connectivity",
+      "devices",
+      "security"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "wifi-pen",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  },
+  {
+    "lucide_name": "wifi-sync",
+    "categories": [
+      "connectivity",
+      "devices"
+    ],
+    "primary_category": "connectivity",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "04"
+  }
+]

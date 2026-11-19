@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const TableRowsSplitIcon = /*#__PURE__*/ forwardRef(function TableRowsSplitIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M14.55 10.75V13.25Q14.55 13.9956 14.0228 14.5228Q13.4956 15.05 12.75 15.05H3.25Q2.5044 15.05 1.9772 14.5228Q1.45 13.9956 1.45 13.25V10.75Q1.45 10.0044 1.9772 9.4772Q2.5044 8.95 3.25 8.95H12.75Q13.4956 8.95 14.0228 9.4772Q14.55 10.0044 14.55 10.75ZM14.55 2.75V5.25Q14.55 5.9956 14.0228 6.5228Q13.4956 7.05 12.75 7.05H3.25Q2.5044 7.05 1.9772 6.5228Q1.45 5.9956 1.45 5.25V2.75Q1.45 2.0044 1.9772 1.4772Q2.5044 0.95 3.25 0.95H12.75Q13.4956 0.95 14.0228 1.4772Q14.55 2.0044 14.55 2.75ZM5.45 14.15H6.55V9.85H5.45ZM10.55 14.15V9.85H9.45V14.15ZM5.45 6.15H6.55V1.85H5.45ZM10.55 6.15V1.85H9.45V6.15Z", "fill": "currentColor"}));
+});

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const MessageSquareDotIcon = /*#__PURE__*/ forwardRef(function MessageSquareDotIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3 1.95H13Q13.7278 1.95 14.1389 2.3611Q14.55 2.7722 14.55 3.5V10.5Q14.55 11.2278 14.1389 11.6389Q13.7278 12.05 13 12.05H7.1991L4.8114 14.0398Q4.7485 14.0922 4.6767 14.1312Q4.6049 14.1703 4.5269 14.1946Q4.4489 14.2189 4.3676 14.2276Q4.2863 14.2362 4.2049 14.2288Q4.1234 14.2214 4.045 14.1982Q3.9666 14.1751 3.8943 14.1371Q3.8219 14.0991 3.7583 14.0477Q3.6947 13.9963 3.6424 13.9335Q3.45 13.7027 3.45 13.4022V12.05H3Q2.2722 12.05 1.8611 11.6389Q1.45 11.2278 1.45 10.5V3.5Q1.45 2.7722 1.8611 2.3611Q2.2722 1.95 3 1.95ZM7 7C7 7.5523 7.4477 8 8 8C8.5523 8 9 7.5523 9 7C9 6.4477 8.5523 6 8 6C7.4477 6 7 6.4477 7 7Z", "fill": "currentColor"}));
+});

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const CylinderIcon = /*#__PURE__*/ forwardRef(function CylinderIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M1.95 4Q1.95 0.95 8 0.95Q14.05 0.95 14.05 4V12Q14.05 15.05 8 15.05Q5.1309 15.05 3.6474 14.3757Q1.95 13.6042 1.95 12ZM3.05 6.0465V12Q3.05 12.8958 4.1026 13.3743Q5.3691 13.95 8 13.95Q10.6309 13.95 11.8974 13.3743Q12.95 12.8958 12.95 12V6.0465Q11.4703 7.05 8 7.05Q4.5297 7.05 3.05 6.0465ZM3.05 4Q3.05 4.8958 4.1026 5.3743Q5.3691 5.95 8 5.95Q10.6309 5.95 11.8974 5.3743Q12.95 4.8958 12.95 4Q12.95 3.1042 11.8974 2.6257Q10.6309 2.05 8 2.05Q5.3691 2.05 4.1026 2.6257Q3.05 3.1042 3.05 4Z", "fill": "currentColor"}));
+});

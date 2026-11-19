@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const ChessPawnIcon = /*#__PURE__*/ forwardRef(function ChessPawnIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M5.4038 7.9267Q3.9747 6.4281 3.7107 5.1079Q3.403 3.5692 4.6111 2.3611Q6.2722 0.7 8 0.7Q9.7278 0.7 11.3889 2.3611Q12.597 3.5692 12.2893 5.1079Q12.0253 6.4281 10.5962 7.9267L11.4509 12.2H12Q12.642 12.2 13.096 12.654Q13.55 13.108 13.55 13.75Q13.55 14.392 13.096 14.846Q12.642 15.3 12 15.3H4Q3.358 15.3 2.904 14.846Q2.45 14.392 2.45 13.75Q2.45 13.108 2.904 12.654Q3.358 12.2 4 12.2H4.5491Z", "fill": "currentColor"}));
+});

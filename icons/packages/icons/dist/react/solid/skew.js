@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const SkewIcon = /*#__PURE__*/ forwardRef(function SkewIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M4.25 2.65C4.25 2.0149 4.7649 1.5 5.4 1.5C5.9509 1.5 6.4113 1.8874 6.5238 2.4046L12.1342 4.0394C12.3426 3.8298 12.6311 3.7 12.95 3.7C13.5851 3.7 14.1 4.2149 14.1 4.85C14.1 5.2642 13.8811 5.6272 13.5526 5.8296L13.8958 12.3121C14.2827 12.4973 14.55 12.8924 14.55 13.35C14.55 13.9851 14.0351 14.5 13.4 14.5C12.8598 14.5 12.4067 14.1276 12.2832 13.6255L3.1873 11.2384C2.9775 11.461 2.68 11.6 2.35 11.6C1.7149 11.6 1.2 11.0851 1.2 10.45C1.2 9.8638 1.6386 9.38 2.2056 9.309L4.52 3.3903C4.3515 3.1903 4.25 2.932 4.25 2.65Z", "fill": "currentColor"}));
+});

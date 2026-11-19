@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SquircleIcon = /*#__PURE__*/ forwardRef(function SquircleIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M8 1.15Q10.4163 1.15 11.5178 1.3256Q12.9878 1.5599 13.7139 2.2861Q14.4401 3.0122 14.6744 4.4822Q14.85 5.5837 14.85 8Q14.85 10.4163 14.6744 11.5178Q14.4401 12.9878 13.7139 13.7139Q12.9878 14.4401 11.5178 14.6744Q10.4163 14.85 8 14.85Q5.5837 14.85 4.4822 14.6744Q3.0122 14.4401 2.2861 13.7139Q1.5599 12.9878 1.3256 11.5178Q1.15 10.4163 1.15 8Q1.15 5.5837 1.3256 4.4822Q1.5599 3.0122 2.2861 2.2861Q3.0122 1.5599 4.4822 1.3256Q5.5837 1.15 8 1.15Z", "fill": "currentColor"}));
+});

@@ -1,0 +1,4274 @@
+[
+  {
+    "lucide_name": "air-vent",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "alarm-smoke",
+    "categories": [
+      "home",
+      "devices",
+      "travel"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "amphora",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "anvil",
+    "categories": [
+      "tools",
+      "gaming"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "armchair",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "armenian-dram",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "avocado",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "axe",
+    "categories": [
+      "tools",
+      "gaming"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "azerbaijani-manat",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bacon",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "badge-cent",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-dollar-sign",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-euro",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-indian-rupee",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-japanese-yen",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-percent",
+    "categories": [
+      "finance",
+      "shopping",
+      "math"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-pound-sterling",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-russian-ruble",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-swiss-franc",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "badge-turkish-lira",
+    "categories": [
+      "shopping",
+      "finance"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "baggage-claim",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "balloon",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bangladeshi-taka",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "banknote-arrow-down",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "banknote-arrow-up",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "banknote-check",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "banknote-x",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "barrel",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bean",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bean-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bed-double",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bed-single",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "beef",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "beef-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "beer",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "beer-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "belarusian-ruble",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "biceps-flexed",
+    "categories": [
+      "emoji",
+      "sports"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "birdhouse",
+    "categories": [
+      "nature",
+      "animals",
+      "home"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bitcoin",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "blender",
+    "categories": [
+      "food-beverage",
+      "home"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "blinds",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bolt",
+    "categories": [
+      "tools",
+      "home"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bomb",
+    "categories": [
+      "gaming",
+      "development"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bone",
+    "categories": [
+      "animals",
+      "medical",
+      "gaming"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bottle-wine",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "bow-arrow",
+    "categories": [
+      "gaming",
+      "sports"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "brick-wall",
+    "categories": [
+      "buildings",
+      "home"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bridge",
+    "categories": [
+      "travel",
+      "transportation",
+      "buildings"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "briefcase-business",
+    "categories": [
+      "travel"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "briefcase-conveyor-belt",
+    "categories": [
+      "travel"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "briefcase-plus",
+    "categories": [
+      "travel",
+      "files",
+      "account"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "broccoli",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "broom",
+    "categories": [
+      "tools",
+      "home",
+      "gaming"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "broom-sparkles",
+    "categories": [
+      "tools",
+      "home",
+      "gaming"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "brush-cleaning",
+    "categories": [
+      "home",
+      "tools",
+      "design"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bubbles",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "bus-front",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cable-car",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cake-slice",
+    "categories": [
+      "food-beverage",
+      "social"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "can",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "can-soda",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "candy",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "candy-cane",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "candy-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cannabis",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cannabis-off",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cap",
+    "categories": [
+      "shopping",
+      "sports"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "car-battery",
+    "categories": [
+      "transportation",
+      "devices"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "car-front",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "car-taxi-front",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "caravan",
+    "categories": [
+      "transportation",
+      "travel",
+      "nature"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "carton",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "carton-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "castle",
+    "categories": [
+      "buildings",
+      "gaming",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cheese",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-bishop",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-king",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-knight",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-pawn",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-queen",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "chess-rook",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "church",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cigarette",
+    "categories": [
+      "travel",
+      "transportation",
+      "medical"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cigarette-off",
+    "categories": [
+      "travel",
+      "transportation",
+      "medical"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "circle-euro",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "circle-gauge",
+    "categories": [
+      "transportation",
+      "sports",
+      "science"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [
+      {
+        "name": "gauge-circle",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "circle-pound-sterling",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "citrus",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-drizzle",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-hail",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-moon",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-moon-rain",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-rain-wind",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-sun",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloud-sun-rain",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cloudy",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "clover",
+    "categories": [
+      "gaming",
+      "nature"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "concierge-bell",
+    "categories": [
+      "travel"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "cooking-pot",
+    "categories": [
+      "food-beverage",
+      "home"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "credit-card-reader",
+    "categories": [
+      "finance",
+      "navigation",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "croissant",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "crown",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cup-soda",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "cupcake",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "currency",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "dam",
+    "categories": [
+      "buildings",
+      "sustainability",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "dessert",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-1",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-2",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-3",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-4",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-5",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dice-6",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dices",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "dollar-sign",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "dome",
+    "categories": [
+      "buildings",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "donut",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "door-closed-cog",
+    "categories": [
+      "home",
+      "security"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "door-closed-locked",
+    "categories": [
+      "home",
+      "travel",
+      "security"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "door-closed-package",
+    "categories": [
+      "home",
+      "transportation",
+      "shopping"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "door-stairwell",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "drill",
+    "categories": [
+      "tools",
+      "home",
+      "devices"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "drone",
+    "categories": [
+      "transportation",
+      "devices"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "droplet-off",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "droplets",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "drumstick",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "egg",
+    "categories": [
+      "food-beverage",
+      "animals"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "egg-fried",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "egg-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "emirati-dirham",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "engine",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ev-charger",
+    "categories": [
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "face-angry",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [
+      {
+        "name": "angry",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "face-expressionless",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [
+      {
+        "name": "annoyed",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "face-grinning",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [
+      {
+        "name": "laugh",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "face-slightly-smiling-plus",
+    "categories": [
+      "emoji",
+      "social",
+      "communication"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [
+      {
+        "name": "smile-plus",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "factory",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "faucet",
+    "categories": [
+      "food-beverage",
+      "home",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "feather",
+    "categories": [
+      "nature",
+      "animals",
+      "text"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "fence",
+    "categories": [
+      "home",
+      "buildings"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "fire-extinguisher",
+    "categories": [
+      "home",
+      "tools"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "fish-off",
+    "categories": [
+      "food-beverage",
+      "animals"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "fish-symbol",
+    "categories": [
+      "food-beverage",
+      "animals"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "flame-kindling",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "flower-2",
+    "categories": [
+      "nature",
+      "sustainability",
+      "seasons"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "forklift",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "gamepad-2",
+    "categories": [
+      "gaming",
+      "devices"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "gamepad-directional",
+    "categories": [
+      "gaming",
+      "devices"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "gavel",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "gem",
+    "categories": [
+      "gaming",
+      "finance"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "georgian-lari",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ghost",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "glass-water",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "goal",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "grape",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "groceries",
+    "categories": [
+      "food-beverage",
+      "shopping"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "ham",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hamburger",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hand-coins",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "hand-helping",
+    "categories": [
+      "emoji",
+      "social"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [
+      {
+        "name": "helping-hand",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hand-metal",
+    "categories": [
+      "emoji",
+      "multimedia"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hand-platter",
+    "categories": [
+      "food-beverage",
+      "people"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "handbag",
+    "categories": [
+      "shopping",
+      "travel"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "hard-hat",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "haze",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "heart-crack",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "heart-handshake",
+    "categories": [
+      "emoji",
+      "social"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "heater",
+    "categories": [
+      "home",
+      "devices",
+      "travel"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "helicopter",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "hop",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hop-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "hot-air-balloon",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "hotel",
+    "categories": [
+      "buildings",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "house-cog",
+    "categories": [
+      "buildings",
+      "home"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "house-heart",
+    "categories": [
+      "home",
+      "buildings"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "house-plug",
+    "categories": [
+      "buildings",
+      "home",
+      "sustainability"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "house-plus",
+    "categories": [
+      "buildings",
+      "medical"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "house-wifi",
+    "categories": [
+      "home",
+      "buildings",
+      "connectivity"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "houses",
+    "categories": [
+      "buildings",
+      "home"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ice-cream-bowl",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [
+      {
+        "name": "ice-cream-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "indian-rupee",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "inspection-panel",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "japanese-yen",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "joystick",
+    "categories": [
+      "gaming",
+      "devices"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "kayak",
+    "categories": [
+      "transportation",
+      "sports"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "kazakh-tenge",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lamp-ceiling",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lamp-desk",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lamp-floor",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lamp-wall-down",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lamp-wall-up",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "laser",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "leafy-green",
+    "categories": [
+      "food-beverage",
+      "sustainability"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "lighthouse",
+    "categories": [
+      "buildings",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "lollipop",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "mango",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "martini",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "microwave",
+    "categories": [
+      "food-beverage",
+      "home"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "milk",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "milk-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "mop",
+    "categories": [
+      "home",
+      "tools"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "mop-sparkles",
+    "categories": [
+      "home",
+      "tools"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "moped",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "mosque",
+    "categories": [
+      "buildings",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "motorbike",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "mound-shovel",
+    "categories": [
+      "tools",
+      "nature"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "mountain-snow",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "nepali-rupee",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "nut",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "nut-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "octagon-minus",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "origami",
+    "categories": [
+      "animals",
+      "design"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "panda",
+    "categories": [
+      "animals"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "paper-bag",
+    "categories": [
+      "food-beverage",
+      "shopping"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "parasol",
+    "categories": [
+      "travel",
+      "weather"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "park",
+    "categories": [
+      "nature",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "parking-meter",
+    "categories": [
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "party-popper",
+    "categories": [
+      "emoji"
+    ],
+    "primary_category": "emoji",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "pencil-ruler",
+    "categories": [
+      "tools",
+      "design",
+      "layout"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "perfume-bottle",
+    "categories": [
+      "shopping"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "philippine-peso",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "pickaxe",
+    "categories": [
+      "tools",
+      "gaming"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "plane-landing",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "plane-takeoff",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "plant-pot",
+    "categories": [
+      "home",
+      "nature"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "playing-card",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "playing-cards",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "playing-cards-fan",
+    "categories": [
+      "gaming",
+      "social"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "pocket-knife",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "popcorn",
+    "categories": [
+      "food-beverage",
+      "multimedia"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "popsicle",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "pound-sterling",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "rat",
+    "categories": [
+      "animals"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "receipt-cent",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-euro",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-indian-rupee",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-japanese-yen",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-pound-sterling",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-russian-ruble",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-swiss-franc",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-text",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "receipt-turkish-lira",
+    "categories": [
+      "finance",
+      "shopping"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "road",
+    "categories": [
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "rocking-chair",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "rose",
+    "categories": [
+      "nature",
+      "seasons",
+      "social"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "ruler-dimension-line",
+    "categories": [
+      "tools",
+      "design",
+      "layout",
+      "math"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "russian-ruble",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "sailboat",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "salad",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "saudi-riyal",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "school",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "scooter",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "screw",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "scroll",
+    "categories": [
+      "gaming",
+      "development",
+      "text"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "scroll-text",
+    "categories": [
+      "gaming",
+      "development",
+      "text"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "shell",
+    "categories": [
+      "animals",
+      "development",
+      "nature",
+      "travel"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "shelving-unit",
+    "categories": [
+      "home"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ship-cargo",
+    "categories": [
+      "transportation",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ship-wheel",
+    "categories": [
+      "transportation",
+      "navigation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "shirt",
+    "categories": [
+      "shopping"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "shopping-cart-minus",
+    "categories": [
+      "shopping"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "shopping-cart-plus",
+    "categories": [
+      "shopping"
+    ],
+    "primary_category": "shopping",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "shovel",
+    "categories": [
+      "nature",
+      "tools",
+      "gaming"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "shower-head",
+    "categories": [
+      "home",
+      "travel"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "shrimp",
+    "categories": [
+      "animals",
+      "food-beverage"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "shrimp-off",
+    "categories": [
+      "animals",
+      "food-beverage"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "shrub",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "skull",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "smartphone-nfc",
+    "categories": [
+      "finance",
+      "devices",
+      "connectivity"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "snail",
+    "categories": [
+      "animals",
+      "food-beverage"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "soap-dispenser-droplet",
+    "categories": [
+      "home",
+      "travel"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "solar-panel",
+    "categories": [
+      "home",
+      "science",
+      "sustainability"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "soup",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "spool",
+    "categories": [
+      "tools"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "squirrel",
+    "categories": [
+      "animals"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "stone",
+    "categories": [
+      "nature"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "sun-snow",
+    "categories": [
+      "weather",
+      "seasons"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "swiss-franc",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "sword",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "swords",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "tent-tree",
+    "categories": [
+      "travel",
+      "nature"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "theater",
+    "categories": [
+      "buildings",
+      "social"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "thermometer-snowflake",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "thermometer-sun",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "tic-tac-toe",
+    "categories": [
+      "gaming"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "ticket-check",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ticket-minus",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ticket-percent",
+    "categories": [
+      "transportation",
+      "shopping"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ticket-plus",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ticket-slash",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "ticket-x",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tickets",
+    "categories": [
+      "travel",
+      "transportation"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tickets-plane",
+    "categories": [
+      "transportation",
+      "travel"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tombstone",
+    "categories": [
+      "gaming",
+      "navigation",
+      "development"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "tool-case",
+    "categories": [
+      "tools",
+      "development",
+      "home"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "toolbox",
+    "categories": [
+      "tools",
+      "home"
+    ],
+    "primary_category": "tools",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "toothbrush",
+    "categories": [
+      "home",
+      "travel",
+      "medical"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "toothbrush-sparkles",
+    "categories": [
+      "home",
+      "travel",
+      "medical"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tornado",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "towel-rack",
+    "categories": [
+      "home",
+      "travel"
+    ],
+    "primary_category": "home",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tower-control",
+    "categories": [
+      "travel",
+      "transportation",
+      "buildings"
+    ],
+    "primary_category": "travel",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "toy-brick",
+    "categories": [
+      "gaming",
+      "development"
+    ],
+    "primary_category": "gaming",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "tractor",
+    "categories": [
+      "transportation",
+      "sustainability",
+      "food-beverage"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "traffic-cone",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "trailer",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "train-front-tunnel",
+    "categories": [
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "train-track",
+    "categories": [
+      "transportation",
+      "navigation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tram-front",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [
+      {
+        "name": "train",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [
+      "train"
+    ],
+    "status": "missing",
+    "local_name": null,
+    "rejected_upstream_alias_reason": "Local train has no reviewed tram-specific distinction; mapped to train-front instead.",
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "tree-deciduous",
+    "categories": [
+      "nature",
+      "sustainability"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "tree-palm",
+    "categories": [
+      "nature",
+      "sustainability",
+      "travel"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [
+      {
+        "name": "palmtree",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "trees",
+    "categories": [
+      "nature",
+      "sustainability"
+    ],
+    "primary_category": "nature",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "truck-electric",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "turkish-lira",
+    "categories": [
+      "finance"
+    ],
+    "primary_category": "finance",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "turtle",
+    "categories": [
+      "animals"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "umbrella-off",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "university",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [
+      {
+        "name": "school-2",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "utensils-crossed",
+    "categories": [
+      "food-beverage",
+      "travel",
+      "navigation"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [
+      {
+        "name": "fork-knife-crossed",
+        "deprecationReason": "alias.name",
+        "deprecated": true
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "utility-pole",
+    "categories": [
+      "buildings",
+      "home",
+      "sustainability"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "van",
+    "categories": [
+      "transportation"
+    ],
+    "primary_category": "transportation",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "vegan",
+    "categories": [
+      "food-beverage",
+      "sustainability"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "warehouse",
+    "categories": [
+      "buildings",
+      "navigation"
+    ],
+    "primary_category": "buildings",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "06"
+  },
+  {
+    "lucide_name": "waves-arrow-down",
+    "categories": [
+      "weather",
+      "sustainability"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "waves-arrow-up",
+    "categories": [
+      "weather",
+      "sustainability"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "waves-horizontal",
+    "categories": [
+      "weather",
+      "navigation",
+      "multimedia",
+      "sustainability"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [
+      {
+        "name": "waves",
+        "deprecated": true,
+        "deprecationReason": "alias.name"
+      }
+    ],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "waves-vertical",
+    "categories": [
+      "weather"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "wheat",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "wheat-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "wind-arrow-down",
+    "categories": [
+      "weather",
+      "sustainability"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "wind-arrow-up",
+    "categories": [
+      "weather",
+      "sustainability"
+    ],
+    "primary_category": "weather",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "wine-off",
+    "categories": [
+      "food-beverage"
+    ],
+    "primary_category": "food-beverage",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  },
+  {
+    "lucide_name": "worm",
+    "categories": [
+      "animals",
+      "security"
+    ],
+    "primary_category": "animals",
+    "lucide_aliases": [],
+    "local_upstream_alias_matches": [],
+    "status": "missing",
+    "local_name": null,
+    "implementation_batch": "07"
+  }
+]

@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const SheetIcon = /*#__PURE__*/ forwardRef(function SheetIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM2.35 8.95V10.05H5.45V13.65H6.55V10.05H9.45V13.65H10.55V10.05H13.65V8.95H10.55V6.05H13.65V4.95H6.55V2.35H5.45V4.95H2.35V6.05H5.45V8.95ZM6.55 6.05H9.45V8.95H6.55Z", "fill": "currentColor"}));
+});

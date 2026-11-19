@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const ToggleOffIcon = /*#__PURE__*/ forwardRef(function ToggleOffIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M5.5 3.45H10.5Q11.4253 3.45 12.2712 3.8078Q13.0879 4.1532 13.7173 4.7827Q14.3468 5.4121 14.6922 6.2288Q15.05 7.0747 15.05 8Q15.05 8.9253 14.6922 9.7712Q14.3468 10.5879 13.7173 11.2173Q13.0879 11.8468 12.2712 12.1922Q11.4253 12.55 10.5 12.55H5.5Q4.5747 12.55 3.7288 12.1922Q2.9121 11.8468 2.2827 11.2173Q1.6532 10.5879 1.3078 9.7712Q0.95 8.9253 0.95 8Q0.95 7.0747 1.3078 6.2288Q1.6532 5.4121 2.2827 4.7827Q2.9121 4.1532 3.7288 3.8078Q4.5747 3.45 5.5 3.45ZM3.2 8C3.2 9.2703 4.2297 10.3 5.5 10.3C6.7703 10.3 7.8 9.2703 7.8 8C7.8 6.7297 6.7703 5.7 5.5 5.7C4.2297 5.7 3.2 6.7297 3.2 8Z", "fill": "currentColor"}));
+});

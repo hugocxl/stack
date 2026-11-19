@@ -1,0 +1,4 @@
+import { createElement, forwardRef } from "react";
+export const CloudIcon = /*#__PURE__*/ forwardRef(function CloudIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement("svg", {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, "aria-hidden": props["aria-label"] || props["aria-labelledby"] ? undefined : true, ...props, ref} ,createElement("path", {"d": "M4.0953 13.6338Q2.3948 13.6338 1.4255 12.4951Q0.5695 11.4896 0.6141 10.0423Q0.6346 9.3754 0.8641 8.7572Q1.1033 8.1129 1.5344 7.6184Q2.3538 6.6785 3.5745 6.5178Q3.7539 4.7145 5.0028 3.5672Q5.6346 2.9869 6.4597 2.6757Q7.2527 2.3766 8.1139 2.3666Q8.9776 2.3565 9.7784 2.6389Q10.6152 2.9339 11.2647 3.5077Q12.5755 4.6657 12.7979 6.5676Q14.0401 6.8571 14.7514 7.8574Q15.5004 8.9106 15.3684 10.2862Q15.2364 11.6608 14.295 12.5945Q13.2472 13.6338 11.6335 13.6338Z", "fill": "currentColor"}));
+});

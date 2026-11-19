@@ -1,0 +1,5 @@
+import { createElement, forwardRef } from "react";
+import { Svg, Path, Circle, Rect, G } from "react-native-svg";
+export const BrickWallIcon = /*#__PURE__*/ forwardRef(function BrickWallIcon({size = 16, color = "currentColor", ...props}, ref) {
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.85 1.55H13.15Q13.8956 1.55 14.4228 2.0772Q14.95 2.6044 14.95 3.35V12.65Q14.95 13.3956 14.4228 13.9228Q13.8956 14.45 13.15 14.45H2.85Q2.1044 14.45 1.5772 13.9228Q1.05 13.3956 1.05 12.65L1.05 10V6L1.05 3.35Q1.05 2.6044 1.5772 2.0772Q2.1044 1.55 2.85 1.55ZM2.15 6.55V9.45H7.45V6.55H2.15ZM13.85 9.45V6.55H8.55V9.45H13.85ZM10.1 2.65H5.9V5.45H10.1V2.65ZM5.9 13.35H10.1V10.55H5.9V13.35ZM13.85 5.45V3.35Q13.85 3.06 13.645 2.855Q13.4399 2.65 13.15 2.65H11.2V5.45H13.85ZM2.85 2.65Q2.5601 2.65 2.355 2.855Q2.15 3.0601 2.15 3.35V5.45H4.8V2.65ZM2.15 10.55V12.65Q2.15 12.9399 2.355 13.145Q2.5601 13.35 2.85 13.35H4.8V10.55H2.15ZM11.2 13.35H13.15Q13.4399 13.35 13.645 13.145Q13.85 12.9399 13.85 12.65V10.55H11.2V13.35Z", "fill": "currentColor"}));
+});
