@@ -174,7 +174,7 @@ public struct DSKnob: View {
                         .onChanged { drag in
                             let start = dragStart ?? value
                             if dragStart == nil { dragStart = start }
-                            let travel = drag.translation.width - drag.translation.height
+                            let travel = Double(drag.translation.width - drag.translation.height)
                             set(start + travel * (range.upperBound - range.lowerBound) / 200)
                         }
                         .onEnded { _ in dragStart = nil }
@@ -247,7 +247,7 @@ public struct DSSlider: View {
                     DragGesture(minimumDistance: 0)
                         .onChanged { drag in
                             dragging = true
-                            let next = range.lowerBound + min(1, max(0, drag.location.x / width)) * (range.upperBound - range.lowerBound)
+                            let next = range.lowerBound + min(1, max(0, Double(drag.location.x / width))) * (range.upperBound - range.lowerBound)
                             value = snapped(next, range, step: step)
                         }
                         .onEnded { _ in dragging = false }
