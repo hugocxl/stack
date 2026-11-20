@@ -31,7 +31,8 @@
   "main": "./dist/react/index.js",
   "types": "./dist/react/index.d.ts",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "prepack": "node build.mjs"
   },
   "dependencies": {
     "@hugocxl/design-system": "^0.2.14",
