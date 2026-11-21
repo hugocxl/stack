@@ -564,7 +564,7 @@ public struct DSSlider: View {
             .contentShape(Rectangle())
             .modifier(DSSliderGestures(
                 dragging: $dragging,
-                position: { point in range.lowerBound + min(1, max(0, point.x / max(width, 1))) * (range.upperBound - range.lowerBound) },
+                position: { point in range.lowerBound + min(1, max(0, Double(point.x / max(width, 1)))) * (range.upperBound - range.lowerBound) },
                 commit: commit, reset: reset, onEditingChanged: onEditingChanged))
         }
         .frame(height: density.metrics.control)
