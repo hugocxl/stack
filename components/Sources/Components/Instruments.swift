@@ -748,7 +748,7 @@ public struct DSFader: View {
                     .contentShape(Rectangle())
                     .modifier(DSSliderGestures(
                         dragging: $dragging,
-                        position: { point in range.lowerBound + min(1, max(0, 1 - point.y / max(h, 1))) * (range.upperBound - range.lowerBound) },
+                        position: { point in range.lowerBound + min(1, max(0, 1 - Double(point.y / max(h, 1)))) * (range.upperBound - range.lowerBound) },
                         commit: commit, reset: reset, onEditingChanged: onEditingChanged))
                 }
                 .frame(width: cap.width, height: track)
