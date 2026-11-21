@@ -1,0 +1,16 @@
+{
+  "name": "row",
+  "title": "Selectable row",
+  "group": "content",
+  "summary": "A row people pick in a sidebar or browser: the surface under the pointer and the selection.",
+  "use": ["For lists of items people select and act on: media, files, sessions."],
+  "anatomy": ["Row content", "Surface behind the hovered or selected row"],
+  "options": [
+    { "name": "selected", "values": [true, false], "default": false, "description": "Whether the row is the selection." }
+  ],
+  "states": ["default", "hover", "selected", "focus"],
+  "tokens": ["surface", "ink", "radius-control", "target", "space-2", "space-3"],
+  "rules": ["Selection is surface, never ink or the accent.", "Rows keep their words in ink."],
+  "accessibility": ["A selected row has the selected trait."],
+  "platforms": { "react": null, "swift": "DSRowStyle" }
+}

@@ -53,6 +53,31 @@
       ],
       "default": false,
       "description": "Fill from the middle, for ranges around zero such as exposure."
+    },
+    {
+      "name": "defaultValue",
+      "values": [
+        "number"
+      ],
+      "default": null,
+      "description": "Double-clicking the track or the label puts the value back."
+    },
+    {
+      "name": "editable",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "Double-clicking the reading lets people type an exact value."
+    },
+    {
+      "name": "onEditingChanged",
+      "values": [
+        "callback"
+      ],
+      "default": null,
+      "description": "Called when a drag, reset or typed edit starts and ends, so a whole gesture is one undo step."
     }
   ],
   "states": [
@@ -74,7 +99,9 @@
   ],
   "rules": [
     "The pointer is the only accent; the fill is ink.",
-    "Clicking anywhere on the track moves the pointer there."
+    "Clicking anywhere on the track moves the pointer there.",
+    "A gesture that changes the value is one undo step: begin on the first change, commit when it ends.",
+    "The track is an inset groove filled with ink; the pointer is a raised fader cap carrying the accent line."
   ],
   "accessibility": [
     "Exposed as a slider with its written value; arrow, Page and Home/End keys work."

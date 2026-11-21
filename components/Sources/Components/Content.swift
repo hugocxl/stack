@@ -17,8 +17,10 @@ public struct DSTitle: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            DSText(title, variant: .title).accessibilityAddTraits(.isHeader)
-            if let byline { DSText(byline, variant: .title, tone: .muted) }
+            // A title fits on one line; long names give way in the middle.
+            DSText(title, variant: .title).lineLimit(1).truncationMode(.middle)
+                .accessibilityAddTraits(.isHeader)
+            if let byline { DSText(byline, variant: .title, tone: .muted).lineLimit(1).truncationMode(.middle) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -74,6 +76,7 @@ public struct DSMeta: View {
 public struct DSSection<Content: View>: View {
     let heading: String?
     let content: Content
+    @Environment(\.dsDensity) private var density
 
     public init(_ heading: String? = nil, @ViewBuilder content: () -> Content) {
         self.heading = heading
@@ -81,23 +84,28 @@ public struct DSSection<Content: View>: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: DSSpace.s4) {
+        let metrics = density.metrics
+        VStack(alignment: .leading, spacing: density.metrics.unit) {
             if let heading {
-                DSText(heading, variant: .heading, tone: .muted).accessibilityAddTraits(.isHeader)
+                DSText(heading, variant: density == .regular ? .heading : .label, tone: .muted).accessibilityAddTraits(.isHeader)
             }
-            VStack(alignment: .leading, spacing: DSSpace.s5) { content }
+            VStack(alignment: .leading, spacing: metrics.stack) { content }
         }
-        .padding(.top, DSSpace.s7)
+        .padding(.top, metrics.section)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-/// A 1px hairline between groups.
+/// A 1px hairline between groups: across, or upright between columns.
 public struct DSDivider: View {
-    public init() {}
+    let axis: Axis
+
+    public init(_ axis: Axis = .horizontal) { self.axis = axis }
 
     public var body: some View {
-        Rectangle().fill(DSColor.rule).frame(height: 1).accessibilityHidden(true)
+        Rectangle().fill(DSColor.rule)
+            .frame(width: axis == .vertical ? 1 : nil, height: axis == .horizontal ? 1 : nil)
+            .accessibilityHidden(true)
     }
 }
 
@@ -107,6 +115,7 @@ public struct DSCodeBlock: View {
     let label: String?
     @State private var copied = false
     @Environment(\.dsStaticRendering) private var staticRendering
+    @Environment(\.dsDensity) private var density
 
     public init(_ code: String, label: String? = nil) {
         self.code = code
@@ -129,7 +138,8 @@ public struct DSCodeBlock: View {
             Button(action: copy) {
                 DSText(copied ? "Copied" : "Copy", variant: .label, tone: .ink)
                     .padding(.horizontal, DSSpace.s3)
-                    .frame(minWidth: DSLayout.target, minHeight: DSLayout.target)
+                    .frame(minWidth: density.metrics.control)
+                    .frame(height: density.metrics.control)
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
@@ -142,7 +152,7 @@ public struct DSCodeBlock: View {
             .fixedSize(horizontal: true, vertical: true)
             .padding(.vertical, DSSpace.s4)
             .padding(.leading, DSSpace.s5)
-            .padding(.trailing, DSSpace.s5 + DSLayout.target)
+            .padding(.trailing, DSSpace.s5 + density.metrics.control)
     }
 
     @ViewBuilder private func selectable(_ text: some View) -> some View {
@@ -186,6 +196,7 @@ public struct DSListItem: Identifiable {
 /// Rows between hairlines that people scan.
 public struct DSList: View {
     let items: [DSListItem]
+    @Environment(\.dsDensity) private var density
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var sizeClass
     private var stacked: Bool { sizeClass == .compact }
@@ -213,12 +224,12 @@ public struct DSList: View {
     private func row(_ item: DSListItem, labels: Bool) -> some View {
         HStack(alignment: .top, spacing: DSSpace.s5) {
             if labels && !stacked {
-                DSText(item.label ?? "", variant: .label).frame(width: 120, alignment: .leading).padding(.top, 3)
+                DSText(item.label ?? "", variant: .label).frame(width: density == .regular ? 120 : 80, alignment: .leading).padding(.top, 3)
             }
             VStack(alignment: .leading, spacing: DSSpace.s2) {
                 if labels && stacked, let label = item.label { DSText(label, variant: .label) }
                 DSText(item.title, variant: .heading)
-                if let description = item.description { DSText(description, tone: .muted) }
+                if let description = item.description { DSText(description, variant: density == .regular ? .reading : .small, tone: .muted) }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             if item.trailing != nil || item.action != nil {
@@ -228,7 +239,7 @@ public struct DSList: View {
                 }
             }
         }
-        .padding(.vertical, DSSpace.s5)
+        .padding(.vertical, density.metrics.unit)
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
     }
@@ -343,5 +354,55 @@ public struct DSFigureGrid: View {
             if let text = item.text { DSText(text, variant: .small, tone: .muted).padding(.top, DSSpace.s2) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// A specification list, as on a product sheet: a mono label beside its value, one fact per row,
+/// between hairlines. For details people check, not settings they change.
+public struct DSSpecList: View {
+    public struct Item: Identifiable {
+        public let id = UUID()
+        public let label: Text
+        public let value: Text
+
+        public init(_ label: LocalizedStringKey, value: String) {
+            self.label = Text(label)
+            self.value = Text(verbatim: value)
+        }
+
+        public init(label: Text, value: Text) {
+            self.label = label
+            self.value = value
+        }
+    }
+
+    let items: [Item]
+    @Environment(\.dsDensity) private var density
+
+    public init(_ items: [Item]) { self.items = items }
+
+    public var body: some View {
+        VStack(spacing: 0) {
+            ForEach(items) { item in
+                HStack(alignment: .firstTextBaseline, spacing: density.metrics.gap) {
+                    item.label
+                        .font(DSFont.of(.label, density))
+                        .tracking(DSTextVariant.label.tracking(density))
+                        .textCase(.uppercase)
+                        .foregroundColor(DSColor.muted)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    item.value
+                        .font(DSFont.of(.reading, density))
+                        .foregroundColor(DSColor.ink)
+                        .multilineTextAlignment(.trailing)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+                .padding(.vertical, density.metrics.unit)
+                .frame(minHeight: density.metrics.control)
+                .overlay(alignment: .bottom) { DSDivider() }
+                .accessibilityElement(children: .combine)
+            }
+        }
     }
 }

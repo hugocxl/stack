@@ -1,0 +1,17 @@
+{
+  "name": "empty-state",
+  "title": "Empty state",
+  "group": "feedback",
+  "summary": "What a pane shows when it has nothing yet: a vector, a title, one sentence and the action that fills it.",
+  "use": ["For an empty pane, list or search result."],
+  "anatomy": ["Vector from @hugocxl/vectors", "Heading", "One muted sentence", "Optional action"],
+  "options": [
+    { "name": "vector", "values": ["vector name"], "default": null, "description": "Chosen for what the pane is for." },
+    { "name": "action", "values": ["button, link"], "default": null, "description": "The one action that fills the pane." }
+  ],
+  "states": ["default"],
+  "tokens": ["ink", "muted", "measure", "space-2", "space-3", "space-5"],
+  "rules": ["Left aligned, never centered text.", "One sentence that says how to fill the pane.", "The vector is drawn in ink, never the accent."],
+  "accessibility": ["The vector is decorative; the heading carries the meaning."],
+  "platforms": { "react": null, "swift": "DSEmptyState" }
+}

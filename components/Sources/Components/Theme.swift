@@ -1,4 +1,5 @@
 @_exported import Icons
+@_exported import Sounds
 @_exported import Vectors
 import CoreText
 import Foundation
@@ -119,15 +120,17 @@ public enum DSTextVariant: String, CaseIterable, Sendable {
         }
     }
 
-    /// Point size at the default Dynamic Type size. Reading is 17pt, title 1.4× and small 0.8× of it.
-    public var size: CGFloat {
+    /// Point size at the default Dynamic Type size, at regular density.
+    public var size: CGFloat { size(.regular) }
+
+    /// Point size at a density. The system uses one size, the reading size: 17pt, or 13pt at
+    /// compact density. Styles differ by face, weight, case and tone, not by size. The title alone
+    /// is larger (1.4×, or 1.3× compact), once per screen.
+    public func size(_ density: DSDensity) -> CGFloat {
+        let reading: CGFloat = density == .regular ? 17 : 13
         switch self {
-        case .reading, .heading: return 17
-        case .title: return 24
-        case .small: return 14
-        case .label: return 13
-        case .mono: return 15
-        case .control: return 16
+        case .title: return density == .regular ? 24 : 17
+        case .reading, .heading, .small, .label, .mono, .control: return reading
         }
     }
 
@@ -143,17 +146,23 @@ public enum DSTextVariant: String, CaseIterable, Sendable {
     }
 
     /// Letter spacing in points.
-    public var tracking: CGFloat {
+    public var tracking: CGFloat { tracking(.regular) }
+
+    public func tracking(_ density: DSDensity) -> CGFloat {
+        let size = size(density)
         switch self {
         case .title: return size * -0.02
-        case .label: return size * 0.08
+        case .label: return size * 0.1
         case .mono: return 0
         default: return size * -0.01
         }
     }
 
     /// Extra space between lines, matching the web line heights.
-    public var lineSpacing: CGFloat {
+    public var lineSpacing: CGFloat { lineSpacing(.regular) }
+
+    public func lineSpacing(_ density: DSDensity) -> CGFloat {
+        let size = size(density)
         switch self {
         case .reading, .heading: return size * 0.1
         case .small: return size * 0.2
@@ -163,9 +172,11 @@ public enum DSTextVariant: String, CaseIterable, Sendable {
         }
     }
 
-    public var font: Font {
+    public var font: Font { font(.regular) }
+
+    public func font(_ density: DSDensity) -> Font {
         DSFonts.register()
-        return Font.custom(postScriptName, size: size, relativeTo: textStyle)
+        return Font.custom(postScriptName, size: size(density), relativeTo: textStyle)
     }
 }
 
@@ -179,10 +190,16 @@ public enum DSFont {
     public static var mono: Font { DSTextVariant.mono.font }
     public static var control: Font { DSTextVariant.control.font }
     /// Code blocks: 13pt mono.
-    public static var code: Font {
+    public static var code: Font { code(.regular) }
+
+    /// Code at a density: mono at the reading size.
+    public static func code(_ density: DSDensity) -> Font {
         DSFonts.register()
-        return Font.custom("GeistMono-Regular", size: 13, relativeTo: .footnote)
+        return Font.custom("GeistMono-Regular", size: DSTextVariant.mono.size(density), relativeTo: .body)
     }
+
+    /// A style at a density.
+    public static func of(_ variant: DSTextVariant, _ density: DSDensity) -> Font { variant.font(density) }
 }
 
 // MARK: - Theme
@@ -203,6 +220,7 @@ public enum DSAppearance: String, CaseIterable, Sendable {
 /// The root of every app: registers the fonts and sets the reading type, ink and tint.
 public struct DSTheme: ViewModifier {
     public var appearance: DSAppearance
+    @Environment(\.dsDensity) private var density
 
     public init(appearance: DSAppearance = .system) {
         self.appearance = appearance
@@ -211,7 +229,7 @@ public struct DSTheme: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .font(DSFont.reading)
+            .font(DSFont.of(.reading, density))
             .foregroundColor(DSColor.ink)
             .tint(DSColor.ink)
             .preferredColorScheme(appearance.colorScheme)
@@ -230,10 +248,12 @@ extension View {
 /// An icon at the system size, in the current foreground color.
 struct DSIconImage: View {
     let icon: any IconResource
-    var size: CGFloat = 16
+    var size: CGFloat? = nil
+    @Environment(\.dsDensity) private var density
 
     var body: some View {
-        icon.image
+        let size = size ?? density.metrics.icon
+        return icon.image
             .resizable()
             .scaledToFit()
             .frame(width: size, height: size)

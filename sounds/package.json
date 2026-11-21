@@ -7,7 +7,9 @@
   "scripts": {
     "build": "pnpm --filter @hugocxl/sounds build",
     "typecheck": "tsc -p packages/sounds --noEmit",
-    "test": "pnpm run build && node --test tests/*.test.mjs",
+    "test": "pnpm run build && node scripts/sync-swift.mjs --check && node --test tests/*.test.mjs",
+    "sync:swift": "pnpm run build && node scripts/sync-swift.mjs",
+    "test:swift": "cd .. && swift test --filter SoundsTests",
     "build:site": "pnpm run build && node scripts/build-site.mjs",
     "dev": "pnpm run build:site && pnpm dlx serve _site -l 4321",
     "pack:check": "npm pack -w @hugocxl/sounds --dry-run"

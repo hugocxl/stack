@@ -18,9 +18,18 @@ public struct DSText: View {
     let content: Text
     let variant: DSTextVariant
     let tone: DSTextTone?
+    @Environment(\.dsDensity) private var density
 
+    @_disfavoredOverload
     public init(_ string: String, variant: DSTextVariant = .reading, tone: DSTextTone? = nil) {
         self.content = Text(verbatim: variant == .label ? string.uppercased() : string)
+        self.variant = variant
+        self.tone = tone
+    }
+
+    /// Localized copy.
+    public init(_ key: LocalizedStringKey, variant: DSTextVariant = .reading, tone: DSTextTone? = nil) {
+        self.content = Text(key)
         self.variant = variant
         self.tone = tone
     }
@@ -33,19 +42,20 @@ public struct DSText: View {
 
     public var body: some View {
         content
-            .font(variant.font)
-            .tracking(variant.tracking)
-            .lineSpacing(variant.lineSpacing)
+            .font(variant.font(density))
+            .tracking(variant.tracking(density))
+            .lineSpacing(variant.lineSpacing(density))
             .foregroundColor((tone ?? (variant == .label ? .muted : .ink)).color)
+            .textCase(variant == .label ? .uppercase : nil)
             .fixedSize(horizontal: false, vertical: true)
     }
 }
 
 extension Text {
     /// Style a Text in place, keeping it a Text so it can be concatenated.
-    public func ds(_ variant: DSTextVariant, tone: DSTextTone? = nil) -> Text {
-        self.font(variant.font)
-            .tracking(variant.tracking)
+    public func ds(_ variant: DSTextVariant, tone: DSTextTone? = nil, density: DSDensity = .regular) -> Text {
+        self.font(variant.font(density))
+            .tracking(variant.tracking(density))
             .foregroundColor((tone ?? (variant == .label ? .muted : .ink)).color)
     }
 }

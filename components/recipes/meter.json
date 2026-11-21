@@ -49,6 +49,15 @@
       ],
       "default": "accent",
       "description": "The color of the lit segments. A status tone when the level has a meaning."
+    },
+    {
+      "name": "orientation",
+      "values": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "horizontal",
+      "description": "Vertical meters stand beside a fader and light from the bottom."
     }
   ],
   "states": [
@@ -67,7 +76,8 @@
   ],
   "rules": [
     "Only lit segments take a color; everything else is ink, muted or rule.",
-    "The reading always shows the number, so color never carries the level alone."
+    "The reading always shows the number, so color never carries the level alone.",
+    "Segments sit in an inset strip; lit segments may glow faintly in their tone."
   ],
   "accessibility": [
     "Exposed as a meter with its value, minimum and maximum."

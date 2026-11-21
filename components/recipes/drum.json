@@ -1,0 +1,17 @@
+{
+  "name": "drum",
+  "title": "Drum",
+  "group": "inputs",
+  "summary": "A select for an ordered list, like a hardware roller: the picked option lit between two marks.",
+  "use": ["For ordered values worth seeing in context: sample rates, frame rates, tempos."],
+  "anatomy": ["Well (media radius)", "Options fading away from the picked one", "Picked option lit in accent text", "Two accent marks"],
+  "options": [
+    { "name": "options", "values": ["value, label"], "default": null, "description": "In order." },
+    { "name": "visible", "values": ["3", "5"], "default": "5", "description": "Rows on show." }
+  ],
+  "states": ["default", "dragging", "focus", "disabled"],
+  "tokens": ["surface", "accent", "accent-text", "muted", "size-mono", "radius-media"],
+  "rules": ["Only for ordered options; use a select for an unordered list.", "The marks and the picked option are the only accent."],
+  "accessibility": ["Adjustable with the arrow keys; the picked option is announced."],
+  "platforms": { "react": null, "swift": "DSDrum" }
+}

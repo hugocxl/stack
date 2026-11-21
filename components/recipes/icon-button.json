@@ -2,16 +2,17 @@
   "name": "icon-button",
   "title": "Icon button",
   "group": "actions",
-  "summary": "An action shown only as an icon, in a 44pt circle.",
+  "summary": "An action shown only as an icon, in a circle the size of the target.",
   "use": ["For actions everyone recognizes by their icon: close, more, previous, next, theme."],
   "anatomy": ["Circle", "Icon"],
   "options": [
     { "name": "variant", "values": ["outline", "ghost"], "default": "outline", "description": "outline has a hairline ring; ghost has none and suits toolbars and fields." },
-    { "name": "label", "values": ["text"], "default": null, "description": "Required. Read by assistive technology and shown as a tooltip." }
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Read by assistive technology and shown as a tooltip." },
+    { "name": "isOn", "values": [true, false], "default": false, "description": "A toggle's on state, or the open pane a toolbar button stands for: ink on surface." }
   ],
-  "states": ["default", "hover", "pressed", "focus", "disabled"],
+  "states": ["default", "hover", "pressed", "focus", "disabled", "on"],
   "tokens": ["rule", "surface", "ink", "muted", "radius-pill", "target"],
-  "rules": ["Never use an icon button for an action whose icon needs explaining; use a button with a label."],
-  "accessibility": ["The label is mandatory.", "44 × 44pt target."],
+  "rules": ["Never use an icon button for an action whose icon needs explaining; use a button with a label.", "An on state is surface and ink; never the accent.", "outline is a round raised cap; ghost is flat. Pressed or on, both sit pressed into a well."],
+  "accessibility": ["The label is mandatory.", "A target of 44 × 44pt, or 28 × 28pt at compact density.", "An on button has the selected trait."],
   "platforms": { "react": "IconButton", "swift": "DSIconButton" }
 }

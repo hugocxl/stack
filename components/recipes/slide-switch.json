@@ -57,7 +57,8 @@
   ],
   "rules": [
     "One or two short words per position, uppercased by the label style.",
-    "For views of the same content use a segmented control instead."
+    "For views of the same content use a segmented control instead.",
+    "An inset groove under a raised thumb that carries the accent line."
   ],
   "accessibility": [
     "Exposed as a radio group; arrow keys move between positions and every label is a target."

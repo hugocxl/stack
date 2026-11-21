@@ -1,0 +1,17 @@
+{
+  "name": "property-row",
+  "title": "Property row",
+  "group": "inputs",
+  "summary": "A setting in an inspector: a small muted label beside its control, on one line.",
+  "use": ["For dense settings panels where many values are read and changed together."],
+  "anatomy": ["Label (small, muted, fixed width)", "Control"],
+  "options": [
+    { "name": "label", "values": ["text"], "default": null, "description": "One to three words." },
+    { "name": "label width", "values": ["points"], "default": "88 compact, 140 regular", "description": "Shared by a group so controls line up." }
+  ],
+  "states": ["default", "disabled"],
+  "tokens": ["muted", "ink", "size-small", "target", "space-2", "space-3"],
+  "rules": ["Controls inside hide their own label; the row's label names them for assistive technology.", "Align every row of a group on one label width."],
+  "accessibility": ["The control is labelled by the row's label."],
+  "platforms": { "react": null, "swift": "DSPropertyRow" }
+}

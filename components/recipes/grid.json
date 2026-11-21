@@ -1,0 +1,76 @@
+{
+  "name": "grid",
+  "title": "Grid",
+  "group": "layout",
+  "summary": "The layout of every display: a Cartesian grid of bordered cells, divided by hairlines that run edge to edge.",
+  "use": [
+    "To lay out everything inside a pane: an inspector, settings, a form, a bank of knobs.",
+    "As a section: a header cell, then one cell per parameter."
+  ],
+  "anatomy": [
+    "Cells padded by the spacing unit",
+    "Hairlines between rows and columns, full bleed",
+    "A mono label top-left in each cell, content one unit below",
+    "Optional header cell: the section name in ink with trailing tools",
+    "Swift: DSGrid with DSGridHeader, DSCell and .dsSpan(_:)"
+  ],
+  "options": [
+    {
+      "name": "columns",
+      "values": [
+        "number"
+      ],
+      "default": 1,
+      "description": "Columns per row; hairlines divide the columns too."
+    },
+    {
+      "name": "span",
+      "values": [
+        "number"
+      ],
+      "default": null,
+      "description": "Columns a cell takes. Without it a cell takes the row; knobs take one."
+    },
+    {
+      "name": "title",
+      "values": [
+        "text"
+      ],
+      "default": null,
+      "description": "A cell's name, as a mono label top-left."
+    },
+    {
+      "name": "header",
+      "values": [
+        "text"
+      ],
+      "default": null,
+      "description": "A header cell across the row: the section name in ink, tools trailing."
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "tokens": [
+    "rule",
+    "ink",
+    "muted",
+    "size-label",
+    "target",
+    "space-3",
+    "space-4"
+  ],
+  "rules": [
+    "Every padding and gap is the spacing unit: space-4 regular, space-3 compact.",
+    "Hairlines meet the edges of the pane; no gutters, no cards.",
+    "The last cell of a row stretches to its end, so every row is whole.",
+    "Every section is the same: header cell first, then parameter cells; knobs three to a row."
+  ],
+  "accessibility": [
+    "Each titled cell is a labelled group."
+  ],
+  "platforms": {
+    "react": null,
+    "swift": "DSGrid"
+  }
+}

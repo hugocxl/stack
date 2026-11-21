@@ -1,0 +1,16 @@
+{
+  "name": "screen",
+  "title": "Screen",
+  "group": "feedback",
+  "summary": "An LCD: dark glass in a well whose type and marks are lit in the accent.",
+  "use": ["For live readouts, levels and status an instrument shows: timecode, render settings, meters over time."],
+  "anatomy": ["Dark glass in a well", "Optional mode tabs (DSScreenTabs)", "Readouts: dim label over a lit value (DSScreenReadout)", "LED bar columns (DSScreenBars)"],
+  "options": [
+    { "name": "content", "values": ["tabs, readouts, bars"], "default": null, "description": "What the screen shows." }
+  ],
+  "states": ["default"],
+  "tokens": ["accent", "size-label", "size-title", "radius-control", "space-3", "space-5"],
+  "rules": ["A screen stays dark in both themes.", "Values are lit in the accent; labels are dim.", "Screens show, they never take input beyond their mode tabs."],
+  "accessibility": ["Readouts combine their label and value; bars announce their levels."],
+  "platforms": { "react": null, "swift": "DSScreen" }
+}

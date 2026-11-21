@@ -13,7 +13,7 @@
   ],
   "states": ["default", "hover", "focus", "disabled"],
   "tokens": ["rule", "ink", "muted", "target"],
-  "rules": ["Use the platform's own menu, so it works with every input method."],
+  "rules": ["Use the platform's own menu, so it works with every input method.", "The trigger is a raised cap with a chevron."],
   "accessibility": ["Native control on every platform."],
   "platforms": { "react": "Select", "swift": "DSSelect" }
 }

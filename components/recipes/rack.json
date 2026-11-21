@@ -1,0 +1,17 @@
+{
+  "name": "rack",
+  "title": "Rack",
+  "group": "layout",
+  "summary": "A bay of instruments: an inset well that holds knobs, faders or meters, named on a raised tab across its top edge.",
+  "use": ["To group the instruments of one processor or effect, as a plugin does: a compressor's dynamics, a clip's color."],
+  "anatomy": ["Well (inset, media radius)", "Tab (raised capsule) with the name", "Optional page buttons and dots", "Instruments"],
+  "options": [
+    { "name": "title", "values": ["text"], "default": null, "description": "The processor's name, one to three words." },
+    { "name": "pages", "values": ["number"], "default": 1, "description": "With a page binding, the tab steps through pages and dots show where you are." }
+  ],
+  "states": ["default", "disabled"],
+  "tokens": ["surface", "canvas", "rule", "ink", "radius-media", "space-3", "space-5"],
+  "rules": ["A rack holds instruments only, never text or forms.", "Never nest racks.", "The tab names the processor; the instruments carry their own labels."],
+  "accessibility": ["The rack is a labelled group; pages are announced."],
+  "platforms": { "react": null, "swift": "DSRack" }
+}

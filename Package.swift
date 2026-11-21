@@ -6,6 +6,7 @@ let package = Package(
     products: [
         .library(name: "Icons", targets: ["Icons"]),
         .library(name: "Vectors", targets: ["Vectors"]),
+        .library(name: "Sounds", targets: ["Sounds"]),
         .library(name: "Components", targets: ["Components"])
     ],
     targets: [
@@ -13,7 +14,9 @@ let package = Package(
         .testTarget(name: "IconsTests", dependencies: ["Icons"], path: "icons/tests/IconsTests"),
         .target(name: "Vectors", path: "vectors/Sources/Vectors", resources: [.process("Resources")]),
         .testTarget(name: "VectorsTests", dependencies: ["Vectors"], path: "vectors/tests/VectorsTests"),
-        .target(name: "Components", dependencies: ["Icons", "Vectors"], path: "components/Sources/Components", resources: [.copy("Resources/Fonts")]),
+        .target(name: "Sounds", path: "sounds/Sources/Sounds"),
+        .testTarget(name: "SoundsTests", dependencies: ["Sounds"], path: "sounds/tests/SoundsTests"),
+        .target(name: "Components", dependencies: ["Icons", "Vectors", "Sounds"], path: "components/Sources/Components", resources: [.copy("Resources/Fonts")]),
         .testTarget(name: "ComponentsTests", dependencies: ["Components"], path: "components/tests/ComponentsTests")
     ]
 )

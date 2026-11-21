@@ -92,6 +92,23 @@ setEnabled(false); // mute every sound
 
 Keep the visitor's choice in your own settings and call `setEnabled` when the page loads.
 
+## Swift
+
+The `Sounds` library of the hugocxlStack Swift package synthesizes the same catalog natively
+(generated from `catalog.ts`, so the two never drift):
+
+```swift
+import Sounds
+
+DSSound.down.play()
+DSSounds.shared.haptic(.success)   // the sound, plus a trackpad or device tap
+DSSounds.shared.isEnabled = false   // honour the person's setting
+```
+
+With the `Components` library, set `.dsSounds(true)` at the root instead: buttons, switches,
+checkboxes, segmented controls, sliders, knobs, disclosures and dialogs then play the sound
+the table above names for them.
+
 ## Custom sounds and audio files
 
 Add a new sound only when none of the fifteen fits. A sound is a list of layers: a `noise`

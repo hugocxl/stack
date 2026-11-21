@@ -1,0 +1,17 @@
+{
+  "name": "disclosure",
+  "title": "Disclosure",
+  "group": "content",
+  "summary": "A group people open and close: a chevron and a heading over its content.",
+  "use": ["To keep long inspectors and settings scannable: advanced options, optional sections."],
+  "anatomy": ["Chevron", "Heading (a mono label in compact)", "Optional trailing tools", "Content"],
+  "options": [
+    { "name": "title", "values": ["text"], "default": null, "description": "Names the group." },
+    { "name": "expanded", "values": [true, false], "default": false, "description": "Whether the content shows." }
+  ],
+  "states": ["collapsed", "expanded", "hover", "focus", "disabled"],
+  "tokens": ["ink", "muted", "rule", "target", "space-1", "space-2", "space-3", "space-5"],
+  "rules": ["Never nest disclosures more than one level.", "Keep what most people need outside any disclosure."],
+  "accessibility": ["The heading is a button that announces Expanded or Collapsed."],
+  "platforms": { "react": null, "swift": "DSDisclosure" }
+}

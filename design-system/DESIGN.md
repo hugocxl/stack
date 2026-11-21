@@ -338,9 +338,120 @@ A recipe fixes the layout and the component order. `?` means optional, `+` one o
 
 `masthead` goes before `<main>` and `footer` after it. All other components go inside `<article class="ds-column ds-opening">`, in order. The example home page in [index.html](index.html#recipes) is the reference output.
 
+## Product interfaces
+
+Pages are read; product interfaces are worked in. A tool such as an editor, a console or an inspector keeps every token, role and rule above and adds what long sessions with a pointer need. The [`@hugocxl/components`](https://hugocxl.github.io/stack/components/) library builds all of it for SwiftUI; set `.dsDensity(.compact)` at the root of a desktop tool.
+
+### Density
+
+Two densities set the same system at two sizes. Never mix them in one window.
+
+| Density | Reading | Small | Label | Title | Control | Target | For |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| regular | 17pt (21px web) | 0.8× | 13px mono | 1.4× | 16 | 44 | Pages, documents and touch screens |
+| compact | 13pt | 11pt | 10pt mono | 17pt | 13 | 28 | Pointer-driven desktop tools |
+
+**One text size.** Product interfaces set everything at the reading size: body, controls, field values, property labels, help, mono labels and figures. Styles differ by face, weight, case and tone, never by size. Two exceptions, each with a reason: the title, once per screen, and display figures read at a distance on a screen or a readout. A smaller or larger size anywhere else needs the same kind of reason, written down.
+
+**One spacing unit.** A product interface is laid out on one unit: `space-4` (16pt) regular, `space-3` (12pt) compact. Every padding, margin and gap between elements is the unit: a cell's padding, the gap between a label and its control, between controls in a row, between a title and its tools. Rows and sections add nothing between them; they meet on a hairline. Smaller steps live only inside a component, such as the gap between an icon and its words.
+
+**Control height.** Every single-line control is exactly the control height, the target: 44pt regular, 28pt compact. That covers buttons, icon buttons, selects, text and search fields, menu triggers, segmented controls, slider tracks, the rows of switches, checkboxes and radios, a rack's tab and the readout of a transport. Never make a control taller or shorter, so any row of mixed controls lines up. Only content grows: a multiline field, a row with a description, a key that shows a picture.
+
+### Workspace
+
+A product window is one canvas divided into panes, like an instrument panel.
+
+- **Panes** fill the window edge to edge. They have no corners, no fill of their own, no gap and no shadow. One `rule` hairline divides neighbours.
+- **Cartesian grid.** Everything inside a pane is split by a grid of bordered cells, like a camera's settings screen. Hairlines run edge to edge between rows and columns and meet the pane's edges. Each cell is padded by the unit and carries its mono label top-left, with its content one unit below. A cell takes the whole row unless it spans fewer columns; the last cell of a row stretches to its end, so every row is whole. No gutters: spacing lives inside cells.
+- **Section.** Every group of settings is the same section: a three-column grid whose first row is the header cell (the name in ink, its reset and power tools at the trailing end), then one cell per parameter. Knobs take one column each, three to a row; selects, fields, key grids, switches and notes take the row. A sub-group is a label cell across the row. Sections follow one another with no space between them. The same section serves inspectors, settings and dialogs: never invent a different one.
+- **Pane header**: an optional muted icon, the pane's name as a mono `label`, and its tools at the trailing end, over a hairline. A pane's name is never a title.
+- **Toolbar**: one row above the workspace with leading, centered and trailing groups of ghost icon buttons, divided by short hairlines, over a hairline. The window's one filled button lives here or in a dialog.
+- **Inspector**: a stack of sections. A property row in a grid becomes a cell, its label top-left and its control below. Controls hide their own label; the cell names them.
+- **Empty pane**: a vector from `@hugocxl/vectors`, a heading, one muted sentence and the action that fills it, left aligned.
+- **Media viewers** that people judge color in keep a fixed dark neutral surround in both themes instead of `surface`. Words and marks drawn over that surround use the dark theme's tokens.
+
+### States
+
+| State | Mark |
+| --- | --- |
+| Hover | `surface` behind the control or row |
+| Selected row | `surface` behind, words and icon in `ink` |
+| Open pane, toggle on | The cap stays pressed into its well, words and icon in `ink` |
+| Pressed | The cap sinks: no rest shadow, the inner shadow |
+| Focus | 2px `ink` outline with a 3px offset |
+| Disabled | 40% opacity |
+| Destructive action | words in `error` on a hairline button; never the filled button |
+
+Selection and on states never use the accent.
+
+### Instruments
+
+The accent marks the live position of an instrument, one mark per instrument: the slider's pointer, the knob's dot, a timeline's playhead, a recording light. It does not count toward the page's accent budget, and it never fills, labels or selects anything.
+
+Sliders that change a document group a whole gesture (drag, reset or typed value) into one undo step. Double-clicking the track resets to the default; double-clicking the reading types an exact value.
+
+**Knobs first.** Every continuous numeric parameter is a knob: amounts, levels, times, ratios, frequencies. A knob in a grid cell shows its name top-left, the dial centred below and its reading under the dial. Sliders stay for scrubbing time or position along a line; faders only where a level is ridden live.
+
+Instruments come from hardware and audio plugins:
+
+- **Knob**: a disc in a ring of ticks, or in a hairline arc drawn over in ink up to the value. Centered knobs grow both ways from twelve o'clock for values around zero. Drag up or right to turn, double-click to reset, double-click the reading to type.
+- **Fader**: upright, as on a console, for levels people ride: a well that fills with ink from the bottom. A vertical LED meter may stand beside it to show a live level.
+- **Slider**: a hairline track drawn over in ink up to a small round thumb, for a value inside a property row.
+- **Meter**: LED segments in an inset strip, horizontal or upright, lit in the accent or a status tone.
+- **Rack**: a hairline frame that holds the instruments of one processor, named in a notch cut into its top edge. With pages, the tab steps through them and dots show where you are. Racks hold instruments only and never nest.
+
+### Displays
+
+What an instrument shows is drawn apart from what you touch.
+
+- **Screen**: an LCD. Dark glass in a well, in both themes, with its type and marks lit in the accent. Labels are dim, values lit. Mode tabs run along its top, the picked one lit. Levels over time are columns of LED segments. Screens show live readouts, levels and status, never forms.
+- **Data table**: a light well of mono rows under a mono header and a dashed rule. The row the instrument is on (playing, rendering, focused) is lit in the accent between two dashes, like a cursor.
+- **Drum**: a select for an ordered list, like a hardware roller. A short column of options fades away from the picked one, which is lit between two accent marks. Drag, scroll or click a neighbour to turn it.
+- **LEDs**: a hardware selector may show a dot under each position, lit under the picked one.
+
+On a screen, in a data table and on a drum, the accent is the light of the display, the same way it is the live mark of an instrument.
+
+### Editorial
+
+Product sheets and the quieter parts of an app take after a printed product catalogue:
+
+- **Space first.** Let a section breathe: `space-8` between sections, one idea each, the figure or product on `surface` with nothing else around it.
+- **Eyebrows.** A section may open with a mono uppercase label, an icon before it, spaced at 0.1em, above a one-line title.
+- **Specifications.** Facts people check are a spec list: a mono uppercase label in `muted` beside its value, one fact per row, between hairlines. Never a paragraph of figures.
+- **Features.** Two to four features read across in a row: an icon, a mono uppercase name, one muted sentence.
+
+### Data marks
+
+Items people read by kind at a glance, such as clips in a timeline, tracks or chart series, are data marks: `surface` with the kind's hue at 16% over it and a 1px edge of the hue. This is the only place a hue tints a fill. The words on a mark stay `ink` and say what it is; selection is a 2px `ink` edge. The same kind keeps the same hue everywhere.
+
+### Sound
+
+Product interfaces may confirm direct actions with [`@hugocxl/sounds`](https://hugocxl.github.io/stack/sounds/): `down` and `up` for a press, `latch-down` and `latch-up` for a toggle, `tick` for a detent, segment or disclosure, `open` for a dialog, and `success`, `warning` or `error` for the result of an action. Sound never carries information alone, never plays for hover or anything people did not do, and people can always turn it off.
+
 ## Elevation & Depth
 
-The system is flat. Group content with space and `rule` hairlines. The only fills are `surface` behind media and code, and `ink` behind the one button. Use no shadows, gradients or blur.
+Layout is flat: group content with space and `rule` hairlines, never with cards. Controls are quietly physical, after minimal audio plugins: a pale chassis, controls drawn in hairlines and ink that sit a hair above it, and almost no colour.
+
+### Material
+
+| Part | What it is | How it is drawn |
+| --- | --- | --- |
+| Chassis | `canvas`, the body everything is built on | Flat. Panes, sections and text sit on it. |
+| Cap | Something you touch: a button, an icon button, a knob, a slider thumb, a switch knob, the picked segment, a select | A hair above: `plate` fill, a hairline and one soft shadow |
+| Well | Something that holds a value: a text field, a fader, a switch or segmented track, a meter, a checkbox | A shade below: `well` fill and a hairline, no shadow |
+| Screen | Media and data people look into: a viewer, a timeline, a graph | Flat, edge to edge, no padding or radius in a product interface |
+
+| Token | Light | Dark |
+| --- | --- | --- |
+| `plate` | `#fcfcfb` | `#1f1f1f` |
+| `well` | `#efefee` | `#171717` |
+| Rest shadow (under a cap) | black at 6%, 3px blur, 1px down | black at 35%, 3px blur, 1px down |
+| Lift (dialogs and menus) | black at 10%, 24px blur, 12px down | black at 45%, 24px blur, 12px down |
+
+- **Restraint.** One soft shadow under a cap, a hairline around everything. No sheen, no highlights, no inner shadows, no gradients, no glow.
+- **Pressing sinks.** A pressed cap loses its shadow and takes the well's shade. A toggle that is on, and a toolbar button whose pane is open, stay pressed in.
+- **Caps are small.** Only controls sit up. Never raise a pane, a section, text or a figure.
+- **Instruments are drawn in ink**: a knob's arc and pointer, a slider's track, a fader's bar. The accent lights only what is live: the playhead, recording, a lit screen, an LED.
 
 ## Shapes
 
@@ -653,10 +764,10 @@ import { ModularDesignVector } from '@hugocxl/vectors/react/modular-design';
 ### Never
 
 - Never add a class, color, font, size, weight, radius or spacing value that is not a token.
-- Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures.
-- Never use a hue or status color on anything but an icon or a dot, or let color alone say what something is or what state it is in.
+- Never use the accent more than twice, or on body text, links, buttons, backgrounds, rules or figures. In a product interface, the live mark of an instrument is the one addition.
+- Never use a hue or status color on anything but an icon, a dot or a data mark, or let color alone say what something is or what state it is in.
 - Never set text larger than the title or bolder than 500 (the wordmark is the exception).
-- Never use shadows, gradients, emoji, stock photography, symbol characters as icons, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`.
+- Never use shadows or gradients outside the material: a cap's rest shadow and highlight, a well's inner shadow, or the lift under dialogs and menus. Never use emoji, stock photography, symbol characters as icons, or icons and illustrations from outside `@hugocxl/icons` and `@hugocxl/vectors`. Icons use the Stroke style.
 - Never place two filled buttons on one page.
 - Never center or justify text. Only the column itself is centered.
 - Never invent copy, links, numbers, quotes or logos the brief does not supply. If a required input is missing, ask for it.

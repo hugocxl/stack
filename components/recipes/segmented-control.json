@@ -2,17 +2,20 @@
   "name": "segmented-control",
   "title": "Segmented control",
   "group": "inputs",
-  "summary": "Switches between two to five views or modes, in a hairline pill.",
+  "summary": "Switches between two to five views or modes: an inset track with the picked segment raised.",
   "use": ["To switch the view of the same content: a period, a layout, a platform."],
-  "anatomy": ["Pill with a hairline", "Segments (the picked one on surface)", "Optional icon per segment"],
+  "anatomy": ["Inset track", "Segments (the picked one raised)", "Optional icon per segment"],
   "options": [
     { "name": "options", "values": ["value, label, icon"], "default": null, "description": "Two to five short labels." },
     { "name": "value", "values": ["option value"], "default": null, "description": "The picked segment." },
-    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the control for assistive technology." }
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the control for assistive technology." },
+    { "name": "iconOnly", "values": [true, false], "default": false, "description": "Icons alone, with labels as tooltips and accessible names: for tab bars of familiar icons." },
+    { "name": "fullWidth", "values": [true, false], "default": false, "description": "Shares the width evenly." },
+    { "name": "indicator", "values": ["none", "leds"], "default": "none", "description": "leds puts a dot under each position, lit under the picked one, as on a hardware selector." }
   ],
   "states": ["default", "hover", "focus", "selected", "disabled"],
   "tokens": ["rule", "surface", "ink", "muted", "radius-pill", "target", "size-control"],
-  "rules": ["One or two words per segment.", "The picked segment uses surface, never ink or the accent."],
+  "rules": ["One or two words per segment.", "The picked segment is a raised cap, never ink or the accent."],
   "accessibility": ["Arrow keys move between segments."],
   "platforms": { "react": "SegmentedControl", "swift": "DSSegmentedControl" }
 }

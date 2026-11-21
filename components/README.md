@@ -37,6 +37,27 @@ DSPage {
 }
 ```
 
+### Product interfaces
+
+Desktop tools set the compact density at the root: 13pt reading and 28pt targets, with every
+token and rule unchanged. Panes, toolbars, property rows, disclosures, menus, search fields,
+empty states and data marks build the workspace; `.dsSounds(true)` lets the components play
+@hugocxl/sounds.
+
+```swift
+WindowContent()
+    .dsTheme()
+    .dsDensity(.compact)
+    .dsSounds(settings.sounds)
+
+DSPane("Inspector", icon: StrokeIcon.sliders) {
+    DSPropertyRow("Opacity") {
+        DSSlider(value: $opacity, in: 0...100, ticks: 0, defaultValue: 100, editable: true,
+                 onEditingChanged: { editing in if !editing { commitUndo() } })
+    }
+}
+```
+
 ## Recipes
 
 `@hugocxl/components/recipes.json` lists every recipe: what it is for, its anatomy, options,

@@ -11,7 +11,7 @@
   ],
   "states": ["determinate", "indeterminate"],
   "tokens": ["rule", "ink", "radius-pill", "size-label"],
-  "rules": ["The fill is ink, never the accent."],
+  "rules": ["The fill is ink, never the accent.", "The track is an inset groove."],
   "accessibility": ["Exposed as a progress bar with its value."],
   "platforms": { "react": "Progress", "swift": "DSProgress" }
 }

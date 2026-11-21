@@ -47,6 +47,41 @@
       ],
       "default": null,
       "description": "A double tap or double click goes back to it."
+    },
+    {
+      "name": "style",
+      "values": [
+        "ticks",
+        "arc"
+      ],
+      "default": "ticks",
+      "description": "A ring of ticks in ink with an accent dot, or a segmented accent arc like a lit ring with an ink pointer."
+    },
+    {
+      "name": "centered",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "The value grows both ways from twelve o'clock, for values around zero."
+    },
+    {
+      "name": "editable",
+      "values": [
+        true,
+        false
+      ],
+      "default": false,
+      "description": "Double-clicking the reading lets people type an exact value."
+    },
+    {
+      "name": "onEditingChanged",
+      "values": [
+        "callback"
+      ],
+      "default": null,
+      "description": "Called when a drag, reset or typed edit starts and ends, so a whole gesture is one undo step."
     }
   ],
   "states": [
@@ -69,7 +104,9 @@
   ],
   "rules": [
     "Drag up or right to raise, down or left to lower; never circular dragging.",
-    "The accent marks only the indicator dot."
+    "The accent marks only the indicator dot.",
+    "The disc is a raised cap with a faint inner ring; only its pointer takes the accent.",
+    "In the arc style the arc is the live mark in the accent and the pointer stays ink."
   ],
   "accessibility": [
     "Exposed as a slider: arrow keys step, Page Up and Down take ten steps, Home and End jump to the ends; VoiceOver adjusts it with swipes."

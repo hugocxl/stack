@@ -12,7 +12,7 @@
   ],
   "states": ["default", "hover", "focus", "checked", "disabled"],
   "tokens": ["ink", "canvas", "muted", "radius-control", "target", "space-3"],
-  "rules": ["Use a switch instead when the change applies at once."],
+  "rules": ["Use a switch instead when the change applies at once.", "Off, an inset well; on, a raised ink cap with the check."],
   "accessibility": ["The whole row is the target and toggles with Space."],
   "platforms": { "react": "Checkbox", "swift": "DSCheckbox" }
 }

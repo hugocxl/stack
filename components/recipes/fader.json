@@ -1,0 +1,19 @@
+{
+  "name": "fader",
+  "title": "Fader",
+  "group": "instruments",
+  "summary": "An upright fader, as on a console: an inset groove filled with ink from the bottom and a raised cap with the accent line.",
+  "use": ["For levels people ride: input, output, mix, volume. Side by side in a bank."],
+  "anatomy": ["Reading (mono)", "Optional level meter", "Groove (inset) filled with ink", "Cap (raised) with the accent line", "Ruler", "Label (mono)"],
+  "options": [
+    { "name": "value", "values": ["min–max"], "default": null, "description": "The current value." },
+    { "name": "level", "values": ["0–1"], "default": null, "description": "A live level on a vertical meter beside the groove." },
+    { "name": "defaultValue", "values": ["number"], "default": null, "description": "Double-clicking resets to it." },
+    { "name": "onEditingChanged", "values": ["callback"], "default": null, "description": "Called when a drag, click or reset starts and ends, so a gesture is one undo step." }
+  ],
+  "states": ["default", "dragging", "disabled"],
+  "tokens": ["ink", "accent", "rule", "size-label", "target", "space-2"],
+  "rules": ["Faders stand upright; use the slider for a value in a row.", "The cap's line is the live mark in the accent; nothing else on a fader takes it.", "A meter beside a fader shows a level, never the fader's own value."],
+  "accessibility": ["Adjustable with the arrow keys; the reading is announced."],
+  "platforms": { "react": null, "swift": "DSFader" }
+}

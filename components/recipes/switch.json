@@ -12,7 +12,7 @@
   ],
   "states": ["default", "hover", "focus", "on", "disabled"],
   "tokens": ["ink", "canvas", "surface", "rule", "muted", "radius-pill", "target"],
-  "rules": ["The label goes before the switch; the switch sits at the end of the row."],
+  "rules": ["The label goes before the switch; the switch sits at the end of the row.", "An inset track, filled with ink when on, under a raised knob."],
   "accessibility": ["Exposed as a switch with its on or off state."],
   "platforms": { "react": "Switch", "swift": "DSSwitch" }
 }

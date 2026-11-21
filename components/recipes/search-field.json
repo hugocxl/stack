@@ -1,0 +1,16 @@
+{
+  "name": "search-field",
+  "title": "Search field",
+  "group": "inputs",
+  "summary": "Filters what is on screen as people type: a search icon, the field and a clear button.",
+  "use": ["Above a list or browser it filters."],
+  "anatomy": ["Search icon", "Field on a hairline", "Clear button while there is text"],
+  "options": [
+    { "name": "label", "values": ["text"], "default": "Search", "description": "Read by assistive technology and used as placeholder." }
+  ],
+  "states": ["empty", "filled", "focus", "disabled"],
+  "tokens": ["ink", "muted", "faint", "rule", "target", "space-2"],
+  "rules": ["Filter as people type; never require a submit.", "Show what the field filters in the placeholder."],
+  "accessibility": ["The clear button is labelled Clear."],
+  "platforms": { "react": null, "swift": "DSSearchField" }
+}

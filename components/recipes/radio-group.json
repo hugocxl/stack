@@ -12,7 +12,7 @@
   ],
   "states": ["default", "hover", "focus", "selected", "disabled"],
   "tokens": ["ink", "muted", "radius-pill", "target", "space-2", "space-3"],
-  "rules": ["Always start with one option picked when there is a sensible default."],
+  "rules": ["Always start with one option picked when there is a sensible default.", "Each choice is an inset well; the picked one holds a raised ink dot."],
   "accessibility": ["Arrow keys move between options."],
   "platforms": { "react": "RadioGroup", "swift": "DSRadioGroup" }
 }

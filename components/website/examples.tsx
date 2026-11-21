@@ -1199,4 +1199,169 @@ export const examples: Record<string, RecipeExamples> = {
       },
     ],
   },
+  density: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/density-light.png" alt="" loading="lazy" />,
+    swift: code`
+      ContentView()
+          .dsTheme()
+          .dsDensity(.compact) // a desktop tool: 13pt reading, 28pt targets
+    `,
+  },
+  pane: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/pane-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSPane("Inspector", icon: StrokeIcon.sliders, accessories: {
+          DSIconButton(StrokeIcon.refreshCcw, label: "Reset", variant: .ghost) { reset() }
+      }) {
+          InspectorContent()
+      }
+    `,
+  },
+  toolbar: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/toolbar-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSToolbar {
+          DSIconButton(StrokeIcon.folder, label: "Media", variant: .ghost, isOn: showsMedia) { showsMedia.toggle() }
+      } center: {
+          DSIconButton(StrokeIcon.sparkles, label: "Assistant", variant: .ghost) { openAssistant() }
+      } trailing: {
+          DSButton("Export", icon: StrokeIcon.upload) { export() }
+      }
+    `,
+  },
+  disclosure: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/disclosure-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSDisclosure("Transform", isExpanded: $showsTransform) {
+          DSSlider("Scale", value: $scale, in: 0...400, ticks: 0)
+      }
+    `,
+  },
+  "property-row": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/property-row-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSPropertyRow("Opacity") {
+          DSSlider(value: $opacity, in: 0...100, ticks: 0, defaultValue: 100, editable: true,
+                   onEditingChanged: { editing in if !editing { commitUndo() } })
+      }
+    `,
+  },
+  row: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/row-light.png" alt="" loading="lazy" />,
+    swift: code`
+      ForEach(items) { item in
+          Text(item.name).dsRow(selected: item.id == selection)
+              .onTapGesture { selection = item.id }
+      }
+    `,
+  },
+  menu: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/menu-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSMenu("More", trigger: .icon(StrokeIcon.ellipsis)) {
+          Button("Rename") { rename() }
+          Button("Duplicate") { duplicate() }
+      }
+    `,
+  },
+  "search-field": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/search-field-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSSearchField("Search media", text: $query)
+    `,
+  },
+  "empty-state": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/empty-state-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSEmptyState("No media yet", message: "Drop video, audio or images here.", vector: Vector.mediaImport) {
+          DSButton("Import media", icon: StrokeIcon.plus, variant: .secondary) { importMedia() }
+      }
+    `,
+  },
+  "data-mark": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/data-mark-light.png" alt="" loading="lazy" />,
+    swift: code`
+      Text(clip.name)
+          .frame(width: width, height: 32, alignment: .leading)
+          .dsDataMark(.pink, selected: isSelected)
+    `,
+  },
+  fader: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/fader-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSFader("In", value: $input, level: inputLevel, defaultValue: 70,
+              onEditingChanged: { editing in if !editing { commitUndo() } })
+    `,
+  },
+  rack: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/rack-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSRack("Node 1 FX", pages: 4, page: $page) {
+          HStack {
+              DSKnob("Volume", value: $volume, size: .small, style: .arc)
+              DSKnob("Pan", value: $pan, in: -100...100, size: .small, style: .arc, centered: true)
+          }
+      }
+    `,
+  },
+  grid: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/grid-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSGrid(columns: 3) {
+          DSGridHeader("Dynamics")
+          DSKnob("Threshold", value: $threshold, style: .arc).dsSpan(1)
+          DSKnob("Ratio", value: $ratio, style: .arc).dsSpan(1)
+          DSKnob("Attack", value: $attack, style: .arc).dsSpan(1)
+          DSPropertyRow("Mode") { DSSegmentedControl("Mode", selection: $mode, options: modes) }
+      }
+    `,
+  },
+  screen: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/screen-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSScreen {
+          DSScreenTabs("Mode", selection: $mode, options: modes)
+          DSScreenReadout("Req/s", value: "1,284")
+          DSScreenBars(values: levels)
+      }
+    `,
+  },
+  "data-table": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/data-table-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSDataTable(columns: ["Project", "Branch", "Age"], rows: rows, active: playing)
+    `,
+  },
+  drum: {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/drum-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSDrum("Sample rate", selection: $rate, options: rates)
+    `,
+  },
+  "spec-list": {
+    examples: [],
+    card: () => <img className="site-swift-card" src="swift/spec-list-light.png" alt="" loading="lazy" />,
+    swift: code`
+      DSSpecList([
+          .init("Format", value: "QuickTime · HEVC"),
+          .init("Duration", value: "00:02:41"),
+      ])
+    `,
+  },
 };

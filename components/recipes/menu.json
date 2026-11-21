@@ -1,0 +1,17 @@
+{
+  "name": "menu",
+  "title": "Menu",
+  "group": "actions",
+  "summary": "Opens a list of actions with the platform's own menu, from an icon or a ghost button.",
+  "use": ["For secondary actions that do not earn a place on screen: more, move, sort, export options."],
+  "anatomy": ["Trigger: an icon, or words with a chevron", "The platform menu"],
+  "options": [
+    { "name": "trigger", "values": ["icon", "text"], "default": "text", "description": "An icon alone (with its label as tooltip) or words with a chevron." },
+    { "name": "label", "values": ["text"], "default": null, "description": "Required. Names the menu." }
+  ],
+  "states": ["default", "hover", "open", "disabled"],
+  "tokens": ["ink", "muted", "size-control", "target", "space-1", "space-2"],
+  "rules": ["Use the platform's menu; never draw a custom popover for a list of actions.", "The more icon is ellipsis."],
+  "accessibility": ["The trigger has the menu's label."],
+  "platforms": { "react": null, "swift": "DSMenu" }
+}

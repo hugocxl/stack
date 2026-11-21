@@ -1,0 +1,16 @@
+{
+  "name": "toolbar",
+  "title": "Toolbar",
+  "group": "layout",
+  "summary": "The row of tools above a workspace: leading, centered and trailing groups over a hairline.",
+  "use": ["For the actions and view toggles of a whole window."],
+  "anatomy": ["Leading group", "Centered group", "Trailing group", "Hairline dividers between groups", "Hairline under the bar"],
+  "options": [
+    { "name": "leading, center, trailing", "values": ["icon buttons, menus, one button"], "default": null, "description": "Groups of tools." }
+  ],
+  "states": ["default"],
+  "tokens": ["canvas", "rule", "target", "space-1", "space-2", "space-5"],
+  "rules": ["Ghost icon buttons; a toggle that shows a pane is on while the pane is open.", "At most one primary button in a window, and it lives here or in a dialog.", "Group related tools; separate groups with a toolbar divider."],
+  "accessibility": ["Every icon button has a label and a tooltip.", "Tools keep a keyboard shortcut where the platform expects one."],
+  "platforms": { "react": null, "swift": "DSToolbar" }
+}

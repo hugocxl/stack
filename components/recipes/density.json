@@ -1,0 +1,16 @@
+{
+  "name": "density",
+  "title": "Density",
+  "group": "foundations",
+  "summary": "How tightly a screen is set: regular for pages and touch, compact for desktop tools.",
+  "use": ["regular for pages, documents and touch screens: 17pt reading and 44pt targets.", "compact for tools people work in for hours with a pointer, such as editors and consoles: 13pt reading and 28pt targets."],
+  "anatomy": ["A density set once at the root", "Every component reading its sizes from it"],
+  "options": [
+    { "name": "density", "values": ["regular", "compact"], "default": "regular", "description": "Set once for a whole window. Never mix densities in one screen." }
+  ],
+  "states": ["default"],
+  "tokens": ["size-reading", "size-small", "size-label", "size-title", "size-control", "target", "space-1", "space-2", "space-3", "space-5"],
+  "rules": ["Compact keeps every role, ratio and rule; only sizes shrink: reading 13, small 11, label 10, title 17, control 13, target 28.", "Compact is for pointer-driven desktop tools only. Touch screens stay regular.", "One density per window."],
+  "accessibility": ["Compact targets are 28pt, the desktop pointer minimum; keep every action reachable by keyboard.", "Text follows the platform's text size setting at both densities."],
+  "platforms": { "react": null, "swift": "DSDensity" }
+}

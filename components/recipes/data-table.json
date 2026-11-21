@@ -1,0 +1,17 @@
+{
+  "name": "data-table",
+  "title": "Data table",
+  "group": "content",
+  "summary": "Mono rows in a light well under a dashed rule; the active row is lit between two dashes.",
+  "use": ["For short, scannable lists an instrument works through: a render queue, a set list, shortcuts."],
+  "anatomy": ["Well", "Mono header row over a dashed rule", "Mono rows at the control height", "Active row: accent words between two dashes"],
+  "options": [
+    { "name": "active", "values": ["row index"], "default": null, "description": "The row the instrument is on: playing, rendering or focused." },
+    { "name": "onSelect", "values": ["callback"], "default": null, "description": "Makes rows pickable." }
+  ],
+  "states": ["default", "active"],
+  "tokens": ["surface", "ink", "muted", "accent", "accent-text", "size-label", "size-mono", "target"],
+  "rules": ["Only one row is active.", "Rows are the control height."],
+  "accessibility": ["The active row has the selected trait."],
+  "platforms": { "react": null, "swift": "DSDataTable" }
+}

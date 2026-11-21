@@ -86,6 +86,16 @@ use the same tokens and rules: the reading scale, the spacing steps, the color r
 surfaces with `rule` hairlines, Stroke icons and the accent budget. Reuse a component's
 markup and classes from DESIGN.md wherever one fits instead of inventing a new one.
 
+For a tool people work in (an editor, a console, an inspector), follow **Product interfaces**
+in DESIGN.md: compact density (13pt reading, 28pt targets), one canvas divided into panes by
+hairlines with no corners or gaps, mono labels on pane headers, selection and on states on
+`surface` in `ink`, the accent only on an instrument's live mark, hues on data marks only, and
+optional @hugocxl/sounds. Controls follow **Material** in DESIGN.md, after minimal audio plugins:
+caps people touch sit a hair above the chassis (a hairline and one soft shadow), wells that hold
+values sit a shade below, instruments are drawn in ink, and layout stays flat. Product
+interfaces use one text size, the reading size; only the title and display figures differ. In SwiftUI, build it from the `Components` library with
+`.dsTheme().dsDensity(.compact)` at the root.
+
 ## Check your work
 
 - The page follows its recipe's component order, and every component's markup matches DESIGN.md.

@@ -1,0 +1,16 @@
+{
+  "name": "spec-list",
+  "title": "Spec list",
+  "group": "content",
+  "summary": "Facts people check, as on a product sheet: a mono label beside its value, one per row, between hairlines.",
+  "use": ["For details, not settings: a file's format and duration, a project's size, an export's settings."],
+  "anatomy": ["Rows between hairlines", "Label: mono, uppercase, muted", "Value: reading type, ink, trailing"],
+  "options": [
+    { "name": "items", "values": ["label, value"], "default": null, "description": "One fact per row." }
+  ],
+  "states": ["default"],
+  "tokens": ["rule", "muted", "ink", "size-label", "size-reading", "target"],
+  "rules": ["One fact per row; never a paragraph of figures.", "Values people change belong in property rows, not a spec list."],
+  "accessibility": ["Each row reads as its label and value."],
+  "platforms": { "react": null, "swift": "DSSpecList" }
+}

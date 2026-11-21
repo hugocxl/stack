@@ -1,0 +1,19 @@
+{
+  "name": "pane",
+  "title": "Pane",
+  "group": "layout",
+  "summary": "One cell of a workspace: a mono label header with its tools, over its content.",
+  "use": ["To divide a tool into regions people work in side by side: a browser, a viewer, an inspector, a timeline."],
+  "anatomy": ["Header: optional icon, mono label, optional subtitle, trailing tools", "Hairline under the header", "Content on the canvas"],
+  "options": [
+    { "name": "title", "values": ["text"], "default": null, "description": "One or two words, shown as a mono label." },
+    { "name": "icon", "values": ["icon name"], "default": null, "description": "Optional, muted, before the label." },
+    { "name": "accessories", "values": ["icon buttons, menus"], "default": null, "description": "The pane's own tools, at the trailing end." },
+    { "name": "title view", "values": ["DSPaneTitle or any view"], "default": "DSPaneTitle", "description": "Swift: the header's title slot, so a workspace can make the title the handle that drags the pane." }
+  ],
+  "states": ["default", "focused"],
+  "tokens": ["canvas", "rule", "muted", "ink", "size-label", "target", "space-2", "space-3", "space-5"],
+  "rules": ["Panes have no corners, fill of their own or shadow. The workspace divides them with one hairline and no gap.", "The header label is the pane's name in a mono label; never a title.", "Tools in the header are ghost icon buttons; an open state uses surface, never the accent.", "Only the title is a drag handle; the header's tools never start a drag."],
+  "accessibility": ["The pane is a labelled group named by its title.", "The label is a heading."],
+  "platforms": { "react": null, "swift": "DSPane" }
+}

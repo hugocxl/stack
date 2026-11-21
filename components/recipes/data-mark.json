@@ -1,0 +1,17 @@
+{
+  "name": "data-mark",
+  "title": "Data mark",
+  "group": "content",
+  "summary": "An item in a timeline, a track or a chart whose hue names its kind.",
+  "use": ["For marks people read by kind at a glance: clips by media type, tracks, chart series."],
+  "anatomy": ["Surface fill", "The hue at 16%", "1px hue edge", "Words in ink"],
+  "options": [
+    { "name": "hue", "values": ["red", "orange", "yellow", "green", "teal", "sky", "blue", "violet", "purple", "pink", "brown"], "default": null, "description": "The kind of thing; the same hue everywhere for the same kind." },
+    { "name": "selected", "values": [true, false], "default": false, "description": "A 2px ink edge." }
+  ],
+  "states": ["default", "hover", "selected"],
+  "tokens": ["surface", "ink", "radius-control", "space-1"],
+  "rules": ["The one place a hue tints a fill, and only at 16% over surface.", "Words stay ink and name what the hue means.", "Selection is an ink edge, never the accent."],
+  "accessibility": ["The mark's label names its kind; color never carries it alone."],
+  "platforms": { "react": null, "swift": "DSDataMark" }
+}
