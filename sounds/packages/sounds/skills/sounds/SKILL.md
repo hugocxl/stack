@@ -5,7 +5,7 @@ description: Use @hugocxl/sounds to add tactile interface sounds and haptic feed
 
 # @hugocxl/sounds
 
-Fifteen short interface sounds, synthesized live with Web Audio from a few layers of filtered
+Seventeen short interface sounds, synthesized live with Web Audio from a few layers of filtered
 noise and tone. There are no audio files to host, and nothing plays the same way twice.
 
 ## Rules
@@ -30,6 +30,7 @@ noise and tone. There are no audio files to host, and nothing plays the same way
 | The page's main button | `down-primary`, then `up` |
 | Checkbox, switch, toggle | `latch-down` when it turns on, `latch-up` when it turns off |
 | Slider step, wheel, tab, segmented control | `tick` |
+| A wheel picker or dial clicking into place | `detent` for slow turns, `detent-fast` for a fast spin |
 | Selection moving through a list or between screens | `blip` |
 | A key in a text field | `type`; `type-space` for Space; `type-big` for Enter, Backspace, Delete and Tab; `type-up` on `keyup` |
 | A menu, popover or dialog opening | `open` |
@@ -111,7 +112,7 @@ the table above names for them.
 
 ## Custom sounds and audio files
 
-Add a new sound only when none of the fifteen fits. A sound is a list of layers: a `noise`
+Add a new sound only when none of the seventeen fits. A sound is a list of layers: a `noise`
 layer is a filtered burst of white noise (the click), a `tone` layer is an oscillator gliding
 from `freq` to `to` (the body). Start from an existing one:
 
@@ -126,7 +127,7 @@ play({ layers: [...sounds.down.layers, { kind: 'tone', freq: 784, level: 0.1, de
 
 ## Check your work
 
-- Every sound name is one of the fifteen in the table, and each control uses its row.
+- Every sound name is one of the seventeen in the table, and each control uses its row.
 - No audio files or other sound libraries were added.
 - Sounds play only for direct actions, and the product has a way to turn them off.
 
