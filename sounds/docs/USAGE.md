@@ -31,6 +31,7 @@ Browsers only start audio after the visitor interacts with the page, so play the
 | Press | `down-primary` | The main button, a little heavier |
 | Latch | `latch-down`, `latch-up` | Checkboxes, switches and toggles |
 | Selection | `tick` | Sliders, wheels, tabs and segmented controls |
+| Selection | `detent`, `detent-fast` | A wheel picker or dial clicking into place: `detent` when turned slowly, `detent-fast` while it spins |
 | Selection | `blip` | A selection moving through a list or a screen |
 | Typing | `type`, `type-space`, `type-big`, `type-up` | Keys in a text field. `type-big` is for Enter, Backspace, Delete and Tab |
 | Overlay | `open` | A menu, popover or dialog opening |

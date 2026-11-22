@@ -8,6 +8,8 @@ public enum DSSound: String, CaseIterable, Sendable {
     case latchDown = "latch-down"
     case latchUp = "latch-up"
     case tick = "tick"
+    case detent = "detent"
+    case detentFast = "detent-fast"
     case blip = "blip"
     case type = "type"
     case typeSpace = "type-space"
@@ -51,6 +53,16 @@ public enum DSSound: String, CaseIterable, Sendable {
             return DSSoundDefinition(group: .selection, description: "A detent: sliders, wheels, segmented controls.", layers: [
                 .noise(at: 0, filter: .highpass, frequency: 3000, q: 0.7, level: 0.18, decay: 0.007),
                 .tone(at: 0, wave: .sine, frequency: 3520, to: 3520, level: 0.03, decay: 0.012, attack: 0.001),
+            ])
+        case .detent:
+            return DSSoundDefinition(group: .selection, description: "A wheel settling on a detent at a slow turn: a defined click with a short G6 ring.", layers: [
+                .noise(at: 0, filter: .bandpass, frequency: 2600, q: 2.4, level: 0.16, decay: 0.01),
+                .tone(at: 0, wave: .sine, frequency: 1568, to: 1568, level: 0.05, decay: 0.02, attack: 0.001),
+            ])
+        case .detentFast:
+            return DSSoundDefinition(group: .selection, description: "A detent passing at a fast spin: brighter and drier, with no ring.", layers: [
+                .noise(at: 0, filter: .highpass, frequency: 4200, q: 0.7, level: 0.14, decay: 0.005),
+                .tone(at: 0, wave: .sine, frequency: 3951, to: 3951, level: 0.02, decay: 0.006, attack: 0.001),
             ])
         case .blip:
             return DSSoundDefinition(group: .selection, description: "A selection moving on a screen or list: a soft triangle A6.", layers: [

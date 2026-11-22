@@ -42,6 +42,8 @@ export type SoundName =
   | "latch-down"
   | "latch-up"
   | "tick"
+  | "detent"
+  | "detent-fast"
   | "blip"
   | "type"
   | "type-space"
@@ -108,6 +110,22 @@ export const sounds: Record<SoundName, Sound> = {
     layers: [
       { kind: "noise", filter: "highpass", freq: 3000, q: 0.7, level: 0.18, decay: 0.007 },
       { kind: "tone", freq: 3520, level: 0.03, decay: 0.012 },
+    ],
+  },
+  detent: {
+    group: "selection",
+    description: "A wheel settling on a detent at a slow turn: a defined click with a short G6 ring.",
+    layers: [
+      { kind: "noise", freq: 2600, q: 2.4, level: 0.16, decay: 0.01 },
+      { kind: "tone", freq: 1568, level: 0.05, decay: 0.02 },
+    ],
+  },
+  "detent-fast": {
+    group: "selection",
+    description: "A detent passing at a fast spin: brighter and drier, with no ring.",
+    layers: [
+      { kind: "noise", filter: "highpass", freq: 4200, q: 0.7, level: 0.14, decay: 0.005 },
+      { kind: "tone", freq: 3951, level: 0.02, decay: 0.006 },
     ],
   },
   blip: {
