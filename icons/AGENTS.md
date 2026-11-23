@@ -15,8 +15,8 @@ icons/ + catalog.json  →  scripts/generate.py  →  packages/icons/dist, Sourc
 - Draw original artwork in the recipes, never by editing an SVG. The contract (one stroke
   width, one corner radius, selective duotone) is in [docs/DESIGN.md](docs/DESIGN.md) and
   [scripts/icons/STYLE.md](scripts/icons/STYLE.md).
-- Everything under `packages/icons/dist`, `Sources/Icons/Resources` and `docs/CATALOG.md` is
-  generated and committed. Run `pnpm run generate`; never edit it by hand.
+- Everything under `packages/icons/dist`, `Sources/Icons/Resources`, the Swift files marked
+  `// Generated` in `Sources/Icons` and `docs/CATALOG.md` is generated and committed. Run `pnpm run generate`; never edit it by hand.
 - `docs/audit.json` binds a visual verdict to the hash of every SVG. Changed artwork fails
   validation until you render it, inspect it and update its entry. Never rehash without
   looking.

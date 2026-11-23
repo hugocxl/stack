@@ -1,13 +1,17 @@
 # Working on @hugocxl/sounds
 
 Tactile interface sounds synthesized with Web Audio, published as one npm package
-(`packages/sounds`, TypeScript compiled to `dist/`). The website is in `website/`.
+(`packages/sounds`, TypeScript compiled to `dist/`) and the `Sounds` library of the
+`hugocxlStack` Swift package (`Sources/Sounds`, declared in the monorepo root `Package.swift`).
+The website is in `website/`.
 
 ## Layout
 
 - `packages/sounds/src/catalog.ts`: every sound as plain data (noise and tone layers), the
   sound names and the haptic map. Tones sit on notes of G major so sounds never clash.
 - `packages/sounds/src/engine.ts`: `play`, `haptic`, volume and mute. `wav.ts`: `toWav`.
+- `Sources/Sounds/Catalog.swift` is generated from the catalog by `pnpm run sync:swift`; never
+  edit it by hand. `Engine.swift` synthesizes it natively.
 - `docs/USAGE.md`: the docs page of the website. `docs/STUDY.md`: the study behind the kit.
 - `packages/sounds/skills/sounds/SKILL.md`: the agent skill (below).
 
@@ -16,7 +20,8 @@ Tactile interface sounds synthesized with Web Audio, published as one npm packag
 ```sh
 pnpm install
 pnpm run typecheck
-pnpm test               # builds, checks the catalog, the skill and what npm ships
+pnpm test               # builds, checks the catalog, Swift sync, the skill and what npm ships
+pnpm run test:swift     # Swift tests (macOS)
 pnpm run dev            # website at http://localhost:4321 — listen to every change
 ```
 

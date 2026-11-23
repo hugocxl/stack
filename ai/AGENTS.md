@@ -1,8 +1,8 @@
 # Working on @hugocxl/ai
 
 This package teaches AI agents to use the four @hugocxl libraries together. It lives in `ai/` of
-the hugocxl/stack pnpm monorepo, next to `design-system/`, `icons/`, `vectors/` and `sounds/`,
-and publishes the npm package `@hugocxl/ai` (a CLI).
+the hugocxl/stack pnpm monorepo, next to `design-system/`, `icons/`, `vectors/`, `sounds/` and
+`components/`, and publishes the npm package `@hugocxl/ai` (a CLI).
 
 ## Layout
 
@@ -31,7 +31,7 @@ claude plugin validate ..   # when Claude Code is installed
 
 When you add a rule, add it to `RULES` in `src/check.mjs`, the README table and a test. When a
 library changes a name or path the `stack` skill mentions, update the skill;
-`tests/skill.test.mjs` checks it against the fixture catalogs.
+`tests/stack.test.mjs` checks it against the published libraries (the devDependencies).
 
 ## Releases
 

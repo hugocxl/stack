@@ -32,7 +32,8 @@ React (the npm package `@hugocxl/components`) and SwiftUI (the `Components` libr
 ## Rules
 
 - Only design-system tokens: no raw colors, sizes or radii in CSS or Swift.
-- Icons come from `@hugocxl/icons` (React) and `Icons` (Swift); figures from `@hugocxl/vectors`.
+- Icons come from `@hugocxl/icons` (React) and `Icons` (Swift); figures from `@hugocxl/vectors`;
+  sounds in Swift from `Sounds`.
 - The package depends on the published `@hugocxl/design-system` and `@hugocxl/icons`, never
   the workspace copies.
 
