@@ -7,7 +7,7 @@ import { project } from './helpers.mjs';
 
 const read = (root, path) => readFileSync(join(root, path), 'utf8');
 
-test('sync writes AGENTS.md, CLAUDE.md and every skill for every agent', () => {
+test('sync writes AGENTS.md and every skill for every agent without CLAUDE.md', () => {
   const root = project();
   const { write } = sync(root);
   assert.ok(write.every(file => file.created));
@@ -15,7 +15,7 @@ test('sync writes AGENTS.md, CLAUDE.md and every skill for every agent', () => {
     for (const id of ['stack', 'design-system', 'icons', 'vectors', 'sounds']) assert.ok(existsSync(join(root, base, id, 'SKILL.md')), `${base}/${id}`);
     assert.ok(existsSync(join(root, base, 'icons/scripts/search.mjs')));
   }
-  assert.equal(read(root, 'CLAUDE.md'), '@AGENTS.md\n');
+  assert.ok(!existsSync(join(root, 'CLAUDE.md')));
   const agents = read(root, 'AGENTS.md');
   assert.ok(agents.includes(BEGIN) && agents.includes(END));
   assert.match(agents, /`@hugocxl\/icons` \| `\.agents\/skills\/icons`/);
@@ -30,12 +30,12 @@ test('sync is idempotent', () => {
   assert.deepEqual([again.write, again.remove], [[], []]);
 });
 
-test('sync keeps what people wrote in AGENTS.md and CLAUDE.md', () => {
-  const root = project({ files: { 'AGENTS.md': '# My app\n\nUse pnpm.\n', 'CLAUDE.md': 'Be brief.\n' } });
+test('sync keeps what people wrote in AGENTS.md', () => {
+  const root = project({ files: { 'AGENTS.md': '# My app\n\nUse pnpm.\n' } });
   sync(root);
   const agents = read(root, 'AGENTS.md');
   assert.ok(agents.startsWith('# My app\n\nUse pnpm.\n\n' + BEGIN));
-  assert.equal(read(root, 'CLAUDE.md'), '@AGENTS.md\n\nBe brief.\n');
+  assert.ok(!existsSync(join(root, 'CLAUDE.md')));
 
   writeFileSync(join(root, 'AGENTS.md'), agents.replace('Use pnpm.', 'Use pnpm.\n\nRun the tests.') + '\n## Deploy\n\nFriday never.\n');
   sync(root);

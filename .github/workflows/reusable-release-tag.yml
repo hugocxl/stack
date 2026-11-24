@@ -1,0 +1,93 @@
+name: Reusable Tag Release
+
+on:
+  workflow_call:
+    inputs:
+      app-name:
+        type: string
+        required: true
+      run-validate:
+        type: boolean
+        default: false
+      pre-release-command:
+        type: string
+        default: ''
+      xcode-path:
+        type: string
+        default: /Applications/Xcode_27.1.app
+      runs-on:
+        type: string
+        default: xcode-27
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: inputs.run-validate
+    runs-on: ${{ inputs.runs-on }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Select Xcode
+        run: |
+          set -euo pipefail
+          sudo xcode-select -s "${{ inputs.xcode-path }}"
+          xcodebuild -version
+          swift --version
+      - name: Validate
+        run: scripts/validate.sh
+      - name: Preserve validation logs
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: validation-logs
+          path: build/validation/*.log
+          if-no-files-found: ignore
+
+  release:
+    needs: validate
+    if: always() && (needs.validate.result == 'success' || needs.validate.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Lint commit messages
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [ ! -f scripts/commit-lint.py ]; then exit 0; fi
+          if [ -n "$BEFORE" ] && [[ ! "$BEFORE" =~ ^0+$ ]] && git merge-base --is-ancestor "$BEFORE" "$GITHUB_SHA" 2>/dev/null; then
+            python3 scripts/commit-lint.py --range "$BEFORE..$GITHUB_SHA"
+          else
+            python3 scripts/commit-lint.py --range "$GITHUB_SHA^!"
+          fi
+      - name: Pre-release checks
+        if: inputs.pre-release-command != ''
+        run: ${{ inputs.pre-release-command }}
+      - name: Tag and publish new versions
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APP_NAME: ${{ inputs.app-name }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
+          NEW="$(scripts/changelog.sh tag-new "$GITHUB_SHA")"
+          [ -n "$NEW" ] || { echo 'No new version to release'; exit 0; }
+          mapfile -t TAGS <<< "$NEW"
+          FAILED=0
+          for TAG in "${TAGS[@]}"; do
+            git push origin "refs/tags/$TAG" || { FAILED=1; continue; }
+            if gh release view "$TAG" > /dev/null 2>&1; then continue; fi
+            scripts/changelog.sh notes-version "${TAG#v}" > "$RUNNER_TEMP/notes.md"
+            gh release create "$TAG" --verify-tag --title "$APP_NAME ${TAG#v}" --notes-file "$RUNNER_TEMP/notes.md"
+          done
+          exit "$FAILED"

@@ -8,7 +8,9 @@ import { libraries, readManifest, settings } from './project.mjs';
 import { plan } from './sync.mjs';
 
 export const RULES = {
-  'agent-files': { level: 'error', summary: 'AGENTS.md, CLAUDE.md and the skills match the installed libraries' },
+  'agent-files': { level: 'error', summary: 'AGENTS.md and the skills match the installed libraries' },
+  'no-claude-md': { level: 'error', summary: 'no CLAUDE.md files; use AGENTS.md only' },
+  'agents-md-size': { level: 'warning', summary: 'AGENTS.md stays concise (under 200 lines)' },
   'foreign-icons': { level: 'error', summary: 'no icon library other than @hugocxl/icons' },
   'unknown-icon': { level: 'error', summary: 'every @hugocxl/icons import, export and name exists' },
   'unknown-vector': { level: 'error', summary: 'every @hugocxl/vectors import, export and name exists' },
@@ -237,10 +239,21 @@ function checkManifest(root) {
 
 function checkAgentFiles(root) {
   const { write, remove } = plan(root);
-  return [
+  const findings = [
     ...write.map(({ path, created }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: created ? 'is missing. Run npx @hugocxl/ai sync.' : 'is out of date with the installed libraries. Run npx @hugocxl/ai sync.' })),
     ...remove.map(({ path }) => ({ file: path, line: 1, column: 1, rule: 'agent-files', message: 'belongs to a library or version that is no longer installed. Run npx @hugocxl/ai sync.' })),
   ];
+  if (existsSync(join(root, 'CLAUDE.md'))) {
+    findings.push({ file: 'CLAUDE.md', line: 1, column: 1, rule: 'no-claude-md', message: 'Remove CLAUDE.md and keep project instructions in AGENTS.md only.' });
+  }
+  const agentsPath = join(root, 'AGENTS.md');
+  if (existsSync(agentsPath)) {
+    const lineCount = readFileSync(agentsPath, 'utf8').split('\n').length;
+    if (lineCount > 200) {
+      findings.push({ file: 'AGENTS.md', line: 1, column: 1, rule: 'agents-md-size', message: `AGENTS.md has ${lineCount} lines; keep it under 200 lines (WHY-only).` });
+    }
+  }
+  return findings;
 }
 
 /** Run every rule over the project. Findings carry their level after the project's settings. */

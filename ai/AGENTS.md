@@ -12,8 +12,8 @@ the hugocxl/stack pnpm monorepo, next to `design-system/`, `icons/`, `vectors/`,
   (`skills/<name>/` in its package of the monorepo), never here.
 - `templates/AGENTS.md`: the section `init` and `sync` write into a project's `AGENTS.md`.
 - `src/project.mjs`: the library list and how installed packages are found.
-- `src/sync.mjs`: `init` and `sync`, which write `AGENTS.md`, `CLAUDE.md` and copies of the
-  skills into `.agents/skills/` and `.claude/skills/`.
+- `src/sync.mjs`: `init` and `sync`, which write `AGENTS.md` and copies of the
+  skills into `.agents/skills/` and `.claude/skills/` (never `CLAUDE.md`).
 - `src/check.mjs`: the rules of `npx @hugocxl/ai check`. They read the catalogs of the libraries
   installed in the checked project, never a copy.
 - `../.claude-plugin/marketplace.json`: the Claude Code marketplace, at the monorepo root.

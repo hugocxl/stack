@@ -8,8 +8,8 @@ const HELP = `Usage: npx @hugocxl/ai <command> [options]
 Set up a project so every AI agent uses the @hugocxl stack the same way.
 
 Commands:
-  init     Set up the agent files: a stack section in AGENTS.md, a CLAUDE.md that
-           imports it, and the skills of the installed libraries
+  init     Set up the agent files: a stack section in AGENTS.md and the skills
+           of the installed libraries
   sync     Update the agent files after installing or upgrading a library
   check    Check the project follows the stack (exit 1 on errors)
 
@@ -76,7 +76,7 @@ export async function main(argv, { log = console.log, error = console.error } = 
       log(`@hugocxl/ai ${options.command} in ${relative(process.cwd(), root) || '.'}`);
       printSync(root, sync(root), log);
       if (options.command === 'init') {
-        log('\nCommit AGENTS.md, CLAUDE.md and the skill folders. Before finishing any task, agents run:');
+        log('\nCommit AGENTS.md and the skill folders. Before finishing any task, agents run:');
         log('  npx @hugocxl/ai check');
       }
       return 0;

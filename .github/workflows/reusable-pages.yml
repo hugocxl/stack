@@ -1,0 +1,56 @@
+name: Reusable Pages
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        type: string
+        default: website
+      static-only:
+        type: boolean
+        default: false
+      update-hugocxl-packages:
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        if: '!inputs.static-only'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
+      - name: Install dependencies
+        if: '!inputs.static-only'
+        run: npm ci
+      - name: Use the newest @hugocxl releases
+        if: '!inputs.static-only && inputs.update-hugocxl-packages'
+        run: npm install --no-save @hugocxl/design-system@latest @hugocxl/icons@latest @hugocxl/vectors@latest
+      - name: Build website
+        if: '!inputs.static-only'
+        run: npm run build:site
+      - name: Check website
+        if: '!inputs.static-only'
+        run: npm run check:site
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ inputs.static-only && inputs.working-directory || format('{0}/_site', inputs.working-directory) }}
+      - uses: actions/deploy-pages@v5
+        id: deployment

@@ -1,5 +1,5 @@
 // Write and verify the agent files a project gets from the stack: a managed section in
-// AGENTS.md, a CLAUDE.md that imports it, and a copy of each installed library's skill.
+// AGENTS.md and a copy of each installed library's skill. No CLAUDE.md is created.
 import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { LIBRARIES, STACK_ROOT, libraries } from './project.mjs';
@@ -59,8 +59,6 @@ export function desiredFiles(root) {
   const read = path => (existsSync(path) ? readFileSync(path, 'utf8') : null);
 
   files.set('AGENTS.md', withSection(read(join(root, 'AGENTS.md')), agentsSection(libs)));
-  const claude = join(root, 'CLAUDE.md');
-  if (!(existsSync(claude) && lstatSync(claude).isSymbolicLink())) files.set('CLAUDE.md', withImport(read(claude)));
 
   const sources = [{ id: 'stack', skillDir: join(STACK_ROOT, 'skills/stack') }, ...libs.filter(library => library.skillDir)];
   for (const base of SKILL_DIRS) {

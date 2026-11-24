@@ -110,12 +110,13 @@ test('generated and dependency folders are never checked', async () => {
   assert.deepEqual(result, []);
 });
 
-test('agent files that are missing or stale are errors', async () => {
-  const root = project();
+test('agent files that are missing or stale are errors, and CLAUDE.md is flagged', async () => {
+  const root = project({ files: { 'CLAUDE.md': '@AGENTS.md\n' } });
   const before = (await check(root)).findings;
-  assert.ok(before.length > 0 && before.every(f => f.rule === 'agent-files'));
+  assert.ok(before.some(f => f.rule === 'no-claude-md'));
   sync(root);
-  assert.deepEqual((await check(root)).findings, []);
+  const after = (await check(root)).findings;
+  assert.deepEqual(rules(after), ['no-claude-md']);
 });
 
 test('import parsing covers the module syntaxes', () => {

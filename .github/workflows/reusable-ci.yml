@@ -1,0 +1,100 @@
+name: Reusable CI
+
+on:
+  workflow_call:
+    inputs:
+      runs-on:
+        type: string
+        default: xcode-27
+      xcode-path:
+        type: string
+        default: /Applications/Xcode_27.1.app
+      checkout-subdir:
+        type: string
+        default: ''
+      setup-command:
+        type: string
+        default: ''
+      validate-command:
+        type: string
+        default: scripts/validate.sh
+      lint-commits:
+        type: boolean
+        default: true
+      check-hygiene:
+        type: boolean
+        default: true
+      timeout-minutes:
+        type: number
+        default: 30
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ${{ inputs.runs-on }}
+    timeout-minutes: ${{ inputs.timeout-minutes }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.checkout-subdir != '' && inputs.checkout-subdir || '.' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          path: ${{ inputs.checkout-subdir }}
+      - name: Check repository hygiene
+        if: inputs.check-hygiene
+        run: |
+          set -euo pipefail
+          FAIL=0
+          if [ -n "$(find . -maxdepth 3 -name 'CLAUDE.md' -not -path './.git/*' -not -path '*/node_modules/*')" ]; then
+            echo "Error: CLAUDE.md files are not allowed; use AGENTS.md only" >&2
+            FAIL=1
+          fi
+          if [ -f RELEASE.md ] || [ -d docs ]; then
+            echo "Error: extra top-level docs (RELEASE.md or docs/) are not allowed; keep docs in AGENTS.md and README.md" >&2
+            FAIL=1
+          fi
+          if [ -f AGENTS.md ] && [ "$(wc -l < AGENTS.md)" -gt 200 ]; then
+            echo "Error: AGENTS.md exceeds 200 lines" >&2
+            FAIL=1
+          fi
+          if [ -d website ] && [ -f package.json ] && [ ! -f pnpm-workspace.yaml ]; then
+            echo "Error: website dependencies must live inside website/, not at the repository root" >&2
+            FAIL=1
+          fi
+          exit "$FAIL"
+      - name: Lint commit messages
+        if: inputs.lint-commits
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if [ ! -f scripts/commit-lint.py ]; then exit 0; fi
+          if [ -n "$BASE_SHA" ] && [[ ! "$BASE_SHA" =~ ^0+$ ]] && git merge-base --is-ancestor "$BASE_SHA" "$HEAD_SHA" 2>/dev/null; then
+            python3 scripts/commit-lint.py --range "$BASE_SHA..$HEAD_SHA"
+          else
+            python3 scripts/commit-lint.py --range "$HEAD_SHA^!"
+          fi
+      - name: Select Xcode
+        if: inputs.xcode-path != '' && runner.os == 'macOS'
+        run: |
+          set -euo pipefail
+          sudo xcode-select -s "${{ inputs.xcode-path }}"
+          xcodebuild -version
+          swift --version
+      - name: Setup
+        if: inputs.setup-command != ''
+        run: ${{ inputs.setup-command }}
+      - name: Validate
+        run: ${{ inputs.validate-command }}
+      - name: Preserve validation logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ci-validation-logs
+          path: ${{ inputs.checkout-subdir != '' && format('{0}/build/validation/*.log', inputs.checkout-subdir) || 'build/validation/*.log' }}
+          if-no-files-found: ignore

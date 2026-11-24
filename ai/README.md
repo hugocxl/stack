@@ -33,9 +33,8 @@ npx @hugocxl/ai init
 
 `init` writes:
 
-- a managed section in **`AGENTS.md`**, read by Codex, Cursor, Copilot, Gemini and most other
-  agents (anything you write outside the markers is kept);
-- a **`CLAUDE.md`** that imports `AGENTS.md`, for Claude Code;
+- a managed section in **`AGENTS.md`**, read by Claude Code, Codex, Cursor, Copilot, Gemini and
+  other agents (anything you write outside the markers is kept; no `CLAUDE.md` is created);
 - the skills of the installed libraries, plus the `stack` skill, in **`.agents/skills/`** and
   **`.claude/skills/`**.
 
@@ -51,7 +50,9 @@ It reads the catalogs of the installed libraries and reports:
 
 | Rule | Level | Catches |
 | --- | --- | --- |
-| `agent-files` | error | `AGENTS.md`, `CLAUDE.md` or the skills missing or out of date with the installed libraries |
+| `agent-files` | error | `AGENTS.md` or the skills missing or out of date with the installed libraries |
+| `no-claude-md` | error | `CLAUDE.md` present in the project (use `AGENTS.md` only) |
+| `agents-md-size` | warning | `AGENTS.md` exceeds 200 lines |
 | `foreign-icons` | error | Lucide, Heroicons, Font Awesome, Material, Phosphor, react-icons and other icon libraries |
 | `unknown-icon` | error | Icon names, styles, exports and import paths that do not exist |
 | `unknown-vector` | error | Vector names, exports and import paths that do not exist |

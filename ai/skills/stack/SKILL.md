@@ -69,9 +69,9 @@ npm install @hugocxl/design-system @hugocxl/icons @hugocxl/vectors @hugocxl/soun
 npx @hugocxl/ai init
 ```
 
-`init` writes the stack's section into `AGENTS.md`, points `CLAUDE.md` at it, and copies the
-skills of the installed libraries into `.agents/skills/` and `.claude/skills/`. Run
-`npx @hugocxl/ai sync` after upgrading any library, and commit the result.
+`init` writes the stack's section into `AGENTS.md` and copies the skills of the installed
+libraries into `.agents/skills/` and `.claude/skills/`. Run `npx @hugocxl/ai sync` after upgrading
+any library, and commit the result.
 
 Then choose the integration the project needs:
 
@@ -97,6 +97,26 @@ Then choose the integration the project needs:
 ## What `npx @hugocxl/ai check` catches
 
 Errors: icon or vector names that do not exist, sound names that do not exist, imports from
-other icon libraries, and agent files that are out of date with the installed libraries.
-Warnings: Tailwind's default palette and raw color values in a project that uses the design
-system. Run `npx @hugocxl/ai check --help` for options.
+other icon libraries, `CLAUDE.md` files, and agent files that are out of date with the installed
+libraries. Warnings: Tailwind's default palette, raw color values, and `AGENTS.md` over 200 lines.
+Run `npx @hugocxl/ai check --help` for options.
+
+## Repository standards
+
+Every `hugocxl/*` repository follows the same setup:
+
+- **`AGENTS.md` only (no `CLAUDE.md`).** Keep `AGENTS.md` short (under 200 lines, ideally 30–75)
+  and limited to exact commands plus **WHY** invariants that cannot be inferred from reading the
+  code. Never add code inventories or architecture walkthroughs.
+- **No extra docs.** Keep only `AGENTS.md`, `README.md`, `CHANGELOG.md`, `LICENSE`, and
+  `THIRD_PARTY_NOTICES.md`. Never create `RELEASE.md` or a root `docs/` folder.
+- **Self-contained `website/`.** Any project website keeps its own `package.json`, lockfile,
+  build scripts, and `_site/` output inside `website/`, never at the repository root.
+- **Multi-worktree isolation.** Parallel agents must never collide on bundle IDs, DerivedData,
+  app state, or running processes. Never use `pkill`/`killall` by app name or bare `git stash`.
+  If a task opened a dev app, run `scripts/stop.sh` before finishing.
+- **Product commits, automatic changelog and tags.** Commit subjects use
+  `<Added|Changed|Removed|Improved|Fixed>: <One user-facing sentence.>` without file names or dev
+  jargon. `.githooks/` lints the message, prepends the `CHANGELOG.md` entry, and tags `vX.Y.Z`.
+- **Shared CI/release workflows.** Repositories call reusable workflows from
+  `hugocxl/stack/.github/workflows/reusable-*.yml@main`. Commit or push only when asked.
