@@ -5,3 +5,5 @@ node_modules/
 _site/
 release/
 *.tgz
+
+__pycache__/
