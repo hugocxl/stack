@@ -464,3 +464,11 @@ def alarm_clock(s, at, r=30):
     plate(s, at, oval(0, 0, r, r, count=72)[:-1], r*.3, BACK)
     s.line([at(u, v) for u, v in oval(0, 0, r*.82, r*.82, count=72)], DETAIL)
     s.line([at(0, r*.55), at(0, 0), at(r*.38, -r*.22)], BOLD)
+
+
+def folder(s, at, w=80, h=58, depth=6):
+    """The SF folder: a tabbed back sheet and a front pocket, facing the viewer on plane `at`."""
+    tab = [(0, 0), (w, 0), (w, h), (w*.42, h), (w*.36, h + 8), (5, h + 8), (0, h + 3)]
+    plate(s, at, tab, depth, BACK)
+    s.line([at(0, h - 8), at(w, h - 8)], DETAIL)
+    return at

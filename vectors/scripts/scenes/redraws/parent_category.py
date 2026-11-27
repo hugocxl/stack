@@ -1,12 +1,11 @@
-from geometry import BOLD, EDGE
-from scenes.redraws._w4 import folder_emblem, front_surface, nav_path
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import folder, screen
 
-DESCRIPTION = "Two folder levels form a short category path, with an upward arrow pointing back to the parent folder."
+DESCRIPTION = "A small folder stands in front of its larger parent folder and carries an up badge."
 
 
 def draw(s):
-    face = front_surface(s, angle=-19, z=7)
-    face.line([(29, 51), (29, 27), (50, 27)], EDGE)
-    folder_emblem(face, 1, 51, 57, 37, solid=True)
-    folder_emblem(face, 50, 7, 52, 35, solid=True)
-    nav_path(face, [(78, 38), (78, 72), (60, 72)], BOLD, head=8)
+    at = screen()
+    folder(s, lambda u, v: at(u - 58, v - 8), 84, 62)
+    child = folder(s, lambda u, v: at(u - 10, v - 46), 64, 46)
+    badge(s, "up", *child(64, 4), 12)

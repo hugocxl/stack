@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-outpatient-room-instructions	extended	Clinic directions page	A freestanding clinic wayfinding sign pairs a medical cross and room field with a right arrow.
-pharmacy-pickup-window	extended	Prescription collection page	A prescription bottle rests on the sill of an open pharmacy service hatch.
-physical-therapy-intake	extended	Clinic information form	An intake clipboard shows a knee-joint diagram above two form rows.
-pillow-fitting	extended	Sleep equipment service	A measuring tape follows the curved seam of a contoured pillow.
-sleep-tracking	extended	Wellness product overview	A smartwatch shows a crescent moon above a stepped overnight sleep timeline.
-strength-progression	extended	Coaching product homepage	A dumbbell with two thick hexagonal weights sits below a rising progression arrow.
-stretch-routine	extended	Rehabilitation exercise library	A multi-loop stretching strap rests on a partially unrolled exercise mat.
-treadmill-session-history	extended	Indoor workout dashboard	A treadmill with a running belt, paired handrails and a raised console carries a history clock badge.
-treatment-referral	extended	Care transfer page	A standing medical envelope is sealed with a cross and carries an outward transfer arrow.
-water-refill-location	extended	Venue wellness map	A standing map pin contains a water bottle beneath a dispensing spout and droplet.
-wearable-data-permission	extended	Connected health permissions	A smartwatch shows a pulse trace on its screen and carries a lock badge.
-wearable-data-sync	specialist	Patient monitoring product	A smartwatch shows a pulse trace and carries a circular sync badge at its lower corner.
-wearable-pairing-complete	extended	Device onboarding success	A smartwatch shows a phone with a wireless signal and carries a pairing check badge.
-community-led-product	extended	Community growth section	A three-milestone roadmap pairs its highlighted priority with a member speech bubble.
-compact-footprint	extended	Space efficiency claim	A folded stepladder stands with a dimension bracket spanning its shallow footprint.
-company-milestones	extended	About-page timeline	A timeline rail has three evenly spaced event ticks and a flag on the last milestone.
-customer-advisory-board	extended	Invitation to product advisory group	Three inward-facing seats attach to a shared round discussion table.
-customer-implementation-spotlight	extended	Adoption implementation story	A desk spotlight casts a diagonal beam across an implemented chart in a laptop window.
-designed-for-teams	extended	Team-focused landing page overview	Three built-in chairs face a round team worktable with a shared plan at its center.
-direct-installation	extended	Service installation CTA	A screwdriver engages the exposed mounting screw on a wall-mounted control unit.
-feature-spotlight	extended	Feature launch hero	A small overhead spotlight casts a cone onto a single control on a display.
-feature-teaser	extended	Soon-to-launch feature card	A ribboned box cracks open at the front and three rays escape beneath its raised lid.
-flexible-modules	extended	Configurable architecture sales page	Two identical modules slide together through a visible tongue-and-slot joint.
-founding-story	extended	Company origin section	An open history book highlights the first milestone on a timeline across its opening pages.
-partnership-tiers	extended	Channel partner program section	Three square podium blocks stack from a broad bottom tier to a small upper tier.
-press-kit	extended	Newsroom resources	A media pack keeps a fact sheet and image cards together.
-process-reliability	extended	Quality commitment claim	A raised start node, process block, and decision diamond lead to a final block with a check badge.
-product-reveal	extended	Launch teaser hero	A lifted drape exposes the lens and controls of a compact camera.
-request-a-callback	extended	Consultation lead form	A curved return arrow sweeps back toward a telephone handset.
-service-overview	extended	Introductory section for a managed service	An open service catalog lists three offerings marked with a wrench, a headset, and a cloud.
-upgrade-announcement	extended	New model or package introduction	A megaphone with two sound rays rests against an interface preview on a release booklet.
-expand-a-section	extended	Expandable navigation group	A downward disclosure chevron opens a raised section header above two indented child rows.
-external-link-handoff	extended	Confirmation before leaving the current site	A diagonal outgoing arrow crosses the upper-right corner of a thick browser window.
-list-density	extended	Choose compact or spacious result rows	Two inward arrowheads beside five compact list rows indicate vertical compression.
-location-jump	extended	Scroll to precise position on a map	A bent jump arrow runs across the folds of a map and points to a destination pin.
-map-versus-list-view	extended	Location-directory view switcher	A two-tab view switcher pairs a folded-map glyph with three bulleted list lines.
-merge-duplicate-records	extended	Directory admin data cleanup	Two overlapping contact cards with matching avatar marks feed into one converging arrow.
-pagination	extended	Large index result footer	A pagination strip has previous and next chevrons and three page buttons, with the current page double-outlined.
-parent-category	extended	Return one level up in the category tree	Two folder levels form a short category path, with an upward arrow pointing back to the parent folder.
-sibling-category	extended	Move laterally between related sections	A shared category branch connects two matching folder nodes at the same depth.
-tagging-content	extended	Topic organization feature	A punched merchandise tag hooks over the upper corner of a document.
-autosize-content	extended	Frame that responds to changing content	A content card sits inside a dashed bounding frame whose lower corner extends along a diagonal resize arrow.
-component-detach	extended	Detach a single instance from its master	Two open ends of a broken chain separate at the corner of a thick component tile.
-content-grouping	extended	Group several related interface components	A single selection frame encloses a landscape tile, a text tile, and a pill-shaped button.
-contextual-toolbar	extended	Editor action strip for one selected object	A floating three-button toolbar points directly to the selection bounds around a single object on a tilted canvas.
-create-component-group	extended	Declare reusable component set	A selection boundary groups three thick component diamonds and carries a plus badge on its corner.
-custom-rules	extended	Configuration features or docs	A rule on a clipboard branches from one decision diamond to two action boxes.
-drag-and-drop	extended	No-code builder feature section	A pointer drags a lifted content tile toward a dashed insertion outline in a browser window.
-extension-marketplace	extended	Add-on discovery hero	A storefront with a scalloped awning displays three interlocking puzzle-piece shapes as software add-ons.
 font-fallback	extended	Define a secondary face for missing primary glyphs	An arrow leads from an empty glyph square on one piece of type to a capital A on another.
 formatting-presets	extended	Document format preset chooser	Three tabbed preset samples display heading, centered, and bulleted text, with the bulleted sample outlined.
 image-replacement	extended	Swap an image while preserving its placement	A standing landscape photo frame carries a corner control with two opposing arrows.

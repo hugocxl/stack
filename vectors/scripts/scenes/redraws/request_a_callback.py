@@ -1,13 +1,14 @@
 from geometry import EDGE
-from scenes.redraws._kit import arrow
-from scenes.redraws._w4 import bezier_path, front_surface, phone_receiver
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import screen, smooth
 
-DESCRIPTION = "A curved return arrow sweeps back toward a telephone handset."
+DESCRIPTION = "A telephone handset carries a return badge asking for a call back."
 
 
 def draw(s):
-    phone_receiver(s, z=22)
-    plane = front_surface(s, angle=-24)
-    sweep = bezier_path((32, 55), ((46, 76), (16, 90), (-13, 79)),
-                        ((-26, 74), (-36, 67), (-37, 55)))
-    arrow(s, [plane.at(u, v) for u, v in sweep], ink=EDGE, head=9)
+    at = screen()
+    grip = smooth([(-26, 33), (-34, 15), (-26, -9), (-6, -27), (18, -33)], 6)
+    s.tube([at(u, v) for u, v in grip], 7, EDGE)
+    for a, b in (((-30, 37), (-20, 28)), ((14, -38), (24, -28))):
+        s.tube([at(*a), at(*b)], 10, EDGE)
+    badge(s, "back", *_screen(0, 0, 0, 26, 22), 14)

@@ -272,7 +272,7 @@
           "id": "request-a-callback",
           "title": "Request a callback",
           "placement": "Consultation lead form",
-          "visual": "A curved return arrow sweeps back toward a telephone handset.",
+          "visual": "A telephone handset carries a return badge asking for a call back.",
           "priority": "extended",
           "asset": "figures/request-a-callback.svg"
         },
@@ -496,7 +496,7 @@
           "id": "flexible-modules",
           "title": "Flexible modules",
           "placement": "Configurable architecture sales page",
-          "visual": "Two identical modules slide together through a visible tongue-and-slot joint.",
+          "visual": "Two matching rounded modules sit side by side, joined by a short connector peg.",
           "priority": "extended",
           "asset": "figures/flexible-modules.svg"
         },
@@ -1022,7 +1022,7 @@
           "id": "parent-category",
           "title": "Parent category",
           "placement": "Return one level up in the category tree",
-          "visual": "Two folder levels form a short category path, with an upward arrow pointing back to the parent folder.",
+          "visual": "A small folder stands in front of its larger parent folder and carries an up badge.",
           "priority": "extended",
           "asset": "figures/parent-category.svg"
         },
@@ -1030,7 +1030,7 @@
           "id": "sibling-category",
           "title": "Sibling category",
           "placement": "Move laterally between related sections",
-          "visual": "A shared category branch connects two matching folder nodes at the same depth.",
+          "visual": "One branch splits to two matching folders standing side by side at the same level.",
           "priority": "extended",
           "asset": "figures/sibling-category.svg"
         },
@@ -11656,7 +11656,7 @@
           "id": "strength-progression",
           "title": "Strength progression",
           "placement": "Coaching product homepage",
-          "visual": "A dumbbell with two thick hexagonal weights sits below a rising progression arrow.",
+          "visual": "A dumbbell loaded with two plates a side carries an up badge for progression.",
           "priority": "extended",
           "asset": "figures/strength-progression.svg"
         },
@@ -12160,7 +12160,7 @@
           "id": "wearable-pairing-complete",
           "title": "Wearable pairing complete",
           "placement": "Device onboarding success",
-          "visual": "A smartwatch shows a phone with a wireless signal and carries a pairing check badge.",
+          "visual": "A smartwatch shows a phone beside a wireless signal and carries a pairing check badge.",
           "priority": "extended",
           "asset": "figures/wearable-pairing-complete.svg"
         },

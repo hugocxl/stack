@@ -9,4 +9,4 @@ def draw(s):
     screen = smartwatch(s)
     screen.line([(-13, 34), (-8, 34), (-5, 39), (-1, 27),
                  (3, 44), (7, 34), (13, 34)], EDGE)
-    badge(s, "refresh", *screen.at(22, 15), 13)
+    badge(s, "refresh", *screen.at(22, 12), 13)
