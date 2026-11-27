@@ -1,18 +1,16 @@
-from geometry import BOLD, EDGE, oval
-from scenes.redraws._kit import arrow
-from scenes.redraws._w4 import standing_card
+from geometry import DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import BACK, left_face, lip, plate, squircle, turned
 
-DESCRIPTION = "A phone shows a hard hat on its screen and a hooked return-call arrow curling around its lower corner."
+DESCRIPTION = "A hard hat rests in front of a standing phone that carries a return-call badge."
 
 
 def draw(s):
-    phone = standing_card(s, 56, 98, angle=-23, lean=.37, depth=8)
-    phone.frame(4, 6, 48, 86, 4)
-    phone.frame(19, 85, 18, 3, 1.4)
-    phone.line(oval(28, 52, 15, 14, 0, 180, count=26), EDGE)
-    phone.frame(9, 48, 38, 4, 1.9, EDGE)
-    phone.line([(25, 64), (25, 70), (31, 70), (31, 64)], EDGE)
-    phone.line([(19, 53), (19, 60)], EDGE)
-    phone.line([(37, 53), (37, 60)], EDGE)
-    curve = oval(43, 22, 21, 16, -65, 93, count=26)
-    arrow(s, [phone.at(u, v) for u, v in curve] + [phone.at(29, 38)], BOLD, head=8)
+    face = left_face(-24, 0, 0)
+    plate(s, face, squircle(48, 92, 10), 6, (0, -1, 0))
+    inner = [face(u + 4, v + 4) for u, v in squircle(40, 84, 7)]
+    s.line(inner + inner[:1], DETAIL)
+    turned(s, [(26, 0), (26, 2.4), (16, 3.4), (17, 13), (14, 20), (8, 24), (.4, 25)], 34, 30, 0, steps=4)
+    lip(s, 34, 30, 3.6, 16.5, EDGE, -60, 150)
+    s.line([(34 - 11.7, 30 + 11.7, 3.6), (34 - 9, 30 + 9, 16), (34 - 4, 30 + 4, 23.5)], DETAIL)
+    badge(s, "back", *face(48, 84), 12)

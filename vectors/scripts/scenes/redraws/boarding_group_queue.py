@@ -1,25 +1,24 @@
-from geometry import DETAIL, EDGE
-from scenes.redraws._kit import arrow
-from scenes.redraws.flight_connection_help import airplane
-from scenes.redraws.garage_vacancy_queue import post
+from geometry import EDGE
+from scenes.redraws._sf import left_face, plate, squircle
 
-DESCRIPTION = "Two upright carry-ons queue beneath an airplane gate sign beside a floor arrow pointing towards the gate."
+DESCRIPTION = "Two upright carry-ons queue in line in front of a gate sign on a post."
 
 
-def carry_on(s, x, y, w):
-    for a in (x + 2, x + w - 4):
-        s.box(a, y + 8, 0, 2.8, 2.4, 3, .7)
-    s.tube([(x + 4, y + 5, 20), (x + 4, y + 5, 30),
-            (x + w - 3, y + 5, 30), (x + w - 3, y + 5, 20)], 1.05)
-    s.box(x, y, 2, w, 12, 19, 2.7)
-    for a in (4, w - 4):
-        s.line([(x + a, y + 12, 6), (x + a, y + 12, 16)], DETAIL)
+def carry_on(s, x, y):
+    for dx in (-8, 8):
+        s.tube([(x + dx, y, 46), (x + dx, y, 60)], 1.3, EDGE)
+    s.tube([(x - 8, y, 60), (x + 8, y, 60)], 1.8, EDGE)
+    face = left_face(x - 16, y + 10, 3)
+    plate(s, face, squircle(32, 44, 7), 16, (0, -1, 0))
+    for dx in (-10, 10):
+        s.disk(x + dx, y + 6, 0, 3, 3, 3)
 
 
 def draw(s):
-    post(s, 3, 5, 52, width=3.6)
-    s.box(-4, 2, 41, 46, 5, 25, 2)
-    airplane(s, 19, 7, 54, .79, vertical=True)
-    arrow(s, [(63, 40, .1), (22, 36, .1)], EDGE, head=5.5)
-    carry_on(s, 31, 16, 15)
-    carry_on(s, 57, 20, 17)
+    s.tube([(-50, -40, 0), (-50, -40, 84)], 2, EDGE)
+    sign = left_face(-78, -38, 74)
+    plate(s, sign, squircle(56, 26, 5), 4, (0, -1, 0))
+    s.line([sign(14, 13), sign(42, 13)], EDGE)
+    s.line([sign(34, 19), sign(42, 13), sign(34, 7)], EDGE)
+    carry_on(s, 0, -30)
+    carry_on(s, 46, -30)

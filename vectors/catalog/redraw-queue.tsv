@@ -1,57 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-lease-signing-session	extended	Rental document signing step	A pen touches the signature line of a landscape lease sheet headed by a house outline.
-living-room-layout	extended	Furniture planning consultation	A sofa and a low coffee table sit together inside a living room floor plan with a wide entry.
-material-quantity-check	extended	Building materials ordering tool	A single tally tag hangs against a stack of square building tiles.
-modular-construction	extended	Prefab builder product page	A prefabricated room module slides into an open bay of a house frame.
-neighborhood-overview	extended	Real estate editorial section	Three gabled houses line a single sidewalk that turns a street corner.
-planning-permission-evidence	extended	Permit evidence submission	A magnifier frames the proposed building outline on a site plan with a clearly marked parcel boundary.
-prefabricated-facade-panel	extended	Prefab facade manufacturer product	A thick prefabricated facade panel with a fitted window meets its mounting column at two slotted connections.
-private-courtyard-layout	extended	Landscape planning service	Low perimeter walls enclose a courtyard with a paved walk around its central garden.
-property-boundary-survey	extended	Land surveyor service page	A surveyed parcel has a bold property boundary and a crosshair at every corner.
-rain-garden-installation	extended	Residential landscaping project	A surface inlet carries water between planted slopes into a sunken rain garden.
-residential-storage-design	extended	Interior storage service landing	An open built-in closet shows a clothes rail beside fitted shelves and a stack of drawers.
-roof-drainage-inspection	extended	Home drainage checklist	A magnifier frames the elbow where a roof gutter joins the downspout.
-soil-drainage-test	extended	Landscape or foundation site test	A soil cross-section exposes a water-filled test hole and downward seepage into the layer beneath it.
-sound-isolation-retrofit	extended	Acoustic insulation remodeling service	Two sound waves approach a wall cutaway with an acoustic batt fitted between its studs and doubled lining.
-space-planning	extended	Interior design feature	A low-walled room plan shows a bed and a wardrobe fitted inside the walls with a clear door swing.
-subdivision-street-alignment	extended	Site masterplan overview	Two homes occupy opposite lots with their driveways connected to one continuous subdivision street.
-thermal-bridge-repair	extended	Building efficiency retrofit explanation	A continuous insulation layer crosses the face of a stud in a cutaway wall.
-after-hours-key-drop	extended	Hotel key return information	A toothed room key is halfway into the top slot of a moon-marked drop box.
-appointment-verification-call	extended	Appointment verification instructions	A thick telephone handset carries a check badge beside one earpiece.
-book-a-fitting	extended	Retail fitting appointment	A tailor's dress form wears a measuring tape and carries a clock badge by its shoulder.
-callback-request	extended	Support callback form	A telephone handset has a curved callback arrow hooked around its receiver.
-dispatch-route-selection	extended	Dispatch management	Two routes cross a folded street map, and a check badge marks the selected route at its endpoint.
-emergency-dispatch	extended	Priority repair ticket response	A response van with a roof beacon points toward a forward dispatch arrow at road level.
-equipment-collection-window	extended	Rental collection scheduling	A power drill pictogram and a clock badge identify the highlighted pickup window on a standing appointment card.
-pet-groomer-appointment	extended	Local pet services booking	A paw-printed pet bowl sits beside grooming scissors with a clock badge attached to the bowl.
-service-disruption-banner	extended	Service status page	A freestanding status banner has an attached warning triangle beside two message lines.
-service-follow-up	extended	Post-service experience or help section	A curved reply arrow sweeps across the upper corner of a message bubble.
-studios-by-the-hour	extended	Studio rental scheduling	A recording studio cutaway contains acoustic panels and a microphone stand with a clock badge attached to the room.
-support-ticket-triage	extended	Customer support software	A warning triangle marks the foremost ticket in a staggered stack of support tickets.
-visitor-reception	extended	Office visitor welcome	A visitor sign-in sheet rests on the angled writing surface of a reception desk.
-workshop-enrollment	extended	Community workshop signup	A workshop admission ticket bears a wrench emblem and a plus badge on its tear-off stub.
-worksite-callback	extended	Trade service callback request	A phone shows a hard hat on its screen and a hooked return-call arrow curling around its lower corner.
-airport-transfer-pickup-point	extended	Airport transport instructions	A curbside location pin displays an airport shuttle pictogram in its face.
-baggage-recheck	extended	Airport transfer instructions	A curved return arrow loops around the top handle of an upright suitcase.
-bike-dock-availability	extended	City mobility map	A docking rack faces a dashed bicycle outline aligned with a vacant dock.
-boarding-group-queue	extended	Airport operations display	Two upright carry-ons queue beneath an airplane gate sign beside a floor arrow pointing towards the gate.
-bus-shelter-directory	extended	Transit stop search page	A roofed bus shelter with a bench has a magnifying glass over its posted stop sign.
-car-park-height-limit	extended	Parking site specifications	A striped clearance bar hangs from a parking gantry just above a car roof.
-carry-on-measurement	extended	Airline baggage rules page	An upright carry-on fits inside an open airline sizing frame with ruler marks on its front post.
-check-in-desk-directions	extended	Airport guest information	An airport check-in counter carries an airplane emblem and a desk bell above an approach arrow.
-combined-ticket-wallet	extended	Multi-route customer account	Two notched travel tickets showing a train and an airplane protrude from a single stitched wallet pocket.
-departure-board	extended	Travel or transport dashboard	A two-post airport departure board lines up destination entries with three clock symbols.
-destination-landmark-guide	extended	City visitor information	An accordion-fold city map shows an Eiffel Tower location pin on its street grid.
-ev-charging-station	extended	Charging network directory	A charging cable connects a compact EV pedestal to the side port of an electric car.
-express-train-ticket	extended	Transit trip planner options	A notched rail ticket shows a streamlined train with three speed lines.
-flight-connection-help	extended	Flight itinerary feature	A boarding pass shows an airplane and a curved arrow connecting two airport markers.
-garage-charging-map	extended	EV destination feature	A garage floor plan shows a parked car and a lightning bolt badge marking a charging bay.
-hotel-amenity-hours	extended	Guest guide page	A freestanding pool sign shows a ladder above two clock faces joined by a short line.
-hotel-workspace-feature	extended	Accommodation amenities page	A hotel writing desk has a drawer and an angled task lamp mounted at its back corner.
-museum-district-walk	extended	City culture route page	An unfolded pocket map shows a dotted walking route between two columned museum landmarks.
-reserve-adjacent-seats	extended	Rail party booking flow	One pair of high-backed rail seats shares a pedestal and a continuous reservation outline.
-road-closure	extended	Travel alert or mobility feed	A striped roadwork barricade spans both lanes of a short road segment.
 room-accessibility-details	extended	Accessible accommodation page	An open doorway has a wheelchair plaque and a continuous floor through its threshold.
 scenic-overlook-booking	extended	Park reservation page	A wooden overlook deck with a railing faces a continuous mountain ridge and carries a clock badge.
 scooter-rental-handover	extended	Micromobility pickup page	A kick scooter has a key inserted into the lock on its steering stem.

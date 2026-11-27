@@ -9494,7 +9494,7 @@
           "id": "service-follow-up",
           "title": "Service follow-up",
           "placement": "Post-service experience or help section",
-          "visual": "A curved reply arrow sweeps across the upper corner of a message bubble.",
+          "visual": "A thick message bubble with two lines of text carries a reply badge at its corner.",
           "priority": "extended",
           "asset": "figures/service-follow-up.svg"
         },
@@ -9534,7 +9534,7 @@
           "id": "callback-request",
           "title": "Callback request",
           "placement": "Support callback form",
-          "visual": "A telephone handset has a curved callback arrow hooked around its receiver.",
+          "visual": "A telephone handset carries a clock badge for a scheduled call back.",
           "priority": "extended",
           "asset": "figures/callback-request.svg"
         },
@@ -9630,7 +9630,7 @@
           "id": "worksite-callback",
           "title": "Worksite callback",
           "placement": "Trade service callback request",
-          "visual": "A phone shows a hard hat on its screen and a hooked return-call arrow curling around its lower corner.",
+          "visual": "A hard hat rests in front of a standing phone that carries a return-call badge.",
           "priority": "extended",
           "asset": "figures/worksite-callback.svg"
         },
@@ -9814,7 +9814,7 @@
           "id": "appointment-verification-call",
           "title": "Appointment verification call",
           "placement": "Appointment verification instructions",
-          "visual": "A thick telephone handset carries a check badge beside one earpiece.",
+          "visual": "A telephone handset carries a check badge beside its upper earpiece.",
           "priority": "extended",
           "asset": "figures/appointment-verification-call.svg"
         },
@@ -12510,7 +12510,7 @@
           "id": "baggage-recheck",
           "title": "Baggage recheck",
           "placement": "Airport transfer instructions",
-          "visual": "A curved return arrow loops around the top handle of an upright suitcase.",
+          "visual": "An upright ribbed suitcase with a pull handle carries a refresh badge for recheck.",
           "priority": "extended",
           "asset": "figures/baggage-recheck.svg"
         },
@@ -12630,7 +12630,7 @@
           "id": "boarding-group-queue",
           "title": "Boarding group queue",
           "placement": "Airport operations display",
-          "visual": "Two upright carry-ons queue beneath an airplane gate sign beside a floor arrow pointing towards the gate.",
+          "visual": "Two upright carry-ons queue in line in front of a gate sign on a post.",
           "priority": "extended",
           "asset": "figures/boarding-group-queue.svg"
         },
@@ -12878,7 +12878,7 @@
           "id": "bike-dock-availability",
           "title": "Bike dock availability",
           "placement": "City mobility map",
-          "visual": "A docking rack faces a dashed bicycle outline aligned with a vacant dock.",
+          "visual": "A row of three bike docks stands on a base plate, and the empty one carries a check badge.",
           "priority": "extended",
           "asset": "figures/bike-dock-availability.svg"
         },

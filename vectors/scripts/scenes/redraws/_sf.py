@@ -472,3 +472,11 @@ def folder(s, at, w=80, h=58, depth=6):
     plate(s, at, tab, depth, BACK)
     s.line([at(0, h - 8), at(w, h - 8)], DETAIL)
     return at
+
+
+def handset(s, at, k=1.0):
+    """The SF phone handset on viewer-facing plane `at`: a curved grip between two broad caps."""
+    grip = smooth([(-26*k, 33*k), (-34*k, 15*k), (-26*k, -9*k), (-6*k, -27*k), (18*k, -33*k)], 6)
+    s.tube([at(u, v) for u, v in grip], 7*k, EDGE)
+    for a, b in (((-30*k, 37*k), (-20*k, 28*k)), ((14*k, -38*k), (24*k, -28*k))):
+        s.tube([at(*a), at(*b)], 10*k, EDGE)

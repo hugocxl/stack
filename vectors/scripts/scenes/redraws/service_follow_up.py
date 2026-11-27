@@ -1,12 +1,14 @@
-from geometry import BOLD, EDGE, oval
-from scenes.redraws._kit import arrow
-from scenes.redraws._w4 import speech_bubble
+from geometry import DETAIL
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import BACK, bubble, plate, screen
 
-DESCRIPTION = "A curved reply arrow sweeps across the upper corner of a message bubble."
+DESCRIPTION = "A thick message bubble with two lines of text carries a reply badge at its corner."
 
 
 def draw(s):
-    bubble = speech_bubble(s)
-    bubble.rows(16, 33, (32, 24), step=-13, ink=EDGE)
-    points = oval(75, 44, 24, 17, -57, 91, count=25) + [(59, 61), (46, 61)]
-    arrow(s, [bubble.at(u, v) for u, v in points], BOLD, head=9)
+    at = screen()
+    b = lambda u, v: at(u - 56, v - 36)
+    plate(s, b, bubble(112, 76, 24, (.24, 14, 16)), 9, BACK)
+    for v, w in ((50, 64), (34, 44)):
+        s.line([b(22, v), b(22 + w, v)], DETAIL)
+    badge(s, "back", *_screen(0, 0, 0, 56, 34), 14)
