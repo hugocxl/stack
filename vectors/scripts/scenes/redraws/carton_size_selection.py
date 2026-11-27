@@ -1,10 +1,11 @@
-from scenes.redraws._w1 import caliper, open_carton_back, open_carton_front
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import carton
 
-DESCRIPTION = "The jaws of a large caliper touch the opposite ends of an open carton."
+DESCRIPTION = "Three cartons step up in size, and the middle one carries a check badge."
 
 
 def draw(s):
-    carton = (-35, 35, -23, 23, 29)
-    open_carton_back(s, *carton)
-    open_carton_front(s, *carton, flap_depth=9, flap_drop=8)
-    caliper(s, -35, 35, -1, 59, 28)
+    carton(s, -76, 0, 0, 30, 24, 22)
+    carton(s, -34, -6, 0, 42, 32, 32)
+    carton(s, 20, -14, 0, 56, 42, 44)
+    badge(s, "check", 8, 26, 30, 11)

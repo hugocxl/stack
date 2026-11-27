@@ -1,24 +1,15 @@
-from geometry import EDGE, oval
+from geometry import DETAIL, EDGE, oval
+from scenes.redraws._sf import shirt
 
-DESCRIPTION = "Three matching pairs of headphones have smooth, ribbed and perforated earcups."
-
-
-def headphones(s, x, finish):
-    band = [(a, 0, z) for a, z in oval(x, 29, 13.6, 16, 0, 180, count=28)]
-    s.tube(band, 2.45)
-    for side in (-1, 1):
-        cup_x = x + side * 14
-        s.tube([(x + side * 13.6, 0, 29), (cup_x, 0, 17)], 1.6)
-        s.box(cup_x - 4.1, -4, 3, 8.2, 8, 19, 3)
-        s.box(cup_x - 4.3, 3, 5, 8.6, 2.8, 15, 2.4)
-        if finish == "ribbed":
-            for z in (9, 12, 15):
-                s.line([(cup_x - 2.7, 5.8, z), (cup_x + 2.7, 5.8, z)], EDGE)
-        elif finish == "perforated":
-            for a, z in ((-1.65, 9), (1.65, 9), (-1.65, 15), (1.65, 15)):
-                s.line([(cx, 5.8, cz) for cx, cz in oval(cup_x + a, z, 1.05, 1.05, count=16)], EDGE)
+DESCRIPTION = "Three matching T-shirts stand in a row, plain, striped and dotted."
 
 
 def draw(s):
-    for x, finish in ((-47, "smooth"), (0, "ribbed"), (47, "perforated")):
-        headphones(s, x, finish)
+    for i in range(3):
+        at = shirt(s, -96 + i*58, -i*6, 0, .8)
+        if i == 1:
+            for v in (14, 22, 30, 38):
+                s.line([at(14, v), at(46, v)], DETAIL)
+        if i == 2:
+            for u, v in ((22, 16), (38, 16), (30, 26), (22, 36), (38, 36)):
+                s.line([at(u + a, v + b) for a, b in oval(0, 0, 2.4, 2.4, count=16)], EDGE)

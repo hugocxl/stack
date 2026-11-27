@@ -7228,7 +7228,7 @@
           "id": "abandoned-cart",
           "title": "Abandoned cart",
           "placement": "Recovery reminder or merchant dashboard",
-          "visual": "A shopping cart still holds two products, and a clock badge shows it has been left waiting.",
+          "visual": "A shopping cart still holds two parcels, and a clock badge shows it has been left waiting.",
           "priority": "extended",
           "asset": "figures/abandoned-cart.svg"
         },
@@ -7244,7 +7244,7 @@
           "id": "product-variants",
           "title": "Product variants",
           "placement": "Storefront configurator",
-          "visual": "Three matching pairs of headphones have smooth, ribbed and perforated earcups.",
+          "visual": "Three matching T-shirts stand in a row, plain, striped and dotted.",
           "priority": "extended",
           "asset": "figures/product-variants.svg"
         },
@@ -7252,7 +7252,7 @@
           "id": "low-stock",
           "title": "Low stock",
           "placement": "Limited inventory product banner",
-          "visual": "One parcel remains among the empty bays of a stock shelf.",
+          "visual": "A shelving rack stands nearly empty, with a single carton left on its middle shelf.",
           "priority": "extended",
           "asset": "figures/low-stock.svg"
         },
@@ -7292,7 +7292,7 @@
           "id": "damaged-delivery",
           "title": "Damaged delivery",
           "placement": "Customer service claim flow",
-          "visual": "A taped shipping carton has a buckled corner with a short jagged tear.",
+          "visual": "A taped carton has a jagged tear down its side and a warning triangle beside it.",
           "priority": "extended",
           "asset": "figures/damaged-delivery.svg"
         },
@@ -7316,7 +7316,7 @@
           "id": "order-customization",
           "title": "Order customization",
           "placement": "Product personalization checkout step",
-          "visual": "A pencil touches the personalization field under a T-shirt thumbnail on a standing product order card.",
+          "visual": "A T-shirt shows a dashed print area on its chest and carries a plus badge.",
           "priority": "extended",
           "asset": "figures/order-customization.svg"
         },
@@ -7428,7 +7428,7 @@
           "id": "carton-size-selection",
           "title": "Carton size selection",
           "placement": "Packing workstation size decision",
-          "visual": "The jaws of a large caliper touch the opposite ends of an open carton.",
+          "visual": "Three cartons step up in size, and the middle one carries a check badge.",
           "priority": "extended",
           "asset": "figures/carton-size-selection.svg"
         },
@@ -7476,7 +7476,7 @@
           "id": "reverse-logistics-intake",
           "title": "Reverse logistics intake",
           "placement": "Return warehouse intake",
-          "visual": "A hooked return arrow turns down into the open mouth of a shipping carton.",
+          "visual": "A closed shipping carton carries a return badge as it comes back in.",
           "priority": "extended",
           "asset": "figures/reverse-logistics-intake.svg"
         },
@@ -7556,7 +7556,7 @@
           "id": "serial-tracked-returns",
           "title": "Serial-tracked returns",
           "placement": "Returns inspection workflow",
-          "visual": "A curved return arrow hooks around the prominent serial barcode label on a returns carton.",
+          "visual": "A carton with a barcode label on its side carries a return badge.",
           "priority": "extended",
           "asset": "figures/serial-tracked-returns.svg"
         },
@@ -7636,7 +7636,7 @@
           "id": "staggered-item-dispatch",
           "title": "Staggered item dispatch",
           "placement": "Split-order dispatch history",
-          "visual": "Two matching parcels connect to separate marks on a shipment timeline.",
+          "visual": "Two matching parcels sit at separate marks along a dashed shipment timeline.",
           "priority": "extended",
           "asset": "figures/staggered-item-dispatch.svg"
         },
@@ -7732,7 +7732,7 @@
           "id": "repacking-fragile-return",
           "title": "Repacking fragile return",
           "placement": "Returns packaging guide",
-          "visual": "An open shipping carton holds a stemmed glass upright in a fitted packing insert.",
+          "visual": "A stemmed glass stands upright inside an open shipping carton.",
           "priority": "extended",
           "asset": "figures/repacking-fragile-return.svg"
         },
@@ -7748,7 +7748,7 @@
           "id": "warehouse-aisle-navigation",
           "title": "Warehouse aisle navigation",
           "placement": "Picking aisle directions",
-          "visual": "A bold route arrow turns into the aisle between two rows of warehouse shelving.",
+          "visual": "A bold floor arrow turns into the aisle between two rows of warehouse racks.",
           "priority": "extended",
           "asset": "figures/warehouse-aisle-navigation.svg"
         },
@@ -7796,7 +7796,7 @@
           "id": "seasonal-stock-rotation",
           "title": "Seasonal stock rotation",
           "placement": "Seasonal store merchandising feature",
-          "visual": "A looping rotation arrow sweeps along the front row of a stocked shelf.",
+          "visual": "A stocked shelving rack carries a refresh badge as its stock is rotated.",
           "priority": "extended",
           "asset": "figures/seasonal-stock-rotation.svg"
         },
@@ -13786,7 +13786,7 @@
           "id": "watershed-monitoring",
           "title": "Watershed monitoring",
           "placement": "Environmental analytics feature",
-          "visual": "A raised watershed map shows three tributaries converging beside a staff gauge.",
+          "visual": "A graduated staff gauge stands in calm water, its markings reading the level.",
           "priority": "specialist",
           "asset": "figures/watershed-monitoring.svg"
         },
@@ -13882,7 +13882,7 @@
           "id": "wind-power-site-appraisal",
           "title": "Wind power site appraisal",
           "placement": "Turbine site suitability assessment",
-          "visual": "A wind turbine marker stands inside the outlined suitability zone on a raised terrain map.",
+          "visual": "A wind turbine stands inside a dashed survey boundary on open ground.",
           "priority": "extended",
           "asset": "figures/wind-power-site-appraisal.svg"
         },
@@ -13978,7 +13978,7 @@
           "id": "water-channel-sweep",
           "title": "Water channel sweep",
           "placement": "Drainage works resource",
-          "visual": "A flow arrow sweeps a pair of leaves downstream through an open concrete drainage channel.",
+          "visual": "Water flows along an open concrete channel, carrying two leaves downstream past a flow arrow.",
           "priority": "extended",
           "asset": "figures/water-channel-sweep.svg"
         },

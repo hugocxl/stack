@@ -1,47 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-village-microgrid	extended	Microgrid feature overview	A single local power cable connects a village house, a solar panel, and a wind turbine.
-volunteer-tool-pickup	extended	Community volunteer coordination	A handled tool case projects from the open compartment of a pickup locker.
-water-channel-sweep	extended	Drainage works resource	A flow arrow sweeps a pair of leaves downstream through an open concrete drainage channel.
-water-conservation	extended	Impact feature or utility advice page	A closed faucet holds one droplet beneath its downward spout.
-water-shutoff-instructions	extended	Plumbing emergency guide	A clockwise arrow curls around the handwheel of a flanged water shutoff valve.
-watershed-monitoring	specialist	Environmental analytics feature	A raised watershed map shows three tributaries converging beside a staff gauge.
-wind-power-site-appraisal	extended	Turbine site suitability assessment	A wind turbine marker stands inside the outlined suitability zone on a raised terrain map.
-abandoned-cart	extended	Recovery reminder or merchant dashboard	A shopping cart still holds two products, and a clock badge shows it has been left waiting.
-carton-size-selection	extended	Packing workstation size decision	The jaws of a large caliper touch the opposite ends of an open carton.
-cold-chain-shipping	extended	Perishable goods delivery feature	A thermometer is mounted on the front wall of an insulated shipping cooler.
-cross-dock-transfer	extended	Distribution cross-dock explainer	A short roller conveyor bridges the open beds of two freight trucks at deck height.
-customer-delivery-proof	extended	Delivery proof detail page	A checked photo print shows a delivered parcel on a doorstep.
-damaged-delivery	extended	Customer service claim flow	A taped shipping carton has a buckled corner with a short jagged tear.
-discount-code	extended	Promo entry on checkout	A merchandise tag bears a large percent sign above a short barcode.
-distribution-bin-assignment	extended	Inventory slot assignment	An open-front stock bin sits inside the outlined slot of a four-bay rack.
-dock-loading-order	extended	Shipping dock schedule	A directional arrow runs from a raised loading dock into the level bed of a freight truck.
-gift-note-insertion	extended	Gift checkout note editor	A small handwritten card peeks out from beneath the front flap of an open ribboned gift carton.
-label-alignment	extended	Shipping label print setup	A shipping label sits squarely inside four printed corner guides on a taped carton.
-long-item-storage	extended	Warehousing capability page	A cantilever rack supports long pipes that extend beyond both sets of arms.
-low-stock	extended	Limited inventory product banner	One parcel remains among the empty bays of a stock shelf.
-merchant-stock-take	extended	Inventory count overview	A stock-count clipboard shows three product rows with tally marks and a separate total line.
-multi-carrier-drop-off	extended	Merchant handoff options	A shared parcel drop box has one wide intake slot and a strip of three carrier emblems.
-order-customization	extended	Product personalization checkout step	A pencil touches the personalization field under a T-shirt thumbnail on a standing product order card.
-packing-line-throughput	extended	Pack station operations dashboard	A taped carton rides a short roller conveyor with a speed gauge built into its side housing.
-packing-material-selection	extended	Merchant packaging materials guide	A sheet of bubble wrap curves up inside an open shipping carton.
-pallet-staging	extended	Dispatch staging bay overview	A loaded shipping pallet sits squarely within four painted floor bay corners.
-parcel-surcharge-comparison	extended	Oversize shipping calculator	A standing parcel rate card compares a standard box with one coin and an oversized box with three coins.
-product-variants	extended	Storefront configurator	Three matching pairs of headphones have smooth, ribbed and perforated earcups.
-receiving-inspection	extended	Warehouse receiving checklist	A handheld magnifier frames the torn corner of a shipping carton.
-refrigerated-parcel-packaging	extended	Packing chilled items instructions	A flat ice pack with a snowflake rests inside the fitted foam liner of an open shipping carton.
-repacking-fragile-return	extended	Returns packaging guide	An open shipping carton holds a stemmed glass upright in a fitted packing insert.
-restock-shelf-map	extended	Store replenishment locator	A location pin identifies the empty bay of a stock shelf.
-reusable-shipper-deposit	extended	Reusable packaging deposit prompt	A lidded returnable shipping tote carries a deposit tag marked with stacked coins.
-reverse-logistics-intake	extended	Return warehouse intake	A hooked return arrow turns down into the open mouth of a shipping carton.
-seasonal-stock-rotation	extended	Seasonal store merchandising feature	A looping rotation arrow sweeps along the front row of a stocked shelf.
-serial-tracked-returns	extended	Returns inspection workflow	A curved return arrow hooks around the prominent serial barcode label on a returns carton.
-shipment-paperwork-pouch	extended	Cross-border documentation help	A clear adhesive document pouch holds a folded shipping form against the face of a carton.
-staggered-item-dispatch	extended	Split-order dispatch history	Two matching parcels connect to separate marks on a shipment timeline.
-tabletop-packing-station	extended	Warehouse workstation design	A tape dispenser feeds a strip across the seam of a carton resting on a workbench.
-warehouse-aisle-navigation	extended	Picking aisle directions	A bold route arrow turns into the aisle between two rows of warehouse shelving.
-warehouse-picking	specialist	Fulfillment SaaS product	A raised forklift lifts a taped carton clear of the upper shelf of a stock rack.
-file-deletion-scheduled	extended	Undoable scheduled removal notice	A file protrudes from a tapered wastebasket with a clock badge on its rim.
 file-renamed	extended	Existing file gained a new label	A folded-corner file shows a boxed filename selection with a tall editing caret.
 file-restored	extended	Recoverable file successfully restored	A curved return arrow wraps around the lower right corner of a restored document.
 import-partially-completed	extended	Some rows imported, others pending	Two sheets occupy one side of an import tray with an exclamation triangle on its open corner.

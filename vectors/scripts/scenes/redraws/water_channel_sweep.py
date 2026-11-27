@@ -1,20 +1,19 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._kit import arrow
+from math import sin
 
-DESCRIPTION = "A flow arrow sweeps a pair of leaves downstream through an open concrete drainage channel."
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import plane, plate
+
+DESCRIPTION = "Water flows along an open concrete channel, carrying two leaves downstream past a flow arrow."
 
 
 def draw(s):
-    s.box(-48, -24, 0, 96, 51, 5, 1.5)
-    s.box(-48, -24, 5, 96, 7, 23, 1)
-    s.face([(48, -17, 28), (48, -17, 5), (48, -7, 5)], EDGE)
-    s.face([(-48, -17, 28), (48, -17, 28), (48, -7, 5), (-48, -7, 5)], EDGE)
-    s.box(-48, 18, 4.9, 96, 8, 6, 1)
-    for x in (-29, -7, 23):
-        s.line([(x, -17, 24), (x + 4, -7.5, 6)], DETAIL)
-    for x, y in ((-28, 2), (4, -1)):
-        s.face([(x - 5, y + 2, 6), (x - 2, y - 2, 7), (x + 6, y - 3, 6),
-                (x + 2, y + 2, 6)], EDGE)
-        s.line([(x - 5, y + 2, 6), (x + 2, y - 1, 6.5)], DETAIL)
-    s.line([(-43, 6, 5), (-35, 5, 5), (-29, 6, 5)], DETAIL)
-    arrow(s, [(-17, 12, 5), (0, 10, 5), (18, 7, 5), (36, 6, 5)], BOLD, head=10)
+    L = 130
+    profile = [(0, 0), (40, 0), (40, 18), (32, 18), (30, 6), (10, 6), (8, 18), (0, 18)]
+    end = plane((-L/2, 20, 0), (0, -1, 0), (0, 0, 1))
+    plate(s, end, profile, L, (1, 0, 0))
+    for y in (2, 9, 16):
+        s.line([(-L/2 + 6 + t, y - 20 + 20, 12 + .8*sin(t/6)) for t in range(0, L - 10, 3)], DETAIL)
+    for x, y in ((-20, 4), (24, 12)):
+        s.face([(x - 5, y, 12.5), (x, y - 3, 12.5), (x + 6, y, 12.5), (x, y + 3, 12.5)], EDGE)
+    s.line([(40, 10, 13), (56, 10, 13)], EDGE)
+    s.line([(51, 6, 13), (56, 10, 13), (51, 14, 13)], EDGE)

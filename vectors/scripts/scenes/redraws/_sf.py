@@ -305,3 +305,80 @@ def bolt(s, at, size, ink=None):
     from geometry import BOLD
     pts = [(.15, 1), (-.5, -.08), (-.02, -.08), (-.15, -1), (.5, .12), (.02, .12), (.15, 1)]
     s.line([at(u*size, v*size) for u, v in pts], ink or BOLD)
+
+
+def carton(s, x=0, y=0, z=0, w=60, d=44, h=40, tape=True):
+    """A closed shipping carton with a centre tape strip; returns its front (+y) face."""
+    s.box(x, y, z, w, d, h, 1.5)
+    if tape:
+        for k in (-4, 4):
+            s.line([(x + w/2 + k, y, z + h), (x + w/2 + k, y + d, z + h), (x + w/2 + k, y + d, z + h - 10)], DETAIL)
+    return left_face(x, y + d, z)
+
+
+def open_carton(s, x=0, y=0, z=0, w=64, d=46, h=36, flap=.55):
+    """An open carton: back walls, contents slot, then front walls and four splayed flaps.
+
+    Returns a callback to draw the front; call it after drawing the contents."""
+    s.face([(x, y, z), (x + w, y, z), (x + w, y, z + h), (x, y, z + h)], EDGE)
+    s.face([(x, y, z), (x, y + d, z), (x, y + d, z + h), (x, y, z + h)], EDGE)
+    s.face([(x, y, z + h), (x + w, y, z + h), (x + w, y - d*flap*.7, z + h + d*flap*.7), (x, y - d*flap*.7, z + h + d*flap*.7)], EDGE)
+    s.face([(x, y, z + h), (x, y + d, z + h), (x - w*flap*.5, y + d, z + h + w*flap*.4), (x - w*flap*.5, y, z + h + w*flap*.4)], EDGE)
+
+    def front():
+        s.face([(x + w, y, z), (x + w, y + d, z), (x + w, y + d, z + h), (x + w, y, z + h)], EDGE)
+        s.face([(x, y + d, z), (x + w, y + d, z), (x + w, y + d, z + h), (x, y + d, z + h)], EDGE)
+        s.face([(x + w, y, z + h), (x + w, y + d, z + h), (x + w + w*flap*.5, y + d, z + h - w*flap*.25), (x + w + w*flap*.5, y, z + h - w*flap*.25)], EDGE)
+        s.face([(x, y + d, z + h), (x + w, y + d, z + h), (x + w, y + d + d*flap*.6, z + h - d*flap*.3), (x, y + d + d*flap*.6, z + h - d*flap*.3)], EDGE)
+    return front
+
+
+def shirt(s, x=0, y=0, z=0, size=1.0):
+    """A T-shirt standing like a flat garment on display; returns its face mapping."""
+    k = size
+    outline = [(14, 0), (46, 0), (46, 44), (56, 38), (62, 50), (46, 62), (38, 62), (35, 58), (25, 58), (22, 62),
+               (14, 62), (-2, 50), (4, 38), (14, 44)]
+    face = left_face(x, y, z)
+    at = lambda u, v: face(u*k, v*k)
+    plate(s, at, outline, 3, (0, -1, 0))
+    s.line([at(u, v) for u, v in smooth([(25, 58), (30, 54), (35, 58)], 4)], DETAIL)
+    return at
+
+
+def cart(s, x=0, y=0, z=0):
+    """A shopping cart: open tapered basket, push handle, chassis and four wheels."""
+    corners = [(x + 6, y + 8), (x + 56, y + 8), (x + 56, y + 34), (x + 6, y + 34)]
+    for cx, cy in corners:
+        s.disk(cx, cy, z, 4.5, 4.5, 3)
+    s.tube([(cx, cy, z + 7) for cx, cy in corners + corners[:1]], 1.3, EDGE)
+    for cx, cy in corners:
+        s.tube([(cx, cy, z + 3), (cx, cy, z + 24)], 1.3, EDGE)
+    top = [(x - 4, y), (x + 66, y), (x + 66, y + 42), (x - 4, y + 42)]
+    foot = [(x + 4, y + 6), (x + 58, y + 6), (x + 58, y + 36), (x + 4, y + 36)]
+    Z0, Z1 = z + 24, z + 54
+    P = lambda a, b, h: (a, b, h)
+    s.face([P(*top[0], Z1), P(*top[1], Z1), P(*foot[1], Z0), P(*foot[0], Z0)], EDGE)
+    s.face([P(*top[0], Z1), P(*top[3], Z1), P(*foot[3], Z0), P(*foot[0], Z0)], EDGE)
+
+    def front():
+        s.face([P(*top[1], Z1), P(*top[2], Z1), P(*foot[2], Z0), P(*foot[1], Z0)], EDGE)
+        s.face([P(*top[3], Z1), P(*top[2], Z1), P(*foot[2], Z0), P(*foot[3], Z0)], EDGE)
+        for t in (.33, .66):
+            a = [top[3][0] + (top[2][0] - top[3][0])*t, top[3][1]]
+            b = [foot[3][0] + (foot[2][0] - foot[3][0])*t, foot[3][1]]
+            s.line([P(*a, Z1), P(*b, Z0)], DETAIL)
+        s.line([P(top[3][0] + 2, top[3][1], Z1 - 12), P(top[2][0] - 2, top[2][1], Z1 - 12)], DETAIL)
+        s.tube([(x - 4, y, Z1), (x - 14, y, Z1 + 8), (x - 14, y + 42, Z1 + 8), (x - 4, y + 42, Z1)], 1.6, EDGE)
+    return front
+
+
+def turbine(s, x=0, y=0, z=0, h=90, blade=34):
+    """A wind turbine: tapered tower, nacelle and three blades facing the viewer."""
+    s.tube([(x, y, z), (x, y, z + h)], 2.4, EDGE)
+    s.box(x - 5, y - 9, z + h - 4, 10, 14, 8, 3)
+    hub = screen(x, y + 6, z + h)
+    for a in (90, 210, 330):
+        c, q = cos(radians(a)), sin(radians(a))
+        blade_pts = [(c*3 - q*2.2, q*3 + c*2.2), (c*blade*.35 - q*4, q*blade*.35 + c*4), (c*blade, q*blade), (c*3 + q*2.2, q*3 - c*2.2)]
+        s.face([hub(u, v) for u, v in smooth(blade_pts, 3, closed=True)], EDGE)
+    s.face([hub(u, v) for u, v in oval(0, 0, 4, 4, count=20)[:-1]], EDGE)

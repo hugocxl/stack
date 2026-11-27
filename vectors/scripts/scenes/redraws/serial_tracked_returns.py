@@ -1,12 +1,13 @@
-from geometry import BOLD, oval
-from scenes.redraws._kit import arrow
-from scenes.redraws._w1 import barcode, software_package
+from geometry import EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import carton
 
-DESCRIPTION = "A curved return arrow hooks around the prominent serial barcode label on a returns carton."
+DESCRIPTION = "A carton with a barcode label on its side carries a return badge."
 
 
 def draw(s):
-    software_package(s, 0, 0, 0, 1.26, show_code=False)
-    barcode(s, -25, 26.46, 9, 39, 22)
-    path = [(x, -1, z) for x, z in oval(48, 29, 18, 20, -106, 131, count=36)]
-    arrow(s, path, BOLD, head=9)
+    front = carton(s, -30, -22, 0, 60, 44, 40)
+    s.line([front(10, 8), front(34, 8), front(34, 24), front(10, 24), front(10, 8)], EDGE)
+    for i, u in enumerate(range(13, 32, 2)):
+        s.line([front(u, 11), front(u, 21 if i % 3 else 22)], EDGE)
+    badge(s, "back", 30, 22, 30, 12)
