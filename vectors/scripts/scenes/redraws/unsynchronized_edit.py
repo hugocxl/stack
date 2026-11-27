@@ -9,4 +9,4 @@ def draw(s):
     page = edited_document(s)
     center = page.point(66, 58)
     badge(s, "refresh", *center, 14)
-    strike(s, center, 12, clearance=1)
+    strike(s, center, 12)

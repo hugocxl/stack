@@ -7,7 +7,7 @@ from math import cos, radians, sin
 
 from shapely.geometry import MultiPoint
 
-from geometry import BOLD, DETAIL, EDGE, project
+from geometry import BOLD, DETAIL, EDGE, knockout_layer, project
 
 GLYPHS = ("check", "x", "plus", "minus", "clock", "exclaim", "arrow", "back", "down", "up", "slash", "pause", "dot",
           "bolt", "refresh", "lock", "unlock", "heart", "star", "play", "moon", "wifi")
@@ -21,6 +21,7 @@ def coin(s, x, y, z, r, depth=2.4, ink=EDGE):
     """An upright disc in the x-z plane. Returns the y of its visible face."""
     back, front = _ring(x, y - depth, z, r), _ring(x, y, z, r)
     hull = MultiPoint([project(p) for p in back + front]).convex_hull
+    s.layers.append(knockout_layer(hull))
     s.layers.append((hull.boundary, hull, ink))
     s.line(front + front[:1], ink)
     return y
@@ -83,22 +84,42 @@ def badge(s, kind, x, y, z, r=12):
     rim = [_screen(x, y, z, u, v, back=r*.14) for u, v in ring]
     face = [_screen(x, y, z, u, v) for u, v in ring]
     hull = MultiPoint([project(p) for p in rim + face]).convex_hull
+    s.layers.append(knockout_layer(hull))
     s.layers.append((hull.boundary, hull, EDGE))
     s.line(face + face[:1], EDGE)
     for stroke in _strokes(kind, r*.62):
         s.line([_screen(x, y, z, u, v, back=-.01) for u, v in stroke], BOLD)
 
 
+def _soft_triangle(x, y, z, size, r):
+    """Upright triangle with rounded corners, as in SF's exclamationmark.triangle."""
+    h = size*.87
+    corners = [(x - size/2, z), (x + size/2, z), (x, z + h)]
+    points = []
+    for i, (cu, cv) in enumerate(corners):
+        (pu, pv), (nu, nv) = corners[i-1], corners[(i+1) % 3]
+        a = ((pu-cu), (pv-cv)); b = ((nu-cu), (nv-cv))
+        la, lb = (a[0]**2 + a[1]**2)**.5, (b[0]**2 + b[1]**2)**.5
+        a, b = (a[0]/la, a[1]/la), (b[0]/lb, b[1]/lb)
+        start, end = (cu + a[0]*r, cv + a[1]*r), (cu + b[0]*r, cv + b[1]*r)
+        for k in range(9):
+            t = k/8
+            points.append(((1-t)**2*start[0] + 2*(1-t)*t*cu + t**2*end[0],
+                           (1-t)**2*start[1] + 2*(1-t)*t*cv + t**2*end[1]))
+    return [(u, y, v) for u, v in points]
+
+
 def warning(s, x, y, z, size=26):
     """Upright warning triangle with an exclamation mark, facing the viewer's lower left."""
     h = size*.87
-    tri = [(x - size/2, y, z), (x + size/2, y, z), (x, y, z + h)]
+    tri = _soft_triangle(x, y, z, size, size*.16)
     back = [(a, b - 2.4, c) for a, b, c in tri]
     hull = MultiPoint([project(p) for p in back + tri]).convex_hull
+    s.layers.append(knockout_layer(hull))
     s.layers.append((hull.boundary, hull, EDGE))
     s.line(tri + tri[:1], EDGE)
-    s.line([(x, y + .01, z + h*.72), (x, y + .01, z + h*.36)], BOLD)
-    s.line([(x, y + .01, z + h*.2), (x, y + .01, z + h*.16)], BOLD)
+    s.line([(x, y + .01, z + h*.66), (x, y + .01, z + h*.4)], BOLD)
+    s.line([(x, y + .01, z + h*.2), (x, y + .01, z + h*.19)], BOLD)
 
 
 def arrow(s, points, ink=EDGE, head=5):
@@ -109,9 +130,11 @@ def arrow(s, points, ink=EDGE, head=5):
     ux, uy, uz = (bx-ax)/length, (by-ay)/length, (bz-az)/length
     # Perpendicular within the ground plane unless the segment is vertical.
     px, py, pz = (-uy, ux, 0) if abs(uz) < .9 else (1, 0, 0)
-    s.line([(bx - head*ux + head*.6*px, by - head*uy + head*.6*py, bz - head*uz + head*.6*pz),
+    # SF arrows end in a right-angled chevron: each leg leaves the tip at 45 degrees.
+    leg = head*.8
+    s.line([(bx - leg*ux + leg*px, by - leg*uy + leg*py, bz - leg*uz + leg*pz),
             (bx, by, bz),
-            (bx - head*ux - head*.6*px, by - head*uy - head*.6*py, bz - head*uz - head*.6*pz)], ink)
+            (bx - leg*ux - leg*px, by - leg*uy - leg*py, bz - leg*uz - leg*pz)], ink)
 
 
 __all__ = ["BOLD", "DETAIL", "EDGE", "GLYPHS", "arrow", "badge", "coin", "glyph", "warning"]

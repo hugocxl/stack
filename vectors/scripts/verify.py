@@ -9,7 +9,7 @@ from xml.etree import ElementTree as XML
 
 SVG = "{http://www.w3.org/2000/svg}"
 PAIR = re.compile(r"(-?\d+\.\d{2}),(-?\d+\.\d{2})")
-OPACITIES = {".34", ".43", ".76", "1"}
+OPACITIES = {".32", ".55", ".9", "1"}
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -41,6 +41,7 @@ def inspect(file):
         "viewBox", "role", "color", "fill", "stroke", "stroke-width", "stroke-linecap", "stroke-linejoin"
     }, "unexpected SVG attribute"
     assert root.get("stroke") == "currentColor", "outline color must be configurable"
+    assert root.get("stroke-width") == "3.6", "every figure carries the collection's single stroke weight"
     title, description, *paths = root
     assert title.tag == SVG+"title" and title.text, "title missing"
     assert description.tag == SVG+"desc" and description.text, "description missing"
@@ -49,9 +50,8 @@ def inspect(file):
     strokes = []
     for path in paths:
         assert path.tag == SVG+"path" and not list(path), "unexpected SVG element"
-        assert set(path.attrib) == {"vector-effect", "stroke-opacity", "d"}, "unexpected path attribute"
+        assert set(path.attrib) == {"stroke-opacity", "d"}, "unexpected path attribute"
         assert path.get("stroke-opacity") in OPACITIES, "invalid ink layer"
-        assert path.get("vector-effect") == "non-scaling-stroke", "invalid stroke scaling"
         commands = path.attrib["d"].split("M")
         assert not commands[0] and len(commands)>1, "missing move-to"
         for command in commands[1:]:

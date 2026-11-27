@@ -24,7 +24,8 @@ test('every vector renders with its geometry, opacities, title and description',
     for (const match of source.matchAll(/(?:viewBox|d|stroke-opacity)="[^"]*"/g)) {
       assert.ok(rendered.includes(match[0]), `${file}: ${match[0].slice(0, 40)}`);
     }
-    assert.ok(rendered.includes('vector-effect="non-scaling-stroke"'), file);
+    assert.ok(!rendered.includes('vector-effect'), `${file}: strokes scale with the artwork`);
+    assert.ok(rendered.includes('stroke-width="3.6"'), file);
   }
 });
 

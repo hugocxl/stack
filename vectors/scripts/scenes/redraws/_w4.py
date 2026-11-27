@@ -3,7 +3,7 @@ from math import cos, radians, sin
 from shapely.geometry import LineString, MultiPoint, Polygon
 from shapely.ops import unary_union
 
-from geometry import BOLD, DETAIL, EDGE, oval, project, rounded, segments
+from geometry import BOLD, DETAIL, EDGE, interlace, oval, project, rounded, segments
 from scenes.redraws._kit import _strokes, arrow
 from scenes.redraws._w2 import face_magnifier, funnel as nav_funnel
 
@@ -788,9 +788,7 @@ def link_emblem(face, u, v, size):
     # The two loops pass over and under each other on opposite sides.
     halves = [Polygon(projected([(-2, 0), (2, 0), (2, y), (-2, y)]))
               for y in (-1, 1)]
-    strokes = [link.boundary.difference(other.intersection(half).buffer(.13))
-               for link, other, half in zip(links, reversed(links), halves)]
-    face.scene.layers.append((unary_union(strokes), unary_union(links), EDGE))
+    interlace(face.scene, links, [other.intersection(half) for other, half in zip(reversed(links), halves)])
 
 
 def folder_emblem(face, u, v, width, height, *, solid=False):

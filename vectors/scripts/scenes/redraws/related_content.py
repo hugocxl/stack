@@ -3,7 +3,7 @@ from math import cos, radians, sin
 from shapely.geometry import Polygon
 from shapely.ops import unary_union
 
-from geometry import BOLD, EDGE, project, rounded
+from geometry import BOLD, EDGE, interlace, project, rounded
 from scenes.redraws._w4 import Surface, front_surface, landscape
 
 DESCRIPTION = "Two staggered article cards are joined at their right edge by a pair of interlocked chain links."
@@ -34,8 +34,4 @@ def draw(s):
         Polygon(projected([(-40, 0), (40, 0), (40, v), (-40, v)]))
         for v in (-12, 12)
     ]
-    strokes = [
-        link.boundary.difference(other.intersection(half).buffer(.15))
-        for link, other, half in zip(links, reversed(links), half_planes)
-    ]
-    s.layers.append((unary_union(strokes), unary_union(links), BOLD))
+    interlace(s, links, [other.intersection(half) for other, half in zip(reversed(links), half_planes)], BOLD)

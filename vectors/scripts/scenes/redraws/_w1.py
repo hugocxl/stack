@@ -1,10 +1,10 @@
 from math import cos, radians, sin
 
 from shapely.affinity import rotate, translate
-from shapely.geometry import LineString, Point
+from shapely.geometry import LineString, Point, Polygon
 from shapely.ops import transform, unary_union
 
-from geometry import BOLD, DETAIL, EDGE, oval, project, rounded
+from geometry import BOLD, DETAIL, EDGE, interlace, knockout_layer, oval, project, rounded
 from scenes.new_states import invite_sent
 from scenes.redraws._kit import arrow, glyph
 from scenes.site_objects import phone
@@ -598,8 +598,8 @@ def intake_arrow(s, points, head, *, branch=()):
     if branch:
         s.line(branch, BOLD)
     arrow(s, points, BOLD, head=head)
-    clearance = unary_union([path.buffer(1.7) for path, _, _ in s.layers[first:]])
-    s.layers.insert(first, (LineString(), clearance, BOLD))
+    clearance = unary_union([path.buffer(.01) for path, _, _ in s.layers[first:]])
+    s.layers.insert(first, knockout_layer(clearance))
 
 
 def tree_crown(s, x, y, z, size, *, outline=False):
@@ -808,20 +808,18 @@ def chain_links(s, x=0, y=0, z=35, scale=1):
 
     left, left_gap = link(-15, -9)
     right, right_gap = link(15, 9)
-    s.face(vertices(left), EDGE, openings=[vertices(left_gap)])
-    s.face(vertices(right), EDGE, openings=[vertices(right_gap)])
-    # Move the lower crossing of the left link in front of the right one.
-    crossing = Point(4, -8).buffer(7)
-    left_band = left.difference(left_gap)
-    mask = left_band.intersection(crossing)
-    visible_edge = left_band.boundary.intersection(crossing)
 
+    def band(outer, inner):
+        return Polygon([project(p) for p in vertices(outer)], [[project(p) for p in vertices(inner)]])
+
+    left_band, right_band = band(left, left_gap), band(right, right_gap)
+    # The lower crossing of the left link passes in front of the right one; the upper
+    # crossing passes behind it, so the links alternate as in SF's link symbol.
     center_x, center_y = project((x, y, z))
-
-    def projected(shape):
-        return transform(lambda u, v: (center_x + u * scale, center_y - v * scale), shape)
-
-    s.layers.append((projected(visible_edge), projected(mask), EDGE))
+    crossing = Point(center_x + 4*scale, center_y + 8*scale).buffer(7*scale)
+    front_of_right = left_band.intersection(crossing)
+    front_of_left = right_band.intersection(left_band).difference(crossing)
+    interlace(s, [left_band, right_band], [front_of_left, front_of_right])
 
 
 def standing_folder(s, *, documents=False):
@@ -933,7 +931,7 @@ def session_door(s, *, entering):
     direction = [near, far] if entering else [far, near]
     # Separate the foreground path from the jamb where their projections cross.
     path = LineString([project(point) for point in direction])
-    s.layers.append((LineString(), path.buffer(1.45), BOLD))
+    s.layers.append(knockout_layer(path.buffer(.01)))
     arrow(s, direction, BOLD, head=12)
 
 

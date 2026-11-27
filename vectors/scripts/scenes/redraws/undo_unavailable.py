@@ -1,6 +1,6 @@
 from shapely.geometry import LineString
 
-from geometry import BOLD, EDGE, project
+from geometry import BOLD, EDGE, knockout_layer, project
 from scenes.redraws._kit import _screen, _strokes, arrow, badge
 from scenes.redraws._w3 import flat, keycap
 from scenes.redraws.upload_in_progress import curve
@@ -8,12 +8,11 @@ from scenes.redraws.upload_in_progress import curve
 DESCRIPTION = "A tapered keyboard keycap with a curved undo arrow carries a slash badge on its upper-right edge."
 
 
-def strike(s, center, radius, clearance=1.8):
+def strike(s, center, radius):
     """Interrupt lines underneath the shared slash so the mark reads cleanly."""
     for stroke in _strokes("slash", radius):
         path = [_screen(*center, u, v) for u, v in stroke]
-        mask = LineString([project(point) for point in path]).buffer(clearance)
-        s.layers.append((LineString(), mask, EDGE))
+        s.layers.append(knockout_layer(LineString([project(point) for point in path]).buffer(.01)))
         s.line(path, BOLD)
 
 

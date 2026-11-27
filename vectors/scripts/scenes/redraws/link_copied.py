@@ -1,8 +1,7 @@
 from shapely.affinity import rotate, translate
 from shapely.geometry import LineString, box
-from shapely.ops import unary_union
 
-from geometry import EDGE
+from geometry import interlace
 from scenes.redraws._kit import badge
 
 DESCRIPTION = "Two interlocking chain links carry a check badge at the end of the chain."
@@ -19,9 +18,5 @@ def draw(s):
     right = chain_link((18, -12), -34)
     # Alternate the overlap so each link passes both in front of and behind the other.
     upper = box(-70, -65, 70, 0)
-    visible = unary_union([
-        left.boundary.difference(right.intersection(upper).buffer(.17)),
-        right.boundary.difference(left.difference(upper).buffer(.17)),
-    ])
-    s.layers.append((visible, unary_union([left, right]), EDGE))
+    interlace(s, [left, right], [right.intersection(upper), left.difference(upper)])
     badge(s, "check", 29, -22, 21, 10)

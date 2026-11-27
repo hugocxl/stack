@@ -4,6 +4,12 @@
 
 ### Changed
 
+- Redraw the line of all 2,000 vectors as an extension of SF Symbols: one 3.6-unit
+  stroke that scales with the artwork (the SVGs no longer use
+  `vector-effect="non-scaling-stroke"`), three opacity tiers (1 and .9, .55, .32),
+  continuous corners, edges that join their silhouettes, round-capped dashes measured
+  on the canvas, and one stroke of clearance around badges, slashes and interlocking
+  links. The compositions, names and catalog are unchanged.
 - Join the @hugocxl stack: the repository is now
   `hugocxl/vectors` and the website is https://hugocxl.github.io/stack/vectors/.
 - Rebuild the website on the @hugocxl design system, with a home page, a

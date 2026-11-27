@@ -5,7 +5,8 @@ import argparse
 import json
 import re
 
-from geometry import Scene, paths_for
+import geometry
+from geometry import STROKE, Scene, paths_for
 from scenes import commerce, control, data, editorial, infrastructure, new_states, product, workflow
 from expansion import attach_artwork, packs
 from scenes.redraws import REDRAWS
@@ -27,13 +28,29 @@ def slug(title):
     return re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
 
 
+FALLBACKS = []
+
+
 def render_svg(draw, title, description):
-    scene = Scene()
-    draw(scene)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" color="#8792a2" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
+    """Draw with continuous corners. A few scenes splice an outline into a corner arc, so
+    they keep circular corners where the longer squircle reach would cross the splice."""
+    for continuous in (True, False):
+        geometry.CONTINUOUS[0] = continuous
+        try:
+            scene = Scene()
+            draw(scene)
+            paths = paths_for(scene)
+            break
+        except Exception:
+            if not continuous:
+                raise
+            FALLBACKS.append(title)
+        finally:
+            geometry.CONTINUOUS[0] = True
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" color="#8792a2" fill="none" stroke="currentColor" stroke-width="{STROKE}" stroke-linecap="round" stroke-linejoin="round">
   <title>{escape(title)}</title>
   <desc>{escape(description)}</desc>
-{paths_for(scene)}
+{paths}
 </svg>
 '''
 

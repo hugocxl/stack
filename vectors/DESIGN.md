@@ -12,6 +12,30 @@ Every figure earns its place by illustrating a specific moment on a website. A u
 
 Mechanical checks catch stale outputs and broken cross-references. Browser review is required to judge the drawing.
 
+## Line language
+
+The collection draws like an extension of SF Symbols. `scripts/geometry.py` owns every rule, so a scene
+module never sets a weight, a gap or a dash itself.
+
+- **One weight.** Every stroke is 3.6 units on the 480 × 360 canvas and scales with the artwork, as a
+  symbol's stroke does: about 1.2 points at 160 wide, 2.7 at 360. Caps and joins are round.
+- **Hierarchy by opacity, not weight.** Outlines and badge glyphs are primary (1 and .9), interior
+  detail is secondary (.55) and construction guides are tertiary (.32), after SF Symbols'
+  hierarchical rendering.
+- **Continuous corners.** Rounded rectangles use the squircle profile of Apple's icons: a corner
+  eases into its edges over 1.42 radii instead of meeting them at a circular tangent. Corners that
+  meet become a capsule.
+- **Edges that join.** The near top edge of a solid runs into its silhouette, as the edges of SF's
+  `cube` and `shippingbox` do. Hidden lines stop 0.35 units short of the part that hides them, so
+  T-junctions read as joined, not crossed.
+- **Clearance.** A badge, a slash or a link passing in front of another part clears it by about one
+  stroke of air, the knockout of SF's `.badge`, `.slash` and `link` symbols. Use `knockout_layer` for
+  a part in front and `interlace` for rings that pass over and under each other.
+- **Short dashes.** Dashed lines are measured in output units: 1.05 strokes on, a 2.35-stroke period,
+  spread to start and end on a dash, as in `circle.dashed`.
+- **Glyphs.** State glyphs follow SF construction: right-angled arrowheads and a warning triangle with
+  rounded corners.
+
 ## Symbol-level redraw
 
 The library was audited against an SF Symbols bar: at 160 CSS pixels, a viewer who sees only the drawing names its concept. Most figures in the expansion packs paired generic props from a layout recipe and failed. The audit kept 45 figures and redrew the other 1,955, one module each in `scripts/scenes/redraws/`.
