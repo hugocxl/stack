@@ -1500,7 +1500,7 @@
           "id": "sign-out",
           "title": "Sign out",
           "placement": "Session close initiated by an account holder",
-          "visual": "A bold arrow points outward through an open doorway.",
+          "visual": "A bold arrow leaves through an open doorway toward the viewer.",
           "priority": "extended",
           "asset": "figures/sign-out.svg"
         },
@@ -5736,7 +5736,7 @@
           "id": "model-evaluation",
           "title": "Model evaluation",
           "placement": "AI quality or developer dashboard",
-          "visual": "A model score gauge points past its marked pass threshold and carries a check badge beside the score.",
+          "visual": "A semicircular score gauge points past its marked pass threshold, with a check badge.",
           "priority": "extended",
           "asset": "figures/model-evaluation.svg"
         },
@@ -5792,7 +5792,7 @@
           "id": "pattern-synthesis",
           "title": "Pattern synthesis",
           "placement": "Procedural pattern generation",
-          "visual": "Nine interlocking tiles repeat a small square motif across a square sheet.",
+          "visual": "A three-by-three grid of thick tiles repeats the same ringed motif.",
           "priority": "extended",
           "asset": "figures/pattern-synthesis.svg"
         },
@@ -6168,7 +6168,7 @@
           "id": "character-pose-fitting",
           "title": "Character pose fitting",
           "placement": "Illustration rigging view",
-          "visual": "An articulated quadruped armature has exposed pivot joints and one front leg held in a raised pose.",
+          "visual": "A jointed four-legged armature stands with one front leg raised at its pivots.",
           "priority": "extended",
           "asset": "figures/character-pose-fitting.svg"
         },
@@ -6256,7 +6256,7 @@
           "id": "api-response-drafting",
           "title": "API response drafting",
           "placement": "Developer assistant tools",
-          "visual": "A pencil touches the last colon-separated property row on a clipped JSON response draft.",
+          "visual": "A standing response card is printed with curly braces around three key and value rows.",
           "priority": "extended",
           "asset": "figures/api-response-drafting.svg"
         },
@@ -8090,7 +8090,7 @@
           "id": "cost-center-budget",
           "title": "Cost-center budget",
           "placement": "Budget allocation settings",
-          "visual": "An office block shares a base with a recessed coin tray and an allocation gauge.",
+          "visual": "An office tower stands beside a short stack of coins set aside for it.",
           "priority": "extended",
           "asset": "figures/cost-center-budget.svg"
         },
@@ -8274,7 +8274,7 @@
           "id": "interest-rate-lock-expiration",
           "title": "Interest-rate lock expiration",
           "placement": "Lending rate deadline notice",
-          "visual": "A closed padlock has an engraved percent sign and a clock badge on the upper corner of its body.",
+          "visual": "A padlock printed with a percent sign carries a clock badge at its lower right.",
           "priority": "extended",
           "asset": "figures/interest-rate-lock-expiration.svg"
         },
@@ -8290,7 +8290,7 @@
           "id": "emergency-fund",
           "title": "Emergency fund",
           "placement": "Savings feature block",
-          "visual": "A coin-slot piggy bank carries a warning triangle at its flank.",
+          "visual": "A round piggy bank with a coin slot on its back carries a warning triangle.",
           "priority": "extended",
           "asset": "figures/emergency-fund.svg"
         },
@@ -8298,7 +8298,7 @@
           "id": "budget-rollover",
           "title": "Budget rollover",
           "placement": "Month-end budget summary",
-          "visual": "An open budget ledger carries a dollar coin and an arrow from one calendar month to the next.",
+          "visual": "A stack of coins carries an arrow badge as its unspent balance rolls into the next period.",
           "priority": "extended",
           "asset": "figures/budget-rollover.svg"
         },
@@ -8322,7 +8322,7 @@
           "id": "operational-expense-cap",
           "title": "Operational expense cap",
           "placement": "Department spend policy",
-          "visual": "An upright expense gauge shows a dollar mark and a heavy stop above the current spend segments.",
+          "visual": "A stack of coins rises until it meets a heavy cap bar held on two posts.",
           "priority": "extended",
           "asset": "figures/operational-expense-cap.svg"
         },
@@ -8442,7 +8442,7 @@
           "id": "exchange-rate-notification",
           "title": "Exchange rate notification",
           "placement": "Currency alert setting",
-          "visual": "An alert bell has dollar and euro symbols engraved on its flared body.",
+          "visual": "A notification bell carries a currency coin at its lower right, announcing a rate change.",
           "priority": "extended",
           "asset": "figures/exchange-rate-notification.svg"
         },

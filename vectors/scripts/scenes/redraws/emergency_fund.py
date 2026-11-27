@@ -1,42 +1,33 @@
-from math import cos, radians, sin
-
 from shapely.geometry import MultiPoint
+from shapely.ops import unary_union
 
 from geometry import DETAIL, EDGE, oval, project
 from scenes.redraws._kit import warning
+from scenes.redraws._sf import smooth
 
-DESCRIPTION = "A coin-slot piggy bank carries a warning triangle at its flank."
+DESCRIPTION = "A round piggy bank with a coin slot on its back carries a warning triangle."
 
 
 def draw(s):
-    tail = []
-    for angle in range(5, 426, 10):
-        radius = 9.5 - .017 * (angle - 5)
-        a = radians(angle)
-        tail.append((2 + radius * cos(a), 12, 25 + radius * sin(a)))
-    s.tube(tail, 1.05)
-    for x, y in ((15, -11), (41, -11), (15, 11), (42, 11)):
-        s.box(x, y, 0, 10, 9, 13, 2.8)
-
-    sections = ((8, 14, 9), (12, 23, 15), (24, 29, 20), (34, 26, 17),
-                (42, 19, 12), (46, 8, 5), (47, 1, 1))
-    body = MultiPoint([project((x, y, z))
-                       for z, rx, ry in sections
-                       for x, y in oval(29, 0, rx, ry, count=40)]).convex_hull
+    # Legs first, so the body hides where they meet it.
+    for x, y in ((-20, -10), (-20, 12), (20, -10), (20, 12)):
+        s.disk(x, y, 0, 5, 5, 12)
+    # Body: rings across the long (x) axis, radius following an egg profile.
+    profile = smooth([(-36, 2), (-30, 16), (-14, 24), (8, 25), (26, 20), (36, 10), (38, 2)], 5)
+    rings = [[project((x, r*a, 32 + r*.92*b)) for a, b in oval(0, 0, 1, 1, count=48)] for x, r in profile]
+    body = unary_union([MultiPoint(p + q).convex_hull for p, q in zip(rings, rings[1:])])
     s.layers.append((body.boundary, body, EDGE))
-    s.ellipse(27, -1, 46.4, 9, 1.6, EDGE)
-
-    s.face([(40, -10, 38), (37, -10, 47), (37, -10, 52), (40, -10, 54),
-            (46, -10, 48), (51, -10, 42), (50, -10, 37)])
-    s.face([(38, 10, 39), (35, 10, 46), (36, 10, 52), (39, 10, 54),
-            (46, 11, 49), (49, 12, 43), (46, 12, 37)])
-
-    tip = [(65, y, z) for y, z in oval(0, 22, 8.6, 6.8, count=38)]
-    base = [(53, y, z) for y, z in oval(0, 23, 10.5, 8, count=38)]
-    snout = MultiPoint([project(point) for point in tip + base]).convex_hull
-    s.layers.append((snout.boundary, snout, EDGE))
-    s.face(tip)
-    for y in (-3.4, 3.4):
-        s.line([(65.1, y, 20.5), (65.1, y, 23.8)], DETAIL)
-    s.line([(51, y, z) for y, z in oval(13, 31, 1.55, 1.55, count=16)], EDGE)
-    warning(s, 28, 24, 29, 21)
+    # Snout: a short cylinder facing +x with two nostrils.
+    snout = [(40, a, 30 + b) for a, b in oval(0, 0, 8, 7, count=36)]
+    back = [(34, a, 30 + b) for a, b in oval(0, 0, 8, 7, count=36)]
+    hull = MultiPoint([project(p) for p in snout + back]).convex_hull
+    s.layers.append((hull.boundary, hull, EDGE))
+    s.line(snout, EDGE)
+    for y in (-3, 3):
+        s.line([(40.1, y + a*.0, 30 + b) for a, b in oval(0, 0, 1.4, 1.8, count=12)][:1] +
+               [(40.1, y + a, 30 + b) for a, b in oval(0, 0, 1.4, 1.8, count=12)], DETAIL)
+    for y in (-12, 10):
+        s.face([(18, y - 6, 50), (18, y + 6, 50), (22, y, 60)], EDGE)
+    s.line([(-8, -1, 57.5), (10, -1, 57.5)], EDGE)
+    s.line([(-8, 1, 57.5), (10, 1, 57.5)], EDGE)
+    warning(s, -6, 28, 22, 26)

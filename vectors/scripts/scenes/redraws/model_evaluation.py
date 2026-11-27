@@ -1,25 +1,23 @@
 from math import cos, radians, sin
 
-from geometry import DETAIL, EDGE, oval
-from scenes.redraws._kit import badge
-from scenes.redraws._w2 import chart_line, model_layers, upright_face
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import BACK, arc, plate, screen
 
-DESCRIPTION = "A model score gauge points past its marked pass threshold and carries a check badge beside the score."
+DESCRIPTION = "A semicircular score gauge points past its marked pass threshold, with a check badge."
 
 
 def draw(s):
-    def p(x, z):
-        return .79*x, -.21*x, z
-
-    base = [(0, 0), (105, 0), (105, 21)]
-    base += oval(52.5, 21, 52.5, 51, start=0, end=180, count=50)[1:]
-    upright_face(s, p, base, 15)
-    chart_line(s, p, oval(52.5, 23, 39, 37, start=12, end=170), EDGE)
-    chart_line(s, p, oval(52.5, 23, 32, 30, start=12, end=65), EDGE)
-    for degrees in (35, 65, 95, 125, 155):
-        angle = radians(degrees)
-        tick = [(52.5 + r*cos(angle), 23 + r*sin(angle)) for r in (42, 49)]
-        chart_line(s, p, tick, EDGE if degrees == 65 else DETAIL)
-    chart_line(s, p, [(52.5, 23), (80, 45)], EDGE)
-    model_layers(s, p, 52.5, 7, 2)
-    badge(s, "check", *p(105, 37), 14)
+    at = screen()
+    R = 52
+    plate(s, at, arc(0, 0, R, 0, 180, 48) + [(-R, -6), (R, -6)], 8, BACK)
+    s.line([at(u, v) for u, v in arc(0, 0, R - 9, 8, 172, 40)], DETAIL)
+    for a in range(10, 171, 20):
+        r0, r1 = R - 9, R - 15
+        s.line([at(r0*cos(radians(a)), r0*sin(radians(a))), at(r1*cos(radians(a)), r1*sin(radians(a)))], DETAIL)
+    t = 60
+    s.line([at((R - 4)*cos(radians(t)), (R - 4)*sin(radians(t))), at((R - 22)*cos(radians(t)), (R - 22)*sin(radians(t)))], EDGE)
+    n = 38
+    s.line([at(0, 0), at(36*cos(radians(n)), 36*sin(radians(n)))], BOLD)
+    s.line([at(4*cos(radians(a)), 4*sin(radians(a))) for a in range(0, 361, 20)], BOLD)
+    badge(s, "check", *_screen(0, 0, 0, 52, 2), 13)

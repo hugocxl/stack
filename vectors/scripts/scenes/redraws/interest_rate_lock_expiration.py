@@ -1,14 +1,13 @@
-from geometry import BOLD
+from geometry import BOLD, oval
 from scenes.redraws._kit import badge
-from scenes.redraws._w5 import lens_outline, printed_stroke, trust_padlock
+from scenes.redraws._sf import padlock
 
-DESCRIPTION = "A closed padlock has an engraved percent sign and a clock badge on the upper corner of its body."
+DESCRIPTION = "A padlock printed with a percent sign carries a clock badge at its lower right."
 
 
 def draw(s):
-    trust_padlock(s, keyway=False)
-    face = lambda x, z: (x, 23, z)
-    for x, z in ((17, 18), (29, 9)):
-        lens_outline(s, face, x, z, 2.9, BOLD)
-    printed_stroke(s, face, [(18, 7), (28, 21)], BOLD)
-    badge(s, "clock", 48, 21, 26, 10.5)
+    body = padlock(s, -30, 0, 0, w=60, h=48, depth=16, keyhole=False)
+    s.line([body(22, 14), body(38, 34)], BOLD)
+    for u, v in ((22, 30), (38, 18)):
+        s.line([body(u + a, v + b) for a, b in oval(0, 0, 3.6, 3.6, count=24)], BOLD)
+    badge(s, "clock", 30, 0, 4, 14)

@@ -1,41 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-set-working-timezone	extended	Pick a timezone for scheduled activity	A desktop globe has a clock badge over one side of its latitude and longitude grid.
-sign-out	extended	Session close initiated by an account holder	A bold arrow points outward through an open doorway.
-skip-optional-setup	extended	Move past a voluntary configuration	A curved forward arrow bypasses the dashed middle row of a standing checklist.
-try-with-sample-data	extended	Demo workspace selector	A populated data table stands behind a small flask of sample liquid.
-agent-execution-trace	extended	Activity and transparency view	A magnifier singles out one step in a vertical execution trace.
-api-response-drafting	extended	Developer assistant tools	A pencil touches the last colon-separated property row on a clipped JSON response draft.
-character-pose-fitting	extended	Illustration rigging view	An articulated quadruped armature has exposed pivot joints and one front leg held in a raised pose.
-cross-document-synthesis	extended	Knowledge assistant feature	Two offset source pages sit behind a summary sheet whose two streams of text converge into one.
-dialogue-noise-profile	extended	Audio cleaning tool	A magnifier isolates the low rumble between two taller bursts of speech on a waveform.
-document-extraction	extended	PDF workflow feature	An arrow carries one selected region out of a folded document as a clipped excerpt.
-evidence-gap	extended	Research answer review	An evidence clipboard has two completed rows and a dashed outline where an attachment belongs.
-filler-word-detection	extended	Interview editor review	A magnifier picks out a short isolated token in a transcript beneath a speech waveform.
-image-upscaling	extended	Creative image tools	A diagonal expansion arrow extends outward from the upper-right corner of a landscape print.
-inline-continuation	extended	Editor assistance feature	A folded writing page shows a dark cursor followed by dashed ghost text beneath a four-point sparkle.
-line-cleanup	extended	Illustration editor	An eraser touches the end of a smooth inked leaf contour on a bound sketchbook page.
-model-evaluation	extended	AI quality or developer dashboard	A model score gauge points past its marked pass threshold and carries a check badge beside the score.
-object-replacement	extended	Photo editor remove and replace mode	An arrow points from a faint round tree silhouette to an outlined pine inside the same photograph.
-pattern-synthesis	extended	Procedural pattern generation	Nine interlocking tiles repeat a small square motif across a square sheet.
-perspective-correction	extended	Imaging postprocess feature	An architectural print shows a building with upright sides in front of its skewed dashed crop guide.
-reference-alignment	extended	Generative render setup	A lightbox registers a solid sailboat drawing against a nearly superimposed dashed reference and three alignment targets.
-semantic-search	extended	Knowledge search capability	A search panel uses a ringed planet as its query and shows a crescent moon and a rocket as related results.
-spelling-intervention	extended	Copy editing controls	A pencil rests beside a proofreading card with a wavy underline beneath a short run of type.
-style-transfer-for-text	extended	Writing tool tone settings	A comparison card pairs separate upright type strokes with flowing script strokes across a transition arrow.
-texture-consistency	extended	Creative tool comparison	A folded material swatch carries the same flowing grain across both sides of its seam.
-vectorization	extended	Creative format conversion	An image tile shows a stepped pixel edge turning into a smooth curve with two square Bézier anchors.
-account-opening-deposit	extended	Bank welcome onboarding	A coin enters the open mouth of a bank-marked deposit envelope.
-budget-rollover	extended	Month-end budget summary	An open budget ledger carries a dollar coin and an arrow from one calendar month to the next.
-cash-drawer-audit	extended	Cash register reconciliation	A magnifying glass frames the coins and notes in the open drawer of a cash register.
-cost-center-budget	extended	Budget allocation settings	An office block shares a base with a recessed coin tray and an allocation gauge.
-deposits-and-reserves	specialist	Treasury product explainers	A partly open safe reveals a stack of coins behind its thick combination door.
-donation-receipt-archive	extended	Donor fiscal records page	Two itemized donation receipts with currency totals are filed inside a tabbed folder marked with a heart.
-emergency-fund	extended	Savings feature block	A coin-slot piggy bank carries a warning triangle at its flank.
-exchange-rate-notification	extended	Currency alert setting	An alert bell has dollar and euro symbols engraved on its flared body.
-expense-capture	extended	Finance automation section	Four close camera corners frame an itemized receipt with a curled foot and a currency total.
-interest-rate-lock-expiration	extended	Lending rate deadline notice	A closed padlock has an engraved percent sign and a clock badge on the upper corner of its body.
-operational-expense-cap	extended	Department spend policy	An upright expense gauge shows a dollar mark and a heavy stop above the current spend segments.
 pause-subscription	extended	Billing settings panel	A recurring-payment controller carries a pause badge beside its currency symbol and renewal dial.
 petty-cash-reimbursement	extended	Office expense repayment request	A curved return arrow points toward coins held in an open clasp purse.
 price-lock-guarantee	extended	Locked quote feature block	A prominent currency tag hangs from the closed shackle of a padlock threaded through its eyelet.

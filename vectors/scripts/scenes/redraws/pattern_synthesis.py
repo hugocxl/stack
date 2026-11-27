@@ -1,20 +1,16 @@
-from geometry import DETAIL, EDGE, rounded
+from geometry import DETAIL, EDGE, oval
+from scenes.redraws._sf import ground, plate, squircle
 
-DESCRIPTION = "Nine interlocking tiles repeat a small square motif across a square sheet."
+DESCRIPTION = "A three-by-three grid of thick tiles repeats the same ringed motif."
 
 
 def draw(s):
-    height = 8
-    border = rounded(0, 0, 96, 96, 3)
-    s.solid(border, 0, height, crease=False)
-    s.line([(x, y, height) for x, y in border + border[:1]], EDGE)
-    interlock = [(0, 0), (0, 9), (-4, 9), (-7, 13), (-7, 19),
-                 (-4, 23), (0, 23), (0, 32)]
-    for seam in (32, 64):
-        for start in (0, 32, 64):
-            s.line([(seam + u, start + v, height) for u, v in interlock], EDGE)
-            s.line([(start + v, seam + u, height) for u, v in interlock], EDGE)
-    for x in (16, 48, 80):
-        for y in (16, 48, 80):
-            diamond = [(x - 6, y), (x, y - 6), (x + 6, y), (x, y + 6), (x - 6, y)]
-            s.line([(u, v, height) for u, v in diamond], DETAIL)
+    size, gap = 30, 5
+    for i in range(3):
+        for j in range(3):
+            x, y = -48 + i*(size + gap), -48 + j*(size + gap)
+            top = ground(x, y, 6)
+            plate(s, top, squircle(size, size, 5), 6, (0, 0, -1))
+            c = size/2
+            s.line([top(c + a, c + b) for a, b in oval(0, 0, 9, 9, count=40)], EDGE)
+            s.line([top(c + a, c + b) for a, b in oval(0, 0, 3.4, 3.4, count=24)], DETAIL)

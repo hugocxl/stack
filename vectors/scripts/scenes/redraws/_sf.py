@@ -132,7 +132,7 @@ def doorway(s, w=56, h=88, t=8, depth=8):
     plate(s, frame, portal, depth, (0, -1, 0))
 
 
-def padlock(s, x=0, y=0, z=0, w=50, h=40, depth=14, shackle=None, open_=False):
+def padlock(s, x=0, y=0, z=0, w=50, h=40, depth=14, shackle=None, open_=False, keyhole=True):
     """An SF padlock: a rounded body with a keyhole and a thick round shackle."""
     from geometry import BOLD
     r = shackle or w*.3
@@ -148,8 +148,9 @@ def padlock(s, x=0, y=0, z=0, w=50, h=40, depth=14, shackle=None, open_=False):
     s.tube(pts, w*.075, EDGE)
     body = left_face(x, y, z)
     plate(s, body, squircle(w, h, 8), depth, (0, -1, 0))
-    s.line([body(w/2 + a, h*.56 + b) for a, b in oval(0, 0, 4, 4, count=32)], BOLD)
-    s.line([body(w/2, h*.48), body(w/2, h*.3)], BOLD)
+    if keyhole:
+        s.line([body(w/2 + a, h*.56 + b) for a, b in oval(0, 0, 4, 4, count=32)], BOLD)
+        s.line([body(w/2, h*.48), body(w/2, h*.3)], BOLD)
     return body
 
 
@@ -245,3 +246,39 @@ def headset(s, mic=True, R=34, cz=24):
     plate(s, right_cup, squircle(16, 30, 8), 9, (-1, 0, 0))
     inner = [right_cup(u + 4, v + 5) for u, v in squircle(8, 20, 4)]
     s.line(inner + inner[:1], DETAIL)
+
+
+class Face2D:
+    """Adapter so 2-D glyph helpers that call face.line([(u, v), ...]) can print on any plane."""
+    def __init__(self, s, at):
+        self.s, self.at = s, at
+
+    def line(self, points, ink=DETAIL, dashed=False):
+        self.s.line([self.at(u, v) for u, v in points], ink, dashed)
+
+
+def coin_face(s, at, r, depth=None, mark="$"):
+    """A viewer-facing coin with a rim and a printed currency sign."""
+    from geometry import BOLD
+    plate(s, at, oval(0, 0, r, r, count=72)[:-1], depth or r*.22, BACK)
+    s.line([at(u, v) for u, v in oval(0, 0, r*.8, r*.8, count=72)], DETAIL)
+    currency(s, at, r*.42, BOLD, mark)
+
+
+def currency(s, at, size, ink, mark="$"):
+    if mark == "$":
+        sv = smooth([(.55, .5), (.2, .75), (-.35, .62), (-.5, .3), (-.2, .05), (.3, -.08), (.55, -.38), (.3, -.7), (-.25, -.75), (-.6, -.5)], 5)
+        s.line([at(u*size, v*size) for u, v in sv], ink)
+        s.line([at(0, -1.05*size), at(0, 1.05*size)], ink)
+    elif mark == "€":
+        s.line([at(.55*size*cos(radians(a)) + .1*size, .75*size*sin(radians(a))) for a in range(40, 321, 15)], ink)
+        for v in (.15, -.15):
+            s.line([at(-.75*size, v*size), at(.15*size, v*size)], ink)
+
+
+def coin_stack(s, x, y, z, r, count, h=4.2):
+    for i in range(count):
+        s.disk(x, y, z + i*h, r, r, h)
+    top = z + count*h
+    s.ellipse(x, y, top, r*.72, r*.72, DETAIL)
+    return top

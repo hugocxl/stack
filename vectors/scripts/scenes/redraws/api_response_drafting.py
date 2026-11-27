@@ -1,24 +1,18 @@
-from geometry import BOLD, EDGE
-from scenes.editorial_objects import At, pencil
-from scenes.redraws._w2 import chart_line, clipboard, rule
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._sf import left_face, plate, smooth, squircle
 
-DESCRIPTION = "A pencil touches the last colon-separated property row on a clipped JSON response draft."
+DESCRIPTION = "A standing response card is printed with curly braces around three key and value rows."
 
 
 def draw(s):
-    top = clipboard(s)
-
-    def point(x, row):
-        return x, row, top
-
-    brace = [(25, 30), (21, 30), (19, 32), (19, 35), (16, 38),
-             (19, 41), (19, 44), (21, 46), (25, 46)]
-    chart_line(s, point, brace, BOLD)
-    chart_line(s, point, [(41 - x, row + 33) for x, row in brace], BOLD)
-    for row, width in ((43, 12), (54, 17), (65, 14)):
-        rule(s, point, 29, row, width, EDGE)
-        for y in (row - 1.8, row + 1.8):
-            rule(s, point, 50, y, 1, EDGE)
-        rule(s, point, 56, row, 15 if row < 65 else 12, EDGE)
-    scale = .86
-    pencil(At(s, 68, 65 - 21*scale, top - 3*scale, scale))
+    w, h = 92, 70
+    face = left_face(-w/2, 0, 0)
+    plate(s, face, squircle(w, h, 7), 6, (0, -1, 0))
+    brace = smooth([(16, 60), (11, 59), (10, 50), (10, 40), (6, 35), (10, 30), (10, 20), (11, 11), (16, 10)], 4)
+    s.line([face(u, v) for u, v in brace], BOLD)
+    s.line([face(w - u, v) for u, v in brace], BOLD)
+    for v, a, b in ((48, 14, 22), (35, 18, 16), (22, 12, 26)):
+        s.line([face(24, v), face(24 + a, v)], EDGE)
+        s.line([face(26 + a, v + 2), face(26 + a, v + 2.4)], EDGE)
+        s.line([face(26 + a, v - 2), face(26 + a, v - 1.6)], EDGE)
+        s.line([face(32 + a, v), face(32 + a + b, v)], DETAIL)
