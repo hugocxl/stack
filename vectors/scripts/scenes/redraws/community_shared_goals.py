@@ -1,17 +1,20 @@
-from geometry import BOLD, EDGE, oval, rounded
-from scenes.redraws._w3 import Surface
+from math import cos, radians, sin
 
-DESCRIPTION = "Three tabbed member passes sit inside a thick progress ring with one unfinished segment."
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._sf import BACK, person, plate, screen
+
+DESCRIPTION = "A thick progress ring, three quarters complete, surrounds three member figures."
+
+
+def ring_arc(a0, a1, r, w):
+    outer = [((r + w/2)*cos(radians(a)), (r + w/2)*sin(radians(a))) for a in range(a0, a1 + 1, 4)]
+    inner = [((r - w/2)*cos(radians(a)), (r - w/2)*sin(radians(a))) for a in range(a1, a0 - 1, -4)]
+    return outer + inner
 
 
 def draw(s):
-    face = Surface(s, (0, 0, 0), rise=(-.36, 1), back=(0, -1, -.36))
-    outer = oval(0, 0, 48, 48, 70, 390, 72)
-    inner = oval(0, 0, 39, 39, 390, 70, 72)
-    face.plate(outer + inner, 8)
-    face.stroke(oval(0, 0, 43.5, 43.5, 30, 70, 12), EDGE, dashed=True)
-
-    for x, v, width, height in ((-26, -10, 20, 26), (6, -10, 20, 26), (-12, -17, 24, 33)):
-        face.plate(rounded(x, v, width, height, 3), 2)
-        face.rules(x + width * .33, v + height - 6, [width * .34], ink=BOLD)
-        face.rules(x + width * .25, v + 10, [width * .50])
+    at = screen()
+    s.line([at(46*cos(radians(a)), 46*sin(radians(a))) for a in range(0, 361, 4)], DETAIL)
+    plate(s, at, ring_arc(-180, 90, 46, 12), 6, BACK)
+    for u, v, k in ((-14, -4, 22), (14, -4, 22), (0, 2, 26)):
+        person(s, at, u, v, k)

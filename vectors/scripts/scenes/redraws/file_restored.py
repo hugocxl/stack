@@ -1,14 +1,9 @@
-from math import cos, radians, sin
-
-from geometry import BOLD
-from scenes.redraws._kit import arrow
+from scenes.redraws._kit import badge
 from scenes.redraws._w5 import ruled_file
 
-DESCRIPTION = "A curved return arrow wraps around the lower right corner of a restored document."
+DESCRIPTION = "A ruled document carries a refresh badge at its lower right corner as it is restored."
 
 
 def draw(s):
-    ruled_file(s)
-    path = [(45 + 14*cos(radians(a)), 2, 10 + 14*sin(radians(a)))
-            for a in range(-142, 104, 7)]
-    arrow(s, path, BOLD, head=7.6)
+    face = ruled_file(s)
+    badge(s, "refresh", *face(48, 23), 13)

@@ -1,12 +1,11 @@
-from geometry import BOLD
-from scenes.redraws._kit import arrow
-from scenes.redraws._w3 import theater_seat
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws.invite_teammates import token
 
-DESCRIPTION = "A single incoming arrow points toward a close group of three chairs."
+DESCRIPTION = "A close group of three member tokens carries an arrow badge for joining."
 
 
 def draw(s):
-    theater_seat(s, 0, -18)
-    theater_seat(s, -38, 10)
-    theater_seat(s, 42, 10)
-    arrow(s, [(108, 69, 6), (84, 73, 7), (47, 62, 10)], BOLD, head=11)
+    token(s, -40, 6, 25)
+    token(s, 40, 6, 25)
+    token(s, 0, 0, 32)
+    badge(s, "arrow", *_screen(0, 0, 0, 27, -24), 12)

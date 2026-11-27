@@ -382,3 +382,17 @@ def turbine(s, x=0, y=0, z=0, h=90, blade=34):
         blade_pts = [(c*3 - q*2.2, q*3 + c*2.2), (c*blade*.35 - q*4, q*blade*.35 + c*4), (c*blade, q*blade), (c*3 + q*2.2, q*3 - c*2.2)]
         s.face([hub(u, v) for u, v in smooth(blade_pts, 3, closed=True)], EDGE)
     s.face([hub(u, v) for u, v in oval(0, 0, 4, 4, count=20)[:-1]], EDGE)
+
+
+def vase(s, x=0, y=0, z=0, k=1.0):
+    """A turned museum vase: foot, full belly, narrow neck and flared lip."""
+    prof = [(10, 0), (10, 2), (8, 4), (16, 12), (22, 24), (21, 36), (14, 46), (8, 52), (8, 58), (12, 62), (12, 64)]
+    turned(s, [(r*k, h*k) for r, h in prof], x, y, z, steps=4)
+    lip(s, x, y, z + 64*k, 9.5*k, DETAIL, -180, 180)
+
+
+def question(s, at, size, ink=None):
+    from geometry import BOLD
+    pts = [(-.45, .5), (-.3, .82), (0, .95), (.32, .85), (.45, .55), (.3, .25), (0, .05), (0, -.3)]
+    s.line([at(u*size, v*size) for u, v in smooth(pts, 4)], ink or BOLD)
+    s.line([at(0, -.62*size), at(0, -.66*size)], ink or BOLD)

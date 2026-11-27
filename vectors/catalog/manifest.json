@@ -14950,7 +14950,7 @@
           "id": "join-a-group",
           "title": "Join a group",
           "placement": "Community or association onboarding",
-          "visual": "A single incoming arrow points toward a close group of three chairs.",
+          "visual": "A close group of three member tokens carries an arrow badge for joining.",
           "priority": "extended",
           "asset": "figures/join-a-group.svg"
         },
@@ -14990,7 +14990,7 @@
           "id": "mentorship",
           "title": "Mentorship",
           "placement": "Community or professional education feature",
-          "visual": "A two-seat study station pairs a tall chair and a short chair at a shared desk with an open workbook.",
+          "visual": "A large member token stands behind a small one, a mentor and the person they guide.",
           "priority": "extended",
           "asset": "figures/mentorship.svg"
         },
@@ -15206,7 +15206,7 @@
           "id": "ask-a-curator",
           "title": "Ask a curator",
           "placement": "Museum learning discussion",
-          "visual": "A question-mark speech bubble sits at the shoulder of a museum vase.",
+          "visual": "A museum vase stands beside a thick speech bubble holding a question mark.",
           "priority": "extended",
           "asset": "figures/ask-a-curator.svg"
         },
@@ -15238,7 +15238,7 @@
           "id": "community-shared-goals",
           "title": "Community shared goals",
           "placement": "Group progress dashboard",
-          "visual": "Three tabbed member passes sit inside a thick progress ring with one unfinished segment.",
+          "visual": "A thick progress ring, three quarters complete, surrounds three member figures.",
           "priority": "extended",
           "asset": "figures/community-shared-goals.svg"
         },
@@ -15764,7 +15764,7 @@
           "id": "sync-complete",
           "title": "Sync complete",
           "placement": "Cross-device synchronization confirmation",
-          "visual": "Two arrows form a synchronization loop with a check badge attached to its lower arc.",
+          "visual": "Two thick curved arrows chase each other around a check mark.",
           "priority": "extended",
           "asset": "figures/sync-complete.svg"
         },
@@ -16052,7 +16052,7 @@
           "id": "file-restored",
           "title": "File restored",
           "placement": "Recoverable file successfully restored",
-          "visual": "A curved return arrow wraps around the lower right corner of a restored document.",
+          "visual": "A ruled document carries a refresh badge at its lower right corner as it is restored.",
           "priority": "extended",
           "asset": "figures/file-restored.svg"
         },
@@ -16076,7 +16076,7 @@
           "id": "key-rotated",
           "title": "Key rotated",
           "placement": "Successful replacement of a trusted key",
-          "visual": "A single notched key has a curved replacement arrow wrapping around its open bow.",
+          "visual": "A single notched key carries a refresh badge beside its round bow.",
           "priority": "extended",
           "asset": "figures/key-rotated.svg"
         },

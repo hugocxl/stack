@@ -1,11 +1,11 @@
-from scenes.redraws._w3 import Surface, question, speech_outline
-from scenes.redraws.artifact_conservation import museum_vase
+from scenes.redraws._sf import BACK, bubble, plate, question, screen, vase
 
-DESCRIPTION = "A question-mark speech bubble sits at the shoulder of a museum vase."
+DESCRIPTION = "A museum vase stands beside a thick speech bubble holding a question mark."
 
 
 def draw(s):
-    museum_vase(s, 0, 0, 0)
-    bubble = Surface(s, (0, 4, 0))
-    bubble.plate(speech_outline(12, 38, 40, 33), 3)
-    question(bubble, 32, 56, 22, aligned=True)
+    vase(s, -20, 0, 0, 1.25)
+    at = screen()
+    b = lambda u, v: at(u + 26, v + 46)
+    plate(s, b, bubble(52, 40, 14, (.2, 8, 9)), 6, BACK)
+    question(s, lambda u, v: b(26 + u, 20 + v), 16)

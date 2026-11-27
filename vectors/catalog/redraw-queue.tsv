@@ -1,47 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-file-renamed	extended	Existing file gained a new label	A folded-corner file shows a boxed filename selection with a tall editing caret.
-file-restored	extended	Recoverable file successfully restored	A curved return arrow wraps around the lower right corner of a restored document.
-import-partially-completed	extended	Some rows imported, others pending	Two sheets occupy one side of an import tray with an exclamation triangle on its open corner.
-import-retry-scheduled	extended	Failed import will run later	A document sits in an import tray with a clock badge attached to its front-right corner.
-import-validated	extended	File was imported and verified for structure	A gridded document sits inside an import tray with a check badge on its corner.
-key-rotated	extended	Successful replacement of a trusted key	A single notched key has a curved replacement arrow wrapping around its open bow.
-preferences-reset	extended	Confirm defaults restored successfully	A sloped settings console has three faders aligned with their center ticks and an attached check badge.
-sync-complete	extended	Cross-device synchronization confirmation	Two arrows form a synchronization loop with a check badge attached to its lower arc.
-accessibility-visit-orientation	extended	Culture welcome resources	An upright folded venue map marks its destination with a wheelchair symbol inside a location pin.
-artifact-photography-setup	extended	Museum production workflow	A tripod camera points its lens at a small museum vase.
-ask-a-curator	extended	Museum learning discussion	A question-mark speech bubble sits at the shoulder of a museum vase.
-community-shared-goals	extended	Group progress dashboard	Three tabbed member passes sit inside a thick progress ring with one unfinished segment.
-culture-walking-itinerary	extended	Public visitor itinerary card	A dotted walking path on a folded map leads to the pictogram of a columned landmark.
-exhibition-curatorial-notes	extended	Art gallery feature	An angled gallery label shows a ring sculpture thumbnail above three lines of curatorial notes.
-exhibition-scenario-preview	extended	Culture season promotion	An open gallery display contains a ring sculpture and a dashed outline for the planned exhibit area.
-festival-accessible-facilities	extended	Visitor information map	A folded festival map marks the facilities with a large wheelchair location pin beside a printed tent.
-festival-guest-welcome	extended	Culture festival ticket site	A festival entrance arch carries a swallowtail welcome banner above a string of pennants.
-gallery-artist-studio-visit	extended	Venue visit booking page	A notched admission ticket carries a large artist’s easel pictogram beside its perforated stub.
-gallery-conservation-funding	extended	Collection stewardship campaign	A repaired museum vase sits on a plinth with a donation heart badge at its foot.
-gallery-opening-hours	extended	Museum visit planning	A freestanding gallery sign shows two clock faces separated by a dash.
-gallery-tour-listening-station	extended	Accessibility audio guide page	A corded gallery audio handset rests in a charging cradle above a printed exhibit marker.
-historical-timeline-authoring	extended	Digital heritage feature	A bound timeline shows three event ticks and a pencil touching the newest entry.
-introduction-buddy	extended	Community matching page	A paired profile card shows two matching avatar pictograms below one shared speech bubble.
-join-a-group	extended	Community or association onboarding	A single incoming arrow points toward a close group of three chairs.
-language-preservation-recording	extended	Cultural documentation page	A field recorder has a built-in microphone, a speech label and a waveform on its display.
-lifetime-member-recognition	extended	Patron program page	A ribbon medallion carries a large embossed infinity emblem.
-member-achievement	extended	Community or learning milestone	A ribbon medallion displays one large embossed star.
-member-program-orientation	extended	Community signup feature	A bound orientation booklet shows three profile pictograms above a short list of three steps.
-mentorship	extended	Community or professional education feature	A two-seat study station pairs a tall chair and a short chair at a shared desk with an open workbook.
-museum-cabinet-label	extended	Exhibition design tool	A glass museum case encloses a faceted sculpture and carries a caption plaque on its front rim.
-museum-tactile-station	extended	Accessible museum services	A sloped museum panel displays a raised spiral fossil above a label with raised Braille dots.
-neighborhood-story-trail	extended	Public arts mapping site	A walking path connects three speech-bubble story stops on a folded neighborhood map.
-object-condition-report	extended	Museum conservation detail	A magnifier circles a chip on the rim of a vase drawn on a conservation clipboard.
-object-provenance-report	extended	Collection evidence page	A spiral accession record places a vase drawing above three ownership entries on a vertical timeline.
-object-transport-case	extended	Gallery loan preparation	An open transport case holds a faceted sculpture in a foam recess cut to its shape.
-open-storage-tour	extended	Museum behind-the-scenes listing	An admission ticket overlaps the open glass door of a museum cabinet containing a ring sculpture.
-performance-stage-pass	extended	Cultural back-of-house credential	A short lanyard clips to a theater access pass printed with parted stage curtains.
-sculpture-360-view	extended	Digital exhibition feature	An orbit arrow wraps around the plinth beneath a standing ring sculpture.
-stage-rehearsal-slot	extended	Public performance preparation	A curtained theater stage carries a clock badge on its proscenium.
-threaded-discussion	extended	Community forum feature	Three progressively indented speech balloons are joined by two elbow-shaped reply connectors.
-venue-accessibility	extended	Cultural visitor information	A ramp leads through an open venue doorway with a wheelchair-access sign mounted beside it.
-volunteer-time-log	extended	Culture venue contribution tracker	A punch-clock time card shows stamped rows and a boxed hours tally at its foot.
 volunteer-welcome-desk	extended	Museum shift check-in	A heart-marked volunteer name badge rests on the ledge of a check-in counter.
 activation-milestones	extended	Growth dashboard onboarding	A three-step progress line links three large milestones and puts a check badge on the last one.
 activity-history	extended	User activity feature section	An event lifts from its place on the timeline.
