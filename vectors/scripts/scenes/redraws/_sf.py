@@ -443,3 +443,24 @@ def arc_arrow(start, end, r=40, w=9, head=None):
     tip_a = radians(end + sign*head*45/r)
     return outer + [((r + head)*cos(t), (r + head)*sin(t)), (r*cos(tip_a), r*sin(tip_a)),
                     ((r - head)*cos(t), (r - head)*sin(t))] + inner
+
+
+def seedling(s, x, y, z, h=18, k=1.0):
+    """A young plant: a short stem with two rounded leaves."""
+    s.line([(x, y, z), (x, y, z + h)], EDGE)
+    for sgn in (1, -1):
+        leaf = [(0, 0), (sgn*4*k, 3*k), (sgn*9*k, 3*k), (sgn*11*k, 0), (sgn*7*k, -3*k), (sgn*3*k, -2*k)]
+        s.face([(x + u*.7, y - u*.7, z + h*.75 + v + abs(u)*.35) for u, v in smooth(leaf, 3, closed=True)], EDGE)
+
+
+def alarm_clock(s, at, r=30):
+    """A twin-bell alarm clock facing the viewer, drawn on screen plane `at`."""
+    from geometry import BOLD
+    for sgn in (-1, 1):
+        cx, cy = sgn*r*.62, r*.92
+        plate(s, lambda u, v, cx=cx, cy=cy: at(cx + u, cy + v), [(a, abs(b)*.0 + b) for a, b in arc(0, 0, r*.32, -20, 200, 16)], 4, BACK)
+    for sgn in (-1, 1):
+        s.line([at(sgn*r*.55, -r*.8), at(sgn*r*.72, -r*1.12)], EDGE)
+    plate(s, at, oval(0, 0, r, r, count=72)[:-1], r*.3, BACK)
+    s.line([at(u, v) for u, v in oval(0, 0, r*.82, r*.82, count=72)], DETAIL)
+    s.line([at(0, r*.55), at(0, 0), at(r*.38, -r*.22)], BOLD)

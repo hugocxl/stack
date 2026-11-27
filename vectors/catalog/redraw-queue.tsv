@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-container-garden-design	extended	Home food growing tutorial	A deep rectangular planter contains three evenly spaced seedlings.
-cooking-duration-check	extended	Recipe timer state	A freestanding kitchen timer has a marked dial with a check badge at the end of its scale.
-counter-pickup-meal	extended	Restaurant pickup information	A handled meal bag rests on a pickup counter marked with a serving cloche.
-crop-monitoring	specialist	Agriculture product page	A crop row has a compact monitoring sensor mounted on a stake at canopy height.
-crop-row-inspection-route	extended	Field management task	A single raised row of seedlings has a directional arrow running beside its furrow.
-cross-contact-separation	extended	Kitchen prep safety training	A full-height divider on a prep board separates a fish from a carrot.
-delivery-handover-counter	extended	Courier order pickup process	A handled delivery bag waits on a cantilevered ledge attached to a tall service counter.
-delivery-route-preparation	extended	Restaurant operations route list	An upright folded street map carries a route through three marked stops.
-dining-delivery-status	extended	Restaurant order progress panel	A handled takeaway bag bears a cloche emblem and an attached outbound arrow badge.
-donate-surplus-meals	extended	Food recovery donation flow	An open takeaway carton holds a meal and bears a donation heart on its front flap.
-family-meal-bundle	extended	Online family-size menu	An open family-size takeaway carton holds three separated servings.
-farm-visitor-hospitality	extended	Agritourism site overview	A farm picnic table with built-in benches is set with two plates and a bowl of fresh produce.
-farmers-market-stall	extended	Local food marketplace vendor page	A striped canopy shades a market counter lined with apples and carrots.
-food-waste-tracking	extended	Kitchen sustainability software	An open food-scraps bin sits on a weighing base with an analog readout.
-freezer-placement	extended	Kitchen equipment placement	A snowflake-marked chest freezer sits in an outlined kitchen appliance bay beside the sink counter.
-grain-sample-inspection	extended	Agricultural quality screening	A magnifying glass sits above a shallow sample dish holding several grain kernels.
-harvest-batch-intake	extended	Agricultural harvest receipt	A full harvest crate has a clipped batch label with two ruled lines on its front slat.
-individual-meal-pickup	extended	Pickup service configuration	An open single-serving takeaway clamshell has an outward arrow extending from its front latch.
-ingredient-preparation-stage	extended	Recipe mise en place step	A chef’s knife rests on a thick chopping board alongside neatly sliced produce.
-ingredient-sourcing	extended	Restaurant or food impact page	A produce crate carries a prominent location pin printed on a front label.
-ingredient-trace-back	extended	Restaurant supply traceability	A produce crate carries a tied traceability tag printed with a return arrow.
-insulated-drink-delivery	extended	Beverage delivery planning	An insulated carrier cradles a lidded drink in a recessed cup holder and has an outward arrow on its front.
-kiosk-cafeteria-layout	extended	Cafeteria design case study	A cafeteria floor plan has three self-service kiosks facing a long serving counter.
-kitchen-water-shutoff	extended	Restaurant maintenance alert	A water supply valve has its lever turned across the pipe and a slash badge on the valve body.
-locally-grown-produce	extended	Farm sourcing story	A handled harvest basket filled with produce carries a map-pin tag on its front.
-outdoor-dining-tables	extended	Restaurant patio information	A patio table set for two supports a large ribbed parasol through its center.
-portion-scaling	extended	Recipe planning tool	A graduated measuring jug has an upward arrow alongside its volume scale.
-private-dining-consult	extended	Restaurant group services	A dining table set for two has an attached speech balloon over its far corner.
-produce-ripeness-inspection	extended	Freshness quality control	A magnifier inspects the cut edge of an avocado half with its pit still in place.
-recipe-revision-card	extended	Recipe development tracking	A tabbed recipe card has a fork-and-knife header, ruled steps, and a refresh badge at one corner.
-restaurant-recycling-setup	extended	Restaurant waste reduction	A two-compartment recycling station pairs a paper slot with a round container opening.
-reusable-catering-carrier	extended	Carrier deposit program	An open rigid catering case has a hinged lid, a molded carry handle, and three fitted food compartments.
-smart-irrigation	specialist	Agriculture or climate feature	A sprinkler head on a supply pipe sends out curved water jets and carries a Wi-Fi badge.
-stovetop-heat-profile	extended	Cooking equipment usage guidance	A four-burner stovetop shows increasing heat through different numbers of concentric burner rings.
-substituted-ingredient-choice	extended	Food order substitutions	An ingredient substitution arrow leads from a mushroom to a bell pepper.
-takeaway-packaging-options	extended	Ordering packaging preferences	A folded paper takeout carton stands beside a reusable molded clamshell.
-unexpected-item-outage	extended	Restaurant ingredient stockout	A stock shelf holds one carton beside a dashed missing-item outline and a large warning triangle.
-weekly-meal-plan	extended	Meal subscription product	A thick ring-bound weekly meal planner has one place-setting pictogram in each day column.
-accessibility-aids-fitting	specialist	Assistive healthcare service	A hook-handled walking cane and an adjustable underarm crutch stand alongside a short fitting ruler.
-adaptive-workout	extended	Accessible exercise program	A sports wheelchair carries a dumbbell in a rack above its seat for an overhead press.
-balance-exercise	extended	Therapy session instruction	A tilted circular balance board rests on its rounded half-dome rocker.
-equipment-sanitation	extended	Clinic operations training	A disinfectant trigger sprayer sits beside the seat of a reclining dental chair.
-exercise-equipment-fit	extended	Wellness equipment service	A stationary exercise bike shows a graduated telescoping seatpost beneath its padded saddle.
-find-a-clinic	extended	Clinic directory hero	A location pin marked with a medical cross stands on a folded street map.
-gym-orientation	extended	New member wellness center	A sloped gym directory shows a route from the entrance to a dumbbell-marked training room.
-lab-intake-bench	extended	Clinic laboratory service	Two capped, labeled sample vials stand in the fitted wells of a specimen rack.
-movement-break	extended	Workday wellness reminder	An empty office chair pulled away from its desk carries a clock badge for a movement break.
-movement-goal	extended	Health tracking product	A thick step-goal ring surrounds a footprint and leaves one progress segment open.
-nap-timer	extended	Recovery product feature	A twin-bell alarm clock stands beside a rectangular pillow stitched with a crescent moon.
 outpatient-room-instructions	extended	Clinic directions page	A freestanding clinic wayfinding sign pairs a medical cross and room field with a right arrow.
 pharmacy-pickup-window	extended	Prescription collection page	A prescription bottle rests on the sill of an open pharmacy service hatch.
 physical-therapy-intake	extended	Clinic information form	An intake clipboard shows a knee-joint diagram above two form rows.

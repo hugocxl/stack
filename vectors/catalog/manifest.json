@@ -11536,7 +11536,7 @@
           "id": "movement-goal",
           "title": "Movement goal",
           "placement": "Health tracking product",
-          "visual": "A thick step-goal ring surrounds a footprint and leaves one progress segment open.",
+          "visual": "A thick step-goal ring, mostly complete, surrounds a single footprint.",
           "priority": "extended",
           "asset": "figures/movement-goal.svg"
         },
@@ -11592,7 +11592,7 @@
           "id": "nap-timer",
           "title": "Nap timer",
           "placement": "Recovery product feature",
-          "visual": "A twin-bell alarm clock stands beside a rectangular pillow stitched with a crescent moon.",
+          "visual": "A twin-bell alarm clock stands beside a soft rectangular pillow.",
           "priority": "extended",
           "asset": "figures/nap-timer.svg"
         },
@@ -11696,7 +11696,7 @@
           "id": "movement-break",
           "title": "Movement break",
           "placement": "Workday wellness reminder",
-          "visual": "An empty office chair pulled away from its desk carries a clock badge for a movement break.",
+          "visual": "An empty office chair stands pushed back on its star base, carrying a clock badge.",
           "priority": "extended",
           "asset": "figures/movement-break.svg"
         },
@@ -11728,7 +11728,7 @@
           "id": "adaptive-workout",
           "title": "Adaptive workout",
           "placement": "Accessible exercise program",
-          "visual": "A sports wheelchair carries a dumbbell in a rack above its seat for an overhead press.",
+          "visual": "An adjustable dumbbell holds plates of three sizes on each side of its grip.",
           "priority": "extended",
           "asset": "figures/adaptive-workout.svg"
         },
@@ -11736,7 +11736,7 @@
           "id": "balance-exercise",
           "title": "Balance exercise",
           "placement": "Therapy session instruction",
-          "visual": "A tilted circular balance board rests on its rounded half-dome rocker.",
+          "visual": "A balance trainer: a soft half-dome sits on a round platform base.",
           "priority": "extended",
           "asset": "figures/balance-exercise.svg"
         },
@@ -11928,7 +11928,7 @@
           "id": "equipment-sanitation",
           "title": "Equipment sanitation",
           "placement": "Clinic operations training",
-          "visual": "A disinfectant trigger sprayer sits beside the seat of a reclining dental chair.",
+          "visual": "A trigger spray bottle of disinfectant stands upright.",
           "priority": "extended",
           "asset": "figures/equipment-sanitation.svg"
         },
@@ -14384,7 +14384,7 @@
           "id": "crop-monitoring",
           "title": "Crop monitoring",
           "placement": "Agriculture product page",
-          "visual": "A crop row has a compact monitoring sensor mounted on a stake at canopy height.",
+          "visual": "A raised crop bed of seedlings has a monitoring sensor on a post carrying a Wi-Fi badge.",
           "priority": "specialist",
           "asset": "figures/crop-monitoring.svg"
         },
@@ -14392,7 +14392,7 @@
           "id": "smart-irrigation",
           "title": "Smart irrigation",
           "placement": "Agriculture or climate feature",
-          "visual": "A sprinkler head on a supply pipe sends out curved water jets and carries a Wi-Fi badge.",
+          "visual": "A sprinkler head on a supply pipe throws two arcs of water and carries a Wi-Fi badge.",
           "priority": "specialist",
           "asset": "figures/smart-irrigation.svg"
         },
@@ -14568,7 +14568,7 @@
           "id": "substituted-ingredient-choice",
           "title": "Substituted ingredient choice",
           "placement": "Food order substitutions",
-          "visual": "An ingredient substitution arrow leads from a mushroom to a bell pepper.",
+          "visual": "A bold arrow leads from one spice jar to the jar that replaces it.",
           "priority": "extended",
           "asset": "figures/substituted-ingredient-choice.svg"
         },
@@ -14848,7 +14848,7 @@
           "id": "produce-ripeness-inspection",
           "title": "Produce ripeness inspection",
           "placement": "Freshness quality control",
-          "visual": "A magnifier inspects the cut edge of an avocado half with its pit still in place.",
+          "visual": "A magnifier hovers over a halved avocado, its round pit showing in the cut face.",
           "priority": "extended",
           "asset": "figures/produce-ripeness-inspection.svg"
         },
@@ -14872,7 +14872,7 @@
           "id": "crop-row-inspection-route",
           "title": "Crop row inspection route",
           "placement": "Field management task",
-          "visual": "A single raised row of seedlings has a directional arrow running beside its furrow.",
+          "visual": "A raised crop row of seedlings has an inspection arrow running along its side.",
           "priority": "extended",
           "asset": "figures/crop-row-inspection-route.svg"
         },

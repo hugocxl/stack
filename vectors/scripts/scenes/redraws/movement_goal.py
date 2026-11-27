@@ -1,19 +1,17 @@
-from geometry import BOLD, EDGE, oval
-from scenes.redraws._w4 import paper
+from math import cos, radians, sin
 
-DESCRIPTION = "A thick step-goal ring surrounds a footprint and leaves one progress segment open."
+from geometry import DETAIL, EDGE, oval
+from scenes.redraws._sf import BACK, plate, screen, smooth
+from scenes.redraws.approval_rate import band
+
+DESCRIPTION = "A thick step-goal ring, mostly complete, surrounds a single footprint."
 
 
 def draw(s):
-    dial = paper(s, 93, pitch=.86, run=.42, angle=-22, depth=6)
-    outer = oval(0, 46, 49, 45, -25, 285, 64)
-    inner = oval(0, 46, 36, 33, 285, -25, 64)
-    dial.slab([*outer, *inner], 6, EDGE)
-
-    sole = [(-13, 71), (-19, 66), (-18, 60), (-12, 52), (-13, 44),
-            (-12, 37), (-7, 33), (3, 33), (10, 37), (12, 43), (10, 50),
-            (3, 55), (0, 62), (-3, 68), (-8, 71)]
-    dial.outline(sole, BOLD)
-    for x, y, r in ((9, 26, 4.4), (-1, 24, 3.6), (-9, 26, 2.8),
-                    (-16, 30, 2.3)):
-        dial.oval(x, y, r, r, EDGE)
+    at = screen()
+    s.line([at(44*cos(radians(a)), 44*sin(radians(a))) for a in range(0, 361, 3)], DETAIL)
+    plate(s, at, band(-200, 90, 44, 14), 7, BACK)
+    sole = smooth([(0, -20), (9, -14), (10, 2), (7, 12), (0, 14), (-7, 10), (-9, -2), (-8, -14)], 4, closed=True)
+    s.line([at(u, v - 4) for u, v in sole] + [at(sole[0][0], sole[0][1] - 4)], EDGE)
+    for u, v, r in ((-6, 15, 2.6), (-1, 18, 2.4), (4, 18, 2.2), (8, 15.5, 2), (10.5, 11.5, 1.8)):
+        s.line([at(u + a, v + b) for a, b in oval(0, 0, r, r, count=16)], EDGE)

@@ -1,27 +1,17 @@
-from geometry import DETAIL, EDGE, GUIDE
-from scenes.redraws._kit import arrow, badge
+from math import cos, radians, sin
 
-DESCRIPTION = "An empty office chair pulled away from its desk carries a clock badge for a movement break."
+from geometry import EDGE
+from scenes.redraws._kit import badge
+
+DESCRIPTION = "An empty office chair stands pushed back on its star base, carrying a clock badge."
 
 
 def draw(s):
-    for x in (5, 75):
-        s.box(x, 4, 0, 6, 8, 56, 1)
-        s.box(x, 35, 0, 6, 8, 56, 1)
-    s.box(0, 0, 56, 87, 48, 5, 3)
-    s.box(23, 6, 61, 39, 5, 28, 2)
-    s.line([(25, 11, 64), (60, 11, 64)], DETAIL)
-
-    s.line([(67, 47, 0), (67, 74, 0)], GUIDE, dashed=True)
-    arrow(s, [(67, 77, 0), (67, 95, 0)], EDGE, head=6)
-
-    # The chair faces the desk, with its back turned toward the viewer.
-    for x, y in ((23, 70), (34, 57), (50, 68), (46, 84), (29, 85)):
-        s.tube([(37, 72, 8), (x, y, 4)], 1.7, EDGE)
-        s.disk(x, y, 0, 2.9, 2.9, 4, DETAIL)
-    s.disk(37, 72, 7, 3, 3, 22)
-    s.box(19, 58, 29, 36, 31, 6, 5)
-    s.tube([(37, 81, 34), (37, 89, 40), (37, 89, 49)], 2.1, EDGE)
-    s.box(19, 86, 45, 36, 7, 24, 3)
-    s.line([(24, 93, 63), (49, 93, 63)], DETAIL)
-    badge(s, "clock", 58, 88, 72, 15)
+    for a in range(18, 360, 72):
+        c, q = cos(radians(a)), sin(radians(a))
+        s.tube([(0, 0, 6), (24*c, 24*q, 4)], 2, EDGE)
+        s.disk(24*c, 24*q, 0, 3.4, 3.4, 3)
+    s.tube([(0, 0, 6), (0, 0, 28)], 2.6, EDGE)
+    s.box(-18, -18, 28, 36, 36, 6, 6)
+    s.box(-16, -20, 36, 32, 6, 38, 6)
+    badge(s, "clock", 24, 6, 64, 12)

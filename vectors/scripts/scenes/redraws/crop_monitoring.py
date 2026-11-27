@@ -1,13 +1,14 @@
-from geometry import DETAIL
-from scenes.redraws._w5 import crop_furrow
+from geometry import EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import seedling
 
-DESCRIPTION = "A crop row has a compact monitoring sensor mounted on a stake at canopy height."
+DESCRIPTION = "A raised crop bed of seedlings has a monitoring sensor on a post carrying a Wi-Fi badge."
 
 
 def draw(s):
-    crop_furrow(s)
-    s.tube([(62, 9, 4), (62, 9, 25)], 1.2)
-    s.box(58, 5, 24, 10, 8, 9, 1.5)
-    s.disk(62, 9, 33, 1.6, 1.6, 3)
-    for z in (27, 30):
-        s.line([(60, 13, z), (66, 13, z)], DETAIL)
+    s.box(-60, -16, 0, 100, 32, 14, 3)
+    for x in (-44, -20, 4):
+        seedling(s, x, 0, 14, 20)
+    s.tube([(52, 0, 0), (52, 0, 46)], 1.6, EDGE)
+    s.box(46, -6, 44, 12, 12, 12, 2.5)
+    badge(s, "wifi", 72, -14, 74, 11)

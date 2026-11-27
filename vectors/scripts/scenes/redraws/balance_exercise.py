@@ -1,24 +1,15 @@
-from math import sqrt
+from math import cos, radians, sin
 
-from shapely.geometry import MultiPoint
+from geometry import DETAIL
+from scenes.redraws._sf import lip, turned
 
-from geometry import DETAIL, EDGE, oval, project
-from scenes.redraws._w4 import Surface
-
-DESCRIPTION = "A tilted circular balance board rests on its rounded half-dome rocker."
+DESCRIPTION = "A balance trainer: a soft half-dome sits on a round platform base."
 
 
 def draw(s):
-    profiles = [(z, 27*sqrt(1 - ((z - 38)/39)**2)) for z in range(39)]
-    dome = MultiPoint([project((x, y, z)) for z, r in profiles
-                       for x, y in oval(0, 0, r, r, count=40)]).convex_hull
-    s.layers.append((dome.boundary, dome, EDGE))
-
-    def deck_point(u, v):
-        return (.94*u + .34*v, -.34*u + .94*v, 44 - .32*u)
-
-    deck = Surface(s, deck_point)
-    deck.slab(oval(0, 0, 43, 38)[:-1], 7)
-    deck.oval(0, 0, 37, 32, DETAIL)
-    for u in (-22, 22):
-        deck.oval(u, 0, 5, 17, EDGE)
+    turned(s, [(42, 0), (42, 7)], steps=1)
+    dome = [(38*cos(radians(a)), 7 + 30*sin(radians(a))) for a in range(0, 91, 10)]
+    turned(s, dome, steps=4)
+    for a in (30, 55):
+        r, z = 38*cos(radians(a)), 7 + 30*sin(radians(a))
+        lip(s, 0, 0, z, r, DETAIL, -40, 130)
