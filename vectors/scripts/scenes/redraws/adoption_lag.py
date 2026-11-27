@@ -1,14 +1,15 @@
-from geometry import DETAIL, EDGE
-from scenes.redraws._kit import badge
-from scenes.redraws._w2 import board, chart_line, response_curve
+from math import cos, exp, radians, sin
 
-DESCRIPTION = "An adoption chart stays flat before rising, with a clock badge marking the delayed start."
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import chart_board, dot, smooth
+
+DESCRIPTION = "On a standing chart a flat line waits before it rises, with a clock badge at the bend."
 
 
 def draw(s):
-    p = board(s, 131, 83, run=.30, rise=.78, depth=8, level=True)
-    s.line([p(14, 74), p(14, 12), p(122, 12)], EDGE)
-    for x in (24, 61):
-        s.line([p(x, 14), p(x, 44)], DETAIL, dashed=True)
-    chart_line(s, p, [(x + 15, 21 + z*.76) for x, z in response_curve()])
-    badge(s, "clock", *p(43, 12), 12)
+    f = chart_board(s)
+    curve = smooth([(14, 16), (40, 17), (56, 20), (70, 36), (84, 56), (100, 62)], 6)
+    s.line([f(u, v) for u, v in curve], BOLD)
+    s.line([f(52, 12), f(52, 66)], DETAIL, dashed=True)
+    badge(s, "clock", *f(52, 22), 10)

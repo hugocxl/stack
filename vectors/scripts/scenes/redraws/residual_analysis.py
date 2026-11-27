@@ -1,15 +1,15 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._w2 import chart_marker, plot_point
+from math import cos, exp, radians, sin
 
-DESCRIPTION = "A residual plot has individual stems extending above and below its zero baseline."
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import chart_board, dot, smooth
+
+DESCRIPTION = "A standing chart shows residual stems rising and falling from a zero line."
 
 
 def draw(s):
-    p = plot_point
-    s.line([p(0, 7), p(0, 82)], EDGE)
-    s.line([p(0, 42), p(113, 42)], BOLD)
-    for z in (14, 28, 56, 70):
-        s.line([p(-5, z), p(0, z)], DETAIL)
-    for x, z in ((14, 56), (28, 33), (42, 64), (56, 49), (70, 20), (84, 29), (98, 54)):
-        s.line([p(x, 42), p(x, z)], EDGE)
-        chart_marker(s, p, x, z, 2.5, EDGE)
+    f = chart_board(s, axes=False)
+    s.line([f(10, 38), f(102, 38)], DETAIL)
+    for u, d in ((20, 14), (32, -10), (44, 20), (56, -16), (68, 8), (80, -12), (92, 16)):
+        s.line([f(u, 38), f(u, 38 + d)], EDGE)
+        dot(s, f, u, 38 + d, 2.4)

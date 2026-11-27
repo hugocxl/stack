@@ -1,24 +1,14 @@
-from math import cos, pi, sin
-
-from geometry import BOLD, DETAIL, EDGE
+from geometry import DETAIL
 from scenes.redraws._kit import badge
+from scenes.redraws._sf import smooth
 
-DESCRIPTION = "A winding route leads from an entry ring past a midpoint marker to a checked final stop."
+DESCRIPTION = "A winding path on the ground runs from an entry ring past a midpoint marker to a check badge."
 
 
 def draw(s):
-    # Concentric turns connect two straight runs without abrupt corners.
-    first = [(0, 0, 0), (43, 0, 0)]
-    first += [(43 + 18*cos(pi*i/24 - pi/2), 18 + 18*sin(pi*i/24 - pi/2), 0)
-              for i in range(1, 25)]
-    first.append((18, 36, 0))
-    middle = (29, 36, 0)
-    last = [(18 + 17*cos(-pi*i/24 - pi/2), 53 + 17*sin(-pi*i/24 - pi/2), 0)
-            for i in range(1, 25)]
-    route = [*first, *last, (85, 70, 0)]
-    s.line(route, BOLD)
-    s.disk(0, 0, 0, 7, 7, 3, EDGE)
-    s.ellipse(0, 0, 3, 3.7, 3.7, DETAIL)
-    s.disk(*middle, 5.5, 5.5, 2, EDGE)
-    s.line([(27, 36, 2), (31, 36, 2)], BOLD)
-    badge(s, "check", 88, 70, 13, 14)
+    path = smooth([(-44, 28), (-26, 26), (-12, 4), (8, -2), (22, -18), (40, -20)], 10)
+    s.line([(x, y, 0) for x, y in path], DETAIL, dashed=True)
+    s.ring(-44, 28, 0, 12, 12, 5, 4.5)
+    s.disk(8, -2, 0, 7, 7, 4)
+    s.disk(40, -20, 0, 9, 9, 3)
+    badge(s, "check", 40, -20, 16, 11)

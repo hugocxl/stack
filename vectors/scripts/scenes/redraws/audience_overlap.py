@@ -1,14 +1,18 @@
-from geometry import BOLD, DETAIL, EDGE, oval
-from scenes.redraws._w2 import level_face, rule
+from math import cos, radians, sin
 
-DESCRIPTION = "Two audience circles share one stack of profile cards in their intersection."
+from geometry import DETAIL
+from scenes.redraws._sf import BACK, person, plate, screen
+
+DESCRIPTION = "Two thick rings overlap, and a member figure stands in the space they share."
+
+
+def ring(r, w):
+    return ([((r + w/2)*cos(radians(a)), (r + w/2)*sin(radians(a))) for a in range(0, 361, 4)] +
+            [((r - w/2)*cos(radians(a)), (r - w/2)*sin(radians(a))) for a in range(360, -1, -4)])
 
 
 def draw(s):
-    for x in (38, 81):
-        s.line([level_face(u, v) for u, v in oval(x, 42, 38, 34)], EDGE)
-    for x, z in ((49, 31), (52, 27), (55, 23)):
-        s.face([level_face(u, v) for u, v in ((x, z), (x + 16, z),
-                (x + 16, z + 24), (x, z + 24))], EDGE)
-    s.line([level_face(u, v) for u, v in oval(63, 39, 3.3, 3.3)], BOLD)
-    rule(s, level_face, 59, 30, 8, DETAIL)
+    at = screen()
+    for u in (-26, 26):
+        plate(s, lambda a, b, u=u: at(u + a, b), ring(40, 7), 5, BACK)
+    person(s, at, 0, -1, 17)

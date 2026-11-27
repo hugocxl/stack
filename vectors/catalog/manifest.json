@@ -4882,7 +4882,7 @@
           "id": "causal-analysis",
           "title": "Causal analysis",
           "placement": "Measurement methodology page",
-          "visual": "A single directional arrow links a trigger node to a distinct effect node.",
+          "visual": "A bold arrow leads from a trigger disc marked with a bolt to an effect disc marked with a target.",
           "priority": "extended",
           "asset": "figures/causal-analysis.svg"
         },
@@ -4914,7 +4914,7 @@
           "id": "customer-journey",
           "title": "Customer journey",
           "placement": "Lifecycle or product analytics page",
-          "visual": "A winding route leads from an entry ring past a midpoint marker to a checked final stop.",
+          "visual": "A winding path on the ground runs from an entry ring past a midpoint marker to a check badge.",
           "priority": "extended",
           "asset": "figures/customer-journey.svg"
         },
@@ -4938,7 +4938,7 @@
           "id": "time-series-sampling",
           "title": "Time-series sampling",
           "placement": "Analytics docs",
-          "visual": "Evenly spaced probes land on isolated points along an irregular physical trace.",
+          "visual": "A standing chart samples a wavy signal with evenly spaced stems.",
           "priority": "extended",
           "asset": "figures/time-series-sampling.svg"
         },
@@ -4978,7 +4978,7 @@
           "id": "residual-analysis",
           "title": "Residual analysis",
           "placement": "Regression diagnostic report",
-          "visual": "A residual plot has individual stems extending above and below its zero baseline.",
+          "visual": "A standing chart shows residual stems rising and falling from a zero line.",
           "priority": "extended",
           "asset": "figures/residual-analysis.svg"
         },
@@ -5130,7 +5130,7 @@
           "id": "seasonal-decomposition",
           "title": "Seasonal decomposition",
           "placement": "Forecast workbench",
-          "visual": "A chart recorder aligns an original signal, a rising trend, and a repeating seasonal wave on three strips.",
+          "visual": "A standing chart splits a signal into three stacked traces: original, trend and season.",
           "priority": "extended",
           "asset": "figures/seasonal-decomposition.svg"
         },
@@ -5194,7 +5194,7 @@
           "id": "interaction-effects",
           "title": "Interaction effects",
           "placement": "Experimental results article",
-          "visual": "Two opposing response lines cross on a shared ruled axis.",
+          "visual": "On a standing chart two response lines cross between their end markers.",
           "priority": "extended",
           "asset": "figures/interaction-effects.svg"
         },
@@ -5202,7 +5202,7 @@
           "id": "cumulative-probability",
           "title": "Cumulative probability",
           "placement": "Probability distribution documentation",
-          "visual": "A cumulative probability curve rises from zero and flattens at the top of a ruled probability scale.",
+          "visual": "A standing chart traces an S-shaped curve that rises from zero and levels off at the top.",
           "priority": "extended",
           "asset": "figures/cumulative-probability.svg"
         },
@@ -5218,7 +5218,7 @@
           "id": "tail-risk",
           "title": "Tail risk",
           "placement": "Risk analytics explainer",
-          "visual": "A loss distribution trails off into a long right tail marked by a warning triangle.",
+          "visual": "A standing chart shows a loss curve trailing into a long right tail, with a warning triangle.",
           "priority": "extended",
           "asset": "figures/tail-risk.svg"
         },
@@ -5330,7 +5330,7 @@
           "id": "approval-rate",
           "title": "Approval rate",
           "placement": "Conversion scoring dashboard",
-          "visual": "A check badge caps the approved segment of a graduated rate gauge.",
+          "visual": "A thick progress ring is filled three quarters of the way around a bold check mark.",
           "priority": "extended",
           "asset": "figures/approval-rate.svg"
         },
@@ -5338,7 +5338,7 @@
           "id": "demand-model",
           "title": "Demand model",
           "placement": "Retail data science feature",
-          "visual": "A stocked shop shelf carries a demand chart that rises into a dashed forecast.",
+          "visual": "A standing chart shows demand bars with the next bars outlined in dashes as a forecast.",
           "priority": "extended",
           "asset": "figures/demand-model.svg"
         },
@@ -5346,7 +5346,7 @@
           "id": "renewal-forecast",
           "title": "Renewal forecast",
           "placement": "Revenue intelligence page",
-          "visual": "A renewal ledger shows a solid revenue history extending into a dashed forecast.",
+          "visual": "A standing chart carries a solid renewal history that continues as a dashed forecast.",
           "priority": "extended",
           "asset": "figures/renewal-forecast.svg"
         },
@@ -5370,7 +5370,7 @@
           "id": "audience-overlap",
           "title": "Audience overlap",
           "placement": "Audience analysis dashboard",
-          "visual": "Two audience circles share one stack of profile cards in their intersection.",
+          "visual": "Two thick rings overlap, and a member figure stands in the space they share.",
           "priority": "extended",
           "asset": "figures/audience-overlap.svg"
         },
@@ -5394,7 +5394,7 @@
           "id": "channel-performance",
           "title": "Channel performance",
           "placement": "Marketing analysis dashboard",
-          "visual": "Three bent inlet pipes of different diameters feed a common tank with a graduated sight glass.",
+          "visual": "Three round columns of different heights compare how three channels perform.",
           "priority": "extended",
           "asset": "figures/channel-performance.svg"
         },
@@ -5538,7 +5538,7 @@
           "id": "activation-milestones",
           "title": "Activation milestones",
           "placement": "Growth dashboard onboarding",
-          "visual": "A three-step progress line links three large milestones and puts a check badge on the last one.",
+          "visual": "A standing chart steps up through three milestone dots to a check badge.",
           "priority": "extended",
           "asset": "figures/activation-milestones.svg"
         },
@@ -5546,7 +5546,7 @@
           "id": "adoption-lag",
           "title": "Adoption lag",
           "placement": "Rollout measurement",
-          "visual": "An adoption chart stays flat before rising, with a clock badge marking the delayed start.",
+          "visual": "On a standing chart a flat line waits before it rises, with a clock badge at the bend.",
           "priority": "extended",
           "asset": "figures/adoption-lag.svg"
         },
@@ -5562,7 +5562,7 @@
           "id": "metric-guardrail",
           "title": "Metric guardrail",
           "placement": "Experiment control policy dashboard",
-          "visual": "A monitoring chart shows a level threshold above its trend and a shield on the upper corner of its frame.",
+          "visual": "A standing chart keeps its trend under a dashed guardrail line marked by a shield badge.",
           "priority": "extended",
           "asset": "figures/metric-guardrail.svg"
         },

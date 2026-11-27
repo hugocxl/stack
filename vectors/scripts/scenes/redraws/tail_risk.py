@@ -1,15 +1,16 @@
-from math import exp
+from math import cos, exp, radians, sin
 
-from scenes.redraws._kit import warning
-from scenes.redraws._w2 import axes, board, chart_line
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import chart_board, dot, smooth
 
-DESCRIPTION = "A loss distribution trails off into a long right tail marked by a warning triangle."
+DESCRIPTION = "A standing chart shows a loss curve trailing into a long right tail, with a warning triangle."
 
 
 def draw(s):
-    point = board(s, 123, 79, run=.44, rise=.79, level=True)
-    axes(s, point, width=100, height=58)
-    curve = [(x, 16 + 51 * ((x - 12) / 15) ** 2 * exp(2 - 2 * (x - 12) / 15))
-             for x in range(13, 109)]
-    chart_line(s, point, curve)
-    warning(s, 50, -60, 26, 26)
+    f = chart_board(s)
+    curve = [(14 + t, 12 + 48*exp(-((t - 16)/9)**2) + 6*exp(-t/30)) for t in range(0, 89, 2)]
+    s.line([f(u, v) for u, v in curve], BOLD)
+    from scenes.redraws._kit import warning
+    x, y, z = f(88, 22)
+    warning(s, x, y + 1, z, 20)

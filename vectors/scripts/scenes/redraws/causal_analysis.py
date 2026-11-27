@@ -1,16 +1,16 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._kit import arrow, coin, glyph
-from scenes.redraws._w2 import level_face
+from geometry import BOLD, EDGE, oval
+from scenes.redraws._sf import BACK, bolt, chevron_arrow, plate, screen
 
-DESCRIPTION = "A single directional arrow links a trigger node to a distinct effect node."
+DESCRIPTION = "A bold arrow leads from a trigger disc marked with a bolt to an effect disc marked with a target."
 
 
 def draw(s):
-    a, b, c = level_face(17, 52)
-    coin(s, a, b, c, 16, depth=6)
-    glyph(s, "bolt", a, b, c, 10, BOLD)
-    a, b, c = level_face(106, 25)
-    coin(s, a, b, c, 16, depth=6)
-    coin(s, a, b, c, 8, depth=0, ink=DETAIL)
-    coin(s, a, b, c, 3.3, depth=0, ink=EDGE)
-    arrow(s, [level_face(33, 48), level_face(88, 30)], BOLD, head=12)
+    at = screen()
+    a = lambda u, v: at(u - 60, v)
+    plate(s, a, oval(0, 0, 22, 22, count=64)[:-1], 6, BACK)
+    bolt(s, a, 12)
+    b = lambda u, v: at(u + 60, v)
+    plate(s, b, oval(0, 0, 22, 22, count=64)[:-1], 6, BACK)
+    for r in (14, 7):
+        s.line([b(u, v) for u, v in oval(0, 0, r, r, count=48)], BOLD if r == 7 else EDGE)
+    plate(s, lambda u, v: at(u - 30, v), chevron_arrow(56, 7, 15), 4, BACK)

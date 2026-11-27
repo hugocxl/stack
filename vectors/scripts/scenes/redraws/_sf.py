@@ -396,3 +396,19 @@ def question(s, at, size, ink=None):
     pts = [(-.45, .5), (-.3, .82), (0, .95), (.32, .85), (.45, .55), (.3, .25), (0, .05), (0, -.3)]
     s.line([at(u*size, v*size) for u, v in smooth(pts, 4)], ink or BOLD)
     s.line([at(0, -.62*size), at(0, -.66*size)], ink or BOLD)
+
+
+def chart_board(s, w=112, h=76, axes=True):
+    """A thick chart board standing on two feet; returns its face with origin at the plot corner."""
+    for x in (14, w - 14):
+        s.box(x - 9, -14, 0, 18, 22, 4, 2)
+    face = left_face(-w/2 + w/2 - w/2, 0, 6)
+    face = left_face(0, 0, 6)
+    plate(s, face, squircle(w, h, 6), 6, (0, -1, 0))
+    if axes:
+        s.line([face(12, h - 10), face(12, 10), face(w - 10, 10)], DETAIL)
+    return face
+
+
+def dot(s, at, u, v, r=2.6, ink=EDGE):
+    s.line([at(u + a, v + b) for a, b in oval(0, 0, r, r, count=20)], ink)

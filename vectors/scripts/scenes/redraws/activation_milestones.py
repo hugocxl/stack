@@ -1,16 +1,16 @@
-from geometry import EDGE
-from scenes.redraws._kit import badge
-from scenes.redraws._w2 import board, chart_line, chart_marker
+from math import cos, exp, radians, sin
 
-DESCRIPTION = "A three-step progress line links three large milestones and puts a check badge on the last one."
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import chart_board, dot, smooth
+
+DESCRIPTION = "A standing chart steps up through three milestone dots to a check badge."
 
 
 def draw(s):
-    point = board(s, 123, 90, run=.36, rise=.82, level=True)
-    milestones = [(19, 21), (58, 43), (100, 65)]
-    chart_line(s, point, [(12, 21), milestones[0], (39, 21), (39, 43), milestones[1],
-                          (79, 43), (79, 65), milestones[2]], EDGE)
-    for x, v in milestones:
-        chart_marker(s, point, x, v, 6.2)
-    x, y, z = point(100, 65)
-    badge(s, "check", x + 7, y - 4, z + 10, 11)
+    f = chart_board(s)
+    pts = [(14, 16), (40, 16), (40, 34), (66, 34), (66, 52), (92, 52)]
+    s.line([f(u, v) for u, v in pts], BOLD)
+    for u, v in ((40, 16), (66, 34), (92, 52)):
+        dot(s, f, u, v, 3.4)
+    badge(s, "check", *f(100, 64), 11)

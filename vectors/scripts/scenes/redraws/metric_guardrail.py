@@ -1,14 +1,14 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._w2 import board, chart_line, closed_outline
+from math import cos, exp, radians, sin
 
-DESCRIPTION = "A monitoring chart shows a level threshold above its trend and a shield on the upper corner of its frame."
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import chart_board, dot, smooth
+
+DESCRIPTION = "A standing chart keeps its trend under a dashed guardrail line marked by a shield badge."
 
 
 def draw(s):
-    p = board(s, 124, 74, run=.17, depth=12, level=True)
-    s.line([p(12, 54), p(12, 12), p(111, 12)], DETAIL)
-    chart_line(s, p, [(12, 51), (94, 51)], BOLD)
-    chart_line(s, p, [(15, 26), (27, 33), (43, 28), (55, 41),
-                     (69, 35), (85, 43), (106, 37)], EDGE)
-    closed_outline(s, p, [(96, 63), (106, 67), (116, 63), (115, 53),
-                          (111, 48), (106, 45), (101, 48), (97, 53)], EDGE)
+    f = chart_board(s)
+    s.line([f(12, 54), f(102, 54)], EDGE, dashed=True)
+    s.line([f(u, v) for u, v in [(14, 22), (28, 30), (42, 26), (56, 38), (70, 34), (84, 42), (100, 40)]], BOLD)
+    badge(s, "lock", *f(100, 62), 10)

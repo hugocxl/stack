@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-volunteer-welcome-desk	extended	Museum shift check-in	A heart-marked volunteer name badge rests on the ledge of a check-in counter.
-activation-milestones	extended	Growth dashboard onboarding	A three-step progress line links three large milestones and puts a check badge on the last one.
-activity-history	extended	User activity feature section	An event lifts from its place on the timeline.
-adoption-lag	extended	Rollout measurement	An adoption chart stays flat before rising, with a clock badge marking the delayed start.
-approval-rate	extended	Conversion scoring dashboard	A check badge caps the approved segment of a graduated rate gauge.
-audience-overlap	extended	Audience analysis dashboard	Two audience circles share one stack of profile cards in their intersection.
-benchmarking	extended	Industry analytics product	A bold benchmark rule crosses three bars and separates the bars above and below target.
-causal-analysis	extended	Measurement methodology page	A single directional arrow links a trigger node to a distinct effect node.
-channel-performance	extended	Marketing analysis dashboard	Three bent inlet pipes of different diameters feed a common tank with a graduated sight glass.
-cluster-sampling	extended	Sampling design help	One whole cassette of sample vials is pulled from a three-slot rack and marked with a check.
-cumulative-probability	extended	Probability distribution documentation	A cumulative probability curve rises from zero and flattens at the top of a ruled probability scale.
-customer-journey	extended	Lifecycle or product analytics page	A winding route leads from an entry ring past a midpoint marker to a checked final stop.
-customer-lifetime-value	extended	Revenue analytics overview	A customer card peeks out of a wallet behind three progressively taller stacks of coins.
-dataset-annotation	specialist	Training or research data platform	An instant photograph has a callout label pointing to the sailboat outlined inside it.
-demand-model	extended	Retail data science feature	A stocked shop shelf carries a demand chart that rises into a dashed forecast.
-document-similarity	extended	Document discovery dashboard	Two thick documents expose matching outlined passages in the same position.
-engagement-depth	extended	Content analytics section	A marker on an open magazine’s engagement scale aligns with the last section reached.
-feature-importance	extended	Model interpretation feature	Three labeled horizontal contribution bars descend in rank from longest to shortest.
-fold-validation	extended	Cross-validation explainer	Each row of a cross-validation matrix holds out a different column in a clearly stepped diagonal.
-imputation-preview	extended	Preprocessing workflow	A dashed data-table cell contains one faint preview entry among the existing values.
-interaction-effects	extended	Experimental results article	Two opposing response lines cross on a shared ruled axis.
-metric-guardrail	extended	Experiment control policy dashboard	A monitoring chart shows a level threshold above its trend and a shield on the upper corner of its frame.
-model-error-budget	extended	ML platform control view	An instrument shows a partially used error allowance as a hatched bar inside a closed track.
-outlier-detection	extended	Model monitoring or anomaly feature	A probe hovers above the single tall sample in an otherwise flat field.
-population-coverage	extended	Audience analysis page	A partly unfolded map outlines a service area around three customer markers.
-price-sensitivity	extended	Pricing research feature	A price tag hangs from a bidirectional slider with wide adjustment marks.
-query-latency-distribution	extended	Search performance diagnostics	A stopwatch displays a binned response-time histogram across its face.
-randomization-check	extended	Experiment quality dashboard	An assignment grid mixes round and triangular tokens, with a check badge on its near corner.
-rank-order	extended	Sorting settings in data explorer	A three-level winners’ podium shows one pip on the highest tier, two on the next and three on the lowest.
-renewal-forecast	extended	Revenue intelligence page	A renewal ledger shows a solid revenue history extending into a dashed forecast.
-residual-analysis	extended	Regression diagnostic report	A residual plot has individual stems extending above and below its zero baseline.
-sampling-bias	extended	Survey validation article	A sampling funnel receives round and square tokens but releases only round ones.
-saturation-point	extended	Growth curve methodology	A laboratory thermometer reaches the end of its graduated scale.
-seasonal-decomposition	extended	Forecast workbench	A chart recorder aligns an original signal, a rising trend, and a repeating seasonal wave on three strips.
-segment-profiling	extended	Customer research section	A standing customer ID card pairs a group pictogram with three trait bars.
-sensor-calibration	extended	Measurement service or connected-device settings	A knobbed calibration weight sits on the raised pan of a digital bench scale.
-sentiment-distribution	extended	Feedback analytics feature	Three bars stand over positive, neutral and negative feedback symbols on their shared base.
-simulation-runs	extended	What-if analysis overview	Three dice show different outcomes along one curving roll path.
-skew-and-asymmetry	extended	Statistical distribution walkthrough	A histogram rises to an early peak and falls into a long series of low bars on the right.
-stratified-sampling	extended	Survey methodology article	Three layers in a sampling jar each yield a matching token.
-stress-testing	extended	Portfolio modeling overview	A load-testing press compresses a bowing specimen between two platens.
-survey-response-coding	extended	Research analysis project	A written response feeds into a two-bin sorter marked with distinct category tags.
-systematic-sampling	extended	Research sampling guide	Every third parcel rises above a line of evenly spaced parcels on a roller conveyor.
-tail-risk	extended	Risk analytics explainer	A loss distribution trails off into a long right tail marked by a warning triangle.
-threshold-crossing	extended	Event detection rule setup	A ball follows an arc over a freestanding threshold bar.
-time-series-sampling	extended	Analytics docs	Evenly spaced probes land on isolated points along an irregular physical trace.
-topic-frequency	extended	Text analysis dashboard	A small receipt printer feeds out a tally with three topic rows and unequal bars.
-type-coercion	extended	Data contracts documentation	A laptop screen shows a quoted token becoming a number-sign token.
-unit-conversion	extended	Measurement analytics reference	An arrow pairs equal-length ruler scales with coarse and fine divisions on one measurement card.
 variance-decomposition	extended	Risk measurement tools	A single variance bar is divided into three differently patterned contributor segments.
 weighting-adjustment	extended	Survey calibration tool	A sliding counterweight shifts along the graduated beam of a balance scale.
 adaptive-batching	extended	Throughput settings page	A conveyor with a rotary size dial carries a two-carton batch and a three-carton batch.
