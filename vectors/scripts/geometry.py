@@ -223,6 +223,44 @@ def fit(strokes):
     return scale, CANVAS[0]/2-(lo_x+hi_x)*scale/2, CANVAS[1]/2-(lo_y+hi_y)*scale/2
 
 
+def _key(point):
+    return tuple(map(float, point.split(",")))
+
+
+def canonical(points):
+    """Print the same outline the same way: rings start at their smallest vertex and every
+    run takes the direction that sorts first."""
+    if len(points) > 3 and points[0] == points[-1]:
+        options = []
+        for ring in (points[:-1], points[-2::-1]):
+            start = min(range(len(ring)), key=lambda i: _key(ring[i]))
+            options.append(ring[start:] + ring[:start] + ring[start:start + 1])
+    else:
+        options = [points, points[::-1]]
+    return min(options, key=lambda run: [_key(p) for p in run])
+
+
+def merged(runs):
+    """Join runs that meet end to end where exactly two run ends share a point.
+
+    GEOS may split one outline into two runs at an arbitrary vertex on one CPU and not on
+    another; joining them makes the printed paths independent of where that split fell."""
+    runs = [list(run) for run in runs]
+    while True:
+        ends = {}
+        for i, run in enumerate(runs):
+            if run[0] != run[-1]:
+                for side in (0, -1):
+                    ends.setdefault(run[side], []).append((i, side))
+        pair = next((v for v in sorted(ends.items()) if len(v[1]) == 2 and v[1][0][0] != v[1][1][0]), None)
+        if pair is None:
+            return runs
+        (i, si), (j, sj) = pair[1]
+        a = runs[i] if si == -1 else runs[i][::-1]
+        b = runs[j] if sj == 0 else runs[j][::-1]
+        runs = [run for k, run in enumerate(runs) if k not in (i, j)] + [a + b[1:]]
+
+
 def paths_for(scene):
     lo_x, lo_y, hi_x, hi_y = scene.extent()
     scale = min(ART[0]/(hi_x-lo_x), ART[1]/(hi_y-lo_y))
@@ -235,13 +273,23 @@ def paths_for(scene):
         if abs(scale - estimate) < estimate*.01:
             break
     groups = {ink: [] for ink in (GUIDE, DETAIL, EDGE, BOLD)}
+    solid = {ink: [] for ink in groups}
     for coords, ink in strokes:
         pieces = dashes(coords, scale) if getattr(ink, "dashed", False) else [coords]
         for piece in pieces:
-            points = " ".join(f"{x*scale+offset_x:.2f},{y*scale+offset_y:.2f}" for x, y in piece)
             if len(piece) > 1:
-                groups[ink].append("M" + points)
+                run = [f"{x*scale+offset_x:.2f},{y*scale+offset_y:.2f}" for x, y in piece]
+                # Rounding can fold a near-duplicate vertex onto its neighbour; drop it.
+                run = [p for i, p in enumerate(run) if i == 0 or p != run[i - 1]]
+                if len(run) < 2:
+                    continue
+                (groups if getattr(ink, "dashed", False) else solid)[ink].append(run)
+    for ink, runs in solid.items():
+        groups[ink].extend(merged(runs))
+    groups = {ink: ["M" + " ".join(canonical(run)) for run in runs] for ink, runs in groups.items()}
+    # GEOS may start a ring at a different vertex, or list rings in a different order, on
+    # another CPU; canonical rings in sorted order keep the built SVGs identical everywhere.
     return '\n'.join(
-        f'  <path vector-effect="non-scaling-stroke" stroke-opacity="{ink}" d="{" ".join(paths)}"/>'
+        f'  <path vector-effect="non-scaling-stroke" stroke-opacity="{ink}" d="{" ".join(sorted(paths))}"/>'
         for ink, paths in groups.items() if paths
     )

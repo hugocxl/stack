@@ -6,8 +6,8 @@ DESCRIPTION = "A standing map pin contains a water bottle beneath a dispensing s
 
 
 def draw(s):
-    upright(s, pin_outline(0, 54, 30), 0, 7, angle=-34)
-    pin = front_surface(s, angle=-34)
+    upright(s, pin_outline(0, 54, 30), 0, 7, angle=-33)
+    pin = front_surface(s, angle=-33)
     pin.outline([(-7, 27), (-10, 30), (-10, 46), (-8, 50), (-4, 53), (-4, 57),
                  (4, 57), (4, 53), (8, 50), (10, 46), (10, 30), (7, 27)], EDGE)
     pin.rows(-9, 37, (18,), ink=DETAIL)
