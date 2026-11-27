@@ -9096,7 +9096,7 @@
           "id": "update-notification",
           "title": "Update notification",
           "placement": "Reader subscription preference",
-          "visual": "A notification bell carries a refresh badge on its lower-right rim.",
+          "visual": "A notification bell carries a download badge on its lower-right rim.",
           "priority": "extended",
           "asset": "figures/update-notification.svg"
         },

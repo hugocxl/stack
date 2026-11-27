@@ -1,9 +1,9 @@
 from scenes.redraws._kit import _screen, badge
 from scenes.redraws.notification_read import notification_bell
 
-DESCRIPTION = "A notification bell carries a refresh badge on its lower-right rim."
+DESCRIPTION = "A notification bell carries a download badge on its lower-right rim."
 
 
 def draw(s):
     notification_bell(s)
-    badge(s, "refresh", *_screen(0, 0, 0, 33, 9), 12.6)
+    badge(s, "down", *_screen(0, 0, 0, 33, 9), 12.6)

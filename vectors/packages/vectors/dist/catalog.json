@@ -20705,7 +20705,7 @@
     "name": "update-notification",
     "export": "UpdateNotificationVector",
     "title": "Update notification",
-    "description": "A notification bell carries a refresh badge on its lower-right rim.",
+    "description": "A notification bell carries a download badge on its lower-right rim.",
     "category": "Publishing, editorial and media",
     "categoryId": "publishing-editorial-and-media",
     "placement": "Reader subscription preference",
