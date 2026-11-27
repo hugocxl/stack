@@ -1,13 +1,14 @@
-from geometry import BOLD, EDGE
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._sf import bolt, left_face, plate, squircle
 
-DESCRIPTION = "An open breaker lever lifts away from one of two contacts in a single circuit."
+DESCRIPTION = "A breaker box with a lightning mark has its toggle lever thrown down to the off position."
 
 
 def draw(s):
-    s.tube([(-20, 8, 6), (-39, 8, 6), (-39, -27, 6), (39, -27, 6),
-            (39, 8, 6), (21, 8, 6)], 2.5, EDGE)
-    for x in (-20, 21):
-        s.disk(x, 8, 4, 6, 6, 6)
-    s.disk(-20, 8, 10, 4, 4, 5)
-    s.tube([(-20, 8, 14), (12, 8, 58)], 3.5, BOLD)
-    s.ellipse(21, 8, 10, 3, 3, EDGE)
+    face = left_face(-36, 0, 0)
+    plate(s, face, squircle(72, 90, 10), 20, (0, -1, 0))
+    slot = [face(26 + u, 30 + v) for u, v in squircle(20, 34, 6)]
+    s.line(slot + slot[:1], EDGE)
+    bolt(s, lambda u, v: face(36 + u, 76 + v), 7)
+    s.tube([face(36, 40), (face(36, 32)[0], 18, face(36, 32)[2])], 3.4, EDGE)
+    s.line([face(12, 12), face(60, 12)], DETAIL)

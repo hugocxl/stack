@@ -412,3 +412,20 @@ def chart_board(s, w=112, h=76, axes=True):
 
 def dot(s, at, u, v, r=2.6, ink=EDGE):
     s.line([at(u + a, v + b) for a, b in oval(0, 0, r, r, count=20)], ink)
+
+
+def server(s, x, y, z=0, w=50, d=34, h=18):
+    """A rack server unit with two drive slots and a status light on its front."""
+    s.box(x, y, z, w, d, h, 3)
+    front = left_face(x, y + d, z)
+    for v in (h*.36, h*.64):
+        s.line([front(6, v), front(w*.55, v)], DETAIL)
+    s.line([front(w - 8 + a, h/2 + b) for a, b in oval(0, 0, 1.8, 1.8, count=12)], EDGE)
+    return front
+
+
+def cylinder_db(s, x, y, z=0, r=26, h=44, bands=2):
+    """A database: a turned cylinder with band seams."""
+    turned(s, [(r, 0), (r, h)], x, y, z, steps=1)
+    for k in range(1, bands + 1):
+        lip(s, x, y, z + h*k/(bands + 1), r, EDGE, -45, 135)

@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-variance-decomposition	extended	Risk measurement tools	A single variance bar is divided into three differently patterned contributor segments.
-weighting-adjustment	extended	Survey calibration tool	A sliding counterweight shifts along the graduated beam of a balance scale.
-adaptive-batching	extended	Throughput settings page	A conveyor with a rotary size dial carries a two-carton batch and a three-carton batch.
-bandwidth	extended	Network performance feature block	Parallel fibers carry traffic between two terminal blocks.
-batch-processing	extended	Offline queue overview	A conveyor carries three identical blocks into the open throat of a processing machine.
-blue-green-deployment	extended	Deployment strategy guide	A selector lever connects its pivot to the round contact while the square contact remains open.
-canary-release	extended	Gradual release guide	A narrow release branch reaches a raised test flask before the main path reaches a software package.
-circuit-breaker	extended	Resilience configuration docs	An open breaker lever lifts away from one of two contacts in a single circuit.
-cold-storage	extended	Archival storage tier	A lidded archival box has a snowflake centered on its front label plate.
-connection-lease	extended	Database server capacity docs	A clock badge sits on the housing of a cable plugged into a database cylinder.
-connection-pooling	extended	Connection management docs	Three cables enter a shared junction hub, which connects to one database cylinder.
-continuous-integration	extended	Build and test feature or docs	A thick figure-eight loop carries a direction arrow and a check badge.
-dependency-pinning	extended	Dependency update configuration	A raised pushpin holds the version label of a code package.
-dependency-vendoring	extended	Packaging and offline build guide	A small code package rests inside an upright project folder with a raised tab.
-disaster-recovery-rehearsal	extended	Failover exercise documentation	A bound recovery runbook shows three drill steps and a restore arrow.
-disk-cleanup	extended	Storage usage detail	A small broom sweeps diagonally across the platter window of an external drive.
-dns-failover	extended	Alias configuration overview	A globe labels a two-row DNS record card, and a bent arrow routes from its primary row to its backup row.
-edge-computing	extended	Distributed compute landing page	A remote sensor housing has a side lens and a cutaway front that reveals its processor.
-edge-network	extended	Infrastructure reach section	A surface links four peripheral nodes to one hub.
-endpoint-health-checks	extended	Load distribution settings	A network endpoint displays a pulse trace beside its keyed Ethernet port.
-failover	extended	High availability feature	A standby unit is ready beside the primary system.
-garbage-collection	extended	Runtime internals guide	A small open wastebasket catches a square allocation beside a pin-legged memory chip.
-gateway-routing	extended	Upstream route configuration	A gateway's single inlet follows a branching trace to two outgoing routes.
-idempotent-writes	extended	API write semantics guide	Two identical write events converge into a single arrow beside a database cylinder.
-incremental-restore	extended	Restore wizard	An offset top snapshot sits above a database stack, and a curved arrow returns to that layer.
-ingress-routing	extended	Cluster networking page	Two incoming paths join before passing through a thick gateway arch.
-integration-test-harness	extended	Test infrastructure documentation	A check badge marks a wired test fixture that clamps a code chip between two connector jaws.
-log-ingestion	extended	Logging product feature	A row of timestamp symbols lines a log console, and an arrow feeds into the middle entry.
-message-ordering	extended	Messaging delivery guarantees	Three speech bubbles in a standing queue show one, two, and three dots beside a downward arrow.
-network-disk-mount	extended	Remote volume setup	An upward mount arrow rises from a disk drive with a keyed network port.
-network-peering	extended	Private links configuration	Two matching routers share a directly attached link with an arrowhead in each direction.
-portable-volume	extended	Storage migration interface	A short outward arrow extends from the front transfer socket of an external drive.
-power-fallback	extended	Hardware capacity and reserve docs	A curved return arrow loops around the side of an upright backup battery.
-process-isolation	extended	Runtime security guide	A pin-legged processor sits entirely inside the edges of a transparent cubic sandbox.
-proxy-diagnostics	extended	Forwarding debug view	A magnifier frames the two forwarding sockets on the face of a proxy server.
-query-execution-plan	extended	Database query inspector	An execution tree connects a database root through an intersecting-ring join node to two table scans.
-quota-tracking	extended	Resource usage dashboard	A standing quota gauge shows a partially filled bar and a tall capacity mark at its end.
-regional-failback	extended	Recovery procedure docs	A curved arrow returns from the right rack server to an identical rack server on the left.
-release-channels	extended	Stable and preview selector	Three code packages sit on parallel release rails, with a check badge marking the nearest channel.
-release-rollback	extended	Deployment or incident recovery docs	A version tag sits on a sealed software package encircled by a looping rollback arrow.
-request-queue	extended	Asynchronous jobs feature or docs	Requests line up to pass through a single gate.
-retention-tagging	extended	Data cleanup control	A punched label shows a large clock beside a short duration field.
-schema-migration	specialist	Data platform admin docs	A migration arrow connects a two-field schema table to a revised three-field table.
-secure-tunnel	extended	Private connection setup	A padlock badge overlaps the midpoint of a flanged network tunnel.
-service-mesh	extended	Platform topology section	Four equal service cubes connect directly to their peers through a crisscross mesh.
-storage-allocation	extended	Capacity editor	Radial dividers partition the top of a database cylinder, and hatching marks one allocated sector.
-system-diagnostics-bundle	extended	Support troubleshooting workflow	A zipper closes a boxed diagnostics bundle with a pulse trace across its front.
-thermal-throttling	extended	Compute cooling notice	A processor shows three descending performance bars beside a thermometer.
-thread-contention	extended	Runtime performance article	Two broad pipes merge into one narrow pipe, with a warning triangle beside the bottleneck.
 tiered-storage	extended	Storage policy configuration	Three concentric storage tiers step down in diameter from the bottom to the top.
 tunnel-retirement	extended	Exit from developer tunnel setup	An x badge overlaps the midpoint of a flanged network tunnel.
 webhook-delivery	extended	Developer integrations guide	A cable hook carries a sealed envelope toward a server.

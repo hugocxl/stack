@@ -3804,7 +3804,7 @@
           "id": "release-rollback",
           "title": "Release rollback",
           "placement": "Deployment or incident recovery docs",
-          "visual": "A version tag sits on a sealed software package encircled by a looping rollback arrow.",
+          "visual": "A sealed software package carries a return badge as the release rolls back.",
           "priority": "extended",
           "asset": "figures/release-rollback.svg"
         },
@@ -3812,7 +3812,7 @@
           "id": "canary-release",
           "title": "Canary release",
           "placement": "Gradual release guide",
-          "visual": "A narrow release branch reaches a raised test flask before the main path reaches a software package.",
+          "visual": "A small release carton goes out ahead of a row of full-size cartons, carrying a check badge.",
           "priority": "extended",
           "asset": "figures/canary-release.svg"
         },
@@ -3820,7 +3820,7 @@
           "id": "blue-green-deployment",
           "title": "Blue-green deployment",
           "placement": "Deployment strategy guide",
-          "visual": "A selector lever connects its pivot to the round contact while the square contact remains open.",
+          "visual": "Two identical server stacks stand side by side, and an arrow badge switches traffic to the second.",
           "priority": "extended",
           "asset": "figures/blue-green-deployment.svg"
         },
@@ -3876,7 +3876,7 @@
           "id": "cold-storage",
           "title": "Cold storage",
           "placement": "Archival storage tier",
-          "visual": "A lidded archival box has a snowflake centered on its front label plate.",
+          "visual": "A lidded archival box is marked with a snowflake on its front.",
           "priority": "extended",
           "asset": "figures/cold-storage.svg"
         },
@@ -4204,7 +4204,7 @@
           "id": "circuit-breaker",
           "title": "Circuit breaker",
           "placement": "Resilience configuration docs",
-          "visual": "An open breaker lever lifts away from one of two contacts in a single circuit.",
+          "visual": "A breaker box with a lightning mark has its toggle lever thrown down to the off position.",
           "priority": "extended",
           "asset": "figures/circuit-breaker.svg"
         },
@@ -4236,7 +4236,7 @@
           "id": "connection-pooling",
           "title": "Connection pooling",
           "placement": "Connection management docs",
-          "visual": "Three cables enter a shared junction hub, which connects to one database cylinder.",
+          "visual": "Three cables gather into one hub that feeds a single database.",
           "priority": "extended",
           "asset": "figures/connection-pooling.svg"
         },
@@ -4324,7 +4324,7 @@
           "id": "network-peering",
           "title": "Network peering",
           "placement": "Private links configuration",
-          "visual": "Two matching routers share a directly attached link with an arrowhead in each direction.",
+          "visual": "Two matching routers are joined directly by one cable.",
           "priority": "extended",
           "asset": "figures/network-peering.svg"
         },
@@ -4404,7 +4404,7 @@
           "id": "power-fallback",
           "title": "Power fallback",
           "placement": "Hardware capacity and reserve docs",
-          "visual": "A curved return arrow loops around the side of an upright backup battery.",
+          "visual": "An upright backup battery with a lightning mark carries a return badge.",
           "priority": "extended",
           "asset": "figures/power-fallback.svg"
         },

@@ -1,14 +1,12 @@
-from geometry import BOLD, DETAIL, EDGE, oval
-from scenes.redraws._kit import arrow, glyph
-from scenes.systems_shapes import bezel
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import bolt, left_face, plate, squircle
 
-DESCRIPTION = "A curved return arrow loops around the side of an upright backup battery."
+DESCRIPTION = "An upright backup battery with a lightning mark carries a return badge."
 
 
 def draw(s):
-    s.box(-24, -24, 0, 48, 32, 63, 5)
-    s.box(-11, -15, 63, 22, 14, 7, 2)
-    bezel(s, -18, 8, 8, 36, 46, DETAIL, 3)
-    glyph(s, "bolt", -2, 8, 32, 19, EDGE)
-    return_path = [(x, -13, z) for x, z in oval(29, 31, 22, 22, -110, 119, 25)]
-    arrow(s, return_path, BOLD, head=9)
+    s.box(-10, -12, 74, 20, 12, 6, 2)
+    face = left_face(-30, 0, 0)
+    plate(s, face, squircle(60, 76, 10), 24, (0, -1, 0))
+    bolt(s, lambda u, v: face(30 + u, 38 + v), 14)
+    badge(s, "back", 30, 0, 8, 13)
