@@ -1,33 +1,20 @@
-from geometry import BOLD, EDGE
-from scenes.redraws._w2 import face_arrow, folded_sheet, rule
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import plane, plate, smooth
 
-DESCRIPTION = "A single folded document passes between two binder clips, following a directional arrow."
+DESCRIPTION = "A sheet arcs from one tray into the next along a dashed path."
+
+
+def tray(s, x, y):
+    s.box(x, y, 0, 50, 38, 9, 3)
+    s.line([(x + 4, y + 4, 9), (x + 46, y + 4, 9), (x + 46, y + 34, 9)], DETAIL)
 
 
 def draw(s):
-    def plane(x, z):
-        return .79*x, -.21*x - .39*z, .87*z
-
-    def page(x, z):
-        return plane(x + 27, z + 4)
-
-    def clip(x, z, side):
-        def jaw(u, v, height=0):
-            a, b, c = plane(x + side*u, z + v)
-            return a + height*.28, b + height*.5, c + height
-
-        wire = [(7, -7), (15, -5), (21, -6), (24, -4),
-                (24, 4), (21, 6), (15, 5), (7, 7)]
-        s.tube([jaw(u, v, .5) for u, v in wire], 1.0, EDGE)
-        toes = [jaw(-5, -10), jaw(-5, 10)]
-        heels = [jaw(10, -10, 8), jaw(10, 10, 8)]
-        s.face([toes[0], heels[0], jaw(10, -10, -1)], EDGE)
-        s.face([toes[0], heels[0], heels[1], toes[1]], EDGE)
-        s.tube([jaw(u, v, 7) for u, v in wire], 1.0, EDGE)
-
-    folded_sheet(s, page, 68, 81, fold=12, depth=4)
-    rule(s, page, 13, 59, 36, EDGE)
-    rule(s, page, 13, 47, 29)
-    clip(27, 45, -1)
-    clip(95, 26, 1)
-    face_arrow(s, plane, [(41, 28), (81, 28)], BOLD, head=9)
+    tray(s, -70, -6)
+    tray(s, 22, 6)
+    s.line([(x, y, z) for x, y, z in smooth([(-44, 12, 12), (-24, 12, 52), (14, 16, 58), (46, 24, 14)], 8)], DETAIL, dashed=True)
+    sheet = plane((-24, 0, 40), (.96, .2, -.18), (0, .28, .96))
+    plate(s, sheet, [(0, 0), (46, 0), (46, 36), (0, 36)], 1.6, (0, -.96, .28))
+    for v in (22, 15, 8):
+        s.line([sheet(8, v + 4), sheet(36, v + 4)], DETAIL)
+    s.line([(41, 23, 21), (46, 24, 14), (50, 20, 20)], EDGE)

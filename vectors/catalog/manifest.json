@@ -24,7 +24,7 @@
           "id": "how-it-works",
           "title": "How it works",
           "placement": "Three-step explainer section",
-          "visual": "Directional arrows connect an input box, a gear, and a checkmark in a three-stage process.",
+          "visual": "A raw cube, a gear and a check seal stand in a row, joined by two arrows.",
           "priority": "core",
           "asset": "figures/how-it-works.svg"
         },
@@ -96,7 +96,7 @@
           "id": "contact-sales",
           "title": "Contact sales",
           "placement": "Enterprise contact section",
-          "visual": "A desk telephone with a handset and keypad sits beneath a speech bubble containing a price tag.",
+          "visual": "A thick speech bubble faces the viewer with a telephone handset standing out from its face.",
           "priority": "core",
           "asset": "figures/contact-sales.svg"
         },
@@ -7196,7 +7196,7 @@
           "id": "product-inventory",
           "title": "Product inventory",
           "placement": "Store-management inventory feature",
-          "visual": "Two shelves hold stock bins, with empty bays and a tally strip beside them.",
+          "visual": "A shelving rack holds labeled stock bins on three shelves, with one empty bay.",
           "priority": "core",
           "asset": "figures/product-inventory.svg"
         },
@@ -7204,7 +7204,7 @@
           "id": "product-details",
           "title": "Product details",
           "placement": "Product-page specifications block",
-          "visual": "A caliper grips the outer edge of a machined bearing with a visible central bore.",
+          "visual": "A product carton is measured along its width, depth and height by three dimension lines.",
           "priority": "core",
           "asset": "figures/product-details.svg"
         },
@@ -7220,7 +7220,7 @@
           "id": "free-shipping-threshold",
           "title": "Free shipping threshold",
           "placement": "Cart-spend incentive",
-          "visual": "A shopping cart carries a spend meter with a currency sign and a marked shipping threshold.",
+          "visual": "A delivery truck sits below a progress bar that is filled almost to its flagged free-shipping mark.",
           "priority": "core",
           "asset": "figures/free-shipping-threshold.svg"
         },
@@ -12190,7 +12190,7 @@
           "id": "destination-guide",
           "title": "Destination guide",
           "placement": "Travel or city landing page",
-          "visual": "An open city guide shows a street map on one page and a triumphal arch on the facing page.",
+          "visual": "A thick closed guidebook lies flat with a map pin standing on its cover.",
           "priority": "core",
           "asset": "figures/destination-guide.svg"
         },
@@ -12988,7 +12988,7 @@
           "id": "virtual-property-tour",
           "title": "Virtual property tour",
           "placement": "Real estate feature or gallery",
-          "visual": "A broad circular arrow sweeps through a room panorama with a picture window.",
+          "visual": "A circular arrow orbits a small house on the ground, a full turn around the property.",
           "priority": "core",
           "asset": "figures/virtual-property-tour.svg"
         },
@@ -12996,7 +12996,7 @@
           "id": "home-renovation",
           "title": "Home renovation",
           "placement": "Remodeling services landing page",
-          "visual": "One wall of a house cutaway transitions from exposed studs to newly installed siding.",
+          "visual": "A gabled house shows exposed studs on one half of its front wall and finished siding on the other.",
           "priority": "core",
           "asset": "figures/home-renovation.svg"
         },

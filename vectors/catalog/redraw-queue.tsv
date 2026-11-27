@@ -1,39 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-smart-suggestions	core	Editor assistance feature	An editor shows a sparkle-marked inline completion at the end of a partially written line.
-emissions-reduction	core	Sustainability report or climate product	A sawtooth-roof factory with a leaf emblem carries a down-arrow badge beside its chimney.
-free-shipping-threshold	core	Cart-spend incentive	A shopping cart carries a spend meter with a currency sign and a marked shipping threshold.
-package-tracking	core	Order tracking landing or progress page	A parcel hovers over its current waypoint on a folded map.
-payment-methods	core	Checkout or ecommerce payment feature	A chip payment card overlaps the rim of a single coin.
-product-details	core	Product-page specifications block	A caliper grips the outer edge of a machined bearing with a visible central bore.
-product-inventory	core	Store-management inventory feature	Two shelves hold stock bins, with empty bays and a tally strip beside them.
-product-return	core	Returns portal or help section	An open carton sits inside a returning route.
-receipt	core	Payment or purchase confirmation	An itemized strip curls up from a countertop printer.
-empty-workspace	core	Initial no-projects screen	An open presentation folder awaits its first file.
-menu-customization	core	Food ordering or dietary picker	A single dish card lists three toppings, with a check on the middle option.
-contact-sales	core	Enterprise contact section	A desk telephone with a handset and keypad sits beneath a speech bubble containing a price tag.
-how-it-works	core	Three-step explainer section	Directional arrows connect an input box, a gear, and a checkmark in a three-stage process.
-partner-ecosystem	core	Partners or marketplace overview	Three small office buildings connect to one shared hub in a partner network.
-testimonials	core	Customer quote or endorsement block	One reader's quote comes forward in a pair of speech panels.
-customization	core	Personalization benefits section	Four sliders set independent levels on a single control surface.
-integrations	core	Integrations feature grid	A bundled connection joins two separate devices.
-scalability	core	Capacity benefits section	A raised module extends a growing grid.
-audio-playback	core	Podcast or audio product feature	A continuous headband connects two cushioned earpieces.
-learning-path	core	Course or documentation path	A continuous track connects four milestones and a finish flag.
-multilingual-content	core	Translation or localization feature block	Two versions of a page use different reading directions.
-newsletter	core	Email subscription section	An illustrated issue unfolds from its delivery sleeve.
-video-library	core	Media catalog or course hub	A viewing gate selects a frame on a strip of film.
-floor-plan	core	Property detail or architecture feature	A low-walled floor plan shows four connected rooms with gaps and arcs for swinging doors.
-home-renovation	core	Remodeling services landing page	One wall of a house cutaway transitions from exposed studs to newly installed siding.
-virtual-property-tour	core	Real estate feature or gallery	A broad circular arrow sweeps through a room panorama with a picture window.
-service-request	core	Customer service form hero	A notched support ticket bears a headset emblem and a plus badge on its tear-off stub.
-destination-guide	core	Travel or city landing page	An open city guide shows a street map on one page and a triumphal arch on the facing page.
-permissions	core	Admin or role-based access overview	Three key profiles fit specific slots, with one key lifted from its own slot.
-security	core	Trust or product security feature	A rounded shackle secures a solid lock body.
-automation	core	Workflow automation hero	A conveyor feeds parts through an overhead machine.
-collaboration	core	Shared workspaces or multiplayer feature block	Three chairs gather around a shared worktable.
-handoff	core	Cross-team workflow feature card	A document travels between two stations.
-task-dependencies	core	Planning or timeline feature section	Right-angle connectors run from one task tile to two downstream task tiles.
 accessible-venue-routes	specialist	Venue or campus access map	A long gentle ramp bypasses steps and reaches the same raised landing.
 adjustable-contrast-testing	specialist	Design-system accessibility docs	A split contrast dial has a strong half and a faint half, with a short adjustment slider over its center.
 alternative-pointing	extended	Input devices support page	A large trackball sits in a rounded pointing-device housing behind two broad click buttons.

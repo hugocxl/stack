@@ -1,26 +1,24 @@
-from math import cos, radians, sin
+from geometry import BOLD, EDGE, oval
+from scenes.redraws._kit import _strokes, badge
+from scenes.redraws._sf import BACK, gear, ground, plate, screen
 
-from geometry import DETAIL, EDGE, oval
-from scenes.redraws._kit import arrow
-from scenes.redraws._w4 import front_surface, printed_glyph
+DESCRIPTION = "A raw cube, a gear and a check seal stand in a row, joined by two arrows."
 
-DESCRIPTION = "Directional arrows connect an input box, a gear, and a checkmark in a three-stage process."
+
+def arrow(s, x0, x1):
+    s.line([(x0, -x0*0 + 0, 0), (x1, 0, 0)], EDGE)
 
 
 def draw(s):
-    diagram = front_surface(s, angle=-26)
-    for u in (0, 40, 80):
-        diagram.slab(oval(u, 25, 14, 14)[:-1], 4)
-    for start in (16, 56):
-        arrow(s, [diagram.at(start, 25), diagram.at(start + 8, 25)], EDGE, head=3.5)
-    diagram.outline([(-6, 21), (0, 18), (6, 21), (6, 29), (0, 32), (-6, 29)], EDGE)
-    diagram.line([(-6, 29), (0, 26), (6, 29)])
-    diagram.line([(0, 26), (0, 18)])
-    gear = []
-    for tooth in range(8):
-        for offset, radius in ((0, 5.5), (8, 8), (27, 8), (35, 5.5)):
-            a = radians(tooth * 45 + offset)
-            gear.append((40 + radius * cos(a), 25 + radius * sin(a)))
-    diagram.outline(gear, EDGE)
-    diagram.oval(40, 25, 2.6, 2.6, DETAIL)
-    printed_glyph(diagram, "check", 80, 25, 9, EDGE)
+    at = screen()
+    s.box(-104, -18, 0, 34, 34, 34, 3)
+    g = lambda u, v: at(u, v + 20)
+    plate(s, g, gear(28, 10), 9, BACK)
+    s.line([g(a, b) for a, b in oval(0, 0, 9, 9, count=32)], EDGE)
+    c = lambda u, v: at(u + 92, v + 20)
+    plate(s, c, oval(0, 0, 24, 24, count=64)[:-1], 7, BACK)
+    for stroke in _strokes("check", 14):
+        s.line([c(u, v) for u, v in stroke], BOLD)
+    for u0, u1 in ((-58, -38), (38, 58)):
+        s.line([at(u0, 20), at(u1, 20)], EDGE)
+        s.line([at(u1 - 5, 25), at(u1, 20), at(u1 - 5, 15)], EDGE)

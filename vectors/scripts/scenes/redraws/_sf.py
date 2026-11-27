@@ -164,3 +164,68 @@ def display(s, w=104, h=66, x=0, y=0, z=0, stand=True, depth=6):
     inner = [face(u + 5, v + 5) for u, v in squircle(w - 10, h - 10, 3)]
     s.line(inner + inner[:1], DETAIL)
     return lambda u, v: face(u, v)
+
+
+def bubble(w, h, r=None, tail=(.22, 12, 10)):
+    """A speech-bubble outline with a tail at its lower left, origin at the lower left."""
+    r = r or min(w, h)*.3
+    body = squircle(w, h, r)
+    at, tw, th = tail
+    x0 = w*at
+    # Splice the tail into the bottom edge.
+    out = []
+    for i, (u, v) in enumerate(body):
+        out.append((u, v))
+    bottom = [i for i, (u, v) in enumerate(out) if abs(v) < 1e-6]
+    # Bottom edge runs right-to-left in rounded(): insert after the point nearest x0 + tw.
+    k = min(range(len(out)), key=lambda i: (abs(out[i][1]) > .5, abs(out[i][0] - (x0 + tw))))
+    return out[:k+1] + [(x0 + tw, 0), (x0 - 2, -th), (x0, 0)] + out[k+1:]
+
+
+def gear(r, teeth=10, depth=None):
+    """A gear outline with flat-topped teeth, centred on the origin."""
+    depth = depth or r*.2
+    pts = []
+    step = 360/teeth
+    for i in range(teeth):
+        a = i*step
+        for da, rr in ((-.30, r - depth), (-.18, r), (.18, r), (.30, r - depth)):
+            pts.append((rr*cos(radians(a + da*step)), rr*sin(radians(a + da*step))))
+        for k in (1, 2):
+            t = a + (.30 + .4*k/3)*step
+            pts.append(((r - depth)*cos(radians(t)), (r - depth)*sin(radians(t))))
+    return pts
+
+
+def puzzle(size, knobs=(True, False, False, False)):
+    """A jigsaw piece: square with a round knob on the right edge (others flat)."""
+    s_ = size
+    k = s_*.17
+    pts = [(0, 0), (s_, 0), (s_, s_*.32)]
+    if knobs[0]:
+        pts += [(s_ + k*.4 + k*cos(radians(a))*1.05, s_/2 + k*sin(radians(a))*1.05) for a in range(-130, 131, 15)]
+    pts += [(s_, s_*.68), (s_, s_), (0, s_)]
+    return pts
+
+
+def house(s, x=0, y=0, z=0, w=60, d=50, h=34, roof=26, overhang=4):
+    """A gabled house with its ridge along x; returns the front (+y) wall mapping (u along x, v up)."""
+    s.box(x, y, z, w, d, h, 1.5)
+    o, top, mid = overhang, z + h + roof, y + d/2
+    slope = roof/(d/2)
+    eave = z + h - o*slope*.5
+    s.face([(x, mid, top), (x + w, mid, top), (x + w, y - o, eave), (x, y - o, eave)], EDGE)
+    s.face([(x + w, y, z + h), (x + w, y + d, z + h), (x + w, mid, top)], EDGE)
+    s.face([(x, mid, top), (x + w, mid, top), (x + w, y + d + o, eave), (x, y + d + o, eave)], EDGE)
+    return left_face(x, y + d, z)
+
+
+def map_pin(s, x, y, z, r=16, ink=EDGE):
+    """A viewer-facing map pin with thickness, its tip at (x, y, z)."""
+    at = screen(x, y, z)
+    pts = [(0, 0)]
+    for a in range(-35, 216, 8):
+        pts.append((r*cos(radians(a)), r*2.1 + r*sin(radians(a))))
+    plate(s, at, pts, r*.3, BACK, ink)
+    s.line([at(u, v) for u, v in oval(0, r*2.1, r*.42, r*.42, count=32)], ink)
+    return at

@@ -1,20 +1,20 @@
-from geometry import BOLD, EDGE
-from scenes.commerce import shopping_cart
-from scenes.systems_shapes import bezel
+from geometry import BOLD, DETAIL, EDGE
+from scenes.redraws._kit import coin
+from scenes.redraws._sf import BACK, capsule, plate, screen
 
-DESCRIPTION = "A shopping cart carries a spend meter with a currency sign and a marked shipping threshold."
+DESCRIPTION = "A delivery truck sits below a progress bar that is filled almost to its flagged free-shipping mark."
 
 
 def draw(s):
-    shopping_cart(s)
-    # The meter is clipped across the near basket wall.
-    s.box(0, 61, 37, 89, 5, 24, 2.5)
-    y = 66
-    points = [(-2, 1), (-4, 3), (-2, 5), (2, 5), (4, 3), (2, 1),
-              (-2, -1), (-4, -3), (-2, -5), (2, -5), (4, -3)]
-    s.line([(14 + x, y, 49 + z) for x, z in points], EDGE)
-    s.line([(14, y, 42), (14, y, 56)], EDGE)
-    bezel(s, 27, y, 44, 53, 10, EDGE, 4)
-    s.line([(31, y, 49), (58, y, 49)], BOLD)
-    s.line([(66, y, 41), (66, y, 57)], EDGE)
-    s.line([(63, y, 57), (66, y, 54), (69, y, 57), (63, y, 57)], EDGE)
+    s.box(-40, -16, 8, 56, 32, 36, 3)
+    s.box(16, -16, 8, 24, 32, 24, 4)
+    s.face([(40, -12, 24), (40, 12, 24), (40, 12, 30), (40, -12, 30)], DETAIL)
+    for x in (-26, 26):
+        coin(s, x, 17, 8, 8, 3)
+        s.ellipse(x, 17, 8, 0, 0)
+    at = screen(0, 0, 0)
+    bar = lambda u, v: at(u - 46, v + 64)
+    plate(s, bar, capsule(92, 16), 5, BACK)
+    s.line([bar(8, 8), bar(64, 8)], BOLD)
+    s.line([bar(74, 2), bar(74, 26)], EDGE)
+    s.line([bar(74, 26), bar(86, 22), bar(74, 18)], EDGE)

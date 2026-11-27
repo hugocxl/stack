@@ -10,9 +10,10 @@
   one stroke of clearance around badges, slashes and interlocking links.
 - Warning triangles face the viewer like badges instead of lying in a side plane, and
   the notification bell has a smooth flared profile.
-- Redraw 21 figures as single SF-grade objects, among them success confirmation,
-  no notifications, sign-in, invite teammates, password recovery, offline mode,
-  trial period, monitoring, forecasting, load balancing and before and after.
+- Redraw every figure that failed an SF-grade review as a single designed object
+  built from a few confident solids, among them success confirmation, sign-in,
+  offline mode, trial period, monitoring, automation, collaboration and
+  product inventory.
 - Join the @hugocxl stack: the repository is now
   `hugocxl/vectors` and the website is https://hugocxl.github.io/stack/vectors/.
 - Rebuild the website on the @hugocxl design system, with a home page, a
