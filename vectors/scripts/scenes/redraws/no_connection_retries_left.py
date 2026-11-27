@@ -3,7 +3,7 @@ from scenes.redraws._kit import badge
 from scenes.redraws._w3 import printed_glyph
 from scenes.redraws.attempt_limit_reached import retry_ring
 
-DESCRIPTION = "A circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail."
+DESCRIPTION = "A thick circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail."
 
 
 def draw(s):

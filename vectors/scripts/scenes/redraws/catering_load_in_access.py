@@ -1,17 +1,15 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._kit import arrow
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import left_face, plate
 
-DESCRIPTION = "A service loading door is raised above a threshold with an inward arrow."
+DESCRIPTION = "A service doorway has its roller shutter rolled up, with a loading arrow leading in."
 
 
 def draw(s):
-    s.box(0, 0, 0, 64, 38, 4, 1.5)
-    s.box(0, 0, 4, 64, 6, 58, 1)
-    s.box(0, 4, 4, 7, 14, 57, 1)
-    s.box(57, 4, 4, 7, 14, 57, 1)
-    s.box(0, 7, 49, 64, 11, 13, 1.5)
-    s.box(7, 13, 34, 50, 3, 15, .7)
-    for z in (39, 44):
-        s.line([(8, 16, z), (56, 16, z)], DETAIL)
-    s.line([(9, 18, 4.1), (55, 18, 4.1)], EDGE)
-    arrow(s, [(32, 35, 4.2), (32, 15, 4.2)], BOLD, head=8)
+    wall = left_face(-60, 0, 0)
+    w, h = 64, 60
+    plate(s, wall, [(0, 0), (28, 0), (28, h), (28 + w, h), (28 + w, 0), (120, 0), (120, 90), (0, 90)], 6, (0, -1, 0))
+    s.box(-34, -2, h, w + 4, 10, 12, 4)
+    for v in (63, 67):
+        s.line([(-32 + t, 8.1, v) for t in (0, w)], DETAIL)
+    s.line([(-32, -6, 0), (-32 + w, -6, 0)], DETAIL)
+    s.face([(-12, 40, .2), (-12, 14, .2), (-18, 14, .2), (0, 0, .2), (18, 14, .2), (12, 14, .2), (12, 40, .2)], EDGE)

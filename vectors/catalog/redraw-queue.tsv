@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-tiered-storage	extended	Storage policy configuration	Three concentric storage tiers step down in diameter from the bottom to the top.
-tunnel-retirement	extended	Exit from developer tunnel setup	An x badge overlaps the midpoint of a flanged network tunnel.
-webhook-delivery	extended	Developer integrations guide	A cable hook carries a sealed envelope toward a server.
-websocket-session	extended	Streaming connection overview	A short cable with opposing arrowheads connects a browser laptop to a server.
-write-ahead-logging	extended	Storage engine documentation	An arrow leads from the newest entry of a standing spiral journal to a database cylinder.
-assignment-accommodations	extended	Accessible class assessment setup	A school desk holds a worksheet above telescoping legs and an up-arrow badge.
-certificate-pickup	extended	On-site course graduation	A rolled diploma is tied with a notched ribbon and marked by a pickup arrow curling outward.
-classroom-seating-shuffle	extended	Teacher seating planner	Two school desks with chairs stand under a pair of opposing swap arrows.
-course-audit-seat	extended	Non-credit enrollment state	A course admission ticket pairs a mortarboard heading with an observing-eye mark on the perforated stub.
-exhibit-booth-setup	extended	Trade-show exhibitor checklist	A trade-show booth has a rectangular display sign sliding down into its upright mounting rails.
-fieldwork-prep	extended	Course field visit page	A hiking pack carries a field checklist tag with a mountain trail and three checked equipment rows.
-group-presentation	extended	Student assignment overview	Two standing presenter microphones share one framed presentation board.
-group-project-roles	extended	Course teamwork site	A team assignment board aligns three removable name strips with pen, magnifier and microphone role symbols.
-office-hours-queue	extended	Academic support scheduling	An office-hours ticket dispenser shows three queue slips with an arrow beside the first.
-open-enrollment	extended	Cohort signup or education program	A school doorway with a mortarboard above its opening has an open door and a plus badge.
-orientation-badge-pickup	extended	Campus welcome page	A campus welcome credential hangs from a looped lanyard and carries an outward arrow badge.
-outdoor-science-trail	extended	Field course brochure	A standing accordion map traces a walking route to a large leaf-shaped field observation marker.
-panel-discussion	extended	Speaker lineup theme	A panel table lines up three empty chairs behind three tabletop microphones.
-partner-talk-proposal	extended	Event organizer submission	A talk proposal projects from an open envelope and shows a lectern, a title and three abstract lines.
-peer-feedback	extended	Collaborative class feature	Two overlapping speech bubbles sit along the edge of an assignment with marked answers.
-registration-refund-record	extended	Event cancellation confirmation	A perforated event ticket carries a two-coin emblem and a curved return-arrow badge.
-reserved-accessible-row	extended	Accessible seating settings	Two theater seats share a reserved row with an outlined wheelchair bay.
-seating-plan	extended	Event venue seating selection	Three rows of venue seats flank a center aisle, with a check badge on the selected seat.
-session-time-changed	extended	Attendee reminder alert	A round wall clock with hour marks carries a refresh badge on its right rim.
-speaker-registration-closed	extended	Conference administration state	A lanyard credential with a microphone emblem has a lock badge at its lower corner.
-standing-room-admission	extended	Festival availability screen	A perforated admission ticket shows two side-by-side shoeprints.
-venue-box-office	extended	Venue ticket purchase page	A box-office window has a service shelf and a perforated ticket projecting from its slot.
-venue-entry-scan	extended	Entry checkpoint experience	A freestanding barcode reader projects a scan line across an admission ticket held under its hood.
-venue-sound-rehearsal	extended	Conference production schedule	A stage with tied-back curtains and steps has a loudspeaker mounted on its right proscenium post.
-workbook-answer-key	extended	Digital exercise library	An open workbook pairs three shape-indexed questions with their matching completed answers.
-workshop-stations	extended	Hands-on session floor plan	Three separate workbenches stand on a workshop floor plan and carry station markers with one, two and three dots.
-attempt-limit-reached	extended	Retry budget is exhausted	A large circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner.
-field-length-exceeded	extended	Validation warning about too much content	A text entry crosses the end boundary of its outlined field beside an attached warning triangle.
-no-activity-yet	extended	Wait for first event on an empty timeline	An activity timeline has evenly spaced date ticks above a dashed event lane with no entries.
-no-connection-retries-left	extended	Failed sync screen	A circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail.
-no-team-seats-available	extended	Team invitation blocked by seat capacity	Three seats on a shared bench have checked backrests and a warning triangle beside them.
-nothing-shared-yet	extended	Shared area before first share	An upright folder is outlined with dashes and has an outward share arrow in its raised tab.
-nothing-uploaded	extended	File area before first upload	An empty upload tray holds the dashed outline of an upright file above its opening.
-page-moved	extended	Redirect guidance or stale link notice	A browser window with an address bar shows a bent forward arrow.
-reconnecting-device	extended	Wait during reconnection attempt	A two-prong plug lines up with a matching socket that carries a refresh badge.
-shared-item-removed	extended	Shared asset no longer available	A folded document has an outward-arrow sharing tab with an X badge at its outer corner.
-temporarily-disabled-option	extended	Preference control cannot be changed	A rocker switch on a rounded housing has a slash badge at one corner.
-undo-unavailable	extended	Undo action disabled on empty history	A tapered keyboard keycap with a curved undo arrow carries a slash badge on its upper-right edge.
-breakfast-service-setup	extended	Hotel food service overview	A breakfast plate holds a fried egg and two slices of toast beside a cup.
-buffet-setup-sequence	extended	Buffet service arrangements	A buffet counter supports three chafing dishes with one, two, and three dots along its serving edge.
-catering-load-in-access	extended	Venue catering delivery instructions	A service loading door is raised above a threshold with an inward arrow.
-chef-collaboration-dinner	extended	Dining feature page	A plated dinner sits beside a standing menu with two chef hats printed side by side.
-coffee-service-station	extended	Catering beverage options	A service coffee urn has a lidded stainless body, a coffee bean emblem, a dispensing tap, and a drip ledge.
-commissary-ingredient-dispatch	extended	Central kitchen supply workflow	A kitchen delivery van has an open sliding cargo door with a produce crate visible inside.
 container-garden-design	extended	Home food growing tutorial	A deep rectangular planter contains three evenly spaced seedlings.
 cooking-duration-check	extended	Recipe timer state	A freestanding kitchen timer has a marked dial with a check badge at the end of its scale.
 counter-pickup-meal	extended	Restaurant pickup information	A handled meal bag rests on a pickup counter marked with a serving cloche.

@@ -1,14 +1,12 @@
-from geometry import EDGE, oval
-from scenes.redraws._w1 import envelope, server_unit
+from geometry import DETAIL
+from scenes.redraws._sf import server, smooth
+from scenes.redraws.email_address_changed import envelope
 
-DESCRIPTION = "A cable hook carries a sealed envelope toward a server."
+DESCRIPTION = "A sealed envelope arcs along a dashed path into a server."
 
 
 def draw(s):
-    server_unit(s, 13, -10, width=36, depth=26, height=43)
-    s.tube([(15, -20, 43), (-5, -20, 58), (-25, -12, 65),
-            (-34, 10, 66), (-34, 10, 57)], 1.9, EDGE)
-    hook = [(x, 10, z) for x, z in oval(-34, 49, 8, 9, 90, 350, 30)]
-    s.tube(hook, 2.4, EDGE)
-    envelope(s, -53, 14, 6, width=44, height=32)
-    s.line([(-34, 10, 42), (-31, 14, 38)], EDGE)
+    envelope(s, -90, 20, 18, 46, 30)
+    s.line([(x, y, z) for x, y, z in smooth([(-44, 20, 40), (-10, 10, 58), (20, 4, 40), (30, 2, 26)], 8)], DETAIL, dashed=True)
+    server(s, 20, -20, 0, 52, 36, 20)
+    server(s, 20, -20, 20, 52, 36, 20)

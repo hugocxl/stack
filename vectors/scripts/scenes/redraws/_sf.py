@@ -429,3 +429,17 @@ def cylinder_db(s, x, y, z=0, r=26, h=44, bands=2):
     turned(s, [(r, 0), (r, h)], x, y, z, steps=1)
     for k in range(1, bands + 1):
         lip(s, x, y, z + h*k/(bands + 1), r, EDGE, -45, 135)
+
+
+def arc_arrow(start, end, r=40, w=9, head=None):
+    """Outline of a thick circular arrow from angle `start` to `end` (either direction), head at `end`."""
+    head = head or w*1.45
+    sign = 1 if end > start else -1
+    steps = max(8, int(abs(end - start)/4))
+    angs = [start + (end - start)*i/steps for i in range(steps + 1)]
+    outer = [((r + w/2)*cos(radians(a)), (r + w/2)*sin(radians(a))) for a in angs]
+    inner = [((r - w/2)*cos(radians(a)), (r - w/2)*sin(radians(a))) for a in angs[::-1]]
+    t = radians(end)
+    tip_a = radians(end + sign*head*45/r)
+    return outer + [((r + head)*cos(t), (r + head)*sin(t)), (r*cos(tip_a), r*sin(tip_a)),
+                    ((r - head)*cos(t), (r - head)*sin(t))] + inner

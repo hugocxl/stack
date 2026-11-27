@@ -1,15 +1,15 @@
 from geometry import EDGE, oval
-from scenes.redraws._kit import arrow, badge
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import BACK, arc_arrow, plate
 from scenes.redraws._w3 import Surface
 
-DESCRIPTION = "A large circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner."
+DESCRIPTION = "A thick circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner."
 
 
 def retry_ring(s, *, start=-62, end=-290):
     """Draw a viewer-facing retry loop with room beside its tail for a badge."""
     face = Surface(s, (0, 0, 40), rise=(0, 1.155), across=(.577, -.577))
-    track = [face.point(x, z) for x, z in oval(0, 0, 34, 34, start, end, 64)]
-    arrow(s, track, EDGE, head=10)
+    plate(s, lambda u, v: face.point(u, v), arc_arrow(start, end, 34, 7, 11), 5, BACK)
     return face
 
 

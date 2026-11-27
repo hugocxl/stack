@@ -1898,7 +1898,7 @@
           "id": "no-connection-retries-left",
           "title": "No connection retries left",
           "placement": "Failed sync screen",
-          "visual": "A circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail.",
+          "visual": "A thick circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail.",
           "priority": "extended",
           "asset": "figures/no-connection-retries-left.svg"
         },
@@ -2282,7 +2282,7 @@
           "id": "attempt-limit-reached",
           "title": "Attempt limit reached",
           "placement": "Retry budget is exhausted",
-          "visual": "A large circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner.",
+          "visual": "A thick circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner.",
           "priority": "extended",
           "asset": "figures/attempt-limit-reached.svg"
         },
@@ -3924,7 +3924,7 @@
           "id": "webhook-delivery",
           "title": "Webhook delivery",
           "placement": "Developer integrations guide",
-          "visual": "A cable hook carries a sealed envelope toward a server.",
+          "visual": "A sealed envelope arcs along a dashed path into a server.",
           "priority": "extended",
           "asset": "figures/webhook-delivery.svg"
         },
@@ -4228,7 +4228,7 @@
           "id": "websocket-session",
           "title": "Websocket session",
           "placement": "Streaming connection overview",
-          "visual": "A short cable with opposing arrowheads connects a browser laptop to a server.",
+          "visual": "A display and a server are joined by one cable with arrowheads at both ends.",
           "priority": "extended",
           "asset": "figures/websocket-session.svg"
         },
@@ -11042,7 +11042,7 @@
           "id": "classroom-seating-shuffle",
           "title": "Classroom seating shuffle",
           "placement": "Teacher seating planner",
-          "visual": "Two school desks with chairs stand under a pair of opposing swap arrows.",
+          "visual": "Two school desks with chairs carry a refresh badge as the seating changes.",
           "priority": "extended",
           "asset": "figures/classroom-seating-shuffle.svg"
         },
@@ -11074,7 +11074,7 @@
           "id": "assignment-accommodations",
           "title": "Assignment accommodations",
           "placement": "Accessible class assessment setup",
-          "visual": "A school desk holds a worksheet above telescoping legs and an up-arrow badge.",
+          "visual": "A school desk and chair carry a plus badge for an adjusted setup.",
           "priority": "extended",
           "asset": "figures/assignment-accommodations.svg"
         },
@@ -11162,7 +11162,7 @@
           "id": "workshop-stations",
           "title": "Workshop stations",
           "placement": "Hands-on session floor plan",
-          "visual": "Three separate workbenches stand on a workshop floor plan and carry station markers with one, two and three dots.",
+          "visual": "Three workbenches stand in a row on the workshop floor, each with a vise clamped to its top.",
           "priority": "extended",
           "asset": "figures/workshop-stations.svg"
         },
@@ -11266,7 +11266,7 @@
           "id": "exhibit-booth-setup",
           "title": "Exhibit booth setup",
           "placement": "Trade-show exhibitor checklist",
-          "visual": "A trade-show booth has a rectangular display sign sliding down into its upright mounting rails.",
+          "visual": "A trade-show booth has a back wall, a side panel, a header sign and a counter.",
           "priority": "extended",
           "asset": "figures/exhibit-booth-setup.svg"
         },
@@ -11298,7 +11298,7 @@
           "id": "panel-discussion",
           "title": "Panel discussion",
           "placement": "Speaker lineup theme",
-          "visual": "A panel table lines up three empty chairs behind three tabletop microphones.",
+          "visual": "Three chairs stand behind a long panel table with a microphone at each seat.",
           "priority": "extended",
           "asset": "figures/panel-discussion.svg"
         },
@@ -14440,7 +14440,7 @@
           "id": "chef-collaboration-dinner",
           "title": "Chef collaboration dinner",
           "placement": "Dining feature page",
-          "visual": "A plated dinner sits beside a standing menu with two chef hats printed side by side.",
+          "visual": "A dinner plate set with a fork and knife sits in front of a standing menu card.",
           "priority": "extended",
           "asset": "figures/chef-collaboration-dinner.svg"
         },
@@ -14816,7 +14816,7 @@
           "id": "catering-load-in-access",
           "title": "Catering load-in access",
           "placement": "Venue catering delivery instructions",
-          "visual": "A service loading door is raised above a threshold with an inward arrow.",
+          "visual": "A service doorway has its roller shutter rolled up, with a loading arrow leading in.",
           "priority": "extended",
           "asset": "figures/catering-load-in-access.svg"
         },

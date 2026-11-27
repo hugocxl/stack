@@ -1,23 +1,15 @@
 from geometry import DETAIL, EDGE
-from scenes.redraws._w5 import printed_stroke
+from scenes.redraws._sf import left_face, lip, plate, squircle, turned
 
-DESCRIPTION = "A plated dinner sits beside a standing menu with two chef hats printed side by side."
+DESCRIPTION = "A dinner plate set with a fork and knife sits in front of a standing menu card."
 
 
 def draw(s):
-    s.face([(28, 1, 0), (67, 1, 0), (67, 7, 33), (28, 7, 33)])
-    face = lambda x, z: (x, 14 - 7 * z / 33, z)
-    s.face([face(28, 0), face(67, 0), face(67, 33), face(28, 33)])
-    for x in (39, 56):
-        hat = [(-4, -5), (4, -5), (4, -1), (7, 1), (7, 4), (5, 6),
-               (3, 6), (1, 9), (-2, 9), (-4, 6), (-6, 6), (-8, 3),
-               (-7, 0), (-4, -1), (-4, -5)]
-        printed_stroke(s, face, [(x + u*.86, 20 + v*.86) for u,v in hat], EDGE)
-    s.disk(24, 34, 0, 23, 20, 3)
-    s.ellipse(24, 34, 3, 18.5, 15)
-    entree = [(10, 34), (12, 30), (19, 29), (23, 30), (25, 33),
-              (31, 35), (30, 39), (26, 42), (17, 42), (12, 39)]
-    s.solid(entree, 3, 4, crease=False)
-    s.line([(15, 34, 7), (19, 32, 7), (22, 33, 7), (26, 37, 7)], DETAIL)
-    for x, y in ((30, 26), (35, 29), (36, 34)):
-        s.disk(x, y, 3, 2.8, 2.2, 2.2)
+    card = left_face(-30, -40, 0)
+    plate(s, card, squircle(48, 66, 4), 3, (0, -1, 0))
+    for v in (50, 42, 34, 26):
+        s.line([card(10, v), card(38, v)], DETAIL)
+    turned(s, [(30, 0), (32, 3), (33, 4)], 0, 10, 0, steps=2)
+    lip(s, 0, 10, 4, 20, DETAIL, -180, 180)
+    for dx in (-44, 44):
+        s.box(dx - 2, -6, 0, 4, 34, 1.6, 1.5)
