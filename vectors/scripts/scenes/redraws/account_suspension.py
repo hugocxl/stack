@@ -1,9 +1,9 @@
-from scenes.redraws._kit import glyph
+from scenes.redraws._kit import badge
 from scenes.redraws._w1 import profile_card
 
-DESCRIPTION = "A thick profile card has a bold diagonal slash across its portrait."
+DESCRIPTION = "A profile card with a printed avatar carries a slash badge at its upper corner."
 
 
 def draw(s):
-    profile_card(s, -34, 5, 0)
-    glyph(s, "slash", -15, 5, 23, 20)
+    profile_card(s, -34, 0, 0)
+    badge(s, "slash", 34, 0, 44, 12)

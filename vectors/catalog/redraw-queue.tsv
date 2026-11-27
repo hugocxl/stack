@@ -1,41 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-accessible-venue-routes	specialist	Venue or campus access map	A long gentle ramp bypasses steps and reaches the same raised landing.
-adjustable-contrast-testing	specialist	Design-system accessibility docs	A split contrast dial has a strong half and a faint half, with a short adjustment slider over its center.
-alternative-pointing	extended	Input devices support page	A large trackball sits in a rounded pointing-device housing behind two broad click buttons.
-audio-description	specialist	Media accessibility feature	A film-frame tile pairs an eye with radiating sound waves.
-font-coverage	extended	Typography localization guide	A specimen sheet displays six large letterforms from different writing systems in a two-row grid.
-ime-support	extended	Global text input feature	A text input underlines Japanese composition marks above an attached list of candidates.
-interpreter-booking	extended	Event accessibility or support services	An over-ear headset with a boom microphone carries a clock badge for booking.
-keyboard-shortcut-discoverability	extended	Productivity and accessibility guide	A compact keyboard highlights two oversized keycaps for a Command and right-arrow shortcut.
-landmark-navigation	extended	Assistive navigation guide	A bold route on a folded map ends at a clock-tower landmark.
-language-fallback	extended	International CMS configuration	A two-row language selector uses a bent arrow to return from a primary script to its fallback row.
-mixed-language-annotation	extended	International content guide	A document carries one anchored speech bubble with two rows of visibly different scripts.
-motion-sensitivity-preferences	extended	Accessible animation settings	Two fading position outlines trail a moving tile marked with a slash badge.
-programmatic-focus-transfer	extended	Accessibility pattern library	An arrow carries the focus outline from one field to the next on a sloped form panel.
-reduced-motion	extended	Accessibility statement or settings	A pause badge overlaps a spinning top traced by two short motion arcs.
-reduced-parallax	extended	Web animation accessibility docs	A slash badge overlaps a motion arrow beneath the foreground and background ridges of a deep landscape window.
-shortcut-remapping	extended	Settings discoverability	A curved remapping arrow joins two separate keyboard keycaps with different key markings.
-skip-link	extended	Keyboard navigation feature	An arrow jumps from the browser toolbar past a navigation row to the start of the main article.
-tactile-feedback	extended	Device accessibility options	One short vibration arc on each side hugs a smartphone.
-text-scaling	extended	Readability settings or docs	Two raised letterforms of different sizes stand on the same baseline.
-transliteration	extended	International user input guidance	A single card maps the Cyrillic letter Д to its Latin counterpart D with an arrow.
-visible-focus-history	extended	Accessibility debug tools	Two dashed focus outlines lead along a pair of arrows to a solid focus outline on the active tile.
-voice-control	extended	Accessible input capabilities page	A smart display on a round speaker base shows a prominent microphone below a voice trace.
-writing-direction-override	extended	Multilingual editor setting	A long left-pointing arrow heads a paragraph control whose text aligns to the right.
-account-merge-confirmation	extended	Confirm joining duplicate accounts	Two overlapping profile cards share a curved arrow pointing into the front card.
-account-restored	extended	Reopen a recoverable account	A curved return arrow turns back toward the portrait on a profile card.
-account-suspension	extended	Restricted account remediation screen	A thick profile card has a bold diagonal slash across its portrait.
-choose-display-name	extended	Set a public identity during signup	A desktop profile nameplate shows a text insertion cursor inside its display-name field.
-connect-another-device	extended	Device linking wizard	A raised connector links a handheld device to a laptop.
-connect-headset	extended	Connect first input device	A raised connector links a headset to a terminal plug.
-default-notification-settings	extended	Configure account notices	A reset arrow curls around the flared lip of a notification bell.
-email-address-changed	extended	Confirm changing primary account email	A curved arrow leads from the old address line to its replacement on an email card.
-join-an-existing-team	extended	Discover and enter an existing organization	An inward arrow points into an organization directory with three member portraits.
-managed-seat-assignment	extended	Workspace administrator selects a seat	A workspace model shows four chairs around a shared desk and an employee token on the selected chair.
-migrate-an-account	extended	Account transfer or ownership wizard	A bold rightward transfer arrow leaves the account card beside its portrait.
-pair-a-security-key	extended	Connect a credential to a device	Two interlocked chain links overlap a USB security key with an exposed plug.
-set-a-passkey	extended	Passwordless setup	A notched key shows a fingerprint engraved in its round bow.
 set-working-timezone	extended	Pick a timezone for scheduled activity	A desktop globe has a clock badge over one side of its latitude and longitude grid.
 sign-out	extended	Session close initiated by an account holder	A bold arrow points outward through an open doorway.
 skip-optional-setup	extended	Move past a voluntary configuration	A curved forward arrow bypasses the dashed middle row of a standing checklist.

@@ -229,3 +229,19 @@ def map_pin(s, x, y, z, r=16, ink=EDGE):
     plate(s, at, pts, r*.3, BACK, ink)
     s.line([at(u, v) for u, v in oval(0, r*2.1, r*.42, r*.42, count=32)], ink)
     return at
+
+
+def headset(s, mic=True, R=34, cz=24):
+    """SF headphones in profile: a padded band over two thick earcups, with a boom mic."""
+    band = [(R*cos(radians(a)), 0, cz + R*1.08*sin(radians(a))) for a in range(0, 181, 5)]
+    left_cup = right_face(-R - 4, 8, cz - 22)
+    plate(s, left_cup, squircle(16, 30, 8), 9, (1, 0, 0))
+    s.tube(band, 3.6, EDGE)
+    if mic:
+        boom = smooth([(-R + 2, 2, cz - 10), (-R + 6, 14, cz - 22), (-R + 18, 22, cz - 28), (-R + 30, 24, cz - 28)], 6)
+        s.tube(boom, 1.6, EDGE)
+        s.tube([boom[-1], (boom[-1][0] + 7, boom[-1][1], boom[-1][2])], 3.2, EDGE)
+    right_cup = right_face(R + 4, 8, cz - 22)
+    plate(s, right_cup, squircle(16, 30, 8), 9, (-1, 0, 0))
+    inner = [right_cup(u + 4, v + 5) for u, v in squircle(8, 20, 4)]
+    s.line(inner + inner[:1], DETAIL)

@@ -1,17 +1,26 @@
-from geometry import BOLD, DETAIL, EDGE, oval, rounded
-from scenes.redraws._w3 import Surface
+from math import sqrt
 
-DESCRIPTION = "A split contrast dial has a strong half and a faint half, with a short adjustment slider over its center."
+from geometry import BOLD, DETAIL, EDGE, oval
+from scenes.redraws._sf import BACK, capsule, plate, screen
+
+DESCRIPTION = "A contrast dial with a hatched half sits above a slider whose knob sets the level."
 
 
 def draw(s):
-    dial = Surface(s, (0, 0, 0), rise=(-.39, .92), back=(0, -.92, -.39))
-    dial.plate(oval(41, 42, 41, 42)[:-1], 13)
-    dial.oval(41, 42, 33, 34, DETAIL)
-    dial.stroke(oval(41, 42, 33, 34, 90, 270), BOLD)
-    dial.stroke([(41, 8), (41, 76)], BOLD)
-    dial.stroke(oval(41, 42, 24, 25, 90, 270), EDGE)
-    slider = Surface(s, dial.point(0, 0, -3), rise=dial.rise, back=dial.back)
-    slider.plate(rounded(17, 35, 50, 14, 5), 3, EDGE)
-    slider.rules(23, 42, [38], ink=EDGE)
-    slider.plate(rounded(42, 34, 11, 16, 4), 2, EDGE)
+    at = screen()
+    d = lambda u, v: at(u, v + 22)
+    plate(s, d, oval(0, 0, 36, 36, count=96)[:-1], 7, BACK)
+    r = 28
+    s.line([d(0, r), d(0, -r)], EDGE)
+    s.line([d(u, v) for u, v in oval(0, 0, r, r, count=96)], EDGE)
+    for k in range(-7, 3):
+        c = k*6
+        disc = 2*r*r - c*c
+        if disc > 0:
+            lo, hi = (-c - sqrt(disc))/2, min((-c + sqrt(disc))/2, -c)
+            if hi - lo > 1.5:
+                s.line([d(lo + c, lo), d(hi + c, hi)], DETAIL)
+    t = lambda u, v: at(u - 48, v - 40)
+    plate(s, t, capsule(96, 12), 4, BACK)
+    s.line([t(8, 6), t(60, 6)], BOLD)
+    plate(s, lambda u, v: t(60 + u, 6 + v), oval(0, 0, 10, 10, count=40)[:-1], 4, BACK)

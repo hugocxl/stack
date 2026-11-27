@@ -1300,7 +1300,7 @@
           "id": "connect-another-device",
           "title": "Connect another device",
           "placement": "Device linking wizard",
-          "visual": "A raised connector links a handheld device to a laptop.",
+          "visual": "A phone stands beside an open laptop, a plus badge between them.",
           "priority": "extended",
           "asset": "figures/connect-another-device.svg"
         },
@@ -1324,7 +1324,7 @@
           "id": "migrate-an-account",
           "title": "Migrate an account",
           "placement": "Account transfer or ownership wizard",
-          "visual": "A bold rightward transfer arrow leaves the account card beside its portrait.",
+          "visual": "A profile card with a printed avatar carries an arrow badge at its upper corner.",
           "priority": "extended",
           "asset": "figures/migrate-an-account.svg"
         },
@@ -1356,7 +1356,7 @@
           "id": "account-suspension",
           "title": "Account suspension",
           "placement": "Restricted account remediation screen",
-          "visual": "A thick profile card has a bold diagonal slash across its portrait.",
+          "visual": "A profile card with a printed avatar carries a slash badge at its upper corner.",
           "priority": "extended",
           "asset": "figures/account-suspension.svg"
         },
@@ -1396,7 +1396,7 @@
           "id": "choose-display-name",
           "title": "Choose display name",
           "placement": "Set a public identity during signup",
-          "visual": "A desktop profile nameplate shows a text insertion cursor inside its display-name field.",
+          "visual": "A profile card shows a display-name field with a blinking text cursor beside its avatar.",
           "priority": "extended",
           "asset": "figures/choose-display-name.svg"
         },
@@ -1468,7 +1468,7 @@
           "id": "connect-headset",
           "title": "Connect headset",
           "placement": "Connect first input device",
-          "visual": "A raised connector links a headset to a terminal plug.",
+          "visual": "An over-ear headset with a boom microphone carries a plus badge as it pairs.",
           "priority": "extended",
           "asset": "figures/connect-headset.svg"
         },
@@ -1524,7 +1524,7 @@
           "id": "account-merge-confirmation",
           "title": "Account merge confirmation",
           "placement": "Confirm joining duplicate accounts",
-          "visual": "Two overlapping profile cards share a curved arrow pointing into the front card.",
+          "visual": "Two profile cards stand one behind the other, the front one carrying a check badge.",
           "priority": "extended",
           "asset": "figures/account-merge-confirmation.svg"
         },
@@ -1580,7 +1580,7 @@
           "id": "email-address-changed",
           "title": "Email address changed",
           "placement": "Confirm changing primary account email",
-          "visual": "A curved arrow leads from the old address line to its replacement on an email card.",
+          "visual": "A thick envelope stands upright and carries a refresh badge at its upper corner.",
           "priority": "extended",
           "asset": "figures/email-address-changed.svg"
         },
@@ -1652,7 +1652,7 @@
           "id": "managed-seat-assignment",
           "title": "Managed seat assignment",
           "placement": "Workspace administrator selects a seat",
-          "visual": "A workspace model shows four chairs around a shared desk and an employee token on the selected chair.",
+          "visual": "Three chairs stand in a row, and the assigned one carries a check badge.",
           "priority": "extended",
           "asset": "figures/managed-seat-assignment.svg"
         },
@@ -1676,7 +1676,7 @@
           "id": "default-notification-settings",
           "title": "Default notification settings",
           "placement": "Configure account notices",
-          "visual": "A reset arrow curls around the flared lip of a notification bell.",
+          "visual": "A flared notification bell carries a refresh badge for restoring its default settings.",
           "priority": "extended",
           "asset": "figures/default-notification-settings.svg"
         },
@@ -1724,7 +1724,7 @@
           "id": "account-restored",
           "title": "Account restored",
           "placement": "Reopen a recoverable account",
-          "visual": "A curved return arrow turns back toward the portrait on a profile card.",
+          "visual": "A profile card with a printed avatar carries a refresh badge at its upper corner.",
           "priority": "extended",
           "asset": "figures/account-restored.svg"
         },
@@ -10012,7 +10012,7 @@
           "id": "reduced-motion",
           "title": "Reduced motion",
           "placement": "Accessibility statement or settings",
-          "visual": "A pause badge overlaps a spinning top traced by two short motion arcs.",
+          "visual": "A spinning top stands still on its point, carrying a pause badge.",
           "priority": "extended",
           "asset": "figures/reduced-motion.svg"
         },
@@ -10124,7 +10124,7 @@
           "id": "accessible-venue-routes",
           "title": "Accessible venue routes",
           "placement": "Venue or campus access map",
-          "visual": "A long gentle ramp bypasses steps and reaches the same raised landing.",
+          "visual": "A long gentle ramp in front and a short flight of steps to the side both reach the same raised landing.",
           "priority": "specialist",
           "asset": "figures/accessible-venue-routes.svg"
         },
@@ -10132,7 +10132,7 @@
           "id": "adjustable-contrast-testing",
           "title": "Adjustable contrast testing",
           "placement": "Design-system accessibility docs",
-          "visual": "A split contrast dial has a strong half and a faint half, with a short adjustment slider over its center.",
+          "visual": "A contrast dial with a hatched half sits above a slider whose knob sets the level.",
           "priority": "specialist",
           "asset": "figures/adjustable-contrast-testing.svg"
         },
@@ -10220,7 +10220,7 @@
           "id": "landmark-navigation",
           "title": "Landmark navigation",
           "placement": "Assistive navigation guide",
-          "visual": "A bold route on a folded map ends at a clock-tower landmark.",
+          "visual": "A dashed route on the ground leads to a clock tower landmark.",
           "priority": "extended",
           "asset": "figures/landmark-navigation.svg"
         },
@@ -10500,7 +10500,7 @@
           "id": "reduced-parallax",
           "title": "Reduced parallax",
           "placement": "Web animation accessibility docs",
-          "visual": "A slash badge overlaps a motion arrow beneath the foreground and background ridges of a deep landscape window.",
+          "visual": "A display shows a near ridge and a faint far ridge locked together, with a slash badge.",
           "priority": "extended",
           "asset": "figures/reduced-parallax.svg"
         },

@@ -1,24 +1,20 @@
-from geometry import BOLD, DETAIL, EDGE, oval
-from scenes.redraws.exhibition_map import folded_map, mark
+from geometry import DETAIL, EDGE, oval
+from scenes.redraws._sf import left_face, smooth
 
-DESCRIPTION = "A bold route on a folded map ends at a clock-tower landmark."
+DESCRIPTION = "A dashed route on the ground leads to a clock tower landmark."
 
 
 def draw(s):
-    panels = folded_map(s)
-    route = [[(6, 12), (11, 24), (20, 24), (30, 37)],
-             [(0, 37), (12, 29), (19, 29), (30, 21)],
-             [(0, 21), (14, 21), (14, 29)]]
-    for panel, segment in zip(panels, route):
-        mark(s, panel, segment, BOLD)
-    mark(s, panels[0], oval(6, 11, 2.4, 2.4, count=18), EDGE)
-    for x, v, panel in [(10, 39, panels[0]), (17, 45, panels[1])]:
-        mark(s, panel, [(x - 6, v + 9), (x + 2, v + 3), (x + 9, v + 8)], DETAIL)
-        mark(s, panel, [(x - 3, v + 14), (x + 2, v + 11)], DETAIL)
-    tower = panels[-1]
-    mark(s, tower, [(6, 29), (6, 46), (3, 46), (14, 59), (25, 46),
-                    (22, 46), (22, 29), (6, 29)], EDGE)
-    mark(s, tower, [(6, 46), (22, 46)], EDGE)
-    mark(s, tower, [(12, 29), (12, 34), (16, 34), (16, 29)], DETAIL)
-    mark(s, tower, oval(14, 40, 4, 4, count=20), EDGE)
-    mark(s, tower, [(14, 42), (14, 40), (16, 40)], BOLD)
+    route = smooth([(-52, 46), (-36, 40), (-22, 26), (-6, 22), (6, 16)], 8)
+    s.line([(x, y, 0) for x, y in route], DETAIL, dashed=True)
+    s.box(0, -14, 0, 28, 28, 6, 2)
+    s.box(4, -10, 6, 20, 20, 64, 1)
+    apex = (14, 0, 98)
+    for face in ([(4, 10, 70), (24, 10, 70), apex], [(24, -10, 70), (24, 10, 70), apex]):
+        s.face(face, EDGE)
+    clock = left_face(4, 10, 0)
+    s.line([clock(10 + a, 54 + b) for a, b in oval(0, 0, 6.5, 6.5, count=32)], EDGE)
+    s.line([clock(10, 58), clock(10, 54), clock(13, 52)], DETAIL)
+    for z in (20, 34):
+        s.line([clock(7, z), clock(7, z + 8)], DETAIL)
+        s.line([clock(13, z), clock(13, z + 8)], DETAIL)

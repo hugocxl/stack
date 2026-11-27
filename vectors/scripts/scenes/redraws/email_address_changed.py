@@ -1,17 +1,19 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._kit import arrow
-from scenes.redraws._w1 import screen_point
-from scenes.systems_shapes import bezel
+from geometry import DETAIL, EDGE
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import left_face, plate, squircle
 
-DESCRIPTION = "A curved arrow leads from the old address line to its replacement on an email card."
+DESCRIPTION = "A thick envelope stands upright and carries a refresh badge at its upper corner."
+
+
+def envelope(s, x=-40, y=0, z=0, w=80, h=52):
+    face = left_face(x, y, z)
+    plate(s, face, squircle(w, h, 4), 6, (0, -1, 0))
+    s.line([face(2, h - 3), face(w/2, h*.38), face(w - 2, h - 3)], EDGE)
+    s.line([face(3, 3), face(w*.36, h*.5)], DETAIL)
+    s.line([face(w - 3, 3), face(w*.64, h*.5)], DETAIL)
+    return face
 
 
 def draw(s):
-    s.box(-34, -7, 0, 68, 7, 50, 2)
-    bezel(s, -28, 0, 17, 19, 14, EDGE, 1)
-    s.line([(-27, 0, 30), (-18.5, 0, 23), (-10, 0, 30)], EDGE)
-    s.line([(-2, 0, 32), (22, 0, 32)], DETAIL)
-    s.line([(-2, 0, 17), (22, 0, 17)], EDGE)
-    origin = (21, 0, 23)
-    offsets = [(0, 9), (5, 7), (8, 3), (8, -2), (6, -5), (1, -7)]
-    arrow(s, [screen_point(*origin, u, v) for u, v in offsets], BOLD, head=4.8)
+    envelope(s)
+    badge(s, "refresh", 40, 0, 50, 12)

@@ -1,11 +1,10 @@
-from scenes.redraws._w1 import intake_arrow, profile_card, screen_point
+from scenes.redraws._kit import badge
+from scenes.redraws._w1 import profile_card
 
-DESCRIPTION = "Two overlapping profile cards share a curved arrow pointing into the front card."
+DESCRIPTION = "Two profile cards stand one behind the other, the front one carrying a check badge."
 
 
 def draw(s):
-    profile_card(s, -43, -11, 4)
-    profile_card(s, -21, 9, 0)
-    offsets = [(-18, 14), (-11, 23), (-1, 27), (9, 25),
-               (17, 18), (22, 8), (23, -1), (22, -8)]
-    intake_arrow(s, [screen_point(0, 0, 42, u, v) for u, v in offsets], 10)
+    profile_card(s, -22, -24, 0)
+    profile_card(s, -40, 0, 0)
+    badge(s, "check", 28, 0, 44, 12)

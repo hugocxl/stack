@@ -1,15 +1,12 @@
-from geometry import EDGE, GUIDE, oval
-from scenes.redraws._kit import badge
+from geometry import DETAIL
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import lip, turned
 
-DESCRIPTION = "A pause badge overlaps a spinning top traced by two short motion arcs."
+DESCRIPTION = "A spinning top stands still on its point, carrying a pause badge."
 
 
 def draw(s):
-    s.ellipse(0, 0, 19, 41, 41, GUIDE, start=165, end=227)
-    s.ellipse(0, 0, 19, 40, 40, GUIDE, start=319, end=384)
-    s.solid(oval(0, 0, 2, 2)[:-1], 0, 24, oval(0, 0, 29, 29)[:-1], crease=False)
-    s.disk(0, 0, 24, 29, 29, 6)
-    s.ellipse(0, 0, 30, 28, 28, EDGE)
-    s.disk(0, 0, 29, 5, 5, 20)
-    s.ellipse(0, 0, 49, 5, 5, EDGE)
-    badge(s, "pause", 27, -9, 42, 14)
+    turned(s, [(.4, 0), (5, 7), (14, 20), (23, 34), (25, 38), (21, 42), (9, 45)], steps=4)
+    lip(s, 0, 0, 37, 24, DETAIL, -50, 140)
+    turned(s, [(3.4, 44), (3.4, 60), (2.6, 62)], steps=2)
+    badge(s, "pause", *_screen(0, 0, 0, 38, 44), 12.5)
