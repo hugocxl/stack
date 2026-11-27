@@ -72,7 +72,7 @@
           "id": "before-and-after",
           "title": "Before and after",
           "placement": "Transformation section",
-          "visual": "A bold seam divides one house into a cracked half and a restored half.",
+          "visual": "A standing photo splits down a bold seam into a faint sketch and a finished landscape, with a slider knob.",
           "priority": "core",
           "asset": "figures/before-and-after.svg"
         },
@@ -1172,7 +1172,7 @@
           "id": "welcome-aboard",
           "title": "Welcome aboard",
           "placement": "First-session welcome",
-          "visual": "An open door swings beside a rectangular welcome mat at the threshold.",
+          "visual": "An open door swings out toward a welcome mat at the threshold.",
           "priority": "core",
           "asset": "figures/welcome-aboard.svg"
         },
@@ -1188,7 +1188,7 @@
           "id": "invite-teammates",
           "title": "Invite teammates",
           "placement": "First-run team setup",
-          "visual": "Three overlapping teammate portrait tokens carry one plus badge.",
+          "visual": "Three overlapping teammate tokens face the viewer, with one plus badge.",
           "priority": "core",
           "asset": "figures/invite-teammates.svg"
         },
@@ -1236,7 +1236,7 @@
           "id": "sign-in",
           "title": "Sign in",
           "placement": "Login split-screen side artwork",
-          "visual": "A bold arrow points inward through an open doorway.",
+          "visual": "A bold arrow passes inward through an open doorway.",
           "priority": "core",
           "asset": "figures/sign-in.svg"
         },
@@ -1244,7 +1244,7 @@
           "id": "password-recovery",
           "title": "Password recovery",
           "placement": "Forgot-password request screen",
-          "visual": "A notched key with a refresh badge lies across the front of a padlock.",
+          "visual": "A padlock with a round shackle carries a refresh badge at its lower right.",
           "priority": "core",
           "asset": "figures/password-recovery.svg"
         },
@@ -1818,7 +1818,7 @@
           "id": "success-confirmation",
           "title": "Success confirmation",
           "placement": "Generic successful form submission",
-          "visual": "A raised circular seal shows a single bold checkmark.",
+          "visual": "A thick circular seal faces the viewer with a single bold checkmark.",
           "priority": "core",
           "asset": "figures/success-confirmation.svg"
         },
@@ -1826,7 +1826,7 @@
           "id": "something-went-wrong",
           "title": "Something went wrong",
           "placement": "Generic recoverable error page",
-          "visual": "A single upright warning triangle surrounds a large exclamation mark.",
+          "visual": "A thick warning plate with rounded corners carries a large exclamation mark.",
           "priority": "core",
           "asset": "figures/something-went-wrong.svg"
         },
@@ -2290,7 +2290,7 @@
           "id": "account-needs-attention",
           "title": "Account needs attention",
           "placement": "Action required banner in profile view",
-          "visual": "A warning plate sits just outside the nearest edge of a profile card.",
+          "visual": "A profile card with a printed avatar carries a warning triangle at its upper corner.",
           "priority": "extended",
           "asset": "figures/account-needs-attention.svg"
         },
@@ -7086,7 +7086,7 @@
           "id": "incident-escalation",
           "title": "Incident escalation",
           "placement": "Security response playbook",
-          "visual": "An upward arrow rises along the edge of a standing incident warning triangle.",
+          "visual": "A thick warning plate carries an up-arrow badge at its upper right corner.",
           "priority": "extended",
           "asset": "figures/incident-escalation.svg"
         },
@@ -7866,7 +7866,7 @@
           "id": "trial-period",
           "title": "Trial period",
           "placement": "Free trial offer block",
-          "visual": "A sturdy hourglass holds a small admission ticket bearing a play symbol against its lower cap.",
+          "visual": "A tall turned hourglass with sand settling in its lower bulb carries a play badge.",
           "priority": "core",
           "asset": "figures/trial-period.svg"
         },
@@ -7874,7 +7874,7 @@
           "id": "money-transfer",
           "title": "Money transfer",
           "placement": "Payments product page",
-          "visual": "A billfold holds a visible currency note, and a bold arrow carries the payment out to the right.",
+          "visual": "A standing banknote with a printed medallion, and a bold arrow carrying it out to the right.",
           "priority": "core",
           "asset": "figures/money-transfer.svg"
         },
@@ -9988,7 +9988,7 @@
           "id": "high-contrast-mode",
           "title": "High-contrast mode",
           "placement": "Accessibility settings or feature section",
-          "visual": "A circular contrast dial sets a dark, striped semicircle directly beside an open semicircle.",
+          "visual": "A thick circular dial faces the viewer, its left half hatched dark and its right half open.",
           "priority": "core",
           "asset": "figures/high-contrast-mode.svg"
         },
@@ -14888,7 +14888,7 @@
           "id": "farm-cold-room-loading",
           "title": "Farm cold-room loading",
           "placement": "Harvest cold storage workflow",
-          "visual": "A produce crate crosses the raised threshold of an open walk-in cooler.",
+          "visual": "A produce crate waits at the open door of a walk-in cooler marked with a snowflake.",
           "priority": "extended",
           "asset": "figures/farm-cold-room-loading.svg"
         },

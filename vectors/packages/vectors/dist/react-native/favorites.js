@@ -1,7 +1,7 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path } from "react-native-svg";
 export const FavoritesVector = /*#__PURE__*/ forwardRef(function FavoritesVector({size = 480, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "3.6", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "Favorites", ...props, ref},
-    createElement(Path, {"strokeOpacity": ".55", "d": "M204.07,121.86 196.17,135.98 95.80,113.95 M318.05,302.34 292.56,217.69 308.29,211.56 M370.34,186.94 269.81,155.56 233.19,70.65"}),
-    createElement(Path, {"strokeOpacity": "1", "d": "M95.03,113.78 173.42,186.02 147.73,257.67 232.99,236.52 318.25,303.00 332.27,289.81 308.66,211.41 370.94,187.13 384.97,173.94 283.83,142.37 247.01,57.00 232.99,70.19 204.28,121.50 109.06,100.59 95.03,113.78"}));
+  return createElement(Svg, {...{"viewBox": "0 0 480 360", "fill": "none", "stroke": "currentColor", "strokeWidth": "1.05", "strokeLinecap": "round", "strokeLinejoin": "round"}, width: size, height: size * 360 / 480, color, accessible: true, accessibilityRole: "image", accessibilityLabel: "Favorites", ...props, ref},
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": ".55", "d": "M204.07,121.86 196.17,135.98 95.80,113.95 M318.05,302.34 292.56,217.69 308.29,211.56 M370.34,186.94 269.81,155.56 233.19,70.65"}),
+    createElement(Path, {"vectorEffect": "non-scaling-stroke", "strokeOpacity": "1", "d": "M95.03,113.78 173.42,186.02 147.73,257.67 232.99,236.52 318.25,303.00 332.27,289.81 308.66,211.41 370.94,187.13 384.97,173.94 283.83,142.37 247.01,57.00 232.99,70.19 204.28,121.50 109.06,100.59 95.03,113.78"}));
 });

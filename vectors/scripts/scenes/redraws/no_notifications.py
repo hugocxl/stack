@@ -1,20 +1,15 @@
-from geometry import DETAIL, EDGE, oval
-from scenes.redraws.page_moved import Surface
-from scenes.redraws.upload_in_progress import curve
+from math import cos, radians, sin
 
-DESCRIPTION = "A dashed bell silhouette has flared sides, a small crown, and a rounded clapper."
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import lip, turned
+
+DESCRIPTION = "A still desk bell rests on its round base with the plunger raised."
 
 
 def draw(s):
-    bell = Surface(s, screen=True)
-    outline = curve((-35, 0), [
-        ((-38, 4), (-27, 8), (-26, 21)),
-        ((-25, 37), (-21, 47), (-8, 51)),
-        ((-8, 64), (8, 64), (8, 51)),
-        ((21, 47), (25, 37), (26, 21)),
-        ((27, 8), (38, 4), (35, 0)),
-        ((28, -4), (-28, -4), (-35, 0)),
-    ])
-    bell.line(outline, EDGE, dashed=True)
-    bell.line(oval(0, -3, 10, 12, 180, 360, 30), EDGE, dashed=True)
-    bell.line([(-27, 6), (27, 6)], DETAIL, dashed=True)
+    turned(s, [(31, 0), (31.4, 1.2), (31.4, 11), (30.2, 12.4)], steps=3)
+    lip(s, 0, 0, 1.2, 30.8, DETAIL, -40, 130)
+    dome = [(27*cos(radians(a)), 12.4 + 27*sin(radians(a))) for a in range(0, 91, 10)]
+    turned(s, dome, steps=4)
+    s.tube([(0, 0, 38), (0, 0, 46)], 1.5, EDGE)
+    turned(s, [(4.4, 45.6), (5.4, 47.2), (5, 49.4), (2.8, 50.8), (.4, 51)])

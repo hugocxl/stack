@@ -1,11 +1,9 @@
 from scenes.redraws._kit import badge
-from scenes.redraws._w1 import account_key
-from scenes.systems_shapes import lock
+from scenes.redraws._sf import padlock
 
-DESCRIPTION = "A notched key with a refresh badge lies across the front of a padlock."
+DESCRIPTION = "A padlock with a round shackle carries a refresh badge at its lower right."
 
 
 def draw(s):
-    lock(s, -21, -26, 0, w=42, d=21, h=31)
-    account_key(s, -25, 17, 1, .92)
-    badge(s, "refresh", -35, 17, 12, 12)
+    padlock(s, -30, 0, 0, w=60, h=48, depth=16)
+    badge(s, "refresh", 30, 0, 4, 14)

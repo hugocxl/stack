@@ -1,21 +1,18 @@
-from geometry import DETAIL, EDGE
-from scenes.systems_shapes import rectangle
+from geometry import DETAIL
+from scenes.redraws._sf import doorway, ground, plane, plate, squircle
 
-DESCRIPTION = "An open door swings beside a rectangular welcome mat at the threshold."
+DESCRIPTION = "An open door swings out toward a welcome mat at the threshold."
 
 
 def draw(s):
-    s.box(-23, -9, 0, 46, 9, 2, 1)
-    s.box(-17, 7, 0, 37, 24, 2, 2)
-    rectangle(s, -14, 10, 2, 31, 18, DETAIL, 1.5)
-    s.box(-28, -9, 0, 5, 9, 59, 1)
-    s.box(23, -9, 0, 5, 9, 59, 1)
-    s.box(-28, -9, 59, 56, 9, 6, 1)
-
-    def door(u, z):
-        return -23 + 12 * u, 41 * u, z
-
-    s.face([door(u, z) for u, z in ((0, 2), (1, 2), (1, 57), (0, 57))], EDGE)
-    s.line([door(u, z) for u, z in ((.17, 9), (.83, 9), (.83, 50),
-                                   (.17, 50), (.17, 9))], DETAIL)
-    s.tube([door(.85, 29), door(.94, 29)], 1.2)
+    w, h = 56, 88
+    doorway(s, w, h)
+    # The leaf swings out toward the viewer on the left jamb.
+    leaf = plane((0, 0, 0), (.26, .97, 0), (0, 0, 1))
+    plate(s, leaf, [(0, 1), (w - 3, 1), (w - 3, h - 2), (0, h - 2)], 3, (.97, -.26, 0))
+    s.tube([leaf(w - 10, 42), leaf(w - 10, 42)], 1.2)
+    # A mat lies flat in front of the threshold.
+    mat = ground(2, 22, 0)
+    plate(s, mat, squircle(52, 30, 5), 2.2, (0, 0, -1))
+    inner = [mat(u + 4, v + 4) for u, v in squircle(44, 22, 3)]
+    s.line(inner + inner[:1], DETAIL)

@@ -1,25 +1,27 @@
-from geometry import BOLD, DETAIL, EDGE
-from scenes.redraws._w4 import Surface
+from geometry import BOLD, DETAIL, EDGE, oval
+from scenes.redraws._kit import _strokes
+from geometry import project
+from scenes.redraws._sf import left_face, plate, screen, squircle
 
-DESCRIPTION = "A bold seam divides one house into a cracked half and a restored half."
+DESCRIPTION = "A standing photo splits down a bold seam into a faint sketch and a finished landscape, with a slider knob."
 
 
 def draw(s):
-    s.face([(78, 0, 0), (78, 47, 0), (78, 47, 47), (78, 0, 47)])
-    s.face([(0, 47, 0), (78, 47, 0), (78, 47, 46), (39, 47, 73),
-            (0, 47, 46)])
-    s.face([(39, -4, 76), (83, -4, 45), (83, 52, 45), (39, 52, 76)])
-    s.face([(-5, -4, 45), (39, -4, 76), (39, 52, 76), (-5, 52, 45)])
-    s.face([(-5, 52, 45), (39, 52, 76), (83, 52, 45), (78, 49, 43),
-            (39, 49, 70), (0, 49, 43)], DETAIL)
-    front = Surface(s, lambda u, v: (u, 47, v))
-    for u in (9, 49):
-        front.frame(u, 18, 19, 19, 1, EDGE)
-    front.line([(58.5, 18), (58.5, 37)])
-    front.line([(49, 27.5), (68, 27.5)])
-    front.line([(19, 18), (23, 25), (19, 28), (22, 37)], EDGE)
-    front.line([(1, 7), (10, 10), (14, 6), (20, 10), (25, 7)], EDGE)
-    front.line([(3, 15), (10, 15), (10, 10)], DETAIL)
-    front.line([(31, 46), (30, 41), (25, 42), (22, 38)], DETAIL)
-    s.line([(63, 9, 59.1), (63, 47, 59.1)], DETAIL)
-    s.line([(39, 52, 76), (39, 52, 71), (39, 47, 68), (39, 47, 0)], BOLD)
+    w, h = 120, 80
+    face = left_face(0, 0, 0)
+    plate(s, face, squircle(w, h, 7), 6, (0, -1, 0))
+    m = w/2
+    hills = [(8, 18), (30, 44), (46, 28), (60, 40)]
+    s.line([face(u, v) for u, v in hills], DETAIL, dashed=True)
+    s.line([face(u, v) for u, v in [(60, 40), (76, 54), (94, 32), (112, 46)]], EDGE)
+    s.line([face(92 + a, 62 + b) for a, b in oval(0, 0, 6, 6, count=32)], EDGE)
+    s.line([face(22 + a, 62 + b) for a, b in oval(0, 0, 6, 6, count=32)], DETAIL, dashed=True)
+    s.line([face(m, -6), face(m, h + 6)], BOLD)
+    at = screen()
+    centre = project(face(m, h/2))
+    from scenes.redraws._kit import _screen
+    cx, cy, cz = face(m, h/2)
+    knob = lambda u, v: _screen(cx, cy + 2, cz, u, v)
+    plate(s, knob, oval(0, 0, 11, 11, count=48)[:-1], 3, (0, -1, 0))
+    for sign in (-1, 1):
+        s.line([knob(sign*2.6, 4.6), knob(sign*7, 0), knob(sign*2.6, -4.6)], BOLD)

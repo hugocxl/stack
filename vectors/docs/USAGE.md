@@ -178,9 +178,8 @@ color per illustration; the artwork is not designed for gradients or fills.
 
 ## Sizing
 
-The canvas is 480 × 360 points. Like SF Symbols, the stroke scales with the
-artwork: one 3.6-point weight on the canvas, about 1.2 points at 160 wide and 2.7
-at 360, so a figure looks the same at every size. Keep the 4:3 aspect ratio.
+The canvas is 480 × 360 points and every line uses a non-scaling stroke, so the
+lines stay crisp and thin at any size. Keep the 4:3 aspect ratio.
 
 - On the web, set a width and let the height follow:
   `style={{ width: '100%', height: 'auto' }}` in React, or

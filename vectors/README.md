@@ -16,7 +16,7 @@ The collection is organized into 23 groups, from landing pages, onboarding and e
 
 ## Made to feel at home
 
-- **One line, drawn like SF Symbols.** A single stroke weight that scales with the drawing, continuous corners, round caps and badges with breathing room, so the vectors sit naturally beside Apple's symbols and your words.
+- **One line, drawn like SF Symbols.** One fine stroke that stays crisp at any size, continuous corners, round caps and badges with breathing room, so the vectors sit naturally beside Apple's symbols and your words.
 - **Your colors.** Every vector takes the color of the text around it, in light and dark.
 - **Ready where you build.** The same drawings on the web, in React and React Native, and in native Apple apps.
 - **Free to use.** Open source, for personal and commercial work.

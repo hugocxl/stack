@@ -4,12 +4,15 @@
 
 ### Changed
 
-- Redraw the line of all 2,000 vectors as an extension of SF Symbols: one 3.6-unit
-  stroke that scales with the artwork (the SVGs no longer use
-  `vector-effect="non-scaling-stroke"`), three opacity tiers (1 and .9, .55, .32),
-  continuous corners, edges that join their silhouettes, round-capped dashes measured
-  on the canvas, and one stroke of clearance around badges, slashes and interlocking
-  links. The compositions, names and catalog are unchanged.
+- Draw all 2,000 vectors with an SF Symbols line language: a fine 1.05 px
+  non-scaling stroke, three opacity tiers (1 and .9, .55, .32), continuous corners,
+  edges that join their silhouettes, round-capped dashes measured on the canvas, and
+  one stroke of clearance around badges, slashes and interlocking links.
+- Warning triangles face the viewer like badges instead of lying in a side plane, and
+  the notification bell has a smooth flared profile.
+- Redraw 21 figures as single SF-grade objects, among them success confirmation,
+  no notifications, sign-in, invite teammates, password recovery, offline mode,
+  trial period, monitoring, forecasting, load balancing and before and after.
 - Join the @hugocxl stack: the repository is now
   `hugocxl/vectors` and the website is https://hugocxl.github.io/stack/vectors/.
 - Rebuild the website on the @hugocxl design system, with a home page, a

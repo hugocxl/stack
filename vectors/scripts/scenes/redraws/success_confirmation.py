@@ -1,15 +1,13 @@
-from shapely.geometry import MultiPoint
+from geometry import BOLD, DETAIL, EDGE, oval
+from scenes.redraws._kit import _strokes
+from scenes.redraws._sf import BACK, plate, screen
 
-from geometry import EDGE, oval, project
-from scenes.redraws._kit import _screen, badge
-
-DESCRIPTION = "A raised circular seal shows a single bold checkmark."
+DESCRIPTION = "A thick circular seal faces the viewer with a single bold checkmark."
 
 
 def draw(s):
-    rim = oval(0, 0, 38, 38, count=64)[:-1]
-    base = [_screen(0, 0, 0, u - 5, v - 4) for u, v in rim]
-    front = [_screen(0, 0, 0, u, v) for u, v in rim]
-    hull = MultiPoint([project(point) for point in base + front]).convex_hull
-    s.layers.append((hull.boundary, hull, EDGE))
-    badge(s, "check", 0, 0, 0, 38)
+    at = screen()
+    plate(s, at, oval(0, 0, 44, 44, count=96)[:-1], 9, BACK)
+    s.line([at(u, v) for u, v in oval(0, 0, 36, 36, count=96)], DETAIL)
+    for stroke in _strokes("check", 25):
+        s.line([at(u, v) for u, v in stroke], BOLD)

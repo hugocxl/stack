@@ -1,9 +1,8 @@
-from geometry import EDGE
-from scenes.redraws._kit import arrow, warning
+from scenes.redraws._kit import _screen, badge, warning
 
-DESCRIPTION = "An upward arrow rises along the edge of a standing incident warning triangle."
+DESCRIPTION = "A thick warning plate carries an up-arrow badge at its upper right corner."
 
 
 def draw(s):
-    warning(s, 26, 0, 0, 52)
-    arrow(s, [(57, 0, 5), (57, 0, 49)], EDGE, head=10)
+    warning(s, 0, 0, 0, 84)
+    badge(s, "up", *_screen(0, 0, 0, 34, 50), 13)

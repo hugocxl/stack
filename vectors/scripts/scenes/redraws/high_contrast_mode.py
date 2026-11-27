@@ -1,17 +1,24 @@
 from math import sqrt
 
-from geometry import BOLD, EDGE, oval
-from scenes.redraws._kit import coin
-from scenes.redraws._w3 import Surface
+from geometry import DETAIL, EDGE, oval
+from scenes.redraws._sf import BACK, plate, screen
 
-DESCRIPTION = "A circular contrast dial sets a dark, striped semicircle directly beside an open semicircle."
+DESCRIPTION = "A thick circular dial faces the viewer, its left half hatched dark and its right half open."
 
 
 def draw(s):
-    coin(s, 0, 0, 0, 38, depth=7)
-    dial = Surface(s, (0, .02, 0))
-    dial.stroke(oval(0, 0, 30, 30, 270, 450, 32), EDGE)
-    dial.stroke(oval(0, 0, 30, 30, 90, 270, 32), BOLD)
-    dial.stroke([(0, -30), (0, 30)], BOLD)
-    for z in (-18, -6, 6, 18):
-        dial.stroke([(-sqrt(30 ** 2 - z ** 2) + 3, z), (-3, z)], BOLD)
+    at = screen()
+    plate(s, at, oval(0, 0, 44, 44, count=96)[:-1], 9, BACK)
+    r = 34
+    s.line([at(u, v) for u, v in oval(0, 0, r, r, count=96)], EDGE)
+    s.line([at(0, r), at(0, -r)], EDGE)
+    # Hatch the dark half with 45-degree lines u = v + c, clipped to the left half-disc.
+    for k in range(-9, 4):
+        c = k*6.2
+        disc = 2*r*r - c*c
+        if disc <= 0:
+            continue
+        lo = (-c - sqrt(disc))/2
+        hi = min((-c + sqrt(disc))/2, -c)
+        if hi - lo > 1.5:
+            s.line([at(lo + c, lo), at(hi + c, hi)], DETAIL)

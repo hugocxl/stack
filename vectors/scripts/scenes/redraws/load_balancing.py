@@ -1,14 +1,20 @@
-from geometry import EDGE
-from scenes.redraws._w1 import server_unit
+from geometry import DETAIL, EDGE
 
-DESCRIPTION = "A level beam on a central fulcrum distributes one link to three server bays."
+DESCRIPTION = "One intake pipe branches through a manifold into three server units below."
+
+
+def unit(s, x):
+    s.box(x, 0, 0, 30, 30, 20, 4)
+    for z in (7, 13):
+        s.line([(x + 5, 30, z), (x + 19, 30, z)], DETAIL)
 
 
 def draw(s):
-    for x in (-36, -12, 12):
-        server_unit(s, x, 10, width=24, depth=22, height=19)
-    for x in (-24, 24):
-        s.tube([(x, -2, 19), (x, -2, 41)], 1.8)
-    s.face([(-10, 1, 20), (0, 1, 42), (10, 1, 20)], EDGE)
-    s.box(-33, -6, 42, 66, 10, 5, 2)
-    s.tube([(0, -1, 47), (0, -1, 63)], 1.8)
+    xs = (-55, -15, 25)
+    for x in xs:
+        unit(s, x)
+    for x in xs:
+        s.tube([(x + 15, 15, 20), (x + 15, 15, 46)], 2.4, EDGE)
+    s.tube([(-40, 15, 46), (40, 15, 46)], 3.2, EDGE)
+    s.tube([(0, 15, 46), (0, 15, 76)], 3.2, EDGE)
+    s.disk(0, 15, 74, 6, 6, 4)

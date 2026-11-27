@@ -17,8 +17,8 @@ Mechanical checks catch stale outputs and broken cross-references. Browser revie
 The collection draws like an extension of SF Symbols. `scripts/geometry.py` owns every rule, so a scene
 module never sets a weight, a gap or a dash itself.
 
-- **One weight.** Every stroke is 3.6 units on the 480 × 360 canvas and scales with the artwork, as a
-  symbol's stroke does: about 1.2 points at 160 wide, 2.7 at 360. Caps and joins are round.
+- **One weight.** Every stroke is a fine 1.05 px non-scaling line, so the drawing stays quiet beside
+  text at any size. Caps and joins are round.
 - **Hierarchy by opacity, not weight.** Outlines and badge glyphs are primary (1 and .9), interior
   detail is secondary (.55) and construction guides are tertiary (.32), after SF Symbols'
   hierarchical rendering.
@@ -31,10 +31,12 @@ module never sets a weight, a gap or a dash itself.
 - **Clearance.** A badge, a slash or a link passing in front of another part clears it by about one
   stroke of air, the knockout of SF's `.badge`, `.slash` and `link` symbols. Use `knockout_layer` for
   a part in front and `interlace` for rings that pass over and under each other.
-- **Short dashes.** Dashed lines are measured in output units: 1.05 strokes on, a 2.35-stroke period,
-  spread to start and end on a dash, as in `circle.dashed`.
+- **Short dashes.** Dashed lines are measured on the canvas, about 5.6 units on and a 12-unit period,
+  spread to start and end on a dash.
 - **Glyphs.** State glyphs follow SF construction: right-angled arrowheads and a warning triangle with
-  rounded corners.
+  rounded corners that faces the viewer like a badge. Where the triangle is the subject, it is a thick plate.
+- **Volumes.** A subject is built from a few confident solids: plates with visible thickness, turned bodies
+  with smooth profiles (`redraws/_sf.py`), never a stack of unrelated props.
 
 ## Symbol-level redraw
 

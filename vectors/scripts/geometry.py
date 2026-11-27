@@ -1,10 +1,10 @@
 """Orthographic line drawing with transparent hidden-line removal.
 
-The line language follows SF Symbols: one stroke weight that scales with the artwork,
-round caps and joins, continuous (squircle) corners, hierarchy by opacity rather than
-by weight, short rounded dashes, and a clearance gap wherever one part passes in front
-of another. Weights, gaps and dashes are measured in output units of the 480 x 360
-canvas, so every figure carries the same line whatever its scene scale.
+The line language follows SF Symbols drawn fine: one hairline weight that stays 1.05 px
+at any size, round caps and joins, continuous (squircle) corners, hierarchy by opacity
+rather than by weight, short rounded dashes, and a clearance gap wherever one part
+passes in front of another. Gaps and dashes are measured in output units of the
+480 x 360 canvas, so every figure carries the same rhythm whatever its scene scale.
 """
 from math import cos, sin, radians
 from shapely.geometry import LineString, MultiPoint, Polygon
@@ -17,12 +17,14 @@ EDGE = ".9"
 DETAIL = ".55"
 GUIDE = ".32"
 
+STROKE_WIDTH = "1.05"  # the single, non-scaling stroke weight of the collection, in px
+
 # Output units on the 480 x 360 canvas.
-STROKE = 3.6           # the single stroke weight of the collection
+STROKE = 1.6           # the stroke's width on the canvas at a typical 320 px display
 OCCLUSION = .35        # hidden lines stop just short of the solid that hides them
 CLEARANCE = 1.9        # extra stroke widths of air around a badge (SF badge knockout)
-DASH = 1.05            # dash length before round caps, in stroke widths
-DASH_GAP = 2.35        # dash period, in stroke widths
+DASH = 3.5             # dash length before round caps, in stroke widths
+DASH_GAP = 7.5         # dash period, in stroke widths
 CREASE = 1           # the near top edge of a solid meets its silhouette, as in SF's cube
 CANVAS = (480, 360)
 ART = (310, 246)       # the artwork's bounding box, centred on the canvas
@@ -240,6 +242,6 @@ def paths_for(scene):
             if len(piece) > 1:
                 groups[ink].append("M" + points)
     return '\n'.join(
-        f'  <path stroke-opacity="{ink}" d="{" ".join(paths)}"/>'
+        f'  <path vector-effect="non-scaling-stroke" stroke-opacity="{ink}" d="{" ".join(paths)}"/>'
         for ink, paths in groups.items() if paths
     )

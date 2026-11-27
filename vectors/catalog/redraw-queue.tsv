@@ -1,0 +1,632 @@
+# Figures that failed the SF-grade review on 2026-11-27, core priority first.
+# id	priority	placement	current visual
+smart-suggestions	core	Editor assistance feature	An editor shows a sparkle-marked inline completion at the end of a partially written line.
+emissions-reduction	core	Sustainability report or climate product	A sawtooth-roof factory with a leaf emblem carries a down-arrow badge beside its chimney.
+free-shipping-threshold	core	Cart-spend incentive	A shopping cart carries a spend meter with a currency sign and a marked shipping threshold.
+package-tracking	core	Order tracking landing or progress page	A parcel hovers over its current waypoint on a folded map.
+payment-methods	core	Checkout or ecommerce payment feature	A chip payment card overlaps the rim of a single coin.
+product-details	core	Product-page specifications block	A caliper grips the outer edge of a machined bearing with a visible central bore.
+product-inventory	core	Store-management inventory feature	Two shelves hold stock bins, with empty bays and a tally strip beside them.
+product-return	core	Returns portal or help section	An open carton sits inside a returning route.
+receipt	core	Payment or purchase confirmation	An itemized strip curls up from a countertop printer.
+empty-workspace	core	Initial no-projects screen	An open presentation folder awaits its first file.
+menu-customization	core	Food ordering or dietary picker	A single dish card lists three toppings, with a check on the middle option.
+contact-sales	core	Enterprise contact section	A desk telephone with a handset and keypad sits beneath a speech bubble containing a price tag.
+how-it-works	core	Three-step explainer section	Directional arrows connect an input box, a gear, and a checkmark in a three-stage process.
+partner-ecosystem	core	Partners or marketplace overview	Three small office buildings connect to one shared hub in a partner network.
+testimonials	core	Customer quote or endorsement block	One reader's quote comes forward in a pair of speech panels.
+customization	core	Personalization benefits section	Four sliders set independent levels on a single control surface.
+integrations	core	Integrations feature grid	A bundled connection joins two separate devices.
+scalability	core	Capacity benefits section	A raised module extends a growing grid.
+audio-playback	core	Podcast or audio product feature	A continuous headband connects two cushioned earpieces.
+learning-path	core	Course or documentation path	A continuous track connects four milestones and a finish flag.
+multilingual-content	core	Translation or localization feature block	Two versions of a page use different reading directions.
+newsletter	core	Email subscription section	An illustrated issue unfolds from its delivery sleeve.
+video-library	core	Media catalog or course hub	A viewing gate selects a frame on a strip of film.
+floor-plan	core	Property detail or architecture feature	A low-walled floor plan shows four connected rooms with gaps and arcs for swinging doors.
+home-renovation	core	Remodeling services landing page	One wall of a house cutaway transitions from exposed studs to newly installed siding.
+virtual-property-tour	core	Real estate feature or gallery	A broad circular arrow sweeps through a room panorama with a picture window.
+service-request	core	Customer service form hero	A notched support ticket bears a headset emblem and a plus badge on its tear-off stub.
+destination-guide	core	Travel or city landing page	An open city guide shows a street map on one page and a triumphal arch on the facing page.
+permissions	core	Admin or role-based access overview	Three key profiles fit specific slots, with one key lifted from its own slot.
+security	core	Trust or product security feature	A rounded shackle secures a solid lock body.
+automation	core	Workflow automation hero	A conveyor feeds parts through an overhead machine.
+collaboration	core	Shared workspaces or multiplayer feature block	Three chairs gather around a shared worktable.
+handoff	core	Cross-team workflow feature card	A document travels between two stations.
+task-dependencies	core	Planning or timeline feature section	Right-angle connectors run from one task tile to two downstream task tiles.
+accessible-venue-routes	specialist	Venue or campus access map	A long gentle ramp bypasses steps and reaches the same raised landing.
+adjustable-contrast-testing	specialist	Design-system accessibility docs	A split contrast dial has a strong half and a faint half, with a short adjustment slider over its center.
+alternative-pointing	extended	Input devices support page	A large trackball sits in a rounded pointing-device housing behind two broad click buttons.
+audio-description	specialist	Media accessibility feature	A film-frame tile pairs an eye with radiating sound waves.
+font-coverage	extended	Typography localization guide	A specimen sheet displays six large letterforms from different writing systems in a two-row grid.
+ime-support	extended	Global text input feature	A text input underlines Japanese composition marks above an attached list of candidates.
+interpreter-booking	extended	Event accessibility or support services	An over-ear headset with a boom microphone carries a clock badge for booking.
+keyboard-shortcut-discoverability	extended	Productivity and accessibility guide	A compact keyboard highlights two oversized keycaps for a Command and right-arrow shortcut.
+landmark-navigation	extended	Assistive navigation guide	A bold route on a folded map ends at a clock-tower landmark.
+language-fallback	extended	International CMS configuration	A two-row language selector uses a bent arrow to return from a primary script to its fallback row.
+mixed-language-annotation	extended	International content guide	A document carries one anchored speech bubble with two rows of visibly different scripts.
+motion-sensitivity-preferences	extended	Accessible animation settings	Two fading position outlines trail a moving tile marked with a slash badge.
+programmatic-focus-transfer	extended	Accessibility pattern library	An arrow carries the focus outline from one field to the next on a sloped form panel.
+reduced-motion	extended	Accessibility statement or settings	A pause badge overlaps a spinning top traced by two short motion arcs.
+reduced-parallax	extended	Web animation accessibility docs	A slash badge overlaps a motion arrow beneath the foreground and background ridges of a deep landscape window.
+shortcut-remapping	extended	Settings discoverability	A curved remapping arrow joins two separate keyboard keycaps with different key markings.
+skip-link	extended	Keyboard navigation feature	An arrow jumps from the browser toolbar past a navigation row to the start of the main article.
+tactile-feedback	extended	Device accessibility options	One short vibration arc on each side hugs a smartphone.
+text-scaling	extended	Readability settings or docs	Two raised letterforms of different sizes stand on the same baseline.
+transliteration	extended	International user input guidance	A single card maps the Cyrillic letter Д to its Latin counterpart D with an arrow.
+visible-focus-history	extended	Accessibility debug tools	Two dashed focus outlines lead along a pair of arrows to a solid focus outline on the active tile.
+voice-control	extended	Accessible input capabilities page	A smart display on a round speaker base shows a prominent microphone below a voice trace.
+writing-direction-override	extended	Multilingual editor setting	A long left-pointing arrow heads a paragraph control whose text aligns to the right.
+account-merge-confirmation	extended	Confirm joining duplicate accounts	Two overlapping profile cards share a curved arrow pointing into the front card.
+account-restored	extended	Reopen a recoverable account	A curved return arrow turns back toward the portrait on a profile card.
+account-suspension	extended	Restricted account remediation screen	A thick profile card has a bold diagonal slash across its portrait.
+choose-display-name	extended	Set a public identity during signup	A desktop profile nameplate shows a text insertion cursor inside its display-name field.
+connect-another-device	extended	Device linking wizard	A raised connector links a handheld device to a laptop.
+connect-headset	extended	Connect first input device	A raised connector links a headset to a terminal plug.
+default-notification-settings	extended	Configure account notices	A reset arrow curls around the flared lip of a notification bell.
+email-address-changed	extended	Confirm changing primary account email	A curved arrow leads from the old address line to its replacement on an email card.
+join-an-existing-team	extended	Discover and enter an existing organization	An inward arrow points into an organization directory with three member portraits.
+managed-seat-assignment	extended	Workspace administrator selects a seat	A workspace model shows four chairs around a shared desk and an employee token on the selected chair.
+migrate-an-account	extended	Account transfer or ownership wizard	A bold rightward transfer arrow leaves the account card beside its portrait.
+pair-a-security-key	extended	Connect a credential to a device	Two interlocked chain links overlap a USB security key with an exposed plug.
+set-a-passkey	extended	Passwordless setup	A notched key shows a fingerprint engraved in its round bow.
+set-working-timezone	extended	Pick a timezone for scheduled activity	A desktop globe has a clock badge over one side of its latitude and longitude grid.
+sign-out	extended	Session close initiated by an account holder	A bold arrow points outward through an open doorway.
+skip-optional-setup	extended	Move past a voluntary configuration	A curved forward arrow bypasses the dashed middle row of a standing checklist.
+try-with-sample-data	extended	Demo workspace selector	A populated data table stands behind a small flask of sample liquid.
+agent-execution-trace	extended	Activity and transparency view	A magnifier singles out one step in a vertical execution trace.
+api-response-drafting	extended	Developer assistant tools	A pencil touches the last colon-separated property row on a clipped JSON response draft.
+character-pose-fitting	extended	Illustration rigging view	An articulated quadruped armature has exposed pivot joints and one front leg held in a raised pose.
+cross-document-synthesis	extended	Knowledge assistant feature	Two offset source pages sit behind a summary sheet whose two streams of text converge into one.
+dialogue-noise-profile	extended	Audio cleaning tool	A magnifier isolates the low rumble between two taller bursts of speech on a waveform.
+document-extraction	extended	PDF workflow feature	An arrow carries one selected region out of a folded document as a clipped excerpt.
+evidence-gap	extended	Research answer review	An evidence clipboard has two completed rows and a dashed outline where an attachment belongs.
+filler-word-detection	extended	Interview editor review	A magnifier picks out a short isolated token in a transcript beneath a speech waveform.
+image-upscaling	extended	Creative image tools	A diagonal expansion arrow extends outward from the upper-right corner of a landscape print.
+inline-continuation	extended	Editor assistance feature	A folded writing page shows a dark cursor followed by dashed ghost text beneath a four-point sparkle.
+line-cleanup	extended	Illustration editor	An eraser touches the end of a smooth inked leaf contour on a bound sketchbook page.
+model-evaluation	extended	AI quality or developer dashboard	A model score gauge points past its marked pass threshold and carries a check badge beside the score.
+object-replacement	extended	Photo editor remove and replace mode	An arrow points from a faint round tree silhouette to an outlined pine inside the same photograph.
+pattern-synthesis	extended	Procedural pattern generation	Nine interlocking tiles repeat a small square motif across a square sheet.
+perspective-correction	extended	Imaging postprocess feature	An architectural print shows a building with upright sides in front of its skewed dashed crop guide.
+reference-alignment	extended	Generative render setup	A lightbox registers a solid sailboat drawing against a nearly superimposed dashed reference and three alignment targets.
+semantic-search	extended	Knowledge search capability	A search panel uses a ringed planet as its query and shows a crescent moon and a rocket as related results.
+spelling-intervention	extended	Copy editing controls	A pencil rests beside a proofreading card with a wavy underline beneath a short run of type.
+style-transfer-for-text	extended	Writing tool tone settings	A comparison card pairs separate upright type strokes with flowing script strokes across a transition arrow.
+texture-consistency	extended	Creative tool comparison	A folded material swatch carries the same flowing grain across both sides of its seam.
+vectorization	extended	Creative format conversion	An image tile shows a stepped pixel edge turning into a smooth curve with two square Bézier anchors.
+account-opening-deposit	extended	Bank welcome onboarding	A coin enters the open mouth of a bank-marked deposit envelope.
+budget-rollover	extended	Month-end budget summary	An open budget ledger carries a dollar coin and an arrow from one calendar month to the next.
+cash-drawer-audit	extended	Cash register reconciliation	A magnifying glass frames the coins and notes in the open drawer of a cash register.
+cost-center-budget	extended	Budget allocation settings	An office block shares a base with a recessed coin tray and an allocation gauge.
+deposits-and-reserves	specialist	Treasury product explainers	A partly open safe reveals a stack of coins behind its thick combination door.
+donation-receipt-archive	extended	Donor fiscal records page	Two itemized donation receipts with currency totals are filed inside a tabbed folder marked with a heart.
+emergency-fund	extended	Savings feature block	A coin-slot piggy bank carries a warning triangle at its flank.
+exchange-rate-notification	extended	Currency alert setting	An alert bell has dollar and euro symbols engraved on its flared body.
+expense-capture	extended	Finance automation section	Four close camera corners frame an itemized receipt with a curled foot and a currency total.
+interest-rate-lock-expiration	extended	Lending rate deadline notice	A closed padlock has an engraved percent sign and a clock badge on the upper corner of its body.
+operational-expense-cap	extended	Department spend policy	An upright expense gauge shows a dollar mark and a heavy stop above the current spend segments.
+pause-subscription	extended	Billing settings panel	A recurring-payment controller carries a pause badge beside its currency symbol and renewal dial.
+petty-cash-reimbursement	extended	Office expense repayment request	A curved return arrow points toward coins held in an open clasp purse.
+price-lock-guarantee	extended	Locked quote feature block	A prominent currency tag hangs from the closed shackle of a padlock threaded through its eyelet.
+refund-issued	extended	Billing resolution confirmation	A curved arrow returns across the face of a payment card and points back toward its chip.
+accessible-sidewalk-planning	extended	Accessibility improvement program	A wide curb ramp with a tactile paving strip connects a continuous sidewalk corner to a crossing.
+bulky-waste-pickup-booking	extended	Municipal bulky pickup scheduler	A flatbed truck carries a couch, with a clock badge above the cab.
+city-hall-public-comment	extended	Local participation guide	A speech bubble connects to the gooseneck microphone on a public-hearing lectern.
+community-garden-signup	extended	Municipal plot allocation	A raised bed holds three seedlings and carries a plus badge at its front corner.
+community-outage-map	extended	Utility outage map help	A warning triangle marks one block on a folded neighborhood street map.
+compost-plot-management	extended	Community compost initiative	An open slatted compost bin exposes a coarse mound of leaves and stems.
+drought-restriction-alert	extended	Water authority notice	A slash badge sits beside the dripping spout of an outdoor tap.
+dust-monitoring-station	extended	Construction air quality control	A pole-mounted dust monitor has a hooded intake and a particulate level display.
+e-waste-processing	extended	Electronics recycling program	A discarded circuit board sits in a collection bin with a circular-arrow badge on its front wall.
+emergency-assembly-area	extended	Local preparedness map	Four inward arrows on a freestanding emergency assembly sign point to a cluster of safety helmets.
+food-scraps-collection	extended	Organics pickup service	An apple core protrudes from the opening of a wheeled organics bin.
+grid-balancing	extended	Energy systems feature	A lattice electricity pylon carries a balanced pair of scale pans beneath its crossarm.
+grid-outage-indicator	extended	Utility outage status banner	A lattice transmission pylon carries sagging power lines and a slash badge.
+home-battery-placement	extended	Battery siting guidance	A home battery hangs on a garage wall above a marked floor clearance.
+home-water-meter-reading	extended	Public water meter reporting	A domestic water meter joins two pipes and displays consumption on an angled analog register.
+impact-measurement-stations	extended	Nonprofit results section	A weatherproof monitoring cabinet shows an upward measurement trend in its built-in instrument window.
+local-weather-alerts	extended	Weather or civic safety service	A storm cloud gives off a lightning bolt and carries an exclamation triangle.
+municipal-document-pickup	extended	City document pickup instructions	A tabbed document folder protrudes through the open door of a civic pickup locker.
+municipal-fee-payment	extended	City payment service	A civic fee statement shows a municipal building pictogram above a ruled balance and a stack of coins.
+neighborhood-cleanup-event	extended	Community cleanup information	The jaws of a litter grabber grip a crumpled scrap of paper.
+neighborhood-flood-response	extended	Flood preparedness resource	Floodwater crosses the lower part of a house door beneath an attached warning triangle.
+peak-demand-reduction	extended	Energy efficiency product benefit	A downward arrow targets the tallest column on an electricity demand chart.
+protected-bike-lane	extended	Public mobility project page	A bicycle pavement marking identifies the lane behind a raised curb that separates it from traffic.
+public-drinking-fountain-locator	extended	Community water portal	A pedestal drinking fountain sends a water arc into its basin beside a map pin.
+public-meeting	extended	Local assembly or nonprofit page	A town-hall lectern faces two compact rows of chairs.
+rainwater-barrel-overflow	extended	Water collection threshold reminder	A broad ribbon of water spills over the rim and down the side of a rain barrel.
+rainwater-harvesting	extended	Water reuse feature	An elbowed downspout turns into the lid of a rain barrel.
+renewable-power-mix	extended	Clean-energy dashboard	A wind turbine and a solar panel stand in the two sectors of a divided energy mix chart.
+report-a-local-issue	extended	Municipal web service	A compact camera overlaps the square foot of a striped roadwork cone.
+reservoir-capacity-monitoring	extended	Reservoir operations feature	An open reservoir tank has a visible water surface and a side gauge aligned to the waterline.
+riparian-tree-planting	extended	Habitat restoration project	A young tree takes root in a raised riverbank just above the waterline.
+river-maintenance-access	extended	Civic waterway maintenance	A rail-lined maintenance ramp leads from the upper riverbank path down to the water's edge.
+sewer-inspection-scheduling	extended	Public works appointment	A round cast-iron manhole cover carries a clock badge at its rim.
+site-habitat-restoration	specialist	Environmental project page	A young tree and new shoots share a cutaway patch of soil with exposed roots.
+stormwater-management	extended	Civil infrastructure feature	A flow arrow enters a curbside grate above the exposed chamber and pipe of a cutaway storm drain.
+street-lighting-repair	extended	Municipal fix request	A curved streetlight carries a wrench-shaped service tag on its pole.
+urban-canopy-mapping	extended	Municipal tree inventory map	Three tree crowns mark a planted corridor on a standing street map sign.
+urban-heat-study	extended	Urban environment report	A tall thermometer rises above a cluster of city rooftops.
+village-microgrid	extended	Microgrid feature overview	A single local power cable connects a village house, a solar panel, and a wind turbine.
+volunteer-tool-pickup	extended	Community volunteer coordination	A handled tool case projects from the open compartment of a pickup locker.
+water-channel-sweep	extended	Drainage works resource	A flow arrow sweeps a pair of leaves downstream through an open concrete drainage channel.
+water-conservation	extended	Impact feature or utility advice page	A closed faucet holds one droplet beneath its downward spout.
+water-shutoff-instructions	extended	Plumbing emergency guide	A clockwise arrow curls around the handwheel of a flanged water shutoff valve.
+watershed-monitoring	specialist	Environmental analytics feature	A raised watershed map shows three tributaries converging beside a staff gauge.
+wind-power-site-appraisal	extended	Turbine site suitability assessment	A wind turbine marker stands inside the outlined suitability zone on a raised terrain map.
+abandoned-cart	extended	Recovery reminder or merchant dashboard	A shopping cart still holds two products, and a clock badge shows it has been left waiting.
+carton-size-selection	extended	Packing workstation size decision	The jaws of a large caliper touch the opposite ends of an open carton.
+cold-chain-shipping	extended	Perishable goods delivery feature	A thermometer is mounted on the front wall of an insulated shipping cooler.
+cross-dock-transfer	extended	Distribution cross-dock explainer	A short roller conveyor bridges the open beds of two freight trucks at deck height.
+customer-delivery-proof	extended	Delivery proof detail page	A checked photo print shows a delivered parcel on a doorstep.
+damaged-delivery	extended	Customer service claim flow	A taped shipping carton has a buckled corner with a short jagged tear.
+discount-code	extended	Promo entry on checkout	A merchandise tag bears a large percent sign above a short barcode.
+distribution-bin-assignment	extended	Inventory slot assignment	An open-front stock bin sits inside the outlined slot of a four-bay rack.
+dock-loading-order	extended	Shipping dock schedule	A directional arrow runs from a raised loading dock into the level bed of a freight truck.
+gift-note-insertion	extended	Gift checkout note editor	A small handwritten card peeks out from beneath the front flap of an open ribboned gift carton.
+label-alignment	extended	Shipping label print setup	A shipping label sits squarely inside four printed corner guides on a taped carton.
+long-item-storage	extended	Warehousing capability page	A cantilever rack supports long pipes that extend beyond both sets of arms.
+low-stock	extended	Limited inventory product banner	One parcel remains among the empty bays of a stock shelf.
+merchant-stock-take	extended	Inventory count overview	A stock-count clipboard shows three product rows with tally marks and a separate total line.
+multi-carrier-drop-off	extended	Merchant handoff options	A shared parcel drop box has one wide intake slot and a strip of three carrier emblems.
+order-customization	extended	Product personalization checkout step	A pencil touches the personalization field under a T-shirt thumbnail on a standing product order card.
+packing-line-throughput	extended	Pack station operations dashboard	A taped carton rides a short roller conveyor with a speed gauge built into its side housing.
+packing-material-selection	extended	Merchant packaging materials guide	A sheet of bubble wrap curves up inside an open shipping carton.
+pallet-staging	extended	Dispatch staging bay overview	A loaded shipping pallet sits squarely within four painted floor bay corners.
+parcel-surcharge-comparison	extended	Oversize shipping calculator	A standing parcel rate card compares a standard box with one coin and an oversized box with three coins.
+product-variants	extended	Storefront configurator	Three matching pairs of headphones have smooth, ribbed and perforated earcups.
+receiving-inspection	extended	Warehouse receiving checklist	A handheld magnifier frames the torn corner of a shipping carton.
+refrigerated-parcel-packaging	extended	Packing chilled items instructions	A flat ice pack with a snowflake rests inside the fitted foam liner of an open shipping carton.
+repacking-fragile-return	extended	Returns packaging guide	An open shipping carton holds a stemmed glass upright in a fitted packing insert.
+restock-shelf-map	extended	Store replenishment locator	A location pin identifies the empty bay of a stock shelf.
+reusable-shipper-deposit	extended	Reusable packaging deposit prompt	A lidded returnable shipping tote carries a deposit tag marked with stacked coins.
+reverse-logistics-intake	extended	Return warehouse intake	A hooked return arrow turns down into the open mouth of a shipping carton.
+seasonal-stock-rotation	extended	Seasonal store merchandising feature	A looping rotation arrow sweeps along the front row of a stocked shelf.
+serial-tracked-returns	extended	Returns inspection workflow	A curved return arrow hooks around the prominent serial barcode label on a returns carton.
+shipment-paperwork-pouch	extended	Cross-border documentation help	A clear adhesive document pouch holds a folded shipping form against the face of a carton.
+staggered-item-dispatch	extended	Split-order dispatch history	Two matching parcels connect to separate marks on a shipment timeline.
+tabletop-packing-station	extended	Warehouse workstation design	A tape dispenser feeds a strip across the seam of a carton resting on a workbench.
+warehouse-aisle-navigation	extended	Picking aisle directions	A bold route arrow turns into the aisle between two rows of warehouse shelving.
+warehouse-picking	specialist	Fulfillment SaaS product	A raised forklift lifts a taped carton clear of the upper shelf of a stock rack.
+file-deletion-scheduled	extended	Undoable scheduled removal notice	A file protrudes from a tapered wastebasket with a clock badge on its rim.
+file-renamed	extended	Existing file gained a new label	A folded-corner file shows a boxed filename selection with a tall editing caret.
+file-restored	extended	Recoverable file successfully restored	A curved return arrow wraps around the lower right corner of a restored document.
+import-partially-completed	extended	Some rows imported, others pending	Two sheets occupy one side of an import tray with an exclamation triangle on its open corner.
+import-retry-scheduled	extended	Failed import will run later	A document sits in an import tray with a clock badge attached to its front-right corner.
+import-validated	extended	File was imported and verified for structure	A gridded document sits inside an import tray with a check badge on its corner.
+key-rotated	extended	Successful replacement of a trusted key	A single notched key has a curved replacement arrow wrapping around its open bow.
+preferences-reset	extended	Confirm defaults restored successfully	A sloped settings console has three faders aligned with their center ticks and an attached check badge.
+sync-complete	extended	Cross-device synchronization confirmation	Two arrows form a synchronization loop with a check badge attached to its lower arc.
+accessibility-visit-orientation	extended	Culture welcome resources	An upright folded venue map marks its destination with a wheelchair symbol inside a location pin.
+artifact-photography-setup	extended	Museum production workflow	A tripod camera points its lens at a small museum vase.
+ask-a-curator	extended	Museum learning discussion	A question-mark speech bubble sits at the shoulder of a museum vase.
+community-shared-goals	extended	Group progress dashboard	Three tabbed member passes sit inside a thick progress ring with one unfinished segment.
+culture-walking-itinerary	extended	Public visitor itinerary card	A dotted walking path on a folded map leads to the pictogram of a columned landmark.
+exhibition-curatorial-notes	extended	Art gallery feature	An angled gallery label shows a ring sculpture thumbnail above three lines of curatorial notes.
+exhibition-scenario-preview	extended	Culture season promotion	An open gallery display contains a ring sculpture and a dashed outline for the planned exhibit area.
+festival-accessible-facilities	extended	Visitor information map	A folded festival map marks the facilities with a large wheelchair location pin beside a printed tent.
+festival-guest-welcome	extended	Culture festival ticket site	A festival entrance arch carries a swallowtail welcome banner above a string of pennants.
+gallery-artist-studio-visit	extended	Venue visit booking page	A notched admission ticket carries a large artist’s easel pictogram beside its perforated stub.
+gallery-conservation-funding	extended	Collection stewardship campaign	A repaired museum vase sits on a plinth with a donation heart badge at its foot.
+gallery-opening-hours	extended	Museum visit planning	A freestanding gallery sign shows two clock faces separated by a dash.
+gallery-tour-listening-station	extended	Accessibility audio guide page	A corded gallery audio handset rests in a charging cradle above a printed exhibit marker.
+historical-timeline-authoring	extended	Digital heritage feature	A bound timeline shows three event ticks and a pencil touching the newest entry.
+introduction-buddy	extended	Community matching page	A paired profile card shows two matching avatar pictograms below one shared speech bubble.
+join-a-group	extended	Community or association onboarding	A single incoming arrow points toward a close group of three chairs.
+language-preservation-recording	extended	Cultural documentation page	A field recorder has a built-in microphone, a speech label and a waveform on its display.
+lifetime-member-recognition	extended	Patron program page	A ribbon medallion carries a large embossed infinity emblem.
+member-achievement	extended	Community or learning milestone	A ribbon medallion displays one large embossed star.
+member-program-orientation	extended	Community signup feature	A bound orientation booklet shows three profile pictograms above a short list of three steps.
+mentorship	extended	Community or professional education feature	A two-seat study station pairs a tall chair and a short chair at a shared desk with an open workbook.
+museum-cabinet-label	extended	Exhibition design tool	A glass museum case encloses a faceted sculpture and carries a caption plaque on its front rim.
+museum-tactile-station	extended	Accessible museum services	A sloped museum panel displays a raised spiral fossil above a label with raised Braille dots.
+neighborhood-story-trail	extended	Public arts mapping site	A walking path connects three speech-bubble story stops on a folded neighborhood map.
+object-condition-report	extended	Museum conservation detail	A magnifier circles a chip on the rim of a vase drawn on a conservation clipboard.
+object-provenance-report	extended	Collection evidence page	A spiral accession record places a vase drawing above three ownership entries on a vertical timeline.
+object-transport-case	extended	Gallery loan preparation	An open transport case holds a faceted sculpture in a foam recess cut to its shape.
+open-storage-tour	extended	Museum behind-the-scenes listing	An admission ticket overlaps the open glass door of a museum cabinet containing a ring sculpture.
+performance-stage-pass	extended	Cultural back-of-house credential	A short lanyard clips to a theater access pass printed with parted stage curtains.
+sculpture-360-view	extended	Digital exhibition feature	An orbit arrow wraps around the plinth beneath a standing ring sculpture.
+stage-rehearsal-slot	extended	Public performance preparation	A curtained theater stage carries a clock badge on its proscenium.
+threaded-discussion	extended	Community forum feature	Three progressively indented speech balloons are joined by two elbow-shaped reply connectors.
+venue-accessibility	extended	Cultural visitor information	A ramp leads through an open venue doorway with a wheelchair-access sign mounted beside it.
+volunteer-time-log	extended	Culture venue contribution tracker	A punch-clock time card shows stamped rows and a boxed hours tally at its foot.
+volunteer-welcome-desk	extended	Museum shift check-in	A heart-marked volunteer name badge rests on the ledge of a check-in counter.
+activation-milestones	extended	Growth dashboard onboarding	A three-step progress line links three large milestones and puts a check badge on the last one.
+activity-history	extended	User activity feature section	An event lifts from its place on the timeline.
+adoption-lag	extended	Rollout measurement	An adoption chart stays flat before rising, with a clock badge marking the delayed start.
+approval-rate	extended	Conversion scoring dashboard	A check badge caps the approved segment of a graduated rate gauge.
+audience-overlap	extended	Audience analysis dashboard	Two audience circles share one stack of profile cards in their intersection.
+benchmarking	extended	Industry analytics product	A bold benchmark rule crosses three bars and separates the bars above and below target.
+causal-analysis	extended	Measurement methodology page	A single directional arrow links a trigger node to a distinct effect node.
+channel-performance	extended	Marketing analysis dashboard	Three bent inlet pipes of different diameters feed a common tank with a graduated sight glass.
+cluster-sampling	extended	Sampling design help	One whole cassette of sample vials is pulled from a three-slot rack and marked with a check.
+cumulative-probability	extended	Probability distribution documentation	A cumulative probability curve rises from zero and flattens at the top of a ruled probability scale.
+customer-journey	extended	Lifecycle or product analytics page	A winding route leads from an entry ring past a midpoint marker to a checked final stop.
+customer-lifetime-value	extended	Revenue analytics overview	A customer card peeks out of a wallet behind three progressively taller stacks of coins.
+dataset-annotation	specialist	Training or research data platform	An instant photograph has a callout label pointing to the sailboat outlined inside it.
+demand-model	extended	Retail data science feature	A stocked shop shelf carries a demand chart that rises into a dashed forecast.
+document-similarity	extended	Document discovery dashboard	Two thick documents expose matching outlined passages in the same position.
+engagement-depth	extended	Content analytics section	A marker on an open magazine’s engagement scale aligns with the last section reached.
+feature-importance	extended	Model interpretation feature	Three labeled horizontal contribution bars descend in rank from longest to shortest.
+fold-validation	extended	Cross-validation explainer	Each row of a cross-validation matrix holds out a different column in a clearly stepped diagonal.
+imputation-preview	extended	Preprocessing workflow	A dashed data-table cell contains one faint preview entry among the existing values.
+interaction-effects	extended	Experimental results article	Two opposing response lines cross on a shared ruled axis.
+metric-guardrail	extended	Experiment control policy dashboard	A monitoring chart shows a level threshold above its trend and a shield on the upper corner of its frame.
+model-error-budget	extended	ML platform control view	An instrument shows a partially used error allowance as a hatched bar inside a closed track.
+outlier-detection	extended	Model monitoring or anomaly feature	A probe hovers above the single tall sample in an otherwise flat field.
+population-coverage	extended	Audience analysis page	A partly unfolded map outlines a service area around three customer markers.
+price-sensitivity	extended	Pricing research feature	A price tag hangs from a bidirectional slider with wide adjustment marks.
+query-latency-distribution	extended	Search performance diagnostics	A stopwatch displays a binned response-time histogram across its face.
+randomization-check	extended	Experiment quality dashboard	An assignment grid mixes round and triangular tokens, with a check badge on its near corner.
+rank-order	extended	Sorting settings in data explorer	A three-level winners’ podium shows one pip on the highest tier, two on the next and three on the lowest.
+renewal-forecast	extended	Revenue intelligence page	A renewal ledger shows a solid revenue history extending into a dashed forecast.
+residual-analysis	extended	Regression diagnostic report	A residual plot has individual stems extending above and below its zero baseline.
+sampling-bias	extended	Survey validation article	A sampling funnel receives round and square tokens but releases only round ones.
+saturation-point	extended	Growth curve methodology	A laboratory thermometer reaches the end of its graduated scale.
+seasonal-decomposition	extended	Forecast workbench	A chart recorder aligns an original signal, a rising trend, and a repeating seasonal wave on three strips.
+segment-profiling	extended	Customer research section	A standing customer ID card pairs a group pictogram with three trait bars.
+sensor-calibration	extended	Measurement service or connected-device settings	A knobbed calibration weight sits on the raised pan of a digital bench scale.
+sentiment-distribution	extended	Feedback analytics feature	Three bars stand over positive, neutral and negative feedback symbols on their shared base.
+simulation-runs	extended	What-if analysis overview	Three dice show different outcomes along one curving roll path.
+skew-and-asymmetry	extended	Statistical distribution walkthrough	A histogram rises to an early peak and falls into a long series of low bars on the right.
+stratified-sampling	extended	Survey methodology article	Three layers in a sampling jar each yield a matching token.
+stress-testing	extended	Portfolio modeling overview	A load-testing press compresses a bowing specimen between two platens.
+survey-response-coding	extended	Research analysis project	A written response feeds into a two-bin sorter marked with distinct category tags.
+systematic-sampling	extended	Research sampling guide	Every third parcel rises above a line of evenly spaced parcels on a roller conveyor.
+tail-risk	extended	Risk analytics explainer	A loss distribution trails off into a long right tail marked by a warning triangle.
+threshold-crossing	extended	Event detection rule setup	A ball follows an arc over a freestanding threshold bar.
+time-series-sampling	extended	Analytics docs	Evenly spaced probes land on isolated points along an irregular physical trace.
+topic-frequency	extended	Text analysis dashboard	A small receipt printer feeds out a tally with three topic rows and unequal bars.
+type-coercion	extended	Data contracts documentation	A laptop screen shows a quoted token becoming a number-sign token.
+unit-conversion	extended	Measurement analytics reference	An arrow pairs equal-length ruler scales with coarse and fine divisions on one measurement card.
+variance-decomposition	extended	Risk measurement tools	A single variance bar is divided into three differently patterned contributor segments.
+weighting-adjustment	extended	Survey calibration tool	A sliding counterweight shifts along the graduated beam of a balance scale.
+adaptive-batching	extended	Throughput settings page	A conveyor with a rotary size dial carries a two-carton batch and a three-carton batch.
+bandwidth	extended	Network performance feature block	Parallel fibers carry traffic between two terminal blocks.
+batch-processing	extended	Offline queue overview	A conveyor carries three identical blocks into the open throat of a processing machine.
+blue-green-deployment	extended	Deployment strategy guide	A selector lever connects its pivot to the round contact while the square contact remains open.
+canary-release	extended	Gradual release guide	A narrow release branch reaches a raised test flask before the main path reaches a software package.
+circuit-breaker	extended	Resilience configuration docs	An open breaker lever lifts away from one of two contacts in a single circuit.
+cold-storage	extended	Archival storage tier	A lidded archival box has a snowflake centered on its front label plate.
+connection-lease	extended	Database server capacity docs	A clock badge sits on the housing of a cable plugged into a database cylinder.
+connection-pooling	extended	Connection management docs	Three cables enter a shared junction hub, which connects to one database cylinder.
+continuous-integration	extended	Build and test feature or docs	A thick figure-eight loop carries a direction arrow and a check badge.
+dependency-pinning	extended	Dependency update configuration	A raised pushpin holds the version label of a code package.
+dependency-vendoring	extended	Packaging and offline build guide	A small code package rests inside an upright project folder with a raised tab.
+disaster-recovery-rehearsal	extended	Failover exercise documentation	A bound recovery runbook shows three drill steps and a restore arrow.
+disk-cleanup	extended	Storage usage detail	A small broom sweeps diagonally across the platter window of an external drive.
+dns-failover	extended	Alias configuration overview	A globe labels a two-row DNS record card, and a bent arrow routes from its primary row to its backup row.
+edge-computing	extended	Distributed compute landing page	A remote sensor housing has a side lens and a cutaway front that reveals its processor.
+edge-network	extended	Infrastructure reach section	A surface links four peripheral nodes to one hub.
+endpoint-health-checks	extended	Load distribution settings	A network endpoint displays a pulse trace beside its keyed Ethernet port.
+failover	extended	High availability feature	A standby unit is ready beside the primary system.
+garbage-collection	extended	Runtime internals guide	A small open wastebasket catches a square allocation beside a pin-legged memory chip.
+gateway-routing	extended	Upstream route configuration	A gateway's single inlet follows a branching trace to two outgoing routes.
+idempotent-writes	extended	API write semantics guide	Two identical write events converge into a single arrow beside a database cylinder.
+incremental-restore	extended	Restore wizard	An offset top snapshot sits above a database stack, and a curved arrow returns to that layer.
+ingress-routing	extended	Cluster networking page	Two incoming paths join before passing through a thick gateway arch.
+integration-test-harness	extended	Test infrastructure documentation	A check badge marks a wired test fixture that clamps a code chip between two connector jaws.
+log-ingestion	extended	Logging product feature	A row of timestamp symbols lines a log console, and an arrow feeds into the middle entry.
+message-ordering	extended	Messaging delivery guarantees	Three speech bubbles in a standing queue show one, two, and three dots beside a downward arrow.
+network-disk-mount	extended	Remote volume setup	An upward mount arrow rises from a disk drive with a keyed network port.
+network-peering	extended	Private links configuration	Two matching routers share a directly attached link with an arrowhead in each direction.
+portable-volume	extended	Storage migration interface	A short outward arrow extends from the front transfer socket of an external drive.
+power-fallback	extended	Hardware capacity and reserve docs	A curved return arrow loops around the side of an upright backup battery.
+process-isolation	extended	Runtime security guide	A pin-legged processor sits entirely inside the edges of a transparent cubic sandbox.
+proxy-diagnostics	extended	Forwarding debug view	A magnifier frames the two forwarding sockets on the face of a proxy server.
+query-execution-plan	extended	Database query inspector	An execution tree connects a database root through an intersecting-ring join node to two table scans.
+quota-tracking	extended	Resource usage dashboard	A standing quota gauge shows a partially filled bar and a tall capacity mark at its end.
+regional-failback	extended	Recovery procedure docs	A curved arrow returns from the right rack server to an identical rack server on the left.
+release-channels	extended	Stable and preview selector	Three code packages sit on parallel release rails, with a check badge marking the nearest channel.
+release-rollback	extended	Deployment or incident recovery docs	A version tag sits on a sealed software package encircled by a looping rollback arrow.
+request-queue	extended	Asynchronous jobs feature or docs	Requests line up to pass through a single gate.
+retention-tagging	extended	Data cleanup control	A punched label shows a large clock beside a short duration field.
+schema-migration	specialist	Data platform admin docs	A migration arrow connects a two-field schema table to a revised three-field table.
+secure-tunnel	extended	Private connection setup	A padlock badge overlaps the midpoint of a flanged network tunnel.
+service-mesh	extended	Platform topology section	Four equal service cubes connect directly to their peers through a crisscross mesh.
+storage-allocation	extended	Capacity editor	Radial dividers partition the top of a database cylinder, and hatching marks one allocated sector.
+system-diagnostics-bundle	extended	Support troubleshooting workflow	A zipper closes a boxed diagnostics bundle with a pulse trace across its front.
+thermal-throttling	extended	Compute cooling notice	A processor shows three descending performance bars beside a thermometer.
+thread-contention	extended	Runtime performance article	Two broad pipes merge into one narrow pipe, with a warning triangle beside the bottleneck.
+tiered-storage	extended	Storage policy configuration	Three concentric storage tiers step down in diameter from the bottom to the top.
+tunnel-retirement	extended	Exit from developer tunnel setup	An x badge overlaps the midpoint of a flanged network tunnel.
+webhook-delivery	extended	Developer integrations guide	A cable hook carries a sealed envelope toward a server.
+websocket-session	extended	Streaming connection overview	A short cable with opposing arrowheads connects a browser laptop to a server.
+write-ahead-logging	extended	Storage engine documentation	An arrow leads from the newest entry of a standing spiral journal to a database cylinder.
+assignment-accommodations	extended	Accessible class assessment setup	A school desk holds a worksheet above telescoping legs and an up-arrow badge.
+certificate-pickup	extended	On-site course graduation	A rolled diploma is tied with a notched ribbon and marked by a pickup arrow curling outward.
+classroom-seating-shuffle	extended	Teacher seating planner	Two school desks with chairs stand under a pair of opposing swap arrows.
+course-audit-seat	extended	Non-credit enrollment state	A course admission ticket pairs a mortarboard heading with an observing-eye mark on the perforated stub.
+exhibit-booth-setup	extended	Trade-show exhibitor checklist	A trade-show booth has a rectangular display sign sliding down into its upright mounting rails.
+fieldwork-prep	extended	Course field visit page	A hiking pack carries a field checklist tag with a mountain trail and three checked equipment rows.
+group-presentation	extended	Student assignment overview	Two standing presenter microphones share one framed presentation board.
+group-project-roles	extended	Course teamwork site	A team assignment board aligns three removable name strips with pen, magnifier and microphone role symbols.
+office-hours-queue	extended	Academic support scheduling	An office-hours ticket dispenser shows three queue slips with an arrow beside the first.
+open-enrollment	extended	Cohort signup or education program	A school doorway with a mortarboard above its opening has an open door and a plus badge.
+orientation-badge-pickup	extended	Campus welcome page	A campus welcome credential hangs from a looped lanyard and carries an outward arrow badge.
+outdoor-science-trail	extended	Field course brochure	A standing accordion map traces a walking route to a large leaf-shaped field observation marker.
+panel-discussion	extended	Speaker lineup theme	A panel table lines up three empty chairs behind three tabletop microphones.
+partner-talk-proposal	extended	Event organizer submission	A talk proposal projects from an open envelope and shows a lectern, a title and three abstract lines.
+peer-feedback	extended	Collaborative class feature	Two overlapping speech bubbles sit along the edge of an assignment with marked answers.
+registration-refund-record	extended	Event cancellation confirmation	A perforated event ticket carries a two-coin emblem and a curved return-arrow badge.
+reserved-accessible-row	extended	Accessible seating settings	Two theater seats share a reserved row with an outlined wheelchair bay.
+seating-plan	extended	Event venue seating selection	Three rows of venue seats flank a center aisle, with a check badge on the selected seat.
+session-time-changed	extended	Attendee reminder alert	A round wall clock with hour marks carries a refresh badge on its right rim.
+speaker-registration-closed	extended	Conference administration state	A lanyard credential with a microphone emblem has a lock badge at its lower corner.
+standing-room-admission	extended	Festival availability screen	A perforated admission ticket shows two side-by-side shoeprints.
+venue-box-office	extended	Venue ticket purchase page	A box-office window has a service shelf and a perforated ticket projecting from its slot.
+venue-entry-scan	extended	Entry checkpoint experience	A freestanding barcode reader projects a scan line across an admission ticket held under its hood.
+venue-sound-rehearsal	extended	Conference production schedule	A stage with tied-back curtains and steps has a loudspeaker mounted on its right proscenium post.
+workbook-answer-key	extended	Digital exercise library	An open workbook pairs three shape-indexed questions with their matching completed answers.
+workshop-stations	extended	Hands-on session floor plan	Three separate workbenches stand on a workshop floor plan and carry station markers with one, two and three dots.
+attempt-limit-reached	extended	Retry budget is exhausted	A large circular retry arrow loops around three empty attempt slots and meets an X badge at its lower corner.
+field-length-exceeded	extended	Validation warning about too much content	A text entry crosses the end boundary of its outlined field beside an attached warning triangle.
+no-activity-yet	extended	Wait for first event on an empty timeline	An activity timeline has evenly spaced date ticks above a dashed event lane with no entries.
+no-connection-retries-left	extended	Failed sync screen	A circular retry arrow surrounds a Wi-Fi mark and carries an X badge at its open tail.
+no-team-seats-available	extended	Team invitation blocked by seat capacity	Three seats on a shared bench have checked backrests and a warning triangle beside them.
+nothing-shared-yet	extended	Shared area before first share	An upright folder is outlined with dashes and has an outward share arrow in its raised tab.
+nothing-uploaded	extended	File area before first upload	An empty upload tray holds the dashed outline of an upright file above its opening.
+page-moved	extended	Redirect guidance or stale link notice	A browser window with an address bar shows a bent forward arrow.
+reconnecting-device	extended	Wait during reconnection attempt	A two-prong plug lines up with a matching socket that carries a refresh badge.
+shared-item-removed	extended	Shared asset no longer available	A folded document has an outward-arrow sharing tab with an X badge at its outer corner.
+temporarily-disabled-option	extended	Preference control cannot be changed	A rocker switch on a rounded housing has a slash badge at one corner.
+undo-unavailable	extended	Undo action disabled on empty history	A tapered keyboard keycap with a curved undo arrow carries a slash badge on its upper-right edge.
+breakfast-service-setup	extended	Hotel food service overview	A breakfast plate holds a fried egg and two slices of toast beside a cup.
+buffet-setup-sequence	extended	Buffet service arrangements	A buffet counter supports three chafing dishes with one, two, and three dots along its serving edge.
+catering-load-in-access	extended	Venue catering delivery instructions	A service loading door is raised above a threshold with an inward arrow.
+chef-collaboration-dinner	extended	Dining feature page	A plated dinner sits beside a standing menu with two chef hats printed side by side.
+coffee-service-station	extended	Catering beverage options	A service coffee urn has a lidded stainless body, a coffee bean emblem, a dispensing tap, and a drip ledge.
+commissary-ingredient-dispatch	extended	Central kitchen supply workflow	A kitchen delivery van has an open sliding cargo door with a produce crate visible inside.
+container-garden-design	extended	Home food growing tutorial	A deep rectangular planter contains three evenly spaced seedlings.
+cooking-duration-check	extended	Recipe timer state	A freestanding kitchen timer has a marked dial with a check badge at the end of its scale.
+counter-pickup-meal	extended	Restaurant pickup information	A handled meal bag rests on a pickup counter marked with a serving cloche.
+crop-monitoring	specialist	Agriculture product page	A crop row has a compact monitoring sensor mounted on a stake at canopy height.
+crop-row-inspection-route	extended	Field management task	A single raised row of seedlings has a directional arrow running beside its furrow.
+cross-contact-separation	extended	Kitchen prep safety training	A full-height divider on a prep board separates a fish from a carrot.
+delivery-handover-counter	extended	Courier order pickup process	A handled delivery bag waits on a cantilevered ledge attached to a tall service counter.
+delivery-route-preparation	extended	Restaurant operations route list	An upright folded street map carries a route through three marked stops.
+dining-delivery-status	extended	Restaurant order progress panel	A handled takeaway bag bears a cloche emblem and an attached outbound arrow badge.
+donate-surplus-meals	extended	Food recovery donation flow	An open takeaway carton holds a meal and bears a donation heart on its front flap.
+family-meal-bundle	extended	Online family-size menu	An open family-size takeaway carton holds three separated servings.
+farm-visitor-hospitality	extended	Agritourism site overview	A farm picnic table with built-in benches is set with two plates and a bowl of fresh produce.
+farmers-market-stall	extended	Local food marketplace vendor page	A striped canopy shades a market counter lined with apples and carrots.
+food-waste-tracking	extended	Kitchen sustainability software	An open food-scraps bin sits on a weighing base with an analog readout.
+freezer-placement	extended	Kitchen equipment placement	A snowflake-marked chest freezer sits in an outlined kitchen appliance bay beside the sink counter.
+grain-sample-inspection	extended	Agricultural quality screening	A magnifying glass sits above a shallow sample dish holding several grain kernels.
+harvest-batch-intake	extended	Agricultural harvest receipt	A full harvest crate has a clipped batch label with two ruled lines on its front slat.
+individual-meal-pickup	extended	Pickup service configuration	An open single-serving takeaway clamshell has an outward arrow extending from its front latch.
+ingredient-preparation-stage	extended	Recipe mise en place step	A chef’s knife rests on a thick chopping board alongside neatly sliced produce.
+ingredient-sourcing	extended	Restaurant or food impact page	A produce crate carries a prominent location pin printed on a front label.
+ingredient-trace-back	extended	Restaurant supply traceability	A produce crate carries a tied traceability tag printed with a return arrow.
+insulated-drink-delivery	extended	Beverage delivery planning	An insulated carrier cradles a lidded drink in a recessed cup holder and has an outward arrow on its front.
+kiosk-cafeteria-layout	extended	Cafeteria design case study	A cafeteria floor plan has three self-service kiosks facing a long serving counter.
+kitchen-water-shutoff	extended	Restaurant maintenance alert	A water supply valve has its lever turned across the pipe and a slash badge on the valve body.
+locally-grown-produce	extended	Farm sourcing story	A handled harvest basket filled with produce carries a map-pin tag on its front.
+outdoor-dining-tables	extended	Restaurant patio information	A patio table set for two supports a large ribbed parasol through its center.
+portion-scaling	extended	Recipe planning tool	A graduated measuring jug has an upward arrow alongside its volume scale.
+private-dining-consult	extended	Restaurant group services	A dining table set for two has an attached speech balloon over its far corner.
+produce-ripeness-inspection	extended	Freshness quality control	A magnifier inspects the cut edge of an avocado half with its pit still in place.
+recipe-revision-card	extended	Recipe development tracking	A tabbed recipe card has a fork-and-knife header, ruled steps, and a refresh badge at one corner.
+restaurant-recycling-setup	extended	Restaurant waste reduction	A two-compartment recycling station pairs a paper slot with a round container opening.
+reusable-catering-carrier	extended	Carrier deposit program	An open rigid catering case has a hinged lid, a molded carry handle, and three fitted food compartments.
+smart-irrigation	specialist	Agriculture or climate feature	A sprinkler head on a supply pipe sends out curved water jets and carries a Wi-Fi badge.
+stovetop-heat-profile	extended	Cooking equipment usage guidance	A four-burner stovetop shows increasing heat through different numbers of concentric burner rings.
+substituted-ingredient-choice	extended	Food order substitutions	An ingredient substitution arrow leads from a mushroom to a bell pepper.
+takeaway-packaging-options	extended	Ordering packaging preferences	A folded paper takeout carton stands beside a reusable molded clamshell.
+unexpected-item-outage	extended	Restaurant ingredient stockout	A stock shelf holds one carton beside a dashed missing-item outline and a large warning triangle.
+weekly-meal-plan	extended	Meal subscription product	A thick ring-bound weekly meal planner has one place-setting pictogram in each day column.
+accessibility-aids-fitting	specialist	Assistive healthcare service	A hook-handled walking cane and an adjustable underarm crutch stand alongside a short fitting ruler.
+adaptive-workout	extended	Accessible exercise program	A sports wheelchair carries a dumbbell in a rack above its seat for an overhead press.
+balance-exercise	extended	Therapy session instruction	A tilted circular balance board rests on its rounded half-dome rocker.
+equipment-sanitation	extended	Clinic operations training	A disinfectant trigger sprayer sits beside the seat of a reclining dental chair.
+exercise-equipment-fit	extended	Wellness equipment service	A stationary exercise bike shows a graduated telescoping seatpost beneath its padded saddle.
+find-a-clinic	extended	Clinic directory hero	A location pin marked with a medical cross stands on a folded street map.
+gym-orientation	extended	New member wellness center	A sloped gym directory shows a route from the entrance to a dumbbell-marked training room.
+lab-intake-bench	extended	Clinic laboratory service	Two capped, labeled sample vials stand in the fitted wells of a specimen rack.
+movement-break	extended	Workday wellness reminder	An empty office chair pulled away from its desk carries a clock badge for a movement break.
+movement-goal	extended	Health tracking product	A thick step-goal ring surrounds a footprint and leaves one progress segment open.
+nap-timer	extended	Recovery product feature	A twin-bell alarm clock stands beside a rectangular pillow stitched with a crescent moon.
+outpatient-room-instructions	extended	Clinic directions page	A freestanding clinic wayfinding sign pairs a medical cross and room field with a right arrow.
+pharmacy-pickup-window	extended	Prescription collection page	A prescription bottle rests on the sill of an open pharmacy service hatch.
+physical-therapy-intake	extended	Clinic information form	An intake clipboard shows a knee-joint diagram above two form rows.
+pillow-fitting	extended	Sleep equipment service	A measuring tape follows the curved seam of a contoured pillow.
+sleep-tracking	extended	Wellness product overview	A smartwatch shows a crescent moon above a stepped overnight sleep timeline.
+strength-progression	extended	Coaching product homepage	A dumbbell with two thick hexagonal weights sits below a rising progression arrow.
+stretch-routine	extended	Rehabilitation exercise library	A multi-loop stretching strap rests on a partially unrolled exercise mat.
+treadmill-session-history	extended	Indoor workout dashboard	A treadmill with a running belt, paired handrails and a raised console carries a history clock badge.
+treatment-referral	extended	Care transfer page	A standing medical envelope is sealed with a cross and carries an outward transfer arrow.
+water-refill-location	extended	Venue wellness map	A standing map pin contains a water bottle beneath a dispensing spout and droplet.
+wearable-data-permission	extended	Connected health permissions	A smartwatch shows a pulse trace on its screen and carries a lock badge.
+wearable-data-sync	specialist	Patient monitoring product	A smartwatch shows a pulse trace and carries a circular sync badge at its lower corner.
+wearable-pairing-complete	extended	Device onboarding success	A smartwatch shows a phone with a wireless signal and carries a pairing check badge.
+community-led-product	extended	Community growth section	A three-milestone roadmap pairs its highlighted priority with a member speech bubble.
+compact-footprint	extended	Space efficiency claim	A folded stepladder stands with a dimension bracket spanning its shallow footprint.
+company-milestones	extended	About-page timeline	A timeline rail has three evenly spaced event ticks and a flag on the last milestone.
+customer-advisory-board	extended	Invitation to product advisory group	Three inward-facing seats attach to a shared round discussion table.
+customer-implementation-spotlight	extended	Adoption implementation story	A desk spotlight casts a diagonal beam across an implemented chart in a laptop window.
+designed-for-teams	extended	Team-focused landing page overview	Three built-in chairs face a round team worktable with a shared plan at its center.
+direct-installation	extended	Service installation CTA	A screwdriver engages the exposed mounting screw on a wall-mounted control unit.
+feature-spotlight	extended	Feature launch hero	A small overhead spotlight casts a cone onto a single control on a display.
+feature-teaser	extended	Soon-to-launch feature card	A ribboned box cracks open at the front and three rays escape beneath its raised lid.
+flexible-modules	extended	Configurable architecture sales page	Two identical modules slide together through a visible tongue-and-slot joint.
+founding-story	extended	Company origin section	An open history book highlights the first milestone on a timeline across its opening pages.
+partnership-tiers	extended	Channel partner program section	Three square podium blocks stack from a broad bottom tier to a small upper tier.
+press-kit	extended	Newsroom resources	A media pack keeps a fact sheet and image cards together.
+process-reliability	extended	Quality commitment claim	A raised start node, process block, and decision diamond lead to a final block with a check badge.
+product-reveal	extended	Launch teaser hero	A lifted drape exposes the lens and controls of a compact camera.
+request-a-callback	extended	Consultation lead form	A curved return arrow sweeps back toward a telephone handset.
+service-overview	extended	Introductory section for a managed service	An open service catalog lists three offerings marked with a wrench, a headset, and a cloud.
+upgrade-announcement	extended	New model or package introduction	A megaphone with two sound rays rests against an interface preview on a release booklet.
+expand-a-section	extended	Expandable navigation group	A downward disclosure chevron opens a raised section header above two indented child rows.
+external-link-handoff	extended	Confirmation before leaving the current site	A diagonal outgoing arrow crosses the upper-right corner of a thick browser window.
+list-density	extended	Choose compact or spacious result rows	Two inward arrowheads beside five compact list rows indicate vertical compression.
+location-jump	extended	Scroll to precise position on a map	A bent jump arrow runs across the folds of a map and points to a destination pin.
+map-versus-list-view	extended	Location-directory view switcher	A two-tab view switcher pairs a folded-map glyph with three bulleted list lines.
+merge-duplicate-records	extended	Directory admin data cleanup	Two overlapping contact cards with matching avatar marks feed into one converging arrow.
+pagination	extended	Large index result footer	A pagination strip has previous and next chevrons and three page buttons, with the current page double-outlined.
+parent-category	extended	Return one level up in the category tree	Two folder levels form a short category path, with an upward arrow pointing back to the parent folder.
+sibling-category	extended	Move laterally between related sections	A shared category branch connects two matching folder nodes at the same depth.
+tagging-content	extended	Topic organization feature	A punched merchandise tag hooks over the upper corner of a document.
+autosize-content	extended	Frame that responds to changing content	A content card sits inside a dashed bounding frame whose lower corner extends along a diagonal resize arrow.
+component-detach	extended	Detach a single instance from its master	Two open ends of a broken chain separate at the corner of a thick component tile.
+content-grouping	extended	Group several related interface components	A single selection frame encloses a landscape tile, a text tile, and a pill-shaped button.
+contextual-toolbar	extended	Editor action strip for one selected object	A floating three-button toolbar points directly to the selection bounds around a single object on a tilted canvas.
+create-component-group	extended	Declare reusable component set	A selection boundary groups three thick component diamonds and carries a plus badge on its corner.
+custom-rules	extended	Configuration features or docs	A rule on a clipboard branches from one decision diamond to two action boxes.
+drag-and-drop	extended	No-code builder feature section	A pointer drags a lifted content tile toward a dashed insertion outline in a browser window.
+extension-marketplace	extended	Add-on discovery hero	A storefront with a scalloped awning displays three interlocking puzzle-piece shapes as software add-ons.
+font-fallback	extended	Define a secondary face for missing primary glyphs	An arrow leads from an empty glyph square on one piece of type to a capital A on another.
+formatting-presets	extended	Document format preset chooser	Three tabbed preset samples display heading, centered, and bulleted text, with the bulleted sample outlined.
+image-replacement	extended	Swap an image while preserving its placement	A standing landscape photo frame carries a corner control with two opposing arrows.
+keyboard-shortcuts	extended	Productivity help index	A plus sign connects a Command keycap and a left-arrow keycap in a keyboard chord.
+layer-reordering	extended	Rearrange z-order on design surface	One design sheet is raised above two matching sheets beside an upward reorder arrow.
+low-contrast-warning	extended	Flag insufficient contrast in an editor	A warning triangle marks a contrast sample with a pale ring beside a darker matching ring.
+measure-a-component	extended	Inspect its physical spacing or size	A vernier caliper closes its jaws against opposite edges of a diamond-marked sample tile.
+move-block-between-pages	extended	Outline transferring a content module	A raised image block moves from the dashed slot on one page toward the facing page along a single arrow.
+open-inspector-from-canvas	extended	View property panel for selected item	An editor canvas on a laptop shows a selected diamond beside three fields in its attached inspector.
+pinned-editor-tools	extended	Always-visible tools for an editor	A physical pushpin fastens the end of a toolbar marked with drawing, shape, and selection tools.
+plugins	extended	Extension platform overview	A raised cartridge lines up with an open slot on a baseboard.
+portable-configuration	extended	Import-export or workspace migration section	A folded-corner settings file shows three slider controls and an arrow pointing out from its right edge.
+reorder-components	extended	Change vertical or horizontal order of modules	A middle row shifts out of a three-row list beside a tall, two-ended reorder arrow.
+restore-component-link	extended	Reconnect a detached component	A thick component tile carries a pair of closed, interlocking chain links at its upper-right corner.
+scale-proportionally	extended	Resize while maintaining relative proportions	A diagonal resize arrow connects matching corner handles on a selection and a larger dashed outline of the same proportions.
+toggle-component-visibility	extended	Hide selected component while preserving it	A slashed eye on a raised visibility control marks a component outlined with dashes.
+beat-coverage	extended	Reporters' coverage area page	A reporter microphone stands at a covered location on a folded street map.
+interactive-map-story	extended	Editorial or travel content hero	A single route runs through three successive waypoints across an accordion-folded map.
+magazine-gifting	extended	Publication gift membership	A bound magazine with a landscape cover is wrapped with a ribbon tied in a bow.
+microfilm-reader	extended	Historical newspaper access page	A microfilm reader feeds film from an exposed reel into a viewer showing a newspaper page.
+photo-restoration	extended	Restoration service landing	A torn corner of a photographic print aligns with the jagged break and completes its landscape image.
+post-roll-placement	extended	Video ad settings	A video timeline places a short advertisement clip directly beyond the end marker of the main clip.
+rights-clearance	specialist	Studio and licensing workflows	A rubber approval stamp rests on a clearance slip and carries a check badge.
+source-documentation	extended	Investigative story evidence	A tabbed source dossier holds a ruled record and carries a linked-reference tab.
+spotlight-interview	extended	Magazine interview hero	A broadcast microphone on a desk stand sits under a single cone of stage light.
+update-notification	extended	Reader subscription preference	A notification bell with a visible clapper carries a refresh badge at its upper rim.
+voiceover-preview	extended	Audio production tool	A spoken-audio waveform runs across a clip with a play badge at its leading edge.
+apartment-move-out	extended	Tenant move-out instructions	An outward arrow leads from an open packing carton at the threshold of an apartment doorway.
+architectural-finish-selection	extended	Interior finish options	A check badge overlaps the upper corner of the foremost chip in a bound finish swatch fan.
+architectural-site-feasibility	extended	Architecture feasibility package	A magnifier frames a proposed foundation set among the contours of a raised building plot.
+as-built-drawing-archive	extended	Facilities property records archive	A rolled floor plan rises from an archival tube and unfurls to show its room outlines.
+balcony-load-inspection	extended	Building condition report	A magnifier frames the triangular support bracket under a projecting railed balcony.
+building-code-review	extended	Permit application support	An open magnifier frames the exposed post and roof joint of a timber house frame.
+building-fixture-schedule	extended	Construction specifications dashboard	A faucet heads a two-column fixture table on a thick tabbed specification binder.
+building-maintenance	extended	Facilities or property-management feature	An open-ended wrench crosses the lower corner of a flat-roofed building.
+change-order-pricing	extended	Construction project change order	A change order crosses out an original amount and highlights its revised price with a plus and a currency mark.
+construction-equipment-return	extended	Construction equipment rental return	A curved return arrow wraps beneath the battery grip of a cordless power drill.
+construction-milestones	extended	Builder project progress page	A single timeline connects a poured foundation, an exposed house frame, and a finished home.
+daylight-study	extended	Architecture daylight analysis page	A diagonal shaft of daylight passes through one pane of a window and meets the floor.
+elevated-access-maintenance	extended	Facilities service procedures	A ladder leans against a building facade with its upper rails seated at the sill of an elevated service hatch.
+foundation-moisture-check	extended	Property condition report	A moisture meter drives two probe tips into soil beside the exposed courses of a foundation wall.
+foundation-preparation	extended	New build site preparation guide	A cutaway excavation exposes continuous footing trenches around a rectangular foundation footprint.
+heating-system-service	extended	HVAC service booking	An open-jaw wrench grips the lower service valve on a wall-mounted radiator.
+heating-zone-layout	extended	Residential HVAC zoning feature	Two rooms in a cutaway floor plan each contain a wall manifold and an independent radiant heating loop.
+home-insulation-estimate	extended	Installer cost estimate	An insulation estimate shows a stud-wall cross-section with looping batts beside the quoted amount.
+housing-accessibility-retrofit	extended	Accessible remodeling service feature	A sloped ramp and continuous handrail meet the raised threshold of a residential doorway.
+hvac-replacement-quote	extended	Heating installer quote page	An estimate pad shows a fan behind a square grille above three aligned item and price rows.
+keyed-entry-upgrade	extended	Entry security upgrade option	An upward badge sits beside a deadbolt cylinder with a key inserted in its keyway.
+land-parcel-comparison	extended	Lot search feature card	An open cadastral map compares two adjoining lots with matching dimension ticks and visibly different widths.
+lease-signing-session	extended	Rental document signing step	A pen touches the signature line of a landscape lease sheet headed by a house outline.
+living-room-layout	extended	Furniture planning consultation	A sofa and a low coffee table sit together inside a living room floor plan with a wide entry.
+material-quantity-check	extended	Building materials ordering tool	A single tally tag hangs against a stack of square building tiles.
+modular-construction	extended	Prefab builder product page	A prefabricated room module slides into an open bay of a house frame.
+neighborhood-overview	extended	Real estate editorial section	Three gabled houses line a single sidewalk that turns a street corner.
+planning-permission-evidence	extended	Permit evidence submission	A magnifier frames the proposed building outline on a site plan with a clearly marked parcel boundary.
+prefabricated-facade-panel	extended	Prefab facade manufacturer product	A thick prefabricated facade panel with a fitted window meets its mounting column at two slotted connections.
+private-courtyard-layout	extended	Landscape planning service	Low perimeter walls enclose a courtyard with a paved walk around its central garden.
+property-boundary-survey	extended	Land surveyor service page	A surveyed parcel has a bold property boundary and a crosshair at every corner.
+rain-garden-installation	extended	Residential landscaping project	A surface inlet carries water between planted slopes into a sunken rain garden.
+residential-storage-design	extended	Interior storage service landing	An open built-in closet shows a clothes rail beside fitted shelves and a stack of drawers.
+roof-drainage-inspection	extended	Home drainage checklist	A magnifier frames the elbow where a roof gutter joins the downspout.
+soil-drainage-test	extended	Landscape or foundation site test	A soil cross-section exposes a water-filled test hole and downward seepage into the layer beneath it.
+sound-isolation-retrofit	extended	Acoustic insulation remodeling service	Two sound waves approach a wall cutaway with an acoustic batt fitted between its studs and doubled lining.
+space-planning	extended	Interior design feature	A low-walled room plan shows a bed and a wardrobe fitted inside the walls with a clear door swing.
+subdivision-street-alignment	extended	Site masterplan overview	Two homes occupy opposite lots with their driveways connected to one continuous subdivision street.
+thermal-bridge-repair	extended	Building efficiency retrofit explanation	A continuous insulation layer crosses the face of a stud in a cutaway wall.
+after-hours-key-drop	extended	Hotel key return information	A toothed room key is halfway into the top slot of a moon-marked drop box.
+appointment-verification-call	extended	Appointment verification instructions	A thick telephone handset carries a check badge beside one earpiece.
+book-a-fitting	extended	Retail fitting appointment	A tailor's dress form wears a measuring tape and carries a clock badge by its shoulder.
+callback-request	extended	Support callback form	A telephone handset has a curved callback arrow hooked around its receiver.
+dispatch-route-selection	extended	Dispatch management	Two routes cross a folded street map, and a check badge marks the selected route at its endpoint.
+emergency-dispatch	extended	Priority repair ticket response	A response van with a roof beacon points toward a forward dispatch arrow at road level.
+equipment-collection-window	extended	Rental collection scheduling	A power drill pictogram and a clock badge identify the highlighted pickup window on a standing appointment card.
+pet-groomer-appointment	extended	Local pet services booking	A paw-printed pet bowl sits beside grooming scissors with a clock badge attached to the bowl.
+service-disruption-banner	extended	Service status page	A freestanding status banner has an attached warning triangle beside two message lines.
+service-follow-up	extended	Post-service experience or help section	A curved reply arrow sweeps across the upper corner of a message bubble.
+studios-by-the-hour	extended	Studio rental scheduling	A recording studio cutaway contains acoustic panels and a microphone stand with a clock badge attached to the room.
+support-ticket-triage	extended	Customer support software	A warning triangle marks the foremost ticket in a staggered stack of support tickets.
+visitor-reception	extended	Office visitor welcome	A visitor sign-in sheet rests on the angled writing surface of a reception desk.
+workshop-enrollment	extended	Community workshop signup	A workshop admission ticket bears a wrench emblem and a plus badge on its tear-off stub.
+worksite-callback	extended	Trade service callback request	A phone shows a hard hat on its screen and a hooked return-call arrow curling around its lower corner.
+airport-transfer-pickup-point	extended	Airport transport instructions	A curbside location pin displays an airport shuttle pictogram in its face.
+baggage-recheck	extended	Airport transfer instructions	A curved return arrow loops around the top handle of an upright suitcase.
+bike-dock-availability	extended	City mobility map	A docking rack faces a dashed bicycle outline aligned with a vacant dock.
+boarding-group-queue	extended	Airport operations display	Two upright carry-ons queue beneath an airplane gate sign beside a floor arrow pointing towards the gate.
+bus-shelter-directory	extended	Transit stop search page	A roofed bus shelter with a bench has a magnifying glass over its posted stop sign.
+car-park-height-limit	extended	Parking site specifications	A striped clearance bar hangs from a parking gantry just above a car roof.
+carry-on-measurement	extended	Airline baggage rules page	An upright carry-on fits inside an open airline sizing frame with ruler marks on its front post.
+check-in-desk-directions	extended	Airport guest information	An airport check-in counter carries an airplane emblem and a desk bell above an approach arrow.
+combined-ticket-wallet	extended	Multi-route customer account	Two notched travel tickets showing a train and an airplane protrude from a single stitched wallet pocket.
+departure-board	extended	Travel or transport dashboard	A two-post airport departure board lines up destination entries with three clock symbols.
+destination-landmark-guide	extended	City visitor information	An accordion-fold city map shows an Eiffel Tower location pin on its street grid.
+ev-charging-station	extended	Charging network directory	A charging cable connects a compact EV pedestal to the side port of an electric car.
+express-train-ticket	extended	Transit trip planner options	A notched rail ticket shows a streamlined train with three speed lines.
+flight-connection-help	extended	Flight itinerary feature	A boarding pass shows an airplane and a curved arrow connecting two airport markers.
+garage-charging-map	extended	EV destination feature	A garage floor plan shows a parked car and a lightning bolt badge marking a charging bay.
+hotel-amenity-hours	extended	Guest guide page	A freestanding pool sign shows a ladder above two clock faces joined by a short line.
+hotel-workspace-feature	extended	Accommodation amenities page	A hotel writing desk has a drawer and an angled task lamp mounted at its back corner.
+museum-district-walk	extended	City culture route page	An unfolded pocket map shows a dotted walking route between two columned museum landmarks.
+reserve-adjacent-seats	extended	Rail party booking flow	One pair of high-backed rail seats shares a pedestal and a continuous reservation outline.
+road-closure	extended	Travel alert or mobility feed	A striped roadwork barricade spans both lanes of a short road segment.
+room-accessibility-details	extended	Accessible accommodation page	An open doorway has a wheelchair plaque and a continuous floor through its threshold.
+scenic-overlook-booking	extended	Park reservation page	A wooden overlook deck with a railing faces a continuous mountain ridge and carries a clock badge.
+scooter-rental-handover	extended	Micromobility pickup page	A kick scooter has a key inserted into the lock on its steering stem.
+tour-guide-profile	extended	Activity listing page	A guide credential hanging from a lanyard shows a mountain trail in its header and profile lines below.
+trail-alternate-route	extended	Outdoor route closure screen	A folded trail map shows a solid detour arrow bending around a blocked segment of the dashed trail.
+trailhead-kiosk	extended	Outdoor visitor services	A two-post trailhead kiosk shelters a framed map with branching trail lines under a pitched roof.
+train-fare-comparison	extended	Transit pricing product	A rail fare board shows a train pictogram and two price rows marked with unequal groups of coins.
+transit-ticket-inspection	extended	Fare compliance status	A magnifying glass enlarges the barcode on the stub of a notched rail ticket.
+travel-agency-consultation	extended	Custom trip booking	A thick speech bubble contains a folded map with a route between two waypoints.
+travel-daypack-contents	extended	Tour organizer gear list	An open hiking daypack holds a capped bottle and a rolled jacket above its front pocket.
+walking-route-itinerary	extended	Pedestrian navigation	An accordion-fold map shows a walking route from a hiking-shoe marker to a circled endpoint.
+authentication-strength	extended	Account security setup score	A closed padlock has three ascending meter bars inset into its face.
+compliance-certification	extended	Enterprise trust proof block	An embossed seal sits beside a marked specimen on an open credential.
+data-residency	extended	Enterprise compliance section	An irregular geographic boundary encloses a three-tier database cylinder.
+evidence-comparison	extended	Incident response examination	Two overlapping parcel photos show the same box with a circle marking the broken seal in the front photo.
+exception-policy	extended	Policy management UI	A policy binder has an outlined exception clause with an arrow that branches outward from the row.
+forensic-image-custody	extended	Security response archive	An evidence drive has a tamper seal across its casing and a custody tag threaded through the seal.
+guardrails	extended	Automation or AI governance section	Two raised edges keep work inside a defined lane.
+incident-triage	extended	Security operations overview	A warning triangle crowns a three-tier incident sorter marked with descending priority bars.
+least-privilege	extended	Enterprise security docs	A key sits in the single enabled slot of a three-cell permissions block.
+read-only-incident-timeline	extended	Compliance reporting feature	A timeline card shows three dated event nodes and a lock badge on its upper edge.
+regional-transfer-review	extended	Compliance exception screen	A cross-border route passes through the lens of a magnifier on a regional map.
+secure-erasure-certification	extended	Data disposal audit	A bordered erasure certificate shows a crossed-out hard drive and a check badge at its lower corner.
+single-sign-on	extended	IT administration feature	A single key branches into three app windows.
+trusted-devices	extended	Sign-in approval flow	A standing phone and landscape tablet share a check badge at their front corner.
+approval-routing	extended	Conditional review workflows	A decision diamond splits a workflow into two paths, with a check badge at the approving exit.
+audit-a-workflow	extended	Operations process-analysis page	A magnifier frames the raised decision block where a workflow branches into two steps.
+backlog-prioritization	extended	Project backlog sorting tool	An upward arrow runs from an outlined backlog row toward the top of a three-row list.
+batch-operations	extended	Admin operations feature section	One continuous arrow sweeps over a fanned stack of operation cards.
+cancel-meeting	extended	Conference reservation withdrawn	An invitation card with an overhead meeting-table pictogram carries an X badge on its upper corner.
+decision-log	extended	Team knowledge or project governance section	An open ruled logbook pairs checked entries with short date fields along its outer columns.
+estimation-round	extended	Collect effort estimates before planning	Three planning-poker cards fan out with different counts of outlined pips.
+export-meeting-notes	extended	Download an edited meeting transcript	Speaker bubbles label the lines of a transcript as a download arrow leads off its lower corner.
+follow-a-discussion	extended	Subscribe to new replies in a thread	A flared notification bell overlaps the upper corner of a discussion bubble.
+merge-changes	extended	Conflict-resolution docs	Two connected version tracks converge on one larger shared commit.
+move-meeting-to-another-room	extended	Change the venue in a meeting invite	A meeting invitation has a calendar header and a rightward arrow joining two room doors.
+ownership-transferred	extended	New team owner confirmed	An incoming arrow points to a clipped owner ID card with a large key stamped across its face.
+presence-indicators	extended	Real-time collaboration feature	Two lanyard cards carry geometric profile emblems, and a status ring lights up the front card.
+reserve-a-workbench	extended	Block a limited shared resource	A clock badge attaches to a timber workbench with a built-in screw vise.
+resolve-duplicate-request	extended	Consolidate requests into one workflow	A single curved merge arrow points from one tabbed request card to a lower matching card.
+roadmap	extended	Product planning overview	A winding timeline passes through three round milestones and ends at a planted destination flag.
+share-a-meeting-summary	extended	Distribute decisions after a meeting	A share arrow rises from an open box that overlaps the right edge of a bulleted meeting summary.
+shift-handover	specialist	Operations workforce product	A transfer arrow bridges adjacent shift blocks on a two-row staff roster.
+standup	extended	Agile practice article or team feature	Three upright profile cards sit side by side inside one speech bubble.
+subscribe-to-updates	extended	Watch or follow project feature	A plus badge overlaps the shoulder of a notification bell with a flared rim and clapper.
+tag-workflow-exception	extended	Mark an exceptional instance for inspection	A warning triangle clips to the edge of a looped workflow tag with a three-step route.
+task-split	extended	Divide a single task into multiple work items	A forked arrow leads from one parent task tile down to two matching child tiles.
+unbundle-tasks	extended	Return a batch to separate work items	Two arrows lead from a clipped stack to matching task cards that fan apart.
+unfollow-a-discussion	extended	Stop receiving replies to a thread	A slash badge overlaps the shoulder of the notification bell on a discussion bubble.
+version-control	extended	Developer workflow feature	A branch leaves the main track and rejoins it downstream.
+work-in-progress-limits	extended	Kanban policy guide	Three task cards fill every slot of a Kanban column capped by a three-position limit rail.
+workshop-outputs	extended	Display decisions produced during a workshop	An attached check badge marks the selected outcome on a workshop decision sheet.

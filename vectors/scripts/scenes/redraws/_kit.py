@@ -109,17 +109,24 @@ def _soft_triangle(x, y, z, size, r):
     return [(u, y, v) for u, v in points]
 
 
-def warning(s, x, y, z, size=26):
-    """Upright warning triangle with an exclamation mark, facing the viewer's lower left."""
+def warning(s, x, y, z, size=26, depth=None):
+    """Warning triangle with an exclamation mark that faces the viewer, like a badge.
+
+    (x, y, z) is the centre of its base in scene space; size is its width in projected units.
+    A depth gives the plate a visible thickness, for a triangle that is the subject itself.
+    """
+    if depth is None:
+        depth = size*.1 if size >= 50 else 0
     h = size*.87
-    tri = _soft_triangle(x, y, z, size, size*.16)
-    back = [(a, b - 2.4, c) for a, b, c in tri]
-    hull = MultiPoint([project(p) for p in back + tri]).convex_hull
+    outline = [(u - x, v - z) for u, _, v in _soft_triangle(x, 0, z, size, size*.16)]
+    rim = [_screen(x, y - depth, z, u, v) for u, v in outline]
+    face = [_screen(x, y, z, u, v) for u, v in outline]
+    hull = MultiPoint([project(p) for p in rim + face]).convex_hull
     s.layers.append(knockout_layer(hull))
     s.layers.append((hull.boundary, hull, EDGE))
-    s.line(tri + tri[:1], EDGE)
-    s.line([(x, y + .01, z + h*.66), (x, y + .01, z + h*.4)], BOLD)
-    s.line([(x, y + .01, z + h*.2), (x, y + .01, z + h*.19)], BOLD)
+    s.line(face + face[:1], EDGE)
+    for v0, v1 in ((h*.66, h*.38), (h*.22, h*.19)):
+        s.line([_screen(x, y, z, 0, v0, back=-.01), _screen(x, y, z, 0, v1, back=-.01)], BOLD)
 
 
 def arrow(s, points, ink=EDGE, head=5):

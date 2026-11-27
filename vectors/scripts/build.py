@@ -6,7 +6,7 @@ import json
 import re
 
 import geometry
-from geometry import STROKE, Scene, paths_for
+from geometry import STROKE_WIDTH, Scene, paths_for
 from scenes import commerce, control, data, editorial, infrastructure, new_states, product, workflow
 from expansion import attach_artwork, packs
 from scenes.redraws import REDRAWS
@@ -47,7 +47,7 @@ def render_svg(draw, title, description):
             FALLBACKS.append(title)
         finally:
             geometry.CONTINUOUS[0] = True
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" color="#8792a2" fill="none" stroke="currentColor" stroke-width="{STROKE}" stroke-linecap="round" stroke-linejoin="round">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" color="#8792a2" fill="none" stroke="currentColor" stroke-width="{STROKE_WIDTH}" stroke-linecap="round" stroke-linejoin="round">
   <title>{escape(title)}</title>
   <desc>{escape(description)}</desc>
 {paths}
