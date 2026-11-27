@@ -282,3 +282,26 @@ def coin_stack(s, x, y, z, r, count, h=4.2):
     top = z + count*h
     s.ellipse(x, y, top, r*.72, r*.72, DETAIL)
     return top
+
+
+def tree(s, x, y, z, h=46, r=18, trunk=2.6):
+    """An SF tree: a straight trunk under a full rounded crown."""
+    s.tube([(x, y, z), (x, y, z + h*.55)], trunk, EDGE)
+    turned(s, [(.4, h*.38), (r*.8, h*.44), (r, h*.62), (r*.92, h*.8), (r*.55, h*.95), (.4, h)], x, y, z, steps=4)
+
+
+def payment_card(s, x=-43, y=0, z=0, w=86, h=54):
+    """A standing payment card with a chip and a number line."""
+    face = left_face(x, y, z)
+    plate(s, face, squircle(w, h, 6), 3, (0, -1, 0))
+    chip = [face(10 + u, 24 + v) for u, v in squircle(14, 11, 2.5)]
+    s.line(chip + chip[:1], EDGE)
+    s.line([face(10, 12), face(46, 12)], DETAIL)
+    s.line([face(52, 12), face(64, 12)], DETAIL)
+    return face
+
+
+def bolt(s, at, size, ink=None):
+    from geometry import BOLD
+    pts = [(.15, 1), (-.5, -.08), (-.02, -.08), (-.15, -1), (.5, .12), (.02, .12), (.15, 1)]
+    s.line([at(u*size, v*size) for u, v in pts], ink or BOLD)

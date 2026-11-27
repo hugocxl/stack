@@ -1,19 +1,19 @@
-from geometry import DETAIL, EDGE, GUIDE
-from scenes.redraws._kit import glyph
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import bolt, left_face, plate, squircle
 
-DESCRIPTION = "A home battery hangs on a garage wall above a marked floor clearance."
+DESCRIPTION = "A home battery is mounted on a wall above a dashed floor clearance."
 
 
 def draw(s):
-    s.box(-40, -9, 0, 80, 53, 4, 1)
-    s.box(-40, -9, 4, 80, 7, 68, 1)
-    s.box(-40, -2, 4, 5, 20, 68, 1)
-    s.line([(-35, -2, 11), (40, -2, 11)], DETAIL)
-    s.box(-21, -2, 19, 35, 5, 6, 1, DETAIL)
-    s.box(-25, -2, 21, 43, 10, 43, 4)
-    glyph(s, "bolt", -3, 8, 43, 11, EDGE)
-    s.line([(-4, 8, 28), (2, 8, 28)], DETAIL)
-    s.line([(21, 8, 21), (31, 8, 21)], GUIDE, dashed=True)
-    s.line([(27, 8, 4), (27, 8, 21)], EDGE)
-    for z in (4, 21):
-        s.line([(24, 8, z - 1.5), (30, 8, z + 1.5)], DETAIL)
+    wall = left_face(-50, 0, 0)
+    plate(s, wall, [(0, 0), (100, 0), (100, 96), (0, 96)], 4, (0, -1, 0))
+    s.line([(-50, 4, 0), (-50, 40, 0)], DETAIL)
+    s.line([(50, 4, 0), (50, 40, 0)], DETAIL)
+    s.line([(-30, 30, 0), (30, 30, 0)], DETAIL, dashed=True)
+    s.line([(-30, 4, 0), (-30, 30, 0)], DETAIL, dashed=True)
+    s.line([(30, 4, 0), (30, 30, 0)], DETAIL, dashed=True)
+    body = left_face(-24, 18, 30)
+    plate(s, body, squircle(48, 58, 8), 14, (0, -1, 0))
+    bolt(s, lambda u, v: body(24 + u, 36 + v), 9)
+    for i in range(4):
+        s.line([body(14 + i*6.5, 14), body(18 + i*6.5, 14)], EDGE if i < 3 else DETAIL)

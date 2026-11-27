@@ -1,23 +1,22 @@
-from geometry import EDGE, oval
-from scenes.redraws._w1 import solar_cells, turbine
+from math import cos, radians, sin
 
-DESCRIPTION = "A wind turbine and a solar panel stand in the two sectors of a divided energy mix chart."
+from geometry import EDGE
+
+DESCRIPTION = "A thick energy-mix disc splits into a sun sector and a wind sector."
 
 
-def slab(s, x, y, start, end, visible_start, visible_end, *, cut_start=False):
-    center = (x, y)
-    outline = [center, *oval(x, y, 42, 32, start, end, 48)]
-    side = oval(x, y, 42, 32, visible_start, visible_end, 30)
-    if cut_start:
-        s.face([(*center, 0), (*outline[1], 0), (*outline[1], 7), (*center, 7)], EDGE)
-    s.face([(*p, 0) for p in side] + [(*p, 7) for p in reversed(side)], EDGE)
-    s.face([(*p, 7) for p in outline], EDGE)
+def sector(s, a0, a1, r, h, dx, dy):
+    ring = [(dx, dy)] + [(dx + r*cos(radians(a)), dy + r*sin(radians(a))) for a in range(a0, a1 + 1, 4)]
+    s.solid(ring, 0, h)
 
 
 def draw(s):
-    slab(s, -2, -4, 194, 415, 323, 415)
-    slab(s, 2, 5, 55, 194, 55, 142, cut_start=True)
-    turbine(s, 12, -13, 7, 26)
-    for x in (-17, -1):
-        s.tube([(x, 16, 8), (x, 16, 16), (x, 24, 8)], 1.2)
-    solar_cells(s, lambda u, v: (-22 + 27 * u, 12 + 16 * v, 22 - 13 * v), columns=3)
+    sector(s, 160, 360, 54, 10, -3, -3)
+    sector(s, 0, 160, 54, 10, 4, 4)
+    cx, cy = -10, -32
+    s.ellipse(cx, cy, 10, 7, 7, EDGE)
+    for a in range(0, 360, 45):
+        c, q = cos(radians(a)), sin(radians(a))
+        s.line([(cx + 10*c, cy + 10*q, 10), (cx + 14*c, cy + 14*q, 10)], EDGE)
+    for off in (-9, 0, 9):
+        s.line([(14 + off + 3*sin(t/2.5), 30 + t - off, 10) for t in range(-12, 13)], EDGE)

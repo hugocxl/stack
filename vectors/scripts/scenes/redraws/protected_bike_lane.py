@@ -1,19 +1,17 @@
-from geometry import BOLD, DETAIL, EDGE
+from geometry import DETAIL, EDGE, oval
 
-DESCRIPTION = "A bicycle pavement marking identifies the lane behind a raised curb that separates it from traffic."
+DESCRIPTION = "A raised curb separates a painted bicycle lane from the road beside it."
 
 
 def draw(s):
-    s.box(-50, -33, 0, 100, 71, 5, 1.8)
-    for x in (-42, -15, 12, 39):
-        s.line([(x - 6, -16, 5), (x + 6, -16, 5)], DETAIL)
-    s.box(-50, -3, 5, 100, 5, 5, 1)
-    s.line([(-48, 35, 5), (48, 35, 5)], DETAIL)
-    for x in (-21, 21):
-        s.ellipse(x, 25, 5, 10.5, 10.5, EDGE)
-    z = 5
-    s.line([(-21, 25, z), (-12, 13, z), (8, 13, z), (-3, 25, z), (-21, 25, z)], BOLD)
-    s.line([(-3, 25, z), (-14, 9, z)], EDGE)
-    s.line([(-18, 9, z), (-10, 9, z)], EDGE)
-    s.line([(21, 25, z), (10, 11, z), (10, 6, z), (16, 6, z)], BOLD)
-    s.line([(8, 13, z), (11, 13, z)], EDGE)
+    s.box(-60, -56, 0, 120, 112, 2, 1)
+    s.box(-60, -4, 2, 120, 8, 7, 3)
+    for x in range(-56, 60, 20):
+        s.line([(x, 30, 2), (x + 10, 30, 2)], DETAIL)
+    p = lambda u, v: (u*1.5, -30 + v*1.5, 2.01)
+    for cx in (-14, 14):
+        s.line([p(cx + a, b) for a, b in oval(0, 0, 9, 9, count=36)], EDGE)
+    s.line([p(-14, 0), p(-2, -9), p(10, -9), p(14, 0)], EDGE)
+    s.line([p(-2, -9), p(2, 0), p(10, -9)], EDGE)
+    s.line([p(-5, -12), p(1, -12)], EDGE)
+    s.line([p(10, -9), p(9, -13), p(13, -13)], EDGE)

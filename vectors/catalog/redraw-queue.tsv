@@ -1,47 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-pause-subscription	extended	Billing settings panel	A recurring-payment controller carries a pause badge beside its currency symbol and renewal dial.
-petty-cash-reimbursement	extended	Office expense repayment request	A curved return arrow points toward coins held in an open clasp purse.
-price-lock-guarantee	extended	Locked quote feature block	A prominent currency tag hangs from the closed shackle of a padlock threaded through its eyelet.
-refund-issued	extended	Billing resolution confirmation	A curved arrow returns across the face of a payment card and points back toward its chip.
-accessible-sidewalk-planning	extended	Accessibility improvement program	A wide curb ramp with a tactile paving strip connects a continuous sidewalk corner to a crossing.
-bulky-waste-pickup-booking	extended	Municipal bulky pickup scheduler	A flatbed truck carries a couch, with a clock badge above the cab.
-city-hall-public-comment	extended	Local participation guide	A speech bubble connects to the gooseneck microphone on a public-hearing lectern.
-community-garden-signup	extended	Municipal plot allocation	A raised bed holds three seedlings and carries a plus badge at its front corner.
-community-outage-map	extended	Utility outage map help	A warning triangle marks one block on a folded neighborhood street map.
-compost-plot-management	extended	Community compost initiative	An open slatted compost bin exposes a coarse mound of leaves and stems.
-drought-restriction-alert	extended	Water authority notice	A slash badge sits beside the dripping spout of an outdoor tap.
-dust-monitoring-station	extended	Construction air quality control	A pole-mounted dust monitor has a hooded intake and a particulate level display.
-e-waste-processing	extended	Electronics recycling program	A discarded circuit board sits in a collection bin with a circular-arrow badge on its front wall.
-emergency-assembly-area	extended	Local preparedness map	Four inward arrows on a freestanding emergency assembly sign point to a cluster of safety helmets.
-food-scraps-collection	extended	Organics pickup service	An apple core protrudes from the opening of a wheeled organics bin.
-grid-balancing	extended	Energy systems feature	A lattice electricity pylon carries a balanced pair of scale pans beneath its crossarm.
-grid-outage-indicator	extended	Utility outage status banner	A lattice transmission pylon carries sagging power lines and a slash badge.
-home-battery-placement	extended	Battery siting guidance	A home battery hangs on a garage wall above a marked floor clearance.
-home-water-meter-reading	extended	Public water meter reporting	A domestic water meter joins two pipes and displays consumption on an angled analog register.
-impact-measurement-stations	extended	Nonprofit results section	A weatherproof monitoring cabinet shows an upward measurement trend in its built-in instrument window.
-local-weather-alerts	extended	Weather or civic safety service	A storm cloud gives off a lightning bolt and carries an exclamation triangle.
-municipal-document-pickup	extended	City document pickup instructions	A tabbed document folder protrudes through the open door of a civic pickup locker.
-municipal-fee-payment	extended	City payment service	A civic fee statement shows a municipal building pictogram above a ruled balance and a stack of coins.
-neighborhood-cleanup-event	extended	Community cleanup information	The jaws of a litter grabber grip a crumpled scrap of paper.
-neighborhood-flood-response	extended	Flood preparedness resource	Floodwater crosses the lower part of a house door beneath an attached warning triangle.
-peak-demand-reduction	extended	Energy efficiency product benefit	A downward arrow targets the tallest column on an electricity demand chart.
-protected-bike-lane	extended	Public mobility project page	A bicycle pavement marking identifies the lane behind a raised curb that separates it from traffic.
-public-drinking-fountain-locator	extended	Community water portal	A pedestal drinking fountain sends a water arc into its basin beside a map pin.
-public-meeting	extended	Local assembly or nonprofit page	A town-hall lectern faces two compact rows of chairs.
-rainwater-barrel-overflow	extended	Water collection threshold reminder	A broad ribbon of water spills over the rim and down the side of a rain barrel.
-rainwater-harvesting	extended	Water reuse feature	An elbowed downspout turns into the lid of a rain barrel.
-renewable-power-mix	extended	Clean-energy dashboard	A wind turbine and a solar panel stand in the two sectors of a divided energy mix chart.
-report-a-local-issue	extended	Municipal web service	A compact camera overlaps the square foot of a striped roadwork cone.
-reservoir-capacity-monitoring	extended	Reservoir operations feature	An open reservoir tank has a visible water surface and a side gauge aligned to the waterline.
-riparian-tree-planting	extended	Habitat restoration project	A young tree takes root in a raised riverbank just above the waterline.
-river-maintenance-access	extended	Civic waterway maintenance	A rail-lined maintenance ramp leads from the upper riverbank path down to the water's edge.
-sewer-inspection-scheduling	extended	Public works appointment	A round cast-iron manhole cover carries a clock badge at its rim.
-site-habitat-restoration	specialist	Environmental project page	A young tree and new shoots share a cutaway patch of soil with exposed roots.
-stormwater-management	extended	Civil infrastructure feature	A flow arrow enters a curbside grate above the exposed chamber and pipe of a cutaway storm drain.
-street-lighting-repair	extended	Municipal fix request	A curved streetlight carries a wrench-shaped service tag on its pole.
-urban-canopy-mapping	extended	Municipal tree inventory map	Three tree crowns mark a planted corridor on a standing street map sign.
-urban-heat-study	extended	Urban environment report	A tall thermometer rises above a cluster of city rooftops.
 village-microgrid	extended	Microgrid feature overview	A single local power cable connects a village house, a solar panel, and a wind turbine.
 volunteer-tool-pickup	extended	Community volunteer coordination	A handled tool case projects from the open compartment of a pickup locker.
 water-channel-sweep	extended	Drainage works resource	A flow arrow sweeps a pair of leaves downstream through an open concrete drainage channel.

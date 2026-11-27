@@ -7946,7 +7946,7 @@
           "id": "refund-issued",
           "title": "Refund issued",
           "placement": "Billing resolution confirmation",
-          "visual": "A curved arrow returns across the face of a payment card and points back toward its chip.",
+          "visual": "A standing payment card carries a return badge as the refund comes back to it.",
           "priority": "extended",
           "asset": "figures/refund-issued.svg"
         },
@@ -8066,7 +8066,7 @@
           "id": "price-lock-guarantee",
           "title": "Price-lock guarantee",
           "placement": "Locked quote feature block",
-          "visual": "A prominent currency tag hangs from the closed shackle of a padlock threaded through its eyelet.",
+          "visual": "A padlock printed with a currency sign carries a check badge for a locked price.",
           "priority": "extended",
           "asset": "figures/price-lock-guarantee.svg"
         },
@@ -8354,7 +8354,7 @@
           "id": "petty-cash-reimbursement",
           "title": "Petty cash reimbursement",
           "placement": "Office expense repayment request",
-          "visual": "A curved return arrow points toward coins held in an open clasp purse.",
+          "visual": "A short stack of coins and a standing coin carry a return badge for a reimbursement.",
           "priority": "extended",
           "asset": "figures/petty-cash-reimbursement.svg"
         },
@@ -13658,7 +13658,7 @@
           "id": "renewable-power-mix",
           "title": "Renewable power mix",
           "placement": "Clean-energy dashboard",
-          "visual": "A wind turbine and a solar panel stand in the two sectors of a divided energy mix chart.",
+          "visual": "A thick energy-mix disc splits into a sun sector and a wind sector.",
           "priority": "extended",
           "asset": "figures/renewable-power-mix.svg"
         },
@@ -13666,7 +13666,7 @@
           "id": "grid-balancing",
           "title": "Grid balancing",
           "placement": "Energy systems feature",
-          "visual": "A lattice electricity pylon carries a balanced pair of scale pans beneath its crossarm.",
+          "visual": "A balance scale holds its two pans level on a post printed with a lightning bolt.",
           "priority": "extended",
           "asset": "figures/grid-balancing.svg"
         },
@@ -13746,7 +13746,7 @@
           "id": "public-meeting",
           "title": "Public meeting",
           "placement": "Local assembly or nonprofit page",
-          "visual": "A town-hall lectern faces two compact rows of chairs.",
+          "visual": "A lectern faces two short rows of chairs at a public meeting.",
           "priority": "extended",
           "asset": "figures/public-meeting.svg"
         },
@@ -13778,7 +13778,7 @@
           "id": "site-habitat-restoration",
           "title": "Site habitat restoration",
           "placement": "Environmental project page",
-          "visual": "A young tree and new shoots share a cutaway patch of soil with exposed roots.",
+          "visual": "A young tree and new shoots grow from a cutaway block of soil with exposed roots.",
           "priority": "specialist",
           "asset": "figures/site-habitat-restoration.svg"
         },
@@ -13818,7 +13818,7 @@
           "id": "peak-demand-reduction",
           "title": "Peak demand reduction",
           "placement": "Energy efficiency product benefit",
-          "visual": "A downward arrow targets the tallest column on an electricity demand chart.",
+          "visual": "Five demand columns rise and fall, and the tallest carries a down-arrow badge.",
           "priority": "extended",
           "asset": "figures/peak-demand-reduction.svg"
         },
@@ -13858,7 +13858,7 @@
           "id": "home-battery-placement",
           "title": "Home battery placement",
           "placement": "Battery siting guidance",
-          "visual": "A home battery hangs on a garage wall above a marked floor clearance.",
+          "visual": "A home battery is mounted on a wall above a dashed floor clearance.",
           "priority": "extended",
           "asset": "figures/home-battery-placement.svg"
         },
@@ -13898,7 +13898,7 @@
           "id": "community-outage-map",
           "title": "Community outage map",
           "placement": "Utility outage map help",
-          "visual": "A warning triangle marks one block on a folded neighborhood street map.",
+          "visual": "A flat neighborhood map with a street grid carries a standing warning triangle on one block.",
           "priority": "extended",
           "asset": "figures/community-outage-map.svg"
         },
@@ -13970,7 +13970,7 @@
           "id": "rainwater-barrel-overflow",
           "title": "Rainwater barrel overflow",
           "placement": "Water collection threshold reminder",
-          "visual": "A broad ribbon of water spills over the rim and down the side of a rain barrel.",
+          "visual": "A ribbon of water spills over the rim and down the side of a hooped rain barrel into a puddle.",
           "priority": "extended",
           "asset": "figures/rainwater-barrel-overflow.svg"
         },
@@ -14010,7 +14010,7 @@
           "id": "protected-bike-lane",
           "title": "Protected bike lane",
           "placement": "Public mobility project page",
-          "visual": "A bicycle pavement marking identifies the lane behind a raised curb that separates it from traffic.",
+          "visual": "A raised curb separates a painted bicycle lane from the road beside it.",
           "priority": "extended",
           "asset": "figures/protected-bike-lane.svg"
         },
@@ -14026,7 +14026,7 @@
           "id": "accessible-sidewalk-planning",
           "title": "Accessible sidewalk planning",
           "placement": "Accessibility improvement program",
-          "visual": "A wide curb ramp with a tactile paving strip connects a continuous sidewalk corner to a crossing.",
+          "visual": "A sidewalk corner dips into a wide curb ramp with a tactile paving pad at the crossing.",
           "priority": "extended",
           "asset": "figures/accessible-sidewalk-planning.svg"
         },
@@ -14050,7 +14050,7 @@
           "id": "e-waste-processing",
           "title": "E-waste processing",
           "placement": "Electronics recycling program",
-          "visual": "A discarded circuit board sits in a collection bin with a circular-arrow badge on its front wall.",
+          "visual": "A discarded phone leans out of an open collection bin that carries a refresh badge.",
           "priority": "extended",
           "asset": "figures/e-waste-processing.svg"
         },
@@ -14130,7 +14130,7 @@
           "id": "emergency-assembly-area",
           "title": "Emergency assembly area",
           "placement": "Local preparedness map",
-          "visual": "Four inward arrows on a freestanding emergency assembly sign point to a cluster of safety helmets.",
+          "visual": "A square sign on two posts shows four arrows pointing in to a gathering point.",
           "priority": "extended",
           "asset": "figures/emergency-assembly-area.svg"
         },
@@ -14194,7 +14194,7 @@
           "id": "riparian-tree-planting",
           "title": "Riparian tree planting",
           "placement": "Habitat restoration project",
-          "visual": "A young tree takes root in a raised riverbank just above the waterline.",
+          "visual": "A young tree stands on a raised riverbank just above gentle water lines.",
           "priority": "extended",
           "asset": "figures/riparian-tree-planting.svg"
         },
@@ -14226,7 +14226,7 @@
           "id": "river-maintenance-access",
           "title": "River maintenance access",
           "placement": "Civic waterway maintenance",
-          "visual": "A rail-lined maintenance ramp leads from the upper riverbank path down to the water's edge.",
+          "visual": "A railed ramp runs from the top of a riverbank down to the water.",
           "priority": "extended",
           "asset": "figures/river-maintenance-access.svg"
         },
@@ -14234,7 +14234,7 @@
           "id": "compost-plot-management",
           "title": "Compost plot management",
           "placement": "Community compost initiative",
-          "visual": "An open slatted compost bin exposes a coarse mound of leaves and stems.",
+          "visual": "An open slatted compost bin holds a rounded mound of leaves.",
           "priority": "extended",
           "asset": "figures/compost-plot-management.svg"
         },

@@ -1,26 +1,17 @@
 from geometry import DETAIL, EDGE
 from scenes.redraws._kit import warning
+from scenes.redraws._sf import ground, plate
 
-DESCRIPTION = "A warning triangle marks one block on a folded neighborhood street map."
+DESCRIPTION = "A flat neighborhood map with a street grid carries a standing warning triangle on one block."
 
 
 def draw(s):
-    panels = ((-48, -7), (-18, 7), (14, -7), (47, 7))
-    for i, ((left, back), (right, front)) in enumerate(zip(panels, panels[1:])):
-        def point(x, z):
-            return left + x * (right - left), back + x * (front - back), z
-
-        s.face([point(0, 0), point(1, 0), point(1, 54), point(0, 54)], EDGE)
-        for z in (16, 20, 35, 39):
-            s.line([point(0, z), point(1, z)], DETAIL)
-        route = (.58, .35, .58)[i]
-        for x in (route, route + .15):
-            for low, high in ((3, 16), (20, 35), (39, 51)):
-                s.line([point(x, low), point(x, high)], DETAIL)
-        for z in (5, 24, 43):
-            if i == 1 and z == 24:
-                continue
-            s.line([point(.13, z), point(.41, z), point(.41, z + 5),
-                    point(.27, z + 9), point(.13, z + 5), point(.13, z)], EDGE)
-
-    warning(s, 1, 4, 18, 28)
+    m = ground(-60, -44, 3)
+    plate(s, m, [(0, 0), (120, 0), (120, 88), (0, 88)], 3, (0, 0, -1))
+    for u in (40, 80):
+        s.line([m(u, 0), m(u, 88)], DETAIL)
+    for v in (30, 60):
+        s.line([m(0, v), m(120, v)], DETAIL)
+    for u, v in ((8, 6), (48, 36), (88, 6), (8, 66), (88, 66)):
+        s.line([m(u, v), m(u + 24, v), m(u + 24, v + 18), m(u, v + 18), m(u, v)], DETAIL)
+    warning(s, 0, -4, 3, 40)

@@ -1,31 +1,19 @@
 from geometry import DETAIL, EDGE
 from scenes.redraws._kit import badge
-from scenes.systems_shapes import bezel
+from scenes.redraws._sf import left_face, plate, squircle
 
-DESCRIPTION = "A discarded circuit board sits in a collection bin with a circular-arrow badge on its front wall."
+DESCRIPTION = "A discarded phone leans out of an open collection bin that carries a refresh badge."
 
 
 def draw(s):
-    s.face([(-34, -22, 27), (34, -22, 27), (29, -17, 0), (-29, -17, 0)], EDGE)
-    s.face([(-34, -22, 27), (-34, 20, 27), (-29, 15, 0), (-29, -17, 0)], EDGE)
-
-    s.box(-26, -8, 3, 54, 4, 58, 2)
-    bezel(s, -19, -4, 32, 24, 20, EDGE, 1)
-    bezel(s, -15, -4, 35, 16, 14, DETAIL, 1)
-    for x in (-16, -10, -4, 2):
-        s.line([(x, -4, 52), (x, -4, 56)], EDGE)
-        s.line([(x, -4, 28), (x, -4, 32)], EDGE)
-    for z in (35, 40, 45, 49):
-        s.line([(-23, -4, z), (-19, -4, z)], EDGE)
-        s.line([(5, -4, z), (9, -4, z)], EDGE)
-    s.box(14, -4, 34, 10, 4, 19, 1.1)
-    for z in (39, 48):
-        s.line([(16, 0, z), (22, 0, z)], DETAIL)
-    bezel(s, -16, -4, 17, 30, 8, DETAIL, 1)
-    for x in (-13, -8, -3, 2, 7, 12):
-        s.line([(x, -4, 19), (x, -4, 23)], DETAIL)
-
-    s.face([(34, -22, 27), (34, 20, 27), (29, 15, 0), (29, -17, 0)], EDGE)
-    s.face([(-34, 20, 27), (34, 20, 27), (29, 15, 0), (-29, 15, 0)], EDGE)
-    s.line([(-33, 19.6, 22), (33, 19.6, 22), (33, -21, 22)], DETAIL)
-    badge(s, "refresh", -1, 22, 15, 12)
+    W, D, H = 72, 46, 32
+    s.face([(0, 0, 0), (W, 0, 0), (W, 0, H), (0, 0, H)], EDGE)
+    s.face([(0, 0, 0), (0, D, 0), (0, D, H), (0, 0, H)], EDGE)
+    phone = lambda u, v: (22 + u, 20 - v*.3, 8 + v*.95)
+    plate(s, phone, squircle(28, 54, 7), 4, (0, -1, 0))
+    inner = [phone(u + 3, v + 5) for u, v in squircle(22, 44, 4)]
+    s.line(inner + inner[:1], DETAIL)
+    s.face([(W, 0, 0), (W, D, 0), (W, D, H), (W, 0, H)], EDGE)
+    s.face([(0, D, 0), (W, D, 0), (W, D, H), (0, D, H)], EDGE)
+    s.line([(8, D, H - 8), (W - 8, D, H - 8)], DETAIL)
+    badge(s, "refresh", W - 4, D, 14, 12)
