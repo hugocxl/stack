@@ -1,15 +1,14 @@
-from geometry import BOLD, EDGE
-from scenes.redraws._kit import arrow
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import smooth
 
-DESCRIPTION = "A continuous route arrow bends between two parallel guardrails."
+DESCRIPTION = "A road curves between two continuous guardrails on short posts."
 
 
 def draw(s):
-    centerline = [(0, 0), (19, 0), (29, 2), (40, 10), (50, 12), (70, 12)]
-    for side in (-18, 18):
-        rail = [(x, y + side, 7) for x, y in centerline]
-        for x, y, _ in (rail[0], rail[2], rail[-1]):
-            s.tube([(x, y, 0), (x, y, 7)], 1.15, EDGE)
-        s.tube(rail, 1.5, EDGE)
-    route = [(x, y, 0) for x, y in centerline[1:-1]]
-    arrow(s, [(4, 0, 0), *route, (64, 12, 0)], BOLD, 8)
+    mid = smooth([(-80, -10), (-30, -12), (10, 8), (60, 10), (90, 8)], 8)
+    for off in (-24, 24):
+        rail = [(x, y + off) for x, y in mid]
+        for x, y in rail[::6]:
+            s.tube([(x, y, 0), (x, y, 14)], 1.4, EDGE)
+        s.tube([(x, y, 14) for x, y in rail], 2.6, EDGE)
+    s.line([(x, y, 0) for x, y in mid], DETAIL, dashed=True)

@@ -1,29 +1,19 @@
-from geometry import EDGE, oval
-from scenes.redraws._w2 import rule, speech_bubble, upright_face
+from geometry import DETAIL
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import BACK, bubble, plate, screen
 
-DESCRIPTION = "A flared notification bell overlaps the upper corner of a discussion bubble."
+DESCRIPTION = "A thick discussion bubble with two lines of text carries a bell badge for following."
 
 
 def discussion_bell(s):
-    def bubble(x, z):
-        return .72*x, -.28*x, z
-
-    speech_bubble(s, bubble, 102, 59, depth=7)
-    for z, length in ((40, 50), (28, 61), (16, 41)):
-        rule(s, bubble, 15, z, length, EDGE)
-
-    def bell(x, z):
-        return bubble(96 + x, 56 + z)
-
-    upright_face(s, bell, oval(0, -15, 4.8, 4.6, count=28)[:-1], 3)
-    bell_body = [(-18, -11), (-18, -7), (-14, -4), (-12, 0), (-11, 8),
-                 (-8, 14), (-4, 17), (4, 17), (8, 14), (11, 8), (12, 0),
-                 (14, -4), (18, -7), (18, -11)]
-    s.tube([bell(0, 15), bell(0, 19)], 2.3)
-    upright_face(s, bell, bell_body, 4)
-    rule(s, bell, -15, -6, 30, EDGE)
-    return bell
+    """A thick message bubble; returns the point for a corner badge."""
+    at = screen()
+    b = lambda u, v: at(u - 56, v - 36)
+    plate(s, b, bubble(112, 76, 24, (.24, 14, 16)), 9, BACK)
+    for v, w in ((50, 64), (34, 44)):
+        s.line([b(22, v), b(22 + w, v)], DETAIL)
+    return _screen(0, 0, 0, 56, 34)
 
 
 def draw(s):
-    discussion_bell(s)
+    badge(s, "plus", *discussion_bell(s), 14)

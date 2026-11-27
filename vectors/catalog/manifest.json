@@ -3134,7 +3134,7 @@
           "id": "roadmap",
           "title": "Roadmap",
           "placement": "Product planning overview",
-          "visual": "A winding timeline passes through three round milestones and ends at a planted destination flag.",
+          "visual": "A dashed path on the ground passes three round milestones and ends at a planted flag.",
           "priority": "extended",
           "asset": "figures/roadmap.svg"
         },
@@ -3158,7 +3158,7 @@
           "id": "batch-operations",
           "title": "Batch operations",
           "placement": "Admin operations feature section",
-          "visual": "One continuous arrow sweeps over a fanned stack of operation cards.",
+          "visual": "A fanned stack of three thick cards carries a bolt badge for a batch operation.",
           "priority": "extended",
           "asset": "figures/batch-operations.svg"
         },
@@ -3166,7 +3166,7 @@
           "id": "merge-changes",
           "title": "Merge changes",
           "placement": "Conflict-resolution docs",
-          "visual": "Two connected version tracks converge on one larger shared commit.",
+          "visual": "Two branch lines with commit nodes curve together into one larger merge commit.",
           "priority": "extended",
           "asset": "figures/merge-changes.svg"
         },
@@ -3198,7 +3198,7 @@
           "id": "subscribe-to-updates",
           "title": "Subscribe to updates",
           "placement": "Watch or follow project feature",
-          "visual": "A plus badge overlaps the shoulder of a notification bell with a flared rim and clapper.",
+          "visual": "A notification bell carries a plus badge on its lower-right rim.",
           "priority": "extended",
           "asset": "figures/subscribe-to-updates.svg"
         },
@@ -3222,7 +3222,7 @@
           "id": "approval-routing",
           "title": "Approval routing",
           "placement": "Conditional review workflows",
-          "visual": "A decision diamond splits a workflow into two paths, with a check badge at the approving exit.",
+          "visual": "A decision diamond splits a flow into two paths, and the approving path carries a check badge.",
           "priority": "extended",
           "asset": "figures/approval-routing.svg"
         },
@@ -3398,7 +3398,7 @@
           "id": "follow-a-discussion",
           "title": "Follow a discussion",
           "placement": "Subscribe to new replies in a thread",
-          "visual": "A flared notification bell overlaps the upper corner of a discussion bubble.",
+          "visual": "A thick discussion bubble with two lines of text carries a bell badge for following.",
           "priority": "extended",
           "asset": "figures/follow-a-discussion.svg"
         },
@@ -3406,7 +3406,7 @@
           "id": "unfollow-a-discussion",
           "title": "Unfollow a discussion",
           "placement": "Stop receiving replies to a thread",
-          "visual": "A slash badge overlaps the shoulder of the notification bell on a discussion bubble.",
+          "visual": "A thick discussion bubble with two lines of text carries a slash badge for unfollowing.",
           "priority": "extended",
           "asset": "figures/unfollow-a-discussion.svg"
         },

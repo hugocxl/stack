@@ -1,19 +1,16 @@
-from geometry import DETAIL, EDGE, oval
-from scenes.redraws._kit import badge
-from scenes.redraws._w2 import face_arrow, upright_face
+from geometry import EDGE
+from scenes.redraws._kit import _screen, badge
+from scenes.redraws._sf import BACK, plate, screen, squircle
 
-DESCRIPTION = "A decision diamond splits a workflow into two paths, with a check badge at the approving exit."
+DESCRIPTION = "A decision diamond splits a flow into two paths, and the approving path carries a check badge."
 
 
 def draw(s):
-    def point(x, z):
-        return .76*x, -.24*x, z
-
-    s.line([point(8, 36), point(46, 36)], EDGE)
-    upright_face(s, point, oval(8, 36, 6, 6, count=32)[:-1], 2)
-    upper = [(58, 51), (58, 67), (64, 74), (115, 74)]
-    lower = [(58, 22), (58, 5), (64, -2), (113, -2)]
-    s.line([point(x, z) for x, z in upper], EDGE)
-    face_arrow(s, point, lower, DETAIL, head=7)
-    upright_face(s, point, [(40, 36), (58, 19), (76, 36), (58, 53)], 4)
-    badge(s, "check", *point(115, 74), 15)
+    at = screen()
+    s.tube([at(-80, 0), at(-26, 0)], 2.2, EDGE)
+    s.tube([at(0, 26), at(0, 44), at(56, 44)], 2.2, EDGE)
+    s.tube([at(0, -26), at(0, -44), at(56, -44)], 2.2, EDGE)
+    plate(s, at, [(0, -28), (28, 0), (0, 28), (-28, 0)], 8, BACK)
+    plate(s, lambda u, v: at(u - 90, v - 10), squircle(20, 20, 5), 5, BACK)
+    badge(s, "check", *_screen(0, 0, 0, 68, 44), 13)
+    badge(s, "x", *_screen(0, 0, 0, 68, -44), 13)

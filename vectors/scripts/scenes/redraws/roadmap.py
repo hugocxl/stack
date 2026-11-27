@@ -1,15 +1,14 @@
-from geometry import BOLD, DETAIL, EDGE
+from geometry import DETAIL, EDGE
+from scenes.redraws._sf import smooth
 
-DESCRIPTION = "A winding timeline passes through three round milestones and ends at a planted destination flag."
+DESCRIPTION = "A dashed path on the ground passes three round milestones and ends at a planted flag."
 
 
 def draw(s):
-    s.line([(8, 68, 0), (46, 68, 0), (53, 66, 0), (58, 61, 0),
-            (60, 54, 0), (60, 28, 0), (62, 21, 0), (68, 16, 0),
-            (76, 14, 0), (91, 14, 0)], EDGE)
-    for x, y in ((8, 68), (38, 68), (60, 36)):
-        s.disk(x, y, 0, 7.5, 7.5, 3.6, EDGE)
-    s.box(86, 9, 0, 10, 10, 3, 1.5, DETAIL)
-    s.tube([(91, 14, 3), (91, 14, 74)], 1.5, EDGE)
-    s.face([(91, 14, 73), (121, 14, 73), (113, 14, 61),
-            (121, 14, 49), (91, 14, 49)], BOLD)
+    path = smooth([(-60, 40), (-36, 30), (-18, 10), (4, 4), (22, -16), (40, -22)], 8)
+    s.line([(x, y, 0) for x, y in path], DETAIL, dashed=True)
+    for x, y in ((-60, 40), (-18, 10), (22, -16)):
+        s.disk(x, y, 0, 11, 11, 5)
+    s.disk(44, -24, 0, 5, 5, 2)
+    s.tube([(44, -24, 2), (44, -24, 58)], 1.6, EDGE)
+    s.face([(44, -24, 56), (44, -24, 38), (44 + 24*.7, -24 - 24*.7, 47)], EDGE)
