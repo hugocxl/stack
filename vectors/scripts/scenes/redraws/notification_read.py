@@ -25,10 +25,15 @@ def notification_bell(s):
     a short stem on top and the clapper showing just below the lip."""
     # (radius, height) from the lip up to the crown; overlapping bands keep the flare
     # and the rounded shoulders in the silhouette.
-    sections = [(30, 13), (28.6, 14.6), (25.6, 17.5), (22.6, 22), (21, 28), (20.2, 35),
-                (19.4, 42), (17.8, 49), (14.8, 55), (10.4, 59.4), (5, 61.8), (.5, 62.4)]
-    circles = [[project((x, y, z)) for x, y in oval(0, 0, radius, radius, count=64)]
-               for radius, z in _smooth(sections)]
+    def radius(z):
+        if z < 46:
+            # Sides that widen steadily downward, then sweep out into the lip.
+            return 18.5 + .12*(46 - z) + (7.5*((36 - z)/23)**2.6 if z < 36 else 0)
+        t = min(1, (z - 46)/16.4)
+        return 18.5*(1 - t*t)**.5 + .4                  # a round crown
+    heights = [13 + i*.5 for i in range(0, 99)]
+    circles = [[project((x, y, z)) for x, y in oval(0, 0, radius(z), radius(z), count=64)]
+               for z in heights]
     bands = [MultiPoint(lower + upper).convex_hull for lower, upper in zip(circles, circles[1:])]
     silhouette = unary_union(bands)
     clapper = [project((x, y, z)) for radius, z in ((3.4, 1.6), (6, 4.2), (6.4, 6.4), (5.2, 9))

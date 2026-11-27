@@ -1,22 +1,15 @@
-from geometry import BOLD, DETAIL, EDGE
+from geometry import DETAIL
+from scenes.redraws._kit import badge
+from scenes.redraws._sf import left_face
 
-DESCRIPTION = "An open-ended wrench crosses the lower corner of a flat-roofed building."
+DESCRIPTION = "A flat-roofed building with rows of windows carries a refresh badge for upkeep."
 
 
 def draw(s):
-    s.box(-10, 0, 0, 74, 34, 71, 2)
-    s.box(-12, -2, 70, 78, 38, 4, 2)
-    s.box(-5, 34, 45, 63, 1.2, 14, 1)
-    for x in (10, 26, 42):
-        s.line([(x, 35.2, 45), (x, 35.2, 59)], DETAIL)
-    s.box(0, 34, 0, 19, 1.2, 30, 1)
-
-    # The wrench is an extruded, concave silhouette with a real open jaw.
-    def point(u, v, depth=0):
-        return 38 + .84*u - .54*v, 42 - depth, 18 + .54*u + .84*v
-
-    outline = [(-29, -4), (6, -4), (10, -9), (16, -11), (23, -9), (27, -4),
-               (17, -4), (14, 0), (17, 4), (27, 4), (23, 9), (16, 11),
-               (10, 9), (6, 4), (-29, 4), (-33, 2), (-33, -2)]
-    s.face([point(u, v, 4) for u, v in outline], EDGE)
-    s.face([point(u, v) for u, v in outline], BOLD)
+    s.box(-34, -26, 0, 68, 52, 76, 2)
+    s.box(-37, -29, 76, 74, 58, 5, 2)
+    front = left_face(-34, 26, 0)
+    for v in (16, 34, 52):
+        for u in (10, 30, 50):
+            s.line([front(u, v), front(u + 9, v), front(u + 9, v + 11), front(u, v + 11), front(u, v)], DETAIL)
+    badge(s, "refresh", 34, 26, 12, 13)

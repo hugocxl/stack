@@ -2576,7 +2576,7 @@
           "id": "keyboard-shortcuts",
           "title": "Keyboard shortcuts",
           "placement": "Productivity help index",
-          "visual": "A plus sign connects a Command keycap and a left-arrow keycap in a keyboard chord.",
+          "visual": "A plus sign joins a Command keycap and a left-arrow keycap in a keyboard chord.",
           "priority": "extended",
           "asset": "figures/keyboard-shortcuts.svg"
         },
@@ -8712,7 +8712,7 @@
           "id": "spotlight-interview",
           "title": "Spotlight interview",
           "placement": "Magazine interview hero",
-          "visual": "A broadcast microphone on a desk stand sits under a single cone of stage light.",
+          "visual": "A studio microphone with a ribbed capsule stands on a round desk base.",
           "priority": "extended",
           "asset": "figures/spotlight-interview.svg"
         },
@@ -9096,7 +9096,7 @@
           "id": "update-notification",
           "title": "Update notification",
           "placement": "Reader subscription preference",
-          "visual": "A notification bell with a visible clapper carries a refresh badge at its upper rim.",
+          "visual": "A notification bell carries a refresh badge on its lower-right rim.",
           "priority": "extended",
           "asset": "figures/update-notification.svg"
         },
@@ -13012,7 +13012,7 @@
           "id": "construction-milestones",
           "title": "Construction milestones",
           "placement": "Builder project progress page",
-          "visual": "A single timeline connects a poured foundation, an exposed house frame, and a finished home.",
+          "visual": "A dashed timeline runs from a poured slab through a timber frame to a finished house.",
           "priority": "extended",
           "asset": "figures/construction-milestones.svg"
         },
@@ -13076,7 +13076,7 @@
           "id": "building-maintenance",
           "title": "Building maintenance",
           "placement": "Facilities or property-management feature",
-          "visual": "An open-ended wrench crosses the lower corner of a flat-roofed building.",
+          "visual": "A flat-roofed building with rows of windows carries a refresh badge for upkeep.",
           "priority": "extended",
           "asset": "figures/building-maintenance.svg"
         },
@@ -13156,7 +13156,7 @@
           "id": "apartment-move-out",
           "title": "Apartment move-out",
           "placement": "Tenant move-out instructions",
-          "visual": "An outward arrow leads from an open packing carton at the threshold of an apartment doorway.",
+          "visual": "A packed carton waits in front of an open apartment doorway, carrying an outward arrow badge.",
           "priority": "extended",
           "asset": "figures/apartment-move-out.svg"
         },
@@ -13604,7 +13604,7 @@
           "id": "as-built-drawing-archive",
           "title": "As-built drawing archive",
           "placement": "Facilities property records archive",
-          "visual": "A rolled floor plan rises from an archival tube and unfurls to show its room outlines.",
+          "visual": "A capped archive tube stands beside a rolled drawing whose sheet unrolls to show a floor plan.",
           "priority": "extended",
           "asset": "figures/as-built-drawing-archive.svg"
         }

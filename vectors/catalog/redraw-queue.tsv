@@ -1,54 +1,5 @@
 # Figures that failed the SF-grade review on 2026-11-27, core priority first.
 # id	priority	placement	current visual
-font-fallback	extended	Define a secondary face for missing primary glyphs	An arrow leads from an empty glyph square on one piece of type to a capital A on another.
-formatting-presets	extended	Document format preset chooser	Three tabbed preset samples display heading, centered, and bulleted text, with the bulleted sample outlined.
-image-replacement	extended	Swap an image while preserving its placement	A standing landscape photo frame carries a corner control with two opposing arrows.
-keyboard-shortcuts	extended	Productivity help index	A plus sign connects a Command keycap and a left-arrow keycap in a keyboard chord.
-layer-reordering	extended	Rearrange z-order on design surface	One design sheet is raised above two matching sheets beside an upward reorder arrow.
-low-contrast-warning	extended	Flag insufficient contrast in an editor	A warning triangle marks a contrast sample with a pale ring beside a darker matching ring.
-measure-a-component	extended	Inspect its physical spacing or size	A vernier caliper closes its jaws against opposite edges of a diamond-marked sample tile.
-move-block-between-pages	extended	Outline transferring a content module	A raised image block moves from the dashed slot on one page toward the facing page along a single arrow.
-open-inspector-from-canvas	extended	View property panel for selected item	An editor canvas on a laptop shows a selected diamond beside three fields in its attached inspector.
-pinned-editor-tools	extended	Always-visible tools for an editor	A physical pushpin fastens the end of a toolbar marked with drawing, shape, and selection tools.
-plugins	extended	Extension platform overview	A raised cartridge lines up with an open slot on a baseboard.
-portable-configuration	extended	Import-export or workspace migration section	A folded-corner settings file shows three slider controls and an arrow pointing out from its right edge.
-reorder-components	extended	Change vertical or horizontal order of modules	A middle row shifts out of a three-row list beside a tall, two-ended reorder arrow.
-restore-component-link	extended	Reconnect a detached component	A thick component tile carries a pair of closed, interlocking chain links at its upper-right corner.
-scale-proportionally	extended	Resize while maintaining relative proportions	A diagonal resize arrow connects matching corner handles on a selection and a larger dashed outline of the same proportions.
-toggle-component-visibility	extended	Hide selected component while preserving it	A slashed eye on a raised visibility control marks a component outlined with dashes.
-beat-coverage	extended	Reporters' coverage area page	A reporter microphone stands at a covered location on a folded street map.
-interactive-map-story	extended	Editorial or travel content hero	A single route runs through three successive waypoints across an accordion-folded map.
-magazine-gifting	extended	Publication gift membership	A bound magazine with a landscape cover is wrapped with a ribbon tied in a bow.
-microfilm-reader	extended	Historical newspaper access page	A microfilm reader feeds film from an exposed reel into a viewer showing a newspaper page.
-photo-restoration	extended	Restoration service landing	A torn corner of a photographic print aligns with the jagged break and completes its landscape image.
-post-roll-placement	extended	Video ad settings	A video timeline places a short advertisement clip directly beyond the end marker of the main clip.
-rights-clearance	specialist	Studio and licensing workflows	A rubber approval stamp rests on a clearance slip and carries a check badge.
-source-documentation	extended	Investigative story evidence	A tabbed source dossier holds a ruled record and carries a linked-reference tab.
-spotlight-interview	extended	Magazine interview hero	A broadcast microphone on a desk stand sits under a single cone of stage light.
-update-notification	extended	Reader subscription preference	A notification bell with a visible clapper carries a refresh badge at its upper rim.
-voiceover-preview	extended	Audio production tool	A spoken-audio waveform runs across a clip with a play badge at its leading edge.
-apartment-move-out	extended	Tenant move-out instructions	An outward arrow leads from an open packing carton at the threshold of an apartment doorway.
-architectural-finish-selection	extended	Interior finish options	A check badge overlaps the upper corner of the foremost chip in a bound finish swatch fan.
-architectural-site-feasibility	extended	Architecture feasibility package	A magnifier frames a proposed foundation set among the contours of a raised building plot.
-as-built-drawing-archive	extended	Facilities property records archive	A rolled floor plan rises from an archival tube and unfurls to show its room outlines.
-balcony-load-inspection	extended	Building condition report	A magnifier frames the triangular support bracket under a projecting railed balcony.
-building-code-review	extended	Permit application support	An open magnifier frames the exposed post and roof joint of a timber house frame.
-building-fixture-schedule	extended	Construction specifications dashboard	A faucet heads a two-column fixture table on a thick tabbed specification binder.
-building-maintenance	extended	Facilities or property-management feature	An open-ended wrench crosses the lower corner of a flat-roofed building.
-change-order-pricing	extended	Construction project change order	A change order crosses out an original amount and highlights its revised price with a plus and a currency mark.
-construction-equipment-return	extended	Construction equipment rental return	A curved return arrow wraps beneath the battery grip of a cordless power drill.
-construction-milestones	extended	Builder project progress page	A single timeline connects a poured foundation, an exposed house frame, and a finished home.
-daylight-study	extended	Architecture daylight analysis page	A diagonal shaft of daylight passes through one pane of a window and meets the floor.
-elevated-access-maintenance	extended	Facilities service procedures	A ladder leans against a building facade with its upper rails seated at the sill of an elevated service hatch.
-foundation-moisture-check	extended	Property condition report	A moisture meter drives two probe tips into soil beside the exposed courses of a foundation wall.
-foundation-preparation	extended	New build site preparation guide	A cutaway excavation exposes continuous footing trenches around a rectangular foundation footprint.
-heating-system-service	extended	HVAC service booking	An open-jaw wrench grips the lower service valve on a wall-mounted radiator.
-heating-zone-layout	extended	Residential HVAC zoning feature	Two rooms in a cutaway floor plan each contain a wall manifold and an independent radiant heating loop.
-home-insulation-estimate	extended	Installer cost estimate	An insulation estimate shows a stud-wall cross-section with looping batts beside the quoted amount.
-housing-accessibility-retrofit	extended	Accessible remodeling service feature	A sloped ramp and continuous handrail meet the raised threshold of a residential doorway.
-hvac-replacement-quote	extended	Heating installer quote page	An estimate pad shows a fan behind a square grille above three aligned item and price rows.
-keyed-entry-upgrade	extended	Entry security upgrade option	An upward badge sits beside a deadbolt cylinder with a key inserted in its keyway.
-land-parcel-comparison	extended	Lot search feature card	An open cadastral map compares two adjoining lots with matching dimension ticks and visibly different widths.
 lease-signing-session	extended	Rental document signing step	A pen touches the signature line of a landscape lease sheet headed by a house outline.
 living-room-layout	extended	Furniture planning consultation	A sofa and a low coffee table sit together inside a living room floor plan with a wide entry.
 material-quantity-check	extended	Building materials ordering tool	A single tally tag hangs against a stack of square building tiles.
