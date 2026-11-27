@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path, Circle, Rect, G } from "react-native-svg";
 export const Columns3Icon = /*#__PURE__*/ forwardRef(function Columns3Icon({size = 16, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM5.45 13.65H6.55V2.35H5.45ZM10.55 13.65V2.35H9.45V13.65Z", "fill": "currentColor"}));
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.07 2.3 12.93 2.3Q13.9324 2.3 14.6412 3.0088Q15.35 3.7176 15.35 4.72V11.28Q15.35 12.2824 14.6412 12.9912Q13.9324 13.7 12.93 13.7H3.07Q2.0676 13.7 1.3588 12.9912Q0.65 12.2824 0.65 11.28L0.65 4.72Q0.65 3.7176 1.3588 3.0088Q2.0676 2.3 3.07 2.3ZM10.7967 12.8V3.2H9.7567V12.8ZM5.2033 12.8H6.2433V3.2H5.2033Z", "fill": "currentColor"}));
 });

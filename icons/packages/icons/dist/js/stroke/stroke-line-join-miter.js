@@ -1,1 +1,1 @@
-export const StrokeLineJoinMiterIcon = "<svg fill=\"none\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M0.8 13.2 8 1.4 15.2 13.2 12.6 14.6 8 6.9 3.4 14.6Z\" fill=\"currentColor\"/>\n</svg>\n";
+export const StrokeLineJoinMiterIcon = "<svg fill=\"none\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\">\n  <path d=\"M2.096 12.276 8 2.6 13.904 12.276 11.772 13.424 8 7.11 4.228 13.424Z\" fill=\"currentColor\"/>\n</svg>\n";

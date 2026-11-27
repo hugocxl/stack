@@ -25,12 +25,25 @@ THIRD_PARTY_LICENSES.md.
 
 New UI artwork uses a square 16 × 16 canvas with optical fitting, typically
 0.65–1.5 units of clearance. Every icon is drawn as if by one hand: a single
-stroke width of 1.1 units for every line, outline and detail, and a single
-1.25-unit corner radius for every rounded rectangle (full pills stay pills). Both
-values were measured from SF Symbols Regular on this grid and are enforced in
-`draw.py`; crowded drawings are simplified, never thinned. Round caps and round
-joins are expanded to filled Bézier contours. Shapes are fitted by their actual bounds, including outlines, rather than
-by their control points. Curves remain curves in the exported SVG.
+stroke width of 1.04 units for every line, outline and detail, and a single
+1.2-unit centerline corner radius (about 1.7 units outside the outline) for
+every rounded rectangle (full pills stay pills). Both values were measured from
+SF Symbols Regular on this grid, where SF's `circle` is 13.1 units across, and
+are enforced in `draw.py`; crowded drawings are simplified, never thinned.
+Deliberate SF container radii (app tiles, window chrome) use `rr(..., exact=True)`.
+Round caps and round joins are expanded to filled Bézier contours. Shapes are
+fitted by their actual bounds, including outlines, rather than by their control
+points. Curves remain curves in the exported SVG.
+
+Every symbol follows SF Symbols' optical sizing rather than filling the square:
+objects keep their natural proportions (a square is about 11.8 units, a
+document 10.8 × 13.7, a folder 14.6 × 11.7) and visual mass is balanced
+against the 13.1-unit circle. Status variants use SF badges: a filled disc with
+the mark knocked out, set into the base behind a 0.9-unit gap (`badge()` in
+`draw.py`). Slashed variants use one top-left to bottom-right diagonal with a
+0.85-unit gap. Solid follows SF `.fill`: knocked-out details and gaps between
+overlapping parts. Proprietary SF artwork is only rendered for measurement and
+comparison; every outline here is authored in the recipes.
 
 Duotone is selective, not a requirement to use two opacity levels in every icon.
 A second tone must clarify a distinct surface, an overlapping plane, or physical

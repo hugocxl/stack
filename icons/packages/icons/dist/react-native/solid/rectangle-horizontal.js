@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path, Circle, Rect, G } from "react-native-svg";
 export const RectangleHorizontalIcon = /*#__PURE__*/ forwardRef(function RectangleHorizontalIcon({size = 16, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.05 3.45H12.95Q13.6956 3.45 14.2228 3.9772Q14.75 4.5044 14.75 5.25V10.75Q14.75 11.4956 14.2228 12.0228Q13.6956 12.55 12.95 12.55H3.05Q2.3044 12.55 1.7772 12.0228Q1.25 11.4956 1.25 10.75V5.25Q1.25 4.5044 1.7772 3.9772Q2.3044 3.45 3.05 3.45Z", "fill": "currentColor"}));
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.37 2.3H13.63Q14.3424 2.3 14.8462 2.8038Q15.35 3.3076 15.35 4.02V11.98Q15.35 12.6924 14.8462 13.1962Q14.3424 13.7 13.63 13.7H2.37Q1.6576 13.7 1.1538 13.1962Q0.65 12.6924 0.65 11.98L0.65 4.02Q0.65 3.3076 1.1538 2.8038Q1.6576 2.3 2.37 2.3Z", "fill": "currentColor"}));
 });

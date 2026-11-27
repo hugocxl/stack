@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path, Circle, Rect, G } from "react-native-svg";
 export const AspectRatioIcon = /*#__PURE__*/ forwardRef(function AspectRatioIcon({size = 16, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M11.1 13.4H2.75Q2.0044 13.4 1.4772 12.8728Q0.95 12.3456 0.95 11.6V6.8H10.85Q11.0222 6.8 11.0611 6.8389Q11.1 6.8778 11.1 7.05V13.4ZM2.75 2.6H13.25Q13.9956 2.6 14.5228 3.1272Q15.05 3.6544 15.05 4.4V11.6Q15.05 12.3456 14.5228 12.8728Q13.9956 13.4 13.25 13.4H12.2V7.05Q12.2 6.4222 11.8389 6.0611Q11.4778 5.7 10.85 5.7H0.95V4.4Q0.95 3.6544 1.4772 3.1272Q2.0044 2.6 2.75 2.6Z", "fill": "currentColor"}));
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M2.37 2.28H13.63Q14.3424 2.28 14.8462 2.7838Q15.35 3.2876 15.35 4V12Q15.35 12.7124 14.8462 13.2162Q14.3424 13.72 13.63 13.72H11.57V7.2Q11.57 6.5596 11.2052 6.1948Q10.8404 5.83 10.2 5.83H0.65L0.65 4Q0.65 3.2876 1.1538 2.7838Q1.6576 2.28 2.37 2.28ZM10.53 13.72H2.37Q1.6576 13.72 1.1538 13.2162Q0.65 12.7124 0.65 12L0.65 6.87H10.2Q10.4096 6.87 10.4698 6.9302Q10.53 6.9904 10.53 7.2V13.72Z", "fill": "currentColor"}));
 });

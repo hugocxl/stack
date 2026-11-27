@@ -122,10 +122,10 @@ def register(api):
             'bell':'M6 14H10M8 1V2',
             'save':'M5 2V6H10V2M5 14V10H11V14',
             'package':'M1.65 4.75L8 8.05L14.35 4.75M8 8.05V14.4M4.85 3.25L11.1 6.4',
-            'database':'M2 4C2 8 14 8 14 4M2 8C2 12 14 12 14 8',
+            'database':'M3 3.75A5 2 0 0 0 13 3.75M3 8A5 2 0 0 0 13 8',  # lane B base
             'image':'M2 12L6.5 8 9 10 11 7.5 14 11',
             'hourglass':'M6.5 5H9.5M6.45 11.4L8 9.9L9.55 11.4',
-            'monitor':'M8 11V14M5 14H11M2 8H14',
+            'monitor':'M8 11V13.5M5.35 13.5H10.65',  # lane B base: no chin
         }
         if source == 'server-rack':
             return (rr(1.5,1.75,11.2,12.1),
@@ -194,392 +194,880 @@ def register(api):
         # The badge clears the original drawing after its style has been composed.
         corner_badges[name] = (source,body,detail,badge)
 
-    # Shared silhouettes: interior variants are kept within the surface rather
-    # than allowing the status symbol to collide with the outline.
-    badge = api['badge_body']()
-    shape('badge', badge, None, 'award seal')
-    for suffix in ('exclamation-point','info','minus','plus','x'):
-        shape('badge-'+suffix, badge, compact(suffix), 'award seal '+suffix)
+    # ---- Interface controls and Product tools: SF Symbols conventions ----
+    # These helpers are local to the two categories; the shared helpers above
+    # (compact, stack, gear, badged, disabled_styles) keep their behaviour.
+    drawings, badges = api['DRAWINGS'], api['BADGES']
+    clearance_gap = api['BADGE_GAP']
 
-    book = rr(3, 1.6, 10, 12.8)
+    def rotate_about(p, angle, cx, cy):
+        a = math.radians(angle)
+        c, s = math.cos(a), math.sin(a)
+        return p.transform(c, s, -s, c, cx-c*cx+s*cy, cy-s*cx-c*cy)
+
+    def sf_mark(kind, cx, cy, r):
+        """Knock-out marks for badge discs, beyond the shared badge kinds."""
+        s = r/3.25
+        if kind == 'question':
+            return union(stroke(f'M{cx-1.2*s} {cy-.8*s}C{cx-1.2*s} {cy-2.5*s} {cx+1.25*s} {cy-2.5*s} '
+                                f'{cx+1.25*s} {cy-1.0*s}C{cx+1.25*s} {cy-.1*s} {cx} {cy-.05*s} {cx} {cy+.7*s}'),
+                         circle(cx, cy+1.8*s, .6))
+        if kind in ('arrow-left', 'arrow-right'):
+            return rotate_about(api['badge_mark']('arrow-up', cx, cy, r),
+                                -90 if kind == 'arrow-left' else 90, cx, cy)
+        if kind == 'restore':
+            # A counterclockwise return arrow, the database backup convention.
+            return union(stroke(f'M{cx-1.75*s} {cy+.2*s}A1.75 1.75 0 1 0 {cx-.55*s} {cy-1.65*s}'),
+                         stroke(f'M{cx-2.75*s} {cy-.75*s}L{cx-1.75*s} {cy+.3*s}L{cx-.7*s} {cy-.7*s}'))
+        if kind == 'dot':
+            return po.Path()
+        return api['badge_mark'](kind, cx, cy, r)
+
+    def sf_badge(name, kind, cx=11.85, cy=11.85, r=3.25):
+        """A filled disc with its mark knocked out, set behind a 0.9 u gap."""
+        disc = subtract(circle(cx, cy, r), sf_mark(kind, cx, cy, r))
+        badges[name] = (disc, circle(cx, cy, r+clearance_gap))
+
+    def sf_ink_badge(name, ink, gap):
+        # Symbol badges (gear, lens, pencil) keep their own silhouette.
+        badges[name] = (ink, gap)
+
+    def sf_gear(cx, cy, radius, teeth=8):
+        # Rounded, evenly spaced teeth around a round bore; one solid mass.
+        points = []
+        pitch = 2*math.pi/teeth
+        for tooth in range(teeth):
+            for offset, reach in ((-.36, .76), (-.17, 1), (.17, 1), (.36, .76)):
+                angle = tooth*pitch + offset*pitch
+                points.append((cx+radius*reach*math.cos(angle), cy+radius*reach*math.sin(angle)))
+        return subtract(api['poly'](points), circle(cx, cy, radius*.34))
+
+    def sf_gear_badge(name, cx=11.75, cy=11.75, radius=3.25):
+        sf_ink_badge(name, sf_gear(cx, cy, radius), circle(cx, cy, radius+clearance_gap))
+
+    def sf_lens_badge(name, cx=11.0, cy=11.0, r=2.35):
+        # Open magnifier: the lens interior hides the host, like doc.magnifyingglass.
+        lens = api['ring'](cx, cy, r)
+        hx, hy = cx+r*.7, cy+r*.7
+        handle = line((hx, hy), (hx+1.75, hy+1.75))
+        gap = union(circle(cx, cy, r+clearance_gap), line((hx, hy), (hx+1.75, hy+1.75), width=1.04+2*clearance_gap))
+        sf_ink_badge(name, union(lens, handle), gap)
+
+    def sf_pencil_badge(name, cx=11.55, cy=11.55, length=7.2, width=2.15):
+        half, end = width/2, length/2
+        body = path(f'M{-end} 0L{-end+1.85} {-half}H{end-.7}Q{end} {-half} {end} {-half+.7}'
+                    f'V{half-.7}Q{end} {half} {end-.7} {half}H{-end+1.85}Z')
+        a = math.radians(-45)
+        c, s = math.cos(a), math.sin(a)
+        pencil = api['soften'](body.transform(c, s, -s, c, cx, cy), .2)
+        sf_ink_badge(name, pencil, union(pencil, stroke(pencil, 2*clearance_gap, exact=True)))
+
+    def sf_host(name, source, tags, extra=None):
+        """Register a full-size base symbol; the badge is applied by main()."""
+        body, detail, outline, _, _ = drawings[source]
+        if extra is not None:
+            detail = union(detail, extra)
+        (shape if outline else glyph)(name, body, detail, tags)
+        if source in overrides:
+            overrides[name] = dict(overrides[source])
+
+    def sf_person(cx, cy, s=1):
+        # Head and shoulders, as in SF person. At small sizes the head becomes
+        # a small filled element and the shoulders an open arc, never thinner.
+        if s < .8:
+            return union(circle(cx, cy-1.85*s, 1.55*s),
+                         path(f'M{cx-2.9*s} {cy+3.1*s}Q{cx-2.9*s} {cy+.55*s} {cx} {cy+.55*s}'
+                              f'Q{cx+2.9*s} {cy+.55*s} {cx+2.9*s} {cy+3.1*s}Z'))
+        head = stroke(circle(cx, cy-1.7*s, 1.45*s))
+        shoulders = stroke(path(f'M{cx-2.55*s} {cy+2.85*s}Q{cx-2.55*s} {cy+.75*s} {cx} {cy+.75*s}'
+                                f'Q{cx+2.55*s} {cy+.75*s} {cx+2.55*s} {cy+2.85*s}Z'))
+        return union(head, shoulders)
+
+    # SF square (11.8 u ink) and circle (13.1 u ink) containers.
+    square = rr(2.6, 2.6, 10.8, 10.8)
+    disc = circle(8, 8, 6)
+
+    # Badge seal: the shared eight-point seal with a centered, full-weight mark.
+    seal = api['badge_body']()
+    shape('badge', seal, None, 'award seal')
+    for suffix in ('exclamation-point','info','minus','plus','x'):
+        shape('badge-'+suffix, seal, compact(suffix), 'award seal '+suffix)
+
+    # Book: the shared closed book (spine and page curl); marks sit on the cover.
+    book_body = drawings['book'][0]
+    book_frame = stroke('M5.6 1.8V11.4M13 11.4H5.3Q3.1 11.4 3.1 13')
     for suffix in ('check','heart','lock','minus','plus','search','text','user','x'):
-        shape('book-'+suffix, book, union(stroke('M5 2V11M3.2 11.2H12.8'), compact(suffix,9,6.7,.86)), 'book '+suffix)
-    bookmark = path('M4 2H12V14L8 11L4 14Z')
+        mark = (sf_person(9.3, 6.5, .74) if suffix == 'user'
+                else compact(suffix, 9.3, 6.45, .82))
+        shape('book-'+suffix, book_body, union(book_frame, mark), 'book '+suffix)
+
+    # Bookmark: the family ribbon (bookmark-off derives from it as well).
+    bookmark = drawings['bookmark'][0]
     for suffix in ('minus','x'):
-        shape('bookmark-'+suffix, bookmark, compact(suffix,8,6.5,.84), 'bookmark '+suffix)
+        shape('bookmark-'+suffix, bookmark, compact(suffix, 8, 6.55, .84), 'bookmark '+suffix)
     shape('bookmark-off', bookmark, line((2,2),(14,14)), 'bookmark disabled')
 
-    cal = rr(2.2,3,11.6,10.6)
-    top = stroke('M2.5 6H13.5M5 1.7V4.1M11 1.7V4.1')
+    # Calendar: the family body and header; marks are centered on the date field.
+    cal, top = api['CAL'], api['CALTOP']
     for suffix in ('1','arrow-down','arrow-left','arrow-right','arrow-up','chevrons-left','chevrons-right','cog','minus'):
-        shape('calendar-'+suffix, cal, union(top, gear(8,9.85,2.45) if suffix == 'cog' else compact(suffix,8,9.7,.84)), 'calendar date '+suffix)
-    # Keep a full unit of air above and below the date-grid symbols.
-    lens = union(stroke(circle(7.5,9.65,1.5)),stroke('M8.6 10.7L9.65 11.55'))
-    shape('calendar-search',cal,union(top,lens),'calendar date search')
-    shape('calendar-sync',cal,union(top,stroke('M5.15 9.3C6.25 7.7 8.8 7.55 10.9 9.05M10.9 7.95V9.05H9.45M10.85 10.4C9.75 12 7.2 12.15 5.1 10.65M5.1 11.75V10.65H6.55')),'calendar date sync')
-    # The numbered versions denote marks placed outside the date grid.
-    for suffix in ('check','minus','plus','x'):
-        small = rr(1.8,3,8,8.8)
-        mark = compact(suffix,12.35,12.35,.8)
-        shape('calendar-'+suffix+'-2',small,union(stroke('M2 5.8H9.6M4 1.8V4M7.6 1.8V4'),mark),'calendar date '+suffix)
-    shape('calendar-off', cal, union(top,line((2,2),(14,14))), 'calendar disabled')
-    turned = path('M3.5 3H12.5Q13.8 3 13.8 4.3V9.2L9.4 13.6H3.5Q2.2 13.6 2.2 12.3V4.3Q2.2 3 3.5 3Z')
-    shape('calendar-fold', turned, union(top, stroke('M9.4 13.6V10.3Q9.4 9.2 10.5 9.2H13.8')), 'calendar folded date')
+        mark = gear(8, 10, 2.55) if suffix == 'cog' else compact(suffix, 8, 10, .9)
+        shape('calendar-'+suffix, cal, union(top, mark), 'calendar date '+suffix)
+    lens = union(stroke(circle(7.55, 9.55, 1.75)), line((8.85, 10.85), (10.2, 12.2)))
+    shape('calendar-search', cal, union(top, lens), 'calendar date search')
+    shape('calendar-sync', cal, union(top, compact('sync', 8, 10, .92)), 'calendar date sync')
+    # The numbered versions carry an SF status badge on the full calendar.
+    for suffix, kind in (('check','check'),('minus','minus'),('plus','plus'),('x','x')):
+        sf_host('calendar-'+suffix+'-2', 'calendar', 'calendar date '+suffix)
+        sf_badge('calendar-'+suffix+'-2', kind)
+    shape('calendar-off', cal, union(top, line((2,2),(14,14))), 'calendar disabled')
+    turned = path('M3.2 3H12.8Q14 3 14 4.2V9.6L9.6 14H3.2Q2 14 2 12.8V4.2Q2 3 3.2 3Z')
+    shape('calendar-fold', turned, union(top, stroke('M9.6 14V10.8Q9.6 9.6 10.8 9.6H14')), 'calendar folded date')
     stack('calendars', rr(1.7,1.9,9.6,9.7), rr(4.6,4.8,9.7,9.4),
           stroke('M4.6 8H14.3M7 3.7V6M11.9 3.7V6'), 'multiple dates calendars')
 
-    # Clock faces use independently calculated hands for each hour.
+    # Clock faces: SF circle, a long minute hand at twelve and a short hour hand.
     for hour in range(1,13):
         angle = math.pi*hour/6
-        length = 3.65 if hour in (1,11) else 2.8
-        hx, hy = 8+length*math.sin(angle), 8-length*math.cos(angle)
-        shape('clock-'+str(hour), circle(8,8,6), union(stroke(f'M8 4.2V8L{hx:.3f} {hy:.3f}'),circle(8,8,.97) if hour == 6 else None), 'time hour '+str(hour))
-    for suffix in ('arrow-down','arrow-left','arrow-right','arrow-up','check','exclamation-point','plus'):
-        shape('clock-'+suffix, circle(6.25,6.7,4.6), union(stroke('M6.25 3.9V6.7L8.05 7.7'), compact(suffix,12.5,12.4,.76)), 'time '+suffix)
-    glyph('clock-fading', stroke('M13.5 8A5.5 5.5 0 0 1 8 13.5M2.5 8A5.5 5.5 0 0 1 8 2.5A5.5 5.5 0 0 1 13.5 8M8 4.5V8L10.3 9.3'), dots((3.3,11),(5.3,13),r=.6), 'time history fading')
+        hx, hy = 8+2.75*math.sin(angle), 8-2.75*math.cos(angle)
+        shape('clock-'+str(hour), disc, stroke(f'M8 4.1V8L{hx:.3f} {hy:.3f}'), 'time hour '+str(hour))
+    # Status clocks are full SF clocks (hands at twelve and nine) with a badge.
+    clock_hands = stroke('M8 4.1V8H5.2')
+    for suffix, kind in (('arrow-down','arrow-down'),('arrow-left','arrow-left'),('arrow-right','arrow-right'),
+                         ('arrow-up','arrow-up'),('exclamation-point','alert'),('plus','plus')):
+        shape('clock-'+suffix, disc, clock_hands, 'time '+suffix)
+        sf_badge('clock-'+suffix, kind)
+    # sf_ext_states derives clock-x from clock-check's registered drawing (its
+    # small dial at (6.25, 6.7) and hands). Keep that registration unchanged and
+    # compose the published styles from the same full clock as its siblings.
+    shape('clock-check', circle(6.25,6.7,4.6),
+          union(stroke('M6.25 3.9V6.7L8.05 7.7'), compact('check',12.5,12.4,.76)), 'time check')
+    clock_rim = stroke(disc)
+    clock_ink = union(clock_rim, clock_hands)
+    overrides['clock-check'] = {'duotone': [(subtract(disc, clock_ink), .24), (clock_ink, 1)],
+                                'solid': api['solid_body'](disc, clock_rim, clock_hands),
+                                'stroke': clock_ink}
+    sf_badge('clock-check', 'check')
+    fading = 'M13.5 8A5.5 5.5 0 0 1 8 13.5M2.5 8A5.5 5.5 0 0 1 8 2.5A5.5 5.5 0 0 1 13.5 8'
+    glyph('clock-fading', stroke(fading), union(clock_hands, dots((3.3,11),(5.3,13),r=.6)), 'time history fading')
 
-    clip = rr(3,3,10,11)
-    cliptop = rr(5.5,1.6,5,2.8)
+    # Clipboard: the family board; the clip straddles the centre of its top edge.
+    board = drawings['clipboard'][0]
+    board_left, board_top, board_right, board_bottom = board.bounds
+    board_x = (board_left+board_right)/2
+    clip = rr(board_x-2.35, board_top-1.6, 4.7, 2.7, .9, exact=True)
+    board_y = (board_top+1.6+board_bottom)/2
+    def clipboard(name, content, tags):
+        shape(name, board, union(clip, content), tags)
+        filled = union(board, stroke(board))
+        interior = subtract(filled, stroke(filled, 1.8))
+        knocked = op(content, interior, po.PathOp.INTERSECTION)
+        overrides[name] = {'solid': union(subtract(filled, union(knocked, stroke(clip, 1.8, exact=True))), clip)}
     for suffix in ('clock','minus','plus','x','pen'):
-        shape('clipboard-'+suffix, clip, union(cliptop,compact(suffix,8,9,.96)), 'clipboard '+suffix)
-    shape('clipboard-list',clip,union(cliptop,stroke('M5.3 6.6H5.5M7.8 6.6H10.7M5.3 8.95H5.5M7.8 8.95H10.7M5.3 11.3H5.5M7.8 11.3H10.7')), 'clipboard checklist')
-    shape('clipboard-copy',clip,union(cliptop,stroke('M5.2 7.6V10.7M5.2 7.6H8.8M7.5 9.5H10.9V12.4H7.5Z')), 'clipboard copy')
-    shape('clipboard-paste',clip,union(cliptop,stroke('M8 6V10M6.5 8.5L8 10L9.5 8.5M5.5 11.5H10.5')), 'clipboard paste')
+        clipboard('clipboard-'+suffix, transform(compact(suffix, 8, 9.35, .95), dx=board_x-8, dy=board_y-9.35), 'clipboard '+suffix)
+    clipboard('clipboard-list', transform(union(dots((5.55,6.9),(5.55,9.35),(5.55,11.8),r=.65),
+                                      stroke('M7.35 6.9H10.75M7.35 9.35H10.75M7.35 11.8H10.75')), dx=board_x-8, dy=board_y-9.35), 'clipboard checklist')
+    clipboard('clipboard-copy', transform(stroke('M5.35 10.85V7.6Q5.35 6.85 6.1 6.85H8.85M7.4 9.15Q7.4 8.65 7.9 8.65H10.15Q10.65 8.65 10.65 9.15V11.85Q10.65 12.35 10.15 12.35H7.9Q7.4 12.35 7.4 11.85Z'), dx=board_x-8, dy=board_y-9.35), 'clipboard copy')
+    clipboard('clipboard-paste', transform(stroke('M8 6.5V10.4M6.35 8.75L8 10.4L9.65 8.75M5.6 12.35H10.4'), dx=board_x-8, dy=board_y-9.35), 'clipboard paste')
 
-    card = rr(1.7,3.5,12.6,9)
+    # Credit cards: the family card with an SF status badge.
     for suffix in ('check','minus','plus','x'):
-        shape('credit-card-'+suffix, card, union(stroke('M2 6H14'),compact(suffix,10.1,9.25 if suffix in ('plus','x') else 9.35,.53 if suffix in ('plus','x') else .8)), 'payment credit card '+suffix)
+        sf_host('credit-card-'+suffix, 'credit-card', 'payment credit card '+suffix)
+        sf_badge('credit-card-'+suffix, suffix)
+    # Copies: the family's two sheets; the mark is centered on the front sheet.
     for suffix in ('check','plus','x'):
-        shape('copy-'+suffix, union(rr(2,2,8,9),rr(5,5,9,9)), union(stroke('M5 6V13Q5 14 6 14H13Q14 14 14 13V6Q14 5 13 5H6Q5 5 5 6Z'),compact(suffix,9.5,9.5,.83)), 'duplicate copy '+suffix)
+        api['stacked']('copy-'+suffix, api['copy_back'], api['copy_front'],
+                       api['badge_mark'](suffix, 9.7, 9.7, 3.4 if suffix == 'plus' else 4.1), 'duplicate copy '+suffix)
 
     # Geometric controls and mathematical notation are opaque glyphs.
     glyph('asterisk',lines('M8 2V14','M2.8 5L13.2 11','M2.8 11L13.2 5'),None,'star wildcard')
     glyph('brackets',lines('M6 2H3.5V14H6','M10 2H12.5V14H10'),None,'code square brackets')
-    glyph('equal',lines('M3 6H13','M3 10H13'),None,'math equality')
-    glyph('math-pi',lines('M2.5 4H13.5','M5.5 4V12Q5.5 13.5 4.5 14','M10.5 4V12Q10.5 13.5 12 13.5'),None,'math pi')
+    glyph('equal',lines('M4.05 5.92H11.95','M4.05 10.08H11.95'),None,'math equality')
+    glyph('math-pi',lines('M3.25 4.35H12.75','M6.2 4.35V11.65','M9.8 4.35V10.45Q9.8 11.65 11 11.65H11.6'),None,'math pi')
     glyph('code-xml',lines('M5.5 4L2 8L5.5 12','M10.5 4L14 8L10.5 12','M9 2L7 14'),None,'code markup xml')
-    glyph('arrow-down-to-line',lines('M8 2V10.5','M5 7.5L8 10.5L11 7.5','M3 13.5H13'),None,'download arrow line')
-    glyph('arrow-up-to-line',lines('M8 13.5V5','M5 8L8 5L11 8','M3 2H13'),None,'upload arrow line')
-    glyph('check-line',union(check(6,7,.8),line((8.45,10.25),(13.45,10.25))),None,'complete check line')
+    glyph('arrow-down-to-line',lines('M8 1.9V10.5','M4.2 6.7L8 10.5L11.8 6.7','M3.7 13.6H12.3'),None,'download arrow line')
+    glyph('arrow-up-to-line',lines('M8 14.1V5.5','M4.2 9.3L8 5.5L11.8 9.3','M3.7 2.4H12.3'),None,'upload arrow line')
+    glyph('check-line',union(check(6.6,7.2,.8),line((9.6,11.6),(13.6,11.6))),None,'complete check line')
     glyph('x-line-top',union(cross(8,9.25,1.12),line((4.7,4.2),(11.3,4.2))),None,'close cross line')
-    glyph('chart-bar-horizontal',lines('M2.5 2V14H14','M5 4H10','M5 7H13','M5 10H8'),None,'chart horizontal bars')
-    # Each segment has enough height and width for an open Stroke counter.
-    segments = []
-    for x, top in ((1.45,4.65),(6.15,3.05),(10.85,1.45)):
-        split = (top+12.65)/2
-        segments.extend((rr(x,top,3.6,split-top-.55),rr(x,split+.55,3.6,12.65-split-.55)))
-    baseline = stroke('M1.55 14.3H14.45')
-    glyph('chart-column-stacked',union(baseline,*segments),None,'chart stacked columns')
-    outlines = [stroke(rr(x+.55,y+.55,right-x-1.1,bottom-y-1.1))
-                for x,y,right,bottom in (segment.bounds for segment in segments)]
-    overrides['chart-column-stacked'] = {'stroke':union(baseline,*outlines)}
-    glyph('chart-scatter',union(lines('M2.5 2V13.5H14'),dots((5,10),(7,6),(9,9),(11,4),(13,7),r=.75)),None,'chart scatter points')
+    # Charts: rounded bars as surfaces (Duotone tint, Solid fill), axis as a line.
+    # chart.bar.xaxis: filled, rounded data bars beside an axis line.
+    bars = union(rr(4.9,2.75,5.6,2.3,.85,exact=True), rr(4.9,6.75,8.9,2.3,.85,exact=True),
+                 rr(4.9,10.75,3.9,2.3,.85,exact=True))
+    glyph('chart-bar-horizontal', stroke('M2.4 1.9V13.55Q2.4 14.1 2.95 14.1H14.1'), bars, 'chart horizontal bars')
+    # chart.bar: outlined columns; the lower stacked segment is a filled mass
+    # with a one-unit gap, so every style reads as two series per column.
+    uppers, lowers = [], []
+    for x, top_ink, lower in ((1.55, 5.2, 2.8), (6.2, 3.3, 3.8), (10.85, 1.4, 4.8)):
+        uppers.append(rr(x+.52, top_ink+.52, 2.56, 14-lower-1.0-top_ink-1.04, .8, exact=True))
+        lowers.append(rr(x, 14-lower, 3.6, lower, .95, exact=True))
+    shape('chart-column-stacked', union(*uppers), union(*lowers), 'chart stacked columns')
+    glyph('chart-scatter',union(lines('M2.5 2V13.5H14'),dots((5,10),(7,6),(9,9),(11,4),(13,7),r=.8)),None,'chart scatter points')
 
     api['CATEGORY'] = 'Files and folders'
     doc = api['FILE']
     fold = api['FOLD']
-    # File interior symbols are authored on the grid below the folded corner.
-    doc_details = {
-        'axis-3d':'M7 11.5V7M7 11.5L4.8 10M7 11.5L10 10M7 7L6 8M7 7L8 8',
-        'badge':'M8 7L9 7.6L10.2 7.6L10.6 8.8L11.2 9.8L10.5 10.8L10.2 12L9 12.2L8 13L7 12.2L5.8 12L5.5 10.8L4.8 9.8L5.4 8.8L5.8 7.6L7 7.6Z',
-        'box':'M5 9L8 7.4L11 9V12L8 13.5L5 12ZM5 9L8 10.5L11 9M8 10.5V13.5',
-        'braces':'M7 7H6V9L5.2 10L6 11V13H7M9 7H10V9L10.8 10L10 11V13H9',
-        'braces-corner':'M7 7H6V9L5.2 10L6 11V13H7M9 7H10V9L10.8 10L10 11V13H9',
-        'chart-column':'M5 12.5V10M8 12.5V7.5M11 12.5V9',
-        'chart-column-increasing':'M5 12.5V11M8 12.5V9M11 12.5V7',
-        'chart-line':'M5 12V8M5 12H11M6 10.5L8 9L9 10L11 7.5',
-        'chart-pie':'M8 7A3 3 0 1 0 11 10H8ZM9 7V9H11',
-        'check-corner':'M5.5 10L7.2 11.8L10.8 8',
-        'clock':'M5.2 10A2.8 2.8 0 1 0 10.8 10A2.8 2.8 0 1 0 5.2 10M8 8.3V10L9 10.7',
-        'code-corner':'M7 8L5 10L7 12M9 8L11 10L9 12',
-        'cog':'M8 7V8M8 12V13M5 10H6M10 10H11M6.5 8.5L7 9M9 11L9.5 11.5M9.5 8.5L9 9M7 11L6.5 11.5M6.8 10A1.2 1.2 0 1 0 9.2 10A1.2 1.2 0 1 0 6.8 10',
-        'database':'M5 8C5 6.5 11 6.5 11 8V12C11 13.5 5 13.5 5 12ZM5 8C5 9.5 11 9.5 11 8M5 10C5 11.5 11 11.5 11 10',
-        'diff':'M5 8H8M6.5 6.5V9.5M8.5 12H11',
-        'digit':'M5.5 8L7 7V12M5.5 12H8.5M9 8Q9 7 10 7Q11 7 11 8V11Q11 12 10 12Q9 12 9 11Z',
-        'exclamation-point':'M8 7V10M8 12V12.1',
-        'headphone':'M5 11V9.5A3 3 0 0 1 11 9.5V11M5 10H6V12H5ZM10 10H11V12H10Z',
-        'input':'M5 9H10M7 7L5 9L7 11M5 11V12.5H11',
-        'key':'M5 8.5A1.4 1.4 0 1 0 7.8 8.5A1.4 1.4 0 1 0 5 8.5M7.5 9.5L10.8 12.5M9.5 11.3L10.4 10.4',
-        'minus-corner':'M5.5 10H10.5',
-        'output':'M6 9H11M9 7L11 9L9 11M5 11V12.5H11',
-        'pen':'M5.5 12.5L6 10.8L9.7 7.1L11 8.4L7.3 12.1Z',
-        'pen-line':'M5 13H11M5.5 11.4L6 9.9L9.3 6.8L10.5 8L7.2 11Z',
-        'plus-corner':'M5.5 10H10.5M8 7.5V12.5',
-        'question-mark':'M6.5 8Q6.5 6.8 8 6.8Q9.7 6.8 9.7 8.2Q9.7 9 8 9.8V10.5M8 12.5V12.6',
-        'scan':'M5 9V7.5H6.5M9.5 7.5H11V9M5 11V12.5H6.5M9.5 12.5H11V11',
-        'search-corner':'M5 9.3A2.2 2.2 0 1 0 9.4 9.3A2.2 2.2 0 1 0 5 9.3M9 11L11 13',
-        'signal':'M5 12V11M7 12V9.5M9 12V8M11 12V6.5',
-        'sliders':'M5 7V13M8 7V13M11 7V13M4 9H6M7 11H9M10 8H12',
-        'terminal':'M5 8L7 10L5 12M8.5 12H11',
-        'type':'M5.7 7.4H10.3M8 7.4V11.8M6.8 11.8H9.2',
-        'type-corner':'M5.7 7.4H10.3M8 7.4V11.8M6.8 11.8H9.2',
-        'user':'M6.8 8.5A1.2 1.2 0 1 0 9.2 8.5A1.2 1.2 0 1 0 6.8 8.5M5.5 12.5Q5.8 10.5 8 10.5Q10.2 10.5 10.5 12.5',
-        'video-camera':'M5 8H9V12H5ZM9 9L11 8V12L9 11',
-        'volume':'M5 9H6.5L8.5 7.5V12.5L6.5 11H5ZM10 9Q11 10 10 11',
-        'x-corner':'M6 8L10 12M10 8L6 12',
-    }
-    page_marks = {
-        'box':'M4.85 8.25L7.8 6.95L10.75 8.25V11.3L7.8 12.65L4.85 11.3ZM4.85 8.25L7.8 9.65L10.75 8.25M7.8 9.65V12.65',
-        'braces':'M6.85 4.5H6.3Q5.7 4.5 5.7 5.2V6.7L4.9 7.7L5.7 8.7V10.3Q5.7 11 6.3 11H6.85M9.15 4.5H9.7Q10.3 4.5 10.3 5.2V6.7L11.1 7.7L10.3 8.7V10.3Q10.3 11 9.7 11H9.15',
-        'braces-corner':'M6.7 7.2H6V8.65L5.15 9.65L6 10.65V12.1H6.7M9.3 7.2H10V8.65L10.85 9.65L10 10.65V12.1H9.3',
-        'chart-column':'M5.45 12V10.1M8 12V7.5M10.55 12V9.1',
-        'chart-column-increasing':'M5.45 12V10.8M8 12V9.2M10.55 12V7.55',
-        'chart-line':'M5.15 7.65V12.2H10.95M7 9.7L8.25 8.5L9.35 9.35L11.05 7.5',
-        'database':'M5.1 7.3C5.1 5.4 10.5 5.4 10.5 7.3V11.65C10.5 13.55 5.1 13.55 5.1 11.65ZM5.1 7.3C5.1 9.2 10.5 9.2 10.5 7.3M5.1 9.5C5.1 11.4 10.5 11.4 10.5 9.5',
-        'digit':'M4.95 8.3L6.25 7.25V12.1M5.4 12.1H6.95M8.9 9.1Q8.9 8.05 9.95 8.05Q11 8.05 11 9.1V11.25Q11 12.3 9.95 12.3Q8.9 12.3 8.9 11.25Z',
-        'pen-line':'M4.95 12.4H10.75',
-        'scan':'M5.1 8.65V7.3H6.4M9.6 7.3H10.9V8.65M5.1 10.8V12.15H6.4M9.6 12.15H10.9V10.8',
-        'signal':'M5.1 12.15V11.65M7.05 12.15V10.5M9 12.15V9.2M10.95 12.15V7.85',
-        'sliders':'M6.1 7.4V12.15M9.9 7.4V12.15M5 9H7.2M8.8 10.65H11',
-        'type':'M5.15 5.25H10.85M8 5.25V10.85M6.65 10.85H9.35',
-        'video-camera':'M4.9 7.85H8.75V11.8H4.9ZM8.75 9.25L11.25 7.95V11.7L8.75 10.4',
-    }
-    code_badge = stroke('M10.6 9.8L8.65 11.75L10.6 13.7M12.55 9.8L14.5 11.75L12.55 13.7')
-    for suffix, detail in doc_details.items():
-        body = rr(3,1.8,10,12.4) if suffix in ('braces','type') else doc
-        # The page fold and lower edge require a real optical margin. Keep
-        # stroke weight while fitting centerlines rather than shrinking ink.
-        detail_path = path(detail)
-        if suffix in ('braces', 'type'):
-            detail_path = detail_path.transform(1, 0, 0, 1, 0, -2)
-        elif suffix not in ('axis-3d', 'input', 'output'):
-            detail_path = detail_path.transform(.9, 0, 0, .82, .8, 1.8)
-        detail_layer = stroke(detail_path) if suffix in ('braces','type') else union(fold,stroke(detail_path))
-        if suffix in page_marks:
-            ink = stroke(page_marks[suffix])
-            detail_layer = ink if suffix in ('braces','type') else union(fold,ink)
-        if suffix == 'clock':
-            detail_layer = union(fold,compact('clock',7.8,9.85,.95))
-        if suffix == 'database':
-            cylinder = stroke('M4.65 7.95C4.65 6.5 7.75 6.5 7.75 7.95V11.65C7.75 12.95 4.65 12.95 4.65 11.65Z'
-                              'M4.65 7.95C4.65 9.3 7.75 9.3 7.75 7.95M4.65 9.8C4.65 11.1 7.75 11.1 7.75 9.8')
-            detail_layer = union(fold,cylinder)
-        if suffix == 'code-corner':
-            # Seat the brackets in the lower corner with an external badge.
-            body = transform(doc,scale=.72,dx=-1.8,dy=-1.4)
-            detail_layer = union(stroke(path('M9 1.5V6H13.5').transform(.72,0,0,.72,.44,.84)),
-                                 code_badge)
-        if suffix == 'user':
-            detail_layer = union(fold,compact('user',7.45,9.95,.87))
-        if suffix == 'volume':
-            speaker = path('M4.85 9H6.2L8.25 7.35V12.25L6.2 10.75H4.85Z')
-            detail_layer = union(fold,stroke(speaker),stroke('M10 8.2Q11.75 9.8 10 11.4'))
-        if suffix == 'pen-line':
-            detail_layer = union(detail_layer,compact('pen',6.8,8.7,.58))
-        if suffix == 'badge':
-            detail_layer = union(fold, stroke(transform(api['badge_body'](), scale=.36, dy=2)))
-        if suffix == 'chart-pie':
-            detail_layer = union(fold,stroke('M8.7 7.85A2.55 2.55 0 1 1 6.15 10.4H8.7Z'),
-                                 stroke('M6.45 5.65V8.15H3.95A2.5 2.5 0 0 1 6.45 5.65Z'))
-        if suffix == 'cog':
-            detail_layer = union(fold, gear(7.7,9.9,2.8))
-        if suffix == 'axis-3d':
-            axes = stroke('M7.65 9.95V5.25M6.4 6.55L7.65 5.25L8.9 6.55'
-                          'M7.65 9.95L4.75 12.1M4.8 10.65L4.75 12.1H6.2'
-                          'M7.65 9.95L10.95 11.95M9.5 12.1L10.95 11.95L10.75 10.55')
-            body = path('M3.4 1.75H10.7L13.85 4.9V13Q13.85 14.25 12.6 14.25H3.4Q2.15 14.25 2.15 13V3Q2.15 1.75 3.4 1.75Z')
-            detail_layer = union(stroke('M10.7 1.75V4.9H13.85'),axes)
-        if suffix in ('input','output'):
-            body = transform(doc,0,.72,-2,-1.3)
-            detail_layer = union(stroke(path('M9 1.5V6H13.5').transform(.72,0,0,.72,.24,.94)),
-                                 compact('arrow-left' if suffix == 'input' else 'arrow-right',11.6,9.1,.92))
-        shape('file-'+suffix,body,detail_layer, 'document file '+suffix.replace('-',' '))
-    stack('files',rr(1.8,1.6,9.25,10.4),path('M4.8 4.5H10.8L14 7.7V14.3H4.8Z'),
-          stroke('M10.8 4.5V7.7H14'),'multiple documents files')
-    stack('file-stack', rr(1.8,1.6,9.1,10.3), path('M4.8 4.4H10.7L14.1 7.8V14.3H4.8Z'),
-          stroke('M10.7 4.4V7.8H14.1'), 'documents stack')
+    BADGES, GAP = api['BADGES'], api['BADGE_GAP']
 
-    # Allow for a native-width outline on the catalog's fitted folder body.
-    folder = transform(api['DRAWINGS']['folder'][0],scale=.9975)
-    folder_details = {
-        'bookmark':'M6.5 7H9.5V11.5L8 10.5L6.5 11.5Z',
-        'clock':'M5.5 9A2.5 2.5 0 1 0 10.5 9A2.5 2.5 0 1 0 5.5 9M8 7.5V9L9 9.7',
-        'cog':'M8 6.4V7.4M8 10.6V11.6M5.4 9H6.4M9.6 9H10.6M6.9 7.9L7.3 8.3M8.7 9.7L9.1 10.1M9.1 7.9L8.7 8.3M7.3 9.7L6.9 10.1M7 9A1 1 0 1 0 9 9A1 1 0 1 0 7 9',
-        'dot':'M8 8.8V9.2',
-        'git':'M6 7V10.8M6 8.5Q10 8.5 10 6.8M5.3 6.5A.7 .7 0 1 0 6.7 6.5A.7 .7 0 1 0 5.3 6.5M5.3 11A.7 .7 0 1 0 6.7 11A.7 .7 0 1 0 5.3 11M9.3 6.5A.7 .7 0 1 0 10.7 6.5A.7 .7 0 1 0 9.3 6.5',
-        'git-2':'M5.5 7L10.5 11M5.5 11L10.5 7M5 7A.6 .6 0 1 0 6.2 7A.6 .6 0 1 0 5 7M9.8 7A.6 .6 0 1 0 11 7A.6 .6 0 1 0 9.8 7M9.8 11A.6 .6 0 1 0 11 11A.6 .6 0 1 0 9.8 11',
-        'input':'M5.5 9H11M7.5 7L5.5 9L7.5 11',
-        'kanban':'M5 7V11M8 7V9.5M11 7V10.5',
-        'key':'M5 8A1.5 1.5 0 1 0 8 8A1.5 1.5 0 1 0 5 8M7.5 9L10.5 11.5M9 10.2L10 9.2',
-        'output':'M5.5 9H11M9 7L11 9L9 11',
-        'pen':'M5.4 11L6 9.6L9.8 6.7L10.8 7.8L6.8 10.7Z',
-        'root':'M8 6.5V8.5M5 11V10Q5 8.5 8 8.5Q11 8.5 11 10V11M4.2 11H5.8M10.2 11H11.8',
-        'search-2':'M5 8.5A2 2 0 1 0 9 8.5A2 2 0 1 0 5 8.5M8.5 10L10.5 12',
-        'symlink':'M5 11V9Q5 7 7 7H10.5M9 5.5L10.5 7L9 8.5',
-        'sync':'M5.5 8Q6.1 6.6 7.8 6.6Q9.3 6.6 10.3 7.8M10.3 6.5V7.9H9M10.5 10Q9.9 11.4 8.2 11.4Q6.7 11.4 5.7 10.2M5.7 11.5V10.1H7',
-        'tree':'M5.5 6.5V11H10.5M5.5 8H9M9 7.3H10.5V8.7H9ZM10.5 10.3H12V11.7H10.5Z',
-        'user':'M7 7.8A1 1 0 1 0 9 7.8A1 1 0 1 0 7 7.8M5.8 11Q6 9.5 8 9.5Q10 9.5 10.2 11',
-        'users':'M6 7.5A1 1 0 1 0 8 7.5A1 1 0 1 0 6 7.5M4.8 11Q5 9.3 7 9.3Q9 9.3 9.2 11M9.5 7A1 1 0 0 1 9.5 9M10 9.5Q11.3 9.6 11.5 11',
+    # Document family, measured against SF doc.*: one shared page (draw.py
+    # FILE and FOLD), every position derived from its bounds so the family
+    # follows the shared page. Content sits centred in the lower page at
+    # about half of its inner width; badges sit at the lower left, where SF
+    # puts doc.badge.plus / .clock / .gearshape (2.6 u left of, 1.1 u below the page).
+    px0, py0, px1, py1 = doc.bounds
+    page_w, page_h = px1-px0, py1-py0
+    unit = page_w/11
+    page_ink = (px0-.52, py0-.52, px1+.52, py1+.52)
+    content = ((px0+px1)/2, py0+.63*page_h)
+    fb = fold.bounds
+    fold_centerline = path(f'M{fb[0]+.52} {fb[1]+.52}V{fb[3]-.52}H{fb[2]-.52}')
+    def on_page(d, scale=1, x=0, y=0):
+        s = unit*scale
+        return path(d).transform(s,0,0,s,content[0]+x*unit,content[1]+y*unit)
+    def fit(*boxes, room=14.4):
+        x0=min(b[0] for b in boxes); y0=min(b[1] for b in boxes)
+        x1=max(b[2] for b in boxes); y1=max(b[3] for b in boxes)
+        s=min(1,room/(x1-x0),room/(y1-y0))
+        return lambda p: p.transform(s,0,0,s,8-s*(x0+x1)/2,8-s*(y0+y1)/2), s
+    def page(T, s):
+        # Re-stroke the fold when the page is scaled so it keeps full weight.
+        return T(doc), (T(fold) if s > .97 else stroke(T(fold_centerline)))
+
+    R = 3.25
+    corner = (px0+.13, py1-1.59)
+    def badged_doc(name, tags, kind=None, mark=None, at=corner, reach=(R,R,R,R)):
+        box = (at[0]-reach[0], at[1]-reach[1], at[0]+reach[2], at[1]+reach[3])
+        T, s = fit(page_ink, box)
+        body, crease = page(T, s)
+        shape(name, body, crease, tags)
+        c = T(path(f'M{at[0]} {at[1]}h.001')).bounds
+        cx, cy = c[0], c[1]
+        if kind:
+            api['badge'](name, kind, cx, cy, R*s)
+        else:
+            disc, clearance = mark(cx, cy, s)
+            BADGES[name] = (disc, clearance)
+
+    def hugging(ink):
+        return ink, union(ink, stroke(ink, 2*GAP, exact=True))
+    def centred(d, cx, cy, s):
+        return path(d).transform(s,0,0,s,cx,cy)
+
+    for suffix, kind in (('plus-corner','plus'),('minus-corner','minus'),('x-corner','x'),
+                         ('check-corner','check'),('clock','clock')):
+        badged_doc('file-'+suffix, 'document file '+suffix.replace('-',' '), kind=kind)
+    # SF doc.badge.gearshape: a filled gear without a disc, set into the page.
+    badged_doc('file-cog', 'document file settings cog',
+               mark=lambda cx, cy, s: hugging(gear(cx, cy, 3.35*s)), reach=(3.4,3.4,3.4,3.4))
+    for suffix, arrow in (('input','M-1.65 0H1.45M.05 -1.45L1.5 0L.05 1.45'),
+                          ('output','M1.65 0H-1.45M-.05 -1.45L-1.5 0L-.05 1.45')):
+        def arrow_disc(cx, cy, s, arrow=arrow):
+            ink = stroke(centred(arrow, cx, cy, s))
+            return subtract(circle(cx, cy, R*s), ink), circle(cx, cy, (R+GAP)*s)
+        badged_doc('file-'+suffix, 'document file '+suffix, mark=arrow_disc)
+    # Code, brace and type marks are knocked out of the same disc.
+    for suffix, d in (
+        ('code-corner','M-.8 -1.15L-2 0L-.8 1.15M.8 -1.15L2 0L.8 1.15'),
+        ('type-corner','M-1.55 -1.6H1.55M0 -1.6V1.75'),
+    ):
+        def glyph_disc(cx, cy, s, d=d):
+            ink = stroke(centred(d, cx, cy, s))
+            return subtract(circle(cx, cy, R*s), ink), circle(cx, cy, (R+GAP)*s)
+        badged_doc('file-'+suffix, 'document file '+suffix.replace('-',' '), mark=glyph_disc)
+    # Braces need more room than a disc's counter: a linear corner mark
+    # set behind a hugging gap, like SF person.badge.key.
+    braces = ('M-.95 -2.2Q-1.75 -2.2 -1.75 -1.4V-.65Q-1.75 0 -2.4 0Q-1.75 0 -1.75 .65V1.4Q-1.75 2.2 -.95 2.2'
+              'M.95 -2.2Q1.75 -2.2 1.75 -1.4V-.65Q1.75 0 2.4 0Q1.75 0 1.75 .65V1.4Q1.75 2.2 .95 2.2')
+    badged_doc('file-braces-corner', 'document file braces corner',
+               mark=lambda cx, cy, s: hugging(stroke(centred(braces, cx, cy, s))),
+               at=(px0+.55, py1-1.35), reach=(2.95,2.75,2.95,2.75))
+    # SF doc.text.magnifyingglass: an open lens over the lower-right corner.
+    def lens(cx, cy, s):
+        glass = union(api['ring'](cx, cy, 2.5*s), line((cx+1.75*s, cy+1.75*s), (cx+3.2*s, cy+3.2*s)))
+        return glass, union(circle(cx, cy, (2.5+GAP)*s), stroke(glass, 2*GAP, exact=True))
+    badged_doc('file-search-corner', 'document file search corner', mark=lens,
+               at=(px1-1.2, py1-2.25), reach=(2.5,2.5,3.75,3.75))
+
+    filled_person = union(circle(0,-1.35,1.2), path('M-2.25 2.45Q-2.25 .55 0 .55Q2.25 .55 2.25 2.45Z'))
+    page_marks = {
+        'axis-3d':'',
+        'box':'M0 -2.35L2.15 -1.2V1.3L0 2.45L-2.15 1.3V-1.2ZM-2.15 -1.2L0 -.05L2.15 -1.2M0 -.05V2.45',
+        'braces':'M-.9 -2.4Q-1.8 -2.4 -1.8 -1.5V-.7Q-1.8 0 -2.5 0Q-1.8 0 -1.8 .7V1.5Q-1.8 2.4 -.9 2.4'
+                 'M.9 -2.4Q1.8 -2.4 1.8 -1.5V-.7Q1.8 0 2.5 0Q1.8 0 1.8 .7V1.5Q1.8 2.4 .9 2.4',
+        'chart-column':'M-2 2.3V.4M0 2.3V-2.3M2 2.3V-.9',
+        'chart-column-increasing':'M-2 2.3V1M0 2.3V-.6M2 2.3V-2.3',
+        'chart-line':'M-2.35 -2.3V2.3H2.45M-.95 .75L.1 -.55L1.05 .2L2.35 -1.55',
+        'chart-pie':'',
+        'database':'M-2 -1.55A2 .85 0 0 1 2 -1.55A2 .85 0 0 1 -2 -1.55ZM-2 -1.55V1.6A2 .85 0 0 0 2 1.6V-1.55M-2 .05A2 .85 0 0 0 2 .05',
+        'diff':'M-1.35 -.95H1.35M0 -2.3V.4M-1.35 2.15H1.35',
+        'digit':'M-1.5 -2.3A.95 .95 0 0 1 -.55 -1.35V1.35A.95 .95 0 0 1 -2.45 1.35V-1.35A.95 .95 0 0 1 -1.5 -2.3Z'
+                'M1 -1.45L2 -2.3V2.3',
+        'headphone':'M-2.05 1V.05A2.05 2.05 0 0 1 2.05 .05V1',
+        'key':'M-1.25 0m-1.15 0a1.15 1.15 0 1 0 2.3 0a1.15 1.15 0 1 0 -2.3 0M-.1 0H2.45M1.75 0V1.25',
+        'pen':'',
+        'pen-line':'M.35 2.4H2.45',
+        'question-mark':'M-1.4 -1.35C-1.4 -2.2 -.8 -2.65 0 -2.65C.85 -2.65 1.45 -2.1 1.45 -1.4'
+                        'C1.45 -.7 .95 -.4 .45 -.05C.1 .2 0 .45 0 .75',
+        'exclamation-point':'M0 -2.5V.3',
+        'signal':'M.03 -1.29A2 2 0 0 1 .03 1.29M1.33 -2.38A3.7 3.7 0 0 1 1.33 2.38',
+        'sliders':'M-2.3 -1.2H2.3M-2.3 1.4H2.3M-.9 -2.3V-.1M1 .3V2.5',
+        'terminal':'M-2.2 -1.7L-.5 0L-2.2 1.7M.7 1.9H2.4',
+        'type':'M-2.1 -2.3H2.1M0 -2.3V2.4',
+        'video-camera':'M-1.95 -1.45H.35Q.95 -1.45 .95 -.85V.85Q.95 1.45 .35 1.45H-1.95Q-2.55 1.45 -2.55 .85V-.85Q-2.55 -1.45 -1.95 -1.45Z'
+                       'M.95 -.45L2.55 -1.35V1.35L.95 .45',
+        'volume':'M1.4 -1.4Q2.45 0 1.4 1.4',
     }
-    for suffix, detail in folder_details.items():
-        detail_path = path(detail)
-        if suffix in ('git', 'git-2', 'cog', 'key', 'search-2', 'root', 'symlink', 'sync', 'tree'):
-            detail_path = detail_path.transform(.88, 0, 0, .78, .96, 2.65 if suffix == 'symlink' else 2.15)
-        ink = gear(8,9.1,2.65) if suffix == 'cog' else stroke(detail_path)
-        if suffix in ('clock','user','pen','search-2','sync','dot'):
-            kind = 'search' if suffix == 'search-2' else suffix
-            ink = compact(kind,8,9.1,.82 if suffix in ('clock','sync') else .9)
-        if suffix == 'bookmark':
-            ink = stroke('M6.45 7.15H9.55V10.95L8 9.95L6.45 10.95Z')
-        if suffix == 'git':
-            ink = union(stroke('M5.4 6.9V10.95M5.4 9.55Q9.9 9.55 9.9 7.55'),
-                        dots((5.4,6.9),(5.4,10.95),(9.9,7.55),r=.8))
-        if suffix == 'kanban':
-            ink = stroke('M5.1 7.25V11.1M8 7.25V9.2M10.9 7.25V10.35')
-        if suffix == 'tree':
-            root = path('M3.9 1.7H6.85L8 2.85H12.1V6.45H3.9Z')
-            children = union(rr(1.9,11.15,4.65,3.1),rr(9.45,11.15,4.65,3.1))
-            branches = stroke('M8 6.45V8.75M4.23 11.15V8.75H11.77V11.15')
-            shape('folder-tree',union(root,children),branches,'directory folder tree')
-            continue
-        if suffix == 'users':
-            ink = union(compact('user',6.5,9.15,.84),circle(10.45,7.75,.76),
-                        stroke('M9.9 9.8Q11.15 9.65 11.65 10.95'))
-        if suffix == 'git-2':
-            ink = union(stroke('M4.7 10.9H10.8M7.05 10.9Q8.25 10.9 9.1 9.4L10.35 7.35'),
-                        dots((4.7,10.9),(10.8,10.9),(10.35,7.35),r=.9))
-        if suffix == 'root':
-            ink = union(stroke('M8 7.4V9M5.2 10.8V9H10.8V10.8'),
-                        rr(6.95,6.7,2.1,1.65), rr(4.15,10,2.1,1.75), rr(9.75,10,2.1,1.75))
-        if suffix == 'search-2':
-            ink = union(stroke(circle(11.65,10.85,2.05)),stroke('M13.1 12.3L14.75 13.95'))
-            corner_badges['folder-search-2'] = ('folder',folder,po.Path(),ink)
-        shape('folder-'+suffix,folder,ink,'directory folder '+suffix.replace('-',' '))
-    shape('folder-closed',folder,stroke('M1.8 7.65H14.2'),'directory closed')
-    front_flap = path('M2.6 7.3H14.45L12.55 12.8H1.65Z')
-    stack('folder-open-dot',path('M1.8 3.5H6.2L7.6 5H12.65V12.55H1.8Z'),front_flap,circle(8,9.95,.85),'directory open notification')
+    pencil = 'M-3.05 3L-2.75 .65L1.05 -3.15L2.95 -1.25L-.95 2.65Z'
+    for suffix, d in page_marks.items():
+        ink = stroke(on_page(d))
+        if suffix in ('question-mark','exclamation-point'):
+            ink = union(ink, on_page('M0 2.35m-.66 0a.66 .66 0 1 0 1.32 0a.66 .66 0 1 0 -1.32 0'))
+        if suffix in ('question-mark','type'):
+            ink = ink.transform(1,0,0,1,0,.25*unit)
+        if suffix == 'headphone':
+            cup = 'M-2.85 .75Q-2.85 .1 -2.2 .1H-1.9Q-1.25 .1 -1.25 .75V2.15Q-1.25 2.8 -1.9 2.8H-2.2Q-2.85 2.8 -2.85 2.15Z'
+            ink = union(ink, on_page(cup), api['mirror'](on_page(cup)).transform(1,0,0,1,2*content[0]-16,0))
+        if suffix == 'volume':
+            ink = union(ink, api['poly']([(content[0]+x*unit, content[1]+y*unit) for x, y in
+                        ((-2.45,-.85),(-1.45,-.85),(.15,-2.25),(.15,2.25),(-1.45,.85),(-2.45,.85))]))
+        if suffix == 'axis-3d':
+            # SF move.3d: three axes from one point, each with a filled head.
+            def spoke(angle, pts):
+                c, n = math.cos(angle), math.sin(angle)
+                return [(content[0]+unit*(x*c-y*n), content[1]+unit*(x*n+y*c+.65)) for x, y in pts]
+            ink = union(*(union(line(*spoke(a, ((0,0),(0,-1.6)))),
+                                api["poly"](spoke(a, ((0,-3.05),(1.15,-1.45),(-1.15,-1.45)))))
+                          for a in (0, 2*math.pi/3, -2*math.pi/3)))
+        if suffix == 'chart-pie':
+            # SF chart.pie: an open three-quarter sector and a detached filled slice.
+            ink = union(stroke(on_page('M-.45 -1.55A2 2 0 1 0 1.55 .45H-.45Z')),
+                        on_page('M.6 -.6V-3.12A2.52 2.52 0 0 1 3.12 -.6Z'))
+        if suffix == 'pen':
+            ink = stroke(on_page(pencil, .78))
+        if suffix == 'pen-line':
+            ink = union(ink, stroke(on_page(pencil, .66, -.35, -.55)))
+        if suffix == 'signal':
+            ink = union(ink, on_page('M-1.5 0m-.72 0a.72 .72 0 1 0 1.44 0a.72 .72 0 1 0 -1.44 0'))
+        shape('file-'+suffix, doc, union(fold, ink), 'document file '+suffix.replace('-',' '))
+    shape('file-user', doc, union(fold, filled_person.transform(unit,0,0,unit,*content)), 'document file user')
+    # SF checkmark.seal.fill, set inside the page.
+    seal = transform(api['badge_body'](), scale=.4*unit, dx=content[0]-8, dy=content[1]-8)
+    shape('file-badge', doc, union(fold, subtract(seal, stroke(on_page('M-1.15 .05L-.3 .95L1.25 -.85')))),
+          'document file badge')
+
+    # SF doc.viewfinder: a small page inside viewfinder corners.
+    T, s = fit((px0-2.7, py0-1.6, px1+2.7, py1+1.6), room=7.6)
+    frame = stroke('M2.15 5.05V3.35Q2.15 2.15 3.35 2.15H5.05M10.95 2.15H12.65Q13.85 2.15 13.85 3.35V5.05'
+                   'M13.85 10.95V12.65Q13.85 13.85 12.65 13.85H10.95M5.05 13.85H3.35Q2.15 13.85 2.15 12.65V10.95')
+    small_page, small_fold = page(T, s)
+    shape('file-scan', small_page, union(small_fold, frame), 'document file scan')
+
+    # SF doc.on.doc: whole pages, each with its fold, separated by a clear gap.
+    def sheets(name, layers, tags):
+        inks, surfaces, solids = [], [], []
+        cover = po.Path()
+        for body, crease in reversed(layers):
+            rim = stroke(body)
+            filled = union(body, rim)
+            inks.append(subtract(union(rim, crease), cover))
+            surfaces.append(subtract(body, cover))
+            solids.append(subtract(subtract(filled, crease), cover))
+            cover = union(cover, filled, stroke(filled, 2*GAP, exact=True))
+        ink = union(*inks)
+        shape(name, union(*(b for b, _ in layers)), ink, tags)
+        overrides[name] = {'duotone':[(subtract(union(*surfaces), ink), .24), (ink, 1)],
+                           'stroke':ink, 'solid':union(*solids)}
+    def offset_pages(count, step, fold_all):
+        w, h = page_ink[2]-page_ink[0], page_ink[3]-page_ink[1]
+        s = min(1, 14.4/(w+step*(count-1)), 14.4/(h+step*(count-1)))
+        layers = []
+        for i in range(count):
+            shift = (i-(count-1)/2)*step*s
+            T = lambda p, shift=shift: p.transform(s,0,0,s,8-s*(px0+px1)/2+shift,8-s*(py0+py1)/2+shift)
+            body = T(doc) if fold_all or i == count-1 else T(rr(px0, py0, page_w, page_h))
+            layers.append((body, stroke(T(fold_centerline)) if fold_all or i == count-1 else po.Path()))
+        return layers
+    sheets('files', offset_pages(2, .21*(page_ink[2]-page_ink[0]), True), 'multiple documents files')
+    sheets('file-stack', offset_pages(3, .17*(page_ink[2]-page_ink[0]), False), 'documents stack')
+
+    # Folder family, measured against SF folder.*: the shared folder body and
+    # pocket line from draw.py; content centred below the pocket line at about
+    # half of the pocket's height; badges at the top right, where SF puts
+    # folder.badge.plus / .gearshape / .person.crop.
+    folder, pocket = api['DRAWINGS']['folder'][:2]
+    gx0, gy0, gx1, gy1 = folder.bounds
+    pb = pocket.bounds
+    pocket_y = (pb[1]+pb[3])/2
+    pocket_centerline = path(f'M{pb[0]+.52} {pocket_y}H{pb[2]-.52}')
+    funit = (gx1-gx0)/13.3
+    pocket_space = (pocket_y+.52, gy1-.52)
+    fcontent = ((gx0+gx1)/2, sum(pocket_space)/2+.1)
+    folder_ink = (gx0-.52, gy0-.52, gx1+.52, gy1+.52)
+    def in_folder(d, scale=1, x=0, y=0):
+        s = funit*scale
+        return path(d).transform(s,0,0,s,fcontent[0]+x*funit,fcontent[1]+y*funit)
+    def folder_frame(T, s):
+        return T(folder), (T(pocket) if s > .97 else stroke(T(pocket_centerline)))
+    fcorner = (gx1+.52+1.4-R, gy0-.72+R)
+    def badged_folder(name, tags, kind=None, mark=None, at=fcorner, reach=(R,R,R,R), r=R):
+        box = (at[0]-reach[0], at[1]-reach[1], at[0]+reach[2], at[1]+reach[3])
+        T, s = fit(folder_ink, box)
+        body, seam = folder_frame(T, s)
+        shape(name, body, seam, tags)
+        c = T(path(f'M{at[0]} {at[1]}h.001')).bounds
+        if kind:
+            api['badge'](name, kind, c[0], c[1], r*s)
+        else:
+            BADGES[name] = mark(c[0], c[1], s)
+
+    def gearshape(x, y, radius):
+        # SF gearshape: eight short teeth and a round bore, softened corners.
+        points = []
+        for tooth in range(8):
+            for angle, reach in ((-15.5, .78), (-9, 1), (9, 1), (15.5, .78)):
+                theta = math.radians(45*tooth + angle + 22.5)
+                points.append((x+radius*reach*math.cos(theta), y+radius*reach*math.sin(theta)))
+        return subtract(api['poly'](points), circle(x, y, radius*.36))
+
+    badged_folder('folder-clock', 'directory folder clock', kind='clock')
+    badged_folder('folder-cog', 'directory folder cog',
+                  mark=lambda cx, cy, s: hugging(gearshape(cx, cy, 3.45*s)), reach=(3.45,3.45,3.45,3.45))
+    def person_disc(cx, cy, s):
+        head = circle(cx, cy-.85*s, 1.0*s)
+        body = op(path('M-2 2.6Q-2 .6 0 .6Q2 .6 2 2.6Z').transform(s,0,0,s,cx,cy),
+                  circle(cx, cy, (R-.62)*s), po.PathOp.INTERSECTION)
+        return subtract(circle(cx, cy, R*s), union(head, body)), circle(cx, cy, (R+GAP)*s)
+    badged_folder('folder-user', 'directory folder user', mark=person_disc)
+    for suffix, arrow in (('input','M1.65 0H-1.45M-.05 -1.45L-1.5 0L-.05 1.45'),
+                          ('output','M-1.65 0H1.45M.05 -1.45L1.5 0L.05 1.45')):
+        def folder_arrow(cx, cy, s, arrow=arrow):
+            ink = stroke(centred(arrow, cx, cy, s))
+            return subtract(circle(cx, cy, R*s), ink), circle(cx, cy, (R+GAP)*s)
+        badged_folder('folder-'+suffix, 'directory folder '+suffix, mark=folder_arrow)
+    # A notification dot rides the folder's upper right corner, as on SF envelope.badge.
+    probe = op(folder, rr(gx1-1.6, 0, .2, 16, 0), po.PathOp.INTERSECTION).bounds[1]
+    badged_folder('folder-dot', 'directory folder dot', kind='dot',
+                  at=(gx1-.35, probe+.25), reach=(2.2,2.2,2.2,2.2), r=2.2)
+
+    def circular_arrows(r):
+        def at(theta, radius=r):
+            t = math.radians(theta)
+            return radius*math.cos(t), radius*math.sin(t)
+        parts = []
+        for start, end in ((190, 305), (10, 125)):
+            arc = 'M'+'L'.join(f'{x:.3f} {y:.3f}' for x, y in (at(a) for a in range(start, end+1, 5)))
+            parts.append(stroke(in_folder(arc)))
+            t = math.radians(end)
+            tx, ty = -math.sin(t), math.cos(t)
+            ex, ey = at(end)
+            parts.append(api['poly']([(fcontent[0]+funit*x, fcontent[1]+funit*y) for x, y in (
+                (ex+tx*1.55, ey+ty*1.55), (ex+math.cos(t)*1.2, ey+math.sin(t)*1.2),
+                (ex-math.cos(t)*1.2, ey-math.sin(t)*1.2))]))
+        return union(*parts)
+
+    pencil_small = 'M-3.05 3L-2.75 .65L1.05 -3.15L2.95 -1.25L-.95 2.65Z'
+    folder_marks = {
+        'bookmark': stroke(in_folder('M-1.3 -1.95H1.3V2.05L0 1.05L-1.3 2.05Z')),
+        'git': union(stroke(in_folder('M-1.5 -1.6V1.6M1.55 -.95Q1.55 .75 -1.5 .75')),
+                     dots(*((fcontent[0]+funit*x, fcontent[1]+funit*y) for x, y in ((-1.5,-1.6),(-1.5,1.6),(1.55,-.95))), r=.85)),
+        'git-2': union(stroke(in_folder('M-1.6 -1.55V1.55M-1.6 -.45Q-1.6 1.55 1.6 1.55')),
+                       dots(*((fcontent[0]+funit*x, fcontent[1]+funit*y) for x, y in ((-1.6,-1.55),(-1.6,1.55),(1.6,1.55))), r=.85)),
+        'kanban': stroke(in_folder('M-2 -1.4V1.2M0 -1.4V.1M2 -1.4V2')),
+        'key': stroke(in_folder(page_marks['key'])),
+        'pen': stroke(in_folder(pencil_small, .7)),
+        'root': union(stroke(in_folder('M0 -.75m-1.25 0a1.25 1.25 0 1 0 2.5 0a1.25 1.25 0 1 0 -2.5 0M0 .5V2.05'))),
+        'search-2': stroke(in_folder('M-.45 -.45m-1.55 0a1.55 1.55 0 1 0 3.1 0a1.55 1.55 0 1 0 -3.1 0M.7 .7L2.05 2.05')),
+        'symlink': stroke(in_folder('M-2 2V.8Q-2 -.6 -.6 -.6H2.1M.85 -1.85L2.1 -.6L.85 .65')),
+        'sync': circular_arrows(1.95),
+        'users': union(filled_person.transform(.78*funit,0,0,.78*funit,fcontent[0]-1.35*funit,fcontent[1]+.15*funit),
+                       subtract(filled_person.transform(.78*funit,0,0,.78*funit,fcontent[0]+1.35*funit,fcontent[1]+.15*funit),
+                                stroke(filled_person.transform(.78*funit,0,0,.78*funit,fcontent[0]-1.35*funit,fcontent[1]+.15*funit), 2*GAP, exact=True))),
+    }
+    for suffix, ink in folder_marks.items():
+        shape('folder-'+suffix, folder, union(pocket, ink), 'directory folder '+suffix.replace('-',' '))
+    shape('folder-closed', folder, pocket, 'directory closed')
+
+    # Folder tree: one folder above two, linked by right-angled branches.
+    def mini_folder(x, y, s):
+        return folder.transform(s,0,0,s,x-s*(gx0+gx1)/2,y-s*(gy0+gy1)/2)
+    root = mini_folder(8, 3.9, .41)
+    children = union(mini_folder(3.95, 12.1, .37), mini_folder(12.05, 12.1, .37))
+    branches = stroke('M8 6.1V8.2M3.95 10.1V8.2H12.05V10.1')
+    shape('folder-tree', union(root, children), branches, 'directory folder tree')
+
+    # Open folder with a dot: the shared open-folder planes, dot on the front flap.
+    back, flap = api['folder_back'], api['folder_flap']
+    fb2 = flap.bounds
+    stack('folder-open-dot', back, flap, circle((fb2[0]+fb2[2])/2, (fb2[1]+fb2[3])/2+.1, .95),
+          'directory open notification')
 
     api['CATEGORY'] = 'Communication'
-    # Speech bubbles use separate round and square contours and keep the
-    # identifying mark centered away from the tail.
-    bubble_round = path('M2 7Q2 2 8 2Q14 2 14 7Q14 12 8 12H6L3 14L3.5 10.5Q2 9 2 7Z')
-    bubble_square = path('M3 2.5H13Q14 2.5 14 3.5V10.5Q14 11.5 13 11.5H7L4 14V11.5H3Q2 11.5 2 10.5V3.5Q2 2.5 3 2.5Z')
-    shape('message-circle', bubble_round, None, 'conversation chat bubble')
-    for suffix in ('check','exclamation-point','heart','plus','question-mark','x'):
-        shape('message-circle-'+suffix, bubble_round, compact(suffix,8,6.9,.92), 'conversation chat '+suffix)
-    shape('message-circle-code', bubble_round, stroke('M6.5 5L4.8 6.8L6.5 8.6M9.5 5L11.2 6.8L9.5 8.6'), 'conversation code')
-    shape('message-circle-more', bubble_round, dots((5.5,7),(8,7),(10.5,7),r=.65), 'conversation more')
-    shape('message-circle-text', bubble_round, stroke('M5 5.5H11M5 8H9.5'), 'conversation text')
-    shape('message-circle-reply', bubble_round, stroke('M6.5 5L4.8 6.8L6.5 8.5M5 6.8H9Q11 6.8 11 9'), 'conversation reply')
-    shape('message-circle-off', bubble_round, line((2,2),(14,14)), 'conversation disabled')
-    dashed_round = stroke('M3.5 3.45Q4.8 2.25 6.8 2.1M9.35 2.15Q11.45 2.45 12.65 3.8M13.85 6.05Q14.25 7.75 13.4 9.25M11.6 11.05Q9.9 12.1 7.6 12.1H6.4L3.05 14L3.55 10.5M2.35 8.3Q1.95 6.8 2.5 5.45')
-    glyph('message-circle-dashed',dashed_round,None,'conversation dashed')
-    glyph('message-circle-dashed-check',dashed_round,compact('check',8,6.95,.95),'conversation dashed check')
-    square_details = {
-        'code':'M6.5 5L4.8 6.8L6.5 8.6M9.5 5L11.2 6.8L9.5 8.6',
-        'diff':'M4.5 6H7.5M6 4.5V7.5M8.5 8.5H11.5',
-        'dot':'M8 6.7V7.2',
-        'exclamation-point':'M8 4.5V7.2M8 9V9.1',
-        'lock':'M6 6.7H10V9.7H6ZM6.8 6.7V5.5Q6.8 4.2 8 4.2Q9.2 4.2 9.2 5.5V6.7',
+    STROKE = api['STROKE']
 
-        'reply':'M6.5 5L4.8 6.8L6.5 8.5M5 6.8H9Q11 6.8 11 9',
-        'share':'M6.5 8.5L10.5 4.8M8 4.8H10.5V7.3M5 5H4.5V9H9V8.5',
-        'x':'M6 5L10 9M10 5L6 9',
+    def dashed(outline, dash=1.95, gap=1.85, anchor=None):
+        """Round-capped dashes along a closed centerline, evenly distributed."""
+        from fontTools.pens.recordingPen import RecordingPen
+        pen = RecordingPen(); outline.draw(pen)
+        contours, pts, last = [], [], None
+        for verb, args in pen.value:
+            if verb == 'moveTo':
+                pts = [args[0]]; last = args[0]
+            elif verb == 'lineTo':
+                pts.append(args[0]); last = args[0]
+            elif verb in ('curveTo', 'qCurveTo'):
+                ctrl = (last,)+args
+                for i in range(1, 25):
+                    t = i/24
+                    if len(ctrl) == 4:
+                        x = sum(c*p[0] for c, p in zip(((1-t)**3, 3*t*(1-t)**2, 3*t*t*(1-t), t**3), ctrl))
+                        y = sum(c*p[1] for c, p in zip(((1-t)**3, 3*t*(1-t)**2, 3*t*t*(1-t), t**3), ctrl))
+                    else:
+                        x = sum(c*p[0] for c, p in zip(((1-t)**2, 2*t*(1-t), t*t), ctrl))
+                        y = sum(c*p[1] for c, p in zip(((1-t)**2, 2*t*(1-t), t*t), ctrl))
+                    pts.append((x, y))
+                last = args[-1]
+            elif verb in ('closePath', 'endPath'):
+                if pts and pts[0] != pts[-1]: pts.append(pts[0])
+                contours.append(pts); pts = []
+        pieces = []
+        for pts in contours:
+            seg = [math.dist(a, b) for a, b in zip(pts, pts[1:])]
+            total = sum(seg)
+            n = max(1, round(total/(dash+gap)))
+            period = total/n
+            on = period*dash/(dash+gap)
+            def point(s):
+                s %= total
+                for (a, b), d in zip(zip(pts, pts[1:]), seg):
+                    if s <= d:
+                        f = s/d if d else 0
+                        return (a[0]+(b[0]-a[0])*f, a[1]+(b[1]-a[1])*f)
+                    s -= d
+                return pts[-1]
+            # Centre one dash on the anchor (the tail tip) so no stub is left there.
+            offset = 0
+            if anchor:
+                acc, best = 0, None
+                for a, d in zip(pts, [0]+seg):
+                    acc += d
+                    gap_to = math.dist(a, anchor)
+                    if best is None or gap_to < best[0]: best = (gap_to, acc)
+                offset = best[1]-on/2
+            for i in range(n):
+                start = offset+i*period
+                samples = [point(start+on*j/8) for j in range(9)]
+                pieces.append(line(*samples))
+        return union(*pieces)
+
+    # Speech bubbles, measured against SF message (an oval, 14.9 x 12.4) and
+    # bubble.left (a rounded rectangle, 14.2 x 13.2). Marks sit centred in the
+    # body at about half of its inner height, at full weight.
+    def oval(cx, cy, rx, ry):
+        return path(f'M{cx-rx} {cy}a{rx} {ry} 0 1 0 {2*rx} 0a{rx} {ry} 0 1 0 {-2*rx} 0Z')
+    bubble_round = union(oval(8, 7.25, 6.68, 4.93),
+                         api['soften'](path('M3.05 9.6Q3.5 12.3 2.25 13.7Q5.2 13.8 7.05 11.95Z'), .3))
+    round_mark = (8, 7.25)
+    bubble_square = union(rr(1.42, 1.92, 13.16, 9.68, 3.0, exact=True),
+                          api['soften'](path('M3.6 11V14Q3.6 14.45 4.05 14.1L7.45 11Z'), .3))
+    square_mark = (8, 6.76)
+    def mark_at(d, centre, scale=1):
+        return path(d).transform(scale,0,0,scale,*centre)
+
+    marks = {
+        'check': 'M-2.15 .2L-.6 1.85L2.2 -1.95',
+        'x': 'M-1.75 -1.75L1.75 1.75M1.75 -1.75L-1.75 1.75',
+        'plus': 'M-2.2 0H2.2M0 -2.2V2.2',
+        'exclamation-point': 'M0 -2.4V.5',
+        'question-mark': 'M-1.4 -1.6C-1.4 -2.45 -.8 -2.9 0 -2.9C.85 -2.9 1.45 -2.35 1.45 -1.65'
+                         'C1.45 -.95 .95 -.65 .45 -.3C.1 -.05 0 .2 0 .5',
+        'text': 'M-2.75 -1.2H2.75M-2.75 1.2H1.05',
+        'code': 'M-1.15 -1.8L-2.8 0L-1.15 1.8M1.15 -1.8L2.8 0L1.15 1.8',
+        'reply': 'M-.55 -2.15L-2.65 -.1L-.55 1.95M-2.45 -.1H.35Q2.65 -.1 2.65 2.2',
+        'diff': 'M-1.45 -1.05H1.45M0 -2.5V.4M-1.45 2.2H1.45',
+        'share': 'M-1.55 1.55L1.95 -1.95M-.3 -1.95H1.95V.3',
     }
-    for suffix, detail in square_details.items():
-        ink = stroke(detail)
-        if suffix == 'dot':
-            ink = circle(8,7,1)
-        if suffix == 'exclamation-point':
-            ink = compact(suffix,8,7,.86)
-        if suffix == 'share':
-            ink = stroke('M7 7.8L10.8 4.6M8.45 4.6H10.8V6.85M4.65 6.8V9.35H9.6')
-        shape('message-square-'+suffix,bubble_square,ink,'message chat '+suffix)
-    quote = path('M5.8 4.5C7 4.5 7.5 5.3 7.4 6.4C7.3 7.9 6.4 9 4.9 9.55L4.6 8.7Q5.9 8.05 6.05 7.3C3.85 7.55 3.7 4.55 5.8 4.5Z')
-    shape('message-square-quote',bubble_square,union(quote,transform(quote,dx=4.1)),'message chat quote')
-    shape('message-square-off',bubble_square,line((2,2),(14,14)),'message disabled')
-    glyph('message-square-dashed',stroke('M3.5 2.5H6.2M8.65 2.5H12.4Q14 2.5 14 4.1M14 6.55V8.6M13.75 10.95Q13.3 11.55 12.4 11.55H10.1M7.65 11.55H7L4 13.95V11.55H3.5Q2 11.55 2 10V9M2 6.55V4.95'),None,'conversation dashed')
-    shape('messages-circle', union(transform(bubble_round,0,.72,-2,-2),transform(bubble_round,0,.72,2,2)), stroke('M5 9Q5 5 9.5 5Q14 5 14 9Q14 12.5 9.5 12.5H8L5.5 14L6 11.2Q5 10 5 9Z'), 'conversations messages')
-    shape('messages-square', union(transform(bubble_square,0,.72,-2,-2),transform(bubble_square,0,.72,2,2)), stroke('M6 5H13Q14 5 14 6V11Q14 12 13 12H9L6 14V12H6Q5 12 5 11V6Q5 5 6 5Z'), 'conversations messages')
+    def mark_ink(kind, centre):
+        if kind == 'more':
+            return dots(*((centre[0]+x, centre[1]) for x in (-2.55, 0, 2.55)), r=.85)
+        if kind == 'heart':
+            return mark_at('M0 2.25C-.55 1.85 -2.75 .4 -2.75 -.95C-2.75 -2.25 -1.05 -2.75 0 -1.45'
+                           'C1.05 -2.75 2.75 -2.25 2.75 -.95C2.75 .4 .55 1.85 0 2.25Z', centre)
+        if kind == 'lock':
+            return union(rr(centre[0]-1.85, centre[1]-.45, 3.7, 2.75, .6, exact=True),
+                         stroke(mark_at('M-1.1 -.45V-1.3A1.1 1.1 0 0 1 1.1 -1.3V-.45', centre)))
+        if kind == 'quote':
+            ink = []
+            for qx in (-1.3, 1.3):
+                ink += [circle(centre[0]+qx, centre[1]-.55, 1.05),
+                        stroke(mark_at(f'M{qx+1.0} -.55C{qx+1.0} .8 {qx+.45} 1.65 {qx-.6} 2.1', centre))]
+            return union(*ink)
+        ink = stroke(mark_at(marks[kind], centre))
+        if kind in ('exclamation-point', 'question-mark'):
+            ink = union(ink, circle(centre[0], centre[1]+2.15, .68))
+        return ink
 
-    shape('user-round',union(circle(8,4.5,2.7),path('M2.5 13.5Q2.5 9 8 9Q13.5 9 13.5 13.5Z')),None,'person profile')
-    for source in ('user','user-round'):
-        for suffix in ('cog','exclamation-point','key','minus','pen','search','shield','star'):
-            badged(source+'-'+suffix,source,suffix,'person account '+suffix)
-    for suffix in ('arrow-left','check','plus','x'):
-        badged('user-round-'+suffix,'user-round',suffix,'person account '+suffix)
-    badged('user-lock','user','lock','person account lock')
-    side_heads = union(circle(3.2,6.2,1.45),circle(12.8,6.2,1.45))
-    side_shoulders = path('M1.6 13.2V11.7Q1.6 9.4 3.4 9.4Q5.6 9.4 5.6 11.7V13.2Z')
-    side_people = union(side_heads,side_shoulders,api['mirror'](side_shoulders))
-    middle = union(circle(8,3.8,1.85),path('M4.7 14V11.4Q4.7 8.3 8 8.3Q11.3 8.3 11.3 11.4V14Z'))
-    stack('user-group',side_people,middle,None,'people group')
-    side_ink = union(stroke(side_heads), stroke('M1.5 13.1Q1.5 9.5 3.45 9.5Q5.5 9.5 5.5 13.1M10.5 13.1Q10.5 9.5 12.55 9.5Q14.5 9.5 14.5 13.1'))
-    center_ink = union(stroke(circle(8,3.8,1.85)),stroke('M4.7 14V11.4Q4.7 8.3 8 8.3Q11.3 8.3 11.3 11.4V14'))
-    glyph('user-round-group',union(subtract(side_ink,union(middle,stroke(middle,2.6))),center_ink),None,'people round group')
-    glyph('users-round',union(stroke('M1.5 13Q1.5 9.5 5 9.5Q8 9.5 8 13M8 13Q8 9.5 11 9.5Q14.5 9.5 14.5 13'),stroke(circle(5,5,2)),stroke(circle(11,5,2))),None,'people round group')
-    pair = union(circle(3.9,7.2,1.65), circle(12.1,7.2,1.65))
-    shoulder = path('M1.5 14V12.9Q1.5 10.5 3.9 10.5Q6.3 10.5 6.3 12.9V14Z')
-    exchange = stroke('M5 3H10.8M9.4 1.65L10.8 3L9.4 4.35')
-    shape('users-collaboration',union(pair,shoulder,api['mirror'](shoulder)),exchange,'people collaboration')
-    round_pair = union(stroke(pair),stroke('M1.5 14Q1.5 10.6 3.9 10.6Q6.3 10.6 6.3 14M9.7 14Q9.7 10.6 12.1 10.6Q14.5 10.6 14.5 14'))
-    glyph('users-round-collaboration',round_pair,exchange,'people collaboration')
+    def slashed(name, body, detail, tags, outline=True):
+        # SF .slash: one diagonal across the symbol behind a 0.85 u channel.
+        detail = detail or po.Path()
+        if outline:
+            shape(name, body, detail, tags)
+            b = api['DRAWINGS'][name][0]
+            rim = stroke(b)
+            ink = union(subtract(rim, detail), detail)
+            layers = [(subtract(b, ink), .24), (ink, 1)]
+            mono = union(rim, detail)
+            solid = api['solid_body'](b, rim, detail)
+        else:
+            glyph(name, body, detail, tags)
+            ink = union(body, detail)
+            layers, mono, solid = [(ink, 1)], ink, ink
+        channel = line((2, 2), (14, 14), width=STROKE+1.7)
+        bar = line((2, 2), (14, 14))
+        def cut(p):
+            return union(*(c for c in api['components'](subtract(p, channel)) if c.area > .45))
+        overrides[name] = {'duotone': [(cut(p), a) for p, a in layers[:-1]]+[(union(cut(layers[-1][0]), bar), 1)],
+                           'stroke': union(cut(mono), bar), 'solid': union(cut(solid), bar)}
 
-    overrides['user-round-group'] = {'solid':api['stacked_solid'](side_people,middle)}
-    round_shoulder = path('M1.55 13.75Q1.55 9.45 4.85 9.45Q8.15 9.45 8.15 13.75Z')
-    left_person = union(circle(4.85,5,2),round_shoulder)
-    right_person = api['mirror'](left_person)
-    overrides['users-round'] = {'solid':subtract(union(left_person,right_person),
-                                                 stroke('M8 10V14',2.05))}
-    overrides['users-round-collaboration'] = {'solid':union(pair,shoulder,api['mirror'](shoulder),exchange)}
+    shape('message-circle', bubble_round, None, 'conversation chat bubble')
+    for suffix in ('check','exclamation-point','heart','plus','question-mark','x','code','more','text','reply'):
+        shape('message-circle-'+suffix, bubble_round, mark_ink(suffix, round_mark), 'conversation chat '+suffix)
+    slashed('message-circle-off', bubble_round, None, 'conversation disabled')
+    round_dashes = dashed(api['soften'](bubble_round, .3), anchor=(2.25, 13.7))
+    glyph('message-circle-dashed', round_dashes, None, 'conversation dashed')
+    glyph('message-circle-dashed-check', round_dashes, mark_ink('check', round_mark), 'conversation dashed check')
+    for suffix in ('code','diff','exclamation-point','lock','reply','share','x','quote'):
+        shape('message-square-'+suffix, bubble_square, mark_ink(suffix, square_mark), 'message chat '+suffix)
+    slashed('message-square-off', bubble_square, None, 'message disabled')
+    glyph('message-square-dashed', dashed(api['soften'](bubble_square, .3), anchor=(3.75, 14.2)), None, 'conversation dashed')
+    # SF message.badge: a notification dot over the upper right of the body.
+    shape('message-square-dot', bubble_square, None, 'message chat dot')
+    api['badge']('message-square-dot', 'dot', 13.0, 3.0, 2.05)
 
-    mail = rr(1.6,3.4,12.8,9.2)
-    shape('mail-dot',rr(1.5,2.45,13,11.6),union(stroke('M2.05 3.05L8 6.05L13.95 3.05'),circle(8,10.15,.9)),'email message dot')
-    envelope, flap = host_drawing('mail')[:2]
-    clock_badge = union(stroke(circle(11.55,11.5,3.2)),stroke('M11.55 10.4V11.5L12.45 12'))
-    shape('mail-clock',envelope,union(flap,clock_badge),'email message clock')
-    corner_badges['mail-clock'] = ('mail',envelope,flap,clock_badge)
-    for suffix in ('exclamation-point','minus','pen','question-mark','search','x'):
-        badge = (line((10.75,12.25),(14.75,12.25)) if suffix == 'minus'
-                 else compact(suffix,12.75,12.25,.72))
-        name = 'mail-'+suffix
-        shape(name,envelope,union(flap,badge),'email message '+suffix)
-        corner_badges[name] = ('mail',envelope,flap,badge)
-    shape('mail-badge',mail,union(stroke('M2 4L8 8L14 4'),circle(12,3,1.6)),'email notification')
-    stack('mails',rr(1.6,2,10,8.1),rr(4.55,5.05,9.9,8.1),
-          stroke('M4.98 5.55L9.5 8.55L14 5.55'),'multiple email messages')
+    # SF bubble.left.and.bubble.right: two bubbles with opposed tails, the
+    # front one separated from the back one by a clear gap.
+    def layered(name, layers, tags, extra=None):
+        inks, surfaces, solids = [], [], []
+        cover = po.Path()
+        for body, detail in reversed(layers):
+            rim = stroke(body)
+            filled = union(body, rim)
+            inks.append(subtract(union(rim, detail), cover))
+            surfaces.append(subtract(body, cover))
+            solids.append(subtract(subtract(filled, detail), cover))
+            cover = union(cover, filled, stroke(filled, 2*GAP, exact=True))
+        ink = union(*inks, extra)
+        shape(name, union(*(b for b, _ in layers)), ink, tags)
+        overrides[name] = {'duotone': [(subtract(union(*surfaces), ink), .24), (ink, 1)],
+                           'stroke': ink, 'solid': union(*solids, extra)}
+    for name, bubble in (('messages-circle', bubble_round), ('messages-square', bubble_square)):
+        back = api['soften'](bubble, .3).transform(.7,0,0,.7,.55,.75)
+        front = api['mirror'](api['soften'](bubble, .3)).transform(.7,0,0,.7,4.25,4.3)
+        layered(name, [(back, po.Path()), (front, po.Path())], 'conversations messages')
+
+    # People, measured against SF person (11.2 x 11.9): a round head and a
+    # domed torso one unit below it. Badges follow the pilot user-plus.
+    user_body = api['DRAWINGS']['user'][0]
+    user_round = union(circle(8, 4.92, 2.35),
+                       path('M2.92 12.85C2.92 10.65 5.15 9.3 8 9.3C10.85 9.3 13.08 10.65 13.08 12.85'
+                            'Q13.08 13.43 12.5 13.43H3.5Q2.92 13.43 2.92 12.85Z'))
+    shape('user-round', user_round, None, 'person profile')
+    bmark = api['badge_mark']
+    BX, BY = 11.85, 11.85
+    def person_badge(name, base, kind, tags):
+        if kind in ('plus','minus','check','x','alert'):
+            # Keep the mark as the detail: users-minus reuses it.
+            shape(name, base, bmark(kind, BX, BY, R), tags)
+            api['badge'](name, kind, BX, BY, R)
+            return
+        if kind == 'arrow-left':
+            ink = stroke('M{0} {1}H{2}M{3} {4}L{5} {1}L{3} {6}'.format(BX+1.65, BY, BX-1.45, BX-.05, BY-1.45, BX-1.5, BY+1.45))
+            shape(name, base, ink, tags)
+            BADGES[name] = (subtract(circle(BX, BY, R), ink), circle(BX, BY, R+GAP))
+            return
+        x, y = 12.1, 11.6
+        if kind == 'cog':
+            mark = gearshape(x, y, 3.3)
+        elif kind == 'key':
+            # SF person.badge.key: a filled key, bow up, bit to the right.
+            mark = union(subtract(circle(x, y-1.6, 1.75), circle(x, y-2.05, .62)),
+                         line((x, y-.4), (x, y+3.0)), line((x, y+1.35), (x+1.2, y+1.35)),
+                         line((x, y+2.55), (x+.95, y+2.55)))
+        elif kind == 'lock':
+            mark = union(rr(x-2.2, y-.35, 4.4, 3.45, .75, exact=True),
+                         stroke(f'M{x-1.25} {y-.35}V{y-1.35}A1.25 1.25 0 0 1 {x+1.25} {y-1.35}V{y-.35}'))
+        elif kind == 'pen':
+            mark = path(f'M{x-2.55} {y+2.55}L{x-2.15} {y+.85}L{x+1.0} {y-2.3}Q{x+1.6} {y-2.9} {x+2.2} {y-2.3}'
+                        f'L{x+2.55} {y-1.95}Q{x+3.15} {y-1.35} {x+2.55} {y-.75}L{x-.6} {y+2.4}Z')
+        elif kind == 'search':
+            mark = union(api['ring'](x-.45, y-.45, 2.15), line((x+1.1, y+1.1), (x+2.7, y+2.7)))
+        elif kind == 'shield':
+            shield = api['soften'](path(f'M{x} {y-3.1}Q{x+1.6} {y-2.2} {x+2.85} {y-2.2}V{y}'
+                                        f'Q{x+2.85} {y+2.35} {x} {y+3.3}Q{x-2.85} {y+2.35} {x-2.85} {y}V{y-2.2}'
+                                        f'Q{x-1.6} {y-2.2} {x} {y-3.1}Z'), .35)
+            mark = subtract(shield, stroke(f'M{x-1.35} {y+.1}L{x-.35} {y+1.15}L{x+1.4} {y-1.0}'))
+        elif kind == 'star':
+            mark = api['soften'](transform(api['STAR'], scale=.46, dx=x-8, dy=y-7.9), .25)
+        clearance = union(mark, stroke(mark, 2*GAP, exact=True))
+        if kind == 'search':
+            clearance = union(clearance, circle(x-.45, y-.45, 2.15+GAP))
+        if name == 'user-cog':
+            # users-cog (sf_ext_states) reuses this drawing's detail at its
+            # former place and size; keep that detail and compose every style here.
+            shape(name, base, gear(12.35, 10.45, 2.75), tags)
+            b = api['DRAWINGS'][name][0]
+            rim = stroke(b)
+            host = subtract(union(b, rim), clearance)
+            ink = union(subtract(rim, clearance), mark)
+            overrides[name] = {'duotone': [(subtract(host, union(rim, clearance)), .24), (ink, 1)],
+                               'stroke': ink, 'solid': union(host, mark)}
+            return
+        shape(name, base, mark, tags)
+        BADGES[name] = (mark, clearance)
+
+    for prefix, base in (('user', user_body), ('user-round', user_round)):
+        for suffix, kind in (('cog','cog'),('exclamation-point','alert'),('key','key'),('minus','minus'),
+                             ('pen','pen'),('search','search'),('shield','shield'),('star','star')):
+            person_badge(prefix+'-'+suffix, base, kind, 'person account '+suffix.replace('-',' '))
+    for suffix, kind in (('arrow-left','arrow-left'),('check','check'),('plus','plus'),('x','x')):
+        person_badge('user-round-'+suffix, user_round, kind, 'person account '+suffix.replace('-',' '))
+    person_badge('user-lock', user_body, 'lock', 'person account lock')
+
+    def placed(base, scale, right=None, left=None, bottom=13.1, centre=None):
+        x0, y0, x1, y1 = base.bounds
+        x0, y0, x1, y1 = x0-.52, y0-.52, x1+.52, y1+.52
+        if centre is not None: dx = centre-scale*(x0+x1)/2
+        elif right is not None: dx = right-scale*x1
+        else: dx = left-scale*x0
+        return base.transform(scale,0,0,scale,dx,bottom-scale*y1)
+    empty = po.Path()
+    # SF person.2: the rear person smaller and to the left of the front one,
+    # both heads whole and apart.
+    layered('users-round', [(placed(user_round, .72, left=.7), empty),
+                            (placed(user_round, .86, right=15.3), empty)], 'people round group')
+    # SF person.3: one person in front, two smaller ones behind on either side.
+    for name, base in (('user-group', user_body), ('user-round-group', user_round)):
+        layered(name, [(placed(base, .62, left=.7), empty),
+                       (placed(base, .62, right=15.3), empty),
+                       (placed(base, .78, centre=8, bottom=13.4), empty)], 'people group')
+    # SF person.line.dotted.person: two people linked by a dotted line.
+    for name, base in (('users-collaboration', user_body), ('users-round-collaboration', user_round)):
+        pair = [(placed(base, .56, left=.7, bottom=12.5), empty),
+                (placed(base, .56, right=15.3, bottom=12.5), empty)]
+        layered(name, pair, 'people collaboration',
+                extra=dots((6.75, 8.35), (8, 8.35), (9.25, 8.35), r=.5))
+
+    # Envelopes, measured against SF envelope (15.5 x 11.0) and its badges.
+    envelope, flap = api['DRAWINGS']['mail'][:2]
+    ex0, ey0, ex1, ey1 = envelope.bounds
+    env_ink = (ex0-.52, ey0-.52, ex1+.52, ey1+.52)
+    fl = flap.bounds
+    flap_centerline = path(f'M{fl[0]+.52} {fl[1]+.52}L{(fl[0]+fl[2])/2} {fl[3]-.52}L{fl[2]-.52} {fl[1]+.52}')
+    def env_layout(box):
+        return fit(env_ink, box)
+    def env_flap(T, s):
+        return T(flap) if s > .97 else stroke(T(flap_centerline))
+    def badged_mail(name, tags, kind=None, mark=None, at=None, r=3.3):
+        at = at or (env_ink[2]+.47-r, env_ink[3]+2.13-r)
+        T, s = env_layout((at[0]-r, at[1]-r, at[0]+r, at[1]+r))
+        shape(name, T(envelope), env_flap(T, s), tags)
+        c = T(path(f'M{at[0]} {at[1]}h.001')).bounds
+        if kind:
+            api['badge'](name, kind, c[0], c[1], r*s)
+        else:
+            BADGES[name] = mark(c[0], c[1], s)
+    # SF envelope.badge: a notification dot over the upper right corner.
+    badged_mail('mail-badge', 'email notification', kind='dot', r=2.0,
+                at=(env_ink[2]+.47-2.0, env_ink[1]-1.13+2.0))
+    for suffix, kind in (('clock','clock'),('exclamation-point','alert'),('minus','minus'),('x','x')):
+        badged_mail('mail-'+suffix, 'email message '+suffix.replace('-',' '), kind=kind)
+    def knocked(d, scale=.72):
+        def make(cx, cy, s):
+            ink = stroke(path(d).transform(scale*s,0,0,scale*s,cx,cy))
+            if d is marks['question-mark']:
+                ink = union(ink, circle(cx, cy+2.15*scale*s, .62))
+            return subtract(circle(cx, cy, 3.3*s), ink), circle(cx, cy, (3.3+GAP)*s)
+        return make
+    badged_mail('mail-question-mark', 'email message question mark', mark=knocked(marks['question-mark'], .78))
+    def mail_pen(cx, cy, s):
+        ink = stroke(path('M-1.55 1.55L-1.3 .5L.85 -1.65L1.85 -.65L-.3 1.5Z').transform(s,0,0,s,cx,cy))
+        return subtract(circle(cx, cy, 3.3*s), ink), circle(cx, cy, (3.3+GAP)*s)
+    badged_mail('mail-pen', 'email message pen', mark=mail_pen)
+    def mail_lens(cx, cy, s):
+        glass = union(api['ring'](cx-.5*s, cy-.5*s, 2.2*s), line((cx+1.05*s, cy+1.05*s), (cx+2.6*s, cy+2.6*s)))
+        return glass, union(circle(cx-.5*s, cy-.5*s, (2.2+GAP)*s), stroke(glass, 2*GAP, exact=True))
+    badged_mail('mail-search', 'email message search', mark=mail_lens)
+    shape('mail-dot', envelope, union(flap, circle((ex0+ex1)/2, ey1-2.55, .9)), 'email message dot')
+    # SF envelope.stack: the envelope with two receding edges above it.
+    T, s = fit(env_ink, (env_ink[0], env_ink[1]-3.3, env_ink[2], env_ink[1]))
+    top = T(path(f'M0 {ey0}h.001')).bounds[1]
+    left, right = T(path(f'M{ex0} 0h.001')).bounds[0], T(path(f'M{ex1} 0h.001')).bounds[0]
+    edges = union(line((left+1.45, top-1.6), (right-1.45, top-1.6)), line((left+2.9, top-3.2), (right-2.9, top-3.2)))
+    shape('mails', T(envelope), union(env_flap(T, s), edges), 'multiple email messages')
 
     api['CATEGORY'] = 'Product tools'
-    # Status marks sit outside reduced bodies, maintaining clear separation.
-    for suffix in ('check', 'cog', 'minus', 'plus', 'search', 'x'):
-        badged('database-'+suffix,'database',suffix,'storage database '+suffix)
-    badged('database-backup','database','backup','database backup restore')
-    for suffix in ('check', 'minus', 'pen', 'plus', 'question-mark', 'search', 'x'):
-        badged('package-'+suffix,'package',suffix,'parcel package '+suffix)
+    # Status variants keep the full-size family symbol and carry an SF badge
+    # (filled disc with the mark knocked out, or a gear, lens or pencil) in the
+    # lower trailing corner behind a 0.9 u gap. main() composes every style.
+    for suffix in ('check', 'minus', 'plus', 'x'):
+        sf_host('database-'+suffix, 'database', 'storage database '+suffix)
+        sf_badge('database-'+suffix, suffix)
+    sf_host('database-cog', 'database', 'storage database cog')
+    sf_gear_badge('database-cog')
+    sf_host('database-search', 'database', 'storage database search')
+    sf_lens_badge('database-search')
+    sf_host('database-backup', 'database', 'database backup restore')
+    sf_badge('database-backup', 'clock')
+    for suffix, kind in (('check','check'),('minus','minus'),('plus','plus'),('question-mark','question'),('x','x')):
+        sf_host('package-'+suffix, 'package', 'parcel package '+suffix)
+        sf_badge('package-'+suffix, kind)
+    sf_host('package-search', 'package', 'parcel package search')
+    sf_lens_badge('package-search')
+    sf_host('package-pen', 'package', 'parcel package pen')
+    sf_pencil_badge('package-pen')
     shape('package-2',path('M2 4L8 1.5L14 4V12L8 14.5L2 12Z'),stroke('M2 4L8 7L14 4M8 7V14M5 2.8L11 5.5'),'parcel box shipping')
     carton = path('M1.4 6.85L3.45 4.7L2.05 3.3L6.25 1.4L8 2.95L9.75 1.4L13.95 3.3L12.55 4.7L14.6 6.85L12.55 7.85V11.75L8 14.25L3.45 11.75V7.85Z')
     flap_seams = stroke('M3.45 4.7L8 2.95L12.55 4.7L8 6.95ZM1.4 6.85L6.05 9.15L8 6.95L9.95 9.15L14.6 6.85M8 6.95V14.25')
     shape('package-open',carton,flap_seams,'parcel open box')
+
+    # Shields: as in checkmark.shield, the mark stays inside, centered, full weight.
     shield = api['SHIELD']
-    for suffix in ('cog', 'minus', 'plus', 'question-mark', 'user'):
-        badged('shield-'+suffix,'shield',suffix,'security protection '+suffix)
-    badged('shield-cog-corner','shield','cog','security protection settings corner')
+    for suffix, mark in (('minus', compact('minus', 8, 7.6, .95)), ('plus', compact('plus', 8, 7.6, .95)),
+                         ('question-mark', compact('question-mark', 8, 7.55, .95)),
+                         ('cog', gear(8, 7.6, 2.7)), ('user', sf_person(8, 7.55, .78))):
+        shape('shield-'+suffix, shield, mark, 'security protection '+suffix)
+    sf_host('shield-cog-corner', 'shield', 'security protection settings corner')
+    sf_gear_badge('shield-cog-corner')
     shape('shield-ellipsis',shield,dots((5.3,7.4),(8,7.4),(10.7,7.4),r=.67),'security protection more')
-    shape('shield-half',path('M8 1.5L13.5 3.5V7.5Q13.5 11.5 8 14.5Q2.5 11.5 2.5 7.5V3.5Z'),stroke('M8 2V14'),'security protection half')
+    shape('shield-half',shield,stroke('M8 2V14'),'security protection half')
     shape('shield-ban',shield,op(stroke('M1.3 2.15L13.5 13.1'),shield,po.PathOp.INTERSECTION),'security forbidden')
     shape('shield-house',shield,stroke('M4.8 7.5L8 4.65L11.2 7.5M5.4 7V10.2H10.6V7M6.85 10.2V8.05H9.15V10.2'),'security home protection')
     shape('shield-off',shield,line((2,2),(14,14)),'security protection disabled')
 
+    # Stars and hearts: full family symbol plus badge. The hidden corner marks
+    # are what sf_ext_states reuses for shopping-bag-plus / -minus; main()
+    # removes them with the badge clearance in every style.
     star = path('M8 1.4L9.9 5.5L14.4 6L11 9.2L11.8 13.8L8 11.5L4.2 13.8L5 9.2L1.6 6L6.1 5.5Z')
     for suffix in ('check', 'minus', 'plus', 'x'):
-        badged('star-'+suffix,'star',suffix,'favorite star '+suffix)
+        sf_host('star-'+suffix, 'star', 'favorite star '+suffix, compact(suffix, 12, 11.6, .87))
+        sf_badge('star-'+suffix, suffix)
     shape('star-half',star,stroke('M8 2V11.5'),'favorite star half')
     shape('star-off',star,line((2,2),(14,14)),'favorite star disabled')
 
-    # Simple enclosed marks.
-    for kind, body in (('square',rr(2,2,12,12)),('circle',circle(8,8,6))):
-        suffixes = ('exclamation-point','minus','plus','x') if kind == 'square' else ()
-        for suffix in suffixes:
-            shape(kind+'-'+suffix,body,compact(suffix,8,8,1),'status '+suffix)
-    shape('square-check-big',rr(2,2,12,12),check(8,8,.8),'status checked')
-    shape('circle-check-big',circle(8,8,6),check(8,8,.8),'status checked')
+    # Simple enclosed marks: SF square and circle containers.
+    for suffix in ('exclamation-point','minus','plus','x'):
+        shape('square-'+suffix, square, compact(suffix,8,8,1), 'status '+suffix)
+    shape('square-check-big', square, check(8,8.1,.82), 'status checked')
+    shape('circle-check-big', disc, check(8,8.1,.86), 'status checked')
     percent = union(stroke('M5.6 10.9L10.4 5.1'),stroke(circle(5.65,5.65,1.18)),stroke(circle(10.35,10.35,1.18)))
-    shape('circle-percent',circle(8,8,6),percent,'percentage ratio')
-    shape('square-percent',rr(2,2,12,12),percent,'percentage ratio')
+    shape('circle-percent', disc, percent, 'percentage ratio')
+    shape('square-percent', square, transform(percent, scale=.93), 'percentage ratio')
     shape('diamond-percent',path('M8 1.28L14.72 8L8 14.72L1.28 8Z'),union(stroke('M6.05 10.1L9.95 5.9'),stroke(circle(6.3,6.4,1.08)),stroke(circle(9.7,9.6,1.08))),'percentage ratio')
-    shape('square-user',rr(2,2,12,12),compact('user',8,8,1.22),'account profile')
-    shape('square-user-round',rr(2,2,12,12),union(stroke(circle(8,5.45,1.5)),stroke('M4.7 11.8Q4.7 9.2 8 9.2Q11.3 9.2 11.3 11.8')), 'account round profile')
-    shape('circle-user-round',circle(8,8,6),compact('user',8,8,1.22),'account round profile')
+    # person.crop.square / .circle: a head and shoulders that meet the frame.
+    shape('square-user', square, union(stroke(circle(8,6.45,1.95)),
+          stroke('M4.75 13.4V12.3Q4.75 10.55 6.5 10.55H9.5Q11.25 10.55 11.25 12.3V13.4')), 'account profile')
+    shape('square-user-round', square, union(stroke(circle(8,6.45,1.95)),
+          stroke('M4.25 13.4A3.75 3.75 0 0 1 11.75 13.4')), 'account round profile')
+    shape('circle-user-round', disc, union(stroke(circle(8,6.3,2.15)),
+          op(stroke('M2.4 13.9Q4.4 10.45 8 10.45Q11.6 10.45 13.6 13.9'), disc, po.PathOp.INTERSECTION)),
+          'account round profile')
     shape('octagon-x',path('M5 1.8H11L14.2 5V11L11 14.2H5L1.8 11V5Z'),compact('x'),'stop close')
     glyph('circle-fading-check',stroke('M13.5 8A5.5 5.5 0 0 1 8 13.5M2.5 8A5.5 5.5 0 0 1 8 2.5A5.5 5.5 0 0 1 13.5 8M3.3 11L3.4 11.1M5.2 13L5.3 13.1'),compact('check'),'fading completed')
     glyph('circle-fading-plus',stroke('M13.5 8A5.5 5.5 0 0 1 8 13.5M2.5 8A5.5 5.5 0 0 1 8 2.5A5.5 5.5 0 0 1 13.5 8M3.3 11L3.4 11.1M5.2 13L5.3 13.1'),compact('plus'),'fading add')
@@ -605,29 +1093,24 @@ def register(api):
         disabled(name,source)
 
     # Actions and small marks.
+    glyph('grip', dots(*((x, y) for x in (4.6, 8, 11.4) for y in (4.6, 8, 11.4)), r=.78), None, 'grip')
+    glyph('grip-horizontal', dots(*((x, y) for x in (4.6, 8, 11.4) for y in (6.3, 9.7)), r=.78), None, 'grip horizontal')
+    glyph('grip-vertical', dots(*((x, y) for x in (6.3, 9.7) for y in (4.6, 8, 11.4)), r=.78), None, 'grip vertical')
     for name, geom in {
-        'grip':'M4.5 4.5V4.6M8 4.5V4.6M11.5 4.5V4.6M4.5 8V8.1M8 8V8.1M11.5 8V8.1M4.5 11.5V11.6M8 11.5V11.6M11.5 11.5V11.6',
-        'grip-horizontal':'M4 6V6.1M8 6V6.1M12 6V6.1M4 10V10.1M8 10V10.1M12 10V10.1',
-        'grip-vertical':'M6 4V4.1M10 4V4.1M6 8V8.1M10 8V8.1M6 12V12.1M10 12V12.1',
         'move':'M8 1.5V14.5M5.5 4L8 1.5L10.5 4M5.5 12L8 14.5L10.5 12M1.5 8H14.5M4 5.5L1.5 8L4 10.5M12 5.5L14.5 8L12 10.5',
         'separator-horizontal':'M2 8H14M8 1.5V5M6 3L8 5L10 3M8 14.5V11M6 13L8 11L10 13',
         'separator-vertical':'M8 2V14M1.5 8H5M3 6L5 8L3 10M14.5 8H11M13 6L11 8L13 10',
         'unfold-vertical':'M3 6.3H13M3 9.7H13M8 1.5V5M6 3.5L8 1.5L10 3.5M8 11V14.5M6 12.5L8 14.5L10 12.5',
-        'forward':'M2 11Q2 6.5 8 6.5H10V3L14.5 7.5L10 12V8.5H8Q4 8.5 2 11Z',
-        'reply':'M14 12Q13 7 7 7H5V4L1.5 8L5 12V9H7Q11 9 14 12Z',
-        'reply-all':'M14 12Q13 7 9 7H8V4L4.5 8L8 12V9H9Q11.5 9 14 12ZM4.4 4.15L1.5 8L4.4 11.85',
-        'send-horizontal':'M1.5 2L14.5 8L1.5 14L3.5 8ZM3.5 8H14',
         'locate':'M8 3A5 5 0 1 0 8 13A5 5 0 1 0 8 3M8 1.3V4M8 12V14.7M1.3 8H4M12 8H14.7',
         'locate-fixed':'M8 3A5 5 0 1 0 8 13A5 5 0 1 0 8 3M8 1.3V4M8 12V14.7M1.3 8H4M12 8H14.7M6.5 8A1.5 1.5 0 1 0 9.5 8A1.5 1.5 0 1 0 6.5 8',
         'list-checks':'M2 4L3 5L5 3M7 4H14M2 9L3 10L5 8M7 9H14M7 13H14',
-        'list-filter':'M2 3H14M4 7H12M6 11H10M7.5 14H8.5',
+        'list-filter':'M2.05 4.72H13.95M4.05 8H11.95M6.05 11.28H9.95',
         'list-tree':'M2.5 2V12.5H5.8M2.5 4.5H5.8M2.5 8.5H5.8M8.5 4.5H14M8.5 8.5H14M8.5 12.5H14',
         'spell-check':'M2 9L4 3L6 9M2.8 7H5.2M8 3H10Q12 3 12 4.5Q12 6 10 6H8ZM8 6H10.5Q12.5 6 12.5 7.5Q12.5 9 10.5 9H8ZM8.1 12.65L9.5 14.05L12.6 11.1',
         'regex':'M4.6 11.2V11.35M9.8 4.3V10.3M7.2 5.8L12.4 8.8M7.2 8.8L12.4 5.8',
         'nfc':'M5 3Q1 8 5 13M7.5 4.5Q5 8 7.5 11.5M10 6Q9 8 10 10M12.5 7V9',
         'waypoints':'M3 4L8 8L13 4M8 8L12 12M1.5 4A1.5 1.5 0 1 0 4.5 4A1.5 1.5 0 1 0 1.5 4M11.5 4A1.5 1.5 0 1 0 14.5 4A1.5 1.5 0 1 0 11.5 4M10.5 12A1.5 1.5 0 1 0 13.5 12A1.5 1.5 0 1 0 10.5 12M6.5 8A1.5 1.5 0 1 0 9.5 8A1.5 1.5 0 1 0 6.5 8',
         'voicemail':'M1.5 8A2.5 2.5 0 1 0 6.5 8A2.5 2.5 0 1 0 1.5 8M9.5 8A2.5 2.5 0 1 0 14.5 8A2.5 2.5 0 1 0 9.5 8M4 10.5H12',
-
     }.items():
         if name == 'waypoints':
             centers = ((3,4), (8,8), (13,4), (12,12))
@@ -636,16 +1119,25 @@ def register(api):
             glyph(name,union(links,*(stroke(circle(x,y,1.5)) for x,y in centers)),None,'connected waypoints nodes')
         else:
             glyph(name,stroke(geom),None,name.replace('-',' '))
+    # arrowshape.turn.up.*: a closed arrow shape (tinted in Duotone, filled in Solid).
+    turn = path('M1.75 6.75L6.45 2.65Q7.35 1.95 7.35 3.05V4.85C11.6 5 14.35 7.6 14.35 12.25'
+                'Q14.35 13.2 13.7 12.5C12.35 10.6 10.4 9.6 7.35 9.55V11.35Q7.35 12.45 6.45 11.75'
+                'L1.75 7.65Q1.25 7.2 1.75 6.75Z')
+    shape('reply', turn, None, 'reply')
+    shape('forward', api['mirror'](turn), None, 'forward')
+    rear_head = stroke('M4.55 2.55L.9 5.75Q.25 6.3 .9 6.85L4.55 10.05')
+    shape('reply-all', transform(turn, scale=.86, dx=1.7, dy=.3), transform(rear_head, dx=.2, dy=.95), 'reply all')
+    # paperplane: closed dart with its fold line from the notch to the tip.
+    plane = path('M2.25 2.35L14.05 7.4Q14.7 7.7 14.05 8L2.25 13.65Q1.45 14 1.7 13.15L3.45 7.7L1.7 2.85Q1.45 2 2.25 2.35Z')
+    shape('send-horizontal', plane, stroke('M3.45 7.7H8.6'), 'send horizontal')
     # The three open terminals sweep around the outside of the triangle.
     hook = stroke('M6.05 2.7A2.2 2.2 0 1 1 7.5 5.64L12 10.25')
     glyph('webhook',union(hook,transform(hook,120),transform(hook,240)),None,'webhook')
-    for suffix, geom in {
-
-        'clock':'M2 3.8H9.4M2 7.8H7.4M2 11.8H7.4M9.45 10.2A2.6 2.6 0 1 0 14.65 10.2A2.6 2.6 0 1 0 9.45 10.2M12.05 9.15V10.2L12.9 10.7',
-    }.items(): glyph('list-'+suffix,stroke(geom),None,'list '+suffix)
-    list_rows = stroke('M2 3.6H11.4M2 7.3H8.6M2 11H6.2')
-    for suffix in ('minus','plus','x'):
-        glyph('list-'+suffix,list_rows,compact(suffix,12.2,12.55,.85),'list '+suffix)
+    # text.badge.*: rows of text with an SF badge in the trailing lower corner.
+    list_rows = stroke('M2 3.4H14M2 7.2H14M2 11H6.9')
+    for suffix, kind in (('clock','clock'),('minus','minus'),('plus','plus'),('x','x')):
+        glyph('list-'+suffix, list_rows, None, 'list '+suffix)
+        sf_badge('list-'+suffix, kind, 12, 12, 3.1)
 
     # Hollow inactive bars preserve the full signal silhouette at zero and
     # low strengths; the filled bars indicate the actual active count.
@@ -662,69 +1154,113 @@ def register(api):
     for level, ink in (('zero',zero),('low',low),('high',high)):
         glyph('wifi-'+level,ink,None,'wireless signal '+level)
 
-    for source, suffixes in {
-        'archive':('arrow-down','arrow-up','x'),
-        'bell':('check','dot','minus'),
-        'cloud':('check','sync'),
-        'heart':('minus','plus','x'),
-        'map-pin':('plus','x'),
-        'save':('check','pen','plus'),
-        'tag':('plus','x'),
-        'monitor':('cog',),
-        'server-rack':('cog',),
-    }.items():
+    # Family symbols with SF badges.
+    for source, suffixes in (('archive',('arrow-down','arrow-up','x')), ('heart',('minus','plus','x')),
+                             ('map-pin',('plus','x')), ('save',('check','plus')), ('tag',('plus','x'))):
         for suffix in suffixes:
-            prefix = 'server' if source == 'server-rack' else source
-            badged(prefix+'-'+suffix,source,suffix)
-    badged('alarm-clock-check','alarm-clock','check')
+            legacy = compact('minus', 12, 11.6, .87) if (source, suffix) == ('heart', 'minus') else None
+            sf_host(source+'-'+suffix, source, source.replace('-', ' ')+' '+suffix, legacy)
+            sf_badge(source+'-'+suffix, suffix)
+    sf_host('save-pen', 'save', 'save pen')
+    sf_pencil_badge('save-pen')
+    # Bells carry their badge at the top trailing corner (bell.badge).
+    for suffix in ('check', 'minus'):
+        sf_host('bell-'+suffix, 'bell', 'bell '+suffix)
+        sf_badge('bell-'+suffix, suffix, 11.9, 4.1)
+    sf_host('bell-dot', 'bell', 'bell dot')
+    sf_badge('bell-dot', 'dot', 12.25, 3.75, 2.55)
+    # checkmark.icloud: the mark sits inside the cloud's lower body.
+    cloud_body = drawings['cloud'][0]
+    left, top_edge, right, bottom = cloud_body.bounds
+    cx, cy = (left+right)/2, bottom-3.05
+    shape('cloud-check', cloud_body, check(cx, cy, .72), 'cloud check')
+    shape('cloud-sync', cloud_body, compact('sync', cx, cy-.05, .86), 'cloud sync')
+    for source, name in (('monitor','monitor-cog'), ('server-rack','server-cog'), ('hourglass','hourglass-cog')):
+        sf_host(name, source, name.replace('-', ' '))
+        sf_gear_badge(name)
+    sf_host('alarm-clock-check', 'alarm-clock', 'alarm clock check')
+    sf_badge('alarm-clock-check', 'check')
     disabled('alarm-clock-off','alarm-clock')
-    badged('image-minus','image','minus')
-    badged('hourglass-cog','hourglass','cog')
+    sf_host('image-minus', 'image', 'image minus')
+    sf_badge('image-minus', 'minus')
 
     api['CATEGORY'] = 'Devices and connectivity'
-    shape('captions',rr(1.6,3,12.8,10),stroke('M7 6Q5 4.5 4 6Q3 7.5 4 9Q5 10.5 7 9M12 6Q10 4.5 9 6Q8 7.5 9 9Q10 10.5 12 9'),'subtitles closed captions accessibility')
-    disabled('captions-off','captions')
-    shape('cctv',path('M2 3L11 4.5L10.2 9L1.2 7.5Z'),union(stroke('M10.86 5.3L14 4.6V8.15L10.4 7.7M6 8.3L7.6 12.2H12M12 10.4V14'),circle(3.5,5.5,.7)),'security surveillance camera')
-    disabled('cctv-off','cctv')
+    # Closed captions: SF rectangle proportions with two open C counters.
+    cc = stroke('M6.88 6.85A1.8 1.8 0 1 0 6.88 9.15M11.88 6.85A1.8 1.8 0 1 0 11.88 9.15')
+    shape('captions', rr(1.45,2.65,13.1,10.7), cc, 'subtitles closed captions accessibility')
+    slashed('captions-off', rr(1.45,2.65,13.1,10.7), cc, 'subtitles closed captions disabled')
+    lens_mount = union(stroke('M10.86 5.3L14 4.6V8.15L10.4 7.7M6 8.3L7.6 12.2H12M12 10.4V14'),circle(3.5,5.5,.7))
+    shape('cctv',path('M2 3L11 4.5L10.2 9L1.2 7.5Z'),lens_mount,'security surveillance camera')
+    slashed('cctv-off',path('M2 3L11 4.5L10.2 9L1.2 7.5Z'),lens_mount,'security surveillance camera disabled')
     shape('ethernet-port',path('M2 2.5H14V11H11V13.5H5V11H2Z'),stroke('M4.7 4.45V6.8M6.9 4.45V6.8M9.1 4.45V6.8M11.3 4.45V6.8M2 9H14'),'wired network port')
     ram = rr(1.35,2.05,13.3,10.1)
     chips = union(stroke(rr(3.55,4.05,4.05,2.2)),stroke(rr(3.55,8.35,4.05,2.2)),
                   stroke(rr(9.75,4.05,2.8,6.5)))
     pins = stroke('M3.5 12.15V14.05M5.75 12.15V14.05M8 12.15V14.05M10.25 12.15V14.05M12.5 12.15V14.05')
     shape('memory-stick',ram,union(chips,pins),'computer ram memory')
-    shape('router',rr(1.7,8,12.6,5),union(stroke('M4 8V4M12 8V4M6 5Q8 3.2 10 5M7 6.5Q8 5.8 9 6.5'),dots((4.5,10.5),(7,10.5),r=.5)),'wireless router network')
-    shape('speaker',rr(3.2,1.6,9.6,12.8),union(stroke(circle(8,9.8,2.5)),circle(8,4.5,1)),'audio loudspeaker')
+    # SF wifi.router: a low, wide base under two concentric waves.
+    waves = stroke('M5.45 6.15A3.6 3.6 0 0 1 10.55 6.15M3.55 4.25A6.3 6.3 0 0 1 12.45 4.25')
+    shape('router', rr(1.25,8.7,13.5,4.55,1.6,exact=True),
+          union(waves, stroke('M3.65 10.95H5.6'), dots((8.4,10.95),(10.35,10.95),(12.3,10.95),r=.62)),
+          'wireless router network')
+    # SF hifispeaker: a tall cabinet, small tweeter over a large woofer.
+    shape('speaker', rr(3.55,1.9,8.9,12.2), union(api['ring'](8,9.85,2.75), circle(8,4.7,.95)), 'audio loudspeaker')
     shape('touchpad',rr(1.8,2.5,12.4,11),stroke('M2 10H14M8 10V13'),'trackpad computer input')
-    disabled('touchpad-off','touchpad')
+    slashed('touchpad-off',rr(1.8,2.5,12.4,11),stroke('M2 10H14M8 10V13'),'trackpad computer input disabled')
     shape('webcam',circle(8,6.5,4.8),union(stroke(circle(8,6.5,1.7)),stroke('M8 11.3V13.5M5.5 14H10.5')),'camera video computer')
-    shape('headset',path('M2 8V7A6 6 0 0 1 14 7V8H12V7A4 4 0 0 0 4 7V8Z'),union(rr(2,7.5,2.7,4,.8),rr(11.3,7.5,2.7,4,.8),stroke('M14 10V12Q14 14 11 14H9.5',1.1)),'headphones microphone call')
-    shape('smartphone-user-round',rr(3,1.5,10,13),union(stroke('M6 3H10M7 13H9'),compact('user',8,7.95,.93)),'mobile phone account')
-    shape('screen-share',rr(1.5,2,13,9),stroke('M8 11V14M5 14H11M8 8V4.2M6 6.2L8 4.2L10 6.2'),'display share presentation')
-    disabled('screen-share-off','screen-share')
-    shape('mouse-pointer',path('M3 1.8L12 9L8 9.6L10 13.5L8 14.5L6 10.3L3 13Z'),None,'cursor pointer')
-    shape('mouse-pointer-click',path('M4 5L12 10L8.5 10.5L10 13.5L8 14.5L6.5 11.3L4 13Z'),stroke('M2.5 1.55L3.15 2.65M1.4 5.1H2.4M6.85 1.7L6.2 3.05'),'cursor click')
+    # SF headset: a single-weight band, filled ear cups and a short boom.
+    cups = union(rr(1.6,7.35,2.75,4.75,1.3,exact=True), rr(11.65,7.35,2.75,4.75,1.3,exact=True))
+    glyph('headset', cups, union(stroke('M2.95 8.2V7.3A5.05 5.05 0 0 1 13.05 7.3V8.2'),
+                                 stroke('M13.05 12V12.4Q13.05 14.15 11.3 14.15H9.6')),
+          'headphones microphone call')
+    # SF iphone: 8.2 x 13.5 with a short island; the account sits on the screen.
+    phone = rr(4.42,1.75,7.16,12.5,1.9,exact=True)
+    shape('smartphone-user-round', phone,
+          union(stroke('M7.2 3.65H8.8'), filled_person.transform(1.05,0,0,1.05,8,8.65)),
+          'mobile phone account')
+    display = rr(1.4,2.1,13.2,8.95)
+    share_ink = stroke('M8 11.05V13.9M5.3 13.9H10.7M8 8.75V4.6M6.1 6.5L8 4.6L9.9 6.5')
+    shape('screen-share', display, share_ink, 'display share presentation')
+    # The arrow moves right of the slash so both remain whole.
+    slashed('screen-share-off', display, stroke('M8 11.05V13.9M5.3 13.9H10.7M11.05 7.75V4.45M9.55 5.95L11.05 4.45L12.55 5.95'),
+            'display share disabled')
+    # SF cursorarrow: a slim arrow, upright left edge and a narrow tail.
+    pointer = path('M4.9 2.1L4.9 11.55L7.05 9.75L8.6 13.6L10.05 13L8.5 9.3L11.1 9.25Z')
+    shape('mouse-pointer', pointer, None, 'cursor pointer')
+    small_pointer = pointer.transform(.84,0,0,.84,8-8*.84+1.75,8-8*.84+1.45)
+    shape('mouse-pointer-click', small_pointer,
+          stroke('M7.05 3.05V1.5M5.25 4.85H3.7M5.75 3.55L4.6 2.4M8.55 3.35L9.45 2.15'),
+          'cursor click')
     rune = path('M3 5.76L12 10.8L7 14.3V1.7L12 5.2L3 10.24')
     glyph('bluetooth-connected',stroke(rune),dots((1.55,8),(14.45,8),r=.75),'wireless connected')
     glyph('bluetooth-searching',stroke(transform(rune,dx=-1)),stroke('M13.1 4.8Q15.5 8 13.1 11.2'),'wireless searching')
     shape('volume-1',path('M2 6H5L9 2.5V13.5L5 10H2Z'),stroke('M11.5 6Q13.5 8 11.5 10'),'audio sound low')
 
     api['CATEGORY'] = 'Interface controls'
+    # viewfinder corners: rounded, as in SF *.viewfinder and the family scan.
+    finder = 'M2 5.2V3.25Q2 2 3.25 2H5.2M10.8 2H12.75Q14 2 14 3.25V5.2M14 10.8V12.75Q14 14 12.75 14H10.8M5.2 14H3.25Q2 14 2 12.75V10.8'
     for name, geom in {
         'languages':'M2 4H10M6 2V4M3.5 5Q4.35 7.95 8 10M8.5 5Q7.5 9 2.5 11M10 14L12.25 7.9L14.5 14M10.7 12.25H13.8',
         'link-2':'M6 10L5 11A2.5 2.5 0 0 1 1.5 7.5L4 5A2.5 2.5 0 0 1 7.5 5M10 6L11 5A2.5 2.5 0 0 1 14.5 8.5L12 11A2.5 2.5 0 0 1 8.5 11M5.5 10.5L10.5 5.5',
         'loader':'M8 1.5V3.5M12.6 3.4L11.2 4.8M14.5 8H12.5M12.6 12.6L11.2 11.2M8 14.5V12.5M3.4 12.6L4.8 11.2M1.5 8H3.5M3.4 3.4L4.8 4.8',
-        'sliders-vertical':'M3.25 2V5M3.25 8V14M2.1 5H4.4V8H2.1ZM8 2V8M8 11V14M6.85 8H9.15V11H6.85ZM12.75 2V4M12.75 7V14M11.6 4H13.9V7H11.6Z',
-        'scan-barcode':'M2 5V2H5M11 2H14V5M2 11V14H5M11 14H14V11M3.85 5.5V10.5M6.05 5.5V10.5M9.85 5.5V10.5M12.1 5.5V10.5',
-        'scan-qr-code':'M2 5V2H5M11 2H14V5M2 11V14H5M11 14H14V11M4.6 4.6H7V7H4.6ZM9 4.6H11.4V7H9ZM4.6 9H7V11.4H4.6ZM9.15 9.15H11.35V11.35',
-        'scan-text':'M2 5V2H5M11 2H14V5M2 11V14H5M11 14H14V11M5 6H11M5 8H11M5 10H9',
-
-        'ungroup':'M2 6V2H6M10 2H14V6M2 10V14H6M10 14H14V10M4.15 4.15H7.4V7.4H4.15ZM8.6 8.6H11.85V11.85H8.6Z',
+        'scan-barcode':finder+'M4.9 5.3V10.7M6.95 5.3V10.7M9.05 5.3V10.7M11.1 5.3V10.7',
+        'scan-qr-code':finder+'M4.9 4.9H7.1V7.1H4.9ZM8.9 4.9H11.1V7.1H8.9ZM4.9 8.9H7.1V11.1H4.9ZM9.15 9.15H11V11',
+        'scan-text':finder+'M5 5.6H11M5 8H11M5 10.4H9',
+        'ungroup':finder+'M4.6 4.6H7.4V7.4H4.6ZM8.6 8.6H11.4V11.4H8.6Z',
         'table-cells-merge':'M1.65 2H10.65V9.2H1.65ZM1.65 5.6H10.65M6.15 2V9.2M6.95 11.5L8.55 13L6.95 14.5M14.2 11.5L12.6 13L14.2 14.5',
         'table-cells-split':'M1.65 2H10.65V9.2H1.65ZM1.65 5.6H10.65M6.15 2V9.2M8.6 11.5L7 13L8.6 14.5M12.6 11.5L14.2 13L12.6 14.5',
     }.items(): glyph(name,stroke(geom),None,name.replace('-',' '))
+    # slider.vertical.3: capsule knobs interrupt three tracks.
+    tracks = []
+    for x, knob in ((3.6, 7.9), (8, 3.7), (12.4, 9.3)):
+        tracks += [stroke(rr(x-1.15, knob, 2.3, 3.2, 1.15, exact=True)),
+                   line((x, 2.85), (x, knob)) if knob > 3.4 else po.Path(),
+                   line((x, knob+3.2), (x, 13.15))]
+    glyph('sliders-vertical', union(*tracks), None, 'sliders vertical')
 
-    panel = union(stroke(rr(2,3,12,10)),stroke('M6 3V13'))
-    for action, chevron in (('close','M12 6L9 8L12 10'),('open','M9 6L12 8L9 10')):
+    # sidebar.left: SF rectangle proportions, sidebar divider, chevron in the pane.
+    panel = union(stroke(rr(1.2,2.6,13.6,10.8)),stroke('M5.65 2.6V13.4'))
+    for action, chevron in (('close','M11.15 6.05L9.2 8L11.15 9.95'),('open','M9.3 6.05L11.25 8L9.3 9.95')):
         glyph('panel-left-'+action,panel,stroke(chevron),'panel left '+action)
 
     heading = api['DRAWINGS']['heading-1'][0]
@@ -736,7 +1272,7 @@ def register(api):
     glyph('timeline', events, None, 'timeline')
     api['CATEGORY'] = 'Symbols'
     for suffix, geom in {
-        'aquarius':'M2 6L4 4L6 6L8 4L10 6L12 4L14 6M2 12L4 10L6 12L8 10L10 12L12 10L14 12',
+        'aquarius':'M1.9 6.05Q3.4 3.7 4.95 5.25T8 5.25T11.05 5.25T14.1 4.45M1.9 11.55Q3.4 9.2 4.95 10.75T8 10.75T11.05 10.75T14.1 9.95',
         'aries':'M8 14V7Q8 2 4.5 2Q2 2 2 5M8 7Q8 2 11.5 2Q14 2 14 5',
         'cancer':'M5 3.8A2.15 2.15 0 1 0 5 8.1A2.15 2.15 0 1 0 5 3.8M5 3.8C8.1 3.8 10.25 2.5 13.2 4.05M11 12.2A2.15 2.15 0 1 0 11 7.9A2.15 2.15 0 1 0 11 12.2M11 12.2C7.9 12.2 5.75 13.5 2.8 11.95',
         'capricorn':'M1.9 4.25L4.2 10.1L6.45 3.85C7.55 6.95 7.7 12.65 10.35 13.15C13.4 13.75 14.85 9.15 12.05 8.8C10.45 8.55 9.7 10.15 8.65 11.5',
@@ -752,11 +1288,12 @@ def register(api):
     }.items(): glyph('zodiac-'+suffix,stroke(geom),None,'astrology zodiac '+suffix)
 
     api['CATEGORY'] = 'Product tools'
-    shape('briefcase-medical',rr(1.5,5,13,9),union(stroke('M5 5V2.5H11V5'),plus(8,9.2,.65)),'medical first aid case')
+    shape('briefcase-medical',rr(1.5,5,13,9),union(stroke('M5 5V2.5H11V5'),plus(8,9.5,.82)),'medical first aid case')
     buildings = path('M2 14V5.5H6.6V2H14V14Z')
     building_windows = path('M4.35 8.25V9.3M4.35 11.4V12M9 4.65V5.5M11.65 4.65V5.5M9 7.65V8.5M11.65 7.65V8.5M9 10.7V11.55')
     shape('building-complex',buildings,stroke(building_windows),'buildings office complex')
-    badged('building-complex-plus','building-complex','plus')
+    sf_host('building-complex-plus','building-complex','buildings office complex plus')
+    sf_badge('building-complex-plus','plus')
     wall = rr(1.7,3,10.5,10)
     mortar = stroke('M1.7 6.3H12.2M1.7 9.65H12.2M5.2 3V6.3M4.15 6.3V9.65M8.1 6.3V9.65M5.2 9.65V13')
     shield_badge = path('M12 8L14.5 9V11Q14.5 13 12 14Q9.5 13 9.5 11V9Z')
@@ -791,7 +1328,7 @@ def register(api):
     overrides['certificate'] = {'stroke':ink,'duotone':[(subtract(surface,ink),.24),(ink,1)],
                                 'solid':union(subtract(paper,lettering),solid_seal)}
     contact_cover = rr(3.2,1.85,10.5,12.3)
-    portrait = compact('user',8.9,8,.95)
+    portrait = sf_person(8.95,8.15,.82)
     loops = union(*(stroke(rr(1.4,y,3.7,2.2)) for y in (4.2,9.6)))
     holes = union(*(rr(.65,y-.8,5.4,3.8) for y in (4.2,9.6)))
     shape('contact-round',contact_cover,union(portrait,loops),'address book contact person')
@@ -833,17 +1370,21 @@ def register(api):
     shape('highlighter',marker,stroke('M8.95 4.2L11.85 7.1M7.4 14H12.4'),'marker pen highlighting')
     identity_card = rr(2.5,5.55,11,8.65)
     lanyard = stroke('M5.7 1.85L8 4.95L10.3 1.85M8 4.95V5.65')
-    identity = union(stroke(circle(6.8,8.45,1.12)),
-                     stroke('M4.65 12.2Q5 10.75 6.8 10.75Q8.6 10.75 8.95 12.2M10.25 8.45H11.55'))
+    identity = union(sf_person(6.55, 9.95, .62), stroke('M9.9 8.9H11.3M9.9 11.1H11.3'))
     shape('id-card-lanyard',identity_card,union(lanyard,identity),'identity badge lanyard')
     overrides['id-card-lanyard'] = {'solid':union(subtract(union(identity_card,stroke(identity_card)),identity),lanyard)}
-    shape('key-square',rr(2,2,12,12),compact('key',8,8,1.2),'security key')
-    shape('layout-list',rr(1.5,2,13,12),union(stroke(rr(3.7,4.4,2.65,2.65)),stroke(rr(3.7,9.1,2.65,2.65)),
-                                                stroke('M7.65 5.9H12M7.65 10.15H12')),'layout list')
-    shape('layout-template',rr(1.5,2,13,12),stroke('M2 6H14M6 6V14'),'layout template panels')
-    keyhole = union(circle(8,9.65,1.3),line((8,10.45),(8,12)))
-    shape('lock-keyhole',rr(3,7,10,7),union(stroke('M5 7V5A3 3 0 0 1 11 5V7'),keyhole),'security locked keyhole')
-    shape('lock-keyhole-open',rr(3,7,10,7),union(stroke('M5 7V5A3 3 0 0 1 11 5'),keyhole),'security unlocked keyhole')
+    shape('key-square',square,compact('key',8,8,1.12),'security key')
+    # list.bullet.rectangle / rectangle.split: SF rectangle proportions.
+    window = rr(1.2,2.6,13.6,10.8)
+    shape('layout-list',window,union(stroke(rr(3.65,4.75,2.4,2.4,.7,exact=True)),stroke(rr(3.65,8.85,2.4,2.4,.7,exact=True)),
+                                     stroke('M7.75 5.95H12.2M7.75 10.05H12.2')),'layout list')
+    shape('layout-template',window,stroke('M1.2 6.3H14.8M6 6.3V13.4'),'layout template panels')
+    # lock: SF's narrow body (8.7 x 12.5 overall) with a keyhole on the body.
+    keyhole = union(circle(8,9.9,1.05),line((8,10.3),(8,11.85)))
+    lock_body = rr(4.15,7.05,7.7,6.7)
+    shape('lock-keyhole',lock_body,union(stroke('M5.35 7.05V4.9A2.65 2.65 0 0 1 10.65 4.9V7.05'),keyhole),'security locked keyhole')
+    shape('lock-keyhole-open',transform(lock_body,dx=-1.6),
+          union(stroke('M9.25 7.05V4.9A2.65 2.65 0 0 1 14.55 4.9V5.9'),transform(keyhole,dx=-1.6)),'security unlocked keyhole')
     notebook = rr(2,1.75,9.8,12.5)
     tabs = union(rr(11.15,3.55,2.85,2.65),rr(11.15,8.55,2.85,2.65))
     stack('notebook-tabs',tabs,notebook,stroke('M4.35 1.75V14.25M6.5 5.1H9.55M6.5 7.55H8.95'),'notebook index tabs')
@@ -891,13 +1432,21 @@ def register(api):
     glyph('rotate-cw-fading-clock',stroke('M3 6A5.5 5.5 0 0 1 13.2 5M10.5 4.5L13.3 5L13.5 2.2M13.5 8Q13.5 10 12 11.7M9.5 13.4L9.4 13.4M6.5 13.4L6.4 13.4M3.5 11.8L3.4 11.7M8 5.2V8.2L10.3 9.5'),None,'clock rotate history')
     stack('save-all', rr(1.7,1.7,9.5,9.5), path('M4.8 4.6H11.8L14.3 7.1V14.3H4.8Z'),
           stroke('M7 4.6V7.7H10.4V4.6M7.4 14.3V10.6H11.8V14.3'), 'save multiple files')
-    searchbody=stroke(circle(6,6,4))
-    for suffix in ('check','x'):
-        glyph('search-'+suffix,union(searchbody,line((9,9),(13,13))),compact(suffix,12.65,3.15,.73),'find search '+suffix)
-    glyph('search-code',union(searchbody,line((9,9),(13,13))),stroke('M4.9 4.95L3.85 6L4.9 7.05M7.1 4.95L8.15 6L7.1 7.05'),'find search code')
-    glyph('settings-2',union(stroke('M2 3.6H4M7 3.6H14M2 8H9.3M12.3 8H14M2 12.4H4M7 12.4H14'),
-                             *(stroke(rr(x,y,3,2.65)) for x,y in ((4,2.275),(9.3,6.675),(4,11.075)))),None,'settings adjustments sliders')
-    glyph('share',stroke('M8 10V2M5 5L8 2L11 5M3 8V13H13V8'),None,'share upload')
+    # plus.magnifyingglass: the family lens, the mark centered inside it.
+    search_lens, search_handle = circle(6.7,6.7,4.7), line((10.3,10.3),(14,14))
+    for suffix, mark in (('check', check(6.7,6.8,.62)), ('x', cross(6.7,6.7,.66)),
+                         ('code', stroke('M5.6 5.25L4.15 6.7L5.6 8.15M7.8 5.25L9.25 6.7L7.8 8.15'))):
+        shape('search-'+suffix, search_lens, union(search_handle, mark), 'find search '+suffix)
+    # slider.horizontal.3: capsule knobs interrupt three tracks.
+    settings_tracks = []
+    for y, knob in ((3.6, 4.3), (8, 8.6), (12.4, 2.9)):
+        settings_tracks += [stroke(rr(knob, y-1.15, 3.4, 2.3, 1.15, exact=True)),
+                            line((1.85, y), (knob, y)) if knob > 2.5 else po.Path(),
+                            line((knob+3.4, y), (14.15, y))]
+    glyph('settings-2', union(*settings_tracks), None, 'settings adjustments sliders')
+    # square.and.arrow.up: an open tray with rounded corners, arrow through the gap.
+    glyph('share',stroke('M5.6 6.1H4.9Q3.7 6.1 3.7 7.3V13.25Q3.7 14.45 4.9 14.45H11.1Q12.3 14.45 12.3 13.25V7.3Q12.3 6.1 11.1 6.1H10.4'),
+          stroke('M8 9.9V1.7M5.65 4.05L8 1.7L10.35 4.05'),'share upload')
     glyph('share-2',union(stroke('M5 7L11 4M5 9L11 12'),stroke(circle(3.5,8,1.6)),stroke(circle(12.5,3.5,1.6)),stroke(circle(12.5,12.5,1.6))),None,'share network nodes')
     shredder = rr(1.7,6.4,12.6,4.4)
     sheet = path('M4.4 6.4V2H10.4L11.6 3.3V6.4Z')
@@ -919,8 +1468,6 @@ def register(api):
     # otherwise the generic silhouette merges the mark into the background.
 
 
-    mail_solid = subtract(union(mail,stroke(mail)),union(stroke('M2 4L8 8L14 4'),circle(12,3,2.4)))
-    overrides['mail-badge'] = {'solid':union(mail_solid,circle(12,3,1.55))}
     # Cut the final rendered style before adding the slash. Cutting the body
     # first would outline the cut edges and produce two distracting diagonals.
     def disabled_styles(name, source):
@@ -972,12 +1519,11 @@ def register(api):
         }
     for name, source in (
         ('alarm-clock-off','alarm-clock'),('bookmark-off','bookmark'),('calendar-off','calendar'),
-        ('captions-off','captions'),('cctv-off','cctv'),('flag-off','flag'),('heart-off','heart'),
+        ('flag-off','flag'),('heart-off','heart'),
         ('image-off','image'),('lightbulb-off','lightbulb'),('map-pin-off','map-pin'),
-        ('message-circle-off','message-circle'),('message-square-off','message-square-off'),
         ('monitor-off','monitor'),('pin-off','pin'),('power-off','power'),('save-off','save'),
-        ('screen-share-off','screen-share'),('server-off','server-rack'),('shield-off','shield'),
-        ('star-off','star'),('timer-off','timer'),('touchpad-off','touchpad'),('trash-off','trash'),
+        ('server-off','server-rack'),('shield-off','shield'),
+        ('star-off','star'),('timer-off','timer'),('trash-off','trash'),
         ('video-off','video-call'),('wrench-off','wrench'),('zap-off','zap'),
     ):
         disabled_styles(name,source)
@@ -988,11 +1534,6 @@ def register(api):
     phone_slash=line((2,14),(14,2))
     phone_gap=line((2,14),(14,2),width=2.7)
     overrides['phone-off']={'duotone':[(subtract(handset,union(phone_gap,stroke(handset))),.24),(union(subtract(stroke(handset),phone_gap),phone_slash),1)],'solid':union(subtract(phone_base,phone_gap),phone_slash),'stroke':union(subtract(stroke(handset),phone_gap),phone_slash)}
-    overrides['package-open'] = {'solid':subtract(union(carton,stroke(carton)),flap_seams)}
-    for name, bubble in (('messages-circle',bubble_round),('messages-square',bubble_square)):
-        back=transform(bubble,0,.72,-2,-2)
-        front=transform(bubble,0,.72,2,2)
-        overrides[name]={'solid':api['stacked_solid'](back,front)}
 
     # Half-state symbols need an actual half-filled silhouette, not a seam
     # dividing two identical halves. Keep the right counter open in every style.
@@ -1006,9 +1547,7 @@ def register(api):
 
     # Foreground seams in Solid are open gaps between objects. Reusing an
     # interior contour as a counter leaves an unstable hairline double border.
-    for suffix in ('check', 'plus', 'x'):
-        overrides['copy-'+suffix] = {'solid': api['stacked_solid'](
-            rr(2,2,8,9), rr(5,5,9,9), compact(suffix,9.5,9.5,.83))}
+    # copy-check / -plus / -x: composed by draw.stacked() with the shared pair.
     for name, back, front, detail in (
 
 
@@ -1017,15 +1556,6 @@ def register(api):
 
     ):
         overrides[name] = {'solid': api['stacked_solid'](back, front, detail)}
-
-    # Use exactly the same foreground outline as its surface; the earlier
-    # independently drawn line left hooks at the tails of stacked bubbles.
-    for name, bubble in (('messages-circle',bubble_round),('messages-square',bubble_square)):
-        back = transform(bubble,scale=.72,dx=-2,dy=-2)
-        front = transform(bubble,scale=.72,dx=2,dy=2)
-        contour = union(subtract(stroke(back),front),stroke(front))
-        overrides[name].update({'duotone':[(subtract(union(back,front),contour),.24),(contour,1)],
-                                'stroke':contour})
 
     # Reserve a corner after composing the host so no detail bleeds into the badge.
     def detach_badge(name, badge):
@@ -1088,9 +1618,3 @@ def register(api):
         solid = subtract(union(subtract(host_solid,clipped),*structure),gap)
         overrides[name] = {'stroke':ink,'duotone':[(subtract(base,union(gap,ink)),.24),(ink,1)],
                            'solid':union(solid,badge)}
-    for suffix in ('check','minus','plus','x'):
-        detach_badge('calendar-'+suffix+'-2',compact(suffix,12.35,12.35,.8))
-    for suffix, direction in (('input','arrow-left'),('output','arrow-right')):
-        detach_badge('file-'+suffix,compact(direction,11.6,9.1,.92))
-    detach_badge('file-code-corner',code_badge)
-    detach_badge('mail-badge',circle(12,3,1.6))

@@ -28,98 +28,106 @@ def register(api):
 
     api['CATEGORY'] = 'Layout'
     window = drawings['sidebar-left'][0]
-    menu = line((1.35, 5.45), (14.65, 5.45))
+    menu = line((1.245, 5.45), (14.755, 5.45))
     framed('menubar', window, menu, 'desktop window menu bar top system commands')
-    framed('menubar-dock', window, union(menu, line((4.6, 10.8), (11.4, 10.8))),
+    # SF menubar.dock.rectangle: the dock is a filled capsule above the lower edge.
+    framed('menubar-dock', window, union(menu, rr(4.55, 9.95, 6.9, 1.7, .85, exact=True)),
            'desktop window menu bar dock launcher applications')
 
     for name, seam, tags in (
-        ('window-split-horizontal', line((1.35, 8), (14.65, 8)), 'rows upper lower horizontal'),
-        ('window-split-vertical', line((8, 2.65), (8, 13.35)), 'columns left right vertical'),
+        ('window-split-horizontal', line((1.245, 8), (14.755, 8)), 'rows upper lower horizontal'),
+        ('window-split-vertical', line((8, 2.85), (8, 13.15)), 'columns left right vertical'),
     ):
         framed(name, window, seam, 'window split panes divider layout ' + tags)
 
-    rear = rr(1.45, 2.1, 10.1, 8.7)
-    front = rr(4.45, 5.2, 10.1, 8.7)
-    title = line((4.45, 8.15), (14.55, 8.15))
+    # SF macwindow.on.rectangle: a rear frame and a front window whose title
+    # bar carries the three window controls; both use window-chrome corners.
+    rear = rr(1.3, 2.05, 10.4, 8.2, 1.9, exact=True)
+    front = rr(4.3, 5.2, 10.4, 8.6, 1.9, exact=True)
+    controls = api['dots']((6.35, 7.25), (7.9, 7.25), (9.45, 7.25), r=.6)
     rear_rim, front_rim = stroke(rear), stroke(front)
     field = union(front, front_rim)
-    behind = cut(union(rear, rear_rim), union(field, stroke(field, 2.1)))
-    edges = union(cut(rear_rim, field), front_rim, title)
+    clearance = union(field, stroke(field, 1.8, exact=True))
+    behind = cut(union(rear, rear_rim), clearance)
+    edges = union(cut(rear_rim, clearance), front_rim, controls)
     shape('window-stack', union(rear, front), edges, 'desktop overlapping windows switch multitask')
     overrides['window-stack'] = {
-        'duotone': [(cut(union(rear, front), edges), .24), (edges, 1)],
-        'stroke': edges, 'solid': union(behind, cut(field, line((5.5, 8.15), (13.5, 8.15)))),
+        'duotone': [(cut(union(cut(rear, clearance), front), edges), .24), (edges, 1)],
+        'stroke': edges, 'solid': union(behind, cut(field, controls)),
     }
 
-    for name, x, y, w, h, tags in (
-        ('widget-small', 3.9, 3.9, 8.2, 8.2, 'compact square'),
-        ('widget-medium', 1.4, 3.9, 13.2, 8.2, 'wide landscape'),
-        ('widget-large', 1.95, 1.95, 12.1, 12.1, 'expanded square'),
+    # SF widget.small / .medium / .large: tiles with app-tile corners, a filled
+    # rounded square at the top left and caption rows along the bottom.
+    for name, x, y, w, h, rows, tags in (
+        ('widget-small', 2.45, 2.45, 11.1, 11.1, 1, 'compact square'),
+        ('widget-medium', 1.25, 3.0, 13.5, 10.0, 1, 'wide landscape'),
+        ('widget-large', 1.25, 1.45, 13.5, 13.1, 3, 'expanded square'),
     ):
-        tile = rr(x, y, w, h)
-        if name == 'widget-small':
-            heading = line((x + 2.45, y + h - 4.85), (x + w - 3.5, y + h - 4.85))
-        else:
-            heading = circle(x + 2.8, y + 2.8, .8)
-        caption = line((x + 2.45, y + h - 2.45), (x + w - 2.45, y + h - 2.45))
-        if name == 'widget-large':
-            caption = union(caption, line((x + 2.45, y + h - 4.6), (x + w - 4.6, y + h - 4.6)))
-        framed(name, tile, union(heading, caption), 'home screen dashboard widget tile ' + tags)
+        tile = rr(x, y, w, h, 2.6, exact=True)
+        icon = rr(x + 1.75, y + 1.75, 2.9, 2.9, .8, exact=True)
+        caption = [line((x + 2.3, y + h - 2.35 - 1.75*i), (x + w - 2.3 - (2.2 if i == 2 else 0), y + h - 2.35 - 1.75*i))
+                   for i in range(rows)]
+        framed(name, tile, union(icon, *caption), 'home screen dashboard widget tile ' + tags)
 
-    # Lift the active pane across the bottom-right bezel of the original display.
-    display = drawings['picture-in-picture'][0]
-    inset = rr(8.2, 9.9, 7.05, 5.25)
-    clearance = union(inset, stroke(inset, 2.2))
+    # SF pip.enter / .exit / .swap: a window with a filled inset that stands
+    # out over its lower right corner behind a clear gap.
+    display = rr(1.5, 2.75, 11.2, 8.9, 1.9, exact=True)
+    inset = rr(8.15, 8.75, 6.85, 5.0, 1.3, exact=True)
+    clearance = union(inset, stroke(inset, 1.8, exact=True))
     rim = cut(stroke(display), clearance)
-    screen = cut(union(display, stroke(display)), clearance)
-    enter = lines('M4.35 4.65L7.65 7.65', 'M5.25 7.65H7.65V5.25')
-    leave = lines('M7.65 7.65L4.35 4.65', 'M4.35 7.05V4.65H6.75')
-    swap = lines('M5.65 4.95C7.8 3.35 10.65 3.8 11.15 6.7',
-                 'M9.3 5.55L11.15 6.7L12.3 4.85',
-                 'M5.55 12.05C3.65 11.05 3.7 8.95 5.2 7.3',
-                 'M3.65 7.75L5.2 7.3L5.65 9.15')
-    for name, arrow, tags in (
-        ('pip-enter', enter, 'enter shrink minimize'),
-        ('pip-exit', leave, 'exit restore expand'),
-        ('pip-swap', swap, 'swap exchange switch'),
+    screen = cut(display, clearance)
+    # Arrows end in filled heads, as in SF pip.enter.
+    def headed(x0, y0, x1, y1, size=2.3):
+        import math
+        d = math.hypot(x1-x0, y1-y0); ux, uy = (x1-x0)/d, (y1-y0)/d
+        bx, by = x1-ux*size, y1-uy*size
+        return union(line((x0, y0), (bx+ux*.3, by+uy*.3)),
+                     poly([(x1, y1), (bx-uy*size*.62, by+ux*size*.62), (bx+uy*size*.62, by-ux*size*.62)]))
+    enter = headed(3.9, 5.1, 7.35, 8.4)
+    leave = headed(7.35, 8.4, 3.9, 5.1)
+    swap_mark = headed(13.15, 12.6, 10.05, 9.75, 2.0)
+    for name, arrow, mark, tags in (
+        ('pip-enter', enter, None, 'enter shrink minimize'),
+        ('pip-exit', leave, None, 'exit restore expand'),
+        ('pip-swap', enter, swap_mark, 'swap exchange switch'),
     ):
-        edges = union(rim, arrow, inset)
-        shape(name, display, union(arrow, inset), 'picture in picture floating video player ' + tags)
+        tile = cut(inset, mark) if mark else inset
+        edges = union(rim, arrow, tile)
+        shape(name, display, union(arrow, tile), 'picture in picture floating video player ' + tags)
         overrides[name] = {
-            'duotone': [(cut(screen, edges), .24), (edges, 1)],
-            'stroke': edges, 'solid': union(cut(screen, arrow), inset),
+            'duotone': [(cut(screen, union(edges, rim)), .24), (edges, 1)],
+            'stroke': edges, 'solid': union(cut(cut(union(display, stroke(display)), clearance), arrow), tile),
         }
 
     api['CATEGORY'] = 'Interface controls'
-    card, backs = drawings['rectangle-stack'][:2]
-    rim = stroke(card)
-    badge = circle(3.65, 12.3, 2.85)
-    clearance = circle(3.65, 12.3, 3.95)
-    stack_edges = cut(union(backs, rim), clearance)
-    stack_surface = cut(cut(card, rim), clearance)
-    stack_solid = cut(union(card, rim, backs), clearance)
-    head = circle(3.65, 11.06, .78)
-    shoulders = api['path']('M2.19 13.99C2.2 12.5 5.1 12.5 5.11 13.99Q3.65 14.95 2.19 13.99Z')
+    card, backs, (bx, by), br = api['RECTANGLE_STACK_BADGED']
+    k = br/3.25
+    head = circle(bx, by-.85*k, 1.0*k)
+    torso = api['op'](api['path']('M-2 2.6Q-2 .6 0 .6Q2 .6 2 2.6Z').transform(k, 0, 0, k, bx, by),
+                      circle(bx, by, br-.62*k), api['po'].PathOp.INTERSECTION)
     for name, mark, tags in (
-        ('rectangle-stack-user', union(head, shoulders), 'person user profile shared collection'),
-        ('rectangle-stack-play', poly([(2.85, 10.84), (5.15, 12.3), (2.85, 13.76)]),
+        ('rectangle-stack-user', union(head, torso), 'person user profile shared collection'),
+        ('rectangle-stack-play', poly([(bx-.95*k, by-1.6*k), (bx+1.65*k, by), (bx-.95*k, by+1.6*k)]),
          'play video media playlist'),
     ):
-        disc = cut(badge, mark)
-        shape(name, card, union(backs, mark), 'cards layers deck stack ' + tags)
-        overrides[name] = {
-            'duotone': [(union(stack_surface, disc), .24), (union(stack_edges, mark), 1)],
-            'solid': union(stack_solid, disc), 'stroke': union(stack_edges, disc),
-        }
+        shape(name, card, backs, 'cards layers deck stack ' + tags)
+        api['BADGES'][name] = (cut(circle(bx, by, br), mark), circle(bx, by, br+api['BADGE_GAP']))
 
     api['CATEGORY'] = 'Technology and development'
-    pointer = drawings['mouse-pointer-click'][0]
-    rays = lines('M3.85 1.3V2.65', 'M1.25 3L2.05 3.95',
-                 'M6 3.4L7.05 2.25', 'M7.95 4.98L9.5 4.65')
-    shape('cursor-rays', pointer, rays, 'cursor pointer click highlight select rays')
-    trails = lines('M4.55 2.6H10.55', 'M7.95 4.8H12.6', 'M11.5 7H14.65')
-    shape('cursor-motion', pointer, trails, 'cursor pointer motion speed movement tracking')
+    pointer = drawings['mouse-pointer'][0]
+    tip = (4.9, 2.1)
+    # SF cursorarrow.rays: seven rays around the tip, the arrow in the eighth sector.
+    centre = (6.6, 6.1)
+    small = pointer.transform(.64, 0, 0, .64, centre[0]-.64*tip[0], centre[1]-.64*tip[1])
+    import math
+    rays = union(*(line((centre[0]+2.3*math.cos(math.radians(a)), centre[1]+2.3*math.sin(math.radians(a))),
+                        (centre[0]+4.25*math.cos(math.radians(a)), centre[1]+4.25*math.sin(math.radians(a))))
+                   for a in (0, 135, 180, 225, 270, 315)))
+    shape('cursor-rays', small, rays, 'cursor pointer click highlight select rays')
+    # SF cursorarrow.motionlines: the arrow trailing three motion lines.
+    moving = pointer.transform(1, 0, 0, 1, -2.7, 0)
+    trails = lines('M7.6 4.6H14.1', 'M9.15 6.4H13.6', 'M10.7 8.2H13.1')
+    shape('cursor-motion', moving, trails, 'cursor pointer motion speed movement tracking')
 
     keyboard, keys = drawings['keyboard'][:2]
     badge = circle(12, 11.95, 3.3)
@@ -157,8 +165,10 @@ def register(api):
     latch = rr(5.4, 12.4, 5.2, 2.18)
     shape('capslock', union(shift_arrow(1.5, 10.25), latch), None,
           'keyboard modifier capital uppercase caps lock latch')
-    glyph('fn', stroke('M6.6 2.7H5.7Q3.6 2.7 3.6 5.05V13.25M1.8 6.4H5.95'),
-          stroke('M8.4 13.25V6.4M8.4 9.1C8.4 5.6 13.9 5.25 13.9 9V13.25'),
+    # SF fn: text-sized, 10.4 x 9.5.
+    fn_size = lambda d: stroke(api['transform'](api['path'](d), scale=.82, dy=.35))
+    glyph('fn', fn_size('M6.6 2.7H5.7Q3.6 2.7 3.6 5.05V13.25M1.8 6.4H5.95'),
+          fn_size('M8.4 13.25V6.4M8.4 9.1C8.4 5.6 13.9 5.25 13.9 9V13.25'),
           'function fn keyboard modifier shortcut')
     glyph('escape', stroke('M8.4 1.95A6.05 6.05 0 1 1 1.95 8.4'),
           lines('M8.05 8.05L2.45 2.45', 'M2.45 5.85V2.45H5.85'),
@@ -189,10 +199,16 @@ def register(api):
     overrides['cellular-bars'] = {
         'solid': union(*(rr(x - 1.2, top - .55, 2.4, 13.9 - top, 1.2) for x, top in levels)),
     }
-    # Both broadcast sectors share the transmitter's center and opening angle.
-    waves = lines('M4.1 2.8A6.5 6.5 0 0 0 4.1 13.2',
-                  'M5.81 5.08A3.65 3.65 0 0 0 5.81 10.92')
-    glyph('personal-hotspot', circle(8, 8, 1.3), union(waves, api['mirror'](waves)),
+    # SF personalhotspot: two interlinked loops, each passing over the other once.
+    first = rr(1.35, 3.25, 8.3, 5.2, 2.6)
+    second = rr(6.35, 6.95, 8.3, 5.2, 2.6)
+    left, right = rr(0, 0, 8, 16, 0), rr(8, 0, 8, 16, 0)
+    def part(p, half): return api['op'](p, half, api['po'].PathOp.INTERSECTION)
+    band_a, band_b = stroke(first), stroke(second)
+    over_a, over_b = stroke(first, 2.84, exact=True), stroke(second, 2.84, exact=True)
+    links = union(cut(part(band_a, left), over_b), part(band_a, right),
+                  part(band_b, left), cut(part(band_b, right), over_a))
+    glyph('personal-hotspot', links, None,
           'tethering cellular internet share network broadcast personal hotspot')
     chip = rr(2.15, 1.65, 11.7, 12.7)
     contacts = union(*(line((x, y), (x, end)) for x in (5.4, 8, 10.6)

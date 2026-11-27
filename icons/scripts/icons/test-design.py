@@ -93,7 +93,9 @@ class DesignRegressionTests(unittest.TestCase):
             self.assertTrue(all(a==1 for p,a in layers(name)),name)
 
     def test_surface_depth_remains_in_pencil_trash_and_layers(self):
-        for name in ['pencil','trash','layers']:
+        # pencil follows SF's slim solid pencil bar (no surface), shared with
+        # the pen-on-object family, so only trash and layers keep a surface.
+        for name in ['trash','layers']:
             alpha={a for p,a in layers(name)}
             self.assertIn(1,alpha,name)
             self.assertTrue(any(0<a<1 for a in alpha),name)
@@ -115,9 +117,14 @@ class DesignRegressionTests(unittest.TestCase):
             self.assertTrue(shape.contains((12,14)),style)
 
     def test_structural_solid_connections_do_not_turn_into_cutout_fragments(self):
-        for name in ['lock','trophy','network','workflow','watch','calendar','cpu','bug','signpost','syringe']:
+        # calendar is excluded: SF's solid header band is deliberately separated
+        # from the date field by a clearance gap.
+        for name in ['lock','trophy','network','workflow','watch','bug','signpost','syringe']:
             components=art.components(ink(name))
             self.assertEqual(len(components),1,(name,[p.area for p in components]))
+        # SF cpu.fill: the package (pins attached) and a separate die island
+        # inside its clearance ring, by design.
+        self.assertEqual(len(art.components(ink('cpu'))),2)
 
     def test_counters_remain_open(self):
         for style in ['duotone','solid','stroke']:
@@ -125,7 +132,8 @@ class DesignRegressionTests(unittest.TestCase):
                 self.assertFalse(ink(name,style).contains(point),(name,style))
 
     def test_solid_identifying_details_survive_structural_classification(self):
-        for name,point in [('hourglass',(8,4.7)),('bed',(8,10)),('printer',(8,12)),('lungs',(5.5,8.5))]:
+        # SF hourglass keeps its sand in the lower bulb.
+        for name,point in [('hourglass',(8,11.4)),('bed',(8,10)),('printer',(8,12)),('lungs',(5.5,8.5))]:
             self.assertFalse(ink(name).contains(point),name)
         # Overlapping cards have filled faces, with clearance around the rear.
         for name,point in [('copy',(9,9)),('folders',(8,10)),('airplay',(8,12))]:
@@ -163,9 +171,11 @@ class DesignRegressionTests(unittest.TestCase):
         self.assertGreater(areas[2],areas[1]*3)
 
     def test_non_special_default_compositions_preserve_ink(self):
-        special={'airplay','user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off'}
+        special={'airplay','user-plus','user-check','user-x','chart-donut','camera-off','microphone-off','bell-off','cloud-off','bluetooth-off','wifi-off','eye-off','ear-off','volume-off'}
         for name,(body,detail,outlined,*_) in art.DRAWINGS.items():
-            if name in special:continue
+            # SF badges knock a clearance gap out of the base in every style
+            # (see draw.badge), so their ink deliberately differs from the base.
+            if name in special or name in art.BADGES:continue
             # Explicit surface occlusion changes the intended ink, but must
             # still survive serialization without missing or added geometry.
             override=art.STYLE_OVERRIDES.get(name,{}).get('duotone')

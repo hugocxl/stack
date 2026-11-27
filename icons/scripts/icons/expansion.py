@@ -47,21 +47,27 @@ def register(api):
           'balance justice comparison legal weight')
 
     api['CATEGORY'] = 'People and accessibility'
-    shape('id-card', rr(1.5, 3, 13, 10, 1.7),
-          union(circle(5, 6.5, 1.2), stroke('M3 10.5Q3 8.5 5 8.5T7 10.5', 1.1),
-                lines('M9.5 6.5H12M9.5 9.5H12')),
+    # SF person.text.rectangle: a filled figure beside three text lines.
+    op, po, ellipse = api['op'], api['po'], api['ellipse']
+    shape('id-card', rr(1.22, 2.62, 13.56, 10.76, 1.9, exact=True),
+          union(circle(5.35, 6.45, 1.55),
+                path('M2.95 10.95C2.95 9.55 4.0 8.6 5.35 8.6C6.7 8.6 7.75 9.55 7.75 10.95Z'),
+                lines('M9.6 6.0H12.6', 'M9.6 8.15H12.6', 'M9.6 10.3H11.4')),
           'identity identification membership profile credentials')
-    ear = path('M5 12Q5 15 8 14Q10 13.5 10 11Q10 9 12 7.5C15 2 7-1 3.5 3.5Q2 5.5 2.5 8')
-    # An ear is an open anatomical contour, not a filled surface. Keep both
-    # the outline and the inner fold opaque in every style.
-    glyph('ear', stroke(ear), stroke('M6 5Q7 2.5 10 4Q12 6 9 7Q7.5 7.5 8 10', 1.2),
-          'hearing audio listen sensory accessibility')
-    glyph('ear-off', stroke(ear),
-          union(stroke('M6 5Q7 2.5 10 4Q11.7 5.7 9.6 6.85', 1.2), line((2, 2), (14, 14))),
+    # SF ear: a closed outer ear with the inner helix curling into the canal.
+    ear = path('M3.9 6.6C3.9 3.75 5.85 1.65 8.6 1.65C11.35 1.65 13.25 3.75 13.25 6.55'
+               'C13.25 8.5 12.35 9.55 11.35 10.55C10.55 11.35 10.35 12.0 10.05 12.75'
+               'C9.65 13.75 8.85 14.35 7.85 14.35C6.35 14.35 5.3 13.25 5.3 11.85'
+               'C5.3 10.75 4.85 9.95 4.45 9.15C4.1 8.45 3.9 7.6 3.9 6.6Z')
+    helix = stroke('M6.45 6.75C6.45 5.15 7.4 4.15 8.65 4.15C9.95 4.15 10.85 5.1 10.85 6.4'
+                   'C10.85 7.45 10.15 7.95 9.55 8.45C8.95 8.95 8.7 9.55 8.7 10.35')
+    shape('ear', ear, helix, 'hearing audio listen sensory accessibility')
+    shape('ear-off', ear, union(helix, line((2, 2), (14, 14))),
           'hearing deaf muted accessibility')
-    shape('baby', circle(8, 8.5, 5.5),
-          union(stroke('M8.7 3.05C8.2 4.4 6.1 5.5 5.85 4.3', 1.1),
-                dots((6, 8), (10, 8), r=.6), stroke('M6 10.5Q8 12.5 10 10.5', 1.1)),
+    shape('baby', circle(),
+          union(stroke('M8.85 2.55C8.55 3.95 6.65 4.75 6.2 3.75'),
+                ellipse(5.85, 7.35, .7, 1.0), ellipse(10.15, 7.35, .7, 1.0),
+                stroke('M5.55 10.15Q8 12.75 10.45 10.15')),
           'infant childcare newborn family')
 
     api['CATEGORY'] = 'Health and fitness'
@@ -78,9 +84,11 @@ def register(api):
                 circle(4,12.25,1.35),circle(12,12.25,1.35)),
           'emergency paramedic medical vehicle rescue')
     api['CATEGORY'] = 'Maps and travel'
-    shape('backpack', rr(3, 4, 10, 10.5, 2.5),
-          union(stroke('M5.5 4V2.4Q8 .4 10.5 2.4V4'),
-                stroke(rr(5.1, 8.9, 5.8, 3.5)), line((6.25, 6.6), (9.75, 6.6))),
+    # SF backpack: a tall body with a domed top, a small grab loop and a
+    # front pocket whose flap seam crosses its upper edge.
+    shape('backpack', rr(3.4, 3.35, 9.2, 11.1, 3.3, exact=True),
+          union(stroke('M6.55 3.35V2.75Q6.55 1.55 7.75 1.55H8.25Q9.45 1.55 9.45 2.75V3.35'),
+                stroke(rr(5.15, 9.15, 5.7, 3.35, 1.0, exact=True)), line((5.15, 10.55), (10.85, 10.55))),
           'bag hiking school luggage travel')
     shape('binoculars',
           union(path('M1.5 12L3.5 4H6.2L7 12Q7 14 4.3 14Q1.5 14 1.5 12Z'),

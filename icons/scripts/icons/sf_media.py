@@ -34,18 +34,17 @@ def register(api):
                   'M14 11V13Q14 14 13 14H11M5 14H3Q2 14 2 13V11', 1.25)
 
     api['CATEGORY'] = 'Photography and optics'
-    # Segmented orbital arcs suggest a captured moment with motion around it.
-    halo = []
-    for i in range(12):
-        a = i * math.pi / 6
-        b = a + .24
-        m = (a+b)/2
-        halo.append(st(f'M{8+6.2*math.cos(a)} {8+6.2*math.sin(a)}'
-                       f'Q{8+6.25*math.cos(m)} {8+6.25*math.sin(m)} '
-                       f'{8+6.2*math.cos(b)} {8+6.2*math.sin(b)}',1.1))
-    g('motion-photo', *halo, stroke(circle(8,8,3.25),1.25), circle(8,8,1.15),
+    # SF livephoto: a ring of small dots around an open ring and a
+    # heavier centre ring.
+    halo = [circle(8 + 6.45*math.cos(i*math.tau/24), 8 + 6.45*math.sin(i*math.tau/24), .48)
+            for i in range(24)]
+    g('motion-photo', *halo, api['ring'](8, 8, 4.45),
+      sub(circle(8, 8, 2.15), circle(8, 8, .95)),
       tags='live photo movement capture motion')
-    g('camera-metering', brackets(), stroke(circle(8,8,3),1.15), circle(8,8,.9),
+    # SF camera.metering.*: the standard rectangle opened at the middle of
+    # each side, around a centre-weighted ring and spot.
+    frame = sub(stroke(rr(1.69, 3.32, 12.62, 9.36)), rr(0, 6.35, 16, 3.3, 0))
+    g('camera-metering', frame, api['ring'](8, 8, 3.0), circle(8, 8, 1.35),
       tags='camera exposure spot center weighted metering')
     # Three exposed top edges communicate a rapid sequence of captured frames.
     front = rr(2,6.4,12,7.5,1.4)

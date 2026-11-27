@@ -9,7 +9,7 @@ The catalog contains **2,462 names**: 2,381 original UI names and 81 retained br
 - Official [Lucide 1.73.0 release](https://github.com/lucide-icons/lucide/releases/tag/1.73.0), published 2026-11-14T06:04:58Z. The metadata snapshot was pinned on the audit date.
 - Commit: `55782beff3a0133df79c417eb68f96e8f19e2404`.
 - Inventory: 2,055 canonical `icons/*.json` entries and 304 alias records. Aliases, Lab and package exports are excluded as independent concepts.
-- Local `catalog.json` SHA-256: `6e11f6e33436858f9d6ca26a09e08c04c7dbb66c2fe816641c039b49c5f94466`.
+- Local `catalog.json` SHA-256: `fc86604f8d8d63474844cb1792b7f122d3b3b0eebb6fc53d7628d495846444e1`.
 - Upstream archive SHA-256: `f5469fa3574960f5e62780160204512766e1463d5d8b0a9c95515d058fd6062c`.
 - Metadata-only inventory SHA-256: `f8da62ef9b13b3ba9fdd62ba31bed8966ce2dc1a9cbc194e6cb2d13ce5466962`.
 - Rebuild with `python3 scripts/icons/compare-lucide.py --require-complete`; check coverage and report currency without writing with `--check --require-complete`. `--inventory METADATA.json` accepts another snapshot with the same schema.

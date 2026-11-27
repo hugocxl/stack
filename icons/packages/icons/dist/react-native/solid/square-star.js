@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
 import { Svg, Path, Circle, Rect, G } from "react-native-svg";
 export const SquareStarIcon = /*#__PURE__*/ forwardRef(function SquareStarIcon({size = 16, color = "currentColor", ...props}, ref) {
-  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.25 1.45H12.75Q13.4956 1.45 14.0228 1.9772Q14.55 2.5044 14.55 3.25V12.75Q14.55 13.4956 14.0228 14.0228Q13.4956 14.55 12.75 14.55H3.25Q2.5044 14.55 1.9772 14.0228Q1.45 13.4956 1.45 12.75V3.25Q1.45 2.5044 1.9772 1.9772Q2.5044 1.45 3.25 1.45ZM8 4.75 7 6.85 4.75 7.15 6.4 8.75 6 11 8 9.9 10 11 9.6 8.75 11.25 7.15 9 6.85Z", "fill": "currentColor"}));
+  return createElement(Svg, {...{"fill": "none", "viewBox": "0 0 16 16"}, width: size, height: size, color, ...props, ref} ,createElement(Path, {"d": "M3.82 2.1 12.18 2.1Q12.8924 2.1 13.3962 2.6038Q13.9 3.1076 13.9 3.82V12.18Q13.9 12.8924 13.3962 13.3962Q12.8924 13.9 12.18 13.9H3.82Q3.1076 13.9 2.6038 13.3962Q2.1 12.8924 2.1 12.18L2.1 3.82Q2.1 3.1076 2.6038 2.6038Q3.1076 2.1 3.82 2.1ZM8 4.655 6.94 6.881 4.555 7.199 6.304 8.895 5.88 11.28 8 10.114 10.12 11.28 9.696 8.895 11.445 7.199 9.06 6.881Z", "fill": "currentColor"}));
 });

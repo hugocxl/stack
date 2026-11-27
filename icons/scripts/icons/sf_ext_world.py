@@ -28,58 +28,67 @@ def register(api):
         return api['op'](body, cut, api['po'].PathOp.DIFFERENCE)
 
     api['CATEGORY'] = 'Weather and nature'
-    # Compose the shaded hemisphere and limb as one foreground. The illuminated
-    # surface stays open even in Solid, so the phase is independent of the tint.
-    lunar_disc = circle(8, 8, 6.15)
+
+    def ellipse(cx, cy, rx, ry):
+        return circle(0, 0, 1).transform(rx, 0, 0, ry, cx, cy)
+
+    # SF moon phases ink the illuminated part and leave the dark limb open:
+    # new moon is an empty ring, full moon a solid disc. The terminator is a
+    # half ellipse meeting the limb at both poles. Waning phases are mirrored.
+    lunar_disc = circle(8, 8, 6)
     limb = stroke(lunar_disc)
-    west = 'M8 1.85A6.15 6.15 0 0 0 8 14.15'
-    crescent = path(west + 'A3.15 6.15 0 0 0 8 1.85Z')
-    quarter = path(west + 'Z')
-    gibbous = path(west + 'A3.15 6.15 0 0 1 8 1.85Z')
-    for name, shade in (
-        ('moon-new', lunar_disc),
+    lit_disc = circle(8, 8, 6.2)
+    east = subtract(lit_disc, rr(0, 0, 8, 16, 0))
+    terminator = ellipse(8, 8, 3.1, 6.2)
+    crescent = subtract(east, terminator)
+    gibbous = union(east, terminator)
+    for name, lit in (
+        ('moon-new', None),
         ('moon-waxing-crescent', crescent),
-        ('moon-first-quarter', quarter),
+        ('moon-first-quarter', east),
         ('moon-waxing-gibbous', gibbous),
-        ('moon-full', None),
+        ('moon-full', lit_disc),
         ('moon-waning-gibbous', mirror(gibbous)),
-        ('moon-last-quarter', mirror(quarter)),
+        ('moon-last-quarter', mirror(east)),
         ('moon-waning-crescent', mirror(crescent)),
     ):
-        ink = union(limb, shade)
-        shape(name, lunar_disc, shade, 'astronomy lunar phase night orbit ' + name.replace('-', ' '))
-        styles[name] = {'duotone': [(subtract(lunar_disc, ink), .24), (ink, 1)],
+        ink = union(limb, lit)
+        shape(name, lunar_disc, lit, 'astronomy lunar phase night orbit ' + name.replace('-', ' '))
+        dark = subtract(lunar_disc, ink)
+        styles[name] = {'duotone': [(dark, .24), (ink, 1)] if dark.area > .01 else [(ink, 1)],
                         'solid': ink, 'stroke': ink}
 
-    storm_disc = circle(8, 8, 3.55)
-    arm = stroke('M4.53 8.75C3.75 4.15 6.95 1.8 11.6 1.5')
+    # SF storms are narrow: two tapered comma arms leave a central disc and
+    # curl to opposite sides. The hurricane is a solid vortex with an open
+    # eye; the tropical storm keeps an open ring around a small dot.
+    storm_disc = circle(8, 8, 2.95)
+    arm = path('M5.05 8.4C4.6 4.1 7.5 1.45 11.95 1.5A.62 .62 0 0 1 11.95 2.74'
+               'C8.75 2.8 6.6 4.75 6.45 7.25Z')
     arms = union(arm, rotate(arm, 180))
-    storm_ring = stroke(storm_disc)
-    for name, eye, tags in (
-        ('hurricane', circle(8, 8, 1.45), 'hurricane typhoon cyclone eye severe wind'),
-        ('tropical-storm', circle(8, 8, .78), 'tropical storm cyclone forecast wind'),
-    ):
-        shape(name, storm_disc, union(arms, eye), tags)
-        filled = union(storm_disc, storm_ring)
-        if name == 'hurricane':
-            vortex = union(subtract(filled, eye), arms)
-            styles[name] = {'duotone': [(vortex, 1)], 'solid': vortex, 'stroke': vortex}
-        else:
-            styles[name] = {'solid': union(storm_ring, arms, eye)}
+    vortex = subtract(union(storm_disc, arms), circle(8, 8, 1.2))
+    glyph('hurricane', vortex, None, 'hurricane typhoon cyclone eye severe wind')
+    storm_ring = api['ring'](8, 8, 2.95)
+    storm_ink = union(storm_ring, subtract(arms, circle(8, 8, 2.5)), circle(8, 8, .85))
+    shape('tropical-storm', circle(8, 8, 2.43), union(subtract(arms, circle(8, 8, 2.5)), circle(8, 8, .85)),
+          'tropical storm cyclone forecast wind')
+    styles['tropical-storm'] = {'solid': storm_ink, 'stroke': storm_ink}
 
-    gas_cloud = path('M4.1 13.35Q1.3 13.35 1.3 10.5V8.6Q1.3 5.85 3.85 5.35'
-                     'C5.15 1.15 10.6 1.15 12.1 5.35Q14.7 5.8 14.7 8.6V10.55'
-                     'Q14.7 13.35 11.9 13.35Z')
+    # The family cloud steps down-left to make room for two rising bubbles;
+    # the formula sits low in the cloud with a small subscript, as in SF.
+    gas_cloud = rotate(api['DRAWINGS']['cloud'][0], scale=.93, dx=-.6, dy=1.25)
+    bubbles = union(circle(14.05, 3.55, 1.05), circle(12.15, 1.85, .75))
+    letter_c = ('M6.3 8.6C6.0 8.1 5.65 7.9 5.2 7.9C4.4 7.9 3.95 8.65 3.95 9.75'
+                'C3.95 10.85 4.4 11.6 5.2 11.6C5.65 11.6 6.0 11.4 6.3 10.9')
+    letter_o = ellipse(8.4, 9.75, 1.2, 1.85)
+    two = stroke('M10.45 10.55Q10.6 10.0 11.1 10.0Q11.75 10.0 11.7 10.6Q11.65 11.0 10.45 12.1H11.85')
     for name, dx, tags in (
-        ('co-cloud', 1.1, 'carbon monoxide gas air quality sensor'),
+        ('co-cloud', .6, 'carbon monoxide gas air quality sensor'),
         ('co2-cloud', 0, 'carbon dioxide emissions atmosphere gas air quality'),
     ):
-        letters = rotate(stroke('M5.15 7.8C2.95 5.95 2.95 12.25 5.15 10.4'
-                                'M7.35 8.8C7.35 6.45 9.25 6.45 9.25 8.8V9.3'
-                                'C9.25 11.65 7.35 11.65 7.35 9.3Z'), dx=dx)
+        letters = rotate(union(stroke(letter_c), stroke(letter_o)), dx=dx)
         if name == 'co2-cloud':
-            letters = union(letters, stroke('M11.4 8.5Q12.95 7.2 12.44 9L11.4 10.8H12.45'))
-        shape(name, gas_cloud, letters, tags)
+            letters = union(letters, two)
+        shape(name, gas_cloud, union(letters, bubbles), tags)
 
     degree = api['ring'](3.65, 4.15, 2.15)
     for name, letter, tags in (
@@ -90,45 +99,50 @@ def register(api):
     ):
         glyph(name, union(degree, stroke(letter)), None, tags)
 
-    # Splayed legs frame the curved spine. The long tapering tail carries the
-    # silhouette, leaving room to identify the animal without miniature toes.
-    gecko = path('M8.5 6.65C8.65 5.4 9.55 4.8 10.2 4.35'
-                 'C10.65 2.35 13.85 1.45 14.2 3.1C14.5 4.8 12.75 5.7 11.55 5.85'
-                 'C10.8 6.55 11.15 8.95 9.5 10.55C7.65 12.4 3.9 13.6 2.15 11.35'
-                 'Q.95 9.9 1.85 8.1C1.9 10.55 3.15 11.45 5.05 10.7'
-                 'Q7.55 9.85 8.5 6.65Z')
-    limbs = stroke('M9.8 6.35L7.45 4.9L7.3 3.2M10.4 7.8L12.55 8.15L13.4 6.9'
-                   'M7.65 9.55L5.55 8.25L5.3 6.9M8.2 10.9L9.25 12.7L11.05 12.9')
+    # Seen from above, the body, curled tail and head form one continuous
+    # C, like SF's lizard. Four bent legs splay out with short toes.
+    gecko = path('M12.95 1.55C14.25 1.75 14.45 3.35 13.45 4.25'
+                 'C12.75 4.85 11.95 4.95 11.25 5.35'
+                 'C9.15 6.6 7.55 7.85 7.15 9.7C6.8 11.35 7.85 12.55 9.65 12.65'
+                 'C11.35 12.75 12.85 12.15 14.45 11.15'
+                 'C13.35 12.85 11.45 14.25 9.25 14.3C5.75 14.4 4.35 11.65 5.05 9.0'
+                 'C5.65 6.65 7.55 5.05 9.75 3.6C10.35 2.75 11.25 1.3 12.95 1.55Z')
+    limbs = stroke('M10.45 4.2L9.0 3.0L9.15 1.55M9.0 3.0L7.65 2.55'
+                   'M12.1 5.15L12.65 6.85L14.15 7.25M12.65 6.85L12.3 8.3'
+                   'M5.55 8.25L3.4 7.85L2.45 6.45M3.4 7.85L1.85 8.55'
+                   'M6.0 11.85L4.6 13.15L2.95 12.95M4.6 13.15L4.55 14.55')
     shape('lizard', gecko, limbs, 'gecko reptile animal wildlife tail')
 
-    dog = path('M2.45 6.75L3.8 7.35H8.75L10.15 4.3L10.35 2.7Q10.55 2.1 11.3 2.7'
-               'L12.8 4.15L14.55 4.85L14.2 6.45Q13.95 7.2 12.5 7L11.45 6.8'
-               'L10.6 9.15V13.5H8.7L8.45 10.8H5.5L4.4 13.5H2.45L3.65 9.65'
-               'Q2.15 8.85 1.65 7.1Q1.3 5.6 2.45 6.75Z')
-    harness = stroke('M5.65 7.35V9.55H8.1V7.35')
+    # A standing dog in profile with a guide harness handle over its back.
+    dog = path('M3.4 6.0H9.75L10.05 3.65Q10.3 2.35 11.6 2.35H12.55Q13.35 2.35 13.7 3.05'
+               'L14.7 4.35Q15.15 5.45 14.0 5.65L12.95 5.8Q12.4 6.05 12.4 7.0'
+               'L12.4 12.95Q12.4 13.7 11.65 13.7Q10.85 13.7 10.85 12.95'
+               'L10.65 9.6H6.1L5.75 12.95Q5.7 13.7 4.95 13.7Q4.15 13.7 4.15 12.95'
+               'L4.0 9.4Q2.6 8.6 2.7 7.3Q2.8 6.0 3.4 6.0Z')
+    harness = stroke('M6.8 9.6V6.0M8.1 6.0L7.2 3.7H5.3M3.1 6.6Q1.6 5.6 1.55 3.85'
+                     'M11.25 2.9Q10.85 4.35 11.55 5.05')
     shape('service-dog', dog, harness, 'assistance guide dog harness accessibility animal')
 
     api['CATEGORY'] = 'Maps and travel'
-    # Keep the wheel open between the three spokes even in its solid style.
-    hub = path('M5.4 7.15Q8 6.55 10.6 7.15L9.35 9.45Q8 10.45 6.65 9.45Z')
-    wheel = stroke(circle(8, 8, 6.15))
-    spokes = stroke('M2 6.75L5.65 7.55M10.35 7.55L14 6.75M8 9.55V14.05')
-    shape('steering-wheel', hub, union(wheel, spokes), 'car steering wheel driver vehicle controls')
+    # Standard rim with a soft hub and three spokes, as in SF steeringwheel.
+    hub = rr(5.25, 6.55, 5.5, 3.5, 1.75)
+    rim = api['ring'](8, 8, 6.52)
+    spokes = stroke('M1.75 7.35L5.25 8.0M10.75 8.0L14.25 7.35M8 10.05V14.25')
+    shape('steering-wheel', hub, union(rim, spokes), 'car steering wheel driver vehicle controls')
 
-    pump = rr(2.4, 2.35, 7.65, 10.95)
-    window = rr(4.6, 4.55, 3.25, 3.1)
-    hose = stroke('M10 7.45Q11.7 7.45 11.7 9.45V10.85'
-                  'C11.7 12.75 14.35 12.75 14.35 10.85V6.3L12.2 4.05')
-    plinth = line((1.45, 13.65), (10.9, 13.65))
-    shape('fuel-pump', pump, union(stroke(window), plinth, hose), 'fuel pump petrol gas station refuel')
-    styles['fuel-pump'] = {'solid': union(subtract(union(pump, stroke(pump)), window), hose, plinth)}
+    # A tall pump with a solid display, a wide plinth and a looping hose.
+    pump = rr(2.35, 1.65, 7.4, 11.6)
+    display = rr(3.95, 3.3, 4.2, 3.2, .55, exact=True)
+    hose = stroke('M9.75 7.0H10.45Q11.55 7.0 11.55 8.1V10.9'
+                  'C11.55 12.85 14.2 12.85 14.2 10.9V5.15L12.15 3.0')
+    plinth = line((1.35, 13.75), (10.75, 13.75))
+    shape('fuel-pump', pump, union(display, plinth, hose), 'fuel pump petrol gas station refuel')
 
-    headrest = rr(9.55, 1.4, 3.6, 2.3)
-    backrest = api['poly']([(9.35, 4.75), (13.05, 5.05), (12.25, 12.2), (8.55, 12.2)])
-    cushion = rr(2.2, 9.6, 10.2, 2.6)
-    rail = line((4.1, 14.25), (10.4, 14.25))
-    shape('car-seat', union(headrest, backrest, cushion), rail,
-          'vehicle car seat headrest driver passenger')
+    # One continuous seat profile: bucket backrest and cushion, no rail.
+    seat = path('M4.55 1.6Q5.95 1.45 6.25 2.85L7.05 7.75Q7.25 8.75 8.25 8.85'
+                'L12.45 9.2Q13.95 9.35 13.95 11.0Q13.95 12.95 11.95 12.95H5.45'
+                'Q3.6 12.95 3.4 11.05L2.55 3.75Q2.35 1.8 4.55 1.6Z')
+    shape('car-seat', seat, None, 'vehicle car seat headrest driver passenger')
 
     # A quarter-turned tire reveals a strip of tread beyond the sidewall.
     tire = path('M7 1.95H9.15C15.85 1.95 15.85 14.05 9.15 14.05H7'
@@ -139,37 +153,45 @@ def register(api):
     tread_seam = stroke('M10.15 3.75C12.7 6.05 12.7 9.95 10.15 12.25')
     styles['tire'] = {'solid': subtract(union(tire, stroke(tire)), union(bore, tread_seam))}
 
-    lamp = path('M8.35 3.65Q14.45 3.65 14.45 8Q14.45 12.35 8.35 12.35'
-                'Q7.15 12.35 7.15 11.1V4.9Q7.15 3.65 8.35 3.65Z')
-    beams = stroke('M1.55 4.9H4.85M1.55 8H4.85M1.55 11.1H4.85')
+    # SF high beam: a rounded lamp lens and four level beams.
+    lamp = path('M8.25 3.1C12.95 3.1 14.55 5.3 14.55 8C14.55 10.7 12.95 12.9 8.25 12.9'
+                'Q7.05 12.9 7.05 11.7V4.3Q7.05 3.1 8.25 3.1Z')
+    beams = stroke('M1.45 4.55H4.75M1.45 6.85H4.75M1.45 9.15H4.75M1.45 11.45H4.75')
     shape('headlight', lamp, beams, 'car headlamp high beam light headlights')
 
-    horn = path('M5.6 6.55L10.95 3.4Q11.65 3 11.65 3.85V12.15Q11.65 13 10.95 12.6L5.6 9.45Z')
-    sound = union(line((1.55, 8), (5.6, 8)),
-                  stroke('M13.55 5.75Q14.55 8 13.55 10.25'))
-    shape('horn', horn, sound, 'vehicle horn honk trumpet sound alert')
+    # A trumpet horn: flared bell, narrow throat and the return tube below.
+    horn = path('M1.55 4.85H5.85Q10.15 4.65 12.45 2.1Q14.45 .75 14.45 3.35V8.75'
+                'Q14.45 11.35 12.45 10.0Q10.15 7.45 5.85 7.25H1.55Z')
+    tube = stroke('M2.45 7.25V9.25Q2.45 10.65 3.85 10.65H7.75Q8.85 10.65 8.85 9.55V7.75')
+    shape('horn', horn, tube, 'vehicle horn honk trumpet sound alert')
 
-    plate = rr(1.45, 3.8, 13.1, 8.4)
-    bolts = union(circle(3.75, 6.1, .55), circle(12.25, 6.1, .55))
-    serial = stroke('M4.3 9.3H7.8M10 9.3H11.7')
-    shape('license-plate', plate, union(bolts, serial), 'car license plate registration number vehicle tag')
+    # A wide plate with registration characters, sized like SF licenseplate.
+    plate = rr(1.17, 3.65, 13.66, 8.7)
+    serial = stroke('M3.75 6.75L4.95 5.75V10.25'
+                    'M6.85 6.75Q7.2 5.75 8.2 5.75Q9.35 5.75 9.35 6.95'
+                    'Q9.35 7.75 8.55 8.45L6.85 10.25H9.45'
+                    'M10.75 5.75H12.85L11.65 7.6Q13.1 7.6 13.1 8.95'
+                    'Q13.1 10.35 11.8 10.35Q11.0 10.35 10.6 9.75')
+    shape('license-plate', plate, serial, 'car license plate registration number vehicle tag')
 
-    cabin = path('M4.1 8.55L4.65 4.25H11.35L11.9 8.55Z')
-    bow = path('M2.2 8.95L8 7.05L13.8 8.95L11.15 13.1Q9.4 12.9 8 13.85'
-               'Q6.6 12.9 4.85 13.1Z')
-    bridge = rr(6.05, 2.05, 3.9, 2.2)
-    deck = union(bridge, cabin, bow)
-    bow_line = stroke('M2.2 8.95L8 7.05L13.8 8.95M8 7.05V11.15')
-    shape('ferry', deck, union(bow_line, line((4.65, 4.25), (11.35, 4.25))),
+    # SF ferry: bridge with windows above a broad hull, riding one wave.
+    superstructure = union(rr(5.85, 1.45, 4.3, 2.6), rr(3.95, 3.65, 8.1, 4.55))
+    hull = path('M1.75 8.2H14.25Q13.0 11.0 11.2 12.05Q9.4 11.95 8 12.95'
+                'Q6.6 11.95 4.8 12.05Q3.0 11.0 1.75 8.2Z')
+    windows = union(rr(5.25, 5.25, 2.1, 1.5, .45, exact=True),
+                    rr(8.65, 5.25, 2.1, 1.5, .45, exact=True))
+    wave = stroke('M1.6 14.35Q3.2 13.25 4.8 14.35T8 14.35T11.2 14.35T14.4 14.35')
+    shape('ferry', union(superstructure, hull), union(windows, wave),
           'ferry boat passenger ship harbor crossing water transport')
 
-    railcar = rr(3.6, 4.45, 8.8, 7.75)
-    windscreen = rr(5.8, 6.65, 4.4, 2.35, 1.25)
-    rail_details = stroke('M5.45 12.05L4.1 14.45M10.55 12.05L11.9 14.45'
-                          'M5 1.55H11M5.65 1.55L7.35 4.45M10.35 1.55L8.65 4.45')
-    shape('light-rail', railcar, union(rail_details, stroke(windscreen)),
+    # SF lightrail: pantograph, tall car with a solid windscreen and lamps.
+    railcar = rr(3.45, 4.35, 9.1, 9.05, 2.2, exact=True)
+    windscreen = rr(4.95, 5.85, 6.1, 3.35, .6, exact=True)
+    lamps = union(circle(5.85, 11.15, .65), circle(10.15, 11.15, .65))
+    rail_details = stroke('M5.6 13.35L4.35 14.75M10.4 13.35L11.65 14.75'
+                          'M5.05 1.35H10.95M6.35 1.35L8 4.35L9.65 1.35')
+    shape('light-rail', railcar, union(windscreen, lamps, rail_details),
           'tram light rail streetcar electric train public transit')
-    styles['light-rail'] = {'solid': union(subtract(union(railcar, stroke(railcar)), windscreen), rail_details)}
 
     airline = path('M3.05 2.85Q4.2 2.35 4.7 3.45L7.5 9.45H12.6Q14 9.45 14 10.85'
                    'Q14 12.05 12.65 12.05H6.85Q5.7 12.05 5.2 10.9L2.4 4.65Q1.85 3.3 3.05 2.85Z')
@@ -177,11 +199,14 @@ def register(api):
     support = stroke('M7.25 12L6.25 14.3M10.75 12L11.75 14.3')
     shape('airplane-seat', airline, union(armrest, support), 'airline cabin seat passenger airplane armrest')
 
-    oil = path('M3.7 6.3H8.85L10.1 7.65L13.8 5.65L14.6 6.55L11.15 10.85'
-               'Q10.55 11.8 9.55 11.8H4.8Q3.7 11.8 3.7 10.7Z')
-    handle = stroke('M3.7 6.85H1.45V8.35Q1.45 10.15 3.7 10.15'
-                    'M6.4 6.3V3.9M4.65 3.9H8.15')
-    shape('oil-can', oil, handle, 'engine oil can lubrication service automotive')
+    # SF oilcan: handle, filler cap, a long raised spout and a falling drop.
+    oil = path('M3.6 6.35H8.75L10.05 7.65L14.15 5.35L14.85 6.1L11.05 10.85'
+               'Q10.45 11.75 9.45 11.75H4.7Q3.6 11.75 3.6 10.65Z')
+    handle = stroke('M3.6 6.9H1.45V8.35Q1.45 10.1 3.6 10.1'
+                    'M6.2 6.35V4.0M4.5 4.0H7.9')
+    drop = path('M14.2 8.65Q15.25 10.05 15.25 10.75A1.05 1.05 0 0 1 13.15 10.75'
+                'Q13.15 10.05 14.2 8.65Z')
+    shape('oil-can', oil, union(handle, drop), 'engine oil can lubrication service automotive')
 
     socket = path('M1.65 5.6H4.5L7.6 9.4H12.9Q14.15 9.4 14.15 10.6'
                   'Q14.15 11.8 12.9 11.8H7.2Q6.25 11.8 5.6 11L3.1 7.9H1.65Z')
@@ -200,26 +225,18 @@ def register(api):
     shape('dpad', union(*(rotate(paddle, a) for a in (0, 90, 180, 270))), None,
           'controller d-pad directional pad game navigation buttons')
 
-    # Each key is its own cap. In the small key faces the open chevrons carry
-    # direction and the negative perimeter separates adjacent buttons.
-    caps, arrows = [], []
-    for x, y, angle in ((8, 4.65, 0), (2.85, 10.7, -90), (8, 10.7, 180), (13.15, 10.7, 90)):
-        caps.append(rr(x - 2, y - 2.35, 4, 4.7))
-        arrows.append(rotate(stroke('M7.25 8.4L8 7.5L8.75 8.4'), angle, dx=x-8, dy=y-8))
-    keycaps, arrows = union(*caps), union(*arrows)
-    key_edges = []
-    for x, y, angle in ((8, 3.1, 0), (2.85, 10, -90), (8, 10, 180), (13.15, 10, 90)):
-        key_edges.extend((rotate(stroke('M6.7 8.7L8 7.3L9.3 8.7'), angle, dx=x-8, dy=y-8),
-                          line((x-1.45, y+3.45), (x+1.45, y+3.45))))
-    keys = subtract(keycaps, arrows)
-    glyph('arrow-keys', keycaps, arrows, 'keyboard arrow keys cursor up down left right gaming')
-    api['DUOTONE_GLYPHS']['arrow-keys'] = 'Four keycap surfaces behind their direction marks.'
-    styles['arrow-keys'] = {'duotone': [(keys, .24), (arrows, 1)], 'solid': keys, 'stroke': keys}
+    # SF arrowkeys: an inverted T of four equal keycaps with solid arrows.
+    keys, arrows = [], []
+    tri = path('M8 7.2L9.05 8.85H6.95Z')
+    for cx, cy, angle in ((8, 5.35, 0), (2.95, 10.65, -90), (8, 10.65, 180), (13.05, 10.65, 90)):
+        keys.append(rr(cx - 1.95, cy - 1.95, 3.9, 3.9, .95, exact=True))
+        arrows.append(rotate(api['soften'](tri, .2), angle, dx=cx-8, dy=cy-8.1 if angle == 0 else cy-8))
+    shape('arrow-keys', union(*keys), union(*arrows),
+          'keyboard arrow keys cursor up down left right gaming')
 
     api['CATEGORY'] = 'Geometry'
-    shape('capsule', rr(1.45, 4.05, 13.1, 7.9, 3.95), None, 'stadium obround pill capsule shape')
-    oval = path('M1.45 8A6.55 4.65 0 1 0 14.55 8A6.55 4.65 0 1 0 1.45 8Z')
-    shape('oval', oval, None, 'ellipse oval geometric shape horizontal')
+    shape('capsule', rr(1.17, 2.85, 13.66, 10.3, 5.15), None, 'stadium obround pill capsule shape')
+    shape('oval', ellipse(8, 8, 6.83, 5.2), None, 'ellipse oval geometric shape horizontal')
     shape('rhombus', path('M8 1.55L12.7 8L8 14.45L3.3 8Z'), None,
           'lozenge diamond rhombus quadrilateral geometry')
     shape('trapezoid', path('M4.55 3.4H11.45L14.5 12.6H1.5Z'), None,
@@ -234,21 +251,29 @@ def register(api):
     shape('skew', skewed, nodes, 'transform shear distort skew handles vector corners')
     styles['skew'] = {'solid': union(skewed, stroke(skewed), nodes)}
 
-    # A floor plane receding to the horizon: converging rails and one
-    # cross rail, like a ground grid seen in perspective.
-    plane = path('M4.75 3.3H11.25L14.45 12.7H1.55Z')
-    grid = stroke('M6.95 3.3L5.95 12.7M9.05 3.3L10.05 12.7M3.2 7.85H12.8')
-    shape('perspective', plane, grid, 'perspective projection plane vanishing grid transform')
+    # SF perspective: a quad foreshortened to the left, crossed by its two
+    # axes, which run past the outline on every side.
+    plane = path('M3.55 4.35L12.45 2.45V13.55L3.55 11.65Z')
+    axes = stroke('M1.05 8H14.95M8 1.05V14.95')
+    shape('perspective', plane, axes, 'perspective projection plane vanishing grid transform')
+    field = union(plane, stroke(plane))
+    styles['perspective'] = {'solid': union(subtract(field, axes), subtract(axes, field))}
 
-    frame = rr(1.5, 3.15, 13, 9.7)
-    inset = stroke('M1.5 6.25H10.85Q11.65 6.25 11.65 7.05V12.85')
+    # Standard SF rectangle with the nested 4:3 frame of aspectratio.
+    frame = rr(1.17, 2.8, 13.66, 10.4)
+    inset = stroke('M1.17 6.35H10.2Q11.05 6.35 11.05 7.2V13.2')
     shape('aspect-ratio', frame, inset, 'aspect ratio resize proportions image frame crop')
-    cut = stroke('M.7 6.25H10.85Q11.65 6.25 11.65 7.05V13.65')
+    cut = stroke('M.4 6.35H10.2Q11.05 6.35 11.05 7.2V14.0')
     styles['aspect-ratio'] = {'solid': subtract(union(frame, stroke(frame)), cut)}
 
-    tab = api['poly']([(9.45, 11.35), (11.35, 9.45), (14.3, 12.4), (12.4, 14.3)])
-    loupe = union(circle(7.05, 7.05, 5.05), tab)
-    shape('loupe', loupe, stroke(circle(7.05, 7.05, 2.75)),
+    # SF loupe: a jeweler's eyepiece. A short barrel with a dark lens on top
+    # flares into a wide skirt with a rounded rim.
+    barrel = rr(4.65, 1.65, 6.7, 5.0, 1.1, exact=True)
+    skirt = path('M4.65 6.0H11.35L12.95 11.4Q13.45 13.9 10.95 13.9H5.05'
+                 'Q2.55 13.9 3.05 11.4Z')
+    lens = ellipse(8, 3.2, 2.45, .72)
+    collar = stroke('M4.65 6.25Q8 7.65 11.35 6.25')
+    shape('loupe', union(barrel, skirt), union(lens, collar),
           'magnifier loupe optical lens inspect jeweler photography')
 
     scribble = stroke('M1.55 9.3L7.55 3.55C9.8 1.5 11.05 3.1 9.1 5.55'
@@ -331,8 +356,13 @@ def register(api):
         'austral': ('M2.85 13.55L8 2.45L13.15 13.55M2.95 8.05H13.05M2.1 10.7H13.9',
                     'argentina argentine historical ara'),
     }
+    # Narrow the signs that SF sets on a condensed width; squeezing the
+    # skeleton before stroking keeps the single family weight.
+    squeeze = {'naira': .76, 'peseta': .8, 'shekel': .82, 'kip': .8, 'austral': .72,
+               'hryvnia': .83, 'mill': .82, 'zloty': .85, 'dong': .87, 'tugrik': .84}
     for name, (skeleton, tags) in currency.items():
-        mark = stroke(skeleton)
+        sx = squeeze.get(name, 1)
+        mark = stroke(path(skeleton).transform(sx, 0, 0, 1, 8 - 8*sx, 0))
         if name == 'danish-krone':
             mark = union(mark, circle(13.45, 12.75, .8))
         glyph(name, mark, None, f'currency money finance {tags}')

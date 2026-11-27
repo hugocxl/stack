@@ -52,33 +52,63 @@ def register(api):
       st('M12.2 4.8Q13.4 6.8 12.2 8.8M14.1 3Q16.3 6.8 14.1 10.6', 1.1),
       tags='assistive listening hearing loop auditory accessibility sound')
 
-    g('person-walking', circle(8.8, 2.1, 1.4),
-      st('M8.4 5L7.4 9L5 14.1M7.4 9L10.3 11.2L11.3 14.1'
-         'M8.4 5L5.5 6.5L4 9M8.4 5L10.4 7.3L12.2 7.9'),
+    # SF figure.* poses are solid silhouettes: a round head and thick
+    # limbs with round ends, the same in every style.
+    LIMB = 1.75
+
+    def figure(head, *chains, torso=None):
+        parts = [circle(*head)]
+        for chain in chains:
+            parts.append(stroke('M' + 'L'.join(f'{x} {y}' for x, y in chain), LIMB, exact=True))
+        if torso:
+            parts.append(stroke('M' + 'L'.join(f'{x} {y}' for x, y in torso), 2.3, exact=True))
+        return union(*parts)
+
+    walker = figure((9.05, 2.3, 1.6),
+                    ((7.7, 9.0), (6.4, 11.6), (4.75, 14.1)),
+                    ((7.7, 9.0), (9.55, 11.3), (10.15, 14.15)),
+                    ((8.6, 5.6), (10.15, 7.55), (11.95, 7.95)),
+                    torso=((8.55, 5.2), (7.7, 9.0)))
+    g('person-walking', walker,
       tags='walk walking pedestrian movement activity steps fitness')
 
-    g('person-running', circle(10.3, 2.2, 1.4),
-      st('M9 5L6.9 8.4L10 10.7L8.3 14M6.9 8.4L4.6 11.4H1.8'
-         'M9 5L11.2 7.3L14 6.4M9 5L5.7 4.7L4 6.8'),
+    runner = figure((10.6, 2.25, 1.6),
+                    ((8.0, 8.65), (10.65, 10.25), (10.0, 13.9)),
+                    ((8.0, 8.65), (6.6, 11.35), (3.35, 12.45)),
+                    ((9.4, 5.4), (11.15, 7.35), (13.1, 6.6)),
+                    ((9.4, 5.4), (6.9, 5.25), (5.4, 7.25)),
+                    torso=((9.6, 5.1), (8.0, 8.65)))
+    g('person-running', runner,
       tags='run running jogging sprint workout activity fitness')
 
     # A walking pole and a rear backpack distinguish hiking from walking.
-    g('person-hiking', circle(8, 2.1, 1.4),
-      st('M8.1 5L7 9.3L4.7 14.3M7 9.3L9.7 11.3L10.6 14.3'
-         'M8.1 5L10.3 7.7H12.9M13 5.5V14.2'),
-      path('M7.8 5L6.5 5.85L5.65 8.4Q5.4 9.2 4.5 9L3.3 8.7Q2.65 8.5 2.95 7.5L3.9 4.65Q4.2 3.7 5.15 4L6.6 4.6Z'),
+    hiker = figure((8.75, 2.3, 1.6),
+                   ((7.45, 9.0), (6.15, 11.6), (4.6, 14.1)),
+                   ((7.45, 9.0), (9.25, 11.3), (9.85, 14.15)),
+                   ((8.35, 5.6), (9.85, 7.55), (11.35, 7.75)),
+                   torso=((8.3, 5.2), (7.45, 9.0)))
+    pack = rr(3.35, 4.35, 2.95, 5.1, .95, exact=True)
+    pole = stroke('M12.45 6.3V14.95')
+    g('person-hiking', hiker, pack, pole,
       tags='hike hiking trekking trail walking outdoor activity backpack')
 
     # The chair is visibly separate from the sitter's back and upper legs.
-    g('person-seated', circle(8.8, 2.3, 1.45),
-      st('M8.2 5.3L7.9 8.8H11.1L12.2 13.7H14'
-         'M3.5 5.9V10.3H10.6M3.5 10.3V14.1', 1.35),
+    sitter = figure((9.7, 2.3, 1.6),
+                    ((8.3, 9.25), (11.95, 9.4), (12.6, 13.85)),
+                    ((9.1, 5.6), (10.6, 7.45), (12.5, 7.45)),
+                    torso=((9.1, 5.2), (8.3, 9.25)))
+    chair = stroke('M4.45 5.6V14.35M4.45 11.6H10.35')
+    g('person-seated', sitter, chair,
       tags='sitting seated person chair rest accessibility posture')
 
-    # Forward-leaning posture and an open wheel contour communicate propulsion.
-    # Open upper-right arc leaves a clear channel around the active limbs.
-    wheel = stroke('M4.95 7.8A3.55 3.55 0 1 0 9.85 11.95')
-    g('wheelchair-active', circle(9.55, 2.25, 1.4), wheel, api['front_caster'],
-      stroke('M8.65 4.9L6.95 8.65H10.55L12.55 11.9H14.45'
-             'M8.65 4.9L5.65 4.45L3.8 6.6'),
+    # SF figure.roll.runningpace: a leaning figure in the wheel, a small
+    # caster and pace lines trailing behind.
+    roller = figure((11.0, 2.3, 1.6),
+                    ((8.15, 8.75), (11.85, 9.2), (12.55, 12.0)),
+                    ((9.75, 5.5), (10.55, 7.9), (8.6, 9.85)),
+                    torso=((10.0, 5.15), (8.15, 8.75)))
+    rim = api['op'](api['ring'](8.15, 10.55, 4.15),
+                    union(roller, stroke(roller, 1.8, exact=True)), api['po'].PathOp.DIFFERENCE)
+    pace = stroke('M.95 6.85H3.35M.95 9.05H2.75M.95 11.25H2.95')
+    g('wheelchair-active', roller, rim, api['ring'](13.85, 13.75, 1.05), pace,
       tags='active wheelchair mobility accessible adaptive sport propulsion')

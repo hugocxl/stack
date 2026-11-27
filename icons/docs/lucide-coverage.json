@@ -15,7 +15,7 @@
   },
   "local_snapshot": {
     "catalog_path": "catalog.json",
-    "catalog_sha256": "6e11f6e33436858f9d6ca26a09e08c04c7dbb66c2fe816641c039b49c5f94466",
+    "catalog_sha256": "fc86604f8d8d63474844cb1792b7f122d3b3b0eebb6fc53d7628d495846444e1",
     "catalog_count": 2462,
     "original_ui_count": 2381,
     "legacy_brand_count": 81

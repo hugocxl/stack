@@ -52,24 +52,40 @@ def register(api):
                                    character(three, 12.99, 8, .392)),
            'text format digits numerals numbers 123')
 
-    for name, base, tags in (
-        ('indent-increase', 'indent', 'indent increase paragraph right nest'),
-        ('indent-decrease', 'outdent', 'indent decrease paragraph left outdent'),
+    # SF increase.indent / decrease.indent: four ragged rows beside a small
+    # filled triangle; SF increase.quotelevel: bars beside the same triangle.
+    poly = api['poly']
+    def pointer(x, y, direction):
+        return poly([(x, y-1.95), (x+2.8*direction, y), (x, y+1.95)])
+    rows = [3.75, 6.5, 9.25, 12.0]
+    for name, x0, x1, tri, tags in (
+        ('indent-increase', 6.0, 14.4, pointer(1.55, 7.85, 1), 'indent increase paragraph right nest'),
+        ('indent-decrease', 1.6, 10.0, pointer(14.55, 7.85, -1), 'indent decrease paragraph left outdent'),
     ):
-        glyph(name, *drawings[base][:2], tags)
+        text = union(*(line((x0, y), (x1 if i < 3 else x0+(x1-x0)*.55, y)) for i, y in enumerate(rows)))
+        glyph(name, text, tri, tags)
 
-    def quote_level(name, rails, arrow, tags):
-        linear(name, union(*(line((x, 2.5), (x, 13.5)) for x in rails), stroke(arrow)),
+    def quote_level(name, rails, tri, tags):
+        linear(name, union(*(line((x, 2.4), (x, 13.6)) for x in rails), tri),
                'blockquote citation quotation nesting level ' + tags)
 
-    quote_level('quote-level-increase', (2.25, 5.45, 8.65),
-                'M11.45 5.6L13.85 8L11.45 10.4', 'increase deeper')
-    quote_level('quote-level-decrease', (5.15,),
-                'M10.85 5.6L8.45 8L10.85 10.4', 'decrease shallower')
+    quote_level('quote-level-increase', (2.3, 5.4, 8.5),
+                pointer(11.25, 8, 1), 'increase deeper')
+    quote_level('quote-level-decrease', (6.25,),
+                pointer(11.85, 8, -1), 'decrease shallower')
 
-    shape('text-box', rr(1.45, 2.55, 13.1, 10.9),
-          lines('M5.45 11.15L8 4.85L10.55 11.15', 'M6.3 9.05H9.7'),
-          'text box field frame type insert editable')
+    # SF character.textbox: a frame with a handle in each side and a letter.
+    box = rr(1.95, 2.75, 12.1, 10.5)
+    letter = lines('M5.45 11.0L8 4.95L10.55 11.0', 'M6.3 9.0H9.7')
+    handles = union(api['circle'](1.95, 8, .85), api['circle'](14.05, 8, .85))
+    sockets = union(api['circle'](1.95, 8, 1.85), api['circle'](14.05, 8, 1.85))
+    shape('text-box', box, union(letter, handles), 'text box field frame type insert editable')
+    cutout = lambda p: api['op'](p, sockets, api['po'].PathOp.DIFFERENCE)
+    frame_ink = union(cutout(stroke(box)), letter, handles)
+    api['STYLE_OVERRIDES']['text-box'] = {
+        'duotone': [(cutout(api['op'](box, union(stroke(box), letter), api['po'].PathOp.DIFFERENCE)), .24), (frame_ink, 1)],
+        'stroke': frame_ink,
+        'solid': union(cutout(api['op'](union(box, stroke(box)), letter, api['po'].PathOp.DIFFERENCE)), handles)}
     # Greeked lines stand in for a heading and two lines of body copy.
     linear('placeholder-text', union(rr(1.9, 3.05, 8, 2.45, 1.25),
                                      lines('M2.45 8.65H13.55', 'M2.45 12H10.8')),
@@ -81,16 +97,19 @@ def register(api):
 
     api['CATEGORY'] = 'Math and symbols'
     for right, left, mark, tags in (
-        ('greater-than', 'less-than', stroke('M3.75 3.45L12.25 8L3.75 12.55'), ''),
+        # SF greaterthan (8.8 x 8.5) and greaterthanorequalto (7.8 x 10.7): text-sized.
+        ('greater-than', 'less-than', stroke('M4.1 4.3L11.9 8L4.1 11.7'), ''),
         ('greater-than-equal', 'less-than-equal',
-         lines('M3.75 2.55L12.25 6.1L3.75 9.65', 'M3.75 13H12.25'), ' or equal'),
+         lines('M4.6 2.85L11.4 6.05L4.6 9.25', 'M4.6 12.6H11.4'), ' or equal'),
     ):
         linear(right, mark, 'math comparison inequality greater than' + tags)
         linear(left, mirror(mark), 'math comparison inequality less than' + tags)
-    glyph('multiply', *drawings['close'][:2], 'math arithmetic multiply product times cross')
+    linear('multiply', lines('M4.25 4.25L11.75 11.75', 'M11.75 4.25L4.25 11.75'),
+           'math arithmetic multiply product times cross')
     linear('square-root', stroke('M1.65 8.25H3.6L5.95 12.95L8.75 3.05H14.35'),
            'math arithmetic square root radical algebra')
-    glyph('sum', *drawings['sigma'][:2], 'math sum summation sigma series total')
+    linear('sum', stroke('M11.25 2.75H4.75L8.75 8L4.75 13.25H11.25'),
+           'math sum summation sigma series total')
 
     api['CATEGORY'] = 'Media'
     circle, poly = api['circle'], api['poly']
@@ -104,10 +123,11 @@ def register(api):
               lines('M10.75 3.2V12.8', 'M14.15 3.2V12.8'),
               'media playback play pause resume toggle')
     # Reflect only the arrow. Numerals remain upright in both directions.
-    forward = lines('M12.1 3.9C13.6 5.05 14.35 6.75 14.35 8.6'
-                    'C14.35 12.1 11.5 14.65 8 14.65S1.65 12.1 1.65 8.6'
-                    'C1.65 5.1 4.5 2.65 8 2.65H8.95',
-                    'M7.15 1.25L8.95 2.65L7.15 4.05')
+    # SF goforward.*: the arc ends in a filled triangular head.
+    forward = union(stroke('M12.1 3.9C13.6 5.05 14.35 6.75 14.35 8.6'
+                           'C14.35 12.1 11.5 14.65 8 14.65S1.65 12.1 1.65 8.6'
+                           'C1.65 5.1 4.5 2.65 8 2.65H8.4'),
+                    poly([(7.85, .9), (10.45, 2.65), (7.85, 4.4)]))
     one = stroke('M4.9 7.75L6.35 6.65V11.35')
     zero = stroke(rr(9, 6.65, 2.65, 4.7, 1.325))
     five = stroke('M11.3 6.65H8.95L8.7 8.7C10.45 8.1 11.8 8.75 11.55 10.2'
@@ -121,7 +141,7 @@ def register(api):
             glyph(f'go-{direction}-{seconds}', arrow, digits,
                   f'media playback seek {direction} {action} {seconds} seconds')
 
-    linear('record', union(api['ring'](), circle(8, 8, 2.65)),
+    linear('record', union(api['ring'](8, 8, 6.55), circle(8, 8, 2.85)),
            'media capture record recording start audio video')
     blade = poly([(5.7, 3.2), (13.65, 8), (5.7, 12.8)])
     bar = line((2.4, 3.2), (2.4, 12.8))
